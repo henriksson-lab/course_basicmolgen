@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.30">
+
+  <meta name="author" content="Basic and molecular genetics (5MO104)">
+  <title>Basic and molecular genetics – Digital analysis of DNA</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Digital analysis of DNA</h1>
+  <p class="subtitle">Part 4: Genome analysis. Cutting, copying and reading DNA: restriction enzymes, gels, PCR and sequencing</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Basic and molecular genetics (5MO104) 
+</div>
+</div>
+</div>
+
+</section>
+<section id="about-this-lecture" class="slide level2">
+<h2>About this lecture</h2>
+<p>So far we have studied genes through <strong>phenotypes</strong>: round or wrinkled, affected or not. From here on we also read the <strong>DNA itself</strong>. Four tools make that possible, and together they turn a gene into data you can store, compare and search.</p>
+<ul>
+<li><strong>Cut</strong>: restriction enzymes recognise short palindromic sites and cut there.</li>
+<li><strong>Sort</strong>: gel electrophoresis separates DNA fragments by size; a ladder gives the scale.</li>
+<li><strong>Copy</strong>: cloning in a plasmid vector (briefly), and the <strong>polymerase chain reaction</strong> (PCR), which copies one stretch of DNA a billion-fold.</li>
+<li><strong>Read</strong>: <strong>Sanger sequencing</strong> reads one PCR product; <strong>next-generation sequencing</strong> reads millions of short pieces at once.</li>
+</ul>
+<p>The running example is the sickle-cell allele of <em>HBB</em> from Genetics as information: we will detect it in a family with PCR and a restriction enzyme.</p>
+<p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, chapter on digital analysis of DNA.</p>
+<aside class="notes">
+<p>This lecture opens Part 4, the most bioinformatic block of the course, but the questions stay genetic: which allele does this person carry, and how do we know? Remind students of HbS from the first unit: one base change, GAG to GTG in codon 7 (traditionally codon 6). Today we see how a lab detects that one base. The book calls this “digital” because DNA, once read, is a string of four letters that can be copied, compared and searched like any other digital data. The exercise has two demos (a virtual gel and a PCR curve) and the R part finds restriction sites in the genome of phage lambda.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cut-sort-copy-read" class="slide level2 smaller">
+<h2>Cut, sort, copy, read</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>What it does</th>
+<th>What it gives you</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Restriction enzyme</td>
+<td>cuts at a specific 4–8 bp site</td>
+<td>fragments of predictable size</td>
+<td>mapping, cloning, detecting some mutations</td>
+</tr>
+<tr class="even">
+<td>Gel electrophoresis</td>
+<td>separates fragments by size</td>
+<td>bands; size from a ladder</td>
+<td>checking digests and PCR products</td>
+</tr>
+<tr class="odd">
+<td>Cloning vector</td>
+<td>carries a fragment into bacteria, which copy it</td>
+<td>many identical copies, kept for later</td>
+<td>libraries, protein expression, transgenics</td>
+</tr>
+<tr class="even">
+<td>PCR</td>
+<td>copies the DNA between two primers</td>
+<td>10<sup>9</sup>-fold more of one region</td>
+<td>diagnostics, genotyping, sequencing input</td>
+</tr>
+<tr class="odd">
+<td>Sanger sequencing</td>
+<td>reads one PCR product</td>
+<td>~800 bases of high-quality sequence</td>
+<td>confirming a variant</td>
+</tr>
+<tr class="even">
+<td>Next-generation sequencing</td>
+<td>reads millions of short fragments</td>
+<td>whole genomes, exomes, transcriptomes</td>
+<td>finding variants genome-wide</td>
+</tr>
+</tbody>
+</table>
+<p>The tools combine: PCR a region, cut it, run it on a gel; or PCR it and sequence it.</p>
+<aside class="notes">
+<p>This slide is the map of the lecture. Read it as a pipeline: you usually cannot see one gene in three billion base pairs, so you first make many copies of it (PCR or cloning), then you look at it, either by its size on a gel or by reading the bases. Each tool has a characteristic output, and students should be able to say which tool answers which question. For example: “is this person a carrier of HbS?” can be answered by PCR plus DdeI digestion plus a gel, or by PCR plus Sanger sequencing. “Which variants does this person carry in all 20,000 genes?” needs next-generation sequencing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="restriction-enzymes-cut-at-palindromes" class="slide level2 smaller">
+<h2>Restriction enzymes cut at palindromes</h2>
+
+<img data-src="fig01-restriction-site.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
+<li>Bacteria make restriction enzymes to <strong>cut invading phage DNA</strong>; they protect their own DNA by methylating the same sites.</li>
+<li>The site is usually a <strong>palindrome</strong>: the two strands read the same 5’→3’. The enzyme is a dimer and each half cuts one strand.</li>
+<li>A staggered cut leaves <strong>sticky ends</strong> that can pair with any other end cut by the same enzyme.</li>
+</ul>
+<aside class="notes">
+<p>Restriction enzymes were discovered as the reason some phages grow poorly on certain bacterial strains: the phage DNA is “restricted”, cut up, on entry. The bacterium’s own DNA carries a methyl group at the same sites, added by a matching methyltransferase, so it is not cut. The names come from the organism: EcoRI from Escherichia coli strain RY13, HindIII from Haemophilus influenzae Rd, BamHI from Bacillus amyloliquefaciens. Palindrome here means the sequence equals its own reverse complement, which students can check with the reverse-complement function from the DNA recap unit. Sticky ends are what made recombinant DNA possible in the 1970s: cut a human gene and a plasmid with EcoRI, mix, and the ends pair; DNA ligase seals them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-often-does-an-enzyme-cut" class="slide level2 smaller">
+<h2>How often does an enzyme cut?</h2>
+<p>If the four bases were equally common and random, a given site of <em>n</em> specified bases would occur once every 4<sup><em>n</em></sup> bp.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Enzyme</th>
+<th>Site</th>
+<th style="text-align: right;">Expected spacing</th>
+<th style="text-align: right;">Expected in phage λ (48,502 bp)</th>
+<th style="text-align: right;">Actual in λ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EcoRI</td>
+<td>GAATTC</td>
+<td style="text-align: right;">4<sup>6</sup> = 4,096 bp</td>
+<td style="text-align: right;">11.8</td>
+<td style="text-align: right;"><strong>5</strong></td>
+</tr>
+<tr class="even">
+<td>BamHI</td>
+<td>GGATCC</td>
+<td style="text-align: right;">4,096 bp</td>
+<td style="text-align: right;">11.8</td>
+<td style="text-align: right;"><strong>5</strong></td>
+</tr>
+<tr class="odd">
+<td>HindIII</td>
+<td>AAGCTT</td>
+<td style="text-align: right;">4,096 bp</td>
+<td style="text-align: right;">11.8</td>
+<td style="text-align: right;"><strong>6</strong></td>
+</tr>
+<tr class="even">
+<td>DdeI</td>
+<td>CTNAG (N = any)</td>
+<td style="text-align: right;">4<sup>4</sup> = 256 bp</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;"><strong>104</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>6-bp cutters (“six-cutters”) give fragments of a few kb; 4-bp cutters give a few hundred bp.</li>
+<li>Real DNA is not random, so actual counts differ from the expectation. In the R exercise you count the λ sites yourself.</li>
+</ul>
+<aside class="notes">
+<p>The 4 to the n rule is a useful first estimate and a nice probability exercise: each position must match, with probability one quarter, independently, so the product rule from Part 1 gives one quarter to the power n.&nbsp;For DdeI, the N matches anything, so only four positions count. The actual numbers for phage lambda come from the reference sequence NC_001416.1 and agree with REBASE’s own counts. Lambda has fewer sites than expected for all four enzymes. One reason is that many phages avoid the sites of their hosts’ restriction enzymes over evolutionary time, since phages with fewer sites survive restriction better. Do not overclaim this for lambda in particular; the general point is that sequence composition matters.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gel-electrophoresis-sorting-fragments-by-size" class="slide level2 smaller">
+<h2>Gel electrophoresis: sorting fragments by size</h2>
+
+<img data-src="fig02-gel-ladder.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><ul>
+<li>DNA has a negative phosphate backbone, so it moves towards the + electrode. The agarose mesh slows long molecules more.</li>
+<li>Distance run is roughly linear in <strong>log(size)</strong> over the gel’s useful range. Use a <strong>ladder</strong> of known sizes to read off unknown bands.</li>
+<li>Higher % agarose resolves short fragments (100–1,000 bp); lower % resolves long ones (1–20 kb).</li>
+</ul>
+<aside class="notes">
+<p>Every DNA molecule has the same charge per unit length, so charge alone would not separate them; it is the gel matrix that does, by sieving. That is why distance depends on size, and in practice on the log of size. Show how to read the plot: find the unknown band’s distance, go up to the line, read across. Doing it by eye on a log scale is a skill students will need in the lab. Two practical details: the DNA is invisible until stained, and band brightness depends on mass, so a 37 bp fragment carries much less stain than a 400 bp fragment present in the same number of copies. Very large fragments (above about 20 to 30 kb) all run together near the well on a normal gel; separating them needs pulsed-field electrophoresis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="restriction-mapping-where-are-the-sites" class="slide level2 smaller">
+<h2>Restriction mapping: where are the sites?</h2>
+<p>Phage λ DNA (48,502 bp, linear), digested once with each enzyme and once with both:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Digest</th>
+<th>Fragments (bp)</th>
+<th style="text-align: right;">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EcoRI</td>
+<td>21,226 · 7,421 · 5,804 · 5,643 · 4,878 · 3,530</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td>BamHI</td>
+<td>16,841 · 7,233 · 6,770 · 6,527 · 5,626 · 5,505</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td>EcoRI + BamHI</td>
+<td>15,721 · 5,505 · 4,669 · 3,775 · 3,758 · 3,530 · 3,240 · 2,752 · 2,564 · 1,868 · 1,120</td>
+<td style="text-align: right;">11</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A linear molecule with <em>k</em> sites gives <em>k</em> + 1 fragments; a <strong>circular</strong> one gives <em>k</em>.</li>
+<li>Fragments always <strong>sum</strong> to the full length: a check on your reading of the gel.</li>
+<li>A fragment that survives the double digest unchanged (5,505; 3,530) contains no site for the other enzyme. Fragments that split show where the other sites are.</li>
+</ul>
+<aside class="notes">
+<p>Restriction mapping is the oldest kind of physical map, and the logic is a puzzle like the three-point cross in Part 2: you have pieces and must find the order. Walk through one example. The BamHI 5,505 fragment survives the double digest, so it has no EcoRI site; it is at an end of the molecule (it is in fact the left end, positions 1 to 5,505). The EcoRI 21,226 fragment, the left end, is cut by BamHI into 5,505 and 15,721. The numbers are computed from the real sequence; students reproduce them in R. Note that 3,775 and 3,758 differ by only 17 bp and would look like one bright band on a gel: a gel cannot resolve everything.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cloning-vectors-briefly" class="slide level2 smaller">
+<h2>Cloning vectors (briefly)</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p>A <strong>vector</strong> is a small DNA molecule that bacteria copy for you. The classic example is the plasmid <strong>pUC19</strong> (2,686 bp, circular):</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>origin of replication</td>
+<td>many copies per cell</td>
+</tr>
+<tr class="even">
+<td>antibiotic-resistance gene (<em>bla</em>, ampicillin)</td>
+<td>only cells with the plasmid survive</td>
+</tr>
+<tr class="odd">
+<td>multiple cloning site (MCS)</td>
+<td>one site each for EcoRI, BamHI, HindIII, PstI, …</td>
+</tr>
+<tr class="even">
+<td><em>lacZα</em> around the MCS</td>
+<td>an insert disrupts it: white instead of blue colonies</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<p><strong>Cloning in four steps</strong></p>
+<ol type="1">
+<li>Cut vector and insert with the same enzyme(s).</li>
+<li>Mix; sticky ends pair; <strong>ligase</strong> seals them.</li>
+<li><strong>Transform</strong> <em>E. coli</em>; select on ampicillin.</li>
+<li>Pick a white colony, grow it, check the insert with a digest and a gel.</li>
+</ol>
+</div></div>
+<p>Today PCR has replaced cloning for most diagnostic work; cloning is still used to make proteins and transgenic organisms.</p>
+<aside class="notes">
+<p>Keep this short: the course book covers vectors in more detail, and the lab course does the practical work. The key ideas are the selectable marker and the unique sites. In pUC19, the EcoRI, BamHI, HindIII and PstI sites each occur once, all inside the multiple cloning site, so one cut opens the circle into a single linear 2,686 bp piece; students can check this in the gel demo. Blue-white screening: the lacZ alpha fragment complements a defective lacZ in the host, giving blue colonies on X-gal; an insert in the MCS breaks lacZ alpha and gives white colonies. This links back to the lac operon from 5MO103. Vectors come back in the BLAST task of the exercise: the mystery read hits fly transformation vectors, because they carry the white gene as a marker.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pcr-copying-one-region-a-billion-times" class="slide level2 smaller">
+<h2>PCR: copying one region a billion times</h2>
+
+<img data-src="fig03-pcr.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><ul>
+<li>Two <strong>primers</strong> define the product: one on each strand, 3’ ends pointing towards each other.</li>
+<li>Each cycle: <strong>denature</strong> (~95 °C), <strong>anneal</strong> primers (~55–65 °C), <strong>extend</strong> with a heat-stable polymerase (72 °C).</li>
+<li>Ingredients: template DNA, two primers, dNTPs, Mg<sup>2+</sup>, buffer, <em>Taq</em> polymerase.</li>
+</ul>
+<aside class="notes">
+<p>PCR was invented by Kary Mullis in the 1980s. The trick that made it practical was the polymerase from Thermus aquaticus, a bacterium from hot springs, which survives the denaturation step, so you do not have to add new enzyme every cycle. Make sure students see why the product has defined ends: the first cycles make longer strands that start at a primer but run past the other primer site, but from cycle 3 on, strands that start at one primer and end at the other dominate, and after 30 cycles they are essentially all of the product. The product length is therefore set by the primer positions, which is what Primer-BLAST reports in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exponential-amplification-efficiency-and-plateau" class="slide level2 smaller">
+<h2>Exponential amplification, efficiency and plateau</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Cycles</th>
+<th style="text-align: right;">Ideal copies from 1 template (2<sup><em>n</em></sup>)</th>
+<th style="text-align: right;">At 90% efficiency (1.9<sup><em>n</em></sup>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1,024</td>
+<td style="text-align: right;">613</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">1.0 × 10<sup>6</sup></td>
+<td style="text-align: right;">3.8 × 10<sup>5</sup></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">1.1 × 10<sup>9</sup></td>
+<td style="text-align: right;">2.3 × 10<sup>8</sup></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Real reactions copy a fraction <em>E</em> of the molecules per cycle: <em>N</em> = <em>N</em><sub>0</sub> (1 + <em>E</em>)<sup><em>n</em></sup>.</li>
+<li>The reaction <strong>plateaus</strong> (~10<sup>12</sup> copies in 50 µl) when primers and dNTPs run out.</li>
+<li><strong>qPCR</strong> measures the cycle where the product crosses a threshold (Ct). 10× more template crosses about log(10)/log(1 + <em>E</em>) ≈ <strong>3.3 cycles</strong> earlier (at <em>E</em> = 1).</li>
+</ul>
+<aside class="notes">
+<p>The point of this table is that exponential growth is extremely sensitive to both the number of cycles and the efficiency: 90 percent instead of 100 percent efficiency gives five times fewer copies after 30 cycles. That is why quantitative PCR does not read the end point, which saturates, but the threshold cycle, which sits in the exponential phase. The rule of 3.3 cycles per ten-fold is worth deriving on the board: 2 to the power x equals 10 gives x equals log 10 over log 2, about 3.32. At 90 percent efficiency it is log 10 over log 1.9, about 3.6, which the demo shows. Sensitivity has a dark side: a single contaminating molecule can be amplified too, so every PCR has a no-template control.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="designing-primers" class="slide level2 smaller">
+<h2>Designing primers</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule of thumb</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Length <strong>18–25 nt</strong></td>
+<td>long enough to be unique in a 3 × 10<sup>9</sup> bp genome (4<sup>18</sup> ≈ 7 × 10<sup>10</sup>)</td>
+</tr>
+<tr class="even">
+<td>GC content <strong>40–60%</strong></td>
+<td>stable binding without sticking everywhere</td>
+</tr>
+<tr class="odd">
+<td>Melting temperature (Tm) <strong>~55–65 °C</strong>, the two primers within ~2–5 °C</td>
+<td>both bind well at the same annealing temperature</td>
+</tr>
+<tr class="even">
+<td>A G or C at the 3’ end, but no run of G/C</td>
+<td>the polymerase starts from a firmly paired 3’ end</td>
+</tr>
+<tr class="odd">
+<td>No complementarity between or within primers, especially at 3’ ends</td>
+<td>avoids <strong>primer-dimers</strong> and hairpins</td>
+</tr>
+<tr class="even">
+<td>Unique in the genome (check with <strong>Primer-BLAST</strong>)</td>
+<td>one product, not several</td>
+</tr>
+</tbody>
+</table>
+<p>Quick estimate (Wallace rule, for short primers): Tm ≈ 2 °C × (A + T) + 4 °C × (G + C).</p>
+<aside class="notes">
+<p>The 4 to the 18 argument mirrors the restriction-site calculation: a random 18-mer occurs about once per 7 times ten to the ten bases, more than the genome size, so most 18-mers are unique. Real genomes are full of repeats, so uniqueness must be checked, and that is what Primer-BLAST does: it designs primers and searches them against the genome or the RefSeq transcripts. Primer-dimers are the classic failure: two primers with complementary 3’ ends prime on each other and make a short product that competes with the target, especially when the template is scarce. The second demo shows this. The Wallace rule is crude; Primer-BLAST uses a better model and reports slightly different numbers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="try-it-pcr-cycle-by-cycle" class="slide level2 smaller">
+<h2>Try it: PCR, cycle by cycle</h2>
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="pcr" data-preset="real"></div>
+<script src="../demos/dist/pcr.js"></script>
+<aside class="notes">
+<p>Interactive demo. It starts on the “realistic” preset: 1,000 starting copies, 90 percent efficiency, 35 cycles, log axis, with a dashed curve for ten times less template. Point out the straight line on the log axis during the exponential phase, the plateau near 10 to the 12, and that the dashed curve is a parallel line shifted 3.6 cycles to the right. Untick “log y-axis”: on a linear axis nothing seems to happen for 20 cycles, then the curve shoots up and flattens. That is the same data. Then click “10 templates + primer-dimer” and “no-template control”: with almost no template, primer-dimers made from the primers alone can reach the detection threshold by cycle 39 or so. That is why late signals in a no-template control mean trouble, and why diagnostic PCR uses a cycle cut-off.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pcr-plus-a-restriction-enzyme-genotyping-hbs" class="slide level2 smaller">
+<h2>PCR plus a restriction enzyme: genotyping HbS</h2>
+
+<img data-src="fig06-hbs-rflp.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><p>The sickle-cell change (codon 7 GAG → GTG, c.20A&gt;T) destroys a <strong>DdeI</strong> site (CTGAG → CTGTG). Amplify 500 bp around it, cut with DdeI, run a gel: <em>AA</em> = HbA/HbA, <em>AS</em> = carrier, <em>SS</em> = sickle-cell disease.</p>
+<aside class="notes">
+<p>This is a classic diagnostic method called PCR-RFLP. It ties together everything so far: the mutation from Genetics as information and from the Mutation unit, PCR to get enough DNA from a cheek swab or a blood spot, a restriction enzyme to “read” one base, and a gel to see the result. The primers and fragment sizes are real: the 500 bp product spans exon 1 and intron 1 of HBB on chromosome 11 (GRCh38), and we checked with Primer-BLAST that the primers give a single product in the human genome. The carrier lane shows both alleles: at the DNA level, HbA and HbS are codominant, even though sickle-cell disease is recessive at the level of the phenotype. Before PCR, the same site was detected with the enzyme MstII on Southern blots. In a pedigree, this test turns “probably a carrier, 2/3” into a yes or no.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="try-it-a-virtual-gel" class="slide level2 smaller">
+<h2>Try it: a virtual gel</h2>
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="gel" data-preset="hbbAS"></div>
+<script src="../demos/dist/gel.js"></script>
+<aside class="notes">
+<p>Interactive demo. It starts on the HBB PCR product from a carrier, cut with DdeI on a 2 percent gel. Ask the room to estimate the sizes from the 100 bp ladder before ticking “show fragment sizes”. Switch between the three genotypes. Then switch to phage lambda with EcoRI and BamHI on a 0.7 percent gel: six, six and eleven bands, and some of the double-digest bands overlap. Then pUC19: each single enzyme gives one band (one site, circular plasmid, so one linear fragment of 2,686 bp), and EcoRI plus HindIII cuts out the 51 bp stretch of the multiple cloning site, which is too faint and too small to see well. Note that the uncut plasmid runs as a supercoiled band, ahead of its true size.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sanger-sequencing-reading-one-product" class="slide level2 smaller">
+<h2>Sanger sequencing: reading one product</h2>
+
+<img data-src="fig04-sanger.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:76.0%"><ul>
+<li>A primer, a polymerase, normal dNTPs and a small amount of four <strong>dye-labelled dideoxynucleotides</strong> (ddNTPs). A ddNTP lacks the 3’-OH, so the chain stops there.</li>
+<li>The result is a set of products ending at every position; <strong>capillary electrophoresis</strong> sorts them by length, and the dye colour of each gives the base.</li>
+</ul>
+<aside class="notes">
+<p>Frederick Sanger published the dideoxy method in 1977, and it read the first human genome together with clever automation. The principle uses the replication chemistry from the DNA recap unit: DNA polymerase needs a free 3’ hydroxyl to add the next nucleotide. A dideoxynucleotide has a hydrogen there instead, so once it is built in, synthesis stops. Because the ddNTPs are rare compared with normal dNTPs, termination happens at random, and among millions of molecules every position is represented. Electrophoresis in a thin capillary separates products that differ by one base, which is much finer than an agarose gel.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-a-sanger-trace" class="slide level2 smaller">
+<h2>Reading a Sanger trace</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you see</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>one clean peak per position</td>
+<td>a single sequence: homozygous at that site, or a cloned molecule</td>
+</tr>
+<tr class="even">
+<td><strong>two overlapping peaks</strong> of about half height at one position</td>
+<td>a <strong>heterozygous</strong> SNP (two alleles in the PCR product)</td>
+</tr>
+<tr class="odd">
+<td>everything doubles after one point</td>
+<td>a heterozygous <strong>indel</strong>: the two alleles are shifted relative to each other</td>
+</tr>
+<tr class="even">
+<td>messy start (first ~30 bases) and fading end (after ~800)</td>
+<td>normal limits of the method</td>
+</tr>
+</tbody>
+</table>
+<p>An HbA/HbS carrier shows an <strong>A and a T peak together</strong> at c.20 (forward strand).</p>
+<aside class="notes">
+<p>Reading a trace is a practical skill students may meet in lab courses and in clinical genetics reports. The double peak is the sequencing version of the carrier lane in the PCR-RFLP gel: both alleles are amplified and both are read at once. Make the link to the pedigree unit: a Sanger trace is how a clinical lab confirms that both parents of a child with a recessive disease are carriers. The indel case is worth a sentence: after a heterozygous one-base deletion, every subsequent position has two different bases, so the trace becomes unreadable from that point on, which itself tells you there is an indel.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-generation-sequencing-reads-and-coverage" class="slide level2 smaller">
+<h2>Next-generation sequencing: reads and coverage</h2>
+
+<img data-src="fig05-ngs-coverage.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:64.0%"><ul>
+<li>Fragment the genome, sequence <strong>millions of short reads</strong> (typically 100–300 bases) in parallel, and <strong>map</strong> each read to a reference genome.</li>
+<li><strong>Coverage</strong> = number of reads × read length ÷ genome length. A human genome at 30× needs about 90 Gb of reads.</li>
+<li>Coverage varies by chance, so a heterozygous site is called only where enough reads cover it.</li>
+</ul>
+<aside class="notes">
+<p>The details of the chemistry vary between platforms and change every few years, so we stay at the level of concepts that do not change: reads, mapping and coverage. Short-read platforms such as Illumina dominate; long-read platforms (PacBio, Oxford Nanopore) give reads of tens of kilobases, which help with repeats and assembly in the next unit. The figure is simulated: 40 reads of 50 bases on a 400 base window, mean coverage 5 times. Even so, some bases are not covered at all. This is why 30 times is the usual target for a human genome: at 30 times, very few bases have so few reads that a heterozygous site could be missed. Calling a heterozygote is like the double peak in Sanger, only counted: about half the reads show each allele. The Genomic variation unit uses data from exactly this kind of sequencing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary" class="slide level2 smaller">
+<h2>Summary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Restriction enzyme</td>
+<td>cuts at a palindromic site; sticky or blunt ends; a 6-bp site every ~4,096 bp in random DNA</td>
+</tr>
+<tr class="even">
+<td>Fragments</td>
+<td>linear: <em>k</em> sites → <em>k</em> + 1 fragments; circular: <em>k</em>; sizes sum to the total</td>
+</tr>
+<tr class="odd">
+<td>Gel</td>
+<td>distance ∝ −log(size); read sizes from a ladder; brightness ∝ mass</td>
+</tr>
+<tr class="even">
+<td>Vector</td>
+<td>origin + selectable marker + unique cloning sites (pUC19)</td>
+</tr>
+<tr class="odd">
+<td>PCR</td>
+<td>two primers define the product; <em>N</em> = <em>N</em><sub>0</sub>(1 + <em>E</em>)<sup><em>n</em></sup> until a plateau; 3.3 cycles per 10×</td>
+</tr>
+<tr class="even">
+<td>Primers</td>
+<td>18–25 nt, 40–60% GC, matched Tm, no 3’ complementarity, unique (Primer-BLAST)</td>
+</tr>
+<tr class="odd">
+<td>PCR-RFLP</td>
+<td>HbS destroys a DdeI site: 201 + 180 bp (HbA) vs 381 bp (HbS)</td>
+</tr>
+<tr class="even">
+<td>Sanger</td>
+<td>ddNTPs stop synthesis; sort by length; a heterozygote gives double peaks</td>
+</tr>
+<tr class="odd">
+<td>NGS</td>
+<td>millions of short reads mapped to a reference; coverage = reads × length / genome</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This is the revision table. The numbers students should be able to reproduce: 4 to the 6 equals 4,096; k plus 1 fragments for a linear molecule; 2 to the 30 is about a billion; 3.3 cycles per ten-fold; and the coverage formula. The HbS fragment sizes are not to be memorised, but students should be able to predict which bands a carrier shows.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-this-leads" class="slide level2">
+<h2>Where this leads</h2>
+<ul>
+<li><strong>Exercise</strong>: estimate sizes from a gel, design primers, BLAST a mystery read, and look up an enzyme in REBASE.</li>
+<li><strong>Exercise in R</strong>: read the phage λ genome from a FASTA file, find the EcoRI and BamHI sites with <code>str_locate_all()</code>, and draw your own virtual gel.</li>
+<li><strong>Next: Genome annotation.</strong> Once a genome is sequenced, where are the genes? ORFs, homology (BLAST), genome browsers.</li>
+<li><strong>Genomic variation.</strong> Sequencing many people reveals millions of variants, such as the HbS allele, and how their frequencies differ between populations.</li>
+</ul>
+<aside class="notes">
+<p>Point forward. The BLAST search of the mystery read in the exercise is the first time students use BLAST; the next unit uses it properly, with proteins. The FASTA file in the R exercise is the format every sequence database uses, so reading one by hand is worth doing once.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'visible',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

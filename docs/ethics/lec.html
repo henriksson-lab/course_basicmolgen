@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.30">
+
+  <meta name="author" content="Basic and molecular genetics (5MO104)">
+  <title>Basic and molecular genetics – Ethics of genetic knowledge</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Ethics of genetic knowledge</h1>
+  <p class="subtitle">Ethics module</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Basic and molecular genetics (5MO104) 
+</div>
+</div>
+</div>
+
+</section>
+<section id="about-this-lecture" class="slide level2">
+<h2>About this lecture</h2>
+<p>All course long you have predicted genotypes, computed risks and looked up variants. This lecture asks: <strong>what happens when those answers concern real people?</strong></p>
+<ul>
+<li>A <strong>framework</strong>: four principles, plus consent, privacy and the right not to know.</li>
+<li><strong>Genetic testing</strong>: diagnostic, predictive, carrier and prenatal tests, and findings nobody asked for. <strong>Direct-to-consumer</strong> tests.</li>
+<li><strong>Privacy</strong>: why a genome cannot be made anonymous, and how genealogy databases now solve crimes.</li>
+<li><strong>Editing the germline</strong>: embryo editing, mitochondrial replacement and gene drives.</li>
+<li><strong>History</strong>: eugenics, and the Swedish Institute for Racial Biology and sterilisation laws.</li>
+<li><strong>Ethical review</strong> of research in Sweden, and the laws on biobanks and genetic data.</li>
+</ul>
+<p>The aim is not to give you the right answers. It is to help you <strong>see the conflict</strong>, name the principles involved and argue for a position. The exercise gives you cases and a literature search.</p>
+<aside class="notes">
+<p>This is the ethics module of the course (1 ECTS). It links back to almost every unit: Huntington disease and the half risk from the Mendel unit, Y-linked inheritance from pedigrees, mitochondrial inheritance from Part 5, CRISPR-based tools and databases from Part 4. Make it clear from the start that ethics is not opinion without structure. We use a small, standard vocabulary (four principles, consent, privacy, the right not to know), and a good argument uses the facts of genetics correctly. Many questions have no single right answer, but there are clearly bad answers: ones that get the genetics wrong, or ignore someone whose interests are at stake.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-genetic-information-is-special" class="slide level2">
+<h2>Why genetic information is special</h2>
+<p>A blood glucose value is about you, today. A genotype is different:</p>
+<ul>
+<li><strong>It is shared.</strong> Your relatives carry half, a quarter or an eighth of your alleles. A result about you is also partly a result about them, and they did not consent.</li>
+<li><strong>It predicts.</strong> A Huntington disease allele says something about your health decades from now, sometimes with no treatment available.</li>
+<li><strong>It is permanent and identifying.</strong> You can change a password, not a genome. A genome is a unique identifier, and it can be read from a few cells.</li>
+<li><strong>It is reproductive.</strong> Carrier and prenatal tests inform choices about <em>future</em> people.</li>
+<li><strong>Its meaning changes.</strong> A variant of uncertain significance today may be classified as pathogenic next year (think of the ClinVar classification from the pedigree exercise).</li>
+</ul>
+<aside class="notes">
+<p>Each bullet links to genetics they have done. Shared: the coefficient of relationship, one half for first-degree relatives, is Mendelian segregation. Predictive: an autosomal dominant late-onset disease with full penetrance turns a genotype into a forecast. Identifying: we will see how few markers are needed. Reproductive: carrier testing is the Aa x Aa cross. Changing meaning: ClinVar classifications and review status change as evidence accumulates; a result from five years ago may need to be re-read. These five properties are why genetics gets its own laws in many countries, including Sweden’s Genetic Integrity Act, which we meet at the end.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-framework-four-principles" class="slide level2 smaller">
+<h2>A framework: four principles</h2>
+
+<img data-src="fig01-principles.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><p>The four principles of <strong>biomedical ethics</strong> (Beauchamp and Childress, <em>Principles of Biomedical Ethics</em>, 1st edition 1979). Each is a reason that counts; in real cases they <strong>conflict</strong>, and the work is to weigh them.</p>
+<aside class="notes">
+<p>These four principles are the most widely used framework in medical ethics. Autonomy: respect people’s own informed choices. Beneficence: act for the person’s good. Non-maleficence: avoid causing harm. Justice: distribute benefits, risks and costs fairly. None of them is absolute, and the interesting cases are the ones where they pull in different directions. Example: a doctor finds a BRCA1 variant. Beneficence says tell the patient’s sisters, who could get screening. Autonomy and privacy say the patient decides whom to tell. Justice asks whether everyone has access to the screening that would follow. In the exercise, every case asks you to name which principles are in tension. Other frameworks exist (consequences, duties, virtues, rights), and the principles are a practical summary rather than a full theory.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="consent-privacy-and-the-right-not-to-know" class="slide level2">
+<h2>Consent, privacy and the right not to know</h2>
+<ul>
+<li><strong>Informed consent</strong>: a person agrees to a test or to research <strong>voluntarily</strong>, after understanding what it involves, its risks, and what will happen to the sample and the data. Consent can be <strong>withdrawn</strong>.</li>
+<li><strong>Broad consent</strong>: agreeing that a stored sample may be used in <strong>future research</strong> that nobody can describe yet. Common in biobanks; debated, because it is hard to be “informed” about the unknown.</li>
+<li><strong>Privacy and confidentiality</strong>: genetic results are sensitive data. Who may see them: relatives, employers, insurers, the police?</li>
+<li><strong>The right not to know</strong>: a person may choose <strong>not</strong> to learn a genetic result about themselves. This is part of autonomy, and it is why tests are offered, never imposed.</li>
+<li><strong>The family problem</strong>: one person’s result reveals risk for relatives. The right to know of one person can collide with the right not to know of another.</li>
+</ul>
+<aside class="notes">
+<p>These are the concepts that make genetics different from most of medicine. Stress the right not to know: in most of medicine, more information is assumed to be better, but for an untreatable late-onset disease many at-risk people choose not to be tested, and that choice must be respected. The family problem is the core of several cases in the exercise: a test on one identical twin is a test on both; a test on a grandchild of a Huntington patient can reveal the status of the parent in between. In Sweden, the Ethical Review Act requires consent to be voluntary, explicit and specific to the research (section 17); broad consent is handled through ethical review and the Biobanks Act.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="kinds-of-genetic-testing" class="slide level2 smaller">
+<h2>Kinds of genetic testing</h2>
+
+<img data-src="fig02-testing-life.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>The <strong>same lab method</strong> can serve very different purposes. The ethics depends on <strong>who</strong> is tested, <strong>why</strong>, and <strong>what can be done</strong> with the answer.</p>
+<aside class="notes">
+<p>Walk along the life course. Carrier testing applies the Aa x Aa cross from the Mendel unit: two healthy carriers have a one in four risk per child. Prenatal testing is about a fetus, and the decision belongs to the pregnant woman. Newborn screening in Sweden (the PKU test) is offered to all newborns for treatable conditions; the dried blood spots are stored in the PKU biobank, which we return to under biobanks. Diagnostic testing explains a disease someone already has; it is the least controversial, but it can still reveal risks for relatives. Predictive testing of a healthy person is the most ethically loaded, especially when there is no treatment. The band at the bottom is the reason incidental findings come up in every kind of test once we sequence exomes or genomes. The colour code says who the result is mainly for.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="predictive-testing-huntington-disease" class="slide level2">
+<h2>Predictive testing: Huntington disease</h2>
+<p>Recall the Mendel unit: Huntington disease is <strong>autosomal dominant</strong> with late onset. A child of an affected parent (<em>Aa</em> × <em>aa</em>) has a <strong>½</strong> risk. Since the <em>HTT</em> CAG-repeat expansion was found (Huntington’s Disease Collaborative Research Group 1993, PMID 8458085), a healthy person at risk can learn their genotype.</p>
+<ul>
+<li><strong>No cure.</strong> A positive result is a forecast, not a treatment plan.</li>
+<li>International guidelines: <strong>counselling</strong> before and after, a free choice without coercion, and a <strong>minimum age of 18</strong> (MacLeod et al.&nbsp;2013, PMID 22642570). The child’s own future choice is protected.</li>
+<li>Most people at risk choose <strong>not</strong> to know: in the UK, cumulative uptake among people at 50% risk (1994–2014) was about <strong>17%</strong> (Baig et al.&nbsp;2016, PMID 27165004).</li>
+<li><strong>Testing reveals others.</strong> A positive result in a grandchild means the parent in between carries the allele too. Testing one <strong>identical twin</strong> tests both.</li>
+</ul>
+<aside class="notes">
+<p>Huntington disease is the classic case for the right not to know, and it is the first case in the exercise. Remind students of the genetics: one affected parent, a testcross, one half. With full penetrance for long expanded repeats, a positive result means the person will develop the disease if they live long enough. Predictive testing protocols built for Huntington disease have become the model for other late-onset conditions: counselling before the test, time to reflect, and support afterwards. Point out the two family problems: a 25% at-risk grandchild whose result reveals the status of the 50% at-risk parent, and monozygotic twins, who share the genotype, so one twin’s wish to know collides with the other’s wish not to know. There is no clean solution; the exercise asks students to weigh it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prenatal-testing-and-nipt" class="slide level2">
+<h2>Prenatal testing and NIPT</h2>
+<ul>
+<li><strong>Prenatal diagnosis</strong> tests fetal cells, obtained by <strong>amniocentesis</strong> or <strong>chorionic villus sampling</strong> (CVS). Both carry a small risk of miscarriage.</li>
+<li><strong>NIPT</strong> (non-invasive prenatal testing) analyses <strong>cell-free fetal DNA</strong> in the mother’s blood. Fetal DNA in maternal plasma was first shown by Lo et al.&nbsp;(1997, <em>Lancet</em>, PMID 9274585). NIPT is a <strong>screening</strong> test, mainly for trisomies 21, 18 and 13; a positive result is confirmed by a diagnostic test.</li>
+<li>In Sweden, all pregnant women must be offered <strong>general information</strong> about prenatal diagnosis, and the woman decides whether to be tested (Genetic Integrity Act, 2006:351, ch.&nbsp;4).</li>
+</ul>
+<p>Ethical questions: a simple blood test makes testing <strong>routine</strong>, so is the choice still informed? What does wide screening say to people who live with Down syndrome? Where is the line between serious disease and <strong>choosing traits</strong>?</p>
+<aside class="notes">
+<p>The key change NIPT brought is that a screening test with no miscarriage risk can be done from a blood sample early in pregnancy. That is a benefit, but it also lowers the threshold: when something is easy and routine, people may not think of it as a choice. Disability-rights critics argue that routine screening sends a message about the value of people with the conditions screened for. Stress the difference between screening and diagnosis: NIPT gives a risk, not a diagnosis, partly because some of the cell-free DNA comes from the placenta. The Swedish law puts the decision with the woman, after information. Preimplantation genetic testing of IVF embryos is regulated in the same act: only for serious monogenic or chromosomal disease, and not for choosing traits (ch.&nbsp;4, section 2).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="incidental-and-secondary-findings" class="slide level2">
+<h2>Incidental and secondary findings</h2>
+<p>Sequence an exome to explain a child’s epilepsy, and you may also find a <strong>pathogenic <em>BRCA1</em> variant</strong> in a parent: a high risk of breast and ovarian cancer that nobody was looking for.</p>
+<ul>
+<li><strong>Incidental finding</strong>: found by chance, unrelated to the question asked.</li>
+<li><strong>Secondary finding</strong>: deliberately looked for in a short list of <strong>actionable</strong> genes, where knowing allows prevention. The ACMG publishes such a list (v3.2: Miller et al.&nbsp;2023, PMID 37347242; updated in v3.3, 2025, PMID 40568962). <em>BRCA1</em> is on it.</li>
+<li>Labs and clinics must decide <strong>in advance</strong>, with the patient: which findings will be reported, and may the patient opt out?</li>
+</ul>
+<p>Principles in tension: <strong>beneficence</strong> (prevention saves lives; relatives could be tested too) against <strong>autonomy</strong> and the <strong>right not to know</strong>.</p>
+<aside class="notes">
+<p>Whole-exome and whole-genome sequencing look at everything, so they find everything. The American College of Medical Genetics and Genomics (ACMG) keeps a list of genes where a pathogenic variant should be reported even if the test was ordered for something else, because something can be done about it: extra screening, preventive surgery, or drugs. BRCA1 and BRCA2 are standard examples. Guidelines differ between countries on whether to look for such findings at all; the policy choice is: look or not, report or not, and who decides. In the exercise, case 2 asks students to apply this. Note the family dimension again: a BRCA1 result in a mother concerns her sisters and daughters, who each have a half chance of carrying it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="direct-to-consumer-genomics" class="slide level2">
+<h2>Direct-to-consumer genomics</h2>
+<p>Companies sell genotyping <strong>directly to the public</strong>, without a doctor: ancestry, relative matching, traits and some health risks. The customer spits in a tube and gets results online.</p>
+<ul>
+<li><p><strong>Autonomy and access</strong>: people can learn about themselves without a gatekeeper.</p></li>
+<li><p><strong>Without counselling</strong>: a health result can frighten or falsely reassure. Genotyping arrays test selected variants, so a “no variant found” for <em>BRCA1</em> does not mean “no risk”.</p></li>
+<li><p><strong>Relatives</strong>: matching reveals unknown siblings, donor-conceived children, misattributed paternity. Your relatives never agreed to be found.</p></li>
+<li><p><strong>Data as an asset</strong>: the company holds a large genetic database. Its terms of use, a data breach, or a change of owner decide what happens to it.</p></li>
+<li><p><strong>Raw data mislead</strong>: in one clinical lab, 40% of variants from DTC raw data sent for confirmation were false positives (Tandy-Connor et al.&nbsp;2018, PMID 29565420).</p></li>
+</ul>
+<p>US example, <strong>23andMe</strong>: an FDA warning letter stopped its health reports in 2013; the FDA authorised its first health-risk reports in 2017; in 2023 a breach of about 14,000 accounts exposed millions of relative-matching profiles; it filed for bankruptcy in March 2025 and was sold in July 2025.</p>
+<aside class="notes">
+<p>Direct-to-consumer (DTC) testing removed the doctor and the genetic counsellor from the loop. Benefits: access, curiosity satisfied, and genuinely useful findings for some people. Risks: misinterpretation, false reassurance from limited arrays, and the fact that matching services connect relatives who did not ask to be connected. Stress that a DTC customer’s database entry affects their relatives’ privacy, which leads directly to the next two slides. The 23andMe story shows that a privacy promise is only as durable as the company: when a company is sold or goes bankrupt, the database is an asset. In Sweden, the Genetic Integrity Act bans making a genetic test or genetic information a condition of a contract, and limits insurers’ use of genetic information to narrow cases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="genetic-privacy-you-cannot-anonymise-a-genome" class="slide level2 smaller">
+<h2>Genetic privacy: you cannot anonymise a genome</h2>
+
+<img data-src="fig03-surname-inference.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><p>Gymrek et al.&nbsp;(2013, <em>Science</em>, PMID 23329047) recovered <strong>surnames</strong> from “anonymous” research genomes by reading <strong>Y-chromosome STRs</strong> and querying public genealogy databases; combined with age and US state, this traced the identities of research participants. They projected that surnames of about 12% of US white males could be recovered this way.</p>
+<aside class="notes">
+<p>This paper was a turning point in the debate on how genomic data should be shared. The research data had no names, but the Y chromosome carries a surname-like signal: it is passed from father to son, as is the surname in many cultures. That is Y-linked inheritance from the pedigree unit, used as an identifier. Recreational genealogy databases let men upload their Y-STR profiles with their surnames, so matching the anonymous profile gives a likely surname. Add metadata that was published with the research data, such as age and US state, and the candidate list shrinks to one. Two lessons. First, removing names is not anonymisation for genomes. Second, the leak comes through relatives: the people in the genealogy database identified someone else. One response is controlled access: individual-level data are released only to researchers who apply and agree to terms of use.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="genetic-genealogy-and-the-police" class="slide level2">
+<h2>Genetic genealogy and the police</h2>
+<p><strong>Investigative genetic genealogy</strong>: genotype a crime-scene sample with a SNP array, upload it to a genealogy database, find <strong>distant cousins</strong>, then build their family trees until one person fits.</p>
+<ul>
+<li><strong>Golden State Killer</strong>: a suspect in a series of 1970s–80s California murders and rapes was arrested on <strong>24 April 2018</strong> after relatives were found in the free genealogy database GEDmatch (Guerrini et al.&nbsp;2018, PMID 30278047). He pleaded guilty in 2020 and was sentenced to life without parole. In 2019 GEDmatch made police matching <strong>opt-in</strong>.</li>
+<li><strong>Scale</strong>: from 1.28 million consumer genomes, Erlich et al.&nbsp;(2018, PMID 30309907) projected that about <strong>60%</strong> of searches for people of European descent would find a <strong>third cousin or closer</strong>.</li>
+<li><strong>Sweden</strong>: first used in 2019, on a 16-year-old double murder in Linköping. The Authority for Privacy Protection (IMY) halted further use in 2021; a new law allows the police to use it from <strong>1 July 2025</strong>, only for murder and aggravated rape, as a last resort (Ansell &amp; Fagerholm 2025, PMID 40995235).</li>
+</ul>
+<aside class="notes">
+<p>Explain the genetics: a third cousin shares on average about one 128th of the genome, but in long identical segments that a SNP array can detect. Each cousin match points to a pair of shared great-great-grandparents; genealogists then work down through all their descendants, using public records, until the candidate list is short; a direct DNA test confirms. The ethical issue is consent: the cousins who uploaded their DNA to trace their ancestry did not agree to become police informants, and the suspect never uploaded anything. In favour: serious crimes solved, and innocent suspects cleared. Against: everyone’s privacy depends on what their relatives do; function creep from murder to lesser crimes. Sweden’s approach shows the regulatory answer: a specific law, limited to the most severe crimes. This is case 4 in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="you-used-these-databases-all-course" class="slide level2">
+<h2>You used these databases all course</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Database (unit)</th>
+<th>What it shares</th>
+<th>Who it could identify?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NCBI Gene, Ensembl, OMIM (Part 1)</td>
+<td>reference genes and diseases</td>
+<td>no one</td>
+</tr>
+<tr class="even">
+<td>ClinVar (pedigrees)</td>
+<td>variants and their interpretation, without names</td>
+<td>rarely, for very rare variants</td>
+</tr>
+<tr class="odd">
+<td>gnomAD (Part 7)</td>
+<td><strong>aggregate</strong> allele counts only</td>
+<td>very hard</td>
+</tr>
+<tr class="even">
+<td>1000 Genomes (Part 4)</td>
+<td><strong>individual genotypes</strong>, openly</td>
+<td>possible: no names or medical data, but open consent to public release</td>
+</tr>
+<tr class="odd">
+<td>A genealogy site</td>
+<td>individual genotypes <strong>with names and family trees</strong></td>
+<td>you, and your relatives</td>
+</tr>
+</tbody>
+</table>
+<p>The same data type, a genotype, can be <strong>harmless or identifying</strong> depending on how it is shared. Open data speeds up research; controlled access and aggregation protect participants.</p>
+<aside class="notes">
+<p>Make the link to their own work. Reference genomes and gene records contain nobody’s private data. ClinVar records variants submitted by labs; it contains no names, but a very rare variant together with a rare disease and a hospital could narrow down a family. gnomAD only shows how many people carry each allele, never which people, which is a privacy design choice. The 1000 Genomes Project released full individual genotypes openly, from openly consented samples, without names or medical data. Gymrek’s and Erlich’s studies showed that people in public data sets of this kind can still be identified, through relatives in genealogy databases. Ask the students: which of these would you be happy to have your own genome in? This prepares the discussion of biobank consent at the end.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="germline-editing" class="slide level2 smaller">
+<h2>Germline editing</h2>
+
+<img data-src="fig04-somatic-germline.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><ul>
+<li><strong>Somatic</strong> editing treats one person. Example: exa-cel, CRISPR-edited blood stem cells for sickle cell disease (Frangoul et al.&nbsp;2024, PMID 38661449).</li>
+<li><strong>Germline</strong> editing changes an embryo, so <strong>every cell, including the gametes</strong>, carries the edit. The change is <strong>inherited</strong> by Mendel’s rules.</li>
+</ul>
+<aside class="notes">
+<p>The distinction is the key concept. Somatic editing is ethically like any other new therapy: one consenting patient (or guardian), benefits and risks to that person. Exa-cel edits the patient’s own blood stem cells outside the body to switch fetal haemoglobin back on, a nice link to the sickle cell example in the first unit. Germline editing affects people who cannot consent, the future children and their descendants, and errors cannot be recalled. Mitochondrial replacement, in the right panel, is not gene editing, but it is also a heritable change: a daughter passes on the donor’s mitochondria, by the maternal inheritance we saw in the pedigree unit and will treat in Part 5. In Sweden, experiments and treatments that cause heritable genetic changes in humans are prohibited (Genetic Integrity Act, 2006:351, ch.&nbsp;2, sections 3–4).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="he-jiankui-and-the-crispr-babies" class="slide level2">
+<h2>He Jiankui and the CRISPR babies</h2>
+<p>On <strong>25–26 November 2018</strong>, just before an international summit on human genome editing in Hong Kong, He Jiankui announced the birth of twin girls whose embryos he had edited with CRISPR-Cas9 to disrupt <strong><em>CCR5</em></strong>, the co-receptor HIV uses to enter cells (Cyranoski &amp; Ledford 2018, PMID 30482929).</p>
+<ul>
+<li><strong>No medical need</strong>: the father had HIV, but sperm washing can prevent transmission to the child with no risk.</li>
+<li><strong>Not what was intended</strong>: neither twin got the natural <em>CCR5</em>-Δ32 deletion; the edits made new mutations, and the children are <strong>mosaics</strong> (Greely 2019, PMID 31666967).</li>
+<li><strong>Consent and oversight</strong>: how the parents were informed, and the ethics approval, could not be independently checked; the work was done in secret.</li>
+<li>On <strong>30 December 2019</strong> a court in Shenzhen sentenced him to <strong>three years in prison</strong> and a fine of 3 million yuan for illegal medical practice; it also confirmed a third edited baby (Cyranoski 2020, PMID 31911693).</li>
+</ul>
+<p>The response was near-universal condemnation, and calls for a moratorium on heritable editing.</p>
+<aside class="notes">
+<p>This case is the clearest example of a violation of almost every principle at once. Non-maleficence: unknown risks to healthy children for no medical benefit. Autonomy: questionable consent from the parents, and none from the children or their descendants. Justice and public trust: done in secret, presented to the media before peer review. Point out the genetics: CRISPR makes a double-strand break and the cell repairs it by error-prone end joining, so the alleles created were new small deletions, not the well-studied Δ32 allele, and different cells of an embryo can be repaired differently, which is mosaicism. That is the scientific reason, apart from ethics, why heritable editing is not safe today. Case 5 in the exercise asks students to evaluate a more plausible proposal.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mitochondrial-replacement" class="slide level2">
+<h2>Mitochondrial replacement</h2>
+<p>Diseases caused by <strong>mtDNA mutations</strong> pass from mother to all her children (pedigree unit; full story in Part 5, <em>Organelle inheritance</em>). <strong>Mitochondrial replacement therapy</strong> (MRT) moves the mother’s nucleus into a donor egg with healthy mitochondria.</p>
+<ul>
+<li>The child gets <strong>nuclear DNA from both parents</strong> and <strong>mtDNA from the donor</strong>: DNA from three people.</li>
+<li>The <strong>UK</strong> allowed it by regulations in force from <strong>29 October 2015</strong>, under licence. In 2025 the Newcastle team reported <strong>8 children</strong> born after pronuclear transfer, healthy at birth, with mutant mtDNA in blood from undetectable up to 16% (Hyslop et al.&nbsp;2025, PMID 40673696; McFarland et al.&nbsp;2025, PMID 40689593).</li>
+<li>It is <strong>heritable</strong> through daughters, and carry-over of some mutant mtDNA means a risk that its level rises again.</li>
+</ul>
+<p>Is replacing ~37 genes of mtDNA different from editing a nuclear gene? Should the donor have any status?</p>
+<aside class="notes">
+<p>MRT is useful for discussion because it is legal and regulated in one country, unlike nuclear germline editing. The genetics: the human mitochondrial genome has 37 genes, all for oxidative phosphorylation and its own translation, so the donor contributes nothing that shapes appearance or personality, which is one argument that it is less problematic. Counter-arguments: it is still a heritable modification; a small amount of the mother’s mitochondria is carried over with the nucleus, and because of the heteroplasmy bottleneck (Part 5) that fraction can rise again in some cells or in the next generation. The donor is anonymous in the UK and has no parental role. A good discussion question: would MRT count as a heritable genetic change under the Swedish Genetic Integrity Act, which bans such changes?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gene-drives" class="slide level2 smaller">
+<h2>Gene drives</h2>
+
+<img data-src="fig05-gene-drive.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><p>A <strong>gene drive</strong> cheats Mendel’s law of segregation: a heterozygote passes the drive to <strong>nearly all</strong> offspring, not half. It could eliminate malaria mosquitoes, or an invasive species.</p>
+<aside class="notes">
+<p>This links straight back to the Mendel unit: segregation gives each allele a one-half chance of reaching a gamete. A homing gene drive carries the genes for Cas9 and a guide RNA aimed at the same site on the homologous chromosome. In the germline of a heterozygote it cuts the wild-type homolog, and the cell repairs the break using the drive chromosome as a template, so the heterozygote becomes a homozygote and almost every gamete carries the drive. Kyrou and colleagues targeted doublesex in Anopheles gambiae, the main African malaria vector: females homozygous for the disruption are sterile, and caged populations collapsed within 7 to 11 generations. The ethics is different from human germline editing: the benefit could be huge (malaria is a major killer, especially of young children), but a release affects an ecosystem and other countries, and cannot easily be recalled. Who consents for a whole region? That is the justice question.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="history-eugenics-in-sweden" class="slide level2">
+<h2>History: eugenics in Sweden</h2>
+<p><strong>Eugenics</strong>: the idea of “improving” a population by controlling who reproduces. Francis Galton coined the word in 1883. It was mainstream science in many countries in the early 20th century, including Sweden.</p>
+<ul>
+<li>The <strong>State Institute for Racial Biology</strong> (<em>Statens institut för rasbiologi</em>) was set up by a decision of the Riksdag in 1921 and opened in <strong>Uppsala in 1922</strong>, with Herman Lundborg (director 1921–1935) in charge. It set out to divide the Swedish population into “racial” categories, measuring people and photographing them; Lundborg made repeated trips to Lapland to measure and photograph Sami people.</li>
+<li>His successor, <strong>Gunnar Dahlberg</strong>, questioned the scientific basis of race research, and the institute moved towards medical genetics. In 1958–59 its work was absorbed into Uppsala University’s <strong>Department of Medical Genetics</strong>.</li>
+<li>Its archive, with about <strong>12,000 photographs</strong>, is kept by Uppsala University Library.</li>
+</ul>
+<aside class="notes">
+<p>This is part of Swedish scientific history, and of the history of human genetics itself: the institute is a direct forerunner of a university department of medical genetics. Under Lundborg it used biometric methods to try to give statistical support to the idea that ethnic differences had genetic causes. Make the point that the institute was set up by a broad parliamentary decision, and that the people involved were respected scientists; the lesson is that scientific authority does not protect against serious harm, and that the categories science uses can be shaped by politics. Uppsala University’s own pages give 1958 or 1959 for when the institute’s activities were taken over by the Department of Medical Genetics. Sources: Uppsala University Library’s pages on the archive of the State Institute for Racial Biology, and the university’s news article from December 2021 when the archive was made available.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-swedish-sterilisation-laws-19351975" class="slide level2">
+<h2>The Swedish sterilisation laws, 1935–1975</h2>
+<ul>
+<li>The <strong>1934 act</strong> (SFS 1934:171, in force <strong>1 January 1935</strong>) allowed sterilisation of people considered mentally ill or “feeble-minded” <strong>without their consent</strong> if they were judged unable to understand it. The <strong>1941 act</strong> (SFS 1941:282) was in principle voluntary, but still allowed sterilisation without consent of people judged legally incapable. The grounds were <strong>eugenic, social and medical</strong>.</li>
+<li>Nearly <strong>63,000</strong> sterilisations were reported in <strong>1935–1975</strong>; <strong>93%</strong> of those sterilised were women. About 9% were done without consent, and about 24% after a formally voluntary application under coercion-like conditions, e.g.&nbsp;as a condition for leaving an institution or for getting an abortion.</li>
+<li>The <strong>1975 act</strong> (SFS 1975:580, in force 1976) allows sterilisation only at the person’s own request.</li>
+<li>A government inquiry appointed in 1997 (final report SOU 2000:20) investigated, and a 1999 law (SFS 1999:332) gave <strong>SEK 175,000</strong> in compensation to people sterilised under compulsion.</li>
+</ul>
+<p>The genetics was also <strong>wrong</strong>: most alleles for recessive conditions are carried by healthy heterozygotes, so sterilising affected people barely changes their frequency (Part 7, <em>Hardy–Weinberg</em>).</p>
+<aside class="notes">
+<p>Not all of the 63,000 were coerced. The government’s report to the Riksdag (Skr. 2000/01:73, summarising the inquiry) estimates that about half of those sterilised took the initiative themselves, about 9% were sterilised without consent, about 24% under coercion-like conditions and about 10% after persuasion or pressure; the rest could not be classified. Compulsion dominated early on; the 1950s were a turning point towards voluntariness and family-planning motives. The laws were passed with broad political agreement. Sweden was not alone: the first sterilisation law was in the US state of Indiana in 1907, and in the 1930s other Nordic countries and Germany passed laws. The point of the last line is that eugenics failed on its own terms. If a recessive allele has frequency q, affected people have frequency q squared and carriers 2pq; for a rare allele almost all copies are in carriers, who look healthy. Removing affected people from reproduction lowers q only very slowly. Students will be able to compute this after the Hardy-Weinberg unit. The lasting lessons for today: consent cannot be replaced by the state’s idea of the common good, and vulnerable groups need special protection. These lessons are built into the modern ethical review system.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ethical-review-of-research-in-sweden" class="slide level2">
+<h2>Ethical review of research in Sweden</h2>
+<p><strong>The Ethical Review Act</strong> (<em>Lag (2003:460) om etikprövning av forskning som avser människor</em>, in force 2004). Research must be approved <strong>before it starts</strong> if it:</p>
+<ul>
+<li>processes <strong>sensitive personal data</strong> (e.g.&nbsp;health or <strong>genetic</strong> data) or data on criminal offences;</li>
+<li>involves a <strong>physical intervention</strong>, or a method meant to affect a person physically or mentally, or an obvious risk of harm;</li>
+<li>uses <strong>biological material</strong> from a living or dead person that can be <strong>traced</strong> to them.</li>
+</ul>
+<p>Applications go to the <strong>Swedish Ethical Review Authority</strong> (<em>Etikprövningsmyndigheten</em>, Uppsala, since 1 January 2019). Consent must be <strong>voluntary, explicit and specific</strong> to the research. Doing such research without approval is a crime.</p>
+<p>Internationally: the World Medical Association’s <strong>Declaration of Helsinki</strong> (1964, last revised October 2024).</p>
+<aside class="notes">
+<p>Point out what this means for them. Student projects done only within first- or second-cycle education are not “research” under the act, so a bachelor’s project does not need its own application; but a degree project inside a research group often uses data or samples covered by the group’s approval, and they should know where that approval comes from. The criteria are in sections 3 and 4 of the act; the consent rules in sections 16 to 22; breaking the approval requirement can give fines or prison of up to two years (section 38). The authority replaced six regional ethical review boards. The Declaration of Helsinki is the international statement of research ethics for medical research on humans; its core ideas are independent review, informed consent, and that the interests of the individual come before those of science and society. Note that an amendment to the act, decided in 2026, takes effect on 1 July 2027 and changes how some studies are assessed; always check the authority’s website for the current rules.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="biobanks-gdpr-and-genetic-integrity" class="slide level2">
+<h2>Biobanks, GDPR and genetic integrity</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Law</th>
+<th>What it says, in short</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Biobanks Act</strong> (<em>Biobankslag</em>, 2023:38; replaced 2002:297)</td>
+<td>Identifiable human samples may be collected, stored and used, for care or research, with the donor’s <strong>informed consent</strong>, which can be <strong>withdrawn</strong>. Includes the <strong>PKU biobank</strong> of newborn blood spots.</td>
+</tr>
+<tr class="even">
+<td><strong>GDPR</strong> (EU 2016/679, applies from 25 May 2018)</td>
+<td><strong>Genetic data</strong> (Art. 4(13)) is a <strong>special category</strong> of personal data (Art. 9): processing is prohibited unless an exception applies, such as explicit consent or approved research.</td>
+</tr>
+<tr class="odd">
+<td><strong>Genetic Integrity Act</strong> (2006:351)</td>
+<td>Nobody may make a genetic test a <strong>condition of a contract</strong>; insurers may use genetic information only in narrow cases. <strong>Heritable genetic changes</strong> in humans are banned. Rules for prenatal and preimplantation diagnosis.</td>
+</tr>
+</tbody>
+</table>
+<p>Sample re-use is common: newborn blood spots from the Swedish PKU biobank were used to trace PFAS exposure from contaminated drinking water in Ronneby back to 1985 (PMID 40089001).</p>
+<aside class="notes">
+<p>These three laws are the practical frame for any genetics project in Sweden. The Biobanks Act: a sample taken in health care stays linked to the person; using it for research needs consent and ethical approval. The PKU biobank is special: it stores the newborn screening blood spots of a very large share of the population, so it is a powerful research resource and a sensitive one; the act gives it its own chapter. The Ronneby study is a good example of beneficial re-use: nobody in 1985 could have consented to a PFAS study, so the decision rests on ethical review and the law. GDPR treats genetic data as a special category, alongside health data and ethnic origin. The Genetic Integrity Act protects individuals in contracts: an employer or insurer may not demand a genetic test; the insurance exception only applies to very large policies. Case 6 in the exercise is a biobank re-use request.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Genetic information is <strong>shared, predictive, permanent, identifying and reproductive</strong>. That is why it gets special ethical and legal treatment.</li>
+<li><strong>Four principles</strong>: autonomy, beneficence, non-maleficence, justice. Add <strong>consent</strong>, <strong>privacy</strong> and the <strong>right not to know</strong>. Good arguments name the principles in tension and weigh them.</li>
+<li><strong>Testing</strong>: predictive testing (Huntington disease), prenatal tests and NIPT, incidental findings (<em>BRCA1</em>), and DTC tests each raise different questions.</li>
+<li><strong>Privacy</strong>: names can be recovered from genomes (Y-STRs, surnames); genealogy databases identify people through their <strong>relatives</strong>.</li>
+<li><strong>Germline</strong>: editing an embryo, mitochondrial replacement and gene drives all make <strong>heritable</strong> changes.</li>
+<li><strong>History</strong>: Sweden’s racial biology institute and sterilisation laws are why consent and <strong>independent ethical review</strong> matter.</li>
+<li><strong>Sweden today</strong>: Ethical Review Act (2003:460), Etikprövningsmyndigheten, Biobanks Act, GDPR, Genetic Integrity Act.</li>
+</ul>
+<aside class="notes">
+<p>If students remember one structure, it should be: who is affected (including relatives and future generations), which principles conflict, what the genetics really says, and what the law requires. The cases in the exercise are built to make them practise exactly this.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-this-leads" class="slide level2">
+<h2>Where this leads</h2>
+<ul>
+<li><strong>Exercise</strong>: six cases for group discussion, a check of when Swedish research needs ethical review, and a <strong>PubMed</strong> search strategy with MeSH terms to find literature for each case.</li>
+<li><strong>Group assignment</strong>: a written analysis of one case and an oral presentation (details on Canvas).</li>
+<li><strong>Back to the course</strong>: Huntington disease (<em>Mendel</em>), Y-linked and mitochondrial inheritance (<em>Pedigree analysis</em>, <em>Organelle inheritance</em>), CRISPR and sequencing (Part 4), allele frequencies and why eugenics failed (<em>Hardy–Weinberg</em>), and every database you used.</li>
+</ul>
+<aside class="notes">
+<p>The exercise is the main work of the module. Encourage the groups to choose the case for their assignment early, and to use the PubMed strategies to find at least one original paper and one review for it. Remind them that the same case can be argued in different directions; they are assessed on how well they use facts and principles, not on which side they take.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'visible',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

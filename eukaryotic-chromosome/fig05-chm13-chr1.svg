@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" font-family="Helvetica, Arial, sans-serif">
+  <!-- Chromosome 1 in the T2T-CHM13 v2.0 assembly (UCSC hs1), drawn to scale: x = 60 + 3.4 px per Mb.
+       Coordinates from the UCSC CenSat Annotation track (hs1, downloaded 2026-11-20):
+       alpha-satellite higher-order repeat (HOR) array 121.80-126.30 Mb (the active centromere),
+       HSat2 block 129.00-142.24 Mb (band 1q12), centromeric transition regions 116.80-121.41 Mb and
+       144.01-147.24 Mb. Length 248 387 328 bp. In GRCh38 (hg38 gap track) chr1:0-10000 is a telomere gap and 125.18-143.18 Mb an 18 Mb
+       heterochromatin gap; its centromere is a model (GJ211836.1). Telomere repeats at both ends are about 2.6-3.2 kb
+       (from the R exercise), far too small to see at this scale, hence the zoom box. -->
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">Chromosome 1 in the complete T2T-CHM13 genome (to scale)</text>
+
+  <!-- chromosome body -->
+  <rect x="60" y="90" width="844" height="30" rx="15" fill="#e7ecf1" stroke="#7a8794" stroke-width="1.5"/>
+  <!-- centromeric transition regions -->
+  <rect x="457" y="90" width="16" height="30" fill="#c9d1d9"/>
+  <rect x="550" y="90" width="11" height="30" fill="#c9d1d9"/>
+  <!-- active alpha-satellite HOR array -->
+  <rect x="474" y="86" width="15" height="38" fill="#bc4749"/>
+  <!-- HSat2 heterochromatin block -->
+  <rect x="499" y="90" width="45" height="30" fill="#3d4b59"/>
+  <!-- telomeres -->
+  <rect x="58" y="88" width="6" height="34" fill="#6a994e"/>
+  <rect x="900" y="88" width="6" height="34" fill="#6a994e"/>
+
+  <!-- scale bar -->
+  <g stroke="#1b2a3a" stroke-width="1.2">
+    <line x1="60" y1="140" x2="904" y2="140"/>
+    <line x1="60" y1="136" x2="60" y2="144"/><line x1="230" y1="136" x2="230" y2="144"/>
+    <line x1="400" y1="136" x2="400" y2="144"/><line x1="570" y1="136" x2="570" y2="144"/>
+    <line x1="740" y1="136" x2="740" y2="144"/>
+  </g>
+  <g font-size="12.5" fill="#5b6b7a" text-anchor="middle">
+    <text x="60" y="158">0</text><text x="230" y="158">50</text><text x="400" y="158">100</text>
+    <text x="570" y="158">150</text><text x="740" y="158">200 Mb</text>
+  </g>
+  <text x="904" y="158" font-size="12.5" fill="#5b6b7a" text-anchor="middle">248.4</text>
+
+  <!-- labels above -->
+  <line x1="481" y1="84" x2="440" y2="60" stroke="#bc4749" stroke-width="1.2"/>
+  <text x="436" y="56" font-size="13.5" fill="#bc4749" text-anchor="end">centromere: α-satellite array, 4.5 Mb</text>
+  <line x1="521" y1="88" x2="560" y2="60" stroke="#3d4b59" stroke-width="1.2"/>
+  <text x="564" y="56" font-size="13.5" fill="#1b2a3a">1q12: HSat2 heterochromatin, 13.2 Mb</text>
+  <text x="76" y="80" font-size="13" fill="#5b6b7a">p arm</text>
+  <text x="888" y="80" font-size="13" fill="#5b6b7a" text-anchor="end">q arm</text>
+
+  <!-- zoom box for the first telomere -->
+  <path d="M61,122 L80,196 M63,122 L340,196" stroke="#6a994e" stroke-width="1" stroke-dasharray="3 2" fill="none"/>
+  <rect x="80" y="196" width="260" height="86" rx="6" fill="#f4f8f1" stroke="#6a994e" stroke-width="1.2"/>
+  <text x="92" y="218" font-size="13.5" font-weight="bold" fill="#1b2a3a">zoom: first 10 kb</text>
+  <rect x="92" y="230" width="64" height="14" fill="#6a994e"/>
+  <rect x="156" y="230" width="172" height="14" fill="#e7ecf1" stroke="#c9d1d9"/>
+  <text x="92" y="262" font-size="12.5" fill="#1b2a3a">≈ 2.7 kb of CCCTAA repeats,</text>
+  <text x="92" y="277" font-size="12.5" fill="#1b2a3a">then unique sequence</text>
+
+  <!-- comparison with GRCh38 -->
+  <rect x="364" y="196" width="540" height="86" rx="6" fill="#f4f6f8" stroke="#c9d1d9"/>
+  <text x="378" y="218" font-size="13.5" font-weight="bold" fill="#1b2a3a">The older reference, GRCh38</text>
+  <text x="378" y="240" font-size="13" fill="#1b2a3a">• chr1:1–10,000 is unknown sequence ("N"): the telomere was never assembled</text>
+  <text x="378" y="258" font-size="13" fill="#1b2a3a">• the centromere is a computer model, and 1q12 is an 18 Mb gap</text>
+  <text x="378" y="276" font-size="13" fill="#1b2a3a">• T2T-CHM13 (2022) reads every base, end to end: 3.055 Gb, no gaps</text>
+</svg>

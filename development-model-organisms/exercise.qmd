@@ -1,0 +1,200 @@
+---
+title: "Exercise: Development & model organisms"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- tell **forward** from **reverse** genetics, and say what each can and cannot find;
+- explain how a **balancer** keeps a recessive lethal mutation in a stock, and plan the generations of a **zygotic** and a **maternal-effect** screen;
+- predict embryo phenotypes from the **mother's** genotype for a maternal-effect gene such as *bicoid*;
+- classify segmentation mutants as **gap**, **pair-rule** or **segment polarity**, and reason about a stripe enhancer;
+- explain **homeotic** transformations and Hox **colinearity**, and why a Hox gain of function is dominant;
+- order genes in a developmental pathway by **epistasis**;
+- find a developmental gene and its orthologs in **NCBI Gene**, **MGI**, **FlyBase** and the **Alliance of Genome Resources**.
+
+## Background
+
+**Forward vs reverse genetics.** Forward genetics goes from phenotype to gene: mutagenise, screen, then map and clone. Reverse genetics goes from gene to phenotype: knock out or knock down a chosen gene (RNAi, CRISPR) and look. Forward screens are unbiased but miss genes that are redundant or have no visible phenotype. Reverse genetics can show "no phenotype" when a paralog covers for the gene.
+
+**Balancers.** A balancer chromosome carries several **inversions**, so it cannot give recombinant products with its homologue. It also carries a **dominant marker**, such as *Curly* wings, and a **recessive lethal**. A stock *m*/Balancer therefore breeds true: both kinds of homozygote die.
+
+**Maternal effect.** For a maternal-effect gene, the embryo's phenotype depends on the **mother's genotype**, not its own. The mother loads mRNAs such as *bicoid* into the egg. Screening for maternal-effect mutants needs **homozygous mothers**, so it takes one generation more than a zygotic screen.
+
+**The segmentation hierarchy.** Maternal gradients (Bicoid, Nanos) → **gap** genes (broad domains; a mutant lacks a block of adjacent segments) → **pair-rule** genes (7 stripes; a mutant lacks every other segment) → **segment-polarity** genes (14 stripes; part of each segment is replaced by a mirror image of the rest) → **Hox** genes (give each segment its identity). Each *even-skipped* stripe has its own enhancer. Stripe 2 forms where the activators Bicoid and Hunchback are high and the repressors Giant and Krüppel are low.
+
+**Hox genes.** Homeotic mutations turn one body part into another. The order of Hox genes on the chromosome matches the order of the body regions where they act, from anterior to posterior (**colinearity**). The *Drosophila* order is *lab*, *pb*, *Dfd*, *Scr*, *Antp*, *Ubx*, *abd-A*, *Abd-B*. Mammals have four Hox clusters.
+
+**Epistasis in a pathway.** For a pathway where gene A inhibits gene B, which promotes an outcome: when single mutants give opposite phenotypes, the double mutant shows the phenotype of the **downstream** gene. This is the same logic as in [Extensions to Mendel](../mendel-extensions/lec.qmd).
+
+## By hand
+
+**B1. (forward or reverse?)** Classify each approach as forward or reverse genetics, and name one limitation of each.
+
+a. Mutagenise zebrafish with ENU and look for embryos with heart defects.
+b. Inject *Drosophila* embryos with double-stranded RNA against a gene known to be expressed in the wing.
+c. Make a mouse knockout of the mouse ortholog of a human disease gene.
+d. Screen *C. elegans* for mutants in which cells that should die survive.
+
+**B2. (balancers)** A recessive embryonic-lethal mutation *m* on chromosome 2 is kept in the stock *m*/*CyO*. *CyO* is a balancer with the dominant marker *Curly* (curled wings), and it is itself lethal as a homozygote.
+
+a. Cross *m*/*CyO* × *m*/*CyO*. What fraction of the zygotes have each genotype, and which survive?
+b. What do all the surviving adults look like? Why does this stock never need to be checked for loss of *m*?
+c. Why does it matter that *CyO* carries inversions?
+
+**B3. (planning a screen)** You mutagenise males and want recessive mutations on chromosome 2 that affect the embryo's segment pattern.
+
+a. Using a balancer, outline the generations from the mutagenised male (P) until you can see **homozygous mutant embryos**. In which generation do you look, and what fraction of the embryos in a line are homozygous?
+b. Now you want **maternal-effect** mutations instead. In which generation can you first score the phenotype? Explain why it is one generation later.
+
+**B4. (maternal effect: *bicoid*)** *bcd* is a recessive maternal-effect mutation. Embryos from *bcd*/*bcd* mothers lack head and thorax and die.
+
+a. *bcd*/+ female × *bcd*/+ male: what fraction of the embryos are abnormal?
+b. Among the surviving adult daughters from (a), what fraction are *bcd*/*bcd*? What happens to *their* embryos, whatever the father's genotype?
+c. *bcd*/*bcd* female × +/+ male, and +/+ female × *bcd*/*bcd* male: predict the embryos of each cross. What does the difference between these reciprocal crosses tell you?
+
+**B5. (classifying segmentation mutants)** Larval cuticles of three new mutants:
+
+- mutant X: denticle belts are missing in **every other** segment;
+- mutant Y: **thorax and the first abdominal segments** are missing, and the rest is normal;
+- mutant Z: there are 14 segments, but in each one the **posterior half is replaced by a mirror image** of the anterior half.
+
+Which class is each mutant? Name one known gene of each class.
+
+**B6. (a stripe enhancer)** The *eve* stripe 2 enhancer is activated by Bicoid and Hunchback and repressed by Giant (anterior to the stripe) and Krüppel (posterior to it).
+
+a. In a *Krüppel* mutant embryo, how would stripe 2 change? (Look only at stripe 2.)
+b. A fly is heterozygous for a small deletion of the stripe 2 enhancer on one copy of *eve*. Is *eve* expressed in the stripe 2 region? From which copy? Use the words *cis* and *trans*.
+c. A reporter gene with only the stripe 2 enhancer in front of *lacZ* is put into flies. Where is β-galactosidase made?
+
+**B7. (Hox genes)**
+
+a. *Antennapedia* gain-of-function alleles (legs instead of antennae) are **dominant**, while loss-of-function alleles of most Hox genes are recessive. Explain the difference.
+b. Using colinearity and the gene order in the Background, which *Drosophila* Hox gene acts furthest **posterior**? Which acts furthest **anterior**?
+c. Mammals have four Hox clusters. Why do single Hox knockouts in mice often give only mild changes in the vertebrae?
+
+**B8. (ordering a pathway by epistasis)** In *C. elegans*, 131 cells die by programmed cell death during development.
+
+- *ced-3* loss of function: no cell deaths.
+- *ced-9* loss of function: many extra cells die, and the embryo dies.
+- *ced-9*; *ced-3* double mutant: **no** cell deaths.
+- *ced-4* loss of function: no cell deaths. The *ced-9*; *ced-4* double mutant also has no cell deaths.
+
+Order *ced-3*, *ced-4* and *ced-9* in a pathway leading to cell death, using arrows (→, activates) and ⊣ (inhibits).
+
+**B9. (*PAX6* and dose)** Aniridia (no iris) is autosomal dominant and caused by loss of one copy of *PAX6* (haploinsufficiency). Homozygous loss of *PAX6* gives no eyes and severe brain defects, and is usually lethal.
+
+a. Two people with aniridia, each *PAX6*/−, have children. What are the probabilities of a child with normal eyes, with aniridia, and with complete loss of *PAX6*?
+b. Mouse *Small eye* (*Sey*) behaves the same way. How would you expect *Sey*/+ × *Sey*/+ litters to look at birth?
+
+**B10. (from a mosaic founder to a homozygous mutant)** A CRISPR knockout founder (F0) is usually a **mosaic**: different cells carry different edits, or none. Explain how you get **homozygous** mutants of one defined allele from such a founder, and in which generation they first appear. What fraction of that generation's offspring is homozygous?
+
+## Find it
+
+**F1. (NCBI Gene and Ensembl)** Search [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/) for human *PAX6*. Give the Gene ID and the cytogenetic location. Then search [Ensembl](https://www.ensembl.org) for the same gene and give its Ensembl gene ID (it starts with ENSG).
+
+**F2. (MGI, mouse)** Search [MGI](https://www.informatics.jax.org) for mouse *Pax6*. Which chromosome is it on? In the gene's allele list, find the classic spontaneous allele behind the *Small eye* phenotype and write its allele symbol.
+
+**F3. (FlyBase)** In [FlyBase](https://flybase.org), look up *eyeless* (*ey*), *twin of eyeless* (*toy*), *Ultrabithorax* (*Ubx*) and *labial* (*lab*). For each, give the chromosome or chromosome arm. Give the FlyBase gene ID (FBgn…) of *ey* and of *Ubx*.
+
+**F4. (the Alliance of Genome Resources)** Open the human *PAX6* page at the [Alliance of Genome Resources](https://www.alliancegenome.org) and scroll to **Orthology**.
+
+a. With the default (stringent) filter, which fly gene is listed as an ortholog? Is *ey* there?
+b. Relax the filter. Which fly gene appears now, and how many methods support it?
+c. List the zebrafish and worm orthologs and their chromosomes. Use [ZFIN](https://zfin.org) and [WormBase](https://wormbase.org) if the Alliance page does not show the chromosome.
+d. Now open the fly gene *lab* and list its stringent human orthologs. What do they have in common?
+
+::: {.callout-tip collapse="true" title="Hint for F4"}
+The orthology table has a stringency setting above it. "Best" or "stringent" keeps only calls supported by several methods and marked as best matches. Ortholog calls are **predictions** made by algorithms, so different methods and databases can disagree.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.**
+
+a. Forward. It finds only genes whose loss gives a visible, specific heart phenotype; it misses redundant genes and genes needed earlier for survival.
+b. Reverse (knockdown). The knockdown may be incomplete, and the dsRNA may hit other genes with similar sequence (off-target effects).
+c. Reverse. The mouse ortholog may be redundant with a paralog, so the knockout can show no phenotype; or the knockout can be lethal, which hides later roles. A conditional (Cre/lox) knockout gets round that.
+d. Forward. This is the screen that found the *ced* genes. It needs a way to see the surviving cells, and it misses genes that are essential for viability.
+
+**B2.**
+
+a. ¼ *m*/*m* (die as embryos), ½ *m*/*CyO*, ¼ *CyO*/*CyO* (die).
+b. Every surviving adult is *m*/*CyO* and has Curly wings. Because both homozygotes die, every survivor must carry *m*. The stock cannot lose the mutation without anyone selecting for it.
+c. Without the inversions, crossing over between *CyO* and the *m* chromosome would make recombinants that separate *m* from its neighbours, or that move the lethal and the marker apart. The inversions make crossover products unbalanced, so they do not survive, and the chromosome stays intact.
+
+**B3.**
+
+a. P: mutagenised male × balancer female. F1: individual males, each carrying one mutagenised chromosome (*m\**) over a balancer. Cross each F1 male to the balancer stock again, to found a line. F2: collect *m\**/Balancer brothers and sisters in each line (identified by the marker). F2 × F2 within the line gives F3 embryos, of which **¼** are *m\**/*m\**. You score the F3 embryos (dead embryos with an abnormal cuticle).
+b. A maternal-effect phenotype shows only in the embryos **of** a homozygous mother. So the F3 *m\**/*m\** females must survive to adulthood (they look normal), and you score **their** embryos, the F4. That is one generation later.
+
+**B4.**
+
+a. **None.** All the mothers are *bcd*/+, so all the eggs get *bicoid* mRNA. The embryos' own genotype does not matter.
+b. ¼ of all daughters are *bcd*/*bcd*. They look normal, because their *bcd*/+ mother gave them *bicoid* mRNA. But **all** of their embryos lack head and thorax, whatever the father is.
+c. *bcd*/*bcd* female × +/+ male: all the embryos are abnormal, although they are *bcd*/+. +/+ female × *bcd*/*bcd* male: all normal. Reciprocal crosses differ, and the mother's genotype decides. That is the signature of a maternal effect. Compare sex linkage (Part 2), organelle inheritance (Part 5) and imprinting (Part 6).
+
+**B5.**
+- X: **pair-rule** (missing every other segment), e.g. *even-skipped* or *fushi tarazu*.
+- Y: **gap** (a block of adjacent segments missing), e.g. *Krüppel*. *hunchback* or *knirps* would also do.
+- Z: **segment polarity** (a mirror-image duplication within each segment), e.g. *wingless* or *hedgehog*.
+
+**B6.**
+
+a. Krüppel sets the posterior border of stripe 2. Without it, stripe 2 **widens posteriorly** into the region where Krüppel would normally repress it.
+b. Yes. The enhancer is **cis-acting**: it controls only the copy of *eve* on the same chromosome. In the stripe 2 region, the intact copy is expressed, and the copy with the deleted enhancer is not. The transcription factors (Bicoid, Hunchback, Giant, Krüppel) are **trans-acting** and reach both copies, but only the intact copy has the binding sites.
+c. Only in stripe 2. The enhancer alone is enough to reproduce that one stripe, which is how enhancers are defined experimentally.
+
+**B7.**
+
+a. A gain-of-function allele makes a normal Antp protein in the **wrong place** (the head). One such copy is enough to switch on a leg programme, so it is dominant. A loss-of-function allele leaves one working copy, and for most Hox genes half the dose is enough, so it is recessive.
+b. **Abd-B** acts furthest posterior; **lab** furthest anterior.
+c. The four clusters contain **paralogs**, for example *Hoxa1*, *Hoxb1* and *Hoxd1*, which partly cover for each other (redundancy). Full transformations need double or triple knockouts of a paralog group.
+
+**B8.** *ced-9* ⊣ *ced-4* → *ced-3* → cell death.
+- *ced-3* and *ced-4* are needed for death, so loss of either means no deaths. *ced-9* prevents death, so its loss means extra deaths.
+- The *ced-9*; *ced-3* and *ced-9*; *ced-4* doubles look like *ced-3* and *ced-4*: no deaths. So *ced-3* and *ced-4* act **downstream** of *ced-9*.
+- These data alone don't order *ced-4* and *ced-3* relative to each other. Biochemistry shows that CED-4 activates the caspase CED-3. Their human counterparts are BCL2 (*ced-9*), APAF1 (*ced-4*) and caspases (*ced-3*).
+
+**B9.**
+
+a. *PAX6*/− × *PAX6*/−: ¼ +/+ (normal eyes), ½ +/− (aniridia), ¼ −/− (no eyes, usually lethal).
+b. About ¼ wild-type, ½ *Sey*/+ with small eyes, and ¼ *Sey*/*Sey* with no eyes and no nose, which die at birth. Among the survivors you see roughly 1 normal : 2 small-eyed, the same 2 : 1 logic as the yellow-mouse lethal allele in [Extensions to Mendel](../mendel-extensions/lec.qmd).
+
+**B10.** Cross the mosaic F0 to wild type. The F1 offspring that inherited an edited chromosome through the F0's germ line are heterozygous for **one** defined allele. Sequence the F1 to find carriers of the allele you want, for example a frameshift. Cross two F1 heterozygotes carrying the same allele: in the **F2**, **¼** are homozygous mutants. This is Mendel's monohybrid cross again.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** NCBI Gene ID **5080**, location **11p13**. Ensembl gene ID **ENSG00000007372**. Click path: NCBI Gene → search "PAX6 human" → the top hit is *PAX6*, *Homo sapiens*; the location is in the summary box. In Ensembl, search PAX6 → Human gene.
+
+**F2.** Mouse *Pax6* is on **chromosome 2**. The *Small eye* allele is ***Pax6^Sey^***. Click path: MGI → search Pax6 → gene detail page → *Mutations, alleles, and phenotypes*.
+
+**F3.**
+- *ey* (**FBgn0005558**) and *toy* are both on **chromosome 4**, the small "dot" chromosome.
+- *Ubx* (**FBgn0003944**) and *lab* are both on **3R**, in the Hox complexes (bithorax and Antennapedia complexes).
+
+The location is in the General Information or Genomic Location section of each FlyBase gene report.
+
+**F4.**
+
+a. With the stringent filter, the fly ortholog listed is ***toy*** (*twin of eyeless*). ***ey* is not listed.**
+b. With a relaxed filter, ***ey*** appears, supported by **only one method**. Ortholog calls are predictions. *ey* and *toy* come from a duplication in the insect lineage, and methods disagree on which one to pair with human *PAX6*. This is the "two paralogs" complication mentioned in the lecture.
+c. Zebrafish: ***pax6a*** on **chr 25** and ***pax6b*** on **chr 7**, two copies from the teleost genome duplication. Worm: ***vab-3*** on the **X** chromosome.
+d. *lab* → ***HOXA1***, ***HOXB1*** and ***HOXD1***. They are all paralog group 1, the most **anterior** Hox genes, one in each of three of the four mammalian clusters. One fly gene has several human orthologs because the Hox cluster was duplicated in the vertebrate lineage.
+:::
+
+## Where this leads
+
+The same genes keep coming back. The *ced-9* counterpart BCL2 is an oncogene in follicular lymphoma, and Hox and *PAX* genes are rearranged in some cancers ([Cancer genetics](../cancer-genetics/lec.qmd)). The ortholog tables you just searched are the input for the R page, where you build the whole table across six species.
+
+**Next:** [Exercise in R](exercise-r.qmd): join the gene and ortholog tables and draw a presence/absence heat map across model organisms.

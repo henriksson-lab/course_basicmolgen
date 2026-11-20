@@ -1,0 +1,230 @@
+---
+title: "Exercise: digital analysis of DNA"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- recognise a palindromic restriction site and predict how often a site occurs in random DNA;
+- predict the fragments of a single and a double digest, and build a simple restriction map;
+- estimate fragment sizes from a gel with a ladder (log scale);
+- compute PCR yields with *N* = *N*~0~(1 + *E*)^*n*^, and explain Ct values, plateaus and primer-dimers;
+- judge a primer pair against the design rules, and check one with **Primer-BLAST**;
+- genotype a family for the sickle-cell allele from a PCR-RFLP gel or a Sanger trace;
+- run a **BLAST** search with a DNA read and name the gene and organism it came from.
+
+## Background
+
+**Restriction enzymes** cut at short, usually palindromic sites: EcoRI G^AATTC, BamHI G^GATCC, HindIII A^AGCTT, PstI CTGCA^G, DdeI C^TNAG (N = any base). In random DNA, a site with *n* specified bases occurs about once every 4^*n*^ bp. A **linear** molecule with *k* sites gives *k* + 1 fragments, a **circular** one gives *k*. The fragment sizes add up to the total length.
+
+**Gels.** Fragments run towards the + electrode; distance is roughly linear in **log(size)**. Read unknown sizes from a ladder by interpolating on the log scale. Band brightness is proportional to DNA mass (copies × length).
+
+**PCR.** Two primers define the product. Each cycle multiplies the product by (1 + *E*), where *E* is the efficiency: *N* = *N*~0~(1 + *E*)^*n*^, until a plateau. Ten times more template reaches a threshold log(10)/log(1 + *E*) cycles earlier: 3.3 cycles at *E* = 1, 3.6 at *E* = 0.9. Primer rules: 18–25 nt, 40–60% GC, Tm ≈ 55–65 °C and matched, no 3' complementarity, unique in the genome. Wallace rule: Tm ≈ 2 °C × (A + T) + 4 °C × (G + C).
+
+**Sickle-cell PCR-RFLP.** A 500-bp PCR product around *HBB* exon 1 has DdeI sites at 37, 217 and 418 bp. The HbS change (codon 7 GAG → GTG, c.20A>T) destroys the site at 217:
+
+| Genotype | DdeI fragments (bp) |
+|---|---|
+| HbA/HbA | 201, 180, 82, 37 |
+| HbA/HbS | 381, 201, 180, 82, 37 |
+| HbS/HbS | 381, 82, 37 |
+
+**Sequencing.** Sanger: dye-labelled ddNTPs stop synthesis; products are sorted by length and the colours read in order; a heterozygote gives a double peak. Next-generation sequencing: coverage = number of reads × read length / genome length.
+
+## By hand
+
+**B1. (palindromes)** Which of these sites are palindromes (equal to their own reverse complement)?
+
+AAGCTT · GGTCTC · GTTAAC · CTGCAG · GATTCC
+
+**B2. (how often?)** a) NotI recognises the 8-bp site GCGGCCGC. How often does it cut random DNA, and about how many sites would you expect in the 3.1 × 10^9^ bp human genome? b) MboI recognises GATC. How many sites would you expect in the 48,502 bp genome of phage λ? c) Which of the two enzymes would you choose to cut a genome into a few large pieces?
+
+**B3. (restriction map)** A 10-kb linear DNA molecule is digested.
+
+| Digest | Fragments (kb) |
+|---|---|
+| EcoRI | 3, 7 |
+| BamHI | 2, 8 |
+| EcoRI + BamHI | 2, 3, 5 |
+
+Draw a map with the positions of the sites. Is there more than one answer?
+
+**B4. (reading a gel)** On a 0.8% gel, the λ/HindIII ladder bands ran these distances (illustrative numbers):
+
+| Size (bp) | 23,130 | 9,416 | 6,557 | 4,361 | 2,322 | 2,027 |
+|---|---:|---:|---:|---:|---:|---:|
+| Distance (mm) | 12 | 18 | 21 | 25 | 32 | 33.5 |
+
+An unknown band ran 28 mm. Estimate its size by interpolating between the two nearest ladder bands on a log scale.
+
+**B5. (PCR arithmetic)** a) You start a PCR with 50 copies of the target. How many copies after 30 cycles at 100% efficiency (ignore the plateau)? b) At 90% efficiency, how many cycles are needed to reach 10^10^ copies from 50? c) Two qPCR samples cross the threshold at cycles 18.0 and 24.6 (efficiency 100%). How many times more template did the first one have?
+
+**B6. (primers)** The primers used for the sickle-cell test are
+
+- forward 5'-TGCCAGAAGAGCCAAGGACA-3'
+- reverse 5'-CCCATAACAGCATCAGGAGT-3'
+
+a) Give the length, GC content and Wallace Tm of each. Do they follow the rules?
+b) The forward primer starts 200 bp upstream of the A of the ATG start codon, and the product is 500 bp long. Where does the reverse primer end, counted from the A of ATG?
+c) Why does the reverse primer **not** have the same sequence as the gene's coding strand at that position?
+
+**B7. (genotyping a family)** Two parents are both carriers of sickle-cell trait (HbA/HbS). DNA from them and their three children is amplified with the primers from B6, cut with DdeI and run on a 2% gel. The children's lanes show:
+
+| Child | Bands (bp) |
+|---|---|
+| 1 | 381, 82, 37 |
+| 2 | 381, 201, 180, 82, 37 |
+| 3 | 201, 180, 82, 37 |
+
+a) Give each child's genotype and phenotype. b) What bands do the parents show? c) In the Pedigree analysis unit, an unaffected sibling of an affected child had a ⅔ risk of being a carrier. What does this test do to that ⅔? d) Why is it fine that the 37-bp band is very faint?
+
+**B8. (reading a Sanger result)** A sequencing reaction used a 20-nt primer. The products, listed in no particular order with the colour of their terminating ddNTP, were
+
+| Length (nt) | 23 | 21 | 26 | 24 | 22 | 25 |
+|---|---|---|---|---|---|---|
+| Colour (base) | red (T) | green (A) | black (G) | blue (C) | blue (C) | green (A) |
+
+a) Read the first six bases synthesised after the primer, 5'→3'. b) What is the sequence of the template strand at that position, written 5'→3'?
+
+**B9. (coverage)** You want to sequence a human genome (3.1 × 10^9^ bp) to 30× coverage with reads of 150 bases. How many reads do you need? At 30×, about how many reads cover a heterozygous site, and about how many of them show each allele?
+
+## Explore: restriction digest and gel {#explore}
+
+Do the by-hand part first. Pick a DNA and one or two enzymes; the gel shows the ladder (M), the uncut DNA (U), each single digest and, with two enzymes, the double digest. Fragment sizes come from the real sequences: phage λ (NCBI NC_001416.1), the plasmid pUC19 (NCBI M77789.2) and the 500-bp *HBB* PCR product (human genome GRCh38). Band brightness is proportional to DNA mass. Leave "show fragment sizes" off until you have made your own estimate.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="gel" data-preset="hbbA"></div>
+<script src="../demos/dist/gel.js"></script>
+```
+
+**E1.** Start with "HBB PCR, HbA/HbA" (DdeI, 2% gel, 100 bp ladder). Estimate the sizes of the bands from the ladder, then tick "show fragment sizes". Now click through HbA/HbS and HbS/HbS. Which band tells you that an HbS allele is present, and which bands tell you an HbA allele is present? Compare with your answer to B7.
+
+**E2.** Choose "phage λ", the enzyme HindIII only, and the "λ / HindIII" ladder. The ladder is itself a HindIII digest of λ DNA. Which of your HindIII bands does **not** match a ladder band? Can you explain the difference? (Hint: the λ DNA sold for ladders comes from a mutant strain. Look at what the sizes add up to.)
+
+**E3.** Choose "pUC19 plasmid". a) Why do EcoRI alone and HindIII alone each give a single band of 2,686 bp? b) Why does the uncut plasmid run *faster* than the linear 2,686 bp band? c) What does the double digest EcoRI + HindIII cut out, and why is it hard to see?
+
+**E4.** Choose "phage λ" with DdeI on a 0.7% gel, then on a 2% gel. Why does the lane look like a smear rather than clear bands? Which gel percentage separates the λ EcoRI fragments best, and which one separates the *HBB* DdeI fragments best?
+
+::: {.callout-note collapse="true" title="Solutions: Explore (gel)"}
+
+**E1.** HbA/HbA: 201, 180, 82 and a faint 37 bp band. HbS/HbS: 381, 82, 37. HbA/HbS: all five. The **381** band (uncut at the codon 7 site) shows an HbS allele; the **201 + 180** pair (cut at codon 7) shows an HbA allele. The 82 and 37 bp bands come from the two other DdeI sites, which are the same in both alleles: they act as a built-in check that the enzyme worked. Note that 201 and 180 run close together; on a 1% gel they would be hard to separate.
+
+**E2.** The λ reference sequence gives seven HindIII fragments: 23,130, 9,416, **6,682**, 4,361, 2,322, 2,027 and 564 bp. The ladder has 6,557 and 125 instead of 6,682, and 6,557 + 125 = 6,682. So the ladder DNA has one extra HindIII site. The NCBI record NC_001416.1 notes at position 37,589 a C in wild type and a **T in the *ind1* mutant**, which turns AAGCTC into the HindIII site AAGCTT. Commercial λ DNA comes from a strain carrying *ind1*, so its HindIII digest has eight fragments. A single point mutation has created a restriction fragment length polymorphism, just like HbS but the other way round (a site gained instead of lost).
+
+**E3.** a) pUC19 has exactly **one** site for each of these enzymes, in the multiple cloning site, and a circle cut once becomes one linear molecule of full length. b) The uncut plasmid is **supercoiled**: twisted into a compact form that moves through the gel faster than the same DNA when linear. So an uncut circle does not tell you its size. c) EcoRI and HindIII are 51 bp apart in the MCS, so the double digest gives 2,635 + 51 bp. The 51-bp fragment has about 2% of the mass of the large one, so its band is very faint, and on a 1% gel it runs near the bottom. In cloning, this small piece is simply replaced by the insert.
+
+**E4.** DdeI has a 4-base specific site (C, T, A, G with any base in the middle), so it cuts λ 104 times. The 105 fragments, none longer than about 1.8 kb, overlap into a smear. A 0.7% gel spreads the large λ EcoRI fragments (3.5–21 kb) best; a 2% gel spreads the 37–381 bp *HBB* fragments best. A 2% gel squashes all fragments above about 3 kb together near the well.
+:::
+
+## Explore: PCR cycles {#explore-pcr}
+
+The second demo follows the number of copies of the PCR product, cycle by cycle. Each cycle multiplies the product by 1 + *E* × (1 − total/*K*), so growth is exponential at first and stops at a plateau *K* = 10^12^ copies. The dashed line is a detection threshold (10^10^ copies); the readout gives the cycle at which each curve crosses it (the Ct). With "primer-dimer" ticked, the primers occasionally prime on each other and the short dimer product then amplifies too.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="pcr" data-preset="real"></div>
+<script src="../demos/dist/pcr.js"></script>
+```
+
+**E5.** On the "realistic (E = 90%)" preset, read the Ct for 1,000 start copies and for 10× less template. What is the difference? Now set the efficiency to 100%: what is the difference now? Compare with log(10)/log(1 + *E*).
+
+**E6.** Untick "log y-axis". Describe the curve. At which cycle could you first see any product on the linear axis? Why do qPCR machines measure the Ct instead of the final amount of product?
+
+**E7.** Click "10 templates + primer-dimer" and then "no-template control". At which cycle does the primer-dimer cross the threshold in each case? What does this mean for a diagnostic test that runs 40 cycles, and why does every PCR experiment include a no-template control?
+
+**E8.** Back on "realistic", raise the start to 10^6^ copies. What is the Ct now, and what happens in the last 15 cycles? If you ran this reaction on a gel after 35 cycles, could you tell 10^5^ from 10^6^ starting copies?
+
+::: {.callout-note collapse="true" title="Solutions: Explore (PCR)"}
+
+**E5.** At *E* = 90%: Ct 25.1 for 1,000 copies and 28.7 for 100 copies, a difference of **3.6 cycles**; log(10)/log(1.9) = 3.59. At *E* = 100%: Ct 23.3 and 26.6, a difference of **3.3 cycles**; log(10)/log(2) = 3.32. Lower efficiency means more cycles per ten-fold, and a later Ct for the same template.
+
+**E6.** On a linear axis the curve sits at zero for about 25 cycles, then rises steeply and bends over into the plateau: an S shape. The product is only visible above roughly 10^10^–10^11^ copies, around cycle 25–28 here. The final amount is almost the same for very different starting amounts (all reactions plateau near 10^12^), whereas the Ct, in the exponential phase, depends directly on the starting amount. That is why quantitative PCR reads the Ct.
+
+**E7.** With 10 template copies, the target crosses the threshold at cycle 32.3 and the primer-dimer at **39.8**. With no template, the primer-dimer crosses at **38.9** (a little earlier, since it does not have to compete with the target). A 40-cycle test with a weak or absent target can therefore show a late signal that is not the target at all. The no-template control (water instead of DNA) shows whether primer-dimers or contaminating DNA give a signal; a signal in it means the run cannot be trusted. In practice, a melting curve or a gel also separates the short dimer from the real product.
+
+**E8.** 10^6^ copies: Ct **14.4** (10^5^ gives 17.9). From about cycle 20 the curve bends and from about cycle 25 it is flat at the plateau: primers and nucleotides are used up, so the last 15 cycles add almost nothing. After 35 cycles both reactions have reached the plateau, so the bands on a gel would look the same: end-point PCR is not quantitative.
+:::
+
+## Find it
+
+You will use four NCBI tools and one enzyme database. They are free and need no login.
+
+**F1. (Primer-BLAST: design)** Open [Primer-BLAST](https://www.ncbi.nlm.nih.gov/tools/primer-blast/). In "PCR Template", enter the RefSeq accession of the human *HBB* mRNA, **NM_000518.5**. Leave the other settings at their defaults (organism *Homo sapiens*, database "Refseq mRNA") and click "Get Primers". For **primer pair 1**, read the two primer sequences, their Tm and GC%, and the product length. Do the primers follow the design rules from the lecture?
+
+**F2. (Primer-BLAST: check primers)** Open Primer-BLAST again. Leave the template empty, paste the two sickle-cell primers from B6 into "Forward primer" and "Reverse primer", set "Database" to **Refseq representative genomes** and the organism to *Homo sapiens*, and click "Get Primers". On which chromosome is the product, how long is it, and are there any other products in the genome?
+
+**F3. (BLAST a mystery read)** A sequencing run produced this 200-base read. Where does it come from?
+
+```
+GCCGAGGGCAGGGTAGCTTTCTTGGGCACTCCCAGCGAAGCCGTCGACTTCTTTTCCTAC
+GTGGGTGCCCAGTGTCCTACCAACTACAATCCGGCGGACTTTTACGTACAGGTGTTGGCC
+GTTGTGCCCGGACGGGAGATCGAGTCCCGTGATCGGATCGCCAAGATATGCGACAATTTT
+GCCATTAGCAAAGTAGCCCG
+```
+
+Open [nucleotide BLAST (blastn)](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch), paste the read, keep the database "Core nucleotide database (core_nt)" and "megablast", and click BLAST. In the **Descriptions** table, read the **Description**, **Scientific Name**, **Per. Ident** and **E value** of the top hits. Which organism and gene does the read come from? Why do some of the top hits have nothing to do with flies' eyes, although they match 100%? What is the closest hit from a *different* species?
+
+**F4. (REBASE: an enzyme's site)** Open the [REBASE page for EcoRI](http://rebase.neb.com/rebase/enz/EcoRI.html). Read the **Recognition Sequence**, the **Organism** the enzyme comes from, and the "**# sites on** … Lambda" field. Do the same for [DdeI](http://rebase.neb.com/rebase/enz/DdeI.html). Do the λ counts agree with the table in the lecture? (Alternative: paste the [*HBB* PCR product](data/hbb_pcr.fasta) into [NEBcutter](https://nc3.neb.com/NEBcutter/) and look for the DdeI sites.)
+
+**F5. (NCBI Nucleotide: get the FASTA for R)** Open the [NCBI Nucleotide record NC_001416.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_001416.1). In the first line of the record (LOCUS), read the **length** and whether the molecule is **linear or circular**. Then download it as FASTA: "Send to" → "File" → Format "FASTA" → "Create File". You need this file (or the copy on the R page) in the [Exercise in R](exercise-r.qmd).
+
+::: {.callout-tip collapse="true" title="Hint: reading a BLAST result"}
+The **Per. Ident** column is the percentage of identical bases in the aligned region; **Query Cover** is how much of your read is in the alignment. The **E value** is the number of hits this good you would expect by chance in a database this size: values like 10^−50^ or smaller mean the match is not chance. See the NCBI [BLAST help](https://blast.ncbi.nlm.nih.gov/doc/blast-help/).
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** Reverse complements: AAGCTT → AAGCTT (**palindrome**, HindIII); GGTCTC → GAGACC (**not**); GTTAAC → GTTAAC (**palindrome**, HpaI); CTGCAG → CTGCAG (**palindrome**, PstI); GATTCC → GGAATC (**not**). (GGTCTC is the site of BsaI, a "type IIS" enzyme that cuts outside its non-palindromic site.)
+
+**B2.** a) 4^8^ = 65,536, so about once per **65,536 bp**; 3.1 × 10^9^ / 65,536 ≈ **47,000** sites in the human genome. (Fewer in reality: NotI sites contain two CG pairs, which are rare in mammalian DNA.) b) 4^4^ = 256; 48,502 / 256 ≈ **190** sites. c) NotI, the 8-cutter: fewer sites, larger pieces.
+
+**B3.** EcoRI cuts once (3 + 7) and BamHI once (2 + 8). Put EcoRI at 3 kb from the left end. If BamHI were 2 kb from the left end, the double digest would give 2, 1 and 7: wrong. With BamHI 2 kb from the right end (at 8 kb), the double digest gives 3 (0–3), **5** (3–8) and 2 (8–10): correct.
+
+```
+0        3                  8     10 kb
+|--------E------------------B-----|
+```
+
+The only other answer is the same map flipped left to right (EcoRI at 7, BamHI at 2), which is the same molecule read from the other end. The map is unique up to orientation.
+
+**B4.** 28 mm lies between 4,361 bp (25 mm) and 2,322 bp (32 mm), 3/7 of the way. On a log scale: log~10~(4,361) = 3.640, log~10~(2,322) = 3.366; 3.640 − (3/7) × 0.274 = 3.523, so size ≈ 10^3.523^ ≈ **3,300 bp**. (Linear interpolation of the sizes would give about 3,500 bp, which overestimates.)
+
+**B5.** a) 50 × 2^30^ = 50 × 1.07 × 10^9^ ≈ **5.4 × 10^10^** copies. b) 50 × 1.9^*n*^ = 10^10^ → 1.9^*n*^ = 2 × 10^8^ → *n* = log(2 × 10^8^)/log(1.9) = 8.30/0.279 ≈ **30 cycles** (29.8). c) 24.6 − 18.0 = 6.6 cycles, 2^6.6^ ≈ **97**, about 100 times more template.
+
+**B6.** a) Forward: 20 nt; G + C = 11, so 55% GC; Tm = 2 × 9 + 4 × 11 = **62 °C**. Reverse: 20 nt; G + C = 10, 50% GC; Tm = 2 × 10 + 4 × 10 = **60 °C**. Both follow the length, GC and Tm rules (Wallace Tm within 2 °C of each other). Neither ends in a G or C (the forward ends in A, the reverse in T), a minor deviation that is common in working primers. Primer-BLAST, with a better model, reports 61.4 and 57.0 °C. b) The product is 500 bp and starts 200 bp before the A of ATG, so it ends **300 bp** after it (positions −200 to +299 counting the A as 0). c) The reverse primer binds the **coding strand** and is copied in the opposite direction, so its sequence is the **reverse complement** of the coding strand there (…ACTCCTGATGCTGTTATGGG in exon 2, reverse-complemented to CCCATAACAGCATCAGGAGT).
+
+**B7.** a) Child 1: only 381 (no 201 + 180), **HbS/HbS**, sickle-cell disease. Child 2: both patterns, **HbA/HbS**, carrier (sickle-cell trait, usually healthy). Child 3: no 381, **HbA/HbA**, unaffected and not a carrier. b) Both parents are carriers and show **381, 201, 180, 82, 37**, like child 2. c) The ⅔ is a probability *before* testing, based only on the pedigree. The test reads the genotype directly, so each unaffected sibling is now known to be a carrier (probability 1) or not (probability 0). d) The 37-bp band carries little mass, so it is faint; it is present in every genotype, so it is not needed for the diagnosis.
+
+**B8.** a) Sort by length: 21 A, 22 C, 23 T, 24 C, 25 A, 26 G. The new strand reads **5'-ACTCAG-3'** after the primer. b) The template is complementary and antiparallel: 3'-TGAGTC-5', which written 5'→3' is **5'-CTGAGT-3'**.
+
+**B9.** Bases needed: 30 × 3.1 × 10^9^ = 9.3 × 10^10^ (93 Gb); reads: 9.3 × 10^10^ / 150 = **6.2 × 10^8^ reads**. A heterozygous site is covered by about **30 reads** on average, about 15 for each allele, but by chance some sites get, say, 18 and 12, or fewer reads in total.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Click path: Primer-BLAST → PCR Template: NM_000518.5 → Get Primers → "Primer pair 1". The exact primers can change when NCBI updates the tool or the database, so compare your result with the rules rather than with one fixed answer. On 2026-11-20, pair 1 was forward **CTGAGTGAGCTGCACTGTGA** and reverse **AATCCAGATGCTCAAGGCCC**: both 20 nt, 55% GC, Tm 60.0 and 60.1 °C, product **281 bp** on NM_000518.5. That pair meets every rule: matched Tm, 40–60% GC, 18–25 nt, and a G or C near the 3' end. Primer-BLAST designs on the mRNA, so a product on genomic DNA would be longer if the primers sat in different exons.
+
+**F2.** Click path: Primer-BLAST → Primer Parameters: paste both primers → Database: "Refseq representative genomes", Organism: *Homo sapiens* → Get Primers → "Products on target templates". Result: one product, **500 bp**, on **NC_000011.10** (*Homo sapiens* chromosome 11, GRCh38 primary assembly), forward primer at 5,227,221–5,227,202 and reverse primer at 5,226,722–5,226,741. No other products are listed, so the primers are specific. (The coordinates run backwards for the forward primer because *HBB* lies on the minus strand of chromosome 11.) Primer-BLAST reports the Tm values as 61.4 °C (forward) and 57.0 °C (reverse).
+
+**F3.** Click path: BLAST → Nucleotide BLAST → paste → BLAST → Descriptions tab. Several hits match **100%** over the whole 200-base read with an E value of about **6 × 10^−98^** (bit score 370). Among them is **NM_057439.2, *Drosophila melanogaster* white (w), mRNA**, and other *D. melanogaster* *white* sequences (for example X51749.1, "Drosophila white mRNA for eye pigment"). So the read comes from the fruit fly ***white*** gene, the eye-colour gene of Morgan's first mutant (Part 2). Several 100% hits are **P element transformation vectors** (for example FJ791036.1, pGE-attB): these vectors carry a copy of *white* as a visible marker, so flies that received the vector have red eyes instead of white. The closest different species are *Drosophila simulans* and *D. mauritiana* (XM_039296520.1 and XR_004459913.1, "PREDICTED: … protein white"), with **97%** identity. (Checked on 2026-11-20 against core_nt; new database entries can change the exact list, but not the top organism and gene.)
+
+**F4.** EcoRI: Recognition Sequence **G^AATTC**; Organism ***Escherichia coli* RY13** (the enzyme gene is on a plasmid); # sites on Lambda: **5**, as in the lecture. DdeI: **C^TNAG**; Organism ***Desulfovibrio desulfuricans*** Norway strain; sites on Lambda: **104**, again as in the lecture. (REBASE also lists HindIII with 6 sites on λ: it uses the wild-type λ sequence, which lacks the *ind1* site from E2.) In NEBcutter, the *HBB* product shows three DdeI sites, near positions 37, 217 and 418.
+
+**F5.** The LOCUS line reads NC_001416, **48502 bp**, DNA, **linear**, PHG (phage). The FASTA file starts with the header line `>NC_001416.1 Enterobacteria phage lambda, complete genome`, followed by the sequence in lines of 70 bases.
+:::
+
+## Where this leads
+
+Restriction sites and PCR products are short. In **Genome annotation** we scale up to whole genomes: once a genome is sequenced, how do we find the genes in it, and how do we find related genes in other species with BLAST? The sickle-cell allele comes back in **Genomic variation**, where we look at how common it is in different populations, and why.
+
+**Next:** [Exercise in R](exercise-r.qmd): read the phage λ genome from a FASTA file, find the EcoRI and BamHI sites with `str_locate_all()`, predict the fragments, and draw a virtual gel with ggplot2.

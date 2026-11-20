@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="300" viewBox="0 0 940 300" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: from linkage to gene for Huntington disease. Sources: Gusella et al. 1983 Nature
+       (PMID 6316146); Youngman et al. 1989 Genomics (PMID 2574148): HD in 4p16.3, about 4 cM distal
+       to D4S10 (G8); Huntington's Disease Collaborative Research Group 1993 Cell (PMID 8458085):
+       IT15 (now HTT), expanded (CAG)n on HD chromosomes in all 75 families examined. -->
+  <!-- time axis -->
+  <line x1="40" y1="120" x2="900" y2="120" stroke="#1b2a3a" stroke-width="3"/>
+  <g fill="#1b2a3a">
+    <circle cx="120" cy="120" r="9"/>
+    <circle cx="480" cy="120" r="9"/>
+    <circle cx="790" cy="120" r="9"/>
+  </g>
+  <!-- years -->
+  <g font-size="24" font-weight="bold" fill="#2a6f97" text-anchor="middle">
+    <text x="120" y="96">1983</text>
+    <text x="480" y="96">1989</text>
+    <text x="790" y="96">1993</text>
+  </g>
+  <!-- bracket: ten years of hunting -->
+  <path d="M120,48 L120,40 L790,40 L790,48" fill="none" stroke="#5b6b7a" stroke-width="1.5"/>
+  <text x="455" y="30" font-size="15" fill="#5b6b7a" text-anchor="middle">10 years from linkage to gene</text>
+
+  <!-- 1983 -->
+  <g font-size="16" fill="#1b2a3a">
+    <text x="40" y="156" font-weight="bold">Linkage found</text>
+    <text x="40" y="180">Gusella et al., Nature</text>
+    <text x="40" y="202">RFLP marker G8 is linked</text>
+    <text x="40" y="224">to HD: gene on chromosome 4</text>
+    <text x="40" y="246" fill="#5b6b7a">US and Venezuelan families</text>
+  </g>
+  <!-- 1989 -->
+  <g font-size="16" fill="#1b2a3a">
+    <text x="380" y="156" font-weight="bold">Region narrowed</text>
+    <text x="380" y="180">more markers, more families:</text>
+    <text x="380" y="202">HD at the tip of 4p (4p16.3),</text>
+    <text x="380" y="224">about 4 cM beyond G8 (D4S10)</text>
+    <text x="380" y="246" fill="#5b6b7a">no flanking marker yet</text>
+  </g>
+  <!-- 1993 -->
+  <g font-size="16" fill="#1b2a3a">
+    <text x="680" y="156" font-weight="bold">Gene found</text>
+    <text x="680" y="180">HD Collaborative Research</text>
+    <text x="680" y="202">Group, Cell: gene IT15 (now</text>
+    <text x="680" y="224"><tspan font-style="italic">HTT</tspan>) has an expanded CAG</text>
+    <text x="680" y="246">repeat in all 75 HD families</text>
+  </g>
+  <text x="470" y="288" font-size="15" fill="#5b6b7a" text-anchor="middle">Linkage tells you where to look; finding the mutation took physical mapping and sequencing of the region.</text>
+</svg>

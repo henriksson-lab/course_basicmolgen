@@ -1,0 +1,15 @@
+# SIMULATED teaching data, not a real experiment. Times of entry for a hypothetical
+# E. coli Hfr (origin of transfer near 4 300 000 bp of NC_000913.3, transferring
+# clockwise), computed from real gene positions (ecoli_genes.csv) as 1.5 min lag +
+# 100 min x distance / genome length + random noise (sd 0.5 min), rounded to 0.5 min.
+marker,time_of_entry_min
+pur,20.5
+thr,8.5
+lac,17.5
+azi,12.5
+ton,13
+pro,14.5
+leu,11.5
+trp,37
+gal,26.5
+pyr,5.5

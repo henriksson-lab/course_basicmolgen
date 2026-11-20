@@ -1,0 +1,147 @@
+---
+title: "Quiz: complex traits, heritability & GWAS"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on quantitative genetics and genome-wide association studies. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** How can many genes with discrete Mendelian alleles produce a trait such as height, which varies continuously?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Count the number of genotype classes with 1, 2 and 20 additive loci. Then add the environment.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+With *k* additive loci there are 2*k* + 1 classes for the number of "+" alleles, and their frequencies follow a binomial distribution that approaches a normal curve as *k* grows. Environmental variation blurs the remaining steps, so the trait looks continuous and normally distributed. This is Fisher's polygenic model (1918).
+:::
+
+---
+
+**Q2.** Define broad-sense (*H*²) and narrow-sense (*h*²) heritability. Which one predicts how much offspring resemble their parents, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does a parent pass to a child: a genotype, or one allele at each locus?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*H*² = *V*<sub>G</sub>/*V*<sub>P</sub>, all genetic variance; *h*² = *V*<sub>A</sub>/*V*<sub>P</sub>, only the additive part. **Narrow-sense** *h*² predicts parent–offspring resemblance and the response to selection, because a parent passes one allele per locus, not a genotype. Dominance (and epistatic) effects depend on combinations of alleles that are broken up in every generation.
+:::
+
+---
+
+**Q3.** For a trait, the correlation between MZ twins is 0.70 and between DZ twins 0.45. Estimate *h*² with Falconer's formula. What assumption does the estimate rely on?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*h*² ≈ 2 [*r*(MZ) − *r*(DZ)].
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*h*² ≈ 2 × (0.70 − 0.45) = **0.50**. It assumes that MZ and DZ twins have **equally similar environments** (and no dominance or interaction effects). If MZ twins are treated more alike, *h*² is overestimated.
+:::
+
+---
+
+**Q4.** A regression of offspring height on midparent height gives a slope of 0.6. What is *h*²? What slope would you expect if you regressed offspring on the father only?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Midparent: slope = *h*². One parent: slope = *h*²/2.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*h*² ≈ **0.6**. On one parent the slope would be about **0.3**: a child shares half of its genes with each parent, but the variance of one parent's height is twice that of the midparent.
+:::
+
+---
+
+**Q5.** Galton found that children of very tall parents were, on average, shorter than their parents. Explain this "regression towards the mean". Does it mean that the population gets less variable each generation?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Part of the parents' extreme height is due to environment and to non-additive effects, which are not passed on.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Very tall parents are tall partly because of their additive genetic value and partly because of favourable environment and chance. Only the additive part is passed on, so their children are on average closer to the mean: the predicted deviation is *h*² times the midparent's deviation. It does **not** make the population less variable: each generation, new environmental and segregation variation is added, and some children of average parents are very tall. The variance stays the same.
+:::
+
+---
+
+**Q6.** The heritability of height in a population is 0.8. Which of these statements are true?
+(a) 80% of each person's height is caused by genes.
+(b) 80% of the variation in height in this population is due to genetic differences.
+(c) Height cannot be changed by environment.
+(d) A height difference between two populations must be mostly genetic.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Heritability is a ratio of variances in one population and environment.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Only **(b)** is true (for additive variance, with the caveats of the estimate). (a) is meaningless: a person's height needs both genes and environment. (c) is false: average height rose by about 10 cm in many countries during the 20th century, with better nutrition. (d) is false: heritability within populations says nothing about the cause of differences between them (Lewontin's seeds in two fields).
+:::
+
+---
+
+**Q7.** How does QTL mapping in a cross between two inbred lines differ from a GWAS in a human population? Why does a GWAS give much finer resolution?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many meioses separate the individuals studied from the shared ancestors in each design?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+QTL mapping uses a controlled cross (F2 or backcross) and **linkage**: markers co-segregate with the QTL over long chromosome segments, because there have been only one or two meioses since the parental lines. A GWAS uses unrelated people and **association** through **linkage disequilibrium** with ancestral haplotypes that have been broken up by thousands of generations of recombination. Only SNPs very close to the causal variant remain correlated with it, so the peaks are narrow.
+:::
+
+---
+
+**Q8.** Why is the genome-wide significance threshold 5 × 10⁻⁸ and not 0.05?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many tests does a GWAS do, and how many would pass p < 0.05 by chance?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A GWAS tests about a million independent common variants. At p < 0.05, about 50 000 would be "significant" by chance alone. Dividing 0.05 by 10⁶ (a Bonferroni correction) gives 5 × 10⁻⁸, which keeps the chance of even one false positive in the whole scan at about 5%.
+:::
+
+---
+
+**Q9.** In a Manhattan plot, a significant locus usually appears as a tall "tower" of many SNPs rather than one point. Why? Is the top SNP the causal variant?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think about linkage disequilibrium.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+SNPs near the causal variant are in **linkage disequilibrium** with it: they lie on the same ancestral haplotypes, so they show the association too, more weakly the further away they are. The top SNP is not necessarily causal: it may just be the best-measured proxy, and the causal variant may not be genotyped at all. Fine-mapping and functional experiments are needed.
+:::
+
+---
+
+**Q10.** In a QQ plot of a GWAS, **all** p-values, not just the top few, lie above the diagonal. What could be wrong?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Recall the Wahlund effect from Hardy–Weinberg.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Population structure**: if cases and controls differ in ancestry, every SNP whose allele frequency differs between the ancestry groups looks associated with the disease. Cryptic relatedness and systematic genotyping differences between cases and controls do the same. (A truly polygenic trait in a very large sample also inflates the QQ plot somewhat, but structure must be ruled out.) Modern GWAS correct for ancestry, for example with principal components of the genotypes.
+:::
+
+---
+
+**Q11.** rs7903146 in *TCF7L2* is the strongest known association for type 2 diabetes, with p-values far below 10⁻¹⁰⁰ in the largest studies. Does this mean that the T allele has a large effect on risk?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What two things determine the size of a test statistic?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No. A p-value depends on the effect size **and** the sample size (and the allele frequency). The odds ratio per T allele is modest, about 1.3–1.4 in many studies in the GWAS Catalog; the tiny p-value comes from samples of hundreds of thousands to millions of people. Most carriers of the risk allele never develop type 2 diabetes.
+:::

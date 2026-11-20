@@ -1,0 +1,174 @@
+---
+title: "Quiz: ethics of genetic knowledge"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the facts from the lecture, and on applying the four principles. For the "apply" questions there is often more than one defensible answer: the answer below shows the reasoning we look for, not the only conclusion.
+
+---
+
+**Q1.** Name the four principles of biomedical ethics, and give each in a few words.
+
+::: {.callout-tip collapse="true" title="Hint"}
+One is about the person's own choice, two are about good and harm, one is about fairness.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+- **Autonomy**: respect a person's own informed, voluntary choices.
+- **Beneficence**: act for the person's good.
+- **Non-maleficence**: do no harm (or avoid harm that is not outweighed by benefit).
+- **Justice**: distribute benefits, risks and costs fairly.
+
+They come from Beauchamp and Childress, *Principles of Biomedical Ethics*. In real cases they conflict, and the work is to weigh them.
+:::
+
+---
+
+**Q2.** Give three reasons why a genetic test result raises ethical questions that a blood glucose value does not.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of relatives, the future, and what a genome can be used for besides medicine.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Any three of:
+
+- It is **shared** with relatives (½ of alleles with a parent, child or sibling), so it tells something about people who were not asked.
+- It can **predict** disease decades ahead, sometimes with no treatment (Huntington disease).
+- It is **permanent and identifying**: a genome cannot be changed, and can identify a person even without a name.
+- It informs **reproductive** choices about future people (carrier and prenatal tests).
+- Its **meaning changes** as variants are reclassified.
+:::
+
+---
+
+**Q3.** Anna's mother has Huntington disease. Anna is 30, healthy, and does not want to be tested. Her daughter Elsa, 20, wants to be tested. (a) What is Elsa's prior risk of carrying the *HTT* expansion? (b) If Elsa tests positive, what does it reveal about Anna? (c) Which principles are in conflict?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Huntington disease is autosomal dominant. Elsa can only have inherited the allele through Anna.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) Anna has a ½ chance of carrying the allele, and if she does, Elsa has a ½ chance: ½ × ½ = **¼**.
+
+(b) A positive result in Elsa means **Anna must carry the allele too**: she is the only route from the grandmother. Anna learns her own status against her will.
+
+(c) Elsa's **autonomy** (her right to know about her own future) against Anna's **autonomy** in the form of the **right not to know**, and **non-maleficence** towards Anna. Genetic counselling would try to find a way through, for example by discussing with Elsa how the result will be kept, and whether she can wait or talk with her mother first. There is no rule that one side always wins.
+:::
+
+---
+
+**Q4.** What is the difference between an **incidental** finding and a **secondary** finding? Give a genetic example of each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+One is found by chance; the other is looked for on purpose, although it is not why the test was ordered.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+An **incidental** finding is discovered by chance and is unrelated to the question, for example misattributed paternity discovered when a trio (child and both parents) is sequenced to explain a child's disease.
+
+A **secondary** finding is **deliberately** looked for in a list of actionable genes, although the test was ordered for something else. Example: reporting a pathogenic ***BRCA1*** variant found while sequencing an exome to explain epilepsy. The ACMG publishes the list of such genes (ACMG SF v3.2, Miller et al. 2023, PMID 37347242; later updated to v3.3).
+:::
+
+---
+
+**Q5.** NIPT is described as a **screening** test, while amniocentesis gives a **diagnostic** test. What does NIPT analyse, and why does a positive NIPT result need to be confirmed?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where does the DNA come from, and is it all from the fetus?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+NIPT analyses **cell-free DNA in the pregnant woman's blood**, part of which comes from the fetus (more exactly, mostly from the placenta). It estimates whether, for example, chromosome 21 is over-represented. Because the DNA is a mixture, and the placenta's DNA does not always match the fetus, the result is a **risk**, not a diagnosis. A positive result is confirmed by testing fetal cells (amniocentesis or CVS) before any decision is made.
+
+Presence of fetal DNA in maternal plasma was first shown by Lo et al. 1997 (*Lancet*, PMID 9274585).
+:::
+
+---
+
+**Q6.** In Gymrek et al. (2013), how were the identities of "anonymous" research participants recovered? Which mode of inheritance from the pedigree unit made it possible?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which chromosome travels with the surname in many families?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The authors read **short tandem repeats on the Y chromosome** (Y-STRs) from the genomes, and searched public recreational **genealogy databases**, where men upload their Y-STR profile with their **surname**. A match gives a likely surname; combined with metadata such as age and US state, this narrowed the search down to one person.
+
+It works because of **Y-linked inheritance**: the Y passes from father to every son, as the surname does in many families. Gymrek et al., *Science* 339:321–324, PMID 23329047.
+:::
+
+---
+
+**Q7.** A man has never taken a DNA test. Police identify him from a crime-scene sample through a genealogy database. How is that possible, and whose consent is missing?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of what you share with a third cousin, and who uploaded their DNA.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+His **relatives** uploaded their DNA. Distant cousins share long identical stretches of DNA, which a SNP array detects. From the matches, genealogists build family trees down to a few candidates, and a direct DNA test confirms. This is how the Golden State Killer suspect was found in April 2018. Erlich et al. (2018, PMID 30309907) projected that about 60% of searches for people of European descent would give a third-cousin or closer match.
+
+Missing consent: the **relatives** agreed to use the database for genealogy, not as police informants; the **suspect** never agreed to anything. In Sweden, a law in force from 1 July 2025 allows the police to use the method only for murder and aggravated rape, as a last resort.
+:::
+
+---
+
+**Q8.** Why is editing a human embryo ethically different from editing a patient's blood stem cells, even when the same gene and the same CRISPR method are used?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where does the edit end up, and who inherits it?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Editing an embryo is **germline** editing: every cell of the person, including the eggs or sperm, carries the edit, so it is **inherited** by future generations by Mendel's rules. Those descendants cannot consent, and mistakes (off-target cuts, mosaicism) cannot be withdrawn. Editing a patient's own blood stem cells is **somatic**: it affects only that consenting person, like any other therapy (e.g. exa-cel for sickle cell disease). In Sweden, research and treatment that cause heritable genetic changes in humans are prohibited (Genetic Integrity Act 2006:351, ch. 2).
+:::
+
+---
+
+**Q9.** A gene drive allele is present in a heterozygote. Under Mendel's law of segregation, what fraction of its gametes should carry the drive? What does a homing gene drive do instead, and why is that ethically different from editing a single organism?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Recall the cross *Aa* × *aa* from the Mendel unit.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Mendel: **½** of the gametes. A homing drive encodes Cas9 and a guide RNA that cut the wild-type homolog in the germline; repair copies the drive across, so the heterozygote passes it to **nearly all** gametes. The allele spreads through a population even if it harms its carriers: Kyrou et al. (2018, PMID 30247490) saw a drive in *doublesex* reach 100% prevalence in caged *Anopheles gambiae* within 7–11 generations, collapsing the population.
+
+Ethically, a release affects a **whole wild species and ecosystem**, crosses national borders, and cannot easily be recalled. Who has the right to decide (justice), and how do you weigh huge potential benefits (malaria control) against uncertain harms?
+:::
+
+---
+
+**Q10.** Under the Swedish Ethical Review Act (2003:460), which of these research projects need ethical approval? (a) A study of anonymous, aggregated allele counts downloaded from gnomAD. (b) Genotyping blood samples from named patients, stored in a hospital biobank. (c) An interview study on how people experience predictive testing for Huntington disease, recording participants' health information.
+
+::: {.callout-tip collapse="true" title="Hint"}
+The act is triggered by sensitive personal data, physical interventions or methods affecting people, and biological material that can be traced to a person.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+- **(a) No**: aggregate counts are not personal data, and no person or sample is involved.
+- **(b) Yes**: biological material that can be **traced** to living persons, and genetic data, which is sensitive personal data. The Biobanks Act also applies to the samples.
+- **(c) Yes**: it processes **sensitive personal data** (health). Interviews are not a physical intervention, but the data trigger the act.
+
+Applications go to the Swedish Ethical Review Authority (Etikprövningsmyndigheten). Work done *only* as part of a first- or second-cycle course is not "research" under the act, but a student working inside a research project is covered by that project's approval.
+:::
+
+---
+
+**Q11.** Between 1935 and 1975, nearly 63,000 sterilisations were reported in Sweden under the sterilisation laws. Apart from the violation of consent, why was the eugenic aim of reducing recessive diseases also **genetically** mistaken?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For a rare recessive allele, where are most copies of the allele: in affected people (*aa*) or in carriers (*Aa*)?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+For a rare recessive allele with frequency *q*, affected people (*aa*) make up about *q*² of the population and carriers (*Aa*) about 2*q*. For *q* = 0.01, that is 1 in 10,000 affected but about 1 in 50 carriers: almost all copies of the allele are in **healthy carriers**, who were not targeted. Preventing affected people from reproducing therefore reduces *q* only very slowly. (You can compute this with Hardy–Weinberg in Part 7.)
+
+The sterilisation laws (1934:171 and 1941:282) were replaced in 1975 by a law that allows sterilisation only at a person's own request. 93% of those sterilised in 1935–1975 were women.
+:::

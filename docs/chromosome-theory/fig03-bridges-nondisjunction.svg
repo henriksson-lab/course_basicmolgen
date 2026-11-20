@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 405" width="780" height="405" font-family="Helvetica, Arial, sans-serif">
+<!-- Bridges 1916: primary nondisjunction in a white-eyed female gives XX and no-X (O) eggs. Fertilised by sperm of a red-eyed male they give the exceptional classes: XXY white females and XO red (sterile) males. Exceptional cells are outlined in orange. -->
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+<text x="20" y="28" font-size="18" text-anchor="start" fill="#1b2a3a" font-weight="bold">Bridges: white <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> × red <tspan font-family="DejaVu Sans, sans-serif">♂</tspan>, with rare nondisjunction in the mother</text>
+<circle cx="32" cy="64" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="44" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6" font-family="DejaVu Sans, sans-serif"> ♀</tspan></text>
+<text x="126" y="70" font-size="18" text-anchor="middle" fill="#1b2a3a" font-weight="normal">×</text>
+<circle cx="150" cy="64" r="7" fill="#c0392b"/>
+<text x="162" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">Y</tspan><tspan font-family="DejaVu Sans, sans-serif"> ♂</tspan></text>
+<text x="299.0" y="114" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>sperm </tspan><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">+</tspan></text>
+<text x="549.0" y="114" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>sperm Y</tspan></text>
+<text x="28" y="154" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>egg </tspan><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">w</tspan></text>
+<text x="28" y="175" font-size="13" text-anchor="start" fill="#5b6b7a" font-weight="normal">normal egg</text>
+<rect x="210" y="124" width="250" height="70" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="234" cy="150" r="7" fill="#c0392b"/>
+<text x="250" y="156" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan></text>
+<text x="250" y="178" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">red <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> · regular</text>
+<rect x="460" y="124" width="250" height="70" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="484" cy="150" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="500" y="156" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">Y</tspan></text>
+<text x="500" y="178" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">white <tspan font-family="DejaVu Sans, sans-serif">♂</tspan> · regular</text>
+<text x="28" y="224" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>egg </tspan><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">w</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="11" font-style="italic">w</tspan></text>
+<text x="28" y="245" font-size="13" text-anchor="start" fill="#d08c2f" font-weight="normal">nondisjunction</text>
+<rect x="210" y="194" width="250" height="70" fill="#ffffff" stroke="#7a8794" stroke-width="1.5"/>
+<text x="250" y="226" font-size="17" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan></text>
+<text x="250" y="248" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">triplo-X <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> · mostly dies</text>
+<rect x="460" y="194" width="250" height="70" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<rect x="463" y="197" width="244" height="64" fill="none" stroke="#d08c2f" stroke-width="3"/>
+<circle cx="484" cy="220" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="500" y="226" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">Y</tspan></text>
+<text x="500" y="248" font-size="14" text-anchor="start" fill="#1b2a3a" font-weight="bold">white <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> · exceptional</text>
+<text x="28" y="294" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>egg </tspan><tspan>O</tspan></text>
+<text x="28" y="315" font-size="13" text-anchor="start" fill="#d08c2f" font-weight="normal">nondisjunction</text>
+<rect x="210" y="264" width="250" height="70" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<rect x="213" y="267" width="244" height="64" fill="none" stroke="#d08c2f" stroke-width="3"/>
+<circle cx="234" cy="290" r="7" fill="#c0392b"/>
+<text x="250" y="296" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">O</tspan></text>
+<text x="250" y="318" font-size="14" text-anchor="start" fill="#1b2a3a" font-weight="bold">red <tspan font-family="DejaVu Sans, sans-serif">♂</tspan>, sterile · exceptional</text>
+<rect x="460" y="264" width="250" height="70" fill="#ffffff" stroke="#7a8794" stroke-width="1.5"/>
+<text x="500" y="296" font-size="17" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>Y</tspan><tspan>O</tspan></text>
+<text x="500" y="318" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">no X · dies</text>
+<text x="20" y="364" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="normal">The exceptional flies break the criss-cross rule: white daughters, red sons.</text>
+<text x="20" y="387" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="normal">Under the microscope, exceptional white females had two X chromosomes and a Y,</text>
+<text x="20" y="410" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="bold">exactly as the X-chromosome explanation predicts.</text>
+</svg>

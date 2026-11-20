@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360" font-family="Helvetica, Arial, sans-serif">
+  <!-- (a) End-replication problem at the right-hand end of a linear chromosome. Dark blue =
+       parental strand, light blue = new lagging strand made as Okazaki fragments, red = RNA
+       primers. Removing the last primer leaves a gap that no polymerase can fill, so the new
+       strand is shorter and the parental 3' end sticks out.
+       (b) Telomerase: the RNA template (TERC) pairs with the 3' end of the G-rich strand and
+       TERT copies it, adding TTAGGG units (green). Sequences are 5'->3' left to right on the
+       G-rich strand; the RNA template reads 3'->5' left to right. -->
+
+  <!-- ===== (a) end-replication problem ===== -->
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">(a) The end-replication problem</text>
+
+  <!-- step 1: lagging strand with primers -->
+  <text x="20" y="62" font-size="13.5" fill="#5b6b7a">1. Lagging strand: Okazaki fragments, each started by an RNA primer</text>
+  <line x1="50" y1="84" x2="430" y2="84" stroke="#2a6f97" stroke-width="5"/>
+  <g stroke-width="5">
+    <line x1="50" y1="98" x2="150" y2="98" stroke="#9cc3dc"/><line x1="152" y1="98" x2="172" y2="98" stroke="#bc4749"/>
+    <line x1="178" y1="98" x2="282" y2="98" stroke="#9cc3dc"/><line x1="284" y1="98" x2="304" y2="98" stroke="#bc4749"/>
+    <line x1="310" y1="98" x2="408" y2="98" stroke="#9cc3dc"/><line x1="410" y1="98" x2="430" y2="98" stroke="#bc4749"/>
+  </g>
+  <g font-size="12" fill="#1b2a3a">
+    <text x="30" y="88">5'</text><text x="436" y="88">3'</text>
+    <text x="30" y="102">3'</text><text x="436" y="102">5'</text>
+  </g>
+
+  <!-- step 2: primers removed and gaps filled, except the last one -->
+  <text x="20" y="138" font-size="13.5" fill="#5b6b7a">2. Primers removed; inner gaps filled from the fragment to the left</text>
+  <line x1="50" y1="160" x2="430" y2="160" stroke="#2a6f97" stroke-width="5"/>
+  <line x1="50" y1="174" x2="408" y2="174" stroke="#9cc3dc" stroke-width="5"/>
+  <rect x="410" y="168" width="20" height="12" fill="none" stroke="#bc4749" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <g font-size="12" fill="#1b2a3a">
+    <text x="30" y="164">5'</text><text x="436" y="164">3'</text>
+    <text x="30" y="178">3'</text>
+  </g>
+  <text x="432" y="200" font-size="13" fill="#bc4749" text-anchor="end">gap: no 3' end to extend from</text>
+
+  <!-- step 3: next round, the short strand is a template -->
+  <text x="20" y="236" font-size="13.5" fill="#5b6b7a">3. Next round: the short strand is copied; one daughter is shorter</text>
+  <line x1="50" y1="258" x2="408" y2="258" stroke="#9cc3dc" stroke-width="5"/>
+  <line x1="50" y1="272" x2="408" y2="272" stroke="#2a6f97" stroke-width="5" stroke-opacity="0.45"/>
+  <line x1="410" y1="265" x2="430" y2="265" stroke="#bc4749" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="20" y="306" font-size="13.5" fill="#1b2a3a">Without telomerase, a human cell loses ≈ 50–200 bp per end</text>
+  <text x="20" y="326" font-size="13.5" fill="#1b2a3a">per division. Telomere repeats are a buffer that can be lost.</text>
+
+  <!-- divider -->
+  <line x1="480" y1="16" x2="480" y2="344" stroke="#e3e7eb" stroke-width="1.5"/>
+
+  <!-- ===== (b) telomerase ===== -->
+  <text x="500" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">(b) Telomerase extends the 3' end</text>
+
+  <!-- enzyme body behind the template -->
+  <rect x="664" y="106" width="250" height="70" rx="20" fill="#f6e2c2" stroke="#d08c2f" stroke-width="1.5"/>
+  <text x="780" y="200" font-size="13" fill="#9a6a1f" text-anchor="middle">telomerase: TERT protein + TERC RNA</text>
+
+  <!-- sequences: monospace, one character every 16 px -->
+  <g font-family="DejaVu Sans Mono, Courier New, monospace" font-size="17" font-weight="bold">
+    <!-- C-rich strand (ends early) -->
+    <text y="80" fill="#1b2a3a" x="540 556 572 588 604 620 636 652">AATCCCAA</text>
+    <!-- G-rich strand: old part -->
+    <text y="122" fill="#2a6f97" x="540 556 572 588 604 620 636 652 668 684 700 716 732 748">TTAGGGTTAGGGTT</text>
+    <text y="122" fill="#2a6f97" x="764 780">AG</text>
+    <!-- newly added nucleotides -->
+    <text y="122" fill="#4f7a37" x="796 812 828 844 860 876">GGTTAG</text>
+    <!-- RNA template, 3'->5' left to right, under GTTAG + new GGTTAG -->
+    <text y="160" fill="#9a6a1f" x="716 732 748 764 780 796 812 828 844 860 876">CAAUCCCAAUC</text>
+  </g>
+  <g font-size="12" fill="#1b2a3a">
+    <text x="515" y="80">3'</text><text x="670" y="80">5'</text>
+    <text x="515" y="122">5'</text><text x="897" y="122">3'</text>
+    <text x="693" y="160" fill="#9a6a1f">3'</text><text x="897" y="160" fill="#9a6a1f">5'</text>
+  </g>
+  <!-- base pairing ticks between template and DNA -->
+  <g stroke="#9a6a1f" stroke-width="1.2">
+    <line x1="721" y1="128" x2="721" y2="142"/><line x1="737" y1="128" x2="737" y2="142"/>
+    <line x1="753" y1="128" x2="753" y2="142"/><line x1="769" y1="128" x2="769" y2="142"/>
+    <line x1="785" y1="128" x2="785" y2="142"/>
+  </g>
+  <!-- labels -->
+  <text x="540" y="148" font-size="13" fill="#2a6f97">G-rich 3' overhang</text>
+  <text x="796" y="80" font-size="13" fill="#4f7a37">new nucleotides</text>
+  <line x1="836" y1="86" x2="836" y2="104" stroke="#4f7a37" stroke-width="1.2"/>
+
+  <!-- steps -->
+  <g font-size="13.5" fill="#1b2a3a">
+    <text x="500" y="240">1. The template's 3' end (CAAUC) pairs with the DNA end (GTTAG).</text>
+    <text x="500" y="262">2. TERT copies the rest of the template: + GGTTAG.</text>
+    <text x="500" y="284">3. Telomerase slides along and repeats: the overhang grows.</text>
+    <text x="500" y="306">4. Primase and DNA polymerase fill in the C-rich strand;</text>
+    <text x="518" y="326">a single-stranded 3' overhang always remains.</text>
+  </g>
+</svg>

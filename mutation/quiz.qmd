@@ -1,0 +1,131 @@
+---
+title: "Quiz: Mutation & complementation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on kinds of mutation, mutagens, the fluctuation test, dominance and the complementation test. Have the genetic code table at hand (Hartwell, or the [Exercise in R](exercise-r.qmd) table).
+
+---
+
+**Q1.** Classify each substitution as a transition or a transversion: (a) A→G, (b) C→A, (c) T→C, (d) G→T.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Purines: A, G. Pyrimidines: C, T. Does the base stay in its class?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) A→G: purine to purine, **transition**. (b) C→A: pyrimidine to purine, **transversion**. (c) T→C: pyrimidine to pyrimidine, **transition**. (d) G→T: purine to pyrimidine, **transversion**.
+:::
+
+---
+
+**Q2.** The codon `TGG` (Trp) mutates at one position. Which single-base changes give a **nonsense** mutation, and which give a **missense** mutation?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The stop codons are TAA, TAG and TGA. Try changing each position of TGG.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Nonsense: **TGG → TAG** (2nd position G→A) and **TGG → TGA** (3rd position G→A). Every other single change is **missense**, because TGG is the only codon for Trp: for example TGG → TGT (Cys), CGG (Arg), GGG (Gly), TTG (Leu), TCG (Ser), TGC (Cys). No change of TGG is silent.
+:::
+
+---
+
+**Q3.** Why does a single-base **deletion** near the start of a coding sequence usually destroy the protein, while a deletion of **three** bases often does not?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The ribosome reads in triplets from the start codon, with no punctuation.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Deleting one base shifts the **reading frame**: every codon after the deletion is read in a different frame, giving a run of wrong amino acids that usually ends at a premature stop codon. Deleting three bases removes one codon (or changes two codons into one) but keeps the frame, so the rest of the protein is normal. The most common cystic fibrosis allele, F508del, is such an in-frame deletion of three bases; the protein is made but folds badly.
+:::
+
+---
+
+**Q4.** Luria and Delbrück plated 20 small parallel cultures of *E. coli* on phage T1. Most plates had 0–2 resistant colonies, but one had 107. Why does this result argue against "the phage induces resistance"?
+
+::: {.callout-tip collapse="true" title="Hint"}
+If each cell had the same small chance of becoming resistant only on the plate, how much should the counts vary between cultures?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+If phage induced resistance on the plate, every cell in every culture would have the same small chance of becoming resistant, so the counts per culture would follow a Poisson distribution, with variance about equal to the mean: no culture should have 107 when the others have 0–2. A **jackpot** like 107 is expected if a resistance mutation arose **early** in the growth of that culture, **before** it met phage, so that the mutant cell left a large clone. Very skewed counts (variance much larger than the mean) mean that mutations arise at random during growth, and the phage only selects them. (The numbers in this question are invented.)
+:::
+
+---
+
+**Q5.** In the Ames test, why are the bacteria treated with **rat liver extract** as well as the chemical? Why does the test count **reversions** rather than forward mutations?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does the liver do to foreign chemicals? On which medium can only revertants grow?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Many chemicals are not mutagenic themselves, but liver enzymes convert them into mutagens. The extract imitates this metabolism, so the test also catches these chemicals. Reversions of a *his*^−^ mutation can be **selected**: on a plate without histidine only revertants form colonies, so one revertant among about 10^8^ cells is easy to see. A forward mutation in a random gene would have no such selection and would be hard to find.
+:::
+
+---
+
+**Q6.** A mutation in an enzyme gene is recessive. Explain why, in terms of the amount of enzyme. Give one reason a loss-of-function allele can instead be **dominant**.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How much enzyme does a heterozygote make, and how much does the cell need?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A heterozygote makes about half the normal amount of enzyme, and for most enzymes half is enough to keep the pathway going, so the phenotype is wild type: the allele is **recessive**. A loss-of-function allele is **dominant** if half the product is not enough (**haploinsufficiency**), or if the faulty product interferes with the normal one, for example as a defective subunit of a complex (**dominant negative**).
+:::
+
+---
+
+**Q7.** Why can only **recessive** mutations be used in a complementation test?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does the F~1~ look like if one of the two mutations is dominant?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The test reads the F~1~ phenotype: wild type means each parent supplied what the other lacked. If one mutation is dominant, the F~1~ is mutant **whatever** the other mutation is, because one copy of the dominant allele is enough to give the mutant phenotype. So the F~1~ is mutant even when the two mutations are in different genes, and the test cannot tell them apart.
+:::
+
+---
+
+**Q8.** Four recessive mutants with yellow leaves give these F~1~ (+ = green, − = yellow): 1×2 −, 1×3 +, 1×4 +, 2×3 +, 2×4 +, 3×4 −. How many genes? Which mutants are in each?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Group together mutants that fail to complement (−).
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+1 and 2 fail to complement: one gene. 3 and 4 fail to complement: a second gene. Every cross between the pairs is +. So **two complementation groups**, {1, 2} and {3, 4}: at least **two genes** are needed for green leaves.
+:::
+
+---
+
+**Q9.** In Q8, a fifth mutant fails to complement mutants 1 **and** 3 (and, as it turns out, 2 and 4). Suggest an explanation.
+
+::: {.callout-tip collapse="true" title="Hint"}
+A simple point mutation hits one gene. What kind of mutation could knock out two genes at once?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Mutant 5 cannot be a simple recessive mutation in one gene, because then it would fail to complement only one group. Likely explanations: a **deletion** that removes both genes (if they lie close together), or a **dominant** mutation (which gives a mutant F~1~ with anything). A test cross of mutant 5 with wild type distinguishes these: a dominant mutation gives a mutant F~1~ even with wild type, a recessive deletion does not. Deletions and other rearrangements are in Part 5.
+:::
+
+---
+
+**Q10.** Three *Neurospora* mutants need arginine. Mutant X grows on citrulline or arginine; mutant Y grows only on arginine; mutant Z grows on ornithine, citrulline or arginine. In which order are their blocks in the pathway precursor → ornithine → citrulline → arginine?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A mutant grows on every compound made **after** its block.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Z** is blocked earliest (before ornithine), since ornithine rescues it. **X** is blocked between ornithine and citrulline (citrulline rescues it, ornithine does not). **Y** is blocked at the last step, citrulline → arginine. The order of blocks is **Z, X, Y**. Each blocked step is one enzyme and, if the three are in different complementation groups, one gene: Beadle and Tatum's one gene–one enzyme.
+:::

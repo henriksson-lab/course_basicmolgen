@@ -1,0 +1,143 @@
+---
+title: "Quiz: Eukaryotic regulation & epigenetics"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on enhancers, transcription factors, chromatin, imprinting and X inactivation. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** A point mutation in an enhancer of gene *G* is heterozygous. Expression of *G* drops in the liver but not in the kidney. Does the mutation act in cis or in trans? How could you show it with an allele-specific measurement?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of *lacO*^c^. Which copy of *G* does the enhancer control?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**In cis.** An enhancer is a DNA site; it controls only the copy of *G* on the same chromosome. If the two alleles of *G* differ at a neutral SNP in the transcript, you can measure each allele's mRNA in liver (allele-specific expression): the allele on the mutant chromosome will be low and the other normal. A trans-acting mutation (in a transcription factor) would lower both alleles equally. Kidney is unaffected because a different enhancer drives *G* there.
+:::
+
+---
+
+**Q2.** GATA1 binds the motif (A/T)GATA(A/G). How often would you expect this 6-bp motif by chance on one strand of random DNA with equal base frequencies? What does that tell you about predicting binding sites from sequence alone?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Two positions allow 2 of 4 bases; four positions allow 1 of 4.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(match at one position) = ½ × (¼)^4^ × ½ = 1/1024, so about **once per kb** on each strand: millions of matches in a 3-Gb genome. Only a small fraction are bound in any cell. Binding depends on chromatin accessibility, neighbouring factors and spacing, not on the motif alone.
+:::
+
+---
+
+**Q3.** Why is lactase persistence (an enhancer variant) inherited as a **dominant** trait?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many active *LCT* alleles does a heterozygote have in adult gut?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The variant keeps the enhancer active in adults, so the *LCT* allele **on the same chromosome** is still expressed after weaning. A heterozygote has one active allele, which makes enough lactase to digest milk. One copy is enough, so the trait is dominant (a gain of expression in cis).
+:::
+
+---
+
+**Q4.** Which marks go with active chromatin and which with silent chromatin: H3K27me3, histone acetylation, H3K4me3, methylated CpG islands at the promoter, H3K9me3?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Two of them are "on", three are "off".
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Active:** histone acetylation and H3K4me3 (at active promoters). **Silent:** H3K9me3, H3K27me3 and methylated CpG islands.
+:::
+
+---
+
+**Q5.** Explain how a DNA methylation pattern can be copied when a cell divides.
+
+::: {.callout-tip collapse="true" title="Hint"}
+CpG reads the same on both strands. What does each daughter double helix look like right after replication?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+CpG is palindromic, so a methylated site has a methyl-C on both strands. After semiconservative replication each daughter helix is **hemi-methylated**: the old strand is methylated, the new strand not. The maintenance methyltransferase **DNMT1** recognises hemi-methylated CpG and methylates the new strand, restoring the full pattern in both daughters.
+:::
+
+---
+
+**Q6.** A child has a deletion of 15q11–q13 on the **maternal** chromosome 15. Which syndrome do you expect, and why? What if the same deletion were on the paternal chromosome?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which genes in the region are expressed only from the mother's copy?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Angelman syndrome.** *UBE3A* is expressed only from the maternal allele in neurons (the paternal copy is silenced). Losing the maternal copy leaves no active *UBE3A* in the brain. The same deletion on the **paternal** 15 removes the paternally expressed genes (the *SNRPN* cluster) and gives **Prader–Willi syndrome**.
+:::
+
+---
+
+**Q7.** How many Barr bodies are in the cells of: a 46,XX woman; a 46,XY man; a 47,XXY man; a 45,X woman; a 47,XXX woman?
+
+::: {.callout-tip collapse="true" title="Hint"}
+All X chromosomes but one are inactivated.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+X − 1 in each case: 46,XX **1**; 46,XY **0**; 47,XXY **1**; 45,X **0**; 47,XXX **2**.
+:::
+
+---
+
+**Q8.** Why are calico (orange-and-black) cats almost always female? What karyotype would you predict for a rare male calico?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where is the orange gene?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The orange locus is on the X. An orange-and-black coat needs **both** alleles, *X*^O^ and *X*^o^, active in different patches, so the cat needs two X chromosomes and X inactivation. A normal male (XY) has one X and is either orange or black. A male calico is most likely **XXY** (or a chimera of two embryos).
+:::
+
+---
+
+**Q9.** A woman is heterozygous for a recessive X-linked mutation that causes haemophilia A in males. She has a clear bleeding tendency. Give two possible explanations.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which X is active in the cells that make clotting factor VIII?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Skewed X inactivation**: by chance (few progenitor cells at the time of inactivation) or by selection, most of her factor-VIII-producing cells use the mutant X. She is a **manifesting carrier**. Other possibilities: she has only one X (45,X, Turner), or she carries a second mutation on her other X. (In a pedigree, this looks like reduced penetrance of an X-linked recessive allele in females.)
+:::
+
+---
+
+**Q10.** In the demo, why does skewing become **less** common as the number of progenitor cells *N* grows?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each progenitor is a coin toss. What happens to the proportion of heads as you toss more coins?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The fraction of progenitors that chose the maternal X is a binomial proportion with standard deviation $\sqrt{0.25/N}$. With *N* = 4 it is 0.25, so 80 : 20 or worse is common (12.5 % of females have all four progenitors choosing the same X); with *N* = 64 it is 0.0625, and 80 : 20 is many standard deviations away. It is the same law of large numbers as Mendel's large counts in Part 1.
+:::
+
+---
+
+**Q11.** Mutations in the *Drosophila* gene *msl-2* kill males but not females. Explain.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How do fruit flies equalise X expression between the sexes?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*Drosophila* males **double** the transcription of their single X using the MSL complex. Without *msl-2*, the complex does not form, the male X is expressed at half the needed level, and males die. Females (XX) do not use the MSL complex (its assembly is blocked in females), so they are unaffected.
+:::

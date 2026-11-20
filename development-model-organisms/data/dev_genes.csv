@@ -1,0 +1,15 @@
+# Human genes for the ortholog exercise. HGNC IDs from rest.genenames.org (2026-11-20); 'role' written by the course team.
+human_gene,hgnc_id,role
+PAX6,HGNC:8620,eye development (fly eyeless/twin of eyeless)
+SHH,HGNC:10848,signal: limb and neural patterning (fly hedgehog)
+WNT1,HGNC:12774,signal: segment polarity (fly wingless)
+NOTCH1,HGNC:7881,cell-cell signalling receptor (fly Notch)
+CTNNB1,HGNC:2514,Wnt pathway effector (fly armadillo)
+BMP4,HGNC:1071,dorsal-ventral signal (fly decapentaplegic)
+HOXB1,HGNC:5111,anterior Hox gene (fly labial)
+HOXD13,HGNC:5136,posterior Hox gene (fly Abdominal-B)
+OTX2,HGNC:8522,head development (fly orthodenticle)
+MYOD1,HGNC:7611,muscle determination
+TP53,HGNC:11998,"tumour suppressor, DNA damage response"
+CDK1,HGNC:1722,control: cell-cycle kinase
+ACTB,HGNC:132,"control: cytoskeleton, actin"

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: X inactivation (Lyon hypothesis). Left: early female embryo, both X active.
+       Middle: around implantation each cell expresses XIST from one X chosen at random; XIST RNA coats
+       that X, which becomes the condensed Barr body. Right: each cell's daughters keep the same choice,
+       so the adult is a mosaic of clonal patches. A calico cat (X^O / X^o at the orange locus) shows it. -->
+  <defs>
+    <marker id="arr" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- stage 1 -->
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">1. Early embryo</text>
+  <circle cx="110" cy="130" r="70" fill="#f6f7f9" stroke="#1b2a3a" stroke-width="2"/>
+  <g stroke-width="7" stroke-linecap="round">
+    <line x1="80" y1="105" x2="80" y2="155" stroke="#e07b39"/>
+    <line x1="140" y1="105" x2="140" y2="155" stroke="#262626"/>
+  </g>
+  <text x="80" y="176" font-size="14" fill="#1b2a3a" text-anchor="middle">X<tspan dy="5" font-size="10">m</tspan></text>
+  <text x="140" y="176" font-size="14" fill="#1b2a3a" text-anchor="middle">X<tspan dy="5" font-size="10">p</tspan></text>
+  <text x="110" y="226" font-size="14" fill="#1b2a3a" text-anchor="middle">both X active</text>
+
+  <line x1="196" y1="130" x2="246" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 2: a few cells, random choice -->
+  <text x="262" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">2. Random choice in each cell</text>
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <circle cx="300" cy="90" r="34" fill="#fde9db"/>
+    <circle cx="380" cy="90" r="34" fill="#e3e3e3"/>
+    <circle cx="300" cy="170" r="34" fill="#e3e3e3"/>
+    <circle cx="380" cy="170" r="34" fill="#fde9db"/>
+  </g>
+  <!-- in each cell: active X as a line, inactive X as a coated blob (Barr body) -->
+  <g stroke-linecap="round" stroke-width="5">
+    <line x1="290" y1="74" x2="290" y2="104" stroke="#e07b39"/>
+    <line x1="390" y1="74" x2="390" y2="104" stroke="#262626"/>
+    <line x1="310" y1="154" x2="310" y2="184" stroke="#262626"/>
+    <line x1="370" y1="154" x2="370" y2="184" stroke="#e07b39"/>
+  </g>
+  <g fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1">
+    <ellipse cx="314" cy="92" rx="9" ry="12"/>
+    <ellipse cx="368" cy="92" rx="9" ry="12"/>
+    <ellipse cx="288" cy="172" rx="9" ry="12"/>
+    <ellipse cx="392" cy="172" rx="9" ry="12"/>
+  </g>
+  <text x="262" y="232" font-size="14" fill="#1b2a3a"><tspan font-style="italic">XIST</tspan> RNA coats one X, which</text>
+  <text x="262" y="250" font-size="14" fill="#1b2a3a">condenses into a <tspan fill="#7b3fa0" font-weight="bold">Barr body</tspan></text>
+
+  <line x1="434" y1="130" x2="484" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 3: patches -->
+  <text x="500" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">3. Clones keep the choice: a mosaic</text>
+  <g stroke="none">
+    <rect x="500" y="50" width="380" height="170" fill="#262626"/>
+    <path d="M500,50 L640,50 Q660,110 600,140 Q560,170 500,160 Z" fill="#e07b39"/>
+    <path d="M700,50 L830,50 Q800,90 760,100 Q720,110 700,50 Z" fill="#e07b39"/>
+    <path d="M640,220 Q650,170 720,160 Q800,150 830,220 Z" fill="#e07b39"/>
+    <path d="M840,100 Q880,110 880,150 L880,180 Q850,170 840,100 Z" fill="#e07b39"/>
+    <ellipse cx="560" cy="200" rx="40" ry="16" fill="#ffffff"/>
+    <ellipse cx="770" cy="120" rx="28" ry="12" fill="#ffffff"/>
+  </g>
+  <rect x="500" y="50" width="380" height="170" fill="none" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="500" y="244" font-size="14" fill="#1b2a3a">Calico cat, <tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">O</tspan><tspan dy="6"> / </tspan><tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">o</tspan><tspan dy="6">: orange where </tspan><tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">O</tspan><tspan dy="6"> is active,</tspan></text>
+  <text x="500" y="262" font-size="14" fill="#1b2a3a">black where <tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">o</tspan><tspan dy="6"> is active (white: a separate spotting gene)</tspan></text>
+
+  <!-- legend -->
+  <line x1="20" y1="284" x2="880" y2="284" stroke="#d5dae0" stroke-width="1.5"/>
+  <line x1="30" y1="310" x2="60" y2="310" stroke="#e07b39" stroke-width="6" stroke-linecap="round"/>
+  <text x="70" y="315" font-size="14" fill="#1b2a3a">maternal X (here carrying <tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">O</tspan><tspan dy="6">)</tspan></text>
+  <line x1="330" y1="310" x2="360" y2="310" stroke="#262626" stroke-width="6" stroke-linecap="round"/>
+  <text x="370" y="315" font-size="14" fill="#1b2a3a">paternal X (<tspan font-style="italic">X</tspan><tspan dy="-6" font-size="10">o</tspan><tspan dy="6">)</tspan></text>
+  <ellipse cx="560" cy="310" rx="9" ry="12" fill="#7b3fa0" stroke="#1b2a3a"/>
+  <text x="576" y="315" font-size="14" fill="#1b2a3a">inactive X (Barr body)</text>
+</svg>

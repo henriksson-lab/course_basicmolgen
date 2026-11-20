@@ -21,11 +21,17 @@ Work through the sidebar from top to bottom. Each unit has:
   - **By hand:** genetics problems on paper.
   - **Explore:** an interactive demo (in orange).
   - **Find it:** look up real genes, diseases and variants in public databases.
-  - **In R:** a small analysis or simulation.
+- an **exercise in R**: a small analysis or simulation that builds on the exercise.
 
 ## Topics
 
 - **Part 1: Mendelian genetics.** Genes and alleles, Mendel's laws, probability and the χ² test, extensions to Mendel (dominance, lethality, epistasis, penetrance), and pedigree analysis.
-- *More parts follow the course book: chromosomes and mapping, DNA and mutation, genome analysis, chromosomes in detail, gene regulation and development, and population and complex-trait genetics.*
+- **Part 2: Chromosomes and mapping.** Meiosis, sex linkage and nondisjunction; linkage and recombination; three-point crosses; human linkage and LOD scores.
+- **Part 3: DNA, mutation and gene function.** DNA and replication (recap), mutation and complementation, and gene expression (recap).
+- **Part 4: Genome analysis.** Restriction enzymes, PCR and sequencing; genome annotation and BLAST; genomic variation across populations.
+- **Part 5: Chromosomes in detail.** Chromatin, centromeres and telomeres; rearrangements and aneuploidy; bacterial genetics (recap); mitochondrial and chloroplast inheritance.
+- **Part 6: Gene regulation and development.** The lac operon as genetic analysis; eukaryotic regulation, epigenetics and X inactivation; RNA-mediated regulation; development and model organisms.
+- **Part 7: Cancer, populations and complex traits.** Cancer genetics; Hardy–Weinberg; drift and selection; heritability and GWAS.
+- **Ethics.** Genetic testing, privacy, germline editing, and ethical review of research.
 
 **See Canvas for the most up-to-date study instructions.**

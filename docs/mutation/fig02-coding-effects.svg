@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Helvetica, Arial, sans-serif" width="900" height="330">
+  <!-- Effects of point mutations on a coding sequence. HBB codons 5-10 (HGVS numbering, start Met = 1),
+       NM_000518.5. Only HbS (c.20A>T) is the famous real allele; the other rows are worked examples. -->
+  <g font-size="12" fill="#8a97a4" text-anchor="middle">
+    <text x="230" y="22">codon 5</text><text x="300" y="22">6</text><text x="370" y="22">7</text>
+    <text x="440" y="22">8</text><text x="510" y="22">9</text><text x="580" y="22">10</text>
+  </g>
+
+  <!-- row template: label at x=20, codon boxes at x=200,270,...; amino acid under each -->
+  <!-- wild type -->
+  <text x="20" y="52" font-size="14" font-weight="bold" fill="#1b2a3a">wild type</text>
+  <g font-size="15" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="202" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="230" y="52">ACT</text>
+    <rect x="272" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="300" y="52">CCT</text>
+    <rect x="342" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="370" y="52">GAG</text>
+    <rect x="412" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="440" y="52">GAG</text>
+    <rect x="482" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="510" y="52">AAG</text>
+    <rect x="552" y="34" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="580" y="52">TCT</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="230" y="76">Thr</text><text x="300" y="76">Pro</text><text x="370" y="76">Glu</text><text x="440" y="76">Glu</text><text x="510" y="76">Lys</text><text x="580" y="76">Ser</text>
+  </g>
+
+  <!-- silent -->
+  <text x="20" y="114" font-size="14" font-weight="bold" fill="#2a6f97">silent</text>
+  <text x="20" y="132" font-size="12" fill="#5a6b7a">c.21G&gt;A</text>
+  <g font-size="15" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="202" y="96" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="230" y="114">ACT</text>
+    <rect x="272" y="96" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="300" y="114">CCT</text>
+    <rect x="342" y="96" width="56" height="26" rx="3" fill="#e3eef6" stroke="#2a6f97"/><text x="370" y="114">GAA</text><rect x="374" y="117" width="10" height="3" fill="#2a6f97" stroke="none"/>
+    <rect x="412" y="96" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="440" y="114">GAG</text>
+    <rect x="482" y="96" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="510" y="114">AAG</text>
+    <rect x="552" y="96" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="580" y="114">TCT</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="230" y="138">Thr</text><text x="300" y="138">Pro</text><text x="370" y="138" fill="#2a6f97" font-weight="bold">Glu</text><text x="440" y="138">Glu</text><text x="510" y="138">Lys</text><text x="580" y="138">Ser</text>
+  </g>
+  <text x="630" y="114" font-size="13" fill="#1b2a3a">same amino acid</text>
+
+  <!-- missense -->
+  <text x="20" y="176" font-size="14" font-weight="bold" fill="#6a994e">missense (HbS)</text>
+  <text x="20" y="194" font-size="12" fill="#5a6b7a">c.20A&gt;T, p.Glu7Val</text>
+  <g font-size="15" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="202" y="158" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="230" y="176">ACT</text>
+    <rect x="272" y="158" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="300" y="176">CCT</text>
+    <rect x="342" y="158" width="56" height="26" rx="3" fill="#e5efdf" stroke="#6a994e"/><text x="370" y="176">GTG</text><rect x="365" y="179" width="10" height="3" fill="#6a994e" stroke="none"/>
+    <rect x="412" y="158" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="440" y="176">GAG</text>
+    <rect x="482" y="158" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="510" y="176">AAG</text>
+    <rect x="552" y="158" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="580" y="176">TCT</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="230" y="200">Thr</text><text x="300" y="200">Pro</text><text x="370" y="200" fill="#6a994e" font-weight="bold">Val</text><text x="440" y="200">Glu</text><text x="510" y="200">Lys</text><text x="580" y="200">Ser</text>
+  </g>
+  <text x="630" y="176" font-size="13" fill="#1b2a3a">a different amino acid</text>
+
+  <!-- nonsense -->
+  <text x="20" y="238" font-size="14" font-weight="bold" fill="#bc4749">nonsense</text>
+  <text x="20" y="256" font-size="12" fill="#5a6b7a">c.19G&gt;T, p.Glu7Ter</text>
+  <g font-size="15" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="202" y="220" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="230" y="238">ACT</text>
+    <rect x="272" y="220" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="300" y="238">CCT</text>
+    <rect x="342" y="220" width="56" height="26" rx="3" fill="#f6e3e3" stroke="#bc4749"/><text x="370" y="238">TAG</text><rect x="356" y="241" width="10" height="3" fill="#bc4749" stroke="none"/>
+  </g>
+  <g font-size="15" font-family="Courier New, monospace" fill="#b7c0c9" text-anchor="middle">
+    <text x="440" y="238">GAG</text><text x="510" y="238">AAG</text><text x="580" y="238">TCT</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="230" y="262">Thr</text><text x="300" y="262">Pro</text><text x="370" y="262" fill="#bc4749" font-weight="bold">Stop</text>
+  </g>
+  <text x="630" y="238" font-size="13" fill="#1b2a3a">protein cut short (6 amino acids)</text>
+
+  <!-- frameshift -->
+  <text x="20" y="300" font-size="14" font-weight="bold" fill="#9467bd">frameshift</text>
+  <text x="20" y="318" font-size="12" fill="#5a6b7a">c.20del (one A lost)</text>
+  <g font-size="15" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="202" y="282" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="230" y="300">ACT</text>
+    <rect x="272" y="282" width="56" height="26" rx="3" fill="#f4f7fa" stroke="#c9d3dd"/><text x="300" y="300">CCT</text>
+    <rect x="342" y="282" width="56" height="26" rx="3" fill="#ece5f3" stroke="#9467bd"/><text x="370" y="300">GGG</text>
+    <rect x="412" y="282" width="56" height="26" rx="3" fill="#ece5f3" stroke="#9467bd"/><text x="440" y="300">AGA</text>
+    <rect x="482" y="282" width="56" height="26" rx="3" fill="#ece5f3" stroke="#9467bd"/><text x="510" y="300">AGT</text>
+    <rect x="552" y="282" width="56" height="26" rx="3" fill="#ece5f3" stroke="#9467bd"/><text x="580" y="300">CTG</text>
+  </g>
+  <g font-size="13" fill="#9467bd" text-anchor="middle" font-weight="bold">
+    <text x="230" y="324" fill="#1b2a3a" font-weight="normal">Thr</text><text x="300" y="324" fill="#1b2a3a" font-weight="normal">Pro</text><text x="370" y="324">Gly</text><text x="440" y="324">Arg</text><text x="510" y="324">Ser</text><text x="580" y="324">Leu</text>
+  </g>
+  <text x="630" y="300" font-size="13" fill="#1b2a3a">every codon after it is read wrongly</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: heterozygote advantage at HBB in a malaria region. Illustrative relative fitnesses wAA = 1, wAS = 1.16, wSS = 0.2 (same as the drift demo preset). -->
+  <text x="210" y="34" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Relative fitness (illustrative)</text>
+  <line x1="90" y1="320.0" x2="350" y2="320.0" stroke="#e8e8e8"/>
+  <text x="82" y="325.0" font-size="14" fill="#1b2a3a" text-anchor="end">0</text>
+  <line x1="90" y1="215.8" x2="350" y2="215.8" stroke="#e8e8e8"/>
+  <text x="82" y="220.8" font-size="14" fill="#1b2a3a" text-anchor="end">0.5</text>
+  <line x1="90" y1="111.7" x2="350" y2="111.7" stroke="#e8e8e8"/>
+  <text x="82" y="116.7" font-size="14" fill="#1b2a3a" text-anchor="end">1</text>
+  <line x1="90" y1="320" x2="350" y2="320" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="90" y1="320" x2="90" y2="70" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="110" y="111.7" width="60" height="208.3" fill="#2a6f97"/>
+  <text x="140" y="103.7" font-size="15" font-weight="bold" fill="#2a6f97" text-anchor="middle">1</text>
+  <text x="140" y="342" font-size="16" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">AA</text>
+  <text x="140" y="362" font-size="13" fill="#555" text-anchor="middle">malaria</text>
+  <rect x="192" y="78.3" width="60" height="241.7" fill="#6a994e"/>
+  <text x="222" y="70.3" font-size="15" font-weight="bold" fill="#6a994e" text-anchor="middle">1.16</text>
+  <text x="222" y="342" font-size="16" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">AS</text>
+  <text x="222" y="362" font-size="13" fill="#555" text-anchor="middle">protected,</text>
+  <text x="222" y="378" font-size="13" fill="#555" text-anchor="middle">no disease</text>
+  <rect x="274" y="278.3" width="60" height="41.7" fill="#bc4749"/>
+  <text x="304" y="270.3" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">0.2</text>
+  <text x="304" y="342" font-size="16" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">SS</text>
+  <text x="304" y="362" font-size="13" fill="#555" text-anchor="middle">sickle-cell</text>
+  <text x="304" y="378" font-size="13" fill="#555" text-anchor="middle">disease</text>
+  <text x="665.0" y="34" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Change in HbS frequency per generation</text>
+  <line x1="470" y1="195.0" x2="860" y2="195.0" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="470" y1="320" x2="470" y2="70" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="470.0" y1="320" x2="470.0" y2="325" stroke="#1b2a3a"/>
+  <text x="470.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0</text>
+  <line x1="548.0" y1="320" x2="548.0" y2="325" stroke="#1b2a3a"/>
+  <text x="548.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0.1</text>
+  <line x1="626.0" y1="320" x2="626.0" y2="325" stroke="#1b2a3a"/>
+  <text x="626.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0.2</text>
+  <line x1="704.0" y1="320" x2="704.0" y2="325" stroke="#1b2a3a"/>
+  <text x="704.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0.3</text>
+  <line x1="782.0" y1="320" x2="782.0" y2="325" stroke="#1b2a3a"/>
+  <text x="782.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0.4</text>
+  <line x1="860.0" y1="320" x2="860.0" y2="325" stroke="#1b2a3a"/>
+  <text x="860.0" y="341" font-size="14" fill="#1b2a3a" text-anchor="middle">0.5</text>
+  <line x1="470" y1="320" x2="860" y2="320" stroke="#ccc"/>
+  <text x="665.0" y="364" font-size="15" fill="#1b2a3a" text-anchor="middle">frequency of HbS (q)</text>
+  <text x="462" y="200.0" font-size="14" fill="#1b2a3a" text-anchor="end">0</text>
+  <text x="478" y="84" font-size="14" fill="#6a994e">rises</text>
+  <text x="478" y="312" font-size="14" fill="#bc4749">falls</text>
+  <polyline points="470.0,195.0 471.9,194.6 473.9,194.2 475.9,193.9 477.8,193.5 479.8,193.2 481.7,192.9 483.6,192.6 485.6,192.3 487.6,192.1 489.5,191.8 491.4,191.6 493.4,191.4 495.4,191.1 497.3,191.0 499.2,190.8 501.2,190.6 503.1,190.5 505.1,190.3 507.1,190.2 509.0,190.1 510.9,190.0 512.9,190.0 514.9,189.9 516.8,189.8 518.8,189.8 520.7,189.8 522.6,189.8 524.6,189.8 526.5,189.8 528.5,189.8 530.5,189.9 532.4,189.9 534.4,190.0 536.3,190.1 538.2,190.1 540.2,190.2 542.1,190.4 544.1,190.5 546.0,190.6 548.0,190.8 550.0,190.9 551.9,191.1 553.9,191.3 555.8,191.5 557.8,191.7 559.7,191.9 561.6,192.1 563.6,192.4 565.5,192.6 567.5,192.9 569.5,193.1 571.4,193.4 573.4,193.7 575.3,194.0 577.2,194.3 579.2,194.6 581.1,195.0 583.1,195.3 585.0,195.6 587.0,196.0 589.0,196.4 590.9,196.7 592.9,197.1 594.8,197.5 596.8,197.9 598.7,198.3 600.6,198.8 602.6,199.2 604.5,199.6 606.5,200.1 608.5,200.5 610.4,201.0 612.4,201.5 614.3,202.0 616.2,202.5 618.2,203.0 620.1,203.5 622.1,204.0 624.0,204.5 626.0,205.0 628.0,205.6 629.9,206.1 631.9,206.7 633.8,207.3 635.8,207.8 637.7,208.4 639.6,209.0 641.6,209.6 643.5,210.2 645.5,210.8 647.5,211.4 649.4,212.0 651.4,212.7 653.3,213.3 655.2,214.0 657.2,214.6 659.1,215.3 661.1,215.9 663.0,216.6 665.0,217.3 667.0,218.0 668.9,218.7 670.9,219.4 672.8,220.1 674.8,220.8 676.7,221.5 678.6,222.2 680.6,222.9 682.5,223.7 684.5,224.4 686.5,225.2 688.4,225.9 690.3,226.7 692.3,227.4 694.2,228.2 696.2,229.0 698.1,229.8 700.1,230.5 702.0,231.3 704.0,232.1 706.0,232.9 707.9,233.7 709.9,234.6 711.8,235.4 713.8,236.2 715.7,237.0 717.6,237.9 719.6,238.7 721.5,239.6 723.5,240.4 725.5,241.3 727.4,242.1 729.4,243.0 731.3,243.8 733.2,244.7 735.2,245.6 737.2,246.5 739.1,247.4 741.0,248.3 743.0,249.1 745.0,250.0 746.9,250.9 748.8,251.9 750.8,252.8 752.8,253.7 754.7,254.6 756.6,255.5 758.6,256.4 760.5,257.4 762.5,258.3 764.5,259.2 766.4,260.2 768.4,261.1 770.3,262.1 772.2,263.0 774.2,264.0 776.2,265.0 778.1,265.9 780.0,266.9 782.0,267.8 784.0,268.8 785.9,269.8 787.8,270.8 789.8,271.8 791.8,272.7 793.7,273.7 795.6,274.7 797.6,275.7 799.5,276.7 801.5,277.7 803.5,278.7 805.4,279.7 807.4,280.7 809.3,281.7 811.2,282.7 813.2,283.7 815.1,284.8 817.1,285.8 819.0,286.8 821.0,287.8 823.0,288.9 824.9,289.9 826.9,290.9 828.8,291.9 830.8,293.0 832.7,294.0 834.7,295.0 836.6,296.1 838.5,297.1 840.5,298.2 842.5,299.2 844.4,300.2 846.3,301.3 848.3,302.3 850.2,303.4 852.2,304.4 854.1,305.5 856.1,306.5 858.0,307.6 860.0,308.6" fill="none" stroke="#1b2a3a" stroke-width="3"/>
+  <circle cx="581.4" cy="195.0" r="7" fill="#d08c2f" stroke="#fff" stroke-width="2"/>
+  <text x="593.4" y="161.0" font-size="15" font-weight="bold" fill="#d08c2f">stable equilibrium: q = 0.14</text>
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#d08c2f"/></marker></defs>
+  <line x1="485.6" y1="213.0" x2="569.4" y2="213.0" stroke="#d08c2f" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="821.0" y1="181.0" x2="593.4" y2="181.0" stroke="#d08c2f" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

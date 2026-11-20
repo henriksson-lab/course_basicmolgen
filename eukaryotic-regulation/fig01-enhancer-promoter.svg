@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 0 900 370" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: a eukaryotic gene with its cis-acting DNA elements (enhancer, proximal element, core
+       promoter with TATA box) and the trans-acting proteins that bind them (activators, general
+       transcription factors, Mediator, RNA polymerase II). The DNA loops so that the distant enhancer
+       touches the promoter through Mediator. -->
+  <defs>
+    <marker id="arr" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#d08c2f"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" font-size="14" fill="#5c6b7a">An enhancer can lie thousands to a million bp</text>
+  <text x="20" y="52" font-size="14" fill="#5c6b7a">away, upstream, downstream or in an intron.</text>
+
+  <!-- DNA with loop -->
+  <path d="M20,300 L170,300 C250,300 260,120 340,120 C420,120 430,300 500,300 L885,300" fill="none" stroke="#1b2a3a" stroke-width="4"/>
+
+  <!-- enhancer on the loop top -->
+  <rect x="298" y="108" width="84" height="24" rx="3" fill="#f6e2c2" stroke="#b8901a" stroke-width="2"/>
+  <text x="340" y="98" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">enhancer</text>
+  <ellipse cx="318" cy="150" rx="22" ry="18" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.5"/>
+  <ellipse cx="362" cy="150" rx="22" ry="18" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="340" y="194" font-size="14" fill="#7b3fa0" text-anchor="middle">activators</text>
+
+  <!-- Mediator -->
+  <ellipse cx="495" cy="204" rx="110" ry="34" fill="#9db4c8" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="495" y="209" font-size="15" fill="#1b2a3a" text-anchor="middle">Mediator</text>
+
+  <!-- proximal element with its factor -->
+  <rect x="536" y="288" width="46" height="24" rx="3" fill="#f6e2c2" stroke="#b8901a" stroke-width="2"/>
+  <ellipse cx="559" cy="272" rx="20" ry="15" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="559" y="334" font-size="13" fill="#1b2a3a" text-anchor="middle">proximal</text>
+  <text x="559" y="350" font-size="13" fill="#1b2a3a" text-anchor="middle">element</text>
+  <!-- core promoter, GTFs, Pol II -->
+  <rect x="618" y="288" width="46" height="24" rx="3" fill="#fbf0c9" stroke="#b8901a" stroke-width="2"/>
+  <text x="641" y="305" font-size="12" font-weight="bold" fill="#1b2a3a" text-anchor="middle">TATA</text>
+  <text x="641" y="334" font-size="13" fill="#1b2a3a" text-anchor="middle">core</text>
+  <text x="641" y="350" font-size="13" fill="#1b2a3a" text-anchor="middle">promoter</text>
+  <rect x="606" y="242" width="66" height="40" rx="10" fill="#c9d6e3" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="639" y="267" font-size="14" fill="#1b2a3a" text-anchor="middle">GTFs</text>
+  <ellipse cx="722" cy="270" rx="46" ry="26" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="722" y="268" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">RNA</text>
+  <text x="722" y="284" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle">pol II</text>
+
+  <!-- gene -->
+  <rect x="752" y="290" width="44" height="20" fill="#3f8fbf" stroke="#1b2a3a" stroke-width="1.2"/>
+  <rect x="814" y="290" width="30" height="20" fill="#3f8fbf" stroke="#1b2a3a" stroke-width="1.2"/>
+  <rect x="858" y="290" width="26" height="20" fill="#3f8fbf" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="818" y="334" font-size="13" fill="#1b2a3a" text-anchor="middle">exons</text>
+  <path d="M752,240 l0,-16 l50,0" fill="none" stroke="#d08c2f" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="808" y="229" font-size="14" fill="#d08c2f">start</text>
+
+  <!-- legend: cis vs trans -->
+  <rect x="560" y="24" width="320" height="110" rx="8" fill="#f6f7f9" stroke="#d5dae0"/>
+  <rect x="576" y="42" width="28" height="16" rx="3" fill="#f6e2c2" stroke="#b8901a" stroke-width="2"/>
+  <text x="614" y="55" font-size="14" fill="#1b2a3a">DNA elements: act in <tspan font-weight="bold">cis</tspan></text>
+  <text x="614" y="73" font-size="13" fill="#5c6b7a">(like <tspan font-style="italic">lacO</tspan>)</text>
+  <ellipse cx="590" cy="100" rx="14" ry="11" fill="#7b3fa0" stroke="#1b2a3a"/>
+  <text x="614" y="104" font-size="14" fill="#1b2a3a">proteins: act in <tspan font-weight="bold">trans</tspan></text>
+  <text x="614" y="122" font-size="13" fill="#5c6b7a">(like LacI; reach any copy)</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="Helvetica, Arial, sans-serif">
+  <!-- Generalized transduction with phage P1, in four steps. Blue = donor DNA (a+ b+ c+),
+       red = recipient DNA (a- b- c-). Chromosomes are drawn as straight segments for clarity.
+       a and b are close together, c is far away: one phage head holds a+ b+ but never a+ c+. -->
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#7a8794"/>
+    </marker>
+    <!-- a phage: hexagonal head, tail, two fibres; drawn at the origin, head centre at (0,0) -->
+    <g id="phage">
+      <polygon points="0,-14 12,-7 12,7 0,14 -12,7 -12,-7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+      <rect x="-2.5" y="14" width="5" height="16" fill="#1b2a3a"/>
+      <path d="M0,30 L-8,38 M0,30 L8,38" stroke="#1b2a3a" stroke-width="1.8" fill="none"/>
+    </g>
+  </defs>
+
+  <!-- arrows between steps -->
+  <g stroke="#7a8794" stroke-width="2.5" marker-end="url(#ar)">
+    <line x1="208" y1="135" x2="224" y2="135"/>
+    <line x1="430" y1="135" x2="446" y2="135"/>
+    <line x1="652" y1="135" x2="668" y2="135"/>
+  </g>
+
+  <!-- ========== step 1: P1 infects the donor ========== -->
+  <g>
+    <use href="#phage" x="105" y="34"/>
+    <rect x="10" y="75" width="195" height="120" rx="45" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <line x1="30" y1="150" x2="185" y2="150" stroke="#2a6f97" stroke-width="5" stroke-linecap="round"/>
+    <g stroke="#1b2a3a" stroke-width="2"><line x1="62" y1="142" x2="62" y2="158"/><line x1="88" y1="142" x2="88" y2="158"/><line x1="160" y1="142" x2="160" y2="158"/></g>
+    <g font-size="15" font-style="italic" fill="#2a6f97">
+      <text x="56" y="135">a<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+      <text x="82" y="135">b<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+      <text x="154" y="135">c<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+    </g>
+    <text x="107" y="222" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">1. P1 infects the donor</text>
+    <text x="107" y="241" font-size="13" fill="#5b6b7a" text-anchor="middle">and cuts its DNA into pieces</text>
+  </g>
+
+  <!-- ========== step 2: phage heads are filled; a rare one holds donor DNA ========== -->
+  <g>
+    <rect x="232" y="75" width="195" height="120" rx="45" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <use href="#phage" x="275" y="105"/>
+    <use href="#phage" x="330" y="105"/>
+    <use href="#phage" x="385" y="105"/>
+    <!-- phage DNA inside two heads, donor DNA in the third -->
+    <path d="M269,101 q6,-6 12,0 q-6,6 -12,0" fill="none" stroke="#5b6b7a" stroke-width="2"/>
+    <path d="M324,101 q6,-6 12,0 q-6,6 -12,0" fill="none" stroke="#5b6b7a" stroke-width="2"/>
+    <path d="M378,100 q7,-7 14,0 q-7,7 -14,0" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <!-- leftover donor fragments -->
+    <g stroke="#2a6f97" stroke-width="4" stroke-linecap="round">
+      <line x1="262" y1="168" x2="290" y2="168"/>
+      <line x1="306" y1="176" x2="340" y2="176"/>
+      <line x1="356" y1="166" x2="380" y2="166"/>
+    </g>
+    <text x="329" y="222" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">2. New phage heads fill</text>
+    <text x="329" y="241" font-size="13" fill="#5b6b7a" text-anchor="middle">a rare one packs donor DNA:</text>
+    <text x="329" y="258" font-size="13" fill="#2a6f97" font-weight="bold" text-anchor="middle">a transducing particle</text>
+  </g>
+
+  <!-- ========== step 3: the transducing particle injects donor DNA into a recipient ========== -->
+  <g>
+    <use href="#phage" x="550" y="34"/>
+    <path d="M544,30 q6,-6 12,0 q-6,6 -12,0" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <rect x="454" y="75" width="195" height="120" rx="45" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <!-- donor fragment carrying a+ b+ -->
+    <line x1="486" y1="115" x2="560" y2="115" stroke="#2a6f97" stroke-width="5" stroke-linecap="round"/>
+    <g stroke="#1b2a3a" stroke-width="2"><line x1="506" y1="108" x2="506" y2="122"/><line x1="532" y1="108" x2="532" y2="122"/></g>
+    <g font-size="15" font-style="italic" fill="#2a6f97">
+      <text x="500" y="102">a<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+      <text x="526" y="102">b<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+    </g>
+    <!-- crossovers -->
+    <g stroke="#1b2a3a" stroke-width="1.5" stroke-dasharray="3 3">
+      <line x1="492" y1="119" x2="500" y2="146"/><line x1="500" y1="119" x2="492" y2="146"/>
+      <line x1="544" y1="119" x2="552" y2="146"/><line x1="552" y1="119" x2="544" y2="146"/>
+    </g>
+    <!-- recipient chromosome a- b- c- -->
+    <line x1="474" y1="152" x2="629" y2="152" stroke="#bc4749" stroke-width="5" stroke-linecap="round"/>
+    <g stroke="#1b2a3a" stroke-width="2"><line x1="506" y1="145" x2="506" y2="159"/><line x1="532" y1="145" x2="532" y2="159"/><line x1="604" y1="145" x2="604" y2="159"/></g>
+    <g font-size="15" font-style="italic" fill="#bc4749">
+      <text x="500" y="178">a<tspan font-size="10" font-style="normal" dy="-6">−</tspan></text>
+      <text x="526" y="178">b<tspan font-size="10" font-style="normal" dy="-6">−</tspan></text>
+      <text x="598" y="178">c<tspan font-size="10" font-style="normal" dy="-6">−</tspan></text>
+    </g>
+    <text x="551" y="222" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">3. It infects a recipient</text>
+    <text x="551" y="241" font-size="13" fill="#5b6b7a" text-anchor="middle">donor DNA pairs with the</text>
+    <text x="551" y="258" font-size="13" fill="#5b6b7a" text-anchor="middle">recipient chromosome</text>
+  </g>
+
+  <!-- ========== step 4: double crossover gives a transductant ========== -->
+  <g>
+    <rect x="676" y="75" width="214" height="120" rx="45" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <line x1="696" y1="140" x2="870" y2="140" stroke="#bc4749" stroke-width="5" stroke-linecap="round"/>
+    <line x1="714" y1="140" x2="766" y2="140" stroke="#2a6f97" stroke-width="5"/>
+    <g stroke="#1b2a3a" stroke-width="2"><line x1="728" y1="133" x2="728" y2="147"/><line x1="754" y1="133" x2="754" y2="147"/><line x1="836" y1="133" x2="836" y2="147"/></g>
+    <g font-size="15" font-style="italic">
+      <text x="722" y="125" fill="#2a6f97">a<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+      <text x="748" y="125" fill="#2a6f97">b<tspan font-size="10" font-style="normal" dy="-6">+</tspan></text>
+      <text x="830" y="125" fill="#bc4749">c<tspan font-size="10" font-style="normal" dy="-6">−</tspan></text>
+    </g>
+    <text x="783" y="222" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">4. Transductant</text>
+    <g font-size="13" fill="#5b6b7a">
+      <text x="684" y="241"><tspan font-style="italic">a</tspan> and <tspan font-style="italic">b</tspan> are close: often</text>
+      <text x="684" y="258"><tspan font-weight="bold" fill="#1b2a3a">cotransduced</tspan>. <tspan font-style="italic">c</tspan> is more than</text>
+      <text x="684" y="275">~2 min away: never with <tspan font-style="italic">a</tspan>.</text>
+    </g>
+  </g>
+</svg>

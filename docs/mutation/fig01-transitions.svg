@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 310" font-family="Helvetica, Arial, sans-serif" width="940" height="310">
+  <!-- Transitions (purine <-> purine, pyrimidine <-> pyrimidine) and transversions (purine <-> pyrimidine). -->
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1b2a3a">Base substitutions: transitions and transversions</text>
+
+  <text x="20" y="96" font-size="14" font-weight="bold" fill="#5a6b7a">purines</text>
+  <text x="20" y="256" font-size="14" font-weight="bold" fill="#5a6b7a">pyrimidines</text>
+
+  <g transform="translate(70,0)">
+  <!-- lines first, so the base circles sit on top -->
+  <g stroke-width="5" stroke-linecap="round">
+    <line x1="130" y1="90" x2="370" y2="90" stroke="#2a6f97"/>
+    <line x1="130" y1="250" x2="370" y2="250" stroke="#2a6f97"/>
+    <line x1="100" y1="120" x2="100" y2="220" stroke="#d08c2f"/>
+    <line x1="400" y1="120" x2="400" y2="220" stroke="#d08c2f"/>
+    <line x1="124" y1="110" x2="376" y2="230" stroke="#d08c2f"/>
+    <line x1="376" y1="110" x2="124" y2="230" stroke="#d08c2f"/>
+  </g>
+  <g font-size="30" font-weight="bold" text-anchor="middle" fill="#1b2a3a">
+    <circle cx="100" cy="90" r="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="2.5"/><text x="100" y="101">A</text>
+    <circle cx="400" cy="90" r="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="2.5"/><text x="400" y="101">G</text>
+    <circle cx="100" cy="250" r="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="2.5"/><text x="100" y="261">C</text>
+    <circle cx="400" cy="250" r="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="2.5"/><text x="400" y="261">T</text>
+  </g>
+  <text x="250" y="78" font-size="14" fill="#2a6f97" text-anchor="middle">transition</text>
+  <text x="250" y="278" font-size="14" fill="#2a6f97" text-anchor="middle">transition</text>
+
+  </g>
+  <!-- legend and examples -->
+  <line x1="560" y1="74" x2="600" y2="74" stroke="#2a6f97" stroke-width="5" stroke-linecap="round"/>
+  <text x="612" y="79" font-size="14" fill="#1b2a3a"><tspan font-weight="bold">Transition</tspan>: purine to purine, or</text>
+  <text x="612" y="97" font-size="14" fill="#1b2a3a">pyrimidine to pyrimidine (A–G, C–T)</text>
+  <line x1="560" y1="130" x2="600" y2="130" stroke="#d08c2f" stroke-width="5" stroke-linecap="round"/>
+  <text x="612" y="135" font-size="14" fill="#1b2a3a"><tspan font-weight="bold">Transversion</tspan>: purine to pyrimidine</text>
+  <text x="612" y="153" font-size="14" fill="#1b2a3a">(A–C, A–T, G–C, G–T)</text>
+  <line x1="560" y1="178" x2="920" y2="178" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="560" y="204" font-size="14" fill="#1b2a3a">HbC, <tspan font-family="Courier New, monospace" font-weight="bold">c.19G&gt;A</tspan>: a transition</text>
+  <text x="560" y="228" font-size="14" fill="#1b2a3a">HbS, <tspan font-family="Courier New, monospace" font-weight="bold">c.20A&gt;T</tspan>: a transversion</text>
+  <text x="560" y="262" font-size="13" fill="#5a6b7a">8 of the 12 possible changes are transversions,</text>
+  <text x="560" y="280" font-size="13" fill="#5a6b7a">yet transitions are about twice as common.</text>
+</svg>

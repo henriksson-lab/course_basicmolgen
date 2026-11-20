@@ -1,0 +1,178 @@
+---
+title: "Exercise: Eukaryotic regulation & epigenetics"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- tell a **cis-acting** regulatory mutation from a **trans-acting** one, and predict its dominance;
+- estimate how often a transcription-factor motif occurs by chance;
+- predict inheritance of an **imprinted** gene through a pedigree, including reciprocal crosses;
+- use **X inactivation** to explain mosaicism, Barr-body counts, calico cats and manifesting carriers, and compute the chance of **skewing** from the number of progenitor cells;
+- look up a motif in **JASPAR**, tissue expression in **GTEx**, and a gene in **NCBI Gene**.
+
+## Background
+
+**Cis and trans.** Promoters and enhancers are DNA sites: mutations in them affect only the allele on the same chromosome (**cis**). Transcription factors are proteins: mutations in their genes affect every target, on both chromosomes (**trans**). An enhancer can be far from its gene and is often tissue-specific.
+
+**Motifs.** A transcription factor binds a short, degenerate motif. In random DNA with equal base frequencies, a position that allows *k* of the 4 bases matches with probability *k*/4; multiply over positions. Remember to count both strands.
+
+**Chromatin.** Acetylation and H3K4me3 go with active chromatin; H3K9me3, H3K27me3 and promoter CpG methylation with silent chromatin. DNMT1 copies methylation after replication, so the state is inherited through mitosis.
+
+**Imprinting.** Some genes are expressed only from the maternal or only from the paternal allele. The imprint is set in the parent's germ line and reset every generation. A loss-of-function allele of a **maternally expressed** gene causes disease only when inherited **from the mother**; of a **paternally expressed** gene, only when inherited **from the father**.
+
+**X inactivation.** In female mammals, one X per cell is inactivated (Barr body, coated by *XIST* RNA). The choice is random and made in a pool of *N* progenitor cells; descendants keep it. Barr bodies = number of X − 1. The fraction of progenitors that chose the maternal X is binomial: P(*k* of *N*) = $\binom{N}{k}(1/2)^N$. **Skewed** = at least 80 : 20.
+
+**Dosage compensation.** Mammals inactivate one X in females; *Drosophila* males double their single X; *C. elegans* hermaphrodites halve both X.
+
+## By hand
+
+**B1. (cis or trans?)** In mice, two recessive mutations, *m1* and *m2*, each abolish expression of a liver gene *G* in homozygotes. *m1* maps 40 kb upstream of *G*; *m2* maps to another chromosome. The *G* gene carries a silent SNP, so its two alleles (*G*^a^ and *G*^b^) can be measured separately in RNA.
+
+a) Which mutation is probably in an enhancer and which in a transcription factor?
+b) In a heterozygote *m1 G*^a^ / + *G*^b^ (*m1* on the same chromosome as *G*^a^), which allele(s) of *G* are expressed? And in *m2*/+ ; *G*^a^/*G*^b^?
+c) Why can the *m2* mutation be recessive even though it is trans-acting?
+
+**B2. (motifs by chance)** a) How many matches to the SOX2 core motif ACAAT do you expect in a 10 kb stretch of random DNA, counting both strands? b) How many matches to a 12-bp motif with no degenerate positions do you expect in the 3.1 Gb human genome (both strands)? What does that suggest about why many transcription factors bind as pairs or groups?
+
+**B3. (reciprocal crosses with an imprinted gene)** In mice, *Igf2* (a growth factor) is expressed only from the **paternal** allele. *Igf2*^−^ is a null allele; *Igf2*^−^ mice that lack all *Igf2* expression are small.
+
+a) A heterozygous *Igf2*^+^/*Igf2*^−^ **male** is crossed to a wild-type female. What fraction of the pups is small?
+b) Do the reciprocal cross: heterozygous **female** × wild-type male.
+c) Why would Mendel's reciprocal crosses (Part 1) never have shown this?
+
+**B4. (imprinting in a pedigree)** A disease is caused by loss of function of a gene that is expressed only from the **maternal** allele. Grandfather I-1 carries the mutation. He has a son (II-1) and a daughter (II-2); both inherited the mutation. Neither is affected.
+
+a) Why is neither II-1 nor II-2 affected?
+b) What is the risk that a child of II-1 is affected? A child of II-2?
+c) What is the risk that a grandchild of II-1, through one of II-1's daughters, is affected?
+
+**B5. (calico cats)** Orange (*X*^O^) and black (*X*^o^) are alleles of an X-linked gene in cats.
+
+a) An orange male is crossed to a black female. Give the coat colours of their sons and daughters.
+b) A calico female (*X*^O^*X*^o^) is crossed to a black male. Give the expected offspring by sex and colour.
+c) A male calico kitten is born. Suggest a karyotype, and say how many Barr bodies his cells have.
+
+**B6. (Barr bodies and *XIST*)** A lab measures *XIST* RNA and counts Barr bodies in cultured cells from four people. Predict both for: a) 46,XY; b) 46,XX; c) 47,XXY; d) 45,X. Which of them would you mistake for female on *XIST* alone?
+
+**B7. (skewing by chance)** Assume X inactivation is decided in *N* progenitor cells, each choosing at random.
+
+a) For *N* = 8, what is the probability that a female is skewed at least 80 : 20 (that is, *k* ≤ 1 or *k* ≥ 7 progenitors chose the maternal X)?
+b) For *N* = 16, what is the probability that *k* ≤ 3 or *k* ≥ 13? (The binomial coefficients are 1, 16, 120, 560 for *k* = 0–3; $2^{16}$ = 65536.)
+c) Use your answers to explain why identical-twin sisters can differ for an X-linked trait.
+
+**B8. (manifesting carrier)** A woman's brother has Duchenne muscular dystrophy (X-linked recessive); she has mildly weak muscles and a raised creatine kinase level. Her mother is a known carrier.
+
+a) Before any test, what is the chance that she is a carrier?
+b) Given her symptoms, she is very likely a carrier. Explain how a carrier can show symptoms.
+c) What is the chance that a son of hers is affected, if she is a carrier?
+
+**B9. (dosage compensation)** In *C. elegans*, a loss-of-function mutation in *dpy-27*, a subunit of the dosage compensation complex, kills XX animals but not XO animals. In *Drosophila*, *msl* mutations kill XY animals but not XX. Explain both, and predict what a mammal with no working *XIST* gene would look like in each sex.
+
+## Explore {#explore}
+
+Do the by-hand part first. In the demo, *N* progenitor cells choose the maternal (orange) or paternal (black) X at random and grow into clonal patches. The panel on the right gives the percentage of cells in this female, and a histogram of the fraction over 1000 simulated females with the same *N*, with the share that are skewed at least 80 : 20. "cell mixing" moves cells around after the patches have grown.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="xinactivation" data-n="16"></div>
+<script src="../demos/dist/xinactivation.js"></script>
+```
+
+**E1.** At *N* = 16, press "new embryo" ten times and note the percentage of maternal-X cells each time. What range do you see? Compare the share of skewed embryos in the histogram with your answer to B7 b).
+
+**E2.** Set *N* = 2, 4, 8, 64 and 256 in turn. Write down the percentage of skewed embryos for each. Why does the histogram for *N* = 2 have only three bars?
+
+**E3.** In embryo 1 at *N* = 16, 9 of 16 progenitors (56 %) chose the maternal X, but the tissue is 50 : 50. Why can the share of cells differ from the share of progenitors?
+
+**E4.** Click "mixed tissue (blood)". Compare the mosaic and the numbers with the same *N* and no mixing. Does cell mixing change the chance of skewing? What does it change?
+
+**E5.** A calico cat has large orange and black patches; the blood of a woman shows no patches at all, even though both are mosaics. Use the demo to explain the difference.
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** Most embryos fall between about 30 % and 70 % maternal cells; the histogram is centred on 50 % with a spread of about ±12 % (one standard deviation, $\sqrt{0.25/16}$ = 0.125). The demo gives 2.3 % of 1000 embryos skewed for embryo 1's seed; the exact binomial answer from B7 b) is 2.1 %. The small difference is sampling noise in the 1000 simulated embryos.
+
+**E2.** Skewed share for embryo 1 (press "reset" first; the simulated 1000 embryos change a little with each new embryo): *N* = 2 **51.3 %**, *N* = 4 **13.2 %**, *N* = 8 **6.1 %**, *N* = 64 **0 %**, *N* = 256 **0 %**. The exact binomial values are 50 %, 12.5 %, 7.0 % (B7 a), and essentially 0. With *N* = 2 there are only three possible outcomes for the progenitors: 0, 1 or 2 maternal (0 %, 50 %, 100 %), with probabilities ¼, ½, ¼. Half of all females are completely skewed.
+
+**E3.** Each progenitor grows into a patch, but the patches are not equally big: some progenitors leave more descendants than others (here, by random growth). The tissue fraction therefore varies a bit more than the progenitor fraction. In real tissues, differences in proliferation and selection against cells using a harmful X add to this.
+
+**E4.** The percentages are the same: mixing does not change which X each cell uses, only where the cells are. It changes the **pattern**, from big coherent patches to salt-and-pepper. So the skewing statistics depend on *N* (and selection), while patch size depends on how much cells move after the choice.
+
+**E5.** Skin pigment cells (melanocytes) in a cat descend from a few precursors that migrate and then proliferate in place, so their clones stay together as patches. Blood cells are made in the bone marrow and circulate, so clones are thoroughly mixed: a blood sample is a mixture of both cell types with no visible pattern, but the proportions can still be measured (and can be skewed).
+:::
+
+## Find it
+
+**JASPAR** ([jaspar.elixir.no](https://jaspar.elixir.no/)) is an open database of transcription-factor binding profiles. Each profile has an ID such as MA0143 plus a version (.1, .2, …). The page shows the **sequence logo** (big letters = strongly preferred bases), the **Class** and **Family** of the factor, the **Species** and the **Data type** (how the sites were found).
+
+**F1.** Open the JASPAR profile for human **SOX2**, [MA0143.5](https://jaspar.elixir.no/matrix/MA0143.5/). Read the **Class**, the **Family** and the **Data type**. Read the logo from left to right: which five-letter core do the big letters spell?
+
+**F2.** Open the profile for mouse **Gata1**, [MA0035.3](https://jaspar.elixir.no/matrix/MA0035.3/). What is the class of the factor? Read the core of the logo, then write its **reverse complement**. Where is "GATA"? Why does JASPAR not have to show the motif on the strand you expect?
+
+**F3.** Open the **GTEx Portal** page for [*XIST*](https://gtexportal.org/home/gene/XIST). The violin plot shows expression (TPM) across tissues. In which kinds of tissue is *XIST* highest? If the plot lets you split the samples by sex, do so: what do you see in, for example, skeletal muscle?
+
+**F4.** Open [NCBI Gene for human *XIST*](https://www.ncbi.nlm.nih.gov/gene/7503). In the **Summary**, read the **Gene type** and the cytogenetic **Location**. Does *XIST* encode a protein? On which strand of the X is it (Genomic context: is the range marked "complement")?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For F2, reverse complement means: complement each base (A↔T, C↔G) and read the result backwards. TTATCT becomes AGATAA.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) *m1*, close to *G*, is probably a **cis-acting enhancer** mutation; *m2*, unlinked, is probably in a gene for a **transcription factor** (trans-acting).
+b) *m1 G*^a^ / + *G*^b^: only ***G*^b^** is expressed in liver; the enhancer next to *G*^a^ is broken (cis). *m2*/+ ; *G*^a^/*G*^b^: **both** alleles are expressed, each at the level that one working copy of the factor allows. The factor diffuses to both copies.
+c) A trans-acting mutation is recessive when one working copy of the factor gene makes enough protein to activate *G* (haplosufficiency, Extensions to Mendel). Trans means "acts on both copies of the target", not "dominant".
+
+**B2.** a) P(ACAAT) = (¼)^5^ = 1/1024 per position and strand. 10 000 × 2 / 1024 ≈ **20 matches**. b) (¼)^12^ = 1/16 777 216; 3.1 × 10^9^ × 2 / 1.68 × 10^7^ ≈ **370 matches**, still many, and real factors tolerate mismatches, so many more. Factors that bind as dimers or with partners (e.g. OCT4–SOX2) effectively read a longer, combined motif, which is far rarer and so more specific.
+
+**B3.** a) The father passes *Igf2*^−^ to **½** of the pups, and the paternal allele is the only one expressed: those pups make no IGF2 and are **small**. **½ small.**
+b) The mother passes *Igf2*^−^ to ½ of the pups, but the maternal allele is silent anyway; every pup has an active paternal *Igf2*^+^. **None small.**
+c) Mendel's seven pea traits were not imprinted: it did not matter which parent gave which allele. Imprinting makes reciprocal crosses differ even for an autosomal gene. (In mice this exact experiment was done in 1991 and was one of the first demonstrations of imprinting.)
+
+**B4.** a) Both inherited the mutation **from their father**. The paternal allele of this gene is silent anyway, so their maternal allele is the active one, and it is normal.
+b) II-1 is a man: his children receive the mutation on their paternal allele, which is silent. Risk **0**. II-2 is a woman: she passes the mutation with probability ½, on the maternal (active) allele. Risk **½**.
+c) A daughter of II-1 inherits the mutation with probability ½ (unaffected herself). Her child gets it from her (maternal) with probability ½. Risk = ½ × ½ = **¼**.
+
+**B5.** a) *X*^O^Y × *X*^o^*X*^o^: sons get the mother's X: all **black** (*X*^o^Y). Daughters get *X*^O^ from the father and *X*^o^ from the mother: all **calico** (*X*^O^*X*^o^).
+b) *X*^O^*X*^o^ × *X*^o^Y: sons ½ **orange**, ½ **black**; daughters ½ **calico** (*X*^O^*X*^o^), ½ **black** (*X*^o^*X*^o^).
+c) **XXY** (e.g. *X*^O^*X*^o^Y), with **one** Barr body. (A chimera of two fused embryos is the other explanation.)
+
+**B6.** a) 46,XY: no *XIST*, 0 Barr bodies. b) 46,XX: *XIST* expressed, 1. c) 47,XXY: *XIST* expressed, 1. d) 45,X: no *XIST*, 0. The **XXY** man would be mistaken for female on *XIST* alone; the 45,X woman would be mistaken for male. A Y-linked gene such as *RPS4Y1* resolves both.
+
+**B7.** a) P(*k* = 0) + P(*k* = 1) + P(*k* = 7) + P(*k* = 8) = (1 + 8 + 8 + 1)/256 = 18/256 = **0.070**, about 7 %.
+b) 2 × (1 + 16 + 120 + 560)/65536 = 1394/65536 = **0.021**, about 2 %.
+c) X inactivation happens after the twin embryos have split (or in separate cell pools), so each twin's choice is an independent random draw. With a small *N*, one twin can be skewed towards the mutant X and the other not, and they can differ in phenotype although their genomes are identical.
+
+**B8.** a) Her mother is *X*^D^*X*^d^; she has a ½ chance of being a carrier (*X*^D^*X*^d^).
+b) **Skewed X inactivation** in muscle: if most of her muscle precursor cells chose the X with the normal allele as the *inactive* one, most fibres lack dystrophin. She is a **manifesting carrier**.
+c) **½**, as for any carrier mother: each son gets one of her two X chromosomes.
+
+**B9.** *C. elegans* hermaphrodites (XX) halve the expression of both X; without *dpy-27* both X are fully active, the hermaphrodite gets twice the right dose, and dies. XO males do not use the complex. *Drosophila* males (XY) double their single X with the MSL complex; without it, the male X is at half dose and males die. Females do not use MSL. A mammal with no working *XIST*: males (XY) are normal, because they never inactivate an X; females fail to inactivate either X and would have a double dose of X-linked genes. (In mice, embryos that cannot inactivate an X die early.)
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** SOX2, MA0143.5 (*Homo sapiens*): Class **High-mobility group (HMG) domain factors**; Family **SOX-related factors**; Data type **ChIP-seq**. The logo spells **ACAAT**, then a G (consensus ACAATGG). Click path: [jaspar.elixir.no](https://jaspar.elixir.no/) → search "SOX2" → MA0143 → latest version → the logo and the metadata table next to it.
+
+**F2.** Gata1, MA0035.3 (*Mus musculus*, ChIP-seq): Class **Other C4 zinc finger-type factors**, Family **C4-GATA-related**. The core of the logo reads **TTATCT** (consensus …CTTATCTG…). Its reverse complement is **AGATAA**, which contains **GATA**. A binding site is double-stranded, so a motif is equally valid on either strand; JASPAR shows the orientation in which the matrix was built. (The newest version, MA0035.5, from human GATA1, is a shorter core of the same site.)
+
+**F3.** *XIST* is highest in **female reproductive tissues** (ovary, uterus, fallopian tube, cervix, vagina), with median TPM roughly 50–100 in GTEx v10. In most other tissues the pooled median is close to 0, because most GTEx samples come from men, so the median sample is male. Split by sex, *XIST* in skeletal muscle is clearly expressed in women (median ≈ 18 TPM in GTEx v10) and essentially absent in men (≈ 0.02 TPM). You compute exactly these numbers in the R exercise.
+
+**F4.** *XIST*: Gene type **ncRNA** (it does not encode a protein; the RNA itself is the product), location **Xq13.2**. In Genomic context the range on NC_000023.11 is marked **complement**: *XIST* is on the minus strand. Click path: [ncbi.nlm.nih.gov/gene/7503](https://www.ncbi.nlm.nih.gov/gene/7503) → Summary → Gene type, Location; Genomic context → Location.
+:::
+
+## Where this leads
+
+*XIST* is a long non-coding RNA that silences a whole chromosome. In **RNA-mediated regulation** we meet much smaller RNAs, microRNAs, that turn down individual mRNAs, and learn how they were found by a genetic screen in a worm.
+
+**Next:** [Exercise in R](exercise-r.qmd): reshape a GTEx table with `pivot_longer()`, summarise it with `group_by()` and `summarise()`, and see how a pooled median hides the female *XIST* signal.

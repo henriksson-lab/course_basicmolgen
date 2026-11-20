@@ -1,0 +1,297 @@
+---
+title: "Linkage & recombination"
+subtitle: "Part 2: Chromosomes and mapping. When independent assortment fails, and how that failure maps genes"
+author: "Basic and molecular genetics (5MO104)"
+format:
+  revealjs:
+    theme: [simple, ../theme.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    transition: none
+    history: false
+    highlight-style: github
+    code-overflow: wrap
+    code-line-numbers: false
+    incremental: false
+    chalkboard: false
+    menu: true
+    html-math-method: katex
+---
+
+## About this lecture
+
+Mendel's second law says that alleles of different genes go into gametes independently. That is only true for genes on **different chromosomes**, or far apart on one. Genes close together on a chromosome are **linked**: they tend to travel together. Measuring *how much* they travel together turns out to be a ruler for the chromosome.
+
+- **Linkage**: excess parental types in a testcross. **Coupling** and **repulsion**.
+- **Recombination frequency** (RF), and where recombinants come from: **crossing over** at the **four-strand stage**.
+- **Map distance** in centimorgans (cM), and Sturtevant's first genetic map (1913).
+- Why RF never exceeds **50%**, and **map functions** (Haldane, Kosambi) that correct for multiple crossovers.
+- **Testing for linkage** with the χ² test.
+
+Book: Hartwell, *Genetics: From Genes to Genomes*, linkage, recombination and mapping chapter.
+
+::: notes
+This unit picks up two threads. From Mendel: the law of independent assortment, which we flagged as needing genes on different chromosomes. From Chromosome theory & sex linkage: genes sit on chromosomes, chromosomes are replicated into two sister chromatids, and homologues pair in prophase I. Put those together and you can predict linkage before seeing any data. The rest of Part 2 builds on today: Three-point crosses uses the same ideas to order three genes at once and to measure interference; Human linkage & LOD scores does the same thing in families, where we cannot set up testcrosses. The R part today is about writing functions with default arguments: two map functions.
+:::
+
+## Independent assortment has exceptions {.smaller}
+
+- **1905**: Bateson, Saunders and Punnett crossed sweet peas differing in flower colour and pollen shape. The F~2~ was far from 9 : 3 : 3 : 1: the two **parental combinations** were much too common. They called it **coupling** (and, for the reverse arrangement, **repulsion**), without an explanation.
+- **1911**: Thomas Hunt Morgan saw the same in *Drosophila* with X-linked genes, and proposed the explanation: the genes are on the **same chromosome**, and they are separated only when the homologues **exchange segments**.
+
+For a dihybrid **testcross** *AaBb* × *aabb*, recall what Mendel predicts:
+
+| Unlinked genes (Mendel) | Linked genes |
+|---|---|
+| 4 classes, **1 : 1 : 1 : 1** | 4 classes, **2 large + 2 small** |
+| 50% new combinations | **less than 50%** new combinations |
+
+::: notes
+The sweet pea story is worth telling because it shows how a good observation can sit unexplained for years. Bateson was a champion of Mendel but sceptical of the chromosome theory, and he did not connect coupling to chromosomes. Morgan did, and with his students Sturtevant and Bridges turned it into gene mapping. Recall the testcross from the Mendel unit: the tester gives only recessive alleles, so the offspring classes are a direct readout of the gametes of the dihybrid. That is why all mapping in experimental organisms is done with testcrosses, or crosses that act like them.
+:::
+
+## A testcross with linked genes {.smaller}
+
+*Drosophila*: *pr* (purple eyes) and *vg* (vestigial wings), both recessive, both on chromosome 2. F~1~ females from *pr*^+^ *vg*^+^ / *pr*^+^ *vg*^+^ × *pr vg* / *pr vg* are testcrossed to *pr vg* / *pr vg* males.
+
+| Offspring phenotype | Gamete from the F~1~ mother | Class | Number |
+|---|---|---|---:|
+| wild type | *pr*^+^ *vg*^+^ | parental | 1170 |
+| purple, vestigial | *pr vg* | parental | 1149 |
+| purple | *pr vg*^+^ | **recombinant** | 155 |
+| vestigial | *pr*^+^ *vg* | **recombinant** | 146 |
+| | | total | 2620 |
+
+$$\text{RF} = \frac{\text{recombinants}}{\text{total}} = \frac{155 + 146}{2620} = 0.115 = 11.5\%$$
+
+Invented teaching numbers, consistent with the real *pr*–*vg* distance in FlyBase.
+
+::: notes
+Read the table as gametes of the F1 mother, because the father only contributes pr vg. The two big classes have the allele combinations the F1 got from its parents: pr+ vg+ from one, pr vg from the other. Those are parental. The two small classes are new combinations, recombinants. Notice that the two parental classes are about equal, and the two recombinant classes are about equal; that is a useful check on your classification. Why F1 females? Drosophila males do not cross over in meiosis, so a testcross of F1 males would give only parental types. That is a quirk of flies, not a general rule, and it is a question in the exercise. The numbers are invented for teaching, but chosen to fit the FlyBase map positions of pr and vg, about 13 cM apart.
+:::
+
+## Coupling and repulsion {.smaller}
+
+![](fig01-coupling-repulsion.svg){width="80%" fig-align="center"}
+
+- **Coupling** (cis): the two dominant alleles on one homologue, *A B* / *a b*.
+- **Repulsion** (trans): one dominant allele on each homologue, *A b* / *a B*.
+- "Parental" means **as in the chromosomes the F~1~ received**, not "dominant" or "wild type".
+
+::: notes
+The slash notation separates the two homologues: what is to the left of the slash is on one chromosome, what is to the right on the other. This is the first time in the course that the genotype AaBb is not enough: Ab/aB and AB/ab have the same alleles but different arrangements, called the linkage phase. Same recombination frequency, opposite labels: in repulsion, the wild-type and double-mutant flies are the rare recombinant classes. A quick way to find the parental classes in any data set: they are the two largest classes, as long as the genes are linked. Phase becomes a central problem in human linkage, where we usually do not know it.
+:::
+
+## Recombination frequency {.smaller}
+
+$$\text{RF} = \frac{\text{number of recombinant offspring}}{\text{total number of offspring}}$$
+
+| RF | Meaning |
+|---|---|
+| 0 | **complete linkage**: no recombinants at all (genes very close) |
+| between 0 and 0.5 | **linked**: parental types in excess |
+| 0.5 | **unlinked**: 1 : 1 : 1 : 1, as for genes on different chromosomes |
+
+- RF is a property of the **pair of genes** (and of the organism and sex), not of the cross: coupling and repulsion give the same RF.
+- RF is measured in **gametes**. A testcross lets you count them directly.
+- The **larger** the distance between two genes on the chromosome, the **larger** the RF, up to 0.5.
+
+::: notes
+RF of 0.5 is what independent assortment gives: half of the gametes of AaBb are parental (AB, ab) and half are new (Ab, aB). So unlinked genes and genes far apart on the same chromosome look the same in a cross. That is an important point: "unlinked" is a statement about inheritance, not about which chromosome a gene is on. We come back to why RF cannot exceed 0.5 later today. The idea that RF grows with distance is Morgan's: a longer stretch of chromosome gives more room for an exchange.
+:::
+
+## Where recombinants come from: crossing over {.smaller}
+
+Recap from *Chromosome theory & sex linkage*: in **prophase I**, homologous chromosomes pair. Each is already replicated into **two sister chromatids**, so the pair (a **bivalent**) has **four chromatids**.
+
+- Non-sister chromatids can **break and rejoin**, swapping segments: a **crossover**.
+- Under the microscope a crossover is a **chiasma** (plural chiasmata), where non-sister chromatids cross.
+- Most chromosome pairs need at least one chiasma to segregate correctly in meiosis I.
+- **Physical proof** (1931): Creighton & McClintock in maize, and Stern in *Drosophila*, used chromosomes with visible marks. Genetic recombinants always carried the physically swapped chromosome.
+
+::: notes
+Janssens described chiasmata in 1909 and suggested they were sites of exchange; Morgan used that to explain linkage. The 1931 experiments are elegant: in maize, one chromosome 9 carried a knob at one end and a piece of another chromosome at the other, so it could be recognised in the microscope. When the genetic markers recombined, the cytological markers recombined too. That tied genetic recombination to a physical exchange between chromosomes. The molecular mechanism, double-strand breaks repaired using the homologue, is beyond this course. One point to keep: crossing over happens between non-sister chromatids, after replication. Next slide.
+:::
+
+## The four-strand stage {.smaller}
+
+![](fig02-four-strand.svg){width="82%" fig-align="center"}
+
+- A crossover involves **2 of the 4** chromatids. The other two stay parental.
+- So a meiosis with one crossover between *A* and *B* gives **2 parental and 2 recombinant** products: 50%, not 100%.
+- If a fraction *f* of meioses have one crossover between *A* and *B* (and none have two): RF = *f* / 2.
+
+::: notes
+This is the most common source of confusion in linkage problems, so spend time here. Students often think: a crossover happened, so the gamete is recombinant. No: a crossover makes two of the four meiotic products recombinant. Hence the factor one half. Example: if 20 percent of meioses have a chiasma between A and B, RF is 10 percent and the map distance is 10 cM. Evidence that crossing over happens at the four-strand stage, not before replication, comes from tetrad analysis in fungi, where all four products of one meiosis can be recovered together: tetrads with exactly two recombinant spores are the rule.
+:::
+
+## From RF to map distance {.smaller}
+
+**Map unit** or **centimorgan (cM)**: the distance in which, on average, **1 crossover per 100 chromatids** occurs.
+
+- For **short** distances, a crossover rarely happens twice, so **1 cM ≈ 1% recombinants**: *pr*–*vg* RF = 11.5% → about 11.5 cM.
+- Equivalently: *d* (in morgans) = expected number of crossovers per chromatid = ½ × mean number of chiasmata in the interval.
+- Map distances **add up**: if *A*–*B* = 5 cM and *B*–*C* = 8 cM, then *A*–*C* = 13 cM (if *B* is in the middle).
+- Additivity gives the **gene order**: the gene in the middle is the one whose two distances add up to the third.
+
+Named after Morgan; 100 cM = 1 morgan (M).
+
+::: notes
+Two definitions of map distance compete in students' heads: the percentage of recombinants, which you can measure, and the expected number of crossovers, which is what is additive. They agree for short intervals, and the rest of the lecture is about why they diverge for long ones. The chiasma version: each chiasma involves two of four chromatids, so the expected number of crossovers per chromatid is half the expected number of chiasmata per bivalent. A chromosome arm with one chiasma on average in every meiosis is 50 cM long. Additivity is what makes a map a map: it is the reason the genes can be drawn on a line.
+:::
+
+## Sturtevant's first genetic map (1913) {.smaller}
+
+![](fig03-sturtevant-map.svg){width="88%" fig-align="center"}
+
+Alfred Sturtevant, an undergraduate in Morgan's lab, put five X-linked genes in order using his own and others' crosses: **y – w – v – m – r**. The order still holds. Data: *J. Exp. Zool.* 14: 43–59 (1913).
+
+::: notes
+Sturtevant was still an undergraduate. He realised, in his own words, that the percentage of crossovers could be used as an index of distance, and he spent most of a night making the map. He used neighbouring intervals to build it and added them up, exactly as on the previous slide: yellow to white 1.0, white to vermilion 29.7, vermilion to miniature 3.0, and vermilion to rudimentary 26.9, which puts rudimentary at 57.6. Then he checked the long distances directly. Yellow to rudimentary came out at 37.6 percent, not 57.6, and he guessed the reason: double crossing over. He even saw that the long intervals are measured less precisely. We use his real numbers in the R exercise. The letters in his paper are different from modern symbols: B, C and O, P, R, M stand for y, w, v, m and r.
+:::
+
+## Why RF can never exceed 50% {.smaller}
+
+![](fig04-double-crossovers.svg){width="86%" fig-align="center"}
+
+- Two crossovers between *A* and *B* can involve 2, 3 or 4 of the chromatids, and on average give **50%** recombinants.
+- More generally: a chromatid is **recombinant** for *A* and *B* if it has an **odd** number of crossovers between them, and **parental** if even (0, 2, 4…).
+- As the distance grows, odd and even become equally likely, so **RF → 0.5**. A **double crossover** inside the interval is invisible with two markers.
+
+::: notes
+The key fact is the last bullet: what matters for a chromatid is whether it has an odd or even number of crossovers between the two loci. Two crossovers on the same chromatid swap the middle segment and swap it back, so the outer markers look parental. The figure shows the four equally likely kinds of double crossover, assuming that each crossover picks its two chromatids at random (no chromatid interference). Average: two of four products recombinant. Long intervals have many crossovers, odd and even become equally likely, and RF levels off at one half. This is why unlinked genes and genes far apart on the same chromosome look the same. The demo shows it moving.
+:::
+
+## RF underestimates long distances {.smaller}
+
+| | Map distance (sum of short intervals) | RF measured directly |
+|---|---:|---:|
+| *y* – *w* | 1.0 cM | 1.0% |
+| *v* – *m* | 3.0 cM | 3.0% |
+| *y* – *v* | 30.7 cM | 32.2% |
+| *w* – *r* | 56.6 cM | 45.2% |
+| *y* – *r* | 57.6 cM | **37.6%** |
+
+Sturtevant (1913). Short distances: RF ≈ map distance. Long distances: RF falls **below** the map distance, because double crossovers are missed.
+
+**Rule:** build maps from **short** intervals, then **add**. Never read a long RF directly as map distance.
+
+::: notes
+These are Sturtevant's own numbers. The first two rows are short intervals and agree by construction. The middle row is fine too. The last two are long, and RF is well below the sum of the intervals. Note also that the w–r and y–r numbers do not agree well with each other, although y and w are only 1 cM apart. The samples behind them are small, 898 and 693 flies; a long distance is measured less precisely. Even Sturtevant's intervals of about 30 cM were already long enough to hide some double crossovers, which is one reason modern positions are a bit larger: FlyBase puts vermilion at 33 and rudimentary at 54. The exercise has students look these up.
+:::
+
+## Map functions: Haldane {.smaller}
+
+A **map function** converts between map distance *d* (in morgans) and RF. Haldane (1919) assumed crossovers occur **independently, at random** along the chromosome (a Poisson process).
+
+- Number of crossovers on a chromatid in the interval: Poisson with mean *d*.
+- Recombinant if that number is odd: P(odd) = ½(1 − e^−2*d*^).
+
+$$\text{RF} = \tfrac{1}{2}\left(1 - e^{-2d}\right) \qquad\Longleftrightarrow\qquad d = -\tfrac{1}{2}\ln(1 - 2\,\text{RF})$$
+
+| *d* | 0.01 M (1 cM) | 0.10 M | 0.50 M | 1 M | 2 M |
+|---|---:|---:|---:|---:|---:|
+| RF (Haldane) | 0.010 | 0.091 | 0.316 | 0.432 | 0.491 |
+
+Back the other way: *y*–*r*, RF = 0.376 → *d* = −½ ln(1 − 0.752) = **0.70 M = 70 cM**.
+
+::: notes
+Haldane's derivation in one line: if the number of crossovers k is Poisson with mean d, the probability that k is odd is one half times one minus e to the minus 2d. You do not need to derive it; you do need to use it in both directions, with a calculator. At small d, e to the minus 2d is about 1 minus 2d, so RF is about d: map distance and RF agree for short intervals, as they should. At large d, the exponential vanishes and RF goes to one half. Applied to Sturtevant's y–r value, Haldane gives 70 cM, more than his 57.6 from adding intervals. That overshoots, and the reason is the next slide.
+:::
+
+## Map functions: Kosambi, and interference {.smaller}
+
+:::: {.columns}
+::: {.column width="56%"}
+![](fig05-map-functions.svg){width="100%"}
+:::
+::: {.column width="44%"}
+Real crossovers are **not** independent: one crossover makes another one nearby **less** likely. This is **interference**, measured properly in *Three-point crosses*.
+
+**Kosambi** (1944) allows for interference:
+
+$$\text{RF} = \tfrac{1}{2}\tanh(2d)$$
+$$d = \tfrac{1}{4}\ln\frac{1 + 2\,\text{RF}}{1 - 2\,\text{RF}}$$
+
+*y*–*r*: Kosambi gives **49 cM**, Haldane 70 cM, the sum of intervals 57.6 cM.
+:::
+::::
+
+All three agree for short intervals. They differ only when RF is large.
+
+::: notes
+The graph shows the three relationships. The dashed line is RF equals d, valid only without multiple crossovers. Haldane is the lowest curve: with independent crossovers, doubles are most common. Kosambi lies between: with interference, double crossovers are rarer, so RF stays closer to d for longer. Sturtevant's two long pairs, the orange points labelled w–r and y–r, sit near or between the curves, and the three short ones lie a little above the dashed line, which says his map slightly underestimated those distances. Kosambi is the usual choice for plant and animal maps; Haldane is common in human genetics software. Which is right depends on the organism. The practical message: use a map function only for moderate RF; above about 0.35 the answer is very sensitive to the function and to sampling noise. In R today you write both functions, with Haldane as the default.
+:::
+
+## Demo: crossovers and saturation
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="crossover" data-loci="3" data-spacing="25"></div>
+<script src="../demos/dist/crossover.js"></script>
+```
+
+::: notes
+The demo draws one bivalent, with crossovers placed at random (Poisson, no interference) and each crossover joining a random blue and a random red chromatid. Press "1 meiosis" a few times: point out that a single crossover between A and C makes two of the four products recombinant, and two crossovers can give zero, two or four. Then press "+1000": the table shows RF for each pair of loci next to Haldane's prediction and d/100. A–B and B–C at 25 cM come out near 0.20 (Haldane 0.197), but A–C at 50 cM comes out near 0.32, not 0.40, the sum of the two RFs, and not 0.50. Turn on "simulate the curve": the grey points follow Haldane and level off at one half. Finally set spacing to 80: A–C is 160 cM apart, and RF is indistinguishable from 0.5, as for genes on different chromosomes.
+:::
+
+## Testing for linkage with χ² {.smaller}
+
+Is an excess of parental types real, or chance? Use the χ² test from *Probability & the χ² test*.
+
+1. First check that each gene alone segregates **1 : 1** (otherwise poor viability of one class can mimic linkage).
+2. Then test **parental vs recombinant** against **1 : 1** (H~0~: unlinked, RF = 0.5), with df = 1.
+
+Example (invented): testcross, 50 offspring: 15 *A B*, 17 *a b*, 9 *A b*, 9 *a B*.
+
+- Gene *A*: 24 *A* : 26 *a*; gene *B*: 24 *B* : 26 *b*. Both fine.
+- Parental 32, recombinant 18, expected 25 : 25.
+
+$$\chi^2 = \frac{(32-25)^2}{25} + \frac{(18-25)^2}{25} = 3.92, \quad \text{df} = 1, \quad p = 0.048$$
+
+Just significant at 5%: weak evidence for linkage, RF ≈ 18/50 = 0.36. More offspring would settle it.
+
+::: notes
+Why not just test all four classes against 1:1:1:1 with three degrees of freedom? Because a deviation from 1:1:1:1 can have three causes: linkage, or one gene segregating unequally (for example because the mutant flies survive less well), or both. The 1-df parental versus recombinant test isolates linkage. Testing each gene first is good practice. In the pr vg example the test is overwhelming: chi-square is over 1500. In real mapping the problem is the opposite: loosely linked genes, RF 0.35 to 0.45, need hundreds of offspring to separate from 0.5. In humans, where families are small, the χ² approach does not work at all, and we need LOD scores, in Human linkage & LOD scores.
+:::
+
+## Real maps: some facts {.smaller}
+
+- **Sex differences.** *Drosophila* **males** have no meiotic crossing over: their genes are completely linked. That is why mapping crosses use F~1~ **females**. In humans the female map is roughly one and a half times longer than the male map.
+- **cM is not bp.** In humans, about **1 cM ≈ 1 Mb** on average, but crossovers cluster in **hotspots**, and are rare near centromeres.
+- **Same chromosome ≠ linked.** Genes more than about 50 cM apart on one chromosome assort (nearly) independently. *y* and *r* on the *Drosophila* X are about 54 cM apart in FlyBase.
+- **Uses.** Gene order and distance; finding markers close to a gene of interest, for plant and animal breeding and for human disease genes.
+
+::: notes
+These are the facts that make linkage maps different from physical maps. A genetic map measures how often crossovers happen, not how many base pairs there are, so it stretches where crossovers are frequent and shrinks where they are rare. The fly male oddity is real and useful: a male fly's chromosomes pass on intact. Mendel's seven traits are a nice illustration of the third point: some of his genes are on the same pea chromosome, but far enough apart to assort independently. The last bullet points ahead: in human genetics, linkage to a nearby DNA marker was how disease genes such as HTT were first located, the topic of the last unit in this part.
+:::
+
+## Summary {.smaller}
+
+| Concept | Key fact |
+|---|---|
+| Linkage | genes close on one chromosome: parental combinations in excess, RF < 0.5 |
+| Coupling / repulsion | *A B* / *a b* vs *A b* / *a B*: same RF, opposite parental classes |
+| Recombination frequency | RF = recombinants / total offspring of a testcross |
+| Crossing over | between **non-sister** chromatids at the **four-strand** stage; one crossover → 2 of 4 products recombinant |
+| Map distance | 1 cM = 1 crossover per 100 chromatids; ≈ 1% RF for short distances; distances add |
+| RF ≤ 0.5 | recombinant ⇔ odd number of crossovers; multiple crossovers make RF level off at ½ |
+| Haldane | RF = ½(1 − e^−2*d*^), *d* = −½ ln(1 − 2RF); independent crossovers |
+| Kosambi | RF = ½ tanh(2*d*); allows for interference |
+| χ² for linkage | check 1 : 1 per gene, then parental vs recombinant against 1 : 1, df = 1 |
+
+::: notes
+The revision sheet. The three ideas that do most of the work: recombinants are the small classes; one crossover gives half recombinant products; and RF is a saturating function of distance, so map from short intervals and add. The formulas for the map functions are worth knowing in both directions.
+:::
+
+## Where this leads
+
+- **Next: Three-point crosses.** With three genes in one testcross, the double crossovers become visible: they give the **gene order** at once, and show whether crossovers **interfere** with each other.
+- **Human linkage & LOD scores.** In human families there are no testcrosses and few offspring. The LOD score asks how much more likely the data are under linkage than under RF = 0.5, and maps disease genes such as *HTT*.
+- **Rearrangements & aneuploidy** (Part 5): inversions suppress recombination in heterozygotes, and a chromosome without a crossover can missegregate.
+- **Complex traits** (Part 7): genome-wide association is linkage thinking on a population scale.
+
+::: notes
+Point forward. Today's exercise: testcross problems on paper, the crossover demo, FlyBase map positions for the classic X-linked markers, and in R two map functions with a default argument, applied to Sturtevant's original data. Three-point crosses is the natural next step: Sturtevant himself already noticed that one crossover tends to prevent another nearby, which is interference.
+:::

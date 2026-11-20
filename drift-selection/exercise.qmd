@@ -1,0 +1,159 @@
+---
+title: "Exercise: drift, selection, mutation, migration"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- explain genetic drift as random sampling of gene copies, and compute fixation probabilities, heterozygosity loss and effective population sizes;
+- explain founder effects with a real example (the Finnish disease heritage);
+- apply the selection recursion by hand for one or two generations, and explain the effect of dominance;
+- compute mutation–selection balance and the equilibrium under heterozygote advantage;
+- compute the effect of migration;
+- find a founder disease in PubMed and MedGen, and compare its allele frequency across populations in gnomAD.
+
+Do the pen-and-paper part first. The demo and R come after.
+
+## Background
+
+**Drift (Wright–Fisher).** *N* diploid individuals, 2*N* gene copies. Next generation: number of *A* copies ~ Binomial(2*N*, *p*).
+
+- P(neutral allele is eventually fixed) = *p*₀. A new mutation: *p*₀ = 1/(2*N*).
+- Expected heterozygosity: *H*<sub>*t*</sub> = *H*₀ (1 − 1/2*N*)<sup>*t*</sup>.
+- Effective size: *N*ₑ = 4*N*<sub>m</sub>*N*<sub>f</sub>/(*N*<sub>m</sub> + *N*<sub>f</sub>); over generations, the harmonic mean *N*ₑ = *t* / Σ(1/*N*<sub>*i*</sub>).
+
+**Selection.** Fitnesses *w*<sub>AA</sub>, *w*<sub>Aa</sub>, *w*<sub>aa</sub> (often 1 + *s*, 1 + *hs*, 1).
+
+$$
+\bar w = p^2 w_{AA} + 2pq\, w_{Aa} + q^2 w_{aa}, \qquad p' = \frac{p^2 w_{AA} + pq\, w_{Aa}}{\bar w}.
+$$
+
+**Mutation–selection balance** (mutation rate *μ*, selection *s* against the allele): recessive *q̂* ≈ √(*μ*/*s*); dominant *q̂* ≈ *μ*/*s*.
+
+**Heterozygote advantage** (*w*<sub>Aa</sub> greater than both homozygotes): $\hat q = \dfrac{w_{Aa} - w_{AA}}{2w_{Aa} - w_{AA} - w_{aa}}$, where *q* is the frequency of *a*.
+
+**Migration**: *p*′ = (1 − *m*)*p* + *m p*<sub>M</sub>; the difference from the source shrinks by (1 − *m*) per generation.
+
+**New beneficial mutation** (Haldane): P(fixation) ≈ 2*s*<sub>het</sub>, where *s*<sub>het</sub> is the advantage of heterozygotes.
+
+## By hand
+
+**B1. (drift in tiny populations)** A population of *N* = 2 individuals (4 gene copies) has *p* = 0.5.
+(a) What is the probability that *A* is lost in the very next generation? That it is fixed?
+(b) Repeat for *N* = 10. What does the comparison show?
+
+**B2. (fixation)** (a) A neutral allele has frequency 0.15 in a population. What is the probability that it is eventually fixed? (b) A new neutral mutation arises in a population of *N* = 1000. What is the probability that it is eventually fixed, and that it is lost? (c) Which of your answers would change if the allele were in a population of 10 million?
+
+**B3. (effective population size)** (a) A zoo population has 20 breeding males and 80 breeding females. What is *N*ₑ? (b) A population has sizes 500, 50, 500 and 500 in four successive generations. What is *N*ₑ over these generations, and what does the answer say about bottlenecks?
+
+**B4. (losing variation)** A population of *N* = 25 starts with heterozygosity *H* = 0.5 at a neutral locus. What heterozygosity do you expect after 50 generations? After how many generations is half of the heterozygosity lost, roughly? (Hint: (1 − 1/2*N*)<sup>*t*</sup> ≈ e<sup>−*t*/2*N*</sup>.)
+
+**B5. (selection, two generations)** Fitnesses are *w*<sub>AA</sub> = 1, *w*<sub>Aa</sub> = 0.95, *w*<sub>aa</sub> = 0.9, and *p* = 0.4. Compute *w̄* and *p* after one and after two generations of selection. What kind of dominance is this?
+
+**B6. (mutation–selection balance)** (a) A recessive lethal disease arises by mutation at *μ* = 10<sup>−6</sup> per generation. What allele frequency and incidence would you expect at mutation–selection balance? (b) Cystic fibrosis affects about 1 in 2500 births in north-west Europe, and until recently patients rarely had children (*s* ≈ 1). What mutation rate would mutation–selection balance require? Is that plausible? Suggest two other explanations for the high frequency.
+
+**B7. (heterozygote advantage)** In a malaria region, the relative fitnesses for a β-thalassaemia allele *t* are: *TT* 0.9, *Tt* 1, *tt* 0.1.
+(a) Which genotype is fittest? What kind of selection is this?
+(b) Compute the equilibrium frequency of *t*.
+(c) What happens to *t* if malaria is eradicated, so that *TT* and *Tt* both have fitness 1?
+
+**B8. (migration)** A population has *p* = 0 for an allele. Each generation, 2% of the parents are migrants from a population with *p* = 0.5. What is *p* after 1 generation, and after 10 generations?
+
+**B9. (a founder disease)** A new population is founded by 500 people. Exactly one of them carries a recessive disease allele.
+(a) What is *q* among the founders?
+(b) If the population grows without further change in *q*, what are the incidence of the disease and the carrier frequency?
+(c) In one isolated region, drift raises *q* to 0.02. What are the incidence and the carrier frequency there? Compare with (b).
+
+## Explore {#explore}
+
+The demo shows replicate populations evolving by the Wright–Fisher model with selection. Each line is one population: blue lines fixed *A* (*p* = 1), red lines lost it (*p* = 0), grey lines are still segregating. The thick dashed line is what selection alone would do in an infinitely large population. The numbers below are for the default seed; **run again** gives new random outcomes.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="drift"></div>
+<script src="../demos/dist/drift.js"></script>
+```
+
+**E1. Drift depends on N.** Press **drift, N = 20**. How many of the 20 populations have fixed *A*, lost *A*, or are still segregating after 100 generations? Now press **drift, N = 500**. Same questions. What does the dashed line do in both cases, and why? Compare the mean heterozygosity *H* in the readout with the drift-theory value *H*₀(1 − 1/2*N*)<sup>*t*</sup>.
+
+**E2. Fixation probability = starting frequency.** Set *N* = 20, *s* = 0, start *p* = 0.2, **populations = 100** and **generations = 500**. What fraction of populations fixed *A*? What does theory predict for a neutral allele? Press **run again** twice and note the fractions. Then press **one new mutation**: what is the chance that a single new neutral mutation in a population of *N* = 20 is eventually fixed?
+
+**E3. Selection versus drift.** Press **selection s = 0.05** (*N* = 500, start *p* = 0.1, *h* = 0.5). Do the lines follow the dashed line? Roughly how many generations does selection need to take *A* from 0.1 to 0.5? Now change *N* to 20 (keep everything else). How many of the 20 populations lose the favoured allele? What does this tell you about selection in small populations?
+
+**E4. A new beneficial mutation is usually lost.** Press **new beneficial mutation** (*N* = 500, *s* = 0.05, *h* = 0.5, one copy of *A*, 100 populations, 500 generations). How many populations fixed *A*? Compare with Haldane's approximation 2*s*<sub>het</sub>, where *s*<sub>het</sub> = *hs*. When are most of the lost mutations lost?
+
+**E5. Sickle cell and malaria.** Press **sickle cell / malaria**. Read the fitnesses: which genotype is fittest? Where do the lines settle? Check the equilibrium by hand with the formula in the Background. Why is the HbS allele not lost, even though *SS* has fitness 0.2? Now set *N* = 20. What happens, and why?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** With **N = 20**: 9 fixed, 9 lost, 2 segregating after 100 generations. With **N = 500**: none fixed or lost; all 20 are still segregating and have only spread out a little around 0.5 (mean *p* 0.536). The dashed line stays flat at 0.5: with *s* = 0 there is no selection, so an infinite population does not change. All the change is drift, and drift is strong when 2*N* is small. Heterozygosity: *N* = 20 gives mean *H* = 0.024 against the theory value 0.5 × (1 − 1/40)<sup>100</sup> = 0.040; *N* = 500 gives 0.443 against 0.5 × (1 − 1/1000)<sup>100</sup> = 0.452. (With only 20 populations the simulated mean is noisy.) The small population has lost almost all its variation in 100 generations; the large one less than 10%.
+
+**E2.** Default seed: 19 of 100 populations fixed *A* (0.19); **run again** gives 0.18 and 0.22. Theory: the fixation probability equals the starting frequency, **0.2**. Drift has no direction, so the mean *p* stays at *p*₀, and at the end every population is at 0 or 1, so the fraction at 1 must be *p*₀. A single new mutation starts at *p* = 1/40 = 0.025, so it is fixed with probability **1/40**: in 100 populations expect 2 or 3.
+
+**E3.** With *N* = 500 the lines stay close to the dashed line: selection dominates drift (4*Ns* = 100 ≫ 1). The deterministic curve reaches 0.5 after about **90 generations** (0.9 after about 180); at generation 200 the lines average 0.930, against 0.936 for *N* = ∞. With **N = 20**, **17 of 20** populations **lose** the favoured allele and only 3 fix it. In a small population drift can overpower weak selection: an allele that starts rare is often lost by chance before selection can act (4*Ns* = 4 here).
+
+**E4.** Default seed: **7 of 100** populations fixed *A*; **run again** gives 4 and 4. Haldane: *s*<sub>het</sub> = 0.5 × 0.05 = 0.025, so P(fix) ≈ **0.05**, about 5 in 100. (A run with 2000 populations gave 0.052.) About 95% of new beneficial mutations are lost, most of them **within the first ~10 generations**, while there are only one or two copies and chance decides everything. The survivors then rise along an S-shaped curve and fix after roughly 300–360 generations.
+
+**E5.** *w*<sub>AA</sub> (normal) = 1, *w*<sub>AS</sub> = 1.16, *w*<sub>SS</sub> = 0.20: the **heterozygote is fittest**. The lines rise from 0.02 and settle around **0.14** (mean 0.142 at generation 300; the dotted line shows *p̂* = 0.143). By hand: (1.16 − 1)/(2 × 1.16 − 1 − 0.20) = 0.16/1.12 = **0.143**. When HbS is rare it is almost always in fitter heterozygotes, so it increases; when it is common many *SS* die, so it decreases. The balance keeps the allele. With **N = 20** all 20 populations lose HbS: they start with *p* = 0.02, less than one copy among 40, so drift removes it before selection can protect it. Balancing selection maintains an allele only if the population is large enough for selection to beat drift.
+:::
+
+## Find it
+
+**F1. The Finnish disease heritage in PubMed.** Search [PubMed](https://pubmed.ncbi.nlm.nih.gov/) for `"Finnish disease heritage"[title]`. Find the three-part review by **Norio** from 2003. In which journal was it published, and what are the three parts about (read the titles)? Open the abstract of part I. Which historical event in Finland and which feature of the population does it list among the topics? How do they connect to founder effects?
+
+**F2. Salla disease in MedGen.** Open [Salla disease in MedGen](https://www.ncbi.nlm.nih.gov/medgen/203368) (OMIM [604369](https://www.omim.org/entry/604369)). What is the **mode of inheritance**? Which **gene** is involved, and where is it (read the gene's location in [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/?term=SLC17A5+human))? What does the protein do (read the gene's full name)?
+
+**F3. A Finnish founder allele in gnomAD.** The main Finnish Salla allele is *SLC17A5* R39C, dbSNP rs80338794. Open it in [gnomAD v4](https://gnomad.broadinstitute.org/variant/6-73644583-G-A?dataset=gnomad_r4). In the **Genetic Ancestry Group Frequencies** table, compare the allele frequency in **European (Finnish)** with **European (non-Finnish)** (use the exome data, which has more people).
+(a) How many times more frequent is the allele in Finns?
+(b) Assuming HWE, what is the carrier frequency in Finland ("1 in …")?
+(c) Repeat for the CLN1 disease allele *PPT1* R122W, rs137852695, [in gnomAD](https://gnomad.broadinstitute.org/variant/1-40091398-T-A?dataset=gnomad_r4). Which drift process explains both?
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+Checked on 20 November 2026 via PubMed and MedGen (NCBI E-utilities), NCBI Gene and the gnomAD v4 API. gnomAD frequencies may shift slightly between releases; the enrichment in Finns will not.
+
+**F1.** Norio R. *Human Genetics*, May 2003, in three parts: "Finnish Disease Heritage I: characteristics, causes, background" (PMID 12627295), "II: population prehistory and genetic roots of Finns" (PMID 12627296) and "III: the individual diseases" (PMID 12627297). The abstract of part I describes the FDH as "a group of rare hereditary diseases that are overrepresented in Finland" and lists among its topics the **internal migration of the 1500s** and **geography and population structure**, together with consanguineous marriages, linkage disequilibrium and haplotypes, and the age of the mutations. The connection: when small groups settled new inland regions in the 1500s, each regional population started from few founders, so some rare alleles became common there by **founder effects and drift**. Patients from one region share the same mutation on the same surrounding haplotype (linkage disequilibrium), inherited from a common ancestor.
+
+**F2.** MedGen "Salla disease" (C1096903; MIM 604369): **autosomal recessive** inheritance. Gene ***SLC17A5***, on **6q13** (NCBI Gene ID 26503), "solute carrier family 17 member 5": according to the RefSeq summary, a membrane transporter that exports free sialic acids from lysosomes. Without it, sialic acid accumulates in lysosomes (a lysosomal storage disease).
+
+**F3.** Click path: gnomAD → search `rs80338794` (or open the link) → variant 6-73644583-G-A → Genetic Ancestry Group Frequencies (exomes).
+(a) Exomes: Finnish 245/53 410 = **0.0046**; non-Finnish European 252/1 111 918 = **0.00023**: about **20 times** higher in Finns. (Genomes give a similar picture: 0.0044 and 0.0003.) It is absent or nearly absent from the African, East Asian and South Asian groups.
+(b) 2*pq* ≈ 2 × 0.0046 = 0.0092, about **1 in 110** Finns carries the allele.
+(c) *PPT1* R122W (1-40091398-T-A), exomes: Finnish 362/53 394 = **0.0068**, non-Finnish European 45/1 111 280 = **0.00004**: about **170 times** higher; carriers ≈ 1 in 74 in Finland. Both are **founder effects**: a rare allele carried by one of the few founders (or founders of a regional subpopulation) became common by chance as the population grew. (MedGen: CLN1 disease, MIM 256730, autosomal recessive, *PPT1* at 1p34.2.)
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) The next generation draws 4 copies, each *A* with probability 0.5. Lost: 0.5⁴ = **1/16 = 0.0625**. Fixed: also **1/16**. So 1/8 of such populations lose all variation in one generation. (b) With 20 copies: 0.5²⁰ ≈ 10<sup>−6</sup> each. Small populations can lose variation in a single generation; larger ones cannot.
+
+**B2.** (a) **0.15**. (b) *p*₀ = 1/2000, so fixed with probability **0.0005** and lost with probability **0.9995**. (c) (a) does not change: the fixation probability of a neutral allele depends only on its current frequency. (b) changes: in 10 million people a new mutation is fixed with probability 1/(2 × 10⁷), and it takes far longer.
+
+**B3.** (a) *N*ₑ = 4 × 20 × 80/100 = **64**, not 100. (b) *N*ₑ = 4/(1/500 + 1/50 + 1/500 + 1/500) = 4/0.026 = **154**, although the arithmetic mean is 387. The single small generation dominates: a bottleneck has a lasting effect.
+
+**B4.** *H*₅₀ = 0.5 × (1 − 1/50)<sup>50</sup> = 0.5 × 0.364 = **0.18**. Half is lost when e<sup>−*t*/2*N*</sup> = ½, at *t* = 2*N* ln 2 ≈ 1.39 × 50 ≈ **35 generations**.
+
+**B5.** Generation 1: *w̄* = 0.16 × 1 + 0.48 × 0.95 + 0.36 × 0.9 = **0.940**; *p*′ = (0.16 + 0.24 × 0.95)/0.940 = 0.388/0.940 = **0.413**. Generation 2: *p*² = 0.1704, 2*pq* = 0.4848, *q*² = 0.3448; *w̄* = **0.941**; *p*″ = (0.1704 + 0.2424 × 0.95)/0.941 = **0.426**. The heterozygote's fitness is exactly halfway between the homozygotes: **additive** selection (no dominance, *h* = ½), against *a*.
+
+**B6.** (a) *q̂* = √(10<sup>−6</sup>) = **0.001**; incidence *q̂*² = **10<sup>−6</sup>** (1 in a million). (b) At balance, incidence = *q̂*² = *μ*/*s*, so *μ* = 1/2500 = **4 × 10<sup>−4</sup>** per generation. That is far above typical per-gene mutation rates (about 10<sup>−6</sup> to 10<sup>−5</sup>), so mutation–selection balance cannot explain CF's frequency. Other explanations: a **heterozygote advantage** in the past (proposed, for example, as resistance to diarrhoeal infections, but not proven), or **drift/founder effects** in north-west European history. Both are hypotheses.
+
+**B7.** (a) The heterozygote *Tt* (fitness 1) is fittest: **heterozygote advantage**, a kind of balancing selection (thalassaemia carriers are partly protected against malaria). (b) *q̂* = (1 − 0.9)/(2 × 1 − 0.9 − 0.1) = 0.1/1.0 = **0.1**. (c) With *TT* = *Tt* = 1, *t* is a purely recessive harmful allele; it declines, but slowly, because most copies are in healthy carriers.
+
+**B8.** After 1 generation: *p* = 0.98 × 0 + 0.02 × 0.5 = **0.01**. After 10: the difference from the source is 0.5 × 0.98<sup>10</sup> = 0.409, so *p* = 0.5 − 0.409 = **0.091**.
+
+**B9.** (a) 1 copy among 1000: *q* = **0.001**. (b) Incidence *q*² = **10<sup>−6</sup>** (1 in a million); carriers 2*q* ≈ **1 in 500**. (c) *q* = 0.02: incidence 4 × 10<sup>−4</sup> = **1 in 2500**, carriers ≈ 0.039, **1 in 26**. A 20-fold rise in *q* gives a 400-fold rise in incidence: this is how regional founder effects create local "hot spots" of rare recessive disease.
+:::
+
+## Where this leads
+
+The same forces act on tumours (*Cancer genetics*) and shape the variants that GWAS find (*Complex traits*), where drift between populations and population structure can create false associations.
+
+**Next:** [Exercise in R](exercise-r.qmd): write a Wright–Fisher simulation with a `for` loop, replicate it many times, and check the theory for fixation, heterozygosity and selection.

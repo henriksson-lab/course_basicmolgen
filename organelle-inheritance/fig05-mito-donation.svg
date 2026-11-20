@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="474" viewBox="0 0 920 474" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: mitochondrial donation. Top: maternal spindle transfer, before fertilisation. Bottom: pronuclear transfer, after fertilisation. Red rings = the mother's mitochondria (carrying the mutant mtDNA); blue rings = the donor's normal mitochondria; purple = nuclear DNA. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker>
+    <marker id="arrowP" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L6,3 L0,6 Z" fill="#7b5ea7"/></marker>
+  </defs>
+  <text x="20" y="30" font-size="17" font-weight="bold" fill="#1b2a3a">Spindle transfer (before fertilisation)</text>
+  <circle cx="110" cy="130" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="112.8" cy="166.8" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="83.9" cy="157.8" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="90.8" cy="110.6" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="152.6" cy="133.5" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="128.4" cy="99.6" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="69.6" cy="124.1" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="112.0" cy="92.2" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="68.0" cy="145.2" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="129.9" cy="152.9" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+  </g>
+  <ellipse cx="110" cy="130" rx="10" ry="15" fill="#7b5ea7"/>
+  <text x="110" y="208" font-size="15" fill="#1b2a3a" text-anchor="middle">mother's egg</text>
+  <text x="110" y="226" font-size="13" fill="#5b6b7a" text-anchor="middle">mutant mtDNA</text>
+  <circle cx="330" cy="130" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="300.7" cy="101.5" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="342.6" cy="86.9" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="364.7" cy="136.4" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="366.5" cy="116.4" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="299.7" cy="136.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="293.9" cy="119.8" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="321.8" cy="173.6" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="332.9" cy="101.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="337.6" cy="159.3" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+  </g>
+  <ellipse cx="330" cy="130" rx="13" ry="16" fill="none" stroke="#7b5ea7" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="330" y="208" font-size="15" fill="#1b2a3a" text-anchor="middle">donor's egg</text>
+  <text x="330" y="226" font-size="13" fill="#5b6b7a" text-anchor="middle">nucleus removed</text>
+  <path d="M120,108 C170,60 270,60 322,106" fill="none" stroke="#7b5ea7" stroke-width="2.5" marker-end="url(#arrowP)"/>
+  <text x="220" y="64" font-size="14" fill="#7b5ea7" text-anchor="middle">move nuclear DNA</text>
+  <line x1="396" y1="130" x2="500" y2="130" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="570" cy="130" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="537.4" cy="137.7" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="597.9" cy="163.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="606.0" cy="131.5" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="592.2" cy="113.5" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="533.9" cy="117.2" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="559.9" cy="96.4" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="572.1" cy="158.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="539.5" cy="157.3" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="564.7" cy="175.6" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+  </g>
+  <ellipse cx="570" cy="130" rx="10" ry="15" fill="#7b5ea7"/>
+  <text x="570" y="208" font-size="15" fill="#1b2a3a" text-anchor="middle">reconstructed</text>
+  <text x="570" y="226" font-size="13" fill="#5b6b7a" text-anchor="middle">mother's nucleus, donor's mitochondria</text>
+  <line x1="636" y1="130" x2="700" y2="130" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="712" y="126" font-size="15" fill="#1b2a3a">fertilise with father's sperm</text>
+  <text x="712" y="146" font-size="14" fill="#5b6b7a">child: nuclear DNA from</text>
+  <text x="712" y="164" font-size="14" fill="#5b6b7a">both parents, mtDNA</text>
+  <text x="712" y="182" font-size="14" fill="#5b6b7a">from the donor</text>
+  <text x="20" y="264" font-size="17" font-weight="bold" fill="#1b2a3a">Pronuclear transfer (after fertilisation)</text>
+  <circle cx="110" cy="364" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="112.5" cy="392.0" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="86.9" cy="381.7" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="141.1" cy="377.8" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="146.5" cy="343.3" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="112.9" cy="333.7" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="79.3" cy="356.8" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="119.9" cy="407.4" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="130.0" cy="326.9" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <circle cx="95.8" cy="399.8" r="5" fill="none" stroke="#bc4749" stroke-width="3"/>
+  </g>
+  <circle cx="101" cy="364" r="9" fill="#7b5ea7"/><circle cx="120" cy="364" r="9" fill="#7b5ea7"/>
+  <text x="110" y="442" font-size="15" fill="#1b2a3a" text-anchor="middle">mother's zygote</text>
+  <text x="110" y="460" font-size="13" fill="#5b6b7a" text-anchor="middle">mutant mtDNA</text>
+  <circle cx="330" cy="364" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="341.4" cy="323.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="298.9" cy="366.9" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="369.3" cy="364.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="301.1" cy="393.6" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="324.0" cy="405.6" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="325.7" cy="330.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="343.0" cy="398.7" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="365.0" cy="387.2" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="308.9" cy="340.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+  </g>
+  <ellipse cx="330" cy="364" rx="22" ry="13" fill="none" stroke="#7b5ea7" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="330" y="442" font-size="15" fill="#1b2a3a" text-anchor="middle">donor's zygote</text>
+  <text x="330" y="460" font-size="13" fill="#5b6b7a" text-anchor="middle">nucleus removed</text>
+  <path d="M120,342 C170,294 270,294 322,340" fill="none" stroke="#7b5ea7" stroke-width="2.5" marker-end="url(#arrowP)"/>
+  <text x="220" y="298" font-size="14" fill="#7b5ea7" text-anchor="middle">move nuclear DNA</text>
+  <line x1="396" y1="364" x2="500" y2="364" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="570" cy="364" r="56" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g>
+    <circle cx="538.8" cy="349.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="586.5" cy="324.8" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="553.4" cy="340.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="570.0" cy="409.1" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="596.9" cy="363.4" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="546.7" cy="385.4" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="597.7" cy="394.7" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="615.1" cy="359.0" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="527.6" cy="364.9" r="5" fill="none" stroke="#2a6f97" stroke-width="3"/>
+  </g>
+  <circle cx="561" cy="364" r="9" fill="#7b5ea7"/><circle cx="580" cy="364" r="9" fill="#7b5ea7"/>
+  <text x="570" y="442" font-size="15" fill="#1b2a3a" text-anchor="middle">reconstructed</text>
+  <text x="570" y="460" font-size="13" fill="#5b6b7a" text-anchor="middle">mother's nucleus, donor's mitochondria</text>
+  <line x1="636" y1="364" x2="700" y2="364" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="712" y="360" font-size="15" fill="#1b2a3a">embryo develops</text>
+  <text x="712" y="380" font-size="14" fill="#5b6b7a">child: nuclear DNA from</text>
+  <text x="712" y="398" font-size="14" fill="#5b6b7a">both parents, mtDNA</text>
+  <text x="712" y="416" font-size="14" fill="#5b6b7a">from the donor</text>
+</svg>

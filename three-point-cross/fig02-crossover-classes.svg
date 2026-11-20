@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" width="820" height="330" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <!-- Four panels: no crossover, crossover in region I, in region II, in both.
+       Top: two non-sister chromatids (blue A B C, red a b c) with the crossover points.
+       Bottom: the two chromatids that result. A double crossover swaps only the middle gene. -->
+  <!-- panel 1: no crossover -->
+  <text x="110" y="24" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">no crossover</text>
+  <text x="65" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region I</text>
+  <text x="155" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region II</text>
+  <rect x="25" y="76" width="170" height="12" fill="#2a6f97"/>
+  <rect x="25" y="76" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="25" y="104" width="170" height="12" fill="#bc4749"/>
+  <rect x="25" y="104" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="45" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="45" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="110" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="110" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="175" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="175" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <line x1="110" y1="146" x2="110" y2="176" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="25" y="204" width="170" height="12" fill="#2a6f97"/>
+  <rect x="25" y="204" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="25" y="232" width="170" height="12" fill="#bc4749"/>
+  <rect x="25" y="232" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="45" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="45" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="110" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="110" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="175" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="175" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <text x="110" y="294" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">parental</text>
+  <text x="110" y="316" font-size="13.5" fill="#5b6b7a" text-anchor="middle">A B C and a b c</text>
+  <!-- panel 2: crossover in I -->
+  <text x="312" y="24" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">crossover in I</text>
+  <text x="267" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region I</text>
+  <text x="357" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region II</text>
+  <rect x="227" y="76" width="170" height="12" fill="#2a6f97"/>
+  <rect x="227" y="76" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="227" y="104" width="170" height="12" fill="#bc4749"/>
+  <rect x="227" y="104" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="247" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="247" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="312" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="312" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="377" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="377" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <path d="M272,88 L286,104 M286,88 L272,104" stroke="#1b2a3a" stroke-width="2.4"/>
+  <line x1="312" y1="146" x2="312" y2="176" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="227" y="204" width="52" height="12" fill="#2a6f97"/>
+  <rect x="279" y="204" width="118" height="12" fill="#bc4749"/>
+  <rect x="227" y="204" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="227" y="232" width="52" height="12" fill="#bc4749"/>
+  <rect x="279" y="232" width="118" height="12" fill="#2a6f97"/>
+  <rect x="227" y="232" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="247" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="247" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="312" y="198" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="312" y="264" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="377" y="198" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+<text x="377" y="264" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+  <text x="312" y="294" font-size="15" font-weight="bold" fill="#6a994e" text-anchor="middle">single crossover I</text>
+  <text x="312" y="316" font-size="13.5" fill="#5b6b7a" text-anchor="middle">A changes partner</text>
+  <!-- panel 3: crossover in II -->
+  <text x="514" y="24" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">crossover in II</text>
+  <text x="469" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region I</text>
+  <text x="559" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region II</text>
+  <rect x="429" y="76" width="170" height="12" fill="#2a6f97"/>
+  <rect x="429" y="76" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="429" y="104" width="170" height="12" fill="#bc4749"/>
+  <rect x="429" y="104" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="449" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="449" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="514" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="514" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="579" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="579" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <path d="M540,88 L554,104 M554,88 L540,104" stroke="#1b2a3a" stroke-width="2.4"/>
+  <line x1="514" y1="146" x2="514" y2="176" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="429" y="204" width="118" height="12" fill="#2a6f97"/>
+  <rect x="547" y="204" width="52" height="12" fill="#bc4749"/>
+  <rect x="429" y="204" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="429" y="232" width="118" height="12" fill="#bc4749"/>
+  <rect x="547" y="232" width="52" height="12" fill="#2a6f97"/>
+  <rect x="429" y="232" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="449" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="449" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="514" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="514" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="579" y="198" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+<text x="579" y="264" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+  <text x="514" y="294" font-size="15" font-weight="bold" fill="#7a5ea8" text-anchor="middle">single crossover II</text>
+  <text x="514" y="316" font-size="13.5" fill="#5b6b7a" text-anchor="middle">C changes partner</text>
+  <!-- panel 4: crossovers in I and II -->
+  <text x="716" y="24" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">crossovers in I and II</text>
+  <text x="671" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region I</text>
+  <text x="761" y="52" font-size="12" fill="#5b6b7a" text-anchor="middle">region II</text>
+  <rect x="631" y="76" width="170" height="12" fill="#2a6f97"/>
+  <rect x="631" y="76" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="631" y="104" width="170" height="12" fill="#bc4749"/>
+  <rect x="631" y="104" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="651" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="651" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="716" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="716" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="781" y="70" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="781" y="136" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <path d="M676,88 L690,104 M690,88 L676,104" stroke="#1b2a3a" stroke-width="2.4"/>
+  <path d="M742,88 L756,104 M756,88 L742,104" stroke="#1b2a3a" stroke-width="2.4"/>
+  <line x1="716" y1="146" x2="716" y2="176" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="631" y="204" width="52" height="12" fill="#2a6f97"/>
+  <rect x="683" y="204" width="66" height="12" fill="#bc4749"/>
+  <rect x="749" y="204" width="52" height="12" fill="#2a6f97"/>
+  <rect x="631" y="204" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="631" y="232" width="52" height="12" fill="#bc4749"/>
+  <rect x="683" y="232" width="66" height="12" fill="#2a6f97"/>
+  <rect x="749" y="232" width="52" height="12" fill="#bc4749"/>
+  <rect x="631" y="232" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="651" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">A</tspan></text>
+<text x="651" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">a</tspan></text>
+<text x="716" y="198" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">b</tspan></text>
+<text x="716" y="264" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">B</tspan></text>
+<text x="781" y="198" font-size="16" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">C</tspan></text>
+<text x="781" y="264" font-size="16" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">c</tspan></text>
+  <text x="716" y="294" font-size="15" font-weight="bold" fill="#d08c2f" text-anchor="middle">double crossover</text>
+  <text x="716" y="316" font-size="13.5" fill="#5b6b7a" text-anchor="middle">only B changes partner</text>
+</svg>

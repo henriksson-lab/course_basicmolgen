@@ -1,0 +1,276 @@
+---
+title: "Exercise: ethics of genetic knowledge"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- identify **who is affected** by a genetic decision: the person tested, relatives, future children, research participants, the public;
+- name the **principles** in tension in a case (autonomy, beneficence, non-maleficence, justice; consent, privacy, the right not to know) and argue for a position;
+- use the **genetics** of a case correctly: risks, modes of inheritance, what a test can and cannot tell;
+- decide whether a research project in Sweden needs **ethical review**, using the Swedish Ethical Review Authority's website;
+- build a **PubMed** search with MeSH terms, field tags and filters, and find original papers and reviews for a case.
+
+There is no pen-and-paper calculation section in this unit. The genetics is inside the cases: several of them start with a risk you should compute before you argue.
+
+## Background
+
+**Four principles** (Beauchamp and Childress): **autonomy** (respect a person's informed, voluntary choice), **beneficence** (do good), **non-maleficence** (do no harm), **justice** (be fair in who gets benefits and who carries risks). They often conflict; the work is to weigh them.
+
+**What genetics adds.** **Informed consent** (voluntary, informed, can be withdrawn; *broad* consent for future research is debated). **Privacy** (genetic data are sensitive and identifying, and partly shared with relatives). **The right not to know** (a person may decline to learn a genetic result).
+
+**Kinds of test.** Diagnostic (explains a disease), predictive (forecasts disease in a healthy person, e.g. Huntington disease), carrier (*Aa* × *Aa* couples), prenatal (NIPT screening; amniocentesis or CVS for diagnosis), and newborn screening (the PKU test). **Incidental** findings are found by chance; **secondary** findings are actionable genes looked for on purpose (the ACMG list, which includes *BRCA1*).
+
+**Swedish law in one table.**
+
+| Law | Key point for these cases |
+|---|---|
+| Ethical Review Act (2003:460) | Research on sensitive personal data, physical interventions, or traceable biological material needs approval from **Etikprövningsmyndigheten** before it starts. Consent: voluntary, explicit, specific. |
+| Biobanks Act (2023:38) | Identifiable samples may be stored and used with the donor's consent, which can be withdrawn. Includes the PKU biobank. |
+| GDPR (EU 2016/679) | Genetic data are a special category of personal data (Art. 9). |
+| Genetic Integrity Act (2006:351) | No genetic test as a condition of a contract; insurers only in narrow cases. **Heritable genetic changes in humans are banned.** Rules for prenatal and preimplantation diagnosis. |
+| Police genetic genealogy (from 1 July 2025) | Allowed only for murder and aggravated rape, as a last resort. |
+
+**How to analyse a case.** (1) Get the genetics right. (2) List who is affected. (3) Name the principles and where they conflict. (4) Check what the law says. (5) List the options, not just yes or no. (6) Argue for one, and state the strongest objection to it.
+
+## Cases {#cases}
+
+Discuss each case in your group. Start with the genetics, then the guiding questions. Each case ends with a collapsed list of **points a good answer considers**. It is not "the answer": good answers can reach different conclusions.
+
+### C1. Twins and Huntington disease
+
+Karin and Lisa are 28-year-old **identical twins**. Their father has Huntington disease. Karin wants a predictive test: she is planning a family and wants to know. Lisa does not want to know; she says she would rather live without the answer. Karin has booked an appointment at the clinical genetics clinic.
+
+a) What is Karin's risk of carrying the *HTT* expansion before the test? What does Karin's result mean for Lisa? Would the answer be different if they were non-identical twins?
+b) Which principles are in conflict? Whose autonomy counts here?
+c) What should the genetic counsellor do: test Karin, refuse, or something in between?
+d) Karin also asks about testing her future embryos (preimplantation testing) without learning her own status. Does that help?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C1"}
+- **Genetics**: father *Aa* × mother *aa*, so each child has a **½** prior risk. Identical (monozygotic) twins have the **same genotype**, so a test of Karin is a test of Lisa. For non-identical twins the results are independent: each has ½, and Karin's result says nothing certain about Lisa.
+- **Principles**: Karin's autonomy and her reproductive planning (and beneficence towards her) against Lisa's **right not to know** and non-maleficence towards her. Both twins have autonomy claims; neither automatically overrides the other.
+- **Options**: counselling for both, together or separately; time to reflect; agreeing in advance how the result is kept and shared (Lisa will see whether Karin goes ahead with family plans); Karin waiting; testing with a commitment to confidentiality. Many clinics would not simply refuse Karin, but would put real effort into protecting Lisa.
+- **The embryo question**: tests that select embryos without telling the parent their own status exist (exclusion testing, non-disclosing testing). They partly protect the right not to know, but raise their own problems, for example repeated IVF cycles that might be unnecessary. In Sweden, preimplantation diagnosis is allowed for serious monogenic disease (Genetic Integrity Act, ch. 4).
+- **Huntington-specific facts**: no cure; international guidelines recommend structured counselling before and after the test, a free choice without coercion, and a minimum age of 18 (MacLeod et al. 2013, PMID 22642570). Most at-risk people choose not to be tested: in the UK, cumulative uptake among people at 50% risk in 1994–2014 was estimated at 17.4% (Baig et al. 2016, PMID 27165004). Twins are a recognised counselling problem: confidentiality of the co-twin's result and autonomy of participation (Heimler & Zanko 1995, PMID 11660384).
+:::
+
+### C2. An incidental *BRCA1* finding
+
+A two-year-old boy has developmental delay. His parents agree to **trio exome sequencing** (child, mother, father) to find the cause. The consent form said that "results related to the child's condition" would be reported; it did not mention other findings. The analysis finds no clear cause for the boy's condition, but the mother, Sara (35), carries a **pathogenic *BRCA1* variant**. Sara has two sisters.
+
+a) What does a pathogenic *BRCA1* variant mean for Sara? What is the chance that each of her sisters carries it? That her son does?
+b) Should the lab report it to Sara? Who decides, and when should that decision have been made?
+c) If Sara is told, does she have a duty to tell her sisters? Does the clinic?
+d) Is the boy's *BRCA1* status relevant now? Should he be tested as a child?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C2"}
+- **Genetics**: *BRCA1* variants are autosomal dominant with **incomplete penetrance**: a high but not certain lifetime risk of breast and ovarian cancer. Each sister has a **½** prior risk (one of Sara's parents is a carrier); her son has a **½** risk too. Carriers can be offered extra screening and risk-reducing surgery: it is **actionable**.
+- **Principles**: beneficence (prevention can save lives; the sisters can benefit too) against Sara's autonomy and **right not to know**, since she did not ask for it. The consent form did not cover this: a consent problem made by the lab, not by Sara.
+- **The ACMG approach**: report a fixed list of actionable genes (*BRCA1* is on it), but discuss this at consent and let patients opt out. The lesson: decide **before** sequencing, in the consent.
+- **Relatives**: in most systems the patient is encouraged to inform relatives, often with a family letter from the clinic; the clinic does not usually contact relatives directly. Weigh confidentiality against harm to relatives.
+- **Testing the child**: adult-onset risk with no action in childhood: most guidance is to wait until he can decide himself (protecting his future autonomy and right not to know).
+:::
+
+### C3. A DTC result in the family chat
+
+Oskar (24) bought a direct-to-consumer genetic test as a birthday present. He downloaded his **raw data** and ran it through a free online interpretation tool, which said he has a variant giving "**increased risk**" for a hereditary heart condition. Worried, he posted a screenshot in the family group chat and urged everyone to get tested. His mother is upset; his older brother says he never wanted to know anything about this.
+
+a) How reliable is a single variant call from a consumer genotyping array and a third-party tool? What should Oskar do before anything else?
+b) Which principles did Oskar's post affect, and whose?
+c) What responsibility, if any, does the company or the interpretation tool have?
+d) What happens to Oskar's DNA data now? What could happen if the company is sold?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C3"}
+- **Reliability**: consumer arrays genotype pre-selected SNPs and are not validated for rare variants. In one clinical lab, **40%** of variants from DTC raw data sent for confirmation were **false positives**, and some "increased risk" calls were common benign variants (Tandy-Connor et al. 2018, *Genet Med*, PMID 29565420). First step: **confirm in a clinical lab**, with genetic counselling.
+- **Genetics**: if real and autosomal dominant, each first-degree relative has a ½ prior risk. That is why the result concerns them, and also why it is theirs to decide whether to learn.
+- **Principles**: the brother's **right not to know** and the family's **privacy**; Oskar's good intention (beneficence) based on an unconfirmed result (risk of harm: anxiety, unnecessary tests).
+- **Company**: terms of use, quality of the information, whether health results are given with any guidance. DTC data are stored by a company: its privacy policy, research use, data breaches and change of ownership all matter. (The US company 23andMe had a data breach in 2023 that exposed millions of relative-matching profiles, filed for bankruptcy in March 2025, and was sold in July 2025.)
+- **Options**: delete the post; speak with relatives individually; clinical confirmation and counselling before spreading results.
+:::
+
+### C4. The police ask for genealogy access
+
+A woman was found murdered in a Swedish town in 2009. The crime-scene DNA matches nobody in the police DNA register. The Swedish Police Authority wants to use **forensic investigative genetic genealogy**: generate a SNP profile from the crime-scene sample, compare it with a genealogy database, and build family trees from distant relatives. A colleague then suggests also using it for a series of serious burglaries.
+
+a) How can a search find a suspect who never took a DNA test? Which relatives are most useful, and why do distant cousins work?
+b) Which interests are involved: the victim's family, the public, database users, their relatives, the suspect?
+c) What does the Swedish law in force since 1 July 2025 allow? Would the burglary series qualify?
+d) Should genealogy database users have to **opt in** to police matching? Does it matter whether the database is in Sweden or abroad?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C4"}
+- **Genetics**: relatives share long stretches of DNA identical by descent; even third cousins share detectable segments. Each match points to shared ancestors; genealogists work down their family trees to a few candidates, then a direct DNA test confirms. Erlich et al. (2018) projected that about 60% of searches for people of European descent find a third cousin or closer.
+- **Consent**: users consented to genealogy, not to being police informants; their relatives consented to nothing. Privacy is a **collective** issue here.
+- **Benefits**: serious crimes solved, innocent suspects cleared, justice for victims' families.
+- **Law**: Sweden first used the method in 2019, on a 16-year-old double murder in Linköping; IMY stopped further use in 2021 for lack of legal support and because of data transfer to a third country; the law in force from **1 July 2025** limits it to **murder and aggravated rape**, as a last resort (Ansell & Fagerholm 2025, PMID 40995235). So the **burglaries would not qualify**: an example of "function creep" that the law blocks.
+- **Opt-in** respects database users' autonomy, but not their relatives'. Data transfer outside the EU is a GDPR question.
+:::
+
+### C5. An embryo editing proposal
+
+Both Maria and Ali have **cystic fibrosis**, an autosomal recessive disease. They want a biological child without CF. A clinic abroad offers to correct the *CFTR* variant in their IVF embryos with CRISPR and transfer the edited embryos.
+
+a) What genotypes can their children have? Why can preimplantation genetic testing (PGT) not help this couple, when it helps most carrier couples?
+b) What are the scientific risks of editing an embryo? Think of how CRISPR repair works, mosaicism and off-target effects.
+c) Who is affected by the decision, and who cannot consent?
+d) Is this case different from He Jiankui's? Is it different from mitochondrial replacement? Would it be legal in Sweden?
+e) What alternatives does the couple have?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C5"}
+- **Genetics**: *aa* × *aa* gives **only *aa*** children. PGT selects among embryos, and here there is nothing to select: every embryo is affected. This is one of the few situations where editing would be the *only* way to a biological child without the disease, which makes it a stronger case than most.
+- **Science**: CRISPR cuts, and the cell may repair by error-prone end joining rather than copying a template, so the intended correction is not guaranteed; different cells can end up different (**mosaicism**); off-target cuts are hard to rule out in a single embryo. In He Jiankui's twins, neither got the intended 32-bp deletion (*CCR5*-Δ32); one was heterozygous for a new edit, and they were described as mosaics (Greely 2019, *J Law Biosci*, PMID 31666967).
+- **Who is affected**: the future child and **all descendants** (the edit is in the germline), who cannot consent; also society, if heritable editing becomes normal.
+- **Comparison**: He Jiankui's edit had no real medical need: the father's HIV could be kept from the child by sperm washing, with no risk to the embryo (Greely 2019). MRT replaces mitochondria rather than editing a nuclear gene, and is licensed in the UK; both are heritable.
+- **Law**: in Sweden, experiments and treatments causing **heritable genetic changes** in humans are banned (Genetic Integrity Act 2006:351, ch. 2, §§ 3–4). "Going abroad" raises questions of justice and regulation.
+- **Alternatives**: donor gametes, adoption, a child with CF (whose treatment has improved greatly), or no children. Weigh the strength of the wish for a genetically related child.
+:::
+
+### C6. Re-using biobank samples
+
+A research group wants to genotype **20,000 dried blood spots from the PKU biobank** (newborn screening samples from the 1990s) to study whether genetic variants are associated with childhood asthma, linking the genotypes to national health registers. The people sampled are now adults. They were never asked about genetic research; their parents agreed to newborn screening.
+
+a) Why would a researcher want these particular samples? What is their value?
+b) Which Swedish laws apply? Does the project need ethical approval, and why?
+c) Is the original consent valid for this use? What are the options: new consent from 20,000 adults, an opt-out, or approval without individual consent?
+d) The group wants to deposit the genotypes in an international database to share with other researchers. What are the privacy risks, given what you know about re-identification?
+
+::: {.callout-note collapse="true" title="Points a good answer considers: C6"}
+- **Value**: a population-wide, unselected collection with samples from birth, which no new study could recreate. Re-use has served public health, for example tracing exposure to PFAS from contaminated drinking water in Ronneby back to 1985 (PMID 40089001).
+- **Law**: traceable biological material and genetic (sensitive) data: **ethical review is required** (Ethical Review Act §§ 3–4). The **Biobanks Act** has its own chapter on the PKU biobank and requires consent for storage and use. **GDPR** applies to the genotypes.
+- **Consent**: the parents consented to screening, not to genetic research decades later. Contacting 20,000 adults is costly and may itself feel intrusive; an opt-out respects autonomy at lower cost. Swedish patients rarely refuse biobank research (Johnsson et al. 2008, *BMJ*, PMID 18617496: about 1 in 690 refused), but that does not settle whether consent is needed. The ethical review board weighs the risk to participants against the scientific value.
+- **Sharing**: removing names is not anonymisation for genomes (Gymrek 2013; Erlich 2018). Options: controlled access (researchers apply and sign an agreement), sharing only aggregate results, data staying in Sweden.
+- **Trust**: a misuse would affect public trust in the PKU biobank itself, which exists to screen newborns for treatable disease.
+:::
+
+## Find it
+
+### F1. When does research need ethical review?
+
+Go to the Swedish Ethical Review Authority, [etikprovningsmyndigheten.se](https://etikprovningsmyndigheten.se/en/). In the top menu, open **How it works → What the Act says** (in Swedish: [Vad ska etikprövas?](https://etikprovningsmyndigheten.se/vad-ska-etikprovas/)). The act itself is on [riksdagen.se: Lag (2003:460)](https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-2003460-om-etikprovning-av-forskning-som_sfs-2003-460/).
+
+a) List the **four kinds** of research that need ethical approval.
+b) What does the page say about work done by students in first- and second-cycle (bachelor's and master's) education?
+c) Which of the six cases above describes research that would need approval in Sweden? For each, name the criterion.
+d) Who decides whether an application is needed: the researcher's institution or the authority?
+
+### F2. A worked PubMed search strategy (case C1)
+
+In the probability unit you used quotes, `AND`, and the `[ti]` tag. Here we add **MeSH**, the controlled vocabulary that PubMed indexers use to tag every paper with its main topics. A MeSH search finds papers about a topic even when the authors used different words.
+
+**The strategy, step by step.**
+
+1. **Split the question into concepts.** C1 is about *Huntington disease* AND *predictive testing* AND *ethics*.
+2. **Find the MeSH term for each concept** in the [MeSH database](https://www.ncbi.nlm.nih.gov/mesh/). Search `Huntington` → **Huntington Disease**. Search `genetic testing` → **Genetic Testing** (its entry terms include "Predictive Genetic Testing").
+3. **Add a subheading** to narrow the aspect. `/ethics` attached to a MeSH term means "papers about the *ethics* of this topic".
+4. **Combine with field tags**:
+
+| Tag | Meaning | Example |
+|---|---|---|
+| `[Mesh]` | MeSH term (includes narrower terms below it) | `"Huntington Disease"[Mesh]` |
+| `[Mesh]` + subheading | that aspect of the topic | `"Genetic Testing/ethics"[Mesh]` |
+| `[majr]` | MeSH term as a **major** topic of the paper | `"Genetic Privacy"[majr]` |
+| `[tiab]` | words in title or abstract (catches new papers not yet indexed) | `"right not to know"[tiab]` |
+| `[pt]` | publication type | `review[pt]` |
+| `[dp]` | date of publication | `2015:2025[dp]` |
+| `[au]` | author | `Gymrek M[au]` |
+
+5. **Add synonyms with OR** for recent papers that have no MeSH yet, in parentheses:
+
+```
+("Huntington Disease"[Mesh] OR huntington*[tiab])
+AND ("Genetic Testing/ethics"[Mesh] OR "predictive testing"[tiab])
+```
+
+6. **Filter** with the left-hand menu: **Article type → Review**, **Publication date**, **Free full text**. A filter is the same as adding `review[pt]`.
+7. **Check what PubMed did**: click **Advanced** and read **Search details** (the query translation).
+8. **Follow the trail** from a good paper: **Similar articles** and **Cited by** on its page.
+
+**Task.** Run `"Huntington Disease"[Mesh] AND "Genetic Testing/ethics"[Mesh]`. Then add the **Review** filter. Among the reviews, find a 2007 review by a researcher at Karolinska Institutet with the title starting "To know or not to know". Report its **title, journal, PMID**, and from the abstract: does the author think counsellors should promote predictive testing? Finally, run the search with the synonyms from step 5 and compare: more or fewer hits, and why?
+
+### F3. Secondary findings (case C2)
+
+Search `"secondary findings"[ti] AND ACMG[ti]`, and filter by **Article type → Practice Guideline**. Open the 2023 policy statement, **ACMG SF v3.2**, by Miller et al.
+
+a) Report its **journal, year and PMID**.
+b) The full text is free in PubMed Central (link on the PubMed page). In Table 1, find ***BRCA1***. Which phenotype and which inheritance does the table give, and since which list version has it been included? How many genes are on the v3.2 list?
+c) Is v3.2 still the newest version? (Use the search result list.)
+
+### F4. Genetic genealogy in Sweden (case C4)
+
+Search `"genetic genealogy"[tiab] AND Sweden[tiab]`.
+
+a) Find the 2021 case report about a 16-year-old double murder. Report its **title, journal and PMID**.
+b) Find the 2025 paper on **legislation** by Ansell and Fagerholm. From the abstract: why was the method halted in 2021, when does the new law apply, and for which crimes?
+c) Try the MeSH term instead: `"Forensic Genetics"[Mesh] AND Sweden[Mesh]`. Does it find the same papers? Why might the newest papers be missing? (Hint: indexing takes time.)
+
+### F5. Re-identification: Gymrek et al. 2013 (cases C4 and C6)
+
+Find the *Science* paper "Identifying personal genomes by surname inference". Use a field tag, e.g. `Gymrek M[au] AND surname[ti]`.
+
+a) Report **year, volume, pages and PMID**.
+b) From the abstract: which genetic markers were used, and what kind of databases were queried? What other information was combined with the surname?
+c) On the paper's PubMed page, open **Cited by** or search for the 2018 *Science* paper by Erlich et al. on "long-range familial searches". What fraction of searches for individuals of European descent did they project would find a third cousin or closer?
+
+## Group assignment brief
+
+The ethics module is examined by a **written group analysis** of one case and an **oral presentation**. This section describes the format in general terms; **Canvas has the details**: group sizes, which cases are available, deadlines, length, and the assessment criteria.
+
+- **Choose a case**: one of C1–C6 above, or a case given on Canvas.
+- **Written analysis** (in English): describe the case and **the genetics** behind it; identify who is affected; analyse it with the four principles and the concepts of consent, privacy and the right not to know; explain what Swedish law and ethical review say; discuss the options and argue for one, including the strongest counter-argument.
+- **Literature**: support the analysis with **original literature in English**, found with a documented PubMed search (show your search string, as in F2). Use at least one original research paper and one review or guideline.
+- **Oral presentation**: present the case and your analysis to the class, and lead a short discussion. Be ready to defend your position and to say what would change your mind.
+
+The assessment is about how well you use facts and principles, not which side you take.
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Checked on etikprovningsmyndigheten.se and in the act on riksdagen.se.
+
+a) Research needs approval if it (1) involves a **physical intervention** on a living or deceased person; (2) uses a **method that aims to affect a person physically or mentally**, or carries an **obvious risk of harm**; (3) is done on **biological material** from a living or deceased person that **can be traced** to that person; or (4) processes **sensitive personal data** (GDPR Art. 9, which includes genetic and health data) or data on **criminal offences**. (Act 2003:460, §§ 3–4.)
+
+b) Work done **only within higher education at first or second cycle** (basic or advanced level) is not "research" under the act's definition (§ 2), so it does not need its own approval. Work by a student inside a research project is covered by that project's approval.
+
+c) **C6** clearly: traceable biological material (the blood spots) and sensitive personal data (genotypes, health registers). **C1, C2, C3** are clinical care or private decisions, not research, so the act does not apply; but a *study* of, for example, how twins experience predictive testing would need approval (sensitive personal data). **C4** is police work under its own law, not research. **C5** would be banned in Sweden under the Genetic Integrity Act, whatever the review.
+
+d) The **institution responsible for the research** (*forskningshuvudmannen*) decides whether an application is needed; the authority does not give advance rulings. (An amendment to the act, SFS 2026:1229, in force 1 July 2027, adds a requirement that the institution documents this assessment.)
+
+Click path: etikprovningsmyndigheten.se/en → **How it works** → **What the Act says**.
+
+**F2.** Click path: PubMed → `"Huntington Disease"[Mesh] AND "Genetic Testing/ethics"[Mesh]` → left menu **Article type → Review**. The review is:
+
+Robins Wahlin TB. "To know or not to know: a review of behaviour and suicidal ideation in preclinical Huntington's disease." *Patient Education and Counseling* 2007;65(3):279–287. **PMID 17000074**. The author is at Karolinska Institutet, Stockholm.
+
+From the abstract (Practice implications): "The professionals should **not promote nor advocate** presymptomatic DNA-testing", and counsellors have an obligation to provide adequate information. The review stresses professional counselling and attention to suicide risk.
+
+With the synonyms (`OR huntington*[tiab]`, `OR "predictive testing"[tiab]`) you get **more** hits: OR widens each concept, and `[tiab]` also catches papers that are not (yet) indexed with these MeSH terms. (Exact counts change as papers are added, so we do not give them.)
+
+**F3.** Miller DT et al. "ACMG SF v3.2 list for reporting of secondary findings in clinical exome and genome sequencing: a policy statement of the American College of Medical Genetics and Genomics (ACMG)." *Genetics in Medicine* 2023;25(8):100866. **PMID 37347242**.
+
+b) In Table 1, ***BRCA1*** is listed (with *BRCA2* and *PALB2*) under **Hereditary breast and/or ovarian cancer**, inheritance **AD** (autosomal dominant), report all pathogenic and likely pathogenic variants. The column "ACMG SF List Version" shows *BRCA1* has been on the list since v1.0. The v3.2 table has **81 genes**; v3.2 added *CALM1*, *CALM2* and *CALM3* (long QT syndrome). You may also spot *FBN1* (Marfan syndrome) from the pedigree exercise. Click path: PubMed record → **Free PMC article** (right side) → Table 1.
+
+c) No: **ACMG SF v3.3** (Lee K et al., *Genet Med* 2025;27(8):101454, **PMID 40568962**) replaces it, with 84 genes. Practice guidelines are updated; always check for the newest version.
+
+**F4.** a) Tillmar A, Fagerholm SA, Staaf J, et al. "Getting the conclusive lead with investigative genetic genealogy – A successful case study of a 16 year old double murder in Sweden." *Forensic Science International: Genetics* 2021;53:102525. **PMID 33991867**.
+
+b) Ansell R, Fagerholm SA. "Legislation for forensic investigative genetic genealogy in Sweden." *Forensic Sci Int Synergy* 2025;11:100637. **PMID 40995235**. From the abstract: Sweden was in 2019 the first country outside North America to use the method; in 2021 the Swedish Authority for Privacy Protection (**IMY**) halted further use, because of a **lack of legislative support** and issues with **transferring sensitive personal data to a third country**. The new law passed the Riksdag in February 2025 and applies from **1 July 2025**, limited to **murder and aggravated rape**, as a last resort and only when "absolutely necessary".
+
+c) The MeSH search finds fewer of them: the newest papers may not yet be indexed with MeSH terms, and `[tiab]` searches catch them earlier. A good strategy combines both with OR.
+
+**F5.** a) Gymrek M, McGuire AL, Golan D, Halperin E, Erlich Y. "Identifying personal genomes by surname inference." *Science* 2013;**339**(6117):**321–324**. **PMID 23329047**.
+
+b) **Short tandem repeats on the Y chromosome (Y-STRs)**, profiled from the personal genomes, were queried against **recreational genetic genealogy databases**, which are free and public. The recovered surname was combined with **metadata such as age and US state** to triangulate the person's identity. The authors traced back, with high probability, the identities of multiple participants in public sequencing projects.
+
+c) Erlich Y, Shor T, Pe'er I, Carmi S. "Identity inference of genomic data using long-range familial searches." *Science* 2018;362(6415):690–694. **PMID 30309907**. Using data from 1.28 million people tested with consumer genomics, they projected that about **60%** of searches for individuals of European descent would result in a **third-cousin or closer** match.
+:::
+
+## Where this leads
+
+The cases draw on the whole course: Huntington disease and segregation (*Mendel*), Y-linked and mitochondrial inheritance (*Pedigree analysis*, *Organelle inheritance*), CRISPR and sequencing (Part 4), and allele frequencies (*Hardy–Weinberg*). The PubMed strategy in F2 is the one to use for the group assignment, and for finding original literature in any later course.

@@ -1,0 +1,143 @@
+---
+title: "Quiz: three-point crosses"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on gene order, map distances and interference from three-point testcrosses. Try each on paper first, then open the answer. Unless the question says otherwise, the cross is a testcross of a triple heterozygote to a triple recessive tester.
+
+---
+
+**Q1.** Why does a three-point testcross give **eight** phenotype classes? Why do they come in **pairs** with similar counts?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many allele combinations can one gamete carry for three genes? What does one crossover produce?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each gamete of the triple heterozygote carries one allele of each of three genes, so there are $2^3 = 8$ combinations. The tester adds only recessive alleles, so each combination shows up as its own phenotype. A crossover between two chromatids makes **two** complementary products (for example *A b c* and *a B C*), so the classes come in **reciprocal pairs** that are equally likely and have similar counts.
+:::
+
+---
+
+**Q2.** In a three-point testcross, which pair of classes is normally the most common, and which the rarest? Why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many crossovers does each kind of class need?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The **parental** pair (no crossover in either interval) is the most common. The **double crossover** pair (one crossover in each interval) is the rarest, because two crossovers in the same short region are much less likely than one. The two single-crossover pairs are in between.
+:::
+
+---
+
+**Q3.** The parental classes are *A b C* and *a B c*, and the double crossover classes are *A B C* and *a b c*. Which gene is in the middle?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare *A B C* with the parental class it shares two alleles with. Which allele has changed?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*A B C* differs from the parental *A b C* only at the *B* locus, and *a b c* differs from *a B c* only at *B*. A double crossover swaps only the middle gene, so ***B* is in the middle**: the order is *A*–*B*–*C*. Note that the heterozygote was in a mixed phase (*A b C* / *a B c*), so the DCO classes here are the "all dominant" and "all recessive" ones. Never assume which classes are parental: read them off the counts.
+:::
+
+---
+
+**Q4.** Why is the double crossover count added to **both** interval distances?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many crossovers does a DCO chromatid carry, and where?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A DCO chromatid has one crossover in interval I **and** one in interval II. RF for an interval counts all chromatids with a crossover in that interval, so the DCOs belong in both. Leaving them out underestimates both distances.
+:::
+
+---
+
+**Q5.** In a cross, genes *A* and *C* are 18.9 cM apart in a two-point cross, but 20.0 cM apart when you add the *A*–*B* and *B*–*C* distances from a three-point cross with 2000 offspring. Explain the difference. How many DCOs were there?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does a double crossover between *A* and *C* look like if you ignore *B*?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A double crossover leaves *A* and *C* in their parental combination. A two-point cross counts it as **non-recombinant**, so it misses two crossovers for each DCO. The difference is 2 × DCO / N: 0.200 − 0.189 = 0.011 = 2 × DCO / 2000, so **DCO = 11**. Adding up short intervals gives the better estimate of a long distance.
+:::
+
+---
+
+**Q6.** Genes *A*–*B* are 10 cM apart and *B*–*C* 20 cM apart. With **no** interference, what fraction of the testcross offspring are double crossovers? How many in 1000 offspring?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Use the product rule with the RFs as fractions.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(DCO) = 0.10 × 0.20 = **0.02**, so **20** of 1000 offspring, 10 in each of the two DCO classes. (Not 10 × 20 = 200: the product rule works on probabilities, not on cM.)
+:::
+
+---
+
+**Q7.** In the same cross (*A*–*B* 10 cM, *B*–*C* 20 cM, 1000 offspring), 8 double crossovers are observed. Compute the coefficient of coincidence and the interference. What does the value mean?
+
+::: {.callout-tip collapse="true" title="Hint"}
+CoC = observed / expected; I = 1 − CoC.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Expected 20 (Q6). CoC = 8 / 20 = **0.4**; I = 1 − 0.4 = **0.6**. Only 40% of the double crossovers expected under independence occurred: a crossover in one interval made a crossover in the other less likely. This is **positive interference**, the usual situation.
+:::
+
+---
+
+**Q8.** What would **I = 1** mean? And **I = 0**? Can I be negative?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Translate each value back to the CoC.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**I = 1** (CoC = 0): complete interference, no double crossovers at all; one crossover blocks a second one in the region. **I = 0** (CoC = 1): no interference; crossovers in the two intervals are independent and the product rule holds. **I < 0** (CoC > 1): negative interference, more doubles than expected. It is rare in ordinary crosses. If you get a CoC far above 1, first check that you have the gene order right.
+:::
+
+---
+
+**Q9.** A three-point cross with 300 offspring gives **zero** double crossovers, although 3 were expected. A student concludes "complete interference". Is that justified?
+
+::: {.callout-tip collapse="true" title="Hint"}
+If the expected number is 3, how often do you get 0 just by chance? (For rare events, P(0) ≈ e^−expected^.)
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No. With 3 expected, zero happens by chance with probability about $e^{-3} \approx 0.05$, one cross in twenty, even with no interference at all. The data agree with complete interference but do not prove it. Estimating interference needs large crosses, because the DCO count is small and noisy.
+:::
+
+---
+
+**Q10.** Why do *Drosophila* geneticists put the triple heterozygote in the **female** in a three-point testcross?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What is special about meiosis in *Drosophila* males?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*Drosophila* males do not cross over in meiosis. A heterozygous male would give only the two parental classes, and no map distances. Females cross over normally. (For X-linked genes the heterozygote must be female anyway, since males have only one X.)
+:::
+
+---
+
+**Q11.** You try the wrong gene order on a data set and compute CoC = 4.9. Why does the wrong order give such a large CoC?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which pair of classes does the wrong order call "double crossovers"?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+With the wrong gene in the middle, the "double crossover" classes are really a **single** crossover pair, which is far more common. Its count is then compared with an expected number computed as if it were rare, so observed ≫ expected and CoC ≫ 1. A CoC far above 1 is a warning sign that the order is wrong, which is why the correct order is the one where the DCO pair is the rarest.
+:::

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: a phase-known family for an autosomal dominant disease and one marker.
+       I-1 (affected) is homozygous 1/1 at the marker, so the disease allele D in II-1 must sit on
+       the chromosome with marker allele 1: II-1 is D 1 / d 2 (phase known). II-2 is 3/3, so each
+       child's paternal marker allele can be read directly. 6 informative meioses, 1 recombinant (III-4).
+       Blue = marker allele 1 (travels with D), red = allele 2, grey = allele 3 (from the mother). -->
+  <!-- generation numerals -->
+  <g fill="#1b2a3a" font-size="18" font-weight="bold">
+    <text x="16" y="56">I</text>
+    <text x="16" y="166">II</text>
+    <text x="16" y="276">III</text>
+  </g>
+  <!-- lines -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <line x1="397" y1="50" x2="453" y2="50"/>
+    <line x1="425" y1="50" x2="425" y2="143"/>
+    <line x1="442" y1="160" x2="498" y2="160"/>
+    <line x1="470" y1="160" x2="470" y2="226"/>
+    <line x1="170" y1="226" x2="770" y2="226"/>
+    <line x1="170" y1="226" x2="170" y2="253"/>
+    <line x1="290" y1="226" x2="290" y2="253"/>
+    <line x1="410" y1="226" x2="410" y2="253"/>
+    <line x1="530" y1="226" x2="530" y2="253"/>
+    <line x1="650" y1="226" x2="650" y2="253"/>
+    <line x1="770" y1="226" x2="770" y2="253"/>
+  </g>
+  <!-- generation I -->
+  <rect x="363" y="33" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+  <circle cx="470" cy="50" r="17" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+  <g font-size="17" font-weight="bold">
+    <text x="361" y="92"><tspan fill="#2a6f97">1</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#2a6f97">1</tspan></text>
+    <text x="451" y="92"><tspan fill="#bc4749">2</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#bc4749">2</tspan></text>
+  </g>
+  <!-- generation II -->
+  <rect x="408" y="143" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+  <circle cx="515" cy="160" r="17" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+  <g font-size="17" font-weight="bold">
+    <text x="496" y="202"><tspan fill="#7a8794">3</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+  </g>
+  <!-- phase of II-1, written to the left -->
+  <g font-size="18" font-weight="bold">
+    <text x="314" y="155" fill="#2a6f97" font-style="italic">D 1</text>
+    <text x="350" y="155" fill="#1b2a3a">/</text>
+    <text x="362" y="155" fill="#bc4749" font-style="italic">d 2</text>
+  </g>
+  <text x="392" y="176" font-size="14" fill="#5b6b7a" text-anchor="end">phase known (from I-1)</text>
+  <!-- generation III: aff, marker from father, R/NR -->
+  <g stroke="#1b2a3a" stroke-width="2.2">
+    <rect x="153" y="253" width="34" height="34" fill="#1b2a3a"/>
+    <circle cx="290" cy="270" r="17" fill="#fff"/>
+    <circle cx="410" cy="270" r="17" fill="#1b2a3a"/>
+    <rect x="513" y="253" width="34" height="34" fill="#1b2a3a"/>
+    <rect x="633" y="253" width="34" height="34" fill="#fff"/>
+    <circle cx="770" cy="270" r="17" fill="#fff"/>
+  </g>
+  <!-- ring the recombinant -->
+  <rect x="505" y="245" width="50" height="50" rx="4" fill="none" stroke="#bc4749" stroke-width="3" stroke-dasharray="6 3"/>
+  <g font-size="17" font-weight="bold">
+    <text x="151" y="316"><tspan fill="#2a6f97">1</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+    <text x="271" y="316"><tspan fill="#bc4749">2</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+    <text x="391" y="316"><tspan fill="#2a6f97">1</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+    <text x="511" y="316"><tspan fill="#bc4749">2</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+    <text x="631" y="316"><tspan fill="#bc4749">2</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+    <text x="751" y="316"><tspan fill="#bc4749">2</tspan><tspan fill="#5b6b7a"> / </tspan><tspan fill="#7a8794">3</tspan></text>
+  </g>
+  <g font-size="15" text-anchor="middle">
+    <text x="170" y="340" fill="#5b6b7a">D 1: NR</text>
+    <text x="290" y="340" fill="#5b6b7a">d 2: NR</text>
+    <text x="410" y="340" fill="#5b6b7a">D 1: NR</text>
+    <text x="530" y="340" fill="#bc4749" font-weight="bold">D 2: R</text>
+    <text x="650" y="340" fill="#5b6b7a">d 2: NR</text>
+    <text x="770" y="340" fill="#5b6b7a">d 2: NR</text>
+  </g>
+  <text x="148" y="370" font-size="16" fill="#1b2a3a">II-1's six meioses: <tspan font-weight="bold">n = 6</tspan> informative, <tspan font-weight="bold" fill="#bc4749">k = 1</tspan> recombinant (NR = non-recombinant, R = recombinant)</text>
+</svg>

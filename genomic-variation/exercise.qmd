@@ -1,0 +1,132 @@
+---
+title: "Exercise: genomic variation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- classify a variant as a SNP, indel, microsatellite (STR) or copy-number variant, and predict its likely effect;
+- translate between a variant's rs number, its genomic (g.) and coding (c.) names, and the strand;
+- recognise linkage disequilibrium in a small set of haplotypes;
+- choose between an array and sequencing for a genetic question;
+- look up a variant's allele frequency across populations in **gnomAD**, **Ensembl** and **dbSNP**;
+- use population frequencies in risk calculations, and explain lactase persistence and the sickle-cell allele in terms of selection.
+
+This unit has no demo; the R part plots real allele frequencies.
+
+## Background
+
+**Kinds of variant.** SNP (1 bp), indel (insertion or deletion, 1–50 bp; a frameshift in a coding sequence unless its length is a multiple of 3), STR or microsatellite (a 1–6 bp unit repeated a variable number of times; mutation rate 10^−3^–10^−4^ per generation), CNV (a segment of kb to Mb present in a variable number of copies).
+
+**Names.** dbSNP gives each variant position an **rs number**. HGVS names give the change relative to a reference sequence: g. (genomic), c. (coding, counted from the A of ATG), p. (protein). Genome databases list alleles on the **plus** strand. The sickle-cell allele is rs334 = NC_000011.10:g.5227002T>A = NM_000518.5:c.20A>T = p.Glu7Val (*HBB* is on the minus strand). The lactase persistence allele is rs4988235 = NC_000002.12:g.135851076G>A, known in the literature as *LCT* −13910C>T.
+
+**Haplotypes and LD.** A haplotype is the set of alleles on one chromosome. Two sites are in linkage disequilibrium (LD) when their alleles are associated in the population: the frequency of a haplotype differs from the product of its allele frequencies. Recombination breaks up LD, so it decays with distance and time.
+
+**Databases.** dbSNP (variant IDs and names), 1000 Genomes (2,504 people, 26 populations in 5 continental groups: AFR, AMR, EAS, EUR, SAS), gnomAD (about 800,000 people, grouped by genetic ancestry), ClinVar (clinical interpretation).
+
+**From allele to genotype frequencies.** If genotypes follow Hardy–Weinberg proportions (Part 7), an allele with frequency *q* gives *q*^2^ homozygotes, 2*q*(1 − *q*) heterozygotes and 1 − (1 − *q*)^2^ people with at least one copy.
+
+## By hand
+
+**B1. (kinds of variant)** For each variant, give its type and its most likely effect.
+
+a) *HBB* c.20A>T
+b) *CFTR* c.1521_1523del
+c) *CFTR* c.1624G>T, which turns a GGA (Gly) codon into TGA
+d) a single-base deletion in exon 3 of a gene, 100 codons before the normal stop
+e) 45 CAG repeats in *HTT* (normal range up to 26)
+f) a C>T change 14 kb upstream of *LCT*, inside an intron of *MCM6*
+g) one copy instead of two of a 3-Mb region on chromosome 22q11.2
+
+**B2. (strands and names)** a) rs4988235 is G>A on the plus strand of chromosome 2. *LCT* and *MCM6* lie on the minus strand. What is the change on the genes' strand? Which name do you find in papers about lactase persistence? b) rs671 is G>A on the plus strand of chromosome 12, and *ALDH2* lies on the **plus** strand. The variant changes codon 504 from GAA. What is the new codon and amino acid? c) For rs1426654 (*SLC24A5*, plus strand), Ensembl reports that the reference genome carries A (codon ACA, Thr111), and that the ancestral allele is G (GCA, Ala111). Why might the human reference genome carry a derived allele?
+
+**B3. (linkage disequilibrium)** Ten chromosomes from a population were typed at two nearby SNPs, SNP1 (*A*/*G*) and SNP2 (*C*/*T*). The haplotypes were
+
+| Haplotype | *AC* | *AT* | *GC* | *GT* |
+|---|---:|---:|---:|---:|
+| Count | 5 | 1 | 0 | 4 |
+
+a) Give the allele frequencies at each SNP.
+b) If the two SNPs were independent (linkage equilibrium), how many *AC* haplotypes would you expect out of 10? How many are there?
+c) Compute *D* = *p*~AC~ − *p*~A~ *p*~C~. Is there LD?
+d) A chromosome carries *G* at SNP1. What do you predict at SNP2? Why does this mean you need not genotype both SNPs?
+
+**B4. (lactase persistence)** The persistence allele (rs4988235 A) has frequency 0.74 in CEU, 0.59 in FIN, 0.09 in TSI (Tuscany) and 0 in YRI. Persistence is dominant. For each population, compute the expected fraction of adults who are lactase persistent (assume Hardy–Weinberg proportions). Which population would you expect to have the most adults with lactose intolerance?
+
+**B5. (sickle-cell risk)** In the Yoruba (YRI) sample, the HbS allele has frequency 0.14.
+
+a) What fraction of people do you expect to be carriers (HbA/HbS), and what fraction of newborns to have sickle-cell disease (HbS/HbS)?
+b) A woman from this population knows that she is a carrier. Her partner, from the same population, has not been tested. What is the risk that their first child has sickle-cell disease?
+c) Her partner is tested with the PCR-RFLP method from Digital analysis of DNA and shows bands at 201, 180, 82 and 37 bp. What is the risk now?
+
+**B6. (array or sequencing?)** Which method would you use, and why?
+
+a) Estimating the ancestry of 100,000 customers.
+b) Finding the cause of a severe developmental disorder in a child whose parents are healthy.
+c) Measuring the frequency of rs4988235 in 5,000 people.
+d) Detecting an expanded CAG repeat in *HTT*.
+
+**B7. (population frequency as evidence)** A child has a severe recessive metabolic disease with a prevalence of about 1 in 50,000. Exome sequencing finds two candidate variants, each homozygous: variant X is absent from gnomAD; variant Y has a frequency of 8% in the child's ancestry group. Which variant is the better candidate? Use numbers.
+
+**B8. (heterozygote advantage)** Explain in four or five sentences why the HbS allele reaches 10–14% in several West and East African populations but is absent in the 1000 Genomes samples from Europe and East Asia. Which three genotypes do you need to consider, and what is the fitness of each where malaria is common?
+
+## Find it
+
+The four tasks look up the two variants of this unit. gnomAD and Ensembl list alleles on the **plus** strand.
+
+**F1. (gnomAD: lactase persistence)** Open the gnomAD page for [rs4988235 (2-135851076-G-A)](https://gnomad.broadinstitute.org/variant/2-135851076-G-A?dataset=gnomad_r4) in dataset gnomAD v4. (You can also search for "rs4988235" in the box on the [gnomAD front page](https://gnomad.broadinstitute.org).) Scroll to **Genetic Ancestry Group Frequencies** and read the **Allele Frequency** for European (non-Finnish), European (Finnish), African/African American, East Asian and South Asian. Which group has the highest and which the lowest frequency? Is the allele found only in genomes, or also in exomes, and why?
+
+**F2. (gnomAD: sickle cell)** Do the same for [rs334 (11-5227002-T-A)](https://gnomad.broadinstitute.org/variant/11-5227002-T-A?dataset=gnomad_r4). What is the allele frequency in the African/African American group, and in European (non-Finnish)? Why is it lower than the 14% in the Yoruba sample of 1000 Genomes? How many **homozygotes** are listed?
+
+**F3. (Ensembl: 1000 Genomes populations)** Open the [Ensembl Population genetics page for rs4988235](https://www.ensembl.org/Homo_sapiens/Variation/Population?v=rs4988235). In the **1000 Genomes Project Phase 3** table, find the populations CEU, FIN, TSI, YRI and CHB and read the frequency of the A allele. These are the numbers you use in the [Exercise in R](exercise-r.qmd). Then open the **Explore this variant** summary (left menu) and read the **Most severe consequence** and the **Ancestral allele**.
+
+**F4. (dbSNP: one variant, many names)** Open [rs334 in dbSNP](https://www.ncbi.nlm.nih.gov/snp/rs334). Read the **Alleles** field, the **Chromosome** position (GRCh38), the **Gene : Consequence**, and the **Clinical Significance**. Then open the **HGVS** tab and find the name on NM_000518.5. How many different alternative alleles are known at this position?
+
+::: {.callout-tip collapse="true" title="Hint: gnomAD pages"}
+At the top of a gnomAD variant page are the overall frequency in **Exomes** and **Genomes** and the number of **homozygotes**. Further down, the "Genetic Ancestry Group Frequencies" table has one row per group, with Allele Count, Allele Number (the number of chromosomes typed), Number of Homozygotes and Allele Frequency. Allele frequency = allele count / allele number. See the [gnomAD help](https://gnomad.broadinstitute.org/help).
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) **SNP**, missense (Glu7Val): HbS, sickle-cell allele. b) **Indel** (3-bp deletion), in frame: one amino acid lost (Phe508), the protein misfolds: the commonest cystic fibrosis allele. c) **SNP**, **nonsense**: GGA → TGA is a stop codon (this is the *CFTR* allele G542X). d) **Indel**, **frameshift**: every codon after it is read in the wrong frame until a stop appears; usually a truncated or absent protein (often via nonsense-mediated decay). e) **STR expansion**: 45 repeats is in the fully penetrant Huntington disease range (40 or more). f) **SNP** in a **regulatory** element: no protein change, but it changes when *LCT* is expressed (lactase persistence). g) **CNV** (a deletion), removing one copy of about 3 Mb with dozens of genes: 22q11.2 deletion syndrome; the phenotype comes from reduced gene dosage.
+
+**B2.** a) G>A on the plus strand is **C>T** on the minus strand, the genes' strand. Papers call it ***LCT* −13910C>T**, and the persistence allele "−13910T" (it is 13,910 bp upstream of the *LCT* start). b) *ALDH2* is on the plus strand, so G>A applies directly: GAA → **AAA**, **Lys** (Glu504Lys; the allele also called *ALDH2\*2*). c) The reference genome was assembled mostly from a few people, largely of European ancestry. In Europeans the derived A allele (Thr111) is almost fixed (frequency about 1.0 in the 1000 Genomes European samples), so the reference carries it. Reference allele ≠ ancestral allele ≠ "normal" allele.
+
+**B3.** a) SNP1: *A* = (5 + 1)/10 = **0.6**, *G* = 0.4. SNP2: *C* = (5 + 0)/10 = **0.5**, *T* = 0.5. b) Expected *p*~AC~ = 0.6 × 0.5 = 0.3, so **3** of 10; observed **5**. c) *D* = 0.5 − 0.3 = **0.2**, not 0: the SNPs are in **LD** (*A* tends to go with *C*, *G* with *T*). d) All four *G* chromosomes carry *T*, so predict **T**. Knowing SNP1 tells you SNP2 (for *G* perfectly, for *A* mostly), so genotyping SNP1 "tags" SNP2. This is why an array with fewer than a million SNPs captures much of the common variation in a genome.
+
+**B4.** Persistent = 1 − (1 − *q*)^2^. CEU: 1 − 0.26^2^ = **0.93**. FIN: 1 − 0.41^2^ = **0.83**. TSI: 1 − 0.91^2^ = **0.17**. YRI: **0** (from this allele). Among these, YRI (and among the Europeans, Tuscany) would have the most adults who are lactase non-persistent; YRI does not carry other persistence alleles either, as far as is known. (Lactose intolerance also depends on how much milk people drink.)
+
+**B5.** a) Carriers: 2 × 0.14 × 0.86 ≈ **0.24**. Affected newborns: 0.14^2^ ≈ **0.020**, about 1 in 50. b) The partner is a carrier with probability 0.24; two carriers have a child with HbS/HbS with probability ¼. Risk = 0.24 × ¼ ≈ **0.06** (6%). c) 201 + 180 + 82 + 37 and no 381 band: the partner is **HbA/HbA**, so the risk is **0** (apart from a new mutation, which is negligible).
+
+**B6.** a) **Array**: ancestry uses common SNPs, and arrays are cheap for very many people. b) **Exome or genome sequencing** of the child (and ideally both parents, a "trio"): the cause is probably a rare or new (*de novo*) variant that no array is designed for. c) **Array** (or a single-SNP assay such as PCR-RFLP or a TaqMan test): one known SNP, many people. d) Neither short-read approach works well; a **targeted PCR** across the repeat with sizing of the product on a gel or capillary (or long-read sequencing) measures the repeat length.
+
+**B7.** For a recessive disease, prevalence ≈ *q*^2^. With prevalence 1/50,000, the causal allele can have a frequency of at most about √(1/50,000) ≈ **0.0045** (0.45%), and less if several alleles cause the disease. Variant Y at 8% would give 0.08^2^ = 0.0064, about 1 in 156 homozygotes: far more than the disease prevalence, so Y is almost certainly benign. **Variant X**, absent from gnomAD, is the better candidate (it still needs other evidence, such as its predicted effect and segregation in the family).
+
+**B8.** Three genotypes matter: HbA/HbA, HbA/HbS and HbS/HbS. Where falciparum malaria is common, HbA/HbA people are more likely to die of severe malaria; HbA/HbS carriers are protected and otherwise healthy, so they have the **highest fitness**; HbS/HbS people have sickle-cell disease and, without treatment, low fitness. Selection removes HbS alleles through homozygotes but favours them through heterozygotes, so the allele settles at an intermediate frequency: a **balanced polymorphism**. In Europe and East Asia there has been no such malaria pressure (or the allele never arose there), so HbS is rare or absent. The quantitative version is in the drift and selection unit (Part 7).
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Click path: gnomAD → search rs4988235 → dataset gnomAD v4 → Genetic Ancestry Group Frequencies. In gnomAD v4 (checked 2026-11-20, genomes) the A allele has frequency about **0.64** in European (non-Finnish), **0.58** in European (Finnish), **0.12** in African/African American, **0.16** in South Asian, **0.23** in Admixed American and **0.002** in East Asian. Highest: non-Finnish Europeans; lowest: East Asians. The variant is listed only in **genomes**: it lies in an intron of *MCM6*, outside the exons that exome sequencing captures. (The 12% in the African/African American group mostly reflects European admixture in African Americans, who make up most of that group.)
+
+**F2.** For rs334 (11-5227002-T-A), the African/African American frequency is about **0.04–0.06** (0.044 in genomes, 0.057 in exomes in v4), and about **0.0000–0.0002** in European (non-Finnish). It is lower than the Yoruba's 0.14 because the gnomAD African/African American group is mostly African Americans, whose ancestry is partly European, and whose African ancestors came from many regions; and because selection by malaria has not acted in the Americas. gnomAD lists **homozygotes** (people with sickle-cell disease) at the top of the page: 9 in genomes and 31 in exomes on 2026-11-20 (the counts change between versions). There are some because gnomAD excludes people with severe paediatric disease but not adults with sickle-cell disease.
+
+**F3.** Click path: Ensembl → search rs4988235 → Population genetics → 1000 Genomes Project Phase 3. A allele: **CEU 0.737**, **FIN 0.591**, **TSI 0.089**, **YRI 0**, **CHB 0** (only G is listed). Summary: Most severe consequence **intron variant** (in *MCM6*); ancestral allele **G**. So the persistence allele (A, = −13910T) is the **derived** allele: it arose by mutation from the ancestral non-persistence allele.
+
+**F4.** dbSNP rs334: Alleles **T>A / T>C / T>G** (three alternative alleles: A is HbS; C and G are other, rare variants); position **chr11:5227002** (GRCh38); Gene : Consequence ***HBB*: missense variant**; Clinical Significance includes **pathogenic** (and others, such as protective and likely benign, because ClinVar holds several submissions for the different alleles and conditions). HGVS: **NM_000518.5:c.20A>T** (HbS), as well as c.20A>G and c.20A>C.
+:::
+
+## Where this leads
+
+In **Part 5** the variants get bigger: deletions, inversions, translocations and whole extra chromosomes. In **Part 7**, the Hardy–Weinberg and drift and selection units turn today's stories into numbers: how genotype frequencies follow from allele frequencies, and how heterozygote advantage holds HbS at an equilibrium.
+
+**Next:** [Exercise in R](exercise-r.qmd): read allele frequencies of five SNPs in the 26 populations of the 1000 Genomes Project, join them with a population table using `left_join()`, and plot them by population.

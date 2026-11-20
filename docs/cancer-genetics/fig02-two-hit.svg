@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig02: Knudson's two-hit model. Hereditary: hit 1 in the germline, so every retinal cell starts with one hit.
+       Sporadic: both hits must happen in the same somatic cell. -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+  </defs>
+
+  <!-- column headers -->
+  <g font-size="16" fill="#555" text-anchor="middle">
+    <text x="105" y="26">fertilised egg</text>
+    <text x="385" y="26">retinal cells (many divisions later)</text>
+    <text x="745" y="26">outcome</text>
+  </g>
+
+  <!-- ===== row 1: hereditary ===== -->
+  <text x="20" y="62" font-size="19" font-weight="bold" fill="#1b2a3a">Hereditary</text>
+  <text x="20" y="84" font-size="15" fill="#555">hit 1 inherited</text>
+  <g>
+    <circle cx="105" cy="140" r="36" fill="#f6e2c2" stroke="#1b2a3a" stroke-width="2"/>
+    <rect x="80" y="126" width="50" height="9" rx="4.5" fill="#bc4749"/>
+    <rect x="80" y="145" width="50" height="9" rx="4.5" fill="#6a994e"/>
+  </g>
+  <line x1="152" y1="140" x2="236" y2="140" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="194" y="128" font-size="14" fill="#555" text-anchor="middle">every cell</text>
+  <text x="194" y="162" font-size="14" fill="#555" text-anchor="middle">carries hit 1</text>
+  <!-- grid 8 x 3 of cells, pitch 34; x0 = 250, y0 = 92 -->
+  <g stroke="#1b2a3a" stroke-width="1.4">
+    <g fill="#f6e2c2">
+      <rect x="250" y="92" width="28" height="28" rx="6"/><rect x="284" y="92" width="28" height="28" rx="6"/><rect x="318" y="92" width="28" height="28" rx="6"/><rect x="352" y="92" width="28" height="28" rx="6"/>
+      <rect x="386" y="92" width="28" height="28" rx="6"/><rect x="454" y="92" width="28" height="28" rx="6"/><rect x="488" y="92" width="28" height="28" rx="6"/>
+      <rect x="250" y="126" width="28" height="28" rx="6"/><rect x="318" y="126" width="28" height="28" rx="6"/><rect x="352" y="126" width="28" height="28" rx="6"/>
+      <rect x="386" y="126" width="28" height="28" rx="6"/><rect x="420" y="126" width="28" height="28" rx="6"/><rect x="454" y="126" width="28" height="28" rx="6"/><rect x="488" y="126" width="28" height="28" rx="6"/>
+      <rect x="250" y="160" width="28" height="28" rx="6"/><rect x="284" y="160" width="28" height="28" rx="6"/><rect x="318" y="160" width="28" height="28" rx="6"/>
+      <rect x="386" y="160" width="28" height="28" rx="6"/><rect x="420" y="160" width="28" height="28" rx="6"/><rect x="454" y="160" width="28" height="28" rx="6"/>
+    </g>
+    <g fill="#bc4749">
+      <rect x="420" y="92" width="28" height="28" rx="6"/>
+      <rect x="284" y="126" width="28" height="28" rx="6"/>
+      <rect x="352" y="160" width="28" height="28" rx="6"/>
+      <rect x="488" y="160" width="28" height="28" rx="6"/>
+    </g>
+  </g>
+  <line x1="530" y1="140" x2="596" y2="140" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="563" y="128" font-size="14" fill="#555" text-anchor="middle">hit 2 in</text>
+  <text x="563" y="162" font-size="14" fill="#555" text-anchor="middle">several cells</text>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="612" y="110"><tspan font-weight="bold">several tumours</tspan>, often</text>
+    <text x="612" y="132">in <tspan font-weight="bold">both eyes</tspan></text>
+    <text x="612" y="154"><tspan font-weight="bold">early</tspan>: risk rises linearly with age</text>
+    <text x="612" y="176">runs in families (looks dominant)</text>
+  </g>
+
+  <line x1="20" y1="214" x2="880" y2="214" stroke="#ddd" stroke-width="1.5"/>
+
+  <!-- ===== row 2: sporadic ===== -->
+  <text x="20" y="250" font-size="19" font-weight="bold" fill="#1b2a3a">Sporadic</text>
+  <text x="20" y="272" font-size="15" fill="#555">no inherited hit</text>
+  <g>
+    <circle cx="105" cy="328" r="36" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+    <rect x="80" y="314" width="50" height="9" rx="4.5" fill="#6a994e"/>
+    <rect x="80" y="333" width="50" height="9" rx="4.5" fill="#6a994e"/>
+  </g>
+  <line x1="152" y1="328" x2="236" y2="328" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="194" y="316" font-size="14" fill="#555" text-anchor="middle">cells start</text>
+  <text x="194" y="350" font-size="14" fill="#555" text-anchor="middle">with no hit</text>
+  <g stroke="#1b2a3a" stroke-width="1.4" fill="#fff">
+    <rect x="250" y="280" width="28" height="28" rx="6"/><rect x="284" y="280" width="28" height="28" rx="6"/><rect x="318" y="280" width="28" height="28" rx="6"/><rect x="352" y="280" width="28" height="28" rx="6"/>
+    <rect x="386" y="280" width="28" height="28" rx="6"/><rect x="420" y="280" width="28" height="28" rx="6"/><rect x="454" y="280" width="28" height="28" rx="6"/><rect x="488" y="280" width="28" height="28" rx="6"/>
+    <rect x="250" y="314" width="28" height="28" rx="6"/><rect x="284" y="314" width="28" height="28" rx="6"/><rect x="318" y="314" width="28" height="28" rx="6"/>
+    <rect x="386" y="314" width="28" height="28" rx="6"/><rect x="420" y="314" width="28" height="28" rx="6"/><rect x="454" y="314" width="28" height="28" rx="6"/><rect x="488" y="314" width="28" height="28" rx="6"/>
+    <rect x="250" y="348" width="28" height="28" rx="6"/><rect x="284" y="348" width="28" height="28" rx="6"/><rect x="318" y="348" width="28" height="28" rx="6"/><rect x="352" y="348" width="28" height="28" rx="6"/>
+    <rect x="386" y="348" width="28" height="28" rx="6"/><rect x="420" y="348" width="28" height="28" rx="6"/><rect x="488" y="348" width="28" height="28" rx="6"/>
+    <rect x="352" y="314" width="28" height="28" rx="6" fill="#f6e2c2"/>
+    <rect x="454" y="348" width="28" height="28" rx="6" fill="#f6e2c2"/>
+    <rect x="284" y="314" width="28" height="28" rx="6" fill="#bc4749"/>
+  </g>
+  <line x1="530" y1="328" x2="596" y2="328" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="563" y="316" font-size="14" fill="#555" text-anchor="middle">both hits in</text>
+  <text x="563" y="350" font-size="14" fill="#555" text-anchor="middle">one cell: rare</text>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="612" y="298"><tspan font-weight="bold">one tumour</tspan> in <tspan font-weight="bold">one eye</tspan></text>
+    <text x="612" y="320"><tspan font-weight="bold">later</tspan>: risk rises with age squared</text>
+    <text x="612" y="342">not inherited</text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="15" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="1.2">
+    <rect x="250" y="398" width="18" height="18" rx="4" fill="#fff"/>
+    <rect x="370" y="398" width="18" height="18" rx="4" fill="#f6e2c2"/>
+    <rect x="490" y="398" width="18" height="18" rx="4" fill="#bc4749"/>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="275" y="412">no hit</text>
+    <text x="395" y="412">one hit</text>
+    <text x="515" y="412">both <tspan font-style="italic">RB1</tspan> alleles hit: tumour</text>
+  </g>
+</svg>

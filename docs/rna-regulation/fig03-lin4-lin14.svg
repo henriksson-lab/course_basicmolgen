@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="385" viewBox="0 0 900 385" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig03: the lin-4 / lin-14 story in C. elegans. Left: LIN-14 protein level through the four larval
+       stages. Wild type: high in L1, falls from late L1 as lin-4 RNA appears. lin-4 loss of function,
+       or a lin-14 gain-of-function allele that deletes the 3'UTR sites: LIN-14 stays high, and cells
+       repeat L1 fates (retarded). lin-14 loss of function: no LIN-14, cells skip L1 fates (precocious).
+       Right: lin-4 RNA is complementary to repeated sites in the lin-14 3'UTR. -->
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">Two mutants, one mechanism: <tspan font-style="italic">lin-4</tspan> RNA turns down <tspan font-style="italic">lin-14</tspan></text>
+
+  <!-- axes -->
+  <line x1="80" y1="250" x2="470" y2="250" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="80" y1="250" x2="80" y2="70" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="128" y="272">L1</text><text x="225" y="272">L2</text><text x="322" y="272">L3</text><text x="420" y="272">L4</text>
+  </g>
+  <g stroke="#d5dae0" stroke-width="1"><line x1="177" y1="250" x2="177" y2="70"/><line x1="274" y1="250" x2="274" y2="70"/><line x1="371" y1="250" x2="371" y2="70"/></g>
+  <text x="275" y="296" font-size="14" fill="#1b2a3a" text-anchor="middle">larval stage</text>
+  <text x="40" y="160" font-size="14" fill="#1b2a3a" text-anchor="middle" transform="rotate(-90 40 160)">LIN-14 protein</text>
+
+  <!-- curves -->
+  <path d="M84,90 L470,90" fill="none" stroke="#c0392b" stroke-width="4"/>
+  <path d="M84,94 L150,94 C175,94 190,236 230,240 L470,240" fill="none" stroke="#2a6f97" stroke-width="4"/>
+  <path d="M84,246 L470,246" fill="none" stroke="#5f9e4a" stroke-width="4" stroke-dasharray="10 6"/>
+
+  <!-- curve labels -->
+  <text x="476" y="82" font-size="14" fill="#c0392b" font-weight="bold"><tspan font-style="italic">lin-4</tspan>(lf), or</text>
+  <text x="476" y="100" font-size="14" fill="#c0392b" font-weight="bold"><tspan font-style="italic">lin-14</tspan>(gf) 3'UTR deleted</text>
+  <text x="476" y="118" font-size="13" fill="#5c6b7a">cells repeat L1 fates (retarded)</text>
+  <text x="476" y="218" font-size="14" fill="#2a6f97" font-weight="bold">wild type</text>
+  <text x="476" y="236" font-size="13" fill="#5c6b7a"><tspan font-style="italic">lin-4</tspan> RNA appears late in L1</text>
+  <text x="476" y="268" font-size="14" fill="#5f9e4a" font-weight="bold"><tspan font-style="italic">lin-14</tspan>(lf)</text>
+  <text x="476" y="286" font-size="13" fill="#5c6b7a">cells skip L1 fates (precocious)</text>
+
+  <!-- pairing cartoon -->
+  <line x1="20" y1="316" x2="880" y2="316" stroke="#d5dae0" stroke-width="1.5"/>
+  <text x="20" y="342" font-size="14" fill="#1b2a3a"><tspan font-style="italic">lin-4</tspan> encodes no protein: a ~22-nt RNA that pairs with several sites in the <tspan font-style="italic">lin-14</tspan> 3'UTR. Opposite phenotypes of</text>
+  <text x="20" y="364" font-size="14" fill="#1b2a3a"><tspan font-style="italic">lin-4</tspan> and <tspan font-style="italic">lin-14</tspan> mutants, and epistasis of <tspan font-style="italic">lin-14</tspan>(lf), put <tspan font-style="italic">lin-4</tspan> upstream as a negative regulator.</text>
+</svg>

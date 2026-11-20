@@ -1,0 +1,156 @@
+---
+title: "Quiz: linkage & recombination"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on linkage, recombination frequency and map distance. Try each on paper first, then open the answer. A calculator with `ln` and `exp` helps for Q9 and Q10.
+
+---
+
+**Q1.** A dihybrid *AaBb* is testcrossed to *aabb*. What ratio do you expect if the genes are unlinked? What tells you that they are linked?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The testcross classes are the gametes of the dihybrid. What does independent assortment say about those gametes?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Unlinked: four classes in **1 : 1 : 1 : 1**, so 50% of the offspring carry new combinations. Linked: two classes (the **parental** combinations) are clearly **more** common than the other two (the **recombinants**), and recombinants are **less than 50%**. Two large plus two small, with each pair about equal, is the signature of linkage.
+:::
+
+---
+
+**Q2.** A testcross of *Drosophila* females heterozygous for *b* (black body) and *vg* (vestigial wings) gives: 405 black vestigial, 393 wild type, 92 black, 110 vestigial (invented numbers). Which classes are parental? What is the RF? Was the mother in coupling or repulsion?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Parental classes are the two largest.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Parental: **black vestigial** (*b vg*) and **wild type** (*b*^+^ *vg*^+^), the two largest classes. Recombinant: black (*b vg*^+^) and vestigial (*b*^+^ *vg*). RF = (92 + 110) / 1000 = **0.202 = 20.2%**. The mother was *b*^+^ *vg*^+^ / *b vg*: **coupling**.
+:::
+
+---
+
+**Q3.** Same genes, but the F~1~ mother came from black × vestigial parents (*b vg*^+^ / *b vg*^+^ × *b*^+^ *vg* / *b*^+^ *vg*). Predict the four classes of her testcross, with approximate fractions.
+
+::: {.callout-tip collapse="true" title="Hint"}
+RF does not depend on the phase. Only which classes are called parental changes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+She is *b vg*^+^ / *b*^+^ *vg*: **repulsion**. Parental classes are now black (*b vg*^+^) and vestigial (*b*^+^ *vg*), about (1 − 0.2)/2 = **40% each**. The recombinants are wild type and black vestigial, about 0.2/2 = **10% each**. The same RF, opposite labels.
+:::
+
+---
+
+**Q4.** One crossover happens between genes *A* and *B* in a meiosis. What fraction of the four products of that meiosis is recombinant for *A* and *B*? Why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many chromatids does the bivalent have, and how many take part in one crossover?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Half (2 of 4).** Crossing over happens at the **four-strand stage**, after DNA replication. One crossover involves only two non-sister chromatids; the other two chromatids stay parental. So even if every meiosis had exactly one crossover between *A* and *B*, RF would be 50%, not 100%.
+:::
+
+---
+
+**Q5.** In 30% of meioses there is one chiasma between genes *C* and *D*; in the rest there is none. What is the RF, and what is the map distance?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Use Q4.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each meiosis with a chiasma gives ½ recombinant products, so RF = 0.30 × ½ = **0.15**. With at most one crossover, RF equals map distance: **15 cM**. (Equivalently: map distance in morgans = ½ × mean number of chiasmata = ½ × 0.30 = 0.15 M.)
+:::
+
+---
+
+**Q6.** RFs among three linked genes: *A*–*B* 8%, *B*–*C* 5%, *A*–*C* 13%. What is the gene order?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For short distances, map distances add. Which gene's two distances add up to the third?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+8 + 5 = 13, so ***B* is in the middle**: **A – B – C**, with *A*–*B* 8 cM and *B*–*C* 5 cM.
+:::
+
+---
+
+**Q7.** Two genes are on the same chromosome, 80 cM apart. A student predicts 80% recombinants in a testcross. What will she really see, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A chromatid is recombinant if it has an odd number of crossovers between the two genes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Far fewer than 80%, and certainly **no more than 50%**: Haldane's map function predicts ½(1 − e^−1.6^) = **0.40**, Kosambi's ½ tanh(1.6) = **0.46**. RF can never exceed 0.5: with many crossovers in the interval, an odd number (recombinant) and an even number (parental) become about equally likely, and double crossovers restore the parental combination. The two genes will look nearly **unlinked**, although they are on the same chromosome.
+:::
+
+---
+
+**Q8.** Why does every map distance shorter than about 10 cM almost equal the RF, while long distances do not?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How likely are two crossovers in a short interval?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In a short interval, **two crossovers on one chromatid are very rare**, so nearly every crossover produces a visible recombinant, and RF ≈ expected number of crossovers = map distance. In a long interval, double (and higher even) crossovers are common; they restore the parental combination and are **invisible** with two markers, so RF is lower than the map distance. That is why maps are built by adding up short intervals.
+:::
+
+---
+
+**Q9.** Use Haldane's map function, RF = ½(1 − e^−2*d*^) with *d* in morgans. (a) What RF do you expect for 20 cM? (b) What map distance corresponds to RF = 0.30?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For (b), use *d* = −½ ln(1 − 2 RF). Remember to convert morgans to centimorgans.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) *d* = 0.20 M: RF = ½(1 − e^−0.4^) = ½(1 − 0.670) = **0.165**.
+(b) *d* = −½ ln(1 − 0.6) = −½ ln(0.4) = −½ × (−0.916) = **0.458 M = 45.8 cM**. (Kosambi would give ¼ ln(1.6/0.4) = ¼ ln 4 = 0.347 M = 34.7 cM.)
+:::
+
+---
+
+**Q10.** Kosambi's map function gives a *shorter* map distance than Haldane's for the same RF. Explain why, in terms of interference.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which function expects more double crossovers?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Haldane assumes crossovers are **independent**, so double crossovers are as common as chance allows, and many crossovers are hidden. To explain a given RF, Haldane must assume a lot of hidden crossovers, hence a long distance. Kosambi allows for **interference** (one crossover makes another nearby less likely), so fewer doubles are hidden and fewer extra crossovers are needed: the distance is shorter. Interference is measured directly in *Three-point crosses*.
+:::
+
+---
+
+**Q11.** A testcross gives 31 parental and 19 recombinant offspring. Test the hypothesis that the genes are unlinked (α = 0.05). Assume each gene alone segregates 1 : 1.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Under H~0~ (unlinked), parental : recombinant = 1 : 1. df = 1; the 5% critical value is 3.84.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Expected 25 : 25. χ² = (31 − 25)²/25 + (19 − 25)²/25 = 1.44 + 1.44 = **2.88**, df = 1, below 3.84 (p ≈ 0.09). We **cannot reject** independent assortment. This does not prove that the genes are unlinked: an RF of 0.38 is quite plausible, and with 50 offspring the test has little power.
+:::
+
+---
+
+**Q12.** Why do *Drosophila* geneticists use heterozygous **females**, not males, in mapping testcrosses?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What is unusual about meiosis in male flies?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*Drosophila* **males have no meiotic crossing over**. A heterozygous male in coupling gives only the two parental gamete types, so his testcross shows **complete linkage** (RF = 0) for any two genes on the same chromosome, whatever their distance. Females cross over normally, so their testcross measures RF.
+:::

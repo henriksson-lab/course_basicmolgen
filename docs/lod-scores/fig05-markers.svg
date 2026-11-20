@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="400" viewBox="0 0 940 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: three generations of DNA markers for linkage mapping. Each row: a sketch of the two
+       homologues of one person (blue / red) at the marker, then how many alleles the marker has and
+       how it is typed. A meiosis is only informative if the parent is heterozygous at the marker. -->
+  <!-- column headings -->
+  <g font-size="15" fill="#5b6b7a" font-weight="bold">
+    <text x="20" y="24">marker type</text>
+    <text x="230" y="24">the two homologues of one person</text>
+    <text x="640" y="24">alleles per locus · how typed</text>
+  </g>
+  <line x1="20" y1="34" x2="920" y2="34" stroke="#7a8794" stroke-width="1"/>
+
+  <!-- ===== RFLP ===== -->
+  <text x="20" y="80" font-size="20" font-weight="bold" fill="#1b2a3a">RFLP</text>
+  <text x="20" y="102" font-size="14" fill="#5b6b7a">1980s</text>
+  <g stroke-width="6" stroke-linecap="round">
+    <line x1="230" y1="66" x2="590" y2="66" stroke="#2a6f97"/>
+    <line x1="230" y1="102" x2="590" y2="102" stroke="#bc4749"/>
+  </g>
+  <!-- restriction sites: blue has three, red lacks the middle one -->
+  <g stroke="#1b2a3a" stroke-width="2.5">
+    <line x1="290" y1="56" x2="290" y2="76"/><line x1="410" y1="56" x2="410" y2="76"/><line x1="530" y1="56" x2="530" y2="76"/>
+    <line x1="290" y1="92" x2="290" y2="112"/><line x1="530" y1="92" x2="530" y2="112"/>
+  </g>
+  <text x="410" y="122" font-size="13" fill="#bc4749" text-anchor="middle">site lost</text>
+  <g font-size="13" fill="#5b6b7a" text-anchor="middle">
+    <text x="350" y="52">2 kb</text><text x="470" y="52">2 kb</text>
+  </g>
+  <text x="640" y="72" font-size="16" fill="#1b2a3a"><tspan font-weight="bold">2</tspan> (site present / absent)</text>
+  <text x="640" y="96" font-size="15" fill="#5b6b7a">cut, Southern blot: 2 kb or 4 kb band</text>
+  <text x="640" y="116" font-size="15" fill="#5b6b7a">G8 (D4S10) for Huntington, 1983</text>
+
+  <line x1="20" y1="140" x2="920" y2="140" stroke="#e3e6ea" stroke-width="1"/>
+
+  <!-- ===== Microsatellite ===== -->
+  <text x="20" y="188" font-size="20" font-weight="bold" fill="#1b2a3a">Microsatellite</text>
+  <text x="20" y="210" font-size="14" fill="#5b6b7a">1990s</text>
+  <g stroke-width="6" stroke-linecap="round">
+    <line x1="230" y1="176" x2="590" y2="176" stroke="#2a6f97"/>
+    <line x1="230" y1="212" x2="590" y2="212" stroke="#bc4749"/>
+  </g>
+  <!-- repeat blocks: 6 vs 9 CA units -->
+  <g fill="#fff" stroke="#2a6f97" stroke-width="2">
+    <rect x="340" y="166" width="16" height="20"/><rect x="356" y="166" width="16" height="20"/><rect x="372" y="166" width="16" height="20"/>
+    <rect x="388" y="166" width="16" height="20"/><rect x="404" y="166" width="16" height="20"/><rect x="420" y="166" width="16" height="20"/>
+  </g>
+  <g fill="#fff" stroke="#bc4749" stroke-width="2">
+    <rect x="340" y="202" width="16" height="20"/><rect x="356" y="202" width="16" height="20"/><rect x="372" y="202" width="16" height="20"/>
+    <rect x="388" y="202" width="16" height="20"/><rect x="404" y="202" width="16" height="20"/><rect x="420" y="202" width="16" height="20"/>
+    <rect x="436" y="202" width="16" height="20"/><rect x="452" y="202" width="16" height="20"/><rect x="468" y="202" width="16" height="20"/>
+  </g>
+  <text x="290" y="162" font-size="14" fill="#2a6f97">(CA)<tspan dy="4" font-size="11">6</tspan></text>
+  <text x="500" y="240" font-size="14" fill="#bc4749">(CA)<tspan dy="4" font-size="11">9</tspan></text>
+  <text x="640" y="182" font-size="16" fill="#1b2a3a"><tspan font-weight="bold">many</tspan> (repeat lengths)</text>
+  <text x="640" y="206" font-size="15" fill="#5b6b7a">PCR, then measure the length</text>
+  <text x="640" y="226" font-size="15" fill="#5b6b7a">most people heterozygous</text>
+
+  <line x1="20" y1="252" x2="920" y2="252" stroke="#e3e6ea" stroke-width="1"/>
+
+  <!-- ===== SNP ===== -->
+  <text x="20" y="300" font-size="20" font-weight="bold" fill="#1b2a3a">SNP</text>
+  <text x="20" y="322" font-size="14" fill="#5b6b7a">2000s →</text>
+  <g stroke-width="6" stroke-linecap="round">
+    <line x1="230" y1="288" x2="590" y2="288" stroke="#2a6f97"/>
+    <line x1="230" y1="324" x2="590" y2="324" stroke="#bc4749"/>
+  </g>
+  <g font-size="16" font-weight="bold" text-anchor="middle">
+    <rect x="399" y="276" width="22" height="24" rx="3" fill="#fff" stroke="#2a6f97" stroke-width="2"/>
+    <text x="410" y="294" fill="#2a6f97">A</text>
+    <rect x="399" y="312" width="22" height="24" rx="3" fill="#fff" stroke="#bc4749" stroke-width="2"/>
+    <text x="410" y="330" fill="#bc4749">G</text>
+  </g>
+  <text x="640" y="294" font-size="16" fill="#1b2a3a"><tspan font-weight="bold">2</tspan> (one base differs)</text>
+  <text x="640" y="318" font-size="15" fill="#5b6b7a">arrays or sequencing, 100 000s at once</text>
+  <text x="640" y="338" font-size="15" fill="#5b6b7a">each one less informative, but dense</text>
+
+  <!-- take-home -->
+  <rect x="20" y="356" width="900" height="36" rx="6" fill="#f4f6f8" stroke="#7a8794" stroke-width="1"/>
+  <text x="36" y="380" font-size="16" fill="#1b2a3a">A meiosis is <tspan font-weight="bold">informative</tspan> only if the parent is <tspan font-weight="bold">heterozygous</tspan> at the marker: then you can tell which homologue a child got.</text>
+</svg>

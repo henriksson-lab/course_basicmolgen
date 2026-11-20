@@ -1,0 +1,132 @@
+---
+title: "Quiz: Hardy–Weinberg equilibrium"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on allele and genotype frequencies, the Hardy–Weinberg principle and inbreeding. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** In a sample of 200 people, 98 are *AA*, 84 are *Aa* and 18 are *aa*. What are the genotype frequencies and the allele frequencies?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Genotype frequencies count people. Allele frequencies count gene copies: two per person.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Genotypes: 98/200 = **0.49**, 84/200 = **0.42**, 18/200 = **0.09**.
+Alleles: *p* = (2 × 98 + 84)/400 = 280/400 = **0.7**; *q* = **0.3**. (Shortcut: *p* = 0.49 + 0.42/2 = 0.70.) These genotype frequencies are exactly 0.7², 2 × 0.7 × 0.3 and 0.3²: the sample is in HWE.
+:::
+
+---
+
+**Q2.** A student says: "*A* is dominant, so over the generations *A* will spread until everyone has the dominant phenotype." What is wrong?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What happens to *p* after one generation of random mating?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Dominance decides how a genotype **looks**, not how often an allele is **passed on**. Under random mating, *p* in the next generation is *p*² + *pq* = *p*: unchanged. An allele only spreads if something else acts on it, such as selection or drift. Huntington disease is dominant and rare; blood group O is recessive and common in many populations.
+:::
+
+---
+
+**Q3.** List the assumptions of the Hardy–Weinberg principle. Which of them, if broken, changes **genotype** frequencies but not **allele** frequencies?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think about what inbreeding does to heterozygotes and homozygotes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Random mating, a very large population (no drift), no selection, no mutation, no migration (and a single population). **Non-random mating**, such as inbreeding, shifts genotypes from heterozygotes to homozygotes but leaves *p* unchanged. Pooling different populations (Wahlund effect) does the same. Drift, selection, mutation and migration change *p* itself.
+:::
+
+---
+
+**Q4.** Why does the χ² test for HWE have **1** degree of freedom, although there are three genotype classes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+In Mendel's crosses, where did the expected ratio come from?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+We lose one degree of freedom because the three counts must add up to *N*, and **another** because the expected frequencies use *p*, which we **estimated from the same data**. 3 − 1 − 1 = **1**. In a Mendelian cross the ratio came from theory, so no parameter was estimated and df = classes − 1. The 5% critical value for df = 1 is 3.84.
+:::
+
+---
+
+**Q5.** Phenylketonuria (autosomal recessive) affects about 1 in 10 000 newborns. Assuming HWE, what fraction of people are carriers?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Incidence = *q*². Then carriers = 2*pq*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*q* = √(1/10 000) = 0.01, *p* = 0.99. Carriers 2*pq* = 2 × 0.99 × 0.01 = 0.0198 ≈ **1/50**. This is the carrier frequency used in the [pedigrees](../pedigrees/lec.qmd) unit. For a rare allele, carriers ≈ 2*q*.
+:::
+
+---
+
+**Q6.** About 1 in 5000 boys is born with haemophilia A (X-linked recessive). Estimate the frequency of affected girls and of carrier women.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Males have one X. What is the frequency of affected males in terms of *q*?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Affected males = *q* = 1/5000 = 0.0002. Affected females = *q*² = 4 × 10<sup>−8</sup>, about 1 in 25 million. Carrier females = 2*pq* ≈ 2 × 0.0002 = 0.0004, about **1 in 2500**. (In reality many cases are new mutations, which this simple calculation ignores.)
+:::
+
+---
+
+**Q7.** In a de Finetti triangle, a population lies **below** the HWE parabola. Give two possible explanations. What could put it **above** the parabola?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Below means too few heterozygotes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Below (heterozygote deficit): **inbreeding** (*F* > 0), or **population structure**: a sample pooled from populations with different allele frequencies (Wahlund effect). Selection against heterozygotes or genotyping errors that miss heterozygotes also do it. Above (excess): **heterozygote advantage** acting on the sampled individuals, the offspring of a cross between two different populations, or genotyping errors that call too many heterozygotes.
+:::
+
+---
+
+**Q8.** What does an inbreeding coefficient *F* = 1/16 mean for a child of first cousins? How does it change the frequency of *aa* for an allele with *q* = 0.01?
+
+::: {.callout-tip collapse="true" title="Hint"}
+f(*aa*) = *q*² + *Fpq*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+At any locus, the child's two alleles are copies of the **same** ancestral allele (identical by descent) with probability 1/16. f(*aa*) = 0.0001 + 0.99 × 0.01/16 = 0.0001 + 0.00062 = **0.00072**, about **7 times** higher than under random mating. The rarer the allele, the larger the relative increase.
+:::
+
+---
+
+**Q9.** In 1000 Genomes, the Yoruba sample has 78 *AA*, 30 *AS* and 0 *SS* people at the sickle-cell SNP. HWE predicts about 2 *SS*. A much larger sample (gnomAD) shows the same deficit. Why is the sickle-cell locus not in HWE among adults?
+
+::: {.callout-tip collapse="true" title="Hint"}
+HWE holds at conception. What happens between conception and the time a person is sampled?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Selection**: *SS* people have sickle-cell disease, which shortens life (especially without treatment), and people with severe disease are rarely included in studies of healthy adults. So *SS* genotypes are missing from adult samples, although random mating produced them at conception in HWE proportions.
+:::
+
+---
+
+**Q10.** Two equally large populations are each in HWE, one with *p* = 0.9 and one with *p* = 0.1. You sample both and pool the data. What heterozygote frequency do you observe, and what does HWE predict for the pooled *p*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compute 2*pq* in each population and average. Then compute the pooled *p*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each population has 2 × 0.9 × 0.1 = 0.18 heterozygotes, so the pooled sample has **0.18**. Pooled *p* = 0.5, so HWE predicts **0.50**. Apparent *F* = 1 − 0.18/0.50 = **0.64**, a large heterozygote deficit without any inbreeding: the **Wahlund effect**.
+:::

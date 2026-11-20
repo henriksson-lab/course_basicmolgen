@@ -1,0 +1,276 @@
+---
+title: "Hardy–Weinberg equilibrium"
+subtitle: "Part 7 — Cancer, populations & complex traits"
+author: "Basic and molecular genetics (5MO104)"
+format:
+  revealjs:
+    theme: [simple, ../theme.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    transition: none
+    history: false
+    highlight-style: github
+    code-overflow: wrap
+    code-line-numbers: false
+    incremental: false
+    chalkboard: false
+    menu: true
+    html-math-method: katex
+---
+
+## About this lecture
+
+So far we followed alleles through **one family**. Now we follow them through a whole **population**: what fraction of people carry each allele and each genotype?
+
+- **Allele** and **genotype frequencies**, and how to count them.
+- The **Hardy–Weinberg principle**: random mating turns allele frequencies *p* and *q* into genotype frequencies *p*², 2*pq*, *q*², and keeps them there.
+- Its **assumptions**, and the **χ² test** for HWE (df = 1).
+- The **de Finetti triangle**, a picture of all possible populations.
+- Uses: **carrier frequencies** from disease incidence (the 1/50 from the pedigrees unit), **X-linked** traits, and **inbreeding** (*F*).
+
+Book: Hartwell, the population genetics chapter. You need the product rule and the χ² test from Part 1.
+
+::: notes
+This unit starts population genetics, which runs for the next two units. The key shift is from the Punnett square of one cross to the "Punnett square of a population", where the gametes come from a pool. Students have already used the result: in the pedigrees unit, the 1/50 carrier frequency was promised to come from Hardy–Weinberg. Today we deliver it. HWE is also a null model: like 3:1 in Mendel's crosses, it is what we expect when nothing interesting is happening, and departures tell us something about the population. The next unit, Drift and selection, is about the forces that make populations depart from it.
+:::
+
+## Allele and genotype frequencies
+
+The MN blood group has two **codominant** alleles, *M* and *N*, so every genotype can be seen. A classic textbook sample of 6129 people:
+
+| | *MM* | *MN* | *NN* | total |
+|---|---|---|---|---|
+| count | 1787 | 3039 | 1303 | 6129 |
+| genotype frequency | 0.292 | 0.496 | 0.213 | 1 |
+
+**Allele frequencies**: count alleles, two per person.
+
+$$
+p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.540, \qquad q = f(N) = 1 - p = 0.460.
+$$
+
+Shortcut: *p* = f(*MM*) + ½ f(*MN*) = 0.292 + 0.248 = 0.540.
+
+::: notes
+Two kinds of frequency, and students mix them up. A genotype frequency counts people; an allele frequency counts gene copies, two per person. Homozygotes contribute two copies of their allele, heterozygotes one of each. Codominance matters here only because it lets us see every genotype; with a dominant allele we could not count the heterozygotes directly, which is exactly why HWE is useful for recessive diseases. The numbers are from a classic textbook sample; we test them for HWE later in the lecture and in the demo.
+:::
+
+## Random mating: the population's Punnett square {.smaller}
+
+![](fig01-random-mating.svg){width="82%" fig-align="center"}
+
+- If gametes meet **at random**, an egg carrying *A* (probability *p*) meets a sperm carrying *A* (probability *p*) with probability *p*², by the product rule.
+- So the genotype frequencies are **_p_² : 2_pq_ : _q_²**, and they add up to (*p* + *q*)² = 1.
+- The allele frequency in the next generation is *p*² + *pq* = *p*: **unchanged**.
+
+::: notes
+This is the whole derivation. The product rule from the probability unit does all the work: two independent draws from a gene pool. The heterozygote appears twice, A from the egg and a from the sperm or the other way round, which is the source of the 2. The last line is the important one: random mating does not change the allele frequency. Hardy, a mathematician, wrote this in 1908 to answer the question why dominant alleles do not spread until they take over the population: they do not, because dominance changes how a genotype looks, not how often an allele is passed on. Weinberg found it independently the same year.
+:::
+
+## The Hardy–Weinberg principle
+
+In a large, randomly mating population with no selection, mutation or migration:
+
+1. Genotype frequencies are **_p_², 2_pq_, _q_²**, after **one** generation of random mating, whatever they were before.
+2. Allele and genotype frequencies then stay **constant** from generation to generation.
+
+Note what it does **not** say:
+
+- It does not say *p* = *q* = 0.5. Any *p* can be in equilibrium.
+- It does not say a **dominant** allele becomes common. Dominance affects phenotypes, not allele frequencies.
+- It is a **null model**: like 3:1 in a cross, it is what we test against.
+
+::: notes
+Emphasise point 1: one generation is enough, which is very different from most equilibria in nature. Take a population made by mixing pure AA and aa: no heterozygotes at all. After one round of random mating, genotypes are p squared, 2pq, q squared. The demo shows this with the Mendel F2 preset: an F2 is one generation of random union of gametes and sits exactly on the HWE curve. The misconception that dominant alleles become common is very widespread; ask the class for a counterexample: Huntington disease is dominant and rare, and blood group O is recessive and common in many populations.
+:::
+
+## Rare alleles hide in heterozygotes {.smaller}
+
+![](fig02-genotype-curves.svg){width="72%" fig-align="center"}
+
+- For a rare allele, almost all copies are in **heterozygotes**: at *q* = 0.1 there are 18 carriers for every *aa* person; at *q* = 0.01, about 200.
+- So selection against a rare **recessive** phenotype removes very few copies. This is why recessive disease alleles persist (next unit).
+- Heterozygote frequency 2*pq* is highest, 0.5, at *p* = *q* = 0.5.
+
+::: notes
+Read the plot at q equals 0.1. The orange curve is at 0.18, the red one at 0.01. The ratio 2pq over q squared is 2p over q, about 2 over q for rare alleles. At q equals 0.01 that is about 200 carriers per affected person. This matters for medicine: carrier screening finds far more people than disease screening. It matters for evolution: even if every aa person died, the allele frequency would fall only very slowly, because selection cannot see the carriers. Mention eugenics here briefly: early twentieth-century proposals to remove recessive diseases by sterilising affected people would have had almost no effect on allele frequencies, exactly for this reason.
+:::
+
+## The assumptions
+
+| Assumption | If it fails | Covered in |
+|---|---|---|
+| **Random mating** | inbreeding or assortative mating changes genotype frequencies (not *p*) | today |
+| **Large population** | **drift**: *p* changes by chance | *Drift, selection* |
+| **No selection** | genotypes survive or reproduce differently | *Drift, selection* |
+| **No mutation** | new alleles enter | *Drift, selection* |
+| **No migration** | alleles enter from another population | *Drift, selection* |
+| (One population) | pooled samples show a deficit of heterozygotes (**Wahlund effect**) | today |
+
+In real human populations these are rarely all true, yet most loci are **close** to HWE: the forces are weak at most loci, and one generation of random mating restores the proportions.
+
+::: notes
+Random mating is with respect to this locus. People choose partners by height or language, but not by their MN blood group, so MN is in HWE even though mating is not random overall. Of the six rows, only non-random mating and population structure act on genotype frequencies directly while leaving allele frequencies alone; the other four change allele frequencies and are the subject of the next unit. The final point surprises students: if all the assumptions are false, why does HWE fit? Because most forces are weak per generation, and one generation of random mating is enough to reset the genotype proportions to match the current allele frequencies.
+:::
+
+## Testing HWE with χ²
+
+*TCF7L2* SNP rs7903146 in 99 people of north-west European ancestry (CEU, 1000 Genomes): 52 *CC*, 32 *CT*, 15 *TT*.
+
+1. *p* = (2 × 52 + 32)/198 = 0.687, *q* = 0.313.
+2. Expected: 99 × 0.687² = **46.7**, 99 × 2 × 0.687 × 0.313 = **42.6**, 99 × 0.313² = **9.7**.
+3. χ² = (52 − 46.7)²/46.7 + (32 − 42.6)²/42.6 + (15 − 9.7)²/9.7 = **6.1**.
+4. **df = 3 − 1 − 1 = 1**: three classes, minus 1 because the counts add up to *N*, minus 1 because *p* was **estimated from the same data**.
+5. p = 0.013 < 0.05: reject HWE at the 5% level? Fewer heterozygotes than expected (*F* = 0.25).
+
+But we tested **15** SNP–population pairs in the exercise; one at p ≈ 0.01 is roughly what chance gives. More on this in GWAS.
+
+::: notes
+Go step by step; this is the χ² from Part 1 with one new idea, the lost degree of freedom. In Mendel's crosses the expected ratio came from theory, so df was the number of classes minus one. Here p is estimated from the same counts, and each estimated parameter costs one degree of freedom, leaving 1. The critical value at 5% with df 1 is 3.84. The data are real: from the 1000 Genomes CEU sample, via Ensembl. Is this population really out of HWE? Probably not: in the R exercise students test 15 SNP–population pairs, and with 15 tests at 5% we expect about 0.75 false rejections. This is the multiple-testing problem that returns with the 5 times 10 to the minus 8 threshold in the complex traits unit. Another sample of the same population would likely not reject.
+:::
+
+## The de Finetti triangle {.smaller}
+
+![](fig03-definetti.svg){width="64%" fig-align="center"}
+
+- Every population is a **point**: horizontal position = *q*, height = frequency of *Aa*. The corners are pure *AA*, pure *Aa* and pure *aa*.
+- Populations in HWE lie on the **parabola** *f*(*Aa*) = 2*pq*.
+- **Below** the parabola: too few heterozygotes (inbreeding, population structure). **Above**: too many (heterozygote advantage, mixing of two distinct populations in one generation, genotyping errors).
+
+::: notes
+The triangle is a compact way to see all three genotype frequencies at once. Each point inside an equilateral triangle has three distances to the sides that add up to the height; those are the three genotype frequencies. In practice it is easiest to read it as in the slide: q along the base, heterozygote frequency as the height. The vertical distance to the parabola measures the departure, and the inbreeding coefficient F is that distance as a fraction of 2pq. The point at F equals 1 lies on the base: no heterozygotes, as in a set of fully inbred lines.
+:::
+
+## Demo: the de Finetti triangle
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="hwe" data-preset="inbred"></div>
+<script src="../demos/dist/hwe.js"></script>
+```
+
+::: notes
+The demo starts at inbreeding F equals 0.25 with p equals 0.5. Drag the point onto the parabola: χ² falls to 0. Drag it up: excess heterozygotes. Then change N without moving the point: χ² grows in proportion to N. The same departure from HWE is invisible in 20 people and overwhelming in 1000. For the HWE test, χ² is in fact exactly N times F squared. Try the Mendel F2 preset: it sits on the parabola at its top.
+:::
+
+## Real data: sickle-cell genotypes
+
+*HBB* rs334 (HbS) in 1000 Genomes, via Ensembl:
+
+| Population | *AA* | *AS* | *SS* | *q*(S) | expected *SS* |
+|---|---|---|---|---|---|
+| Yoruba (YRI) | 78 | 30 | **0** | 0.139 | 2.1 |
+| Gambian (GWD) | 87 | 26 | **0** | 0.115 | 1.5 |
+
+gnomAD v4 genomes, African/African-American group: allele frequency 0.044 in about 20 800 people; HWE predicts about **39** *SS* homozygotes, gnomAD reports **9**.
+
+- *SS* people (sickle-cell disease) are **missing** from samples of healthy adults: **selection** acts on genotypes, so HWE fails for this locus among adults.
+- The χ² test is weak here: the expected counts are small (< 5). The direction is still informative.
+- Why is HbS common at all? **Heterozygote advantage** against malaria: next unit.
+
+::: notes
+This connects the HBB thread of the course to populations. In both 1000 Genomes samples, there are no SS individuals at all, while HWE predicts one or two in each. That alone is weak evidence, but gnomAD, with tens of thousands of people, shows the same deficit clearly: about 9 observed against about 39 expected. Two reasons: sickle-cell disease shortens life, especially without treatment, and sequencing projects of adult cohorts often exclude people with severe childhood disease. Either way, the population of adults is not a random sample of the zygotes formed at fertilisation. HWE applies at conception, before selection. Ask: what would you expect at birth? Close to HWE. Note the χ² caveat: with expected counts below 5, the χ² approximation is poor; an exact test would be used in practice.
+:::
+
+## Population structure: the Wahlund effect
+
+*SLC24A5* rs1426654 (a pigmentation SNP): the *A* allele is almost fixed in Europe and rare in Africa.
+
+| Sample | *AA* | *AG* | *GG* | *F* |
+|---|---|---|---|---|
+| Gambian (GWD) | 1 | 15 | 97 | 0.05, in HWE |
+| All 26 populations **pooled** (2504 people) | 892 | 408 | 1204 | **0.67** |
+
+- Each population on its own is close to HWE. **Pooling** populations with different *p* gives far **too few heterozygotes**.
+- No inbreeding is involved: people mate within populations, so the pooled "population" does not mate at random.
+- Lesson: test HWE **within** a population, and remember that hidden structure looks like inbreeding.
+
+::: notes
+This is the Wahlund effect, named after the Swedish geneticist Sten Wahlund, who described it in 1928. Mixing two populations, one mostly AA and one mostly GG, gives many homozygotes of both types and few heterozygotes, compared with what the pooled allele frequency predicts. The pooled sample has F equals 0.67, which looks like heavy inbreeding, but it is pure structure. The same effect causes false associations in GWAS if cases and controls come from populations with different ancestry: a point we come back to in the complex traits unit.
+:::
+
+## X-linked genes {.smaller}
+
+![](fig04-x-linked.svg){width="74%" fig-align="center"}
+
+- Males are **hemizygous**: the frequency of affected males **is** the allele frequency *q*.
+- Females follow HWE: *q*² affected, 2*pq* carriers.
+- So an X-linked recessive trait is about 1/*q* times more common in males. For red–green colour blindness (*q* ≈ 0.08), about 8% of men but under 1% of women.
+
+::: notes
+This links back to the pedigrees unit, where X-linked recessive traits were mostly seen in males. Hardy–Weinberg makes it quantitative. Males show the allele directly, so male incidence is the best estimate of q. Females need two copies. The colour-blindness numbers are typical textbook values for northern European men; frequencies vary between populations. For a rare X-linked disease such as haemophilia A, with q around 1 in 5000 males, affected females are vanishingly rare, about q squared.
+:::
+
+## Carrier frequency from disease incidence
+
+The pedigrees unit assumed a carrier frequency of **1/50** for PKU. Where does it come from?
+
+$$
+\text{incidence} = q^2 = \frac{1}{10\,000} \;\Rightarrow\; q = \frac{1}{100}, \qquad 2pq = 2 \times 0.99 \times 0.01 \approx 0.0198 \approx \frac{1}{50}.
+$$
+
+- For a rare allele, carrier frequency ≈ **2*q*** = 2√incidence.
+- Cystic fibrosis in north-west Europe, incidence about 1 in 2500 births: *q* ≈ 1/50, carriers ≈ **1/26**.
+- Check in gnomAD: *CFTR* F508del (rs113993960) has allele frequency 0.014 in non-Finnish Europeans (carriers ≈ 1/35; F508del is not the only CF allele), but only 0.0015 in Finns.
+
+::: notes
+This is the slide that pays off the promise from the pedigrees unit. The calculation assumes HWE for the disease locus, which is reasonable: selection against a rare recessive disease barely affects genotype proportions at conception. It also assumes all disease alleles act as one allele; for CF, F508del is the commonest of many alleles, which is why its own frequency gives a lower carrier rate than the incidence. The Finnish value is a teaser for the next unit: CF is rare in Finland, while some other recessive diseases are much more common there. That is the founder effect.
+:::
+
+## Inbreeding and the inbreeding coefficient *F*
+
+**F** = the probability that the two alleles in a person are **identical by descent**: copies of one ancestral allele. With inbreeding, genotype frequencies become
+
+$$
+f(AA) = p^2 + Fpq, \qquad f(Aa) = 2pq(1-F), \qquad f(aa) = q^2 + Fpq.
+$$
+
+- Heterozygotes fall by a factor (1 − *F*); the missing ones become homozygotes. **Allele frequencies do not change.**
+- Child of first cousins: *F* = 1/16 (pedigrees unit). Selfing plants approach *F* = 1.
+- The **rarer** the allele, the bigger the effect on *aa*:
+
+| *q* | random mating *q*² | cousins *q*² + *pq*/16 | ratio |
+|---|---|---|---|
+| 0.1 | 0.01 | 0.0156 | 1.6 |
+| 0.01 | 0.0001 | 0.00072 | 7.2 |
+| 0.001 | 0.000001 | 0.000063 | 63 |
+
+::: notes
+F has two readings. As a probability: the chance that a person's two alleles at a locus are copies of the same ancestral allele. As a summary of genotype data: one minus observed over expected heterozygosity. In a population with inbreeding, both readings give the same number. The table shows why consanguinity matters most for very rare recessive diseases: when q is 0.001, almost every affected child of first cousins got both copies from a shared ancestor. Keep the tone neutral: in many countries cousin marriage is common and most children are healthy; the absolute risk increase is small for any one disease. The pedigrees unit computed the same thing for a single family.
+:::
+
+## What HWE is used for
+
+- **Estimating carrier frequencies** for genetic counselling and screening.
+- **Checking data**: in genome-wide genotyping, SNPs that depart strongly from HWE in healthy controls are often **genotyping errors** and are removed before a GWAS.
+- **Detecting forces**: departures point to **selection**, **population structure** or **inbreeding**.
+- **A starting point** for population genetics: the next unit asks what happens when the assumptions fail.
+
+::: notes
+Quality control is a very practical use that students will meet if they ever analyse genotyping data: a SNP assay that cannot tell heterozygotes from homozygotes shows a huge heterozygote deficit, and HWE filtering removes it. The usual threshold is very strict, such as p below 10 to the minus 6, because with a million SNPs some will fail HWE by chance. In cases, a departure could be a real association, which is why the filter is applied in controls.
+:::
+
+## Summary
+
+- Allele frequency: count gene copies, *p* = f(*AA*) + ½ f(*Aa*).
+- Random mating gives **_p_², 2_pq_, _q_²** in one generation, and keeps *p* constant. Dominance does not change allele frequencies.
+- Assumptions: random mating, large population, no selection, mutation or migration, one population.
+- **χ² test for HWE**: expected counts from the estimated *p*, **df = 1**.
+- Rare alleles are mostly in **carriers**: carrier frequency ≈ 2√incidence (PKU: 1/10 000 → 1/50).
+- X-linked: males affected at *q*, females at *q*².
+- Inbreeding (*F*) and population structure (Wahlund) both give a **heterozygote deficit**; heterozygote advantage can give an excess.
+
+::: notes
+The three numbers to remember: p squared, 2pq, q squared; df equals 1; and carrier frequency about 2 times the square root of the incidence. Students should be able to do the χ² test for HWE by hand in an exam.
+:::
+
+## Where this leads
+
+- **Next**: *Drift, selection, mutation, migration*: what happens to *p* when the assumptions fail, including why HbS is common where malaria is.
+- **Complex traits**: HWE filters in GWAS quality control; population structure as a source of false associations.
+- In the exercise: HWE by hand, the de Finetti demo, real genotype counts from 1000 Genomes and gnomAD, and an `hwe_test()` function in R applied to many SNPs with `pmap`.
+
+::: notes
+Today we kept p constant. Next time we let it move. The sickle-cell example will return as heterozygote advantage, and the Finnish CF value as the founder effect.
+:::

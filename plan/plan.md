@@ -66,12 +66,14 @@ The sidebar groups units by topic block in book order, with no weeks or dates. E
 
 | Unit | Ch | Find it | In R | Demo |
 |---|---|---|---|---|
-| `chromosome-theory`: mitosis, meiosis, sex linkage | 4 | Ensembl karyotype view; X-linked genes in OMIM | — | `meiosis`: chromosomes through meiosis I/II, with nondisjunction |
+| `chromosome-theory`: mitosis, meiosis, sex linkage | 4 | Ensembl karyotype view; X-linked genes in OMIM | 2^n gametes; `sample`/`replicate` grandparent simulation; χ² on Morgan's data | `meiosis`: chromosomes through meiosis I/II, with nondisjunction |
 | `linkage`: recombination frequency and mapping | 5 | FlyBase: classic *Drosophila* markers | Write a function: RF → map distance (Haldane vs Kosambi) | `crossover`: crossovers along a chromosome, RF vs distance saturation |
 | `three-point-cross`: gene order and interference | 5 | — | Three-point cross analysis on a data frame | `threepoint` |
 | `lod-scores`: human linkage and LOD | 5 | UCSC browser: the region around a mapped disease gene | LOD curve across θ, written as a function | `lod` |
 
 ### Part 3: DNA, mutation and gene function (Ch 6–8)
+
+*From here on, the table records the original plan. The part agents were given more detailed specs, and every unit has an `exercise-r.qmd`. For what was actually built, see `elo.md` and the unit pages.*
 
 | Unit | Ch | Find it | In R | Demo |
 |---|---|---|---|---|
@@ -92,7 +94,7 @@ The sidebar groups units by topic block in book order, with no weeks or dates. E
 | Unit | Ch | Find it | In R | Demo |
 |---|---|---|---|---|
 | `eukaryotic-chromosome`: chromatin, centromeres, telomeres | 12 | UCSC: telomere and centromere tracks | — | — |
-| `rearrangements-aneuploidy`: deletions, inversions, translocations, polyploidy | 13 | ClinVar/DECIPHER: a CNV syndrome | Probabilities of aneuploid gametes | `nondisjunction` (shared with `meiosis`) |
+| `rearrangements-aneuploidy`: deletions, inversions, translocations, polyploidy | 13 | ClinVar/DECIPHER: a CNV syndrome | Probabilities of aneuploid gametes | `meiosis` with `data-mode="nondisjunction"` (owned by Part 2; also `data-names="21,2"`, `data-division="1|2"`) |
 | `bacterial-genetics-recap`: conjugation mapping (short, recap) | 14 | — | — | — |
 | `organelle-inheritance`: mtDNA, heteroplasmy, maternal inheritance | 15 | MITOMAP | Simulate a heteroplasmy bottleneck with `rbinom`, `replicate` | `bottleneck` |
 
@@ -128,12 +130,12 @@ The sidebar groups units by topic block in book order, with no weeks or dates. E
 
 ## 4. How R skills progress
 
-Students already know base R and the tidyverse. Use the tidyverse (dplyr, ggplot2, readr, stringr) as the default, and use base R where it is clearer, for example `sample`, `rbinom` and `chisq.test`. The lift is towards **writing their own functions, simulating, joining tables and reading bioinformatics file formats**. It does not go as far as Bioconductor.
+Students already know base R and the tidyverse. Use the tidyverse (dplyr, ggplot2, readr, stringr) as the default, and use base R where it is clearer, for example `sample`, `rbinom` and `chisq.test`. Students should already be able to write simple functions from 5KE232; see the note in `audience.md`, as this is not yet taught there. The lift is towards **using functions as building blocks, simulating, joining tables and reading bioinformatics file formats**. It does not go as far as Bioconductor.
 
 | Part | New R skill |
 |---|---|
-| 1 | Simulating crosses with `sample`; `chisq.test` and `pchisq`; writing a function that returns expected ratios |
-| 2 | Functions with arguments and defaults (RF → cM); `purrr::map` or `sapply` over parameter values (LOD curve) |
+| 1 | Simulating crosses with `sample`; `chisq.test` and `pchisq`; practising small functions (`cross()`); applying a function over a list of hypotheses (`map_dbl`) |
+| 2 | Functions with default arguments (RF ↔ cM); `map()` + `list_rbind()` over gene orders; `map_dbl` over a θ grid and `optimize()` (LOD curve) |
 | 3 | stringr: reverse complement, GC content, codon lookup with a named vector or a join |
 | 4 | Reading FASTA by hand; `str_locate_all` for restriction sites; `read_tsv` of a BioMart export; `left_join` across populations |
 | 5 | Reuse `rbinom`/`replicate` (introduced in pedigrees) for bottleneck simulations; distributions in ggplot2 |

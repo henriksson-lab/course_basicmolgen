@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: maternal-effect inheritance of bicoid. The phenotype of an embryo depends on its MOTHER's
+       genotype, because bicoid mRNA is deposited in the egg by the mother. Left: a bcd/bcd female (herself
+       normal, because her own mother was bcd/+) crossed with a wild-type male: every embryo is bcd/+ yet
+       lacks head and thorax. Right: the reciprocal cross, +/+ female x bcd/bcd male: every embryo is bcd/+
+       and normal. -->
+  <defs>
+    <marker id="arr" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+    <linearGradient id="bcdg" x1="0" x2="1"><stop offset="0" stop-color="#c0392b"/><stop offset="0.6" stop-color="#c0392b" stop-opacity="0.05"/><stop offset="1" stop-color="#c0392b" stop-opacity="0"/></linearGradient>
+  </defs>
+  <text x="20" y="26" font-size="18" font-weight="bold" fill="#1b2a3a">Maternal effect: the mother's genotype decides the embryo's phenotype</text>
+
+  <!-- left cross -->
+  <text x="40" y="70" font-size="15" fill="#1b2a3a">female <tspan font-style="italic">bcd</tspan>/<tspan font-style="italic">bcd</tspan> (looks normal)</text>
+  <text x="290" y="70" font-size="15" fill="#1b2a3a">× male +/+</text>
+  <line x1="200" y1="84" x2="200" y2="122" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="210" y="108" font-size="13" fill="#5c6b7a">eggs carry no <tspan font-style="italic">bicoid</tspan> mRNA</text>
+  <ellipse cx="200" cy="170" rx="130" ry="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="200" y="176" font-size="14" fill="#1b2a3a" text-anchor="middle">no anterior gradient</text>
+  <text x="140" y="228" font-size="15" fill="#1b2a3a">all embryos <tspan font-style="italic">bcd</tspan>/+</text>
+  <text x="200" y="250" font-size="15" font-weight="bold" fill="#c62828" text-anchor="middle">all lack head and thorax</text>
+
+  <line x1="450" y1="50" x2="450" y2="270" stroke="#d5dae0" stroke-width="1.5"/>
+
+  <!-- right cross -->
+  <text x="520" y="70" font-size="15" fill="#1b2a3a">female +/+</text>
+  <text x="620" y="70" font-size="15" fill="#1b2a3a">× male <tspan font-style="italic">bcd</tspan>/<tspan font-style="italic">bcd</tspan></text>
+  <line x1="660" y1="84" x2="660" y2="122" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="670" y="108" font-size="13" fill="#5c6b7a">mother loads <tspan font-style="italic">bicoid</tspan> mRNA</text>
+  <ellipse cx="660" cy="170" rx="130" ry="30" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="530" y="140" width="260" height="60" fill="url(#bcdg)" clip-path="url(#clipR)"/>
+  <clipPath id="clipR"><ellipse cx="660" cy="170" rx="130" ry="30"/></clipPath>
+  <ellipse cx="660" cy="170" rx="130" ry="30" fill="none" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="600" y="228" font-size="15" fill="#1b2a3a">all embryos <tspan font-style="italic">bcd</tspan>/+</text>
+  <text x="660" y="250" font-size="15" font-weight="bold" fill="#2e7d32" text-anchor="middle">all normal</text>
+
+  <!-- footer -->
+  <line x1="20" y1="282" x2="880" y2="282" stroke="#d5dae0" stroke-width="1.5"/>
+  <text x="20" y="308" font-size="14" fill="#1b2a3a">Same embryo genotype, opposite phenotypes: reciprocal crosses differ, as with imprinting, but for a different reason.</text>
+  <text x="20" y="330" font-size="14" fill="#1b2a3a">A <tspan font-style="italic">bcd</tspan>/<tspan font-style="italic">bcd</tspan> mother is normal herself (her own mother was <tspan font-style="italic">bcd</tspan>/+): the phenotype shows up one generation late.</text>
+</svg>

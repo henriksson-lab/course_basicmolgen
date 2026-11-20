@@ -1,0 +1,110 @@
+---
+title: "Quiz: Prokaryotic regulation (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the genetic analysis of the lac operon. As in the lecture, "lactose" means an inducer that reaches the repressor whatever the *lacZ* and *lacY* genotypes (in the lab: IPTG), and we ignore CAP and basal expression. Merodiploids are written **F′ genotype / chromosome genotype**; any gene not mentioned is wild type.
+
+---
+
+**Q1.** A haploid *E. coli* strain makes β-galactosidase and permease with and without lactose. Name two different mutations that could cause this.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What two things must both work for the repressor to switch the operon off?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The strain is **constitutive**. Either the repressor is missing or broken (*lacI*^−^), or the operator cannot bind the repressor (*lacO*^c^). In a haploid cell the two give the same phenotype; a merodiploid tells them apart.
+:::
+
+---
+
+**Q2.** What is a **merodiploid**, and why did Jacob and Monod need one?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Bacteria are haploid. How do you test whether an allele is dominant in a haploid?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A merodiploid (partial diploid) is a bacterium that carries a second copy of part of its genome, here on an **F′ plasmid** carrying the *lac* region. With two copies in one cell you can test **dominance** (which allele wins), **complementation**, and whether a mutation acts in **cis** or in **trans**. A haploid cell has only one allele of each gene, so none of these questions can be asked.
+:::
+
+---
+
+**Q3.** Predict the phenotype of F′ *I*^+^ / *I*^−^ for β-galactosidase. What does that tell you about the *lacI* gene product?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Can the repressor made from the F′ reach the operator on the chromosome?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Inducible.** The repressor made from the F′ *lacI*^+^ diffuses through the cell and binds both operators, so *I*^+^ is **dominant** over *I*^−^ and acts **in trans**. A gene whose effect works in trans makes a **diffusible product**: the *lacI* product is a protein (the repressor).
+:::
+
+---
+
+**Q4.** Predict β-galactosidase in F′ *O*^+^ *Z*^−^ / *O*^c^ *Z*^+^, and in F′ *O*^+^ *Z*^+^ / *O*^c^ *Z*^−^.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which copy carries the working *lacZ*? Is that copy's operator normal?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+- F′ *O*^+^ *Z*^−^ / *O*^c^ *Z*^+^: **constitutive**. The working *lacZ* is next to the broken operator.
+- F′ *O*^+^ *Z*^+^ / *O*^c^ *Z*^−^: **inducible**. The working *lacZ* is next to a normal operator; the *O*^c^ copy is always on but makes inactive enzyme.
+
+*O*^c^ only affects the genes on its own DNA molecule: it acts **in cis**, so *lacO* is a DNA site, not a product.
+:::
+
+---
+
+**Q5.** Why is *lacI*^s^ **dominant** over *lacI*^+^, while *lacI*^−^ is **recessive**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+In each merodiploid, which kinds of repressor are present, and what does each do?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In *I*^+^/*I*^−^ the cell still has normal repressor, enough to control both operators: the *I*^−^ allele just fails to contribute, so it is recessive (a loss of function, as in Extensions to Mendel). In *I*^+^/*I*^s^ the super-repressor cannot bind inducer, so it **stays on** both operators even when lactose is present. The normal repressor cannot remove it, so the cell is uninducible: *I*^s^ is dominant (a gain of an abnormal function).
+:::
+
+---
+
+**Q6.** A strain is F′ *Z*^+^ *Y*^−^ / *Z*^−^ *Y*^+^. Which enzymes does it make, and when? Which test from Part 3 is this?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each copy can make one of the two proteins.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Both β-galactosidase (from the F′) and permease (from the chromosome), **inducibly**. *Z*^−^ and *Y*^−^ **complement**: they are mutations in **different genes**. This is the **complementation test** from the Mutation unit. (A polar nonsense mutation in *lacZ* could fail to complement *lacY*^−^, because it also reduces *lacY* expression from the same mRNA.)
+:::
+
+---
+
+**Q7.** Which strain is **uninducible** even though both of its *lacZ* genes are wild type: (a) F′ *I*^+^ / *I*^s^, (b) F′ *I*^+^ *O*^c^ / *I*^s^, (c) F′ *I*^−^ / *I*^+^?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Look for an *I*^s^ allele with no *O*^c^ to escape it.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**(a)**. The *I*^s^ repressor blocks both normal operators. In (b) the F′ copy has *O*^c^, which the super-repressor cannot bind, so that copy is constitutive. (c) is inducible: *I*^+^ is dominant over *I*^−^.
+:::
+
+---
+
+**Q8.** In the *trp* leader, what happens to transcription of *trpE*–*trpA* when tryptophan is **scarce**, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where does the ribosome stop on the leader, and which hairpin can then form?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Transcription **continues**. With little tryptophan, few charged tRNA^Trp^ are available, so the ribosome **stalls** at the two Trp codons in leader region 1. Region 2 is then free to pair with region 3 (the antiterminator), so the 3:4 terminator hairpin cannot form and RNA polymerase goes on into the structural genes. With plenty of tryptophan the ribosome covers region 2, 3:4 forms, and transcription stops.
+:::

@@ -1,0 +1,131 @@
+---
+title: "Quiz: genomic variation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on kinds of variants, haplotypes and LD, genotyping and population differences. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Name the type of each variant: (a) a C → T change at one position; (b) the loss of three bases CTT in *CFTR*; (c) 42 instead of 20 copies of CAG in *HTT*; (d) a 3-Mb segment of chromosome 22 present in one copy instead of two.
+
+::: {.callout-tip collapse="true" title="Hint"}
+SNP, indel, STR (microsatellite) or CNV?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) **SNP** (single-nucleotide variant). (b) **Indel** (a 3-bp deletion; in frame, so one amino acid is lost: F508del). (c) **STR / microsatellite** repeat expansion (Huntington disease range). (d) **CNV**, here a deletion (the 22q11.2 deletion, as in DiGeorge syndrome).
+:::
+
+---
+
+**Q2.** Why do microsatellites (STRs) have many more alleles per locus than SNPs?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare their mutation rates and how they mutate.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+STRs mutate by **slippage** of the DNA polymerase on the repeat during replication, which adds or removes a repeat unit. Their mutation rate is about 10^−3^–10^−4^ per locus per generation, against ~10^−8^ per base for SNPs. Each mutation can produce a new repeat number, so many alleles accumulate. A SNP site usually has only two alleles, because a second mutation at the same base is very rare.
+:::
+
+---
+
+**Q3.** dbSNP lists rs334 as T>A on chromosome 11; the clinical literature calls HbS c.20A>T. Are these different variants?
+
+::: {.callout-tip collapse="true" title="Hint"}
+On which strand of chromosome 11 is *HBB*?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No, it is the same change. Genome databases report alleles on the **plus** strand of the chromosome; *HBB* is on the **minus** strand, so the coding-sequence (c.) name uses the complementary base: plus-strand T>A = coding-strand A>T.
+:::
+
+---
+
+**Q4.** What is a **haplotype**, and why are SNPs that are close together often in **linkage disequilibrium**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How often does a crossover fall between two sites 1 kb apart, compared with two sites 10 Mb apart?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A haplotype is the set of alleles along **one** chromosome. When a new allele arises, it sits on one particular haplotype. Crossovers between sites very close together are rare (1 cM ≈ 1 Mb in humans, so about 10^−5^ per meiosis for sites 1 kb apart), so even after many generations the new allele is still found with the same neighbouring alleles: they are associated, in LD. For distant sites, crossovers have had time to mix the alleles, and the association disappears.
+:::
+
+---
+
+**Q5.** A consumer genetic test (SNP array) reports that you are **not** a carrier of any cystic fibrosis alleles on its panel. Does that mean you cannot be a carrier?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What can an array detect?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No. An array tests only the **known** variants it was designed for, typically the most common ones (such as F508del). Hundreds of other *CFTR* variants can cause cystic fibrosis, including rare ones found in only a few families. Only sequencing the gene would find those. The result lowers your carrier probability; it does not make it zero.
+:::
+
+---
+
+**Q6.** In the 1000 Genomes data, the lactase persistence allele (rs4988235 A) has frequency 0.74 in CEU and 0 in YRI. Does that mean that no Africans can digest milk as adults?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Is this the only allele that gives lactase persistence? Which African populations are in 1000 Genomes?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No. Several pastoralist populations in East Africa (and the Middle East) have **other** variants in the same *LCT* enhancer that also cause lactase persistence: the same trait evolved independently (convergent evolution). The African populations in 1000 Genomes (Yoruba, Esan, Mende, Gambian, Luhya) are mostly not traditional milk-drinking herders. One SNP is not the whole story of a trait.
+:::
+
+---
+
+**Q7.** Lactase persistence is dominant. In the Finnish sample (FIN) the persistence allele has frequency 0.59. What fraction of Finns would you expect to be lactase persistent, if genotypes follow Hardy–Weinberg proportions?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Persistent = at least one persistence allele = 1 − P(two non-persistence alleles).
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(no persistence allele) = (1 − 0.59)^2^ = 0.41^2^ = 0.168, so P(persistent) = 1 − 0.168 ≈ **0.83**. About 17% would be expected to be lactase non-persistent.
+:::
+
+---
+
+**Q8.** Why is the HbS allele common in parts of Africa, although HbS/HbS causes a severe disease?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare the survival of the three genotypes where malaria is common.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Heterozygote advantage** (balancing selection). Where falciparum malaria is common, HbA/HbS carriers are protected against severe malaria and survive better than HbA/HbA people, while HbS/HbS people have sickle-cell disease. Selection against HbS in homozygotes is balanced by selection for it in heterozygotes, so both alleles stay in the population, at about 10–14% HbS in the West and East African 1000 Genomes samples.
+:::
+
+---
+
+**Q9.** About what share of human genetic variation lies **within** populations rather than between them? Why, then, do a few alleles such as rs4988235 differ so strongly between populations?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Most variants are neutral. What forces can change the frequency of one allele a lot?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+About **85–90%** of variation is within populations. Most variants are neutral and their frequencies differ only modestly between populations, through drift and migration. Large differences at single loci, against that background, usually point to **natural selection** in some populations: positive selection for lactase persistence where milk was drunk, balancing selection for HbS where malaria was common.
+:::
+
+---
+
+**Q10.** A patient has a severe dominant disease with a prevalence of 1 in 100,000. Sequencing finds a missense variant in a candidate gene. In gnomAD the variant has an allele frequency of 0.5% in the patient's ancestry group. Is it likely to cause the disease?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For a dominant disease, how common could a fully penetrant causal allele be at most?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Very unlikely. If the variant caused a fully penetrant dominant disease, about 2 × 0.005 = **1%** of people in that group would be heterozygous and affected, a thousand times more than the prevalence of 1 in 100,000. A variant that common in healthy people is almost certainly benign (or at most has a very low penetrance). This is why population frequency is one of the first filters in clinical variant interpretation.
+:::

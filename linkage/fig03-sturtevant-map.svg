@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" width="880" height="290" font-family="Helvetica, Arial, sans-serif">
+  <!-- Sturtevant (1913), Diagram 1: y 0.0, w 1.0, v 30.7, m 33.7, r 57.6 (distances from y).
+       Scale: x = 60 + 12.667 * cM  (0 cM at 60, 60 cM at 820).
+       Positions: y 60.0, w 72.7, v 448.9, m 486.9, r 789.6.
+       Brackets below: the adjacent-interval percentages he built the map from (Table 2),
+       and in orange the direct y-r measurement (37.6%), far below 57.6. -->
+  <text x="440" y="24" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Sturtevant (1913): the first genetic map, X chromosome of Drosophila</text>
+
+  <!-- phenotype names -->
+  <g font-size="14" fill="#5b6b7a">
+    <text x="56" y="62" text-anchor="end">yellow</text>
+    <text x="77" y="62">white</text>
+    <text x="444" y="62" text-anchor="end">vermilion</text>
+    <text x="491" y="62">miniature</text>
+    <text x="789.6" y="62" text-anchor="middle">rudimentary</text>
+  </g>
+  <!-- gene symbols -->
+  <g font-size="19" font-weight="bold" font-style="italic" fill="#1b2a3a">
+    <text x="56" y="86" text-anchor="end">y</text>
+    <text x="77" y="86">w</text>
+    <text x="444" y="86" text-anchor="end">v</text>
+    <text x="491" y="86">m</text>
+    <text x="789.6" y="86" text-anchor="middle">r</text>
+  </g>
+  <!-- chromosome -->
+  <rect x="40" y="96" width="800" height="16" rx="8" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+  <g stroke="#1b2a3a" stroke-width="3">
+    <line x1="60" y1="92" x2="60" y2="116"/>
+    <line x1="72.7" y1="92" x2="72.7" y2="116"/>
+    <line x1="448.9" y1="92" x2="448.9" y2="116"/>
+    <line x1="486.9" y1="92" x2="486.9" y2="116"/>
+    <line x1="789.6" y1="92" x2="789.6" y2="116"/>
+  </g>
+  <!-- map positions -->
+  <g font-size="15" fill="#1b2a3a">
+    <text x="56" y="134" text-anchor="end">0.0</text>
+    <text x="77" y="134">1.0</text>
+    <text x="444" y="134" text-anchor="end">30.7</text>
+    <text x="491" y="134">33.7</text>
+    <text x="789.6" y="134" text-anchor="middle">57.6</text>
+  </g>
+
+  <!-- brackets: adjacent intervals used to build the map -->
+  <g fill="none" stroke="#2a6f97" stroke-width="2">
+    <path d="M60,150 v8 H72.7 v-8"/>
+    <path d="M72.7,150 v8 H448.9 v-8"/>
+    <path d="M448.9,150 v8 H486.9 v-8"/>
+    <path d="M448.9,186 v8 H789.6 v-8"/>
+  </g>
+  <g font-size="14" fill="#2a6f97" text-anchor="middle">
+    <text x="66" y="176">1.0%</text>
+    <text x="260.8" y="176">w–v 29.7% (471 / 1584)</text>
+    <text x="467.9" y="176">3.0%</text>
+    <text x="619.3" y="212">v–r 26.9% (109 / 405)</text>
+  </g>
+  <text x="60" y="210" font-size="14" fill="#5b6b7a">blue: neighbouring intervals measured, then added up</text>
+
+  <!-- direct long-distance measurement -->
+  <path d="M60,232 v8 H789.6 v-8" fill="none" stroke="#d08c2f" stroke-width="2.5"/>
+  <text x="424.8" y="260" font-size="15" font-weight="bold" fill="#d08c2f" text-anchor="middle">y–r measured directly: 37.6% recombinants (260 / 693), far less than 57.6</text>
+  <text x="424.8" y="281" font-size="14" fill="#5b6b7a" text-anchor="middle">Sturtevant's explanation: "double crossing over" hides recombination over long distances</text>
+</svg>

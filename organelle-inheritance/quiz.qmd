@@ -1,0 +1,155 @@
+---
+title: "Quiz: organelle inheritance"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on organelle genomes, maternal inheritance, heteroplasmy, the bottleneck and the threshold effect. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** A trait gives different results in reciprocal crosses: mutant ♀ × normal ♂ gives only mutant offspring, but normal ♀ × mutant ♂ gives only normal offspring, **of both sexes**. Which kind of inheritance does this suggest? Why is it not X-linked?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For an X-linked recessive trait, what would the sons and daughters of the first cross look like?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Maternal (organelle) inheritance**: the offspring always look like the mother, whatever their sex. For an X-linked trait the result depends on the **sex of the offspring**: a mutant mother (X^a^X^a^) × normal father gives mutant sons but normal (carrier) daughters. Here both sexes follow the mother, so the trait goes with the cytoplasm of the egg.
+:::
+
+---
+
+**Q2.** Give two reasons why human mtDNA is inherited from the mother.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare the number of mtDNA copies in an egg and a sperm. What happens to the sperm's mitochondria after fertilisation?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(1) **Numbers**: the egg carries a very large number of mtDNA copies (of the order of 100 000), the sperm very few. (2) **Elimination**: the few sperm mitochondria that enter the egg are tagged and destroyed in the early embryo. So, apart from very rare exceptions (paternal leakage), all of a child's mtDNA comes from the mother.
+:::
+
+---
+
+**Q3.** A man has Leber hereditary optic neuropathy caused by m.11778G>A. His wife does not carry the variant. What is the risk that their children carry it? What about the children of his sister, who carries it too?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Who passes on mtDNA?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+His children: **essentially zero**. A father does not pass on his mtDNA, whatever the sex of the child. His sister passes it to **all** her children (m.11778G>A is usually homoplasmic, so at about 100 %). But not all of them will lose their sight: LHON has **incomplete penetrance**, and her sons are at higher risk than her daughters.
+:::
+
+---
+
+**Q4.** What is **heteroplasmy**? Why does it make no sense to describe a person's mtDNA genotype as *AA*, *Aa* or *aa*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many copies of mtDNA does a cell have?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Heteroplasmy is a **mixture** of normal and mutant mtDNA copies in the same cell or person (homoplasmy: all copies the same). A cell has hundreds to thousands of mtDNA copies, not two, so the "genotype" is a **proportion**, the heteroplasmy level, anywhere from 0 to 100 %. It can also differ between tissues and change over time.
+:::
+
+---
+
+**Q5.** In Correns' experiments with *Mirabilis jalapa*, what seedlings do you expect from (a) a flower on a variegated branch pollinated with pollen from a green branch, and (b) a flower on a green branch pollinated with pollen from a variegated branch?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which parent supplies the chloroplasts?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) **Green, white and variegated** seedlings: the egg cell can contain normal chloroplasts, defective ones, or both. (b) **All green**: the chloroplasts come from the seed parent, and the pollen contributes none. The pollen source does not matter.
+:::
+
+---
+
+**Q6.** A woman has 40 % heteroplasmy for a mtDNA variant. Assume a bottleneck of N = 10 copies, sampled at random. What are the mean and the standard deviation of the heteroplasmy level in her eggs?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Mean = $h$; variance = $h(1-h)/N$.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Mean = **40 %**. Variance = 0.4 × 0.6 / 10 = 0.024, so SD = √0.024 = 0.155, about **15.5 percentage points**. Many of her eggs will be between about 25 % and 55 %, but values of 0 % or 80 % are not rare. (With N = 10 the possible levels are 0 %, 10 %, …, 100 %.)
+:::
+
+---
+
+**Q7.** In Q6, how would the standard deviation change if the bottleneck were N = 40 instead of N = 10? What does that mean for the risk of a child above a threshold of 70 %?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The SD is proportional to $1/\sqrt{N}$.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Four times as many copies gives an SD √4 = **2 times smaller**: about 7.7 points. The eggs cluster more tightly around 40 %, so far fewer reach 70 %. A **narrow** bottleneck (small N) is what makes high-level children possible from a low-level mother.
+:::
+
+---
+
+**Q8.** A woman with 30 % m.3243A>G in her blood has no symptoms, but her son has severe MELAS. Explain how this is possible, using two concepts from the lecture.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How is his level related to hers? When do symptoms appear?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(1) **The bottleneck**: each egg is founded by a small random sample of her mtDNA copies, so her son's level can be much higher than hers (for example 80 %). (2) **The threshold effect**: symptoms appear only when the mutant fraction in a tissue exceeds a threshold. She is below it, he is above it. (Her blood level may also underestimate her level in other tissues, as m.3243A>G levels in blood fall with age.)
+:::
+
+---
+
+**Q9.** A child has a mitochondrial respiratory chain disease. Her parents are both healthy, and her brother is affected too. Later testing shows a variant in *POLG*, a nuclear gene for the mtDNA polymerase. Which mode of inheritance is most likely, and what is the risk for the next child?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where is the gene?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The gene is in the **nucleus**, so the disease follows Mendel. Two affected children of unaffected parents suggests **autosomal recessive** inheritance: both parents are carriers, and the risk for each further child is **¼**. "Mitochondrial disease" does not automatically mean maternal inheritance: most mitochondrial proteins are encoded in the nucleus.
+:::
+
+---
+
+**Q10.** Give three pieces of evidence that mitochondria descend from bacteria. Which group of bacteria?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of the genome, the ribosomes, the membranes and how mitochondria divide.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Any three of: a **small circular genome**; **bacteria-like ribosomes**, sensitive to antibiotics such as chloramphenicol; a **double membrane**; **division by fission** (mitochondria are never made from scratch); and, most convincingly, **sequence**: mitochondrial rRNA and protein genes group with the **alphaproteobacteria** in phylogenetic trees. (Chloroplasts group with the cyanobacteria.)
+:::
+
+---
+
+**Q11.** A child is born after mitochondrial donation (pronuclear transfer). How many of her genes come from the donor? If she later has children, whose mtDNA will they inherit? And if a boy is born this way?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many genes does mtDNA have? Who passes it on?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The donor contributes the mtDNA: **37 genes** (13 proteins, 22 tRNAs, 2 rRNAs), against about 20 000 protein-coding nuclear genes from the two parents. The girl's children inherit **the donor's mtDNA** (plus any small carried-over fraction of her mother's), and so will all her descendants through the female line. A boy does not pass on his mtDNA, so the change ends with him. That is why some have suggested transferring only male embryos, and why the method is regulated as a germline change.
+:::
+
+---
+
+**Q12.** In the green alga *Chlamydomonas*, a mt^+^ strain with a streptomycin-resistance mutation in its chloroplast DNA is crossed with a streptomycin-sensitive mt^−^ strain. What do the progeny look like? What about the reciprocal cross (sensitive mt^+^ × resistant mt^−^)?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which mating type passes on its chloroplast DNA?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Chloroplast DNA comes from the **mt^+^** parent. So the first cross gives **all resistant** progeny and the reciprocal cross gives **all sensitive** progeny. (A nuclear gene would give a 1 : 1 ratio among the haploid progeny in both crosses; so does the mating type itself.)
+:::

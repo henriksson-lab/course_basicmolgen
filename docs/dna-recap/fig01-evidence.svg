@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" font-family="Helvetica, Arial, sans-serif" width="960" height="330">
+  <!-- Three experiments showing that DNA is the genetic material. Schematic, not to scale. -->
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+
+  <!-- Panel 1: Griffith -->
+  <rect x="10" y="10" width="300" height="310" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="24" y="36" font-size="16" font-weight="bold" fill="#1b2a3a">Griffith (1928)</text>
+  <text x="24" y="56" font-size="13" fill="#5a6b7a"><tspan font-style="italic">Streptococcus pneumoniae</tspan> injected into mice</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="24" y="92">live R (harmless)</text>
+    <text x="296" y="92" text-anchor="end" font-weight="bold" fill="#2a6f97">mouse lives</text>
+    <text x="24" y="122">live S (capsule)</text>
+    <text x="296" y="122" text-anchor="end" font-weight="bold" fill="#bc4749">mouse dies</text>
+    <text x="24" y="152">heat-killed S</text>
+    <text x="296" y="152" text-anchor="end" font-weight="bold" fill="#2a6f97">mouse lives</text>
+    <text x="24" y="182">live R + heat-killed S</text>
+    <text x="296" y="182" text-anchor="end" font-weight="bold" fill="#bc4749">mouse dies</text>
+  </g>
+  <line x1="24" y1="196" x2="296" y2="196" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="24" y="222" font-size="13" fill="#1b2a3a">Live S bacteria are recovered from</text>
+  <text x="24" y="240" font-size="13" fill="#1b2a3a">the last mouse, and their offspring</text>
+  <text x="24" y="258" font-size="13" fill="#1b2a3a">stay S: a heritable change.</text>
+  <text x="24" y="290" font-size="14" font-weight="bold" fill="#1b2a3a">Something in dead S cells</text>
+  <text x="24" y="308" font-size="14" font-weight="bold" fill="#1b2a3a">transforms R into S.</text>
+
+  <!-- Panel 2: Avery, MacLeod and McCarty -->
+  <rect x="330" y="10" width="300" height="310" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="344" y="36" font-size="16" font-weight="bold" fill="#1b2a3a">Avery, MacLeod &amp; McCarty (1944)</text>
+  <text x="344" y="56" font-size="13" fill="#5a6b7a">Extract of S cells, treated, then added to live R</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="344" y="92">untreated extract</text>
+    <text x="616" y="92" text-anchor="end" font-weight="bold" fill="#bc4749">S colonies</text>
+    <text x="344" y="122">+ protease</text>
+    <text x="616" y="122" text-anchor="end" font-weight="bold" fill="#bc4749">S colonies</text>
+    <text x="344" y="152">+ RNase</text>
+    <text x="616" y="152" text-anchor="end" font-weight="bold" fill="#bc4749">S colonies</text>
+    <text x="344" y="182">+ DNase</text>
+    <text x="616" y="182" text-anchor="end" font-weight="bold" fill="#2a6f97">only R</text>
+  </g>
+  <line x1="344" y1="196" x2="616" y2="196" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="344" y="222" font-size="13" fill="#1b2a3a">Destroying protein or RNA leaves the</text>
+  <text x="344" y="240" font-size="13" fill="#1b2a3a">transforming activity; destroying DNA</text>
+  <text x="344" y="258" font-size="13" fill="#1b2a3a">removes it.</text>
+  <text x="344" y="290" font-size="14" font-weight="bold" fill="#1b2a3a">The transforming principle</text>
+  <text x="344" y="308" font-size="14" font-weight="bold" fill="#1b2a3a">is DNA.</text>
+
+  <!-- Panel 3: Hershey and Chase -->
+  <rect x="650" y="10" width="300" height="310" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="664" y="36" font-size="16" font-weight="bold" fill="#1b2a3a">Hershey &amp; Chase (1952)</text>
+  <text x="664" y="56" font-size="13" fill="#5a6b7a">Labelled T2 phage infect <tspan font-style="italic">E. coli</tspan>, then blend</text>
+  <!-- phage icon: protein head (outline), DNA inside, tail -->
+  <polygon points="700,72 716,81 716,99 700,108 684,99 684,81" fill="#e3eef6" stroke="#2a6f97" stroke-width="2"/>
+  <path d="M692,86 q8,6 16,0 q-8,8 -16,10" fill="none" stroke="#bc4749" stroke-width="2"/>
+  <line x1="700" y1="108" x2="700" y2="128" stroke="#2a6f97" stroke-width="3"/>
+  <line x1="700" y1="128" x2="688" y2="138" stroke="#2a6f97" stroke-width="2"/>
+  <line x1="700" y1="128" x2="712" y2="138" stroke="#2a6f97" stroke-width="2"/>
+  <text x="730" y="88" font-size="13" fill="#2a6f97">coat: protein (has S)</text>
+  <text x="730" y="108" font-size="13" fill="#bc4749">inside: DNA (has P)</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="664" y="166"><tspan font-size="10" dy="-5">35</tspan><tspan dy="5">S label (protein):</tspan></text>
+    <text x="680" y="186" fill="#2a6f97" font-weight="bold">stays outside, in the fluid</text>
+    <text x="664" y="214"><tspan font-size="10" dy="-5">32</tspan><tspan dy="5">P label (DNA):</tspan></text>
+    <text x="680" y="234" fill="#bc4749" font-weight="bold">goes into the cells, and</text>
+    <text x="680" y="252" fill="#bc4749" font-weight="bold">into the progeny phage</text>
+  </g>
+  <line x1="664" y1="266" x2="936" y2="266" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="664" y="290" font-size="14" font-weight="bold" fill="#1b2a3a">Phage DNA, not protein, enters</text>
+  <text x="664" y="308" font-size="14" font-weight="bold" fill="#1b2a3a">the cell and makes new phage.</text>
+</svg>

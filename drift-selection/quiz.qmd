@@ -1,0 +1,143 @@
+---
+title: "Quiz: drift, selection, mutation, migration"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the forces that change allele frequencies. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Name the four forces that change allele frequencies. Which one has no direction, and which one tends to make populations more similar to each other?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare with the assumptions of Hardy–Weinberg.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Genetic **drift**, **selection**, **mutation** and **migration** (gene flow). Drift has **no direction**: *p* is as likely to go up as down. **Migration** makes populations more similar, because alleles move between them. (Non-random mating changes genotype frequencies but not allele frequencies.)
+:::
+
+---
+
+**Q2.** In the Wright–Fisher model, why does a population of *N* = 10 drift much faster than one of *N* = 1000?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The variance of the change in *p* per generation is *p*(1 − *p*)/(2*N*).
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each generation is a random sample of 2*N* gene copies from the previous one. A small sample deviates more from its source, just as 10 coin tosses deviate more from 50% heads than 1000 tosses. The variance of Δ*p* is *pq*/(2*N*): with *p* = 0.5 the standard deviation is 0.11 for *N* = 10 and 0.011 for *N* = 1000.
+:::
+
+---
+
+**Q3.** A neutral allele has frequency 0.3 in a small isolated population. What is the probability that it is eventually fixed? What is the probability that a single new neutral mutation in a population of *N* = 50 is eventually fixed?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Drift has no direction, so the average *p* over many populations stays at *p*₀.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The fixation probability of a neutral allele equals its current frequency: **0.3**. A new mutation is one copy among 2*N* = 100, so it is fixed with probability **1/100**, and lost with probability 0.99.
+:::
+
+---
+
+**Q4.** A breeding herd has 4 bulls and 200 cows. What is its effective population size? Why is it so much smaller than 204?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*N*ₑ = 4*N*<sub>m</sub>*N*<sub>f</sub>/(*N*<sub>m</sub> + *N*<sub>f</sub>).
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*N*ₑ = 4 × 4 × 200 / 204 = **15.7**. Half of every calf's genes come from one of only 4 bulls, so the paternal half of the gene pool is a very small sample each generation. The herd drifts as fast as an ideal population of about 16 animals.
+:::
+
+---
+
+**Q5.** Explain how a founder effect can make a rare recessive disease common in one population. Give an example.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What happens to the frequency of a rare allele when only a few people found a new population?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A few founders carry a chance sample of the alleles in the source population. If one founder happens to carry a rare disease allele, its frequency among the founders (one copy in, say, 100) can be much higher than in the source (one in 10 000), and it stays high as the population grows. Many other alleles are lost. Most patients then share one **founder mutation**. Example: the **Finnish disease heritage**, such as Salla disease (*SLC17A5* R39C), which is about 20 times more frequent in Finns than in other Europeans. (Others: Ellis–van Creveld syndrome among the Amish.)
+:::
+
+---
+
+**Q6.** Fitnesses are *w*<sub>AA</sub> = 1, *w*<sub>Aa</sub> = 1, *w*<sub>aa</sub> = 0.5, and *p* = 0.5. What is *p* after one generation of selection?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*p*′ = (*p*²*w*<sub>AA</sub> + *pq w*<sub>Aa</sub>)/*w̄*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*w̄* = 0.25 × 1 + 0.5 × 1 + 0.25 × 0.5 = 0.875. *p*′ = (0.25 + 0.25)/0.875 = **0.571**. Selection against *aa* raised *p* from 0.5 to 0.571 in one generation.
+:::
+
+---
+
+**Q7.** Why does selection against a harmful **recessive** allele become very slow once the allele is rare?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where are most copies of a rare allele?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+When *q* is small, almost all copies are in heterozygotes (2*pq* ≫ *q*²), which have normal fitness. Selection only removes the copies in *aa* individuals, a tiny fraction. Even if every affected person had no children, *q* would fall from 0.01 to 0.005 only after about 100 generations.
+:::
+
+---
+
+**Q8.** A recessive lethal allele arises by mutation at rate *μ* = 4 × 10<sup>−6</sup> per generation. What is its expected equilibrium frequency, and the incidence of the disease? What if the allele were dominant lethal?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Recessive: *q̂* ≈ √(*μ*/*s*). Dominant: *q̂* ≈ *μ*/*s*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Recessive: *q̂* = √(4 × 10<sup>−6</sup>) = **0.002**; incidence *q̂*² = 4 × 10<sup>−6</sup>, equal to *μ*. Dominant: *q̂* = **4 × 10<sup>−6</sup>**, and every case is a new mutation (affected people do not reproduce). The recessive allele is 500 times more frequent because it hides in carriers.
+:::
+
+---
+
+**Q9.** Why is the HbS allele common in parts of Africa, although *HbS/HbS* causes sickle-cell disease? What happens to it where malaria disappears?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which genotype has the highest fitness where malaria is common?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Carriers (*HbA/HbS*) are protected against severe malaria, so where malaria is common they are **fitter** than both homozygotes: **heterozygote advantage**. HbS rises when rare (mostly in carriers) and falls when common (many *SS*), towards a stable equilibrium, about 0.1–0.2 in many malaria regions (0.139 in the 1000 Genomes Yoruba sample). Where malaria disappears, carriers lose their advantage, *SS* is still selected against, and HbS slowly declines.
+:::
+
+---
+
+**Q10.** A beneficial mutation gives heterozygotes a 2% advantage (*s*<sub>het</sub> = 0.02) in a large population. What is the probability that it is eventually fixed? Why so low?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Haldane: P(fix) ≈ 2*s*<sub>het</sub>.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+About **2 × 0.02 = 0.04**, so 96% of such mutations are lost. A new mutation starts as a single copy. In the first few generations, whether its one or two carriers happen to pass it on is mostly chance, and a small advantage hardly changes that. Only once it has reached a few dozen copies does selection reliably take over.
+:::
+
+---
+
+**Q11.** Island population: *p* = 0.2. Each generation, 10% of the breeding individuals are migrants from the mainland, where *p* = 0.6. What is *p* on the island after one generation? After many?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*p*′ = (1 − *m*)*p* + *m p*<sub>M</sub>.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*p*′ = 0.9 × 0.2 + 0.1 × 0.6 = **0.24**. The difference from the mainland shrinks by a factor 0.9 per generation (0.4 → 0.36 → …), so after many generations *p* approaches the mainland value, **0.6**, unless drift or selection on the island pulls it away.
+:::

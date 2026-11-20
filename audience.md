@@ -20,8 +20,8 @@ Students learn R and computing in the year-1 course *Data Analysis in Life Scien
   - R Markdown reports.
   - `t.test` and `lm`.
   - Basic terminal use (`ls`, `cd`, `grep`, pipes) and files and paths.
+- **Expected from 5KE232, but not yet taught there:** writing simple functions of their own, with arguments and a return value. A TODO has been added to `introcomputing/contentplan.md`. **Either way, students practise writing functions here**, through `cross()`, `chisq_p()`, RF → cM and the LOD curve, and that practice stays. Until 5KE232 covers it, the Mendel unit also gives a short from-scratch explanation; that explanation can shrink once 5KE232 does.
 - **Explicitly deferred by 5KE232, so it is new here:**
-  - writing their own functions;
   - loops and simulation (`sample`, `rbinom`, `replicate`);
   - string handling for sequences;
   - joining tables;

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: reciprocal translocation t(9;22)(q34;q11) makes the Philadelphia chromosome, der(22), with a BCR-ABL1 fusion gene.
+       Chromosome 9 material blue, chromosome 22 material orange. Breakpoints dashed red. Not to scale. -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <g font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="140" y="28">Normal</text>
+    <text x="410" y="28">After t(9;22)</text>
+    <text x="720" y="28">In the cell</text>
+  </g>
+
+  <!-- ===== normal chr 9 (x = 80..106) ===== -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="#cfe0ec">
+    <rect x="80" y="60" width="26" height="74" rx="13"/>
+    <rect x="80" y="138" width="26" height="202" rx="13"/>
+  </g>
+  <rect x="80" y="304" width="26" height="14" fill="#2a6f97"/>
+  <line x1="70" y1="296" x2="116" y2="296" stroke="#bc4749" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="93" y="364" font-size="16" fill="#1b2a3a" text-anchor="middle">9</text>
+  <text x="74" y="316" font-size="15" fill="#2a6f97" text-anchor="end" font-style="italic">ABL1</text>
+
+  <!-- ===== normal chr 22 (x = 176..202), acrocentric ===== -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="#f6e2c2">
+    <rect x="176" y="60" width="26" height="18" rx="9"/>
+    <rect x="176" y="82" width="26" height="130" rx="13"/>
+  </g>
+  <rect x="176" y="104" width="26" height="14" fill="#d08c2f"/>
+  <line x1="166" y1="122" x2="212" y2="122" stroke="#bc4749" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="189" y="236" font-size="16" fill="#1b2a3a" text-anchor="middle">22</text>
+  <text x="208" y="116" font-size="15" fill="#d08c2f" font-style="italic">BCR</text>
+
+  <!-- arrow -->
+  <line x1="250" y1="200" x2="320" y2="200" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="285" y="188" font-size="14" fill="#555" text-anchor="middle">swap</text>
+  <text x="285" y="222" font-size="14" fill="#555" text-anchor="middle">the ends</text>
+
+  <!-- ===== der(9): 9pter..9q34 + 22q11..22qter ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="350" y="60" width="26" height="74" rx="13" fill="#cfe0ec"/>
+    <path d="M350,151 A13,13 0 0 1 376,151 L376,296 L350,296 Z" fill="#cfe0ec"/>
+    <path d="M350,296 L376,296 L376,377 A13,13 0 0 1 350,377 Z" fill="#f6e2c2"/>
+  </g>
+  <text x="384" y="370" font-size="15" fill="#1b2a3a">der(9)</text>
+
+  <!-- ===== der(22) = Philadelphia chromosome: 22pter..22q11 + 9q34..9qter ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="450" y="60" width="26" height="18" rx="9" fill="#f6e2c2"/>
+    <path d="M450,95 A13,13 0 0 1 476,95 L476,122 L450,122 Z" fill="#f6e2c2"/>
+    <path d="M450,122 L476,122 L476,153 A13,13 0 0 1 450,153 Z" fill="#cfe0ec"/>
+  </g>
+  <rect x="450" y="104" width="26" height="18" fill="#d08c2f"/>
+  <rect x="450" y="122" width="26" height="14" fill="#2a6f97"/>
+  <text x="463" y="190" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">der(22)</text>
+  <text x="463" y="209" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">"Philadelphia</text>
+  <text x="463" y="228" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">chromosome"</text>
+  <line x1="482" y1="122" x2="552" y2="122" stroke="#1b2a3a" stroke-width="1.3"/>
+
+  <!-- ===== right: fusion gene, protein, drug ===== -->
+  <rect x="556" y="104" width="110" height="36" fill="#d08c2f"/>
+  <rect x="666" y="104" width="130" height="36" fill="#2a6f97"/>
+  <text x="611" y="128" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle" font-style="italic">BCR</text>
+  <text x="731" y="128" font-size="17" font-weight="bold" fill="#fff" text-anchor="middle" font-style="italic">ABL1</text>
+  <text x="676" y="94" font-size="15" fill="#1b2a3a" text-anchor="middle">fusion gene, made at the join</text>
+
+  <line x1="676" y1="146" x2="676" y2="180" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="566" y="186" width="220" height="56" rx="8" fill="#f1d3d3" stroke="#bc4749" stroke-width="2"/>
+  <text x="676" y="209" font-size="15" fill="#1b2a3a" text-anchor="middle">BCR–ABL1 tyrosine kinase,</text>
+  <text x="676" y="230" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">always switched on</text>
+
+  <line x1="676" y1="246" x2="676" y2="276" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="676" y="298" font-size="15" fill="#1b2a3a" text-anchor="middle">white blood cells keep dividing:</text>
+  <text x="676" y="318" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">chronic myeloid leukaemia (CML)</text>
+
+  <!-- drug -->
+  <rect x="800" y="190" width="88" height="48" rx="24" fill="#dbe8d1" stroke="#6a994e" stroke-width="2"/>
+  <text x="844" y="219" font-size="15" font-weight="bold" fill="#3d6b2c" text-anchor="middle">imatinib</text>
+  <line x1="800" y1="214" x2="792" y2="214" stroke="#6a994e" stroke-width="3"/>
+  <text x="844" y="258" font-size="14" fill="#3d6b2c" text-anchor="middle">blocks the</text>
+  <text x="844" y="275" font-size="14" fill="#3d6b2c" text-anchor="middle">ATP pocket:</text>
+  <text x="844" y="292" font-size="14" fill="#3d6b2c" text-anchor="middle">kinase off</text>
+</svg>

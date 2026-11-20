@@ -6,8 +6,8 @@ Mark an item complete only after a reviewer has checked every chunk for syntax, 
 
 ## Executable teaching documents
 
-- [ ] `intro-genetics/exercise.qmd`
-- [ ] `mendel/exercise.qmd`
-- [ ] `probability-chisq/exercise.qmd`
-- [ ] `mendel-extensions/exercise.qmd`
-- [ ] `pedigrees/exercise.qmd`
+- [ ] `intro-genetics/exercise-r.qmd`
+- [ ] `mendel/exercise-r.qmd`
+- [ ] `probability-chisq/exercise-r.qmd`
+- [ ] `mendel-extensions/exercise-r.qmd`
+- [ ] `pedigrees/exercise-r.qmd`

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Helvetica, Arial, sans-serif" width="900" height="330">
+  <!-- Meselson-Stahl (1958): E. coli grown in 15N, moved to 14N; DNA separated by density in a CsCl gradient.
+       Left: what semiconservative replication does to the strands. Right: the bands they saw. Schematic. -->
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#1b2a3a">Semiconservative: each new helix keeps one old strand</text>
+
+  <!-- legend -->
+  <rect x="24" y="40" width="30" height="8" rx="2" fill="#2a6f97"/>
+  <text x="62" y="49" font-size="13" fill="#1b2a3a">heavy strand (<tspan font-size="10" dy="-5">15</tspan><tspan dy="5">N, old)</tspan></text>
+  <rect x="224" y="40" width="30" height="8" rx="2" fill="#d08c2f"/>
+  <text x="262" y="49" font-size="13" fill="#1b2a3a">light strand (<tspan font-size="10" dy="-5">14</tspan><tspan dy="5">N, new)</tspan></text>
+
+  <!-- generation labels -->
+  <g font-size="13" font-weight="bold" fill="#5a6b7a">
+    <text x="24" y="86">generation 0</text>
+    <text x="24" y="156">generation 1</text>
+    <text x="24" y="246">generation 2</text>
+  </g>
+  <!-- gen 0: one heavy duplex -->
+  <rect x="140" y="76" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <rect x="140" y="88" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <!-- gen 1: two hybrids -->
+  <rect x="140" y="146" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <rect x="140" y="158" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="146" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="158" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <!-- gen 2: two hybrids, two light -->
+  <rect x="140" y="226" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <rect x="140" y="238" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="140" y="262" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="140" y="274" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="226" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="238" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="262" width="120" height="8" rx="2" fill="#d08c2f"/>
+  <rect x="290" y="274" width="120" height="8" rx="2" fill="#2a6f97"/>
+  <text x="275" y="306" font-size="13" fill="#5a6b7a" text-anchor="middle">2 hybrid + 2 light helices</text>
+
+  <!-- right: density gradient tubes -->
+  <line x1="450" y1="40" x2="450" y2="318" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="474" y="26" font-size="15" font-weight="bold" fill="#1b2a3a">Bands in a density gradient</text>
+  <g font-size="13" fill="#5a6b7a" text-anchor="end">
+    <text x="556" y="104">light</text>
+    <text x="556" y="164">hybrid</text>
+    <text x="556" y="224">heavy</text>
+  </g>
+  <g stroke="#8a97a4" stroke-width="2" fill="#f4f7fa">
+    <rect x="580" y="60" width="54" height="200" rx="10"/>
+    <rect x="670" y="60" width="54" height="200" rx="10"/>
+    <rect x="760" y="60" width="54" height="200" rx="10"/>
+  </g>
+  <rect x="584" y="215" width="46" height="12" rx="3" fill="#2a6f97"/>
+  <rect x="674" y="155" width="46" height="12" rx="3" fill="#5a8a6e"/>
+  <rect x="764" y="155" width="46" height="12" rx="3" fill="#5a8a6e"/>
+  <rect x="764" y="95" width="46" height="12" rx="3" fill="#d08c2f"/>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="607" y="280">gen 0</text>
+    <text x="697" y="280">gen 1</text>
+    <text x="787" y="280">gen 2</text>
+  </g>
+  <text x="474" y="306" font-size="13" fill="#5a6b7a">Only semiconservative replication gives a single hybrid band at</text>
+  <text x="474" y="322" font-size="13" fill="#5a6b7a">gen 1 and then hybrid + light, 1 : 1, at gen 2.</text>
+</svg>

@@ -1,0 +1,175 @@
+---
+title: "Exercise: the eukaryotic chromosome"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- estimate how much DNA a chromosome holds, how many nucleosomes package it and how much it is compacted;
+- read chromosome band names (7q31.2) and karyotype notation (47,XY,+21);
+- classify chromosomes by centromere position, and predict what happens to a chromosome with no centromere or two;
+- explain the end-replication problem, and use a telomerase RNA template to predict the repeat it adds;
+- predict how a DNA construct behaves in yeast from the elements it carries (origin, centromere, telomeres);
+- find a gene's band and its distance from a chromosome end in NCBI Gene, view telomeres and centromeres in the UCSC Genome Browser, and look up a telomere disease in MedGen.
+
+There is no demo in this unit. Do the pen-and-paper part first; the R part reads real telomere sequence from the complete human genome.
+
+## Background
+
+**Numbers.** B-DNA: 0.34 nm per bp. Nucleosome core: 147 bp around a histone octamer (2 × H2A, H2B, H3, H4); about one nucleosome per 200 bp including linker DNA. Haploid human genome (T2T-CHM13): 3.055 × 10^9^ bp.
+
+**Chromatin.** Euchromatin is open, gene-rich and replicates early. Heterochromatin is compact, gene-poor, replicates late and is built largely on satellite repeats; constitutive heterochromatin is condensed in all cells, facultative heterochromatin (the inactive X) only in some. **Position-effect variegation**: a gene moved next to heterochromatin is silenced in some cells and not others.
+
+**Bands and karyotypes.** Band names read chromosome → arm (p short, q long) → region → band → sub-band: 1p36.33. Karyotype: total number, sex chromosomes, abnormality, e.g. 47,XX,+21; 46,XY,del(5)(p15.2); 46,XY,t(9;22)(q34;q11.2). Dark G bands are AT-rich and gene-poor; light bands are GC-rich and gene-rich.
+
+**Centromere position.** Metacentric (middle), submetacentric (off-centre), acrocentric (near one end; human 13, 14, 15, 21, 22), telocentric (at the end). A chromosome needs exactly **one** active centromere: an acentric one is lost, a dicentric one breaks at anaphase.
+
+**Telomeres.** Vertebrate repeat 5'-TTAGGG-3' on the strand that runs 5' → 3' towards the end, which ends in a single-stranded 3' overhang. **End-replication problem**: the last lagging-strand primer cannot be replaced by DNA, so ends shorten each division unless **telomerase** (protein TERT + RNA template TERC) adds repeats. Human TERC template: 3'-CAAUCCCAAUC-5'.
+
+**A minimal chromosome** (yeast): an origin (ARS), a centromere (CEN) and a telomere (TEL) at each end. A YAC adds a selectable marker on each arm and carries a large insert.
+
+## By hand
+
+**B1. (packing)** Chromosome 21 is 45 090 682 bp long in T2T-CHM13.
+(a) How long would it be as stretched-out B-DNA, in mm?
+(b) About how many nucleosomes does it carry, and how many histone proteins are in their octamers?
+(c) At metaphase each chromatid of chromosome 21 is about 1.5 µm long. By what factor is the DNA compacted?
+
+**B2. (band names and karyotypes)** Decode each, in words.
+(a) the band 22q11.21
+(b) 47,XXY
+(c) 46,XX,del(5)(p15.2)
+(d) 46,XY,t(9;22)(q34;q11.2)
+(e) Write the karyotype of a girl with three copies of chromosome 13.
+
+**B3. (G-bands)** A region of a chromosome is gene-rich and its DNA is GC-rich. Predict (a) whether it lies in a dark or a light G band, (b) whether it replicates early or late in S phase, and (c) whether it is mainly euchromatin or heterochromatin. Which kind of band would you expect to contain the most genes that are expressed in many tissues?
+
+**B4. (centromeres)** (a) Classify human chromosomes 1, 5 and 21 by centromere position (use the lecture figure). (b) Two acrocentric chromosomes, 14 and 21, break near their centromeres and the two long arms join into one chromosome. How many chromosomes does the person now have, and what genetic material is lost? Why is this person usually healthy? (You will meet this **Robertsonian translocation** in the next unit.)
+
+**B5. (no centromere, two centromeres)** A chromosome breaks in two places, and the broken ends of two different chromosomes are joined. Predict what happens at the next mitosis to:
+(a) a fragment with **no** centromere;
+(b) a chromosome with **two** active centromeres, if the two centromeres of one chromatid are pulled to opposite poles.
+
+**B6. (end replication)** A human fibroblast line starts with telomeres of 10 kb. Assume each telomere loses 100 bp per cell division, and that a cell stops dividing (senescence) when its shortest telomere reaches 4 kb.
+(a) How many divisions can the line go through?
+(b) In reality, telomere lengths differ between chromosome ends. If one end starts at only 7 kb, how many divisions now? What does this tell you about which telomere matters?
+(c) Why does a circular bacterial chromosome not have this problem?
+
+**B7. (telomerase templates)** (a) The template region of the telomerase RNA of the ciliate *Tetrahymena* reads 3'-AACCCCAAC-5'. Which repeat does *Tetrahymena* telomerase add? Write it 5' → 3'.
+(b) Human TERC has the template 3'-CAAUCCCAAUC-5'. The first five bases (3'-CAAUC) pair with the end of the DNA; the other six are copied. Write the six bases added in one round.
+(c) A cell has a TERC gene with one base changed so that its template reads 3'-CAAUCCCAGUC-5'. What sequence does it add in one round? How could you detect this in the cell's DNA?
+
+**B8. (artificial chromosomes)** Predict how each construct behaves in yeast. Each carries the *URA3* marker and cells are grown without uracil; a construct that is lost leaves cells that cannot grow.
+(a) circular plasmid, *URA3* only;
+(b) circular, *URA3* + ARS;
+(c) circular, *URA3* + ARS + CEN;
+(d) linear, *URA3* + ARS + CEN, no telomere sequences;
+(e) linear, *URA3* + ARS + CEN + TEL at both ends, 15 kb long;
+(f) as (e), but carrying 500 kb of human DNA.
+
+**B9. (strands)** The reference sequence of chromosome 1 begins `CACCCTAAACCCTAACCCCTAACCC…` and ends `…AGGGTTAGGGTTAGGGTT`. The reference shows only one strand, read 5' → 3' from the p end to the q end. Explain why the two ends show different repeats, even though both are vertebrate telomeres made of TTAGGG. At which end is the 3' overhang on the strand shown?
+
+## Find it
+
+You will use [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/), the [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgGateway) and [MedGen](https://www.ncbi.nlm.nih.gov/medgen/). In NCBI Gene, the **Summary** box gives the official full name, the **Gene type** and the **Location** (band); the section **Genomic context** gives the coordinates on the GRCh38 assembly. The UCSC Genome Browser shows a genome as horizontal tracks under a ruler; type a position like `chr1:1-200` in the search box and press **Go**.
+
+**F1. *TERT*.** Search NCBI Gene for [TERT human](https://www.ncbi.nlm.nih.gov/gene/?term=TERT%5Bsym%5D+AND+human%5Borgn%5D) and open the *Homo sapiens* record.
+(a) What is the official full name, and the gene type?
+(b) On which chromosome band does it lie?
+(c) In **Genomic context**, read its coordinates on chromosome 5 (GRCh38). Roughly how far is *TERT* from the end of the short arm of chromosome 5? Is it on the plus or the minus strand ("complement")?
+
+**F2. *TERC*.** Now open the human [TERC](https://www.ncbi.nlm.nih.gov/gene/?term=TERC%5Bsym%5D+AND+human%5Borgn%5D) record. What is its full name, gene type and band? Why does it make sense that its gene type differs from *TERT*'s?
+
+**F3. A telomere and a centromere in the T2T genome.** Open the UCSC Genome Browser on the **T2T-CHM13 v2.0** assembly: [genome.ucsc.edu, genome hs1, chr1:1-200](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hs1&position=chr1:1-200).
+(a) Zoom in until you see bases (or click the ruler's "Base Position" track). Which 6-bp repeat do you see?
+(b) Go to [chr1:115,000,000-150,000,000](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hs1&position=chr1:115000000-150000000) and find the track **CenSat Annotation** (Centromeric Satellite Annotation; if it is hidden, set it to "pack" under *Mapping and Sequencing*). Click the large item in the middle labelled `hor_…` and the large item to its right labelled `hsat2_…`. Read the start and end of each and compute their sizes in Mb. Which one is the active centromere, and which band are you in for the other one? (Use the ideogram at the top, or click the **Cytobands** track.)
+(c) Now open the same region in the older assembly, [hg38 chr1:1-20,000](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr1:1-20000), with the **Gap** track shown. What does the Gap track say about chr1:1-10,000?
+
+**F4. A telomere disease.** Dyskeratosis congenita is a telomere biology disorder. In MedGen, open [Dyskeratosis congenita, X-linked](https://www.ncbi.nlm.nih.gov/medgen/C1148551), [Dyskeratosis congenita, autosomal dominant 1](https://www.ncbi.nlm.nih.gov/medgen/C4551974) and [Dyskeratosis congenita, autosomal dominant 2](https://www.ncbi.nlm.nih.gov/medgen/C3151443). (OMIM: [305000](https://www.omim.org/entry/305000), [127550](https://www.omim.org/entry/127550), [613989](https://www.omim.org/entry/613989).)
+(a) Which gene is listed for each? On which chromosome band is each gene (NCBI Gene)?
+(b) How is each gene connected to telomerase?
+(c) The same disease is X-linked in one family and autosomal dominant in another. What is this kind of heterogeneity called, and how would the pedigrees differ?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) 45 090 682 × 0.34 nm = 1.533 × 10^7^ nm = **15.3 mm**, about 1.5 cm.
+(b) 45 090 682 / 200 ≈ **225 000 nucleosomes**, with 8 histones each: about **1.8 million** histone proteins (plus about 225 000 H1).
+(c) 15.3 mm / 1.5 µm = 15 300 µm / 1.5 µm ≈ **10 000-fold**.
+
+**B2.** (a) Chromosome **22**, long arm (q), region 1, band 1, sub-band 2, sub-sub-band 1: near the centromere on 22q. (It is the region deleted in 22q11.2 deletion syndrome, next unit.)
+(b) **47** chromosomes, sex chromosomes **XXY**: a male with Klinefelter syndrome.
+(c) A female with 46 chromosomes and a **deletion** of the short arm of chromosome 5, from band 5p15.2 to the end (cri-du-chat syndrome).
+(d) A male with a **reciprocal translocation** between chromosome 9 (break at 9q34) and chromosome 22 (break at 22q11.2). In leukaemia cells, this rearrangement makes the Philadelphia chromosome.
+(e) **47,XX,+13** (trisomy 13, Patau syndrome).
+
+**B3.** (a) A **light** (G-negative) band; (b) **early** replicating; (c) **euchromatin**. Genes expressed in many tissues ("housekeeping" genes) are concentrated in light, GC-rich bands.
+
+**B4.** (a) 1: **metacentric**; 5: **submetacentric**; 21: **acrocentric**.
+(b) **45** chromosomes: the two long arms make one chromosome. What is lost are the two tiny short arms, which carry repeats and copies of the ribosomal RNA genes (rDNA). The rDNA is present on all five pairs of acrocentrics, so losing two short arms leaves plenty, and the person is healthy. The problem comes in the next generation: this carrier can make unbalanced gametes (next unit).
+
+**B5.** (a) An **acentric** fragment cannot attach to the spindle. It is not pulled to either pole and is usually **lost** (left in the cytoplasm, often in a micronucleus). The genes on it are lost from one or both daughter cells.
+(b) A **dicentric** chromatid pulled towards both poles is stretched into an **anaphase bridge** and **breaks** at a random point. Each daughter gets a broken chromosome with a new unprotected end, which can fuse again: a breakage-fusion-bridge cycle, as McClintock saw in maize.
+
+**B6.** (a) (10 000 − 4 000) / 100 = **60 divisions**.
+(b) (7 000 − 4 000) / 100 = **30 divisions**. The **shortest** telomere decides, not the average: one critically short end is enough to trigger the DNA damage response.
+(c) A circle has **no ends**: every Okazaki primer has another DNA fragment upstream whose 3' end can be extended to fill the gap.
+
+**B7.** (a) The DNA complement of 3'-AACCCCAAC-5' is 5'-TTGGGGTTG-3': *Tetrahymena* adds **TTGGGG** repeats.
+(b) The copied part is 3'-CCAAUC-5', so it adds 5'-**GGTTAG**-3' (which continues the TTAGGG repeat: …TTAG|GGTTAG|GGTTAG…).
+(c) The copied part becomes 3'-CCA**G**UC-5', so it adds 5'-GGT**C**AG-3' instead of GGTTAG. Detect it by sequencing the chromosome ends (or by hybridising a probe for the mutant repeat): new mutant repeats would appear at the **outermost** part of the telomeres, added on top of the old normal repeats.
+
+**B8.** (a) **No colonies** (or almost none): the plasmid cannot replicate, so it is diluted out.
+(b) Replicates, but has no centromere, so it is distributed **unevenly** and lost from many cells each division. Colonies grow slowly and are unstable.
+(c) **Stable**: replicates once per S phase and segregates like a chromosome, about one copy per cell.
+(d) **Unstable**: the bare ends are degraded or joined; it does not survive as a linear molecule.
+(e) A linear **minichromosome**. It works, but a short one is lost more often than a natural chromosome.
+(f) A **YAC** with a large insert behaves much like a natural yeast chromosome: stable. Length itself improves segregation.
+
+**B9.** The reference shows the top strand, 5' → 3' from the p end to the q end. At the **q end**, this strand runs 5' → 3' **towards** the end, so it is the G-rich strand: TTAGGG. At the **p end**, the strand that runs 5' → 3' towards that end is the **bottom** strand, which is G-rich (TTAGGG); the top strand there is its reverse complement, CCCTAA. On the strand shown, the 3' end is at the **q end**, so that is where its 3' overhang is (the p end's overhang is on the bottom strand). Real chromosome ends have overhangs; a reference assembly writes both strands as fully paired.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+These facts were checked with the NCBI E-utilities (Gene, MedGen) and the UCSC REST API (hs1, hg38) on 2026-11-20.
+
+**F1.** NCBI Gene ID **7015**. (a) **telomerase reverse transcriptase**, gene type **protein coding**. (b) **5p15.33**, the outermost band of 5p. (c) Genomic context: NC_000005.10 (1253167..1295068, **complement**), so *TERT* lies on the **minus** strand, about **1.25–1.3 Mb** from the end of 5p. Click path: Gene search → "TERT telomerase reverse transcriptase [*Homo sapiens* (human)]" → Summary (Official full name, Gene type, Location) → Genomic context.
+
+**F2.** NCBI Gene ID **7012**: **telomerase RNA component**, gene type **ncRNA**, band **3q26.2**. TERC is the RNA template of telomerase. Its gene is transcribed into an RNA that is used as RNA, never translated, so it is a non-coding RNA gene; *TERT* encodes the protein. The two parts of one enzyme are encoded on different chromosomes (5 and 3).
+
+**F3.** (a) **CCCTAA** (CACCCTAAACCCTAACCCCTAACC…): the top strand at the p end, the reverse complement of TTAGGG (see B9).
+(b) In the CenSat Annotation track:
+
+| Item | Start–end (hs1) | Size | What |
+|---|---|---|---|
+| `hor_1_5(…)` | 121 796 048 – 126 300 487 | **4.5 Mb** | α-satellite higher-order repeat array: the **active centromere**, bands 1p11.1/1q11 |
+| `hsat2_1_6(…)` | 129 004 109 – 142 242 033 | **13.2 Mb** | human satellite 2: the **1q12** heterochromatin block |
+
+The browser shows positions counted from 1, so the starts may be shown one higher than in the table (which uses the track's 0-based coordinates). The `ct_…` items on either side are the "centromeric transition" regions between satellites and the chromosome arms.
+(c) In hg38, the Gap track marks chr1:1-10,000 as a **telomere** gap: 10 kb of N, sequence that was never determined. (The same track shows an 18 Mb **heterochromatin** gap in 1q12, at 125.18–143.18 Mb, which T2T-CHM13 filled with the HSat2 array.)
+
+**F4.** (a) and (b):
+
+| MedGen record (MIM) | Gene | Band | Link to telomerase |
+|---|---|---|---|
+| Dyskeratosis congenita, X-linked (305000) | *DKC1*, dyskerin pseudouridine synthase 1 | Xq28 | dyskerin binds and stabilises the TERC RNA; without it, telomerase RNA is lost |
+| Dyskeratosis congenita, autosomal dominant 1 (127550) | *TERC* | 3q26.2 | the RNA template itself |
+| Dyskeratosis congenita, autosomal dominant 2 (613989) | *TERT* | 5p15.33 | the reverse transcriptase protein |
+
+Click path: MedGen record → the **Genes** field (or Summary) names the gene → click it to open NCBI Gene → **Location**.
+(c) This is **locus heterogeneity** (genetic heterogeneity): mutations in different genes cause the same disease. In the X-linked families, affected people are mostly males related through carrier mothers, with no father-to-son transmission. In the autosomal dominant families, both sexes are affected in every generation, with father-to-son transmission possible. (The dominant forms also often get more severe, with earlier onset, in later generations, because children inherit already-shortened telomeres as well as the mutation.)
+:::
+
+## Where this leads
+
+The elements you met here all come back when chromosomes go wrong. In **Rearrangements & aneuploidy** (next), a crossover inside an inversion makes dicentric and acentric chromosomes, two acrocentrics fuse into a Robertsonian translocation, and the 9;22 translocation makes the Philadelphia chromosome. **Bacterial genetics** shows a circular chromosome, with no telomeres, and the F plasmid that BACs are built on. Chromatin returns as a regulator of genes in **Part 6**.
+
+**Next:** [Exercise in R](exercise-r.qmd): read the first and last 10 kb of chromosome 1 from the complete T2T genome, count TTAGGG and CCCTAA repeats with `str_count`, and plot repeat density along the sequence to see where the telomere ends.

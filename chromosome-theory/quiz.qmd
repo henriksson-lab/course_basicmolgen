@@ -1,0 +1,146 @@
+---
+title: "Quiz: chromosome theory & sex linkage"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on meiosis, the chromosome theory, X-linkage and sex determination. Try each on paper first, then open the answer. Write X-linked genotypes with the allele as a superscript on the X: X^*A*^X^*a*^, X^*a*^Y.
+
+---
+
+**Q1.** A human cell is in G2, after DNA replication. How many **chromosomes** and how many **chromatids** does it have? How many does each cell have after meiosis I, and after meiosis II?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Count chromosomes by centromeres. Replication doubles the chromatids, not the chromosomes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+G2: **46 chromosomes, 92 chromatids** (2n). After meiosis I: **23 chromosomes, 46 chromatids** per cell (n; each chromosome still has two sister chromatids). After meiosis II: **23 chromosomes, 23 chromatids** per gamete (n).
+:::
+
+---
+
+**Q2.** What separates in anaphase I, and what separates in anaphase II? Which of the two divisions is like mitosis?
+
+::: {.callout-tip collapse="true" title="Hint"}
+One division halves the chromosome number; the other does not.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Anaphase I**: the **homologous chromosomes** separate (one to each pole); sister chromatids stay together. This is the reductional division, 2n → n. **Anaphase II**: the **sister chromatids** separate. Meiosis II is like mitosis (sisters separate), except that the cell has only one set of chromosomes.
+:::
+
+---
+
+**Q3.** A *Drosophila* female has 2n = 8. Ignoring crossing over, how many genetically different combinations of her own parents' chromosomes can her eggs carry? What is the probability that an egg carries only chromosomes she inherited from her mother?
+
+::: {.callout-tip collapse="true" title="Hint"}
+n = 4 pairs, each oriented independently at metaphase I.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each of the 4 pairs contributes the maternal or the paternal homologue, independently: 2^4^ = **16** combinations. Only maternal chromosomes: (½)^4^ = **1/16**.
+:::
+
+---
+
+**Q4.** Sutton and Boveri listed parallels between Mendel's factors and chromosomes. Why was that not enough to **prove** that genes are on chromosomes? What kind of evidence was needed?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A parallel is a correlation. What would link one particular gene to one particular, visible chromosome?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Parallel behaviour (pairs, segregation, independent assortment) shows that chromosomes *could* carry genes, but it is a correlation: something else might behave in the same way. The proof needed a specific gene whose inheritance follows a specific, **recognisable** chromosome, ideally including its unusual behaviour. Morgan's *white* gene followed the X; Bridges then showed that rare exceptional flies had exactly the unusual X chromosome sets (XXY, XO) that their eye colours predicted.
+:::
+
+---
+
+**Q5.** Morgan's F~1~ (red X^+^X^*w*^ females × red X^+^Y males) gave 2459 red females, 1011 red males and 782 white males. Why do these numbers rule out an autosomal gene, even though red : white is roughly 3 : 1?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For an autosomal gene, is there any reason the white flies should all be male?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+For an autosomal gene, *Ww* × *Ww* gives ¼ white offspring in **both** sexes, so about half of the white flies should be female. Morgan found **no white females at all** among 4252 flies. That is exactly the X-linked prediction: every F~2~ daughter gets X^+^ from her red father, while sons get their only X from the mother (½ X^+^, ½ X^*w*^).
+:::
+
+---
+
+**Q6.** A χ² test of Morgan's F~2~ against ½ red ♀ : ¼ red ♂ : ¼ white ♂ gives χ² ≈ 129 with 2 df. Does this mean that the *white* gene is not X-linked? What is a better explanation?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which class contributes most to χ²? Is it too big or too small?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+No. The qualitative pattern (no white females) fits X-linkage and nothing else. The misfit comes mainly from the **white males**, 782 observed vs 1063 expected, and from the red females (more than expected). A simple explanation is that white-eyed flies **survive less well** (reduced viability). Morgan's backcross supports this: the white classes were short in both sexes (88 and 86 against 129 and 132 red). A significant χ² says that the model is incomplete, not which part of it is wrong.
+:::
+
+---
+
+**Q7.** A white-eyed female *Drosophila* (X^*w*^X^*w*^) is crossed to a red-eyed male (X^+^Y). What do you expect among the daughters and among the sons? Bridges found a few white daughters. What chromosome set did they have, and how did they arise?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Normally, which parent's X does a daughter get? A white daughter cannot have the father's X^+^.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Expected: all daughters **red** (X^+^X^*w*^), all sons **white** (X^*w*^Y): criss-cross inheritance. A white daughter must have got **both** X chromosomes from her mother and **none** from her father, so she is **X^*w*^X^*w*^Y**. Her mother's two X chromosomes failed to separate in meiosis (**nondisjunction**), giving an XX egg that was fertilised by a Y-bearing sperm. In flies XXY is female, because sex depends on the X : autosome ratio.
+:::
+
+---
+
+**Q8.** In humans, XXY individuals are male and XO individuals are female. In *Drosophila* it is the reverse. What does this tell you about how sex is determined in each species?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What do XY and XXY have in common? What do XX and XXY have in common?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In humans the **Y** decides: any karyotype with a Y (and a working *SRY*) is male, whatever the number of X chromosomes. In flies the **number of X chromosomes relative to the autosomes** decides: two X (XX, XXY) gives a female, one X (XY, XO) gives a male; the Y is needed only for male fertility.
+:::
+
+---
+
+**Q9.** In chickens (ZW system), which parent determines the sex of the chicks? In honeybees, how many sets of chromosomes does a drone (male) have, and who are its parents?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The heterogametic sex makes two kinds of gamete.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Chickens: females are **ZW** (heterogametic) and males ZZ, so the **hen** decides: her eggs carry Z or W, ½ each. Honeybees: a drone develops from an **unfertilised egg**, so it is **haploid (n)** and has a mother (the queen) but **no father**.
+:::
+
+---
+
+**Q10.** A woman whose father had haemophilia A (X-linked recessive) has children with an unaffected man. What is the probability that (a) a son is affected, (b) a daughter is affected, (c) a daughter is a carrier?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What did she get from her father? Solve sons and daughters separately.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Her father gave her his only X, X^*h*^, so she is a carrier, X^*H*^X^*h*^ (an obligate carrier). Her partner is X^*H*^Y.
+(a) Sons get her X: P(affected) = **½**.
+(b) Daughters get X^*H*^ from the father: P(affected) = **0**.
+(c) Daughters get X^*h*^ from her with ½: P(carrier) = **½**.
+:::
+
+---
+
+**Q11.** Nondisjunction of chromosome 21 can happen in meiosis I or in meiosis II. How do the resulting n + 1 gametes differ? (Try both modes in the demo.)
+
+::: {.callout-tip collapse="true" title="Hint"}
+In meiosis I, what fails to separate: homologues or sisters?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Meiosis I**: the two **homologues** fail to separate, so the n + 1 gamete carries two **different** copies, one from each of the parent's own parents; all four gametes are abnormal (two n + 1, two n − 1). **Meiosis II**: two **sister chromatids** fail to separate, so the n + 1 gamete carries two **identical** copies; the other cell divides normally, giving two normal gametes, one n + 1 and one n − 1. (Ignoring crossing over, which makes the distinction partial near the chromosome ends.)
+:::

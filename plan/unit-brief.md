@@ -22,12 +22,13 @@ The reference implementation is `/home/mahogny/github/course/quantbio-3MB00A`. C
    - **By hand**: 6–10 pen-and-paper problems (B1, B2, …) using genetics with real organisms where possible.
    - **Explore** `{#explore}`: the demo embed plus 3–5 questions (E1, …), with solutions in a collapsed callout. Leave this out if the unit has no demo.
    - **Find it**: 3–5 database tasks (F1, …). Each task links to the database, says what to search for and which field to read, and asks for a fact that is stable over time. **Verify every fact you put in a solution** by fetching the actual page or API, for example the NCBI E-utilities, the Ensembl REST API (`rest.ensembl.org`), or the ClinVar/MedGen pages. If OMIM blocks automated access, use the MIM number with facts confirmed via NCBI (MedGen, Gene) or Orphanet, and link the OMIM page for students. Never invent IDs, numbers or frequencies. Give the click path in the solution.
-   - **In R**: 3–6 tasks (R1, …). Students know base R and the tidyverse. Use `library(dplyr)`, `library(ggplot2)` and so on, plus base R where it is clearer. Introduce the **one new R idiom** named for the unit in `plan/plan.md` §3–4. If R reads data, commit it as a small CSV/TSV in `<unit>/data/` and load it in the exercise with a relative path (`read_csv("data/x.csv")`). Also give the download link, as the site serves the file next to the page. Use `set.seed()` for anything random.
-   - **Solutions**: a collapsed callout per section, with numbers worked out. Run every R chunk with `Rscript --vanilla` (from the unit folder) and paste the real output. Do not make up output.
-   - **Where this leads**: one short note.
+   - **Solutions** for By hand, Explore and Find it, then **Where this leads**, then a final line: `**Next:** [Exercise in R](exercise-r.qmd): …`.
+4. **`exercise-r.qmd`**: the R part, as its own page with the same YAML `format:` block. Its sections are **Goal** (R bullets), **Before you start** (a link back to the exercise, the packages to load, and download links for `data/` files), **Tasks**, **Solutions** and **Where this leads**. The task rules:
+   - **Tasks**: 3–6 tasks (R1, …). Students know base R and the tidyverse. Use `library(dplyr)`, `library(ggplot2)` and so on, plus base R where it is clearer. Introduce the **one new R idiom** named for the unit in `plan/plan.md` §3–4. If R reads data, commit it as a small CSV/TSV in `<unit>/data/` and load it in the exercise with a relative path (`read_csv("data/x.csv")`). Also give the download link, as the site serves the file next to the page. Use `set.seed()` for anything random.
+   - Solutions go in a collapsed callout, with numbers worked out. Run every R chunk with `Rscript --vanilla` (from the unit folder) and paste the real output. Do not make up output.
 
    R chunks are plain ```` ```r ```` fences, not `{r}`, so Quarto does not execute them.
-4. **Demo** (if the unit has one): `demos/src/<name>/main.ts`, following the rules in `demos/README.md`. No network access, a seeded RNG, readable at slide size, and a reset or preset button. Build it with `demos/build.sh <name>` and type-check it with `node_modules/.bin/tsc --noEmit -p demos`. Embed it in the exercise like this:
+5. **Demo** (if the unit has one): `demos/src/<name>/main.ts`, following the rules in `demos/README.md`. No network access, a seeded RNG, readable at slide size, and a reset or preset button. Build it with `demos/build.sh <name>` and type-check it with `node_modules/.bin/tsc --noEmit -p demos`. Embed it in the exercise like this:
 
    ````md
    ```{=html}

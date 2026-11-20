@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 45 640 357" width="640" height="357" font-family="Helvetica, Arial, sans-serif">
+  <!-- Interrupted mating (Wollman and Jacob). Illustrative curves for four donor markers, using the
+       entry times of the unit's simulated Hfr: thr 8.5, lac 17.5, gal 26.5, trp 37 min.
+       Each curve starts at its time of entry (the x-intercept) and rises to a plateau that is lower
+       for later markers, because mating pairs break apart at random.
+       Scale: x = 70 + 8 * t (t in min, 0..60); y = 280 - 2.2 * p (p in %, 0..100). -->
+
+  <!-- grid -->
+  <g stroke="#e3e3e3" stroke-width="1">
+    <line x1="70" y1="170" x2="550" y2="170"/>
+    <line x1="70" y1="60" x2="550" y2="60"/>
+    <line x1="70" y1="225" x2="550" y2="225"/>
+    <line x1="70" y1="115" x2="550" y2="115"/>
+  </g>
+  <!-- axes -->
+  <line x1="70" y1="280" x2="550" y2="280" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="70" y1="60" x2="70" y2="280" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="70" y="298">0</text>
+    <text x="150" y="298">10</text>
+    <text x="230" y="298">20</text>
+    <text x="310" y="298">30</text>
+    <text x="390" y="298">40</text>
+    <text x="470" y="298">50</text>
+    <text x="550" y="298">60</text>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="1.2">
+    <line x1="150" y1="280" x2="150" y2="285"/><line x1="230" y1="280" x2="230" y2="285"/>
+    <line x1="310" y1="280" x2="310" y2="285"/><line x1="390" y1="280" x2="390" y2="285"/>
+    <line x1="470" y1="280" x2="470" y2="285"/><line x1="550" y1="280" x2="550" y2="285"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="end">
+    <text x="62" y="284">0</text>
+    <text x="62" y="229">25</text>
+    <text x="62" y="174">50</text>
+    <text x="62" y="119">75</text>
+    <text x="62" y="64">100</text>
+  </g>
+  <text x="310" y="320" font-size="14" fill="#1b2a3a" text-anchor="middle">minutes of mating before the pairs are pulled apart</text>
+  <text x="22" y="170" font-size="14" fill="#1b2a3a" text-anchor="middle" transform="rotate(-90 22 170)">recombinants with the marker (%)</text>
+
+  <!-- curves: (entry, 0) -> (entry + 12, plateau) -> (60, plateau) -->
+  <g fill="none" stroke-width="3" stroke-linejoin="round">
+    <polyline points="138,280 234,82 550,82" stroke="#2a6f97"/>
+    <polyline points="210,280 306,126 550,126" stroke="#6a994e"/>
+    <polyline points="282,280 378,181 550,181" stroke="#d08c2f"/>
+    <polyline points="366,280 462,225 550,225" stroke="#bc4749"/>
+  </g>
+  <!-- curve labels at the right end -->
+  <g font-size="15" font-style="italic" font-weight="bold">
+    <text x="558" y="87" fill="#2a6f97">thr</text>
+    <text x="558" y="131" fill="#6a994e">lac</text>
+    <text x="558" y="186" fill="#d08c2f">gal</text>
+    <text x="558" y="230" fill="#bc4749">trp</text>
+  </g>
+
+  <!-- map read off the x-intercepts -->
+  <text x="550" y="356" font-size="13" fill="#5b6b7a" text-anchor="end">map: time of entry (min)</text>
+  <line x1="70" y1="370" x2="550" y2="370" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="70" cy="370" r="5" fill="#d08c2f"/>
+  <text x="70" y="392" font-size="13" fill="#d08c2f" text-anchor="middle">O</text>
+  <g stroke-width="2.5">
+    <line x1="138" y1="362" x2="138" y2="378" stroke="#2a6f97"/>
+    <line x1="210" y1="362" x2="210" y2="378" stroke="#6a994e"/>
+    <line x1="282" y1="362" x2="282" y2="378" stroke="#d08c2f"/>
+    <line x1="366" y1="362" x2="366" y2="378" stroke="#bc4749"/>
+  </g>
+  <g font-size="13" text-anchor="middle" font-style="italic" font-weight="bold">
+    <text x="138" y="356" fill="#2a6f97">thr</text>
+    <text x="210" y="356" fill="#6a994e">lac</text>
+    <text x="282" y="356" fill="#d08c2f">gal</text>
+    <text x="366" y="356" fill="#bc4749">trp</text>
+  </g>
+  <g font-size="13" text-anchor="middle">
+    <text x="138" y="394" fill="#2a6f97">8.5</text>
+    <text x="210" y="394" fill="#6a994e">17.5</text>
+    <text x="282" y="394" fill="#d08c2f">26.5</text>
+    <text x="366" y="394" fill="#bc4749">37</text>
+  </g>
+</svg>

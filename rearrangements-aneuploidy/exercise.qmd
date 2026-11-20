@@ -1,0 +1,225 @@
+---
+title: "Exercise: rearrangements & aneuploidy"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- read karyotypes with rearrangements, and tell paracentric from pericentric inversions and balanced from unbalanced changes;
+- map recessive mutations with overlapping deletions (pseudodominance);
+- work out the products of a crossover in an inversion heterozygote;
+- list the gametes of reciprocal and Robertsonian translocation carriers, and say which are balanced;
+- predict the gametes and zygotes after nondisjunction in meiosis I or II, and use DNA markers to tell which division failed;
+- compute the chance that a triploid makes a balanced gamete;
+- find a copy-number variant and its genes in ClinVar, MedGen and NCBI Gene.
+
+Do the pen-and-paper part first, then the demo. The R part comes after.
+
+## Background
+
+**Kinds of change.** Deletion (del), duplication (dup), inversion (inv; **paracentric** if the centromere is outside the inverted segment, **pericentric** if inside), translocation (t; **reciprocal** between two chromosomes, **Robertsonian** fusion of two acrocentrics: 13, 14, 15, 21, 22). Deletions and duplications are **unbalanced**; inversions and translocations are **balanced** but give unbalanced gametes.
+
+**Inversion heterozygotes.** One crossover inside the loop gives two non-crossover chromatids (balanced) and two crossover chromatids: a **dicentric** + an **acentric** (paracentric), or two chromosomes with a **duplication + deficiency** (pericentric).
+
+**Reciprocal translocation carriers.** The four chromosomes form a cross at meiosis I; two go to each pole. **Alternate** (N1 + N2 or T1 + T2): balanced. **Adjacent-1** (N1 + T2 or N2 + T1) and **adjacent-2** (N1 + T1 or N2 + T2): unbalanced.
+
+**Nondisjunction.** In **MI**, both homologues go to one pole: 2 gametes n + 1 (two *different* homologues) and 2 gametes n − 1. In **MII**, sister chromatids stay together in one cell: 1 gamete n + 1 (two *identical* copies), 1 n − 1 and 2 normal. In females only one of the four products becomes the egg.
+
+**Polyploidy.** A triploid sends 1 or 2 copies of each of its *x* chromosome types to a gamete, ½ each: P(balanced gamete) = 2 × (½)^*x*^.
+
+## By hand
+
+**B1. (karyotypes)** For each karyotype, say whether it is balanced or unbalanced, and what kind of change it is. For the inversions, say whether they are paracentric or pericentric.
+(a) 46,XY,inv(9)(p12q13)
+(b) 46,XX,inv(3)(q21q26)
+(c) 46,XY,del(22)(q11.21q11.21)
+(d) 45,XY,rob(13;14)(q10;q10)
+(e) 46,XX,dup(17)(p12p12)
+
+**B2. (deletion mapping)** In *Drosophila*, a region of a chromosome has the polytene bands 1 to 8. Four deletions remove these bands:
+
+| Deletion | Bands removed |
+|---|---|
+| *Df-A* | 1–3 |
+| *Df-B* | 2–5 |
+| *Df-C* | 4–7 |
+| *Df-D* | 6–8 |
+
+Females homozygous for each of five recessive mutations are crossed to males heterozygous for each deletion. A "+" means that some offspring show the mutant phenotype (the deletion **uncovers** the mutation):
+
+| | *Df-A* | *Df-B* | *Df-C* | *Df-D* |
+|---|:-:|:-:|:-:|:-:|
+| *m1* | + | + | – | – |
+| *m2* | – | + | + | – |
+| *m3* | – | – | + | + |
+| *m4* | – | – | – | + |
+| *m5* | + | – | – | – |
+
+In which band or bands does each mutation lie? What is this phenomenon called?
+
+**B3. (inversion products)** (a) A chromosome reads centromere–A–B–C–D–E–F. Its homologue carries a paracentric inversion of C–D–E: centromere–A–B–E–D–C–F. In a heterozygote, one crossover happens inside the loop, between C and D. Write the four chromatids at the end of meiosis I, and say which can make a viable gamete.
+(b) Another chromosome reads A–B–centromere–C–D–E, and its homologue carries a **pericentric** inversion of B–centromere–C–D: A–D–C–centromere–B–E. One crossover happens inside the loop, between C and D. Write the two crossover products and say what is duplicated and what is missing in each.
+
+**B4. (reciprocal translocation)** A healthy woman is a carrier of t(2;5). Call her chromosomes N2, N5, T2 (the chromosome 2 with a piece of 5) and T5.
+(a) List the gametes from alternate, adjacent-1 and adjacent-2 segregation. Which are balanced?
+(b) If all six ways of sending two of the four chromosomes to each pole were equally likely, what fraction of her eggs would be balanced? What fraction would be completely normal?
+(c) Real carriers usually do better than this. Suggest one reason.
+
+**B5. (Robertsonian translocation)** A man with the karyotype 45,XY,rob(14;21) has a partner with a normal karyotype.
+(a) List the six kinds of gamete he can make from the trivalent (14, 21, rob), and the zygote each gives with a normal egg.
+(b) Which zygotes can survive to birth?
+(c) If all six kinds of gamete were equally frequent, and only the survivors from (b) were born, what fraction of their children would have Down syndrome? The observed risk for a male carrier is about 1%. What does the difference tell you?
+
+**B6. (nondisjunction)** (a) In a woman's oocyte, chromosome 21 nondisjoins in **meiosis I**. What is the chance that the egg (one of the four products) has two copies of 21? No copy? One copy?
+(b) The same for nondisjunction in **meiosis II** in the cell that becomes the secondary oocyte.
+(c) Suppose that in a 42-year-old woman, 4% of meioses have MI nondisjunction of chromosome 21 and 1% have MII nondisjunction. What fraction of her eggs carry two copies of chromosome 21?
+
+**B7. (whose error?)** A short tandem repeat marker lies near the centromere of chromosome 21. In each family below, the child has trisomy 21. Say in which parent and in which meiotic division the nondisjunction most likely happened.
+
+| Family | Mother | Father | Child |
+|---|---|---|---|
+| 1 | 12, 15 | 13, 14 | 12, 15, 14 |
+| 2 | 12, 15 | 13, 14 | 12, 12, 13 |
+| 3 | 12, 15 | 13, 14 | 15, 13, 14 |
+
+**B8. (sex chromosomes)** List the gametes, and then the zygotes formed with a normal gamete from the other parent, for:
+(a) nondisjunction of the sex chromosomes in meiosis I of a father;
+(b) nondisjunction of the Y in meiosis II of a father;
+(c) nondisjunction of the X chromosomes in meiosis I of a mother.
+Name each syndrome. Which zygote cannot survive?
+
+**B9. (triploids)** (a) A triploid plant has *x* = 4 chromosome types (2n = 3x = 12). What fraction of its gametes is balanced (haploid or diploid)?
+(b) A seedless watermelon is triploid with *x* = 11. How likely is a balanced gamete?
+(c) Seedless watermelons are made by crossing a tetraploid (4x) plant with a diploid (2x) one. What are the ploidies of the gametes and of the seeds? Why must the seeds be made again every year?
+
+## Explore {#explore}
+
+The demo follows two chromosome pairs through meiosis, the long pair labelled 21 and the short pair labelled 2 (a cell with n = 2), coloured by origin: **blue** from the father of the person making the gametes, **red** from the mother. Step through the nine stages with **Next ▶**. Each gamete is labelled n = 2, n + 1 = 3 or n − 1 = 1. The **Mode** buttons switch between normal meiosis and nondisjunction of chromosome 21 in meiosis I or II; the **pairs** buttons show one or two pairs; **flip orientation** swaps which homologue of the second pair faces which pole.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="meiosis" data-mode="nondisjunction" data-names="21,2" data-division="1"></div>
+<script src="../demos/dist/meiosis.js"></script>
+```
+
+**E1.** The demo starts with nondisjunction in **meiosis I**. Step to *Anaphase I* and then to *Gametes*. How many gametes are n + 1 and n − 1? What colours are the two chromosomes 21 in an n + 1 gamete, and what does that mean?
+
+**E2.** Switch to **nondisjunction in MII** and step through again. List the four gametes. In the n + 1 gamete, are the two copies alike or different? Compare with your answer to B6.
+
+**E3.** The person making these gametes is a woman. Her egg with two chromosomes 21 is fertilised by a normal sperm. For MI and for MII nondisjunction, which of the child's four grandparents contributed the child's chromosomes 21? Relate your answer to B7.
+
+**E4.** Watch chromosome 2 in both nondisjunction modes. What happens to it? Press **flip orientation** and repeat. What does this tell you about whether nondisjunction of chromosome 21 affects other chromosomes?
+
+**E5.** A trisomic zygote sometimes loses one of its three chromosomes 21 early in development ("trisomy rescue"). If each of the three copies is equally likely to be lost, what is the probability that the rescued embryo has both its chromosomes 21 from the same parent (**uniparental disomy**)? After MII nondisjunction, what is special about such a pair?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** At anaphase I both homologues of 21 go to the left pole. The gametes are **two n + 1 = 3** (each with one blue and one red chromosome 21, plus one chromosome 2) and **two n − 1 = 1** (no chromosome 21). Blue and red mean that the n + 1 gametes carry the **father's and the mother's** homologue: two *different* chromosomes 21. All four gametes are abnormal.
+
+**E2.** Meiosis I is normal. In meiosis II, the sister chromatids in one cell stay together. Gametes: **one n + 1** with two copies of the same colour (two **identical** sister chromatids), **one n − 1**, and **two normal** (n). Only half of the products are abnormal, which fits B6: an egg from MII nondisjunction is disomic with probability ¼, compared with ½ for MI.
+
+**E3.** The child gets one chromosome 21 from the father, plus two from the mother. After **MI** nondisjunction the mother's two copies are her father's and her mother's homologues, so the child has chromosome 21 from **three** grandparents (both maternal grandparents and one paternal). After **MII** nondisjunction the two maternal copies are identical, both from **one** maternal grandparent (near the centromere; crossing over can mix further out). That is the logic of B7: two different maternal alleles at a centromere marker means MI, two identical ones MII.
+
+**E4.** Chromosome 2 separates normally in both modes: every gamete has exactly one chromosome 2. Flipping its orientation only changes which parent's copy goes with which gamete. Nondisjunction of one chromosome does not drag the others along: the gametes are n + 1 or n − 1 for **chromosome 21 only**. Each chromosome pair segregates independently, as in Mendel's second law.
+
+**E5.** Two of the three copies come from the parent with the nondisjunction. The embryo has uniparental disomy if it loses the single copy from the other parent: probability **1/3**. (With probability 2/3 it loses one of the two copies from the same parent and ends up normal.) After MII nondisjunction the two remaining copies are **identical** (isodisomy) near the centromere, so any recessive allele there is now homozygous. Uniparental disomy also matters for imprinted genes; on chromosome 15 it causes Prader–Willi or Angelman syndrome.
+:::
+
+## Find it
+
+You will use [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/), [MedGen](https://www.ncbi.nlm.nih.gov/medgen/) and [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/). ClinVar also holds **copy-number variants** (CNVs): deletions and duplications. Their names have the form `GRCh38/hg38 22q11.21(chr22:start-end)x1`, where `x1` means one copy (a deletion; normal is two) and `x3` three copies (a duplication). In NCBI Gene, the **Genomic context** section gives each gene's coordinates on GRCh38.
+
+**F1. 22q11.2 deletion.** Open the ClinVar record [VCV000057594](https://www.ncbi.nlm.nih.gov/clinvar/variation/57594/).
+(a) Read the **variant type**, the **location** (GRCh38) and the **germline classification**. How large is the deletion, in Mb?
+(b) In NCBI Gene, look up the coordinates of [*TBX1*](https://www.ncbi.nlm.nih.gov/gene/6899) and [*BCR*](https://www.ncbi.nlm.nih.gov/gene/613). Which of them lies inside this deletion?
+(c) Open MedGen's record for [DiGeorge syndrome](https://www.ncbi.nlm.nih.gov/medgen/C0012236) (the 22q11.2 deletion syndrome). Which gene does it list? Name three major features from its description.
+
+**F2. Williams syndrome.** Open [Williams syndrome in MedGen](https://www.ncbi.nlm.nih.gov/medgen/C0175702) (OMIM [194050](https://www.omim.org/entry/194050)).
+(a) What mode of inheritance does it list, and which genes?
+(b) Look up [*ELN*](https://www.ncbi.nlm.nih.gov/gene/2006) in NCBI Gene: full name and band. Which cardiovascular feature in the MedGen description would you connect to this gene, and why?
+(c) The syndrome is caused by a deletion of many genes, yet it is listed as autosomal dominant. Explain.
+
+**F3. The Philadelphia chromosome genes.** In NCBI Gene, open [*BCR*](https://www.ncbi.nlm.nih.gov/gene/613) and [*ABL1*](https://www.ncbi.nlm.nih.gov/gene/25) (human).
+(a) Give the full name and band of each.
+(b) Which of the two encodes a tyrosine kinase (read the full name)? Which chromosome carries the *BCR*::*ABL1* fusion gene in CML: the der(9) or the der(22)?
+(c) Write the karyotype of a male CML cell with the Philadelphia translocation, using the bands from (a).
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) Balanced; **pericentric** inversion of chromosome 9 (breakpoints on both arms, p12 and q13, so the centromere is inside). This is the common harmless variant. (b) Balanced; **paracentric** inversion (both breakpoints on 3q). (c) Unbalanced; an **interstitial deletion** within 22q11.21: the 22q11.2 deletion. (d) Balanced; a **Robertsonian translocation** of 13 and 14, hence 45 chromosomes. (e) Unbalanced; a **duplication** within 17p12 (the CMT1A duplication).
+
+**B2.** A mutation lies in the bands that are removed by **every** deletion that uncovers it, and **not** removed by any deletion that does not.
+- *m1*: in A (1–3) and B (2–5), not C or D → **bands 2–3**.
+- *m2*: in B (2–5) and C (4–7), not A → **bands 4–5**.
+- *m3*: in C (4–7) and D (6–8), not B → **bands 6–7**.
+- *m4*: only D → **band 8**.
+- *m5*: only A → **band 1**.
+
+This is **pseudodominance**: the recessive allele shows in a heterozygote because the deletion removes the other copy.
+
+**B3.** (a) Non-crossover: **centromere–A–B–C–D–E–F** (normal) and **centromere–A–B–E–D–C–F** (inverted): both balanced and viable. Crossover products: the normal chromatid's centromere part (centromere–A–B–C) joins the inverted chromatid's centromere part read backwards (D–E–B–A–centromere): **dicentric centromere–A–B–C–D–E–B–A–centromere**. The leftover pieces join into the **acentric F–E–D–C–F**. The dicentric breaks at anaphase I, the acentric is lost: neither gives a viable gamete.
+(b) **A–B–centromere–C–D–A**: a duplication of A and a deficiency of E. **E–B–centromere–C–D–E**: a duplication of E and a deficiency of A. Each has one centromere, but both are unbalanced.
+
+**B4.** (a) Alternate: **N2 + N5** (normal) and **T2 + T5** (balanced carrier): both balanced. Adjacent-1: **N2 + T5** and **N5 + T2**. Adjacent-2: **N2 + T2** and **N5 + T5**. All four adjacent gametes are unbalanced.
+(b) Choosing 2 of 4 chromosomes for one pole gives 6 equally likely combinations, and 2 of them are balanced: **1/3** balanced, of which half (**1/6**) completely normal.
+(c) Alternate segregation is often favoured by how the cross orients on the spindle, so it is more common than 1/3. Also, many unbalanced eggs or embryos are lost very early, so among recognised pregnancies the balanced fraction looks higher.
+
+**B5.** (a) and (b):
+
+| Gamete | Zygote with a normal egg | Survives? |
+|---|---|---|
+| 14 + 21 | 46,XY or XX, normal | yes |
+| rob(14;21) | 45, balanced carrier | yes |
+| rob(14;21) + 21 | 46, translocation **Down syndrome** (three copies of 21q) | yes |
+| 14 | 45, monosomy 21 | no |
+| rob(14;21) + 14 | 46, trisomy 14 | no |
+| 21 | 45, monosomy 14 | no |
+
+(c) Three kinds survive, so the naive expectation would be **1/3** of births with Down syndrome. The observed risk for a male carrier is only about 1% (about 10–15% for a female carrier). The six gametes are not equally frequent: the unbalanced combinations are rare, and sperm or embryos with them are selected against. This is why genetic counsellors use **empirical** risks for translocation carriers.
+
+**B6.** (a) After MI nondisjunction, two of the four products are n + 1 and two n − 1, so the egg has two copies with probability **½**, none with **½**, one with **0**.
+(b) After MII nondisjunction in the secondary oocyte, the egg has two copies or none, depending on which product becomes the egg. If we treat all four products of the meiosis as equally likely to become the egg, as in the demo: **¼** two copies, **¼** none, **½** one.
+(c) 0.04 × ½ + 0.01 × ¼ = 0.02 + 0.0025 = **0.0225**, about 2.3% of her eggs.
+
+**B7.** 1: The child has 12 and 15 from the mother (both of her alleles, two **different** homologues) and 14 from the father: **maternal meiosis I**. 2: The child has two copies of the mother's 12 (identical) and 13 from the father: **maternal meiosis II**. 3: The child has 15 from the mother and **both** 13 and 14 from the father: **paternal meiosis I**.
+
+**B8.** (a) Father MI: sperm **XY** and **O** (no sex chromosome). With an X egg: **47,XXY** (Klinefelter) and **45,X** (Turner).
+(b) Father MII of the Y-bearing cell: sperm **YY** and **O** (plus normal X sperm from the other cell). With an X egg: **47,XYY** and **45,X**.
+(c) Mother MI: eggs **XX** and **O**. With an X sperm: **47,XXX** (triple X) and **45,X**; with a Y sperm: **47,XXY** and **45,Y**. **45,Y cannot survive**: genes on the X are essential.
+
+**B9.** (a) 2 × (½)^4^ = 2/16 = **1/8**.
+(b) 2 × (½)^11^ = 2/2048 ≈ **0.001**.
+(c) The tetraploid makes **2x** (diploid) gametes, the diploid **x** (haploid) gametes; the seed is **3x**. The triploid plant is nearly sterile, so its fruit has no mature seeds, and it cannot be propagated from its own seed: new triploid seed must be produced from the 4x × 2x cross each year.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+These facts were checked with the NCBI E-utilities (ClinVar, MedGen, Gene) on 2026-11-20.
+
+**F1.** (a) ClinVar variation 57594, `GRCh38/hg38 22q11.21(chr22:18339130-21086225)x1`. Variant type **copy number loss** (one copy, a deletion), on GRCh38 at chr22:18,339,130–21,086,225, band 22q11.21. Germline classification **Pathogenic** (criteria provided, single submitter). Size: 21 086 225 − 18 339 130 + 1 = 2 747 096 bp ≈ **2.7 Mb**. Click path: ClinVar → search `57594` or follow the link → the top of the record (Variant type, Variation ID, location) and the **Germline classification** box.
+(b) *TBX1*: chr22:19,756,703–19,783,593 (22q11.21): **inside** the deletion. *BCR*: chr22:23,180,509–23,318,037 (22q11.23): **outside**, about 2 Mb further along 22q. Click path: NCBI Gene → the gene → **Genomic context** (NC_000022.11).
+(c) MedGen C0012236 lists the gene ***TBX1***. Major features from the description: congenital **heart disease** (conotruncal malformations such as tetralogy of Fallot), **palatal** abnormalities, **immune deficiency**, characteristic facial features and learning difficulties (also hearing loss, psychiatric illness and autoimmune disorders).
+
+**F2.** (a) MedGen C0175702: **autosomal dominant inheritance**; genes ***ELN***, *LIMK1*, *GTF2I*, *GTF2IRD1* and *NCF1*.
+(b) *ELN* is **elastin**, at **7q11.23** (NCBI Gene ID 2006). The feature is **supravalvar aortic stenosis** (a narrowing of the aorta just above the valve), together with peripheral pulmonary stenosis and the connective-tissue problems. With only one copy of *ELN*, the walls of large arteries have too little elastin: **haploinsufficiency**.
+(c) The deletion is **heterozygous**: one copy of the region is enough to cause the syndrome, so it behaves as a dominant trait. An affected person passes the deleted chromosome to half of their children. Most cases are new deletions (by NAHR between the repeats that flank the region), so most patients have unaffected parents.
+
+**F3.** (a) *BCR*: **BCR activator of RhoGEF and GTPase**, **22q11.23** (Gene ID 613). *ABL1*: **ABL proto-oncogene 1, non-receptor tyrosine kinase**, **9q34.12** (Gene ID 25).
+(b) ***ABL1*** encodes the tyrosine kinase. The fusion gene sits on the **der(22)**, the small Philadelphia chromosome: the start of *BCR* on chromosome 22 is joined to the part of *ABL1* that moved from 9q34. (The reciprocal *ABL1*::*BCR* on der(9) is not needed for the leukaemia.)
+(c) **46,XY,t(9;22)(q34;q11)**, or with the finer bands from NCBI Gene, 46,XY,t(9;22)(q34.1;q11.2). Click path: NCBI Gene → gene → Summary (Official full name, Location).
+:::
+
+## Where this leads
+
+Many of the patterns here come back. The empirical risks for translocation carriers and the maternal-age effect are the kind of numbers used in genetic counselling and prenatal screening, discussed in the **Ethics** module. Fusion genes return in **Cancer genetics** (Part 7), and X inactivation, which makes sex-chromosome aneuploidy survivable, in **Eukaryotic regulation** (Part 6). Next in this part, **Bacterial genetics** shows a genome that is one circle and is mapped in minutes.
+
+**Next:** [Exercise in R](exercise-r.qmd): plot the Danish registry data on fetal aneuploidy against maternal age on a log scale, and simulate the gametes of a translocation carrier and a triploid.

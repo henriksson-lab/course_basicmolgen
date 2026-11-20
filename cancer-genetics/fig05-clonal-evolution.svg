@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: clonal evolution as a "fish plot". Height of each band = fraction of cells in the tissue that belong to that clone.
+       Each new clone starts with one cell that gains a driver mutation (star). Grey dots = passenger mutations. -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <!-- tissue background (normal cells) -->
+  <rect x="60" y="60" width="800" height="270" fill="#f4f6f8" stroke="#1b2a3a" stroke-width="1.5"/>
+  <!-- clone 1 -->
+  <path d="M130,195 C 250,195 300,72 860,66 L860,324 C 300,318 250,195 130,195 Z" fill="#cfe0ec" stroke="#2a6f97" stroke-width="2"/>
+  <!-- clone 2 -->
+  <path d="M360,195 C 470,195 520,100 860,92 L860,298 C 520,290 470,195 360,195 Z" fill="#f6e2c2" stroke="#d08c2f" stroke-width="2"/>
+  <!-- clone 3 -->
+  <path d="M590,195 C 660,195 700,135 860,128 L860,262 C 700,255 660,195 590,195 Z" fill="#f1d3d3" stroke="#bc4749" stroke-width="2"/>
+  <!-- a side clone that did not take over (no advantage) -->
+  <path d="M250,170 C 290,170 300,150 340,150 C 380,150 390,170 420,170 Z" fill="#e3e8d8" stroke="#6a994e" stroke-width="1.5"/>
+
+  <!-- driver stars -->
+  <g fill="#ffd166" stroke="#1b2a3a" stroke-width="1">
+    <polygon points="130,185 133,192 141,192 135,197 137,205 130,200 123,205 125,197 119,192 127,192"/>
+    <polygon points="360,185 363,192 371,192 365,197 367,205 360,200 353,205 355,197 349,192 357,192"/>
+    <polygon points="590,185 593,192 601,192 595,197 597,205 590,200 583,205 585,197 579,192 587,192"/>
+  </g>
+  <!-- passenger dots -->
+  <g fill="#7a8794">
+    <circle cx="200" cy="200" r="3"/><circle cx="260" cy="230" r="3"/><circle cx="450" cy="135" r="3"/><circle cx="420" cy="250" r="3"/>
+    <circle cx="470" cy="215" r="3"/><circle cx="540" cy="150" r="3"/><circle cx="520" cy="240" r="3"/><circle cx="650" cy="205" r="3"/>
+    <circle cx="720" cy="170" r="3"/><circle cx="760" cy="230" r="3"/><circle cx="800" cy="190" r="3"/><circle cx="820" cy="110" r="3"/>
+    <circle cx="700" cy="280" r="3"/><circle cx="330" cy="290" r="3"/><circle cx="800" cy="300" r="3"/><circle cx="300" cy="162" r="3"/>
+  </g>
+
+  <!-- driver labels above the box, with leaders -->
+  <g stroke="#1b2a3a" stroke-width="1.2">
+    <line x1="130" y1="183" x2="130" y2="46"/>
+    <line x1="360" y1="183" x2="360" y2="46"/>
+    <line x1="590" y1="183" x2="590" y2="46"/>
+  </g>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="136" y="42"><tspan font-weight="bold">driver 1:</tspan> <tspan font-style="italic">APC</tspan> lost</text>
+    <text x="366" y="42"><tspan font-weight="bold">driver 2:</tspan> <tspan font-style="italic">KRAS</tspan> activated</text>
+    <text x="596" y="42"><tspan font-weight="bold">driver 3:</tspan> <tspan font-style="italic">TP53</tspan> lost</text>
+  </g>
+  <line x1="232" y1="92" x2="300" y2="155" stroke="#6a994e" stroke-width="1.3"/>
+  <text x="140" y="86" font-size="14" fill="#6a994e">no driver: stays small</text>
+
+  <!-- stage labels under the box -->
+  <g font-size="15" fill="#555" text-anchor="middle">
+    <text x="95" y="352">normal</text>
+    <text x="95" y="370">epithelium</text>
+    <text x="245" y="352">small</text>
+    <text x="245" y="370">adenoma</text>
+    <text x="475" y="352">larger</text>
+    <text x="475" y="370">adenoma</text>
+    <text x="760" y="352">carcinoma</text>
+  </g>
+  <line x1="60" y1="392" x2="855" y2="392" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="458" y="414" font-size="15" fill="#1b2a3a" text-anchor="middle">time (years to decades)</text>
+
+  <!-- legend inside the box, bottom left corner -->
+  <circle cx="76" cy="312" r="3.5" fill="#7a8794"/>
+  <text x="86" y="317" font-size="14" fill="#1b2a3a">passenger</text>
+</svg>

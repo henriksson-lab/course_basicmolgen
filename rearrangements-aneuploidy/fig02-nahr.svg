@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" font-family="Helvetica, Arial, sans-serif">
+  <!-- Non-allelic homologous recombination (NAHR), also called unequal crossing over. Two
+       chromatids carry the same two copies of a low-copy repeat (LCR, orange) around a block of
+       genes (blue). They pair out of register, LCR2 of the top one with LCR1 of the bottom one,
+       and a crossover between the mispaired repeats gives one chromatid with a duplication and
+       one with a deletion of the gene block. Grey = unique flanking sequence. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">Unequal crossing over between repeats</text>
+  <text x="20" y="50" font-size="13.5" fill="#5b6b7a">1. Two chromatids pair out of register at a pair of low-copy repeats (LCRs)</text>
+
+  <!-- top chromatid: x 60..620 -->
+  <g>
+    <rect x="60" y="70" width="60" height="20" fill="#c9d1d9"/>
+    <path d="M120,70 L190,70 L200,80 L190,90 L120,90 Z" fill="#d08c2f"/>
+    <rect x="202" y="70" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="262" y="70" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="322" y="70" width="56" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <path d="M380,70 L450,70 L460,80 L450,90 L380,90 Z" fill="#d08c2f"/>
+    <rect x="462" y="70" width="158" height="20" fill="#c9d1d9"/>
+  </g>
+  <!-- bottom chromatid: shifted right by 260 -->
+  <g>
+    <rect x="320" y="118" width="60" height="20" fill="#c9d1d9"/>
+    <path d="M380,118 L450,118 L460,128 L450,138 L380,138 Z" fill="#d08c2f"/>
+    <rect x="462" y="118" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="522" y="118" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="582" y="118" width="56" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <path d="M640,118 L710,118 L720,128 L710,138 L640,138 Z" fill="#d08c2f"/>
+    <rect x="722" y="118" width="158" height="20" fill="#c9d1d9"/>
+  </g>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="231" y="85" font-style="italic">X</text><text x="291" y="85" font-style="italic">Y</text><text x="350" y="85" font-style="italic">Z</text>
+    <text x="491" y="133" font-style="italic">X</text><text x="551" y="133" font-style="italic">Y</text><text x="610" y="133" font-style="italic">Z</text>
+    <text x="155" y="85" fill="#ffffff">LCR</text><text x="415" y="85" fill="#ffffff">LCR</text>
+    <text x="415" y="133" fill="#ffffff">LCR</text><text x="675" y="133" fill="#ffffff">LCR</text>
+  </g>
+  <!-- crossover between the mispaired LCRs -->
+  <path d="M400,92 L430,116 M430,92 L400,116" stroke="#bc4749" stroke-width="3"/>
+  <text x="474" y="110" font-size="13" fill="#bc4749">crossover</text>
+
+  <!-- arrow down -->
+  <line x1="300" y1="152" x2="300" y2="180" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="316" y="172" font-size="13.5" fill="#5b6b7a">2. Products</text>
+
+  <!-- duplication product -->
+  <g>
+    <rect x="60" y="196" width="60" height="20" fill="#c9d1d9"/>
+    <path d="M120,196 L190,196 L200,206 L190,216 L120,216 Z" fill="#d08c2f"/>
+    <rect x="202" y="196" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="262" y="196" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="322" y="196" width="56" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <path d="M380,196 L450,196 L460,206 L450,216 L380,216 Z" fill="#d08c2f"/>
+    <rect x="462" y="196" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="522" y="196" width="58" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <rect x="582" y="196" width="56" height="20" fill="#9cc3dc" stroke="#2a6f97"/>
+    <path d="M640,196 L710,196 L720,206 L710,216 L640,216 Z" fill="#d08c2f"/>
+    <rect x="722" y="196" width="58" height="20" fill="#c9d1d9"/>
+  </g>
+  <!-- deletion product -->
+  <g>
+    <rect x="60" y="246" width="60" height="20" fill="#c9d1d9"/>
+    <path d="M120,246 L190,246 L200,256 L190,266 L120,266 Z" fill="#d08c2f"/>
+    <rect x="202" y="246" width="58" height="20" fill="#c9d1d9"/>
+  </g>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="231" y="211" font-style="italic">X</text><text x="291" y="211" font-style="italic">Y</text><text x="350" y="211" font-style="italic">Z</text>
+    <text x="491" y="211" font-style="italic">X</text><text x="551" y="211" font-style="italic">Y</text><text x="610" y="211" font-style="italic">Z</text>
+    <text x="155" y="211" fill="#ffffff">LCR</text><text x="415" y="211" fill="#ffffff">LCR</text><text x="675" y="211" fill="#ffffff">LCR</text>
+    <text x="155" y="261" fill="#ffffff">LCR</text>
+  </g>
+  <text x="796" y="211" font-size="14" font-weight="bold" fill="#1b2a3a">duplication</text>
+  <text x="276" y="261" font-size="14" font-weight="bold" fill="#1b2a3a">deletion</text>
+  <text x="346" y="261" font-size="13.5" fill="#5b6b7a">of the whole block between the repeats</text>
+
+  <text x="20" y="300" font-size="13.5" fill="#1b2a3a">Because the breakpoints sit in the repeats, the same deletion recurs in unrelated families:</text>
+  <text x="20" y="320" font-size="13.5" fill="#1b2a3a">22q11.2 deletion syndrome, Williams syndrome (7q11.23), and CMT1A (duplication) / HNPP (deletion) at 17p12.</text>
+</svg>

@@ -1,0 +1,141 @@
+---
+title: "Exercise: bacterial genetics (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+This unit is a **recap of 5MO103**. By the end of this exercise you should be able to:
+
+- explain what selection, counterselection and replica plating do in a bacterial cross;
+- order genes and measure distances in **minutes** from interrupted-mating data, and combine several Hfr strains into one **circular** map;
+- order genes and judge distances from **cotransduction** frequencies, and test for linkage in **transformation**;
+- use an F′ partial diploid to decide which allele is dominant;
+- find an *E. coli* gene in NCBI Gene and read its position, strand and product, and convert base pairs to minutes.
+
+Do the pen-and-paper part first. R comes after.
+
+## Background
+
+**Notation.** *lac*^+^ / *lac*^−^: can / cannot use lactose. *str*^r^ / *str*^s^: streptomycin resistant / sensitive. Thr^−^ = needs threonine (an auxotroph).
+
+**Conjugation.** F^+^ × F^−^ transfers only F. Hfr × F^−^ transfers the chromosome from *oriT*, in a fixed order and direction; the whole chromosome would take about 100 min, but pairs break apart long before, so the recipient stays F^−^. F′ × F^−^ transfers F plus a piece of chromosome and makes a partial diploid (merodiploid).
+
+**Interrupted mating.** Time of entry = distance from the Hfr origin, in minutes. Later markers are recovered less often (the gradient of transfer). Recombinants are selected on plates that kill the donor (counterselection, usually streptomycin) and select a donor marker.
+
+**Minutes and base pairs.** *E. coli* K-12 MG1655 has one circular chromosome of 4 641 652 bp (NC_000913.3). 100 min ≈ the whole chromosome, so 1 min ≈ 46 kb, and position in minutes ≈ 100 × bp / 4 641 652.
+
+**Transduction.** A P1 phage carries about 100 kb (a little over 2 min). Cotransduction frequency = fraction of selected transductants that also got an unselected donor marker. **Higher = closer.** In a three-factor cross, the rarest class needs four crossovers. An approximation (Wu, 1966) for fragment length *L* (in min) and distance *d*: $C = (1 - d/L)^3$, so $d = L\,(1 - C^{1/3})$.
+
+**Transformation.** Two unlinked markers are cotransformed about as often as the product of their single frequencies. Much more often than that means they are on one DNA fragment.
+
+## By hand
+
+**B1. (four Hfr strains)** Four *E. coli* Hfr strains were each mated with an F^−^ *str*^r^ strain carrying recessive alleles of all the genes below. The times of entry (min) were:
+
+| Hfr | Markers in order of entry, time of entry (min) |
+|---|---|
+| 1 | *thr* 2, *leu* 4, *lac* 10, *gal* 19, *trp* 30 |
+| 2 | *his* 5, *trp* 22, *gal* 33, *lac* 42 |
+| 3 | *thy* 4, *xyl* 20, *ilv* 25, *met* 29, *pyr* 36, *thr* 40 |
+| 4 | *met* 3, *ilv* 7, *xyl* 12, *thy* 28 |
+
+(a) Draw one map with all 11 genes. Is it linear or circular?
+(b) For each Hfr, mark the origin and the direction of transfer.
+(c) How far apart are *gal* and *trp*? Do Hfr 1 and Hfr 2 agree?
+(d) Taking *thr* as 0 min and the map as 100 min in total, give the position of *his* and of *thy*.
+
+**B2. (the plates)** In an Hfr *thr*^+^ *leu*^+^ *str*^s^ × F^−^ *thr*^−^ *leu*^−^ *str*^r^ cross, the mating mix is plated on minimal medium **with streptomycin and without threonine and leucine**.
+(a) What does each part of the medium do? Which cells form colonies?
+(b) Why must *str* be far from the Hfr origin?
+(c) The *thr*^+^ *leu*^+^ recombinants are then scored for an unselected donor marker, *lac*^+^. How do you score it, without plating each colony by hand on a new plate?
+
+**B3. (gradient of transfer)** In the same cross, the mating was allowed to run for 60 min without interruption. Among the *thr*^+^ *leu*^+^ recombinants, 72% were also *lac*^+^, 41% *gal*^+^ and 12% *trp*^+^. What gene order do you infer? Why do the percentages fall?
+
+**B4. (cotransduction, three factors)** P1 was grown on a *leu*^+^ *azi*^r^ *ton*^r^ donor and used to infect a *leu*^−^ *azi*^s^ *ton*^s^ recipient. 200 *leu*^+^ transductants were selected and scored for the two unselected markers:
+
+| *azi* | *ton* | Number |
+|---|---|---:|
+| r | r | 4 |
+| r | s | 92 |
+| s | r | 0 |
+| s | s | 104 |
+
+(a) Compute the cotransduction frequency of *leu* with *azi* and with *ton*.
+(b) Which gene is closer to *leu*?
+(c) What is the gene order? Use the rarest class, and draw the crossovers that class would need.
+
+**B5. (from frequency to distance, optional)** Use $d = L\,(1 - C^{1/3})$ with *L* = 2 min to turn your two cotransduction frequencies from B4 into distances in minutes and in kb. Compare with the real positions: *leuA* starts at 81 958 bp, *secA* (*azi*) at 108 279 bp and *fhuA* (*ton*) at 167 484 bp.
+
+**B6. (transformation)** *Bacillus subtilis* *a*^−^ *b*^−^ cells were transformed with DNA from an *a*^+^ *b*^+^ strain. The fraction of cells transformed was 2 × 10^−3^ for *a*^+^, 1 × 10^−3^ for *b*^+^ and 8 × 10^−4^ for *a*^+^ *b*^+^ together.
+(a) What fraction of double transformants would you expect if *a* and *b* were transformed independently?
+(b) Are *a* and *b* linked?
+
+**B7. (F′ dominance tests)** Predict the phenotype of each partial diploid, and say which allele is dominant.
+(a) F′ *lac*^+^ / *lac*^−^ (a recipient with a *lacZ* mutation receives an F′ with a working *lacZ*).
+(b) F′ *str*^s^ / *str*^r^. Hint: streptomycin acts on ribosomes, and the cell now has two kinds.
+
+## Find it
+
+[NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/) has a record for every gene in the reference strain *E. coli* K-12 substr. MG1655. Search with the gene symbol and the strain's taxonomy ID, for example [`lacZ[gene] AND 511145[taxid]`](https://www.ncbi.nlm.nih.gov/gene/?term=lacZ%5Bgene%5D+AND+511145%5Btaxid%5D). On the gene page, the **Summary** box gives the official symbol, the full name (gene description), the locus tag (a "b number") and **Also known as** (older names). The section **Genomic context** gives the position on the chromosome sequence NC_000913.3, as `(start..end)`, with `complement` if the gene is on the other strand. [EcoCyc](https://ecocyc.org) has the same information with a map view, in minutes and base pairs.
+
+**F1.** *lacZ*. What protein does it encode, what is its locus tag, and where is it (start..end, and strand)? Convert the start to minutes. What does `complement` mean?
+
+**F2.** *thrA*. What protein does it encode, where does it start, and on which strand? Why do you think *thr* sits at 0 min on the classical map?
+
+**F3.** Search for the old marker name [`tonA` in *E. coli* K-12](https://www.ncbi.nlm.nih.gov/gene/?term=tonA+AND+511145%5Btaxid%5D). Which gene is it today, what does the protein do, and where is the gene (minutes)? Why does a mutation here make cells resistant to phage T1?
+
+**F4.** Search for [`strA` in *E. coli* K-12](https://www.ncbi.nlm.nih.gov/gene/?term=strA+AND+511145%5Btaxid%5D). Which gene is it today, what does it encode, and where is it in minutes? Use the answer to explain why *str* is a good counterselection marker for an Hfr whose origin is at 92.6 min transferring clockwise.
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) Lining up the overlapping orders gives a **circle**:
+
+*thr* – *leu* – *lac* – *gal* – *trp* – *his* – *thy* – *xyl* – *ilv* – *met* – *pyr* – (back to *thr*).
+
+Hfr 3 ends with *pyr* then *thr*, and Hfr 1 starts with *thr*; no straight line fits all four strains.
+
+(b) Hfr 1: origin 2 min before *thr*, transfers *thr* → *trp* ("clockwise" if *thr* is at the top). Hfr 2: origin 5 min on the far side of *his*, transfers *his* → *lac*, the **opposite** direction. Hfr 3: origin 4 min before *thy*, clockwise *thy* → *thr*. Hfr 4: origin 3 min before *met*, anticlockwise *met* → *thy*.
+
+(c) Hfr 1: 30 − 19 = **11 min**; Hfr 2: 33 − 22 = **11 min**. They agree, as they must if the time of entry measures distance.
+
+(d) From Hfr 1, *thr* enters at 2, so the origin is at −2 = 98 min, and *trp* is at 28 min. Hfr 2: *his* is 22 − 5 = 17 min before *trp*, so at 28 + 17 = **45 min**. Hfr 3: *thr* is 36 min after *thy*, so *thy* is at 100 − 36 = **64 min** (Hfr 3 enters *thy* at 4 and *thr* at 40). These match the real positions in MG1655: *hisG* at 45.0 min and *thyA* at 63.9 min (100 × start / 4 641 652).
+
+**B2.** (a) **Streptomycin** kills the *str*^s^ Hfr donors (counterselection). **No threonine and no leucine** means only *thr*^+^ *leu*^+^ cells grow; the F^−^ recipients are *thr*^−^ *leu*^−^, so only recipients that got the donor's *thr*^+^ *leu*^+^ by recombination form colonies. (b) If *str* entered early, many recipients would also receive *str*^s^ and be killed, and you would lose exactly the recombinants you want. Being far from the origin, *str* almost never enters. (c) **Replica plating**: press the master plate onto a velvet and print it onto a plate that selects *lac*^+^ (minimal medium with lactose as the only carbon source, plus threonine, leucine and streptomycin), or screen on X-gal. Every colony is scored at once.
+
+**B3.** Order **origin – (*thr leu*) – *lac* – *gal* – *trp***. The further a marker is from the origin, the longer the transfer must last for it to arrive, and the more mating pairs break apart before that: the gradient of transfer. Even without a blender, the frequencies give the order.
+
+**B4.** (a) *leu*–*azi*: (4 + 92) / 200 = **48%**. *leu*–*ton*: (4 + 0) / 200 = **2%**. (b) *azi* is much closer to *leu*. (c) Two orders are possible with *azi* near *leu*: *leu*–*azi*–*ton* or *azi*–*leu*–*ton*. The class *azi*^s^ *ton*^r^ is absent (0). If the order is **leu – azi – ton**, getting *leu*^+^ and *ton*^+^ but **not** *azi*^r^ needs four crossovers (on either side of *leu* and on either side of *azi*), so it should be the rarest class, as observed. If the order were *azi*–*leu*–*ton*, every class would need only two crossovers, and *azi*^s^ *ton*^r^ (a fragment from *leu* to *ton* that stops short of *azi*) should be at least as common as *azi*^r^ *ton*^r^ (a longer fragment covering all three). It is not: 0 against 4. The order is **leu – azi – ton**, as in the genome.
+
+**B5.** *azi*: $d = 2(1 - 0.48^{1/3}) = 2(1 - 0.783) = 0.43$ min ≈ 20 kb. *ton*: $d = 2(1 - 0.02^{1/3}) = 2(1 - 0.271) = 1.46$ min ≈ 68 kb. Real distances: 108 279 − 81 958 = 26 321 bp (0.57 min) and 167 484 − 81 958 = 85 526 bp (1.84 min). The formula gets the order and the rough size right, but it underestimates; it assumes every fragment is exactly *L* long and that crossovers happen anywhere with equal probability.
+
+**B6.** (a) Independent: 2 × 10^−3^ × 1 × 10^−3^ = **2 × 10^−6^**. (b) Observed 8 × 10^−4^ is 400 times more: *a* and *b* are **linked**, carried on the same DNA fragment. (A further test: dilute the DNA. Linked doubles fall in proportion to the singles; independent doubles fall with the square.)
+
+**B7.** (a) **Lac^+^**: one working *lacZ* makes β-galactosidase. *lac*^+^ is dominant, as most loss-of-function mutations are recessive. (b) **Streptomycin sensitive**: the sensitive ribosomes bind streptomycin, stall on the mRNA and kill the cell even though resistant ribosomes are also present. Here the **sensitive** allele is dominant, and the resistance allele is recessive.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+All coordinates were checked with the NCBI E-utilities (`esummary` on db = gene, field `genomicinfo`) on 2026-11-20, for *E. coli* K-12 substr. MG1655, chromosome NC_000913.3 (4 641 652 bp). Click path: NCBI Gene → search `<symbol>[gene] AND 511145[taxid]` → the record "*symbol* … [*Escherichia coli* str. K-12 substr. MG1655]" → **Summary** (name, locus tag, Also known as) → **Genomic context** (position).
+
+**F1.** *lacZ* (Gene ID 945006): **β-galactosidase**, locus tag **b0344**. Position NC_000913.3 **363231..366305, complement**. 100 × 363 231 / 4 641 652 = **7.8 min**. `complement` means the gene is read from the other DNA strand (the minus strand), so it is transcribed towards lower coordinates; its start codon is at 366 305.
+
+**F2.** *thrA* (Gene ID 945803): **fused aspartate kinase / homoserine dehydrogenase 1** (the first enzymes of threonine synthesis), locus tag b0002, at **337..2799** on the **plus** strand. The *thr* operon was the first marker on the classical map, so the map was started there (0 min) by convention. The genome sequence's coordinate 1 was later put just before it, so *thr* is at 0 min in both systems.
+
+**F3.** `tonA` is today **fhuA** (Gene ID 944856; also known as T1, T5rec, tonA): the **ferrichrome outer membrane transporter / phage receptor**, at 167484..169727 (plus strand), **3.6 min**. The protein sits in the outer membrane, where it takes up iron bound to ferrichrome; phage T1 (and T5) use it as their receptor to attach. Without a working FhuA, T1 cannot attach, so the cell is resistant. The old name *tonA* means "T one" resistance.
+
+**F4.** `strA` is today **rpsL** (Gene ID 947845; also known as asuB, strA): **30S ribosomal subunit protein S12**, at 3474178..3474552, complement, **74.8 min**. Streptomycin binds the small ribosomal subunit; changes in S12 stop it binding, giving resistance. For an Hfr with its origin at 92.6 min transferring clockwise, *str* at 74.8 min is 100 − 92.6 + 74.8 = **82 min** from the origin, so it is almost never transferred before the pairs break: a good counterselection marker. That is the simulated Hfr in the R exercise.
+:::
+
+## Where this leads
+
+The minute map of *E. coli* was built from interrupted mating and cotransduction long before DNA could be sequenced. The genome sequence lets us check it: in the R exercise you put entry times next to real gene positions and fit a line. **Organelle inheritance** comes next: mitochondria and chloroplasts are descendants of bacteria, with small circular genomes of their own. In Part 6, **Prokaryotic regulation** uses F′ partial diploids for the classic *lac* operon experiments.
+
+**Next:** [Exercise in R](exercise-r.qmd): order markers from interrupted-mating data, join them to real genome positions with `left_join`, and fit minutes against megabases with `lm`.

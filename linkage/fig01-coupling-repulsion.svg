@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="Helvetica, Arial, sans-serif">
+  <!-- Coupling vs repulsion. Left: F1 A B / a b (cis). Right: F1 A b / a B (trans).
+       Blue homologue came from one parent, red from the other. Below each: the four gamete types
+       (= testcross offspring classes), parental ones common, recombinant ones rare.
+       Bar widths drawn for RF = 10%: 45% : 45% : 5% : 5% (400 px = 100%). -->
+
+  <!-- ===== left panel: coupling ===== -->
+  <text x="220" y="24" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Coupling (cis)</text>
+  <text x="220" y="44" font-size="14" fill="#5b6b7a" text-anchor="middle" font-style="italic">parents AB / AB × ab / ab</text>
+  <text x="86" y="99" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="end">F</text><text x="87" y="104" font-size="12" font-weight="bold" fill="#1b2a3a">1</text>
+  <rect x="120" y="70" width="200" height="12" rx="6" fill="#2a6f97"/>
+  <rect x="120" y="100" width="200" height="12" rx="6" fill="#bc4749"/>
+  <g font-size="18" font-weight="bold" font-style="italic" text-anchor="middle">
+    <text x="160" y="64" fill="#2a6f97">A</text>
+    <text x="280" y="64" fill="#2a6f97">B</text>
+    <text x="160" y="132" fill="#bc4749">a</text>
+    <text x="280" y="132" fill="#bc4749">b</text>
+  </g>
+
+  <text x="20" y="168" font-size="15" font-weight="bold" fill="#1b2a3a">Gametes = testcross classes</text>
+  <!-- row 1: A B parental -->
+  <rect x="20" y="186" width="70" height="10" rx="5" fill="#2a6f97"/>
+  <text x="104" y="196" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#2a6f97">A B</tspan></text>
+  <rect x="150" y="183" width="180" height="16" fill="#9aa5b1"/>
+  <text x="338" y="196" font-size="14" fill="#5b6b7a">parental</text>
+  <!-- row 2: a b parental -->
+  <rect x="20" y="216" width="70" height="10" rx="5" fill="#bc4749"/>
+  <text x="104" y="226" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#bc4749">a b</tspan></text>
+  <rect x="150" y="213" width="180" height="16" fill="#9aa5b1"/>
+  <text x="338" y="226" font-size="14" fill="#5b6b7a">parental</text>
+  <!-- row 3: A b recombinant -->
+  <rect x="20" y="246" width="35" height="10" fill="#2a6f97"/>
+  <rect x="55" y="246" width="35" height="10" fill="#bc4749"/>
+  <text x="104" y="256" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#2a6f97">A</tspan> <tspan fill="#bc4749">b</tspan></text>
+  <rect x="150" y="243" width="20" height="16" fill="#d08c2f"/>
+  <text x="178" y="256" font-size="14" fill="#5b6b7a">recombinant</text>
+  <!-- row 4: a B recombinant -->
+  <rect x="20" y="276" width="35" height="10" fill="#bc4749"/>
+  <rect x="55" y="276" width="35" height="10" fill="#2a6f97"/>
+  <text x="104" y="286" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#bc4749">a</tspan> <tspan fill="#2a6f97">B</tspan></text>
+  <rect x="150" y="273" width="20" height="16" fill="#d08c2f"/>
+  <text x="178" y="286" font-size="14" fill="#5b6b7a">recombinant</text>
+
+  <!-- divider -->
+  <line x1="440" y1="12" x2="440" y2="296" stroke="#d5dbe1" stroke-width="1.5"/>
+
+  <!-- ===== right panel: repulsion ===== -->
+  <text x="660" y="24" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Repulsion (trans)</text>
+  <text x="660" y="44" font-size="14" fill="#5b6b7a" text-anchor="middle" font-style="italic">parents Ab / Ab × aB / aB</text>
+  <text x="526" y="99" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="end">F</text><text x="527" y="104" font-size="12" font-weight="bold" fill="#1b2a3a">1</text>
+  <rect x="560" y="70" width="200" height="12" rx="6" fill="#2a6f97"/>
+  <rect x="560" y="100" width="200" height="12" rx="6" fill="#bc4749"/>
+  <g font-size="18" font-weight="bold" font-style="italic" text-anchor="middle">
+    <text x="600" y="64" fill="#2a6f97">A</text>
+    <text x="720" y="64" fill="#2a6f97">b</text>
+    <text x="600" y="132" fill="#bc4749">a</text>
+    <text x="720" y="132" fill="#bc4749">B</text>
+  </g>
+
+  <text x="460" y="168" font-size="15" font-weight="bold" fill="#1b2a3a">Gametes = testcross classes</text>
+  <rect x="460" y="186" width="70" height="10" rx="5" fill="#2a6f97"/>
+  <text x="544" y="196" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#2a6f97">A b</tspan></text>
+  <rect x="590" y="183" width="180" height="16" fill="#9aa5b1"/>
+  <text x="778" y="196" font-size="14" fill="#5b6b7a">parental</text>
+  <rect x="460" y="216" width="70" height="10" rx="5" fill="#bc4749"/>
+  <text x="544" y="226" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#bc4749">a B</tspan></text>
+  <rect x="590" y="213" width="180" height="16" fill="#9aa5b1"/>
+  <text x="778" y="226" font-size="14" fill="#5b6b7a">parental</text>
+  <rect x="460" y="246" width="35" height="10" fill="#2a6f97"/>
+  <rect x="495" y="246" width="35" height="10" fill="#bc4749"/>
+  <text x="544" y="256" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#2a6f97">A</tspan> <tspan fill="#bc4749">B</tspan></text>
+  <rect x="590" y="243" width="20" height="16" fill="#d08c2f"/>
+  <text x="618" y="256" font-size="14" fill="#5b6b7a">recombinant</text>
+  <rect x="460" y="276" width="35" height="10" fill="#bc4749"/>
+  <rect x="495" y="276" width="35" height="10" fill="#2a6f97"/>
+  <text x="544" y="286" font-size="17" font-weight="bold" font-style="italic"><tspan fill="#bc4749">a</tspan> <tspan fill="#2a6f97">b</tspan></text>
+  <rect x="590" y="273" width="20" height="16" fill="#d08c2f"/>
+  <text x="618" y="286" font-size="14" fill="#5b6b7a">recombinant</text>
+
+  <!-- caption -->
+  <text x="440" y="326" font-size="15" fill="#1b2a3a" text-anchor="middle">Same genes, same RF (here 10%): which classes are parental depends on the parents of the hybrid.</text>
+</svg>

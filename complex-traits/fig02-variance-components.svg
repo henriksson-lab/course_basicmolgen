@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig02: partition of phenotypic variance. Proportions illustrative. -->
+  <text x="146" y="70" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="end">V<tspan dy="5" font-size="12">P</tspan></text>
+  <rect x="160.0" y="40" width="270.0" height="46" fill="#2a6f97" stroke="#fff" stroke-width="2"/>
+  <text x="295.0" y="69" font-size="17" font-weight="bold" fill="#fff" text-anchor="end" font-style="italic">V</text>
+  <text x="296.0" y="74" font-size="12" font-weight="bold" fill="#fff" font-style="italic">A</text>
+  <text x="295.0" y="108" font-size="14" fill="#555" text-anchor="middle">additive</text>
+  <rect x="430.0" y="40" width="90.0" height="46" fill="#5b8fb3" stroke="#fff" stroke-width="2"/>
+  <text x="475.0" y="69" font-size="17" font-weight="bold" fill="#fff" text-anchor="end" font-style="italic">V</text>
+  <text x="476.0" y="74" font-size="12" font-weight="bold" fill="#fff" font-style="italic">D</text>
+  <text x="475.0" y="108" font-size="14" fill="#555" text-anchor="middle">dominance</text>
+  <rect x="520.0" y="40" width="240.0" height="46" fill="#d08c2f" stroke="#fff" stroke-width="2"/>
+  <text x="640.0" y="69" font-size="17" font-weight="bold" fill="#fff" text-anchor="end" font-style="italic">V</text>
+  <text x="641.0" y="74" font-size="12" font-weight="bold" fill="#fff" font-style="italic">E</text>
+  <text x="640.0" y="108" font-size="14" fill="#555" text-anchor="middle">environment</text>
+  <path d="M160,120 L160,130 L520.0,130 L520.0,120" fill="none" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="390.0" y="150" font-size="15" fill="#1b2a3a" text-anchor="end">genetic variance V</text>
+  <text x="391.0" y="155" font-size="11" fill="#1b2a3a">G</text>
+  <text x="160" y="210" font-size="17" fill="#1b2a3a"><tspan font-weight="bold">Broad-sense</tspan> heritability  H<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> = V</tspan><tspan dy="5" font-size="11">G</tspan><tspan dy="-5"> / V</tspan><tspan dy="5" font-size="11">P</tspan><tspan dy="-5">  (here 0.60): all genetic differences</tspan></text>
+  <text x="160" y="246" font-size="17" fill="#1b2a3a"><tspan font-weight="bold">Narrow-sense</tspan> heritability  h<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> = V</tspan><tspan dy="5" font-size="11">A</tspan><tspan dy="-5"> / V</tspan><tspan dy="5" font-size="11">P</tspan><tspan dy="-5">  (here 0.45): what parents pass on</tspan></text>
+  <text x="160" y="290" font-size="15" fill="#555">V<tspan dy="5" font-size="11">P</tspan><tspan dy="-5"> = V</tspan><tspan dy="5" font-size="11">A</tspan><tspan dy="-5"> + V</tspan><tspan dy="5" font-size="11">D</tspan><tspan dy="-5"> + V</tspan><tspan dy="5" font-size="11">E</tspan><tspan dy="-5">  (ignoring epistasis and gene–environment interaction). Proportions are illustrative.</tspan></text>
+</svg>

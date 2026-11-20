@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: random union of gametes, p = 0.7, q = 0.3; areas proportional to genotype frequencies -->
+  <text x="130" y="34" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Gene pool</text>
+  <ellipse cx="130" cy="190" rx="105" ry="120" fill="#f4f6f8" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="82" cy="103" r="8" fill="#2a6f97"/><text x="82" y="107" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="111" cy="114" r="8" fill="#2a6f97"/><text x="111" y="118" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="52" cy="168" r="8" fill="#2a6f97"/><text x="52" y="172" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="178" cy="129" r="8" fill="#2a6f97"/><text x="178" y="133" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="137" cy="141" r="8" fill="#2a6f97"/><text x="137" y="145" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="189" cy="257" r="8" fill="#2a6f97"/><text x="189" y="261" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="96" cy="218" r="8" fill="#2a6f97"/><text x="96" y="222" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="172" cy="268" r="8" fill="#2a6f97"/><text x="172" y="272" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="149" cy="228" r="8" fill="#2a6f97"/><text x="149" y="232" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="131" cy="119" r="8" fill="#2a6f97"/><text x="131" y="123" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="125" cy="100" r="8" fill="#2a6f97"/><text x="125" y="104" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="204" cy="206" r="8" fill="#2a6f97"/><text x="204" y="210" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="132" cy="171" r="8" fill="#2a6f97"/><text x="132" y="175" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="69" cy="147" r="8" fill="#2a6f97"/><text x="69" y="151" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="48" cy="218" r="8" fill="#2a6f97"/><text x="48" y="222" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="90" cy="198" r="8" fill="#2a6f97"/><text x="90" y="202" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="104" cy="244" r="8" fill="#2a6f97"/><text x="104" y="248" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="178" cy="215" r="8" fill="#2a6f97"/><text x="178" y="219" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="72" cy="181" r="8" fill="#2a6f97"/><text x="72" y="185" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="114" cy="288" r="8" fill="#2a6f97"/><text x="114" y="292" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="152" cy="260" r="8" fill="#2a6f97"/><text x="152" y="264" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="93" cy="122" r="8" fill="#2a6f97"/><text x="93" y="126" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="181" cy="160" r="8" fill="#2a6f97"/><text x="181" y="164" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="217" cy="173" r="8" fill="#2a6f97"/><text x="217" y="177" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="162" cy="113" r="8" fill="#2a6f97"/><text x="162" y="117" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="47" cy="188" r="8" fill="#2a6f97"/><text x="47" y="192" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="85" cy="276" r="8" fill="#2a6f97"/><text x="85" y="280" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="190" cy="190" r="8" fill="#2a6f97"/><text x="190" y="194" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="202" cy="224" r="8" fill="#bc4749"/><text x="202" y="228" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="154" cy="205" r="8" fill="#bc4749"/><text x="154" y="209" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="198" cy="124" r="8" fill="#bc4749"/><text x="198" y="128" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="161" cy="153" r="8" fill="#bc4749"/><text x="161" y="157" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="125" cy="196" r="8" fill="#bc4749"/><text x="125" y="200" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="147" cy="188" r="8" fill="#bc4749"/><text x="147" y="192" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="118" cy="269" r="8" fill="#bc4749"/><text x="118" y="273" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="138" cy="279" r="8" fill="#bc4749"/><text x="138" y="283" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="128" cy="237" r="8" fill="#bc4749"/><text x="128" y="241" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="202" cy="162" r="8" fill="#bc4749"/><text x="202" y="166" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="144" cy="157" r="8" fill="#bc4749"/><text x="144" y="161" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="72" cy="224" r="8" fill="#bc4749"/><text x="72" y="228" font-size="11" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="50" y="340" font-size="16" fill="#1b2a3a" text-anchor="start">allele <tspan font-style="italic">A</tspan>: p = 0.7, allele <tspan font-style="italic">a</tspan>: q = 0.3</text>
+  <text x="50" y="362" font-size="14" fill="#555">gametes drawn at random</text>
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker></defs>
+  <line x1="250" y1="190" x2="310" y2="190" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+  <text x="520.0" y="34" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Next generation</text>
+  <rect x="380.0" y="70.0" width="196.0" height="196.0" fill="#cfe0ec" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="478.0" y="166.0" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">AA</text>
+  <text x="448.0" y="188.0" font-size="15" fill="#1b2a3a">p<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>= 0.49</text>
+  <rect x="576.0" y="70.0" width="84.0" height="196.0" fill="#f6e2c2" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="618.0" y="166.0" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Aa</text>
+  <text x="618.0" y="188.0" font-size="15" fill="#1b2a3a" text-anchor="middle">pq = 0.21</text>
+  <rect x="380.0" y="266.0" width="196.0" height="84.0" fill="#f6e2c2" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="478.0" y="306.0" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Aa</text>
+  <text x="478.0" y="328.0" font-size="15" fill="#1b2a3a" text-anchor="middle">pq = 0.21</text>
+  <rect x="576.0" y="266.0" width="84.0" height="84.0" fill="#f1d3d3" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="618.0" y="306.0" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a" text-anchor="middle">aa</text>
+  <text x="588.0" y="328.0" font-size="15" fill="#1b2a3a">q<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>= 0.09</text>
+  <text x="478.0" y="60" font-size="16" fill="#2a6f97" text-anchor="middle" font-style="italic">A (p)</text>
+  <text x="618.0" y="60" font-size="16" fill="#bc4749" text-anchor="middle" font-style="italic">a (q)</text>
+  <text x="370" y="173.0" font-size="16" fill="#2a6f97" text-anchor="end" font-style="italic">A (p)</text>
+  <text x="370" y="313.0" font-size="16" fill="#bc4749" text-anchor="end" font-style="italic">a (q)</text>
+  <text x="700" y="110" font-size="17" font-weight="bold" fill="#1b2a3a">Genotype frequencies</text>
+  <text x="700" y="145" font-size="17" fill="#1b2a3a"><tspan font-style="italic">AA</tspan>: p<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>= 0.49</text>
+  <text x="700" y="175" font-size="17" fill="#1b2a3a"><tspan font-style="italic">Aa</tspan>: 2pq = 0.42</text>
+  <text x="700" y="205" font-size="17" fill="#1b2a3a"><tspan font-style="italic">aa</tspan>: q<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>= 0.09</text>
+  <line x1="700" y1="222" x2="870" y2="222" stroke="#ccc"/>
+  <text x="700" y="250" font-size="15" fill="#555">sum: (p + q)<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>= 1</text>
+  <text x="700" y="290" font-size="15" fill="#555">allele A next time:</text>
+  <text x="700" y="312" font-size="15" fill="#555">p<tspan dy="-7" font-size="11">2</tspan><tspan dy="7"> </tspan>+ pq = p(p + q) = p</text>
+  <text x="700" y="334" font-size="15" font-weight="bold" fill="#1b2a3a">unchanged</text>
+</svg>

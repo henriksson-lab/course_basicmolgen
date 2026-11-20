@@ -1,0 +1,143 @@
+---
+title: "Quiz: Development & model organisms"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the genetic analysis of development. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** What is the difference between forward and reverse genetics? Give one strength of each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which do you start from: a phenotype or a gene?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Forward** genetics starts from a phenotype: random mutagenesis, screen, then identify the gene. Strength: unbiased; it finds genes nobody suspected. **Reverse** genetics starts from a known gene: disrupt it on purpose (RNAi, CRISPR) and look for a phenotype. Strength: targeted; you can test any gene, including ones whose mutants would never be noticed in a screen.
+:::
+
+---
+
+**Q2.** In the Nüsslein-Volhard–Wieschaus screen, why were the new mutations kept over a **balancer** chromosome?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The mutations were recessive lethals. How do you keep a lethal allele in a stock?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A recessive lethal can only be kept in heterozygotes. A balancer carries inversions that suppress recombination (so the mutation stays on its chromosome together with nearby markers), a dominant visible marker (so you can see who carries it), and its own recessive lethal (so balancer homozygotes die). A *m*/balancer stock then breeds true: *m*/*m* and balancer/balancer die, and only *m*/balancer adults survive, generation after generation, without selection.
+:::
+
+---
+
+**Q3.** A female fly is homozygous for a recessive maternal-effect mutation *bcd*. She looks normal. Her embryos, from a cross with a wild-type male, all lack head and thorax. Explain both observations.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where does *bicoid* mRNA in the egg come from?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*bicoid* mRNA is made by the **mother** and placed at the anterior of the egg. The *bcd*/*bcd* female developed from an egg that her *bcd*/+ mother supplied with normal *bicoid* mRNA, so she is normal. She herself cannot supply any, so all her embryos lack the anterior gradient, whatever their own genotype (here all *bcd*/+).
+:::
+
+---
+
+**Q4.** Put these in the order in which they act: segment-polarity genes, maternal genes, Hox genes, gap genes, pair-rule genes. How many stripes do pair-rule and segment-polarity genes make?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The pattern gets finer at each step.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Maternal → gap → pair-rule (**7** stripes) → segment polarity (**14** stripes) → Hox (identity of each segment). (Hox genes are switched on by the gap and pair-rule genes, so they act in parallel with the later steps.)
+:::
+
+---
+
+**Q5.** A fly embryo lacks every other segment. Which class of gene is probably mutated? Which class if a block of several neighbouring segments is missing?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The class names describe the mutant phenotypes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Every other segment missing: a **pair-rule** gene. A block of adjacent segments missing: a **gap** gene.
+:::
+
+---
+
+**Q6.** Deleting the *even-skipped* stripe 2 enhancer removes stripe 2 but leaves the other six stripes. What does this tell you about how *eve* is regulated? Is the deletion cis- or trans-acting?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many enhancers does *eve* have?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*eve* has separate, **modular** enhancers for different stripes, each reading a different combination of transcription factors (stripe 2: activated by Bicoid and Hunchback, repressed by Giant and Krüppel). The deletion is **cis-acting**: it affects only the *eve* copy on the same chromosome.
+:::
+
+---
+
+**Q7.** *Antennapedia* gain-of-function alleles are dominant and give legs instead of antennae. Why are they dominant?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Is the protein abnormal, or is it in the wrong place?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The mutations (often rearrangements) put the normal *Antp* coding sequence under a regulatory region active in the head. One such allele is enough to make Antp protein in the antenna disc, where it switches the disc to a leg (thoracic) identity. A gain of expression in a new place is dominant: the normal allele cannot prevent it.
+:::
+
+---
+
+**Q8.** What is colinearity of Hox genes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare the order of genes on the chromosome with the order of body regions.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The order of Hox genes along the chromosome matches the order of the body regions in which they act, from anterior (3′ end of the cluster) to posterior (5′ end). In vertebrates the 3′ genes are also expressed earlier than the 5′ genes (temporal colinearity).
+:::
+
+---
+
+**Q9.** Humans heterozygous for a *PAX6* loss-of-function mutation have aniridia. What does this tell you about the dosage of *PAX6*? How would you describe the inheritance of aniridia?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Extensions to Mendel: haplosufficiency vs haploinsufficiency.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+One working copy is **not enough**: *PAX6* is **haploinsufficient**. Aniridia is therefore inherited as an **autosomal dominant** trait, although the mutant allele is a simple loss of function.
+:::
+
+---
+
+**Q10.** In *C. elegans*, *ced-9* loss-of-function mutants lose many cells by extra cell death, but *ced-9*; *ced-3* double mutants have no extra deaths. Which gene acts downstream?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Epistasis: which single-mutant phenotype does the double mutant show?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The double mutant looks like *ced-3* (no deaths), so ***ced-3*** is epistatic and acts **downstream**: CED-9 normally inhibits the death programme, and CED-3 (a caspase) carries it out. Without CED-3, losing the inhibitor makes no difference.
+:::
+
+---
+
+**Q11.** A CRISPR–Cas9 guide is designed against exon 2 of a mouse gene. Why do most edited alleles behave as null alleles, and why must the founder mice be crossed before you study the phenotype?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does end joining usually leave behind? And are all cells of the founder edited the same way?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Cas9 cuts; error-prone end joining usually leaves a small **insertion or deletion**. Unless it is a multiple of 3 nt, it shifts the **reading frame**, giving a premature stop codon and no working protein. Founders are usually **mosaics** (different cells carry different edits, or none), so you cross them to get offspring that carry one defined allele in every cell, then intercross heterozygotes to get homozygotes (¼ of the progeny).
+:::

@@ -1,0 +1,213 @@
+---
+title: "Exercise: Hardy–Weinberg equilibrium"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- compute allele and genotype frequencies from counts;
+- derive the Hardy–Weinberg proportions from random mating, and state the assumptions;
+- test a sample for HWE with a χ² test (df = 1), by hand;
+- compute carrier frequencies from disease incidence, for autosomal and X-linked traits;
+- explain how inbreeding (*F*) and population structure produce a heterozygote deficit;
+- read real genotype counts in Ensembl (1000 Genomes) and homozygote counts in gnomAD.
+
+Do the pen-and-paper part first. The demo and R come after.
+
+## Background
+
+**Frequencies.** With counts *n*<sub>*AA*</sub>, *n*<sub>*Aa*</sub>, *n*<sub>*aa*</sub> and *N* people:
+
+$$
+p = \frac{2n_{AA} + n_{Aa}}{2N}, \qquad q = 1 - p.
+$$
+
+**Hardy–Weinberg proportions** (random mating, large population, no selection, mutation or migration): *AA* = *p*², *Aa* = 2*pq*, *aa* = *q*². Reached after one generation of random mating; *p* stays constant.
+
+**χ² test for HWE.** Expected counts *Np*², 2*Npq*, *Nq*² from the estimated *p*. χ² = Σ(O − E)²/E with **df = 1** (3 classes − 1 − 1 estimated parameter). Reject HWE at 5% if χ² > 3.84. Expected counts below about 5 make the test unreliable.
+
+**Carriers.** If a recessive disease has incidence *q*², carriers = 2*pq* ≈ 2*q* when *q* is small. **X-linked**: affected males = *q*, affected females = *q*², carrier females = 2*pq*.
+
+**Inbreeding.** *AA* = *p*² + *Fpq*, *Aa* = 2*pq*(1 − *F*), *aa* = *q*² + *Fpq*. Observed heterozygosity gives *F* = 1 − *H*<sub>obs</sub>/*H*<sub>exp</sub>. Child of first cousins: *F* = 1/16.
+
+## By hand
+
+**B1. (counting)** At the bitter-taste receptor SNP rs713598 in *TAS2R38*, 103 Han Chinese from Beijing (1000 Genomes CHB) have 13 *CC*, 41 *CG* and 49 *GG*.
+(a) What are the genotype frequencies and the allele frequencies?
+(b) What counts does HWE predict?
+(c) Compute χ² and decide whether to reject HWE at the 5% level.
+
+**B2. (another test)** At the *TCF7L2* SNP rs7903146, the 108 Yoruba from Ibadan (YRI) have 60 *CC*, 44 *CT* and 4 *TT*. Test HWE. Which class contributes most to χ², and why should you be careful with it?
+
+**B3. (one generation is enough)** A new population is founded by 60 *AA* and 40 *aa* individuals, and no heterozygotes.
+(a) What is *p*? Is the founding population in HWE?
+(b) What are the genotype frequencies after one generation of random mating? After two?
+
+**B4. (dominant phenotype)** In a population, 19% of people show a dominant phenotype (*A*_), and the rest are *aa*.
+(a) Assuming HWE, what are *q* and *p*?
+(b) What fraction of the people with the dominant phenotype are heterozygous?
+
+**B5. (carriers from incidence)** A recessive disease affects 1 in 40 000 newborns.
+(a) What is the carrier frequency, assuming HWE? Write it as "1 in …".
+(b) Two people from this population, with no family history, have a child. What is the risk that the child is affected? Check that your answer matches the incidence.
+(c) A woman whose brother has the disease (both parents unaffected) has a child with a man from the population. What is the risk for the child? (Recall the [pedigrees](../pedigrees/lec.qmd) unit.)
+
+**B6. (X-linked)** Red–green colour blindness is X-linked recessive. In a population, 8% of men are colour-blind.
+(a) What is *q*?
+(b) What fraction of women are colour-blind, and what fraction are carriers?
+(c) A colour-blind man has a daughter with a woman of unknown genotype from this population. What is the probability that a son of that daughter is colour-blind?
+
+**B7. (inbreeding)** In a plant population with *p* = 0.6, the observed heterozygote frequency is 0.36.
+(a) What does HWE predict? What is *F*?
+(b) What are the three genotype frequencies?
+(c) For a rare recessive allele with *q* = 0.002, compare f(*aa*) in a child of unrelated parents and in a child of first cousins (*F* = 1/16).
+
+**B8. (population structure)** Two equally large villages are each in HWE: in village 1, *p* = 0.8; in village 2, *p* = 0.2.
+(a) What is the heterozygote frequency in each village, and in a sample that pools both villages equally?
+(b) What does HWE predict for the pooled sample? What is the apparent *F*?
+(c) After one generation in which everyone mates at random across both villages, what are the genotype frequencies?
+
+## Explore {#explore}
+
+The demo shows a **de Finetti triangle**: every population is a point, at horizontal position *q* and height *f*(*Aa*). The green curve is HWE. Drag the point, or use the *p* and *F* sliders and the presets. The bars compare the observed counts for a sample of *N* people with the HWE expectation, and the panel shows the χ² test.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="hwe"></div>
+<script src="../demos/dist/hwe.js"></script>
+```
+
+**E1. Excess heterozygotes, and the role of N.** Press **excess heterozygotes** (genotype frequencies 0.2, 0.7, 0.1).
+(a) What are *p*, *H*<sub>obs</sub>, *H*<sub>exp</sub> and *F*? Is the point above or below the parabola?
+(b) Move the *N* slider from 20 up to 1000 and note χ² and p each time. The frequencies do not change: why does χ² grow? At which *N* do you first reject HWE at the 5% level?
+(c) Give one biological reason for an excess of heterozygotes.
+
+**E2. Inbreeding.** Press **inbreeding F = 0.25**.
+(a) Check the three genotype frequencies against *p*² + *Fpq*, 2*pq*(1 − *F*), *q*² + *Fpq*.
+(b) With *N* = 20, 50, 100 and 200, does the χ² test detect the deficit?
+(c) Press **fully inbred F = 1**. What kind of population is this, and why does the point lie on the base?
+(d) Press **Mendel F2 1:2:1**. Where is the point? What does that tell you about one generation of random mating?
+
+**E3. A rare recessive allele.** Press **rare allele q = 0.1**.
+(a) Read the frequency of *aa*.
+(b) Set *F* = 0.25 with the slider. By what factor does the frequency of *aa* increase? By what factor do the heterozygotes decrease?
+(c) Repeat by hand for *F* = 1/16 at *q* = 0.1 and at *q* = 0.01. What does this say about rare recessive diseases in children of related parents?
+
+**E4. A classic sample: the MN blood group.** The demo below starts from a classic textbook sample of 6129 people with 1787 *MM*, 3039 *MN* and 1303 *NN* (*M* plays the role of *A*).
+(a) Compute *p* and the HWE expected counts by hand, then compare with the demo.
+(b) What are χ² and the p-value? Is the sample in HWE?
+(c) Where does the point sit relative to the parabola?
+
+```{=html}
+<div data-demo="hwe" data-counts="1787 3039 1303"></div>
+```
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** (a) *p* = 0.2 + 0.7/2 = **0.55**, *q* = 0.45. *H*<sub>obs</sub> = **0.70**, *H*<sub>exp</sub> = 2 × 0.55 × 0.45 = **0.495**, *F* = 1 − 0.70/0.495 = **−0.41**. The point lies **above** the parabola.
+(b)
+
+| *N* | counts (*AA*, *Aa*, *aa*) | χ² | p |
+|---|---|---|---|
+| 20 | 4, 14, 2 | 3.43 | 0.064 |
+| 50 | 10, 35, 5 | 8.58 | 0.0034 |
+| 100 | 20, 70, 10 | 17.2 | 3.5 × 10⁻⁵ |
+| 200 | 40, 140, 20 | 34.3 | 4.7 × 10⁻⁹ |
+| 1000 | 200, 700, 100 | 172 | 3.5 × 10⁻³⁹ |
+
+χ² grows in proportion to *N*, because each (O − E)² grows as *N*² while E grows only as *N*. (For the HWE test, χ² is exactly *N*·*F*²: 200 × 0.414² = 34.3.) HWE is first rejected at **N = 50**. A small sample can only detect large departures.
+(c) For example **heterozygote advantage** acting on the sampled adults (HbS and malaria, next unit); a sample of the offspring of matings **between** two populations with different allele frequencies; or genotyping errors that call homozygotes as heterozygotes.
+
+**E2.** (a) *p* = *q* = 0.5, *pq* = 0.25: *AA* = 0.25 + 0.25 × 0.25 = **0.3125**, *Aa* = 0.5 × 0.75 = **0.375**, *aa* = **0.3125**. The missing heterozygotes are split equally between the homozygotes; *p* does not change.
+(b)
+
+| *N* | counts | χ² | p |
+|---|---|---|---|
+| 20 | 6, 8, 6 | 0.80 | 0.37 |
+| 50 | 16, 19, 15 | 2.87 | 0.090 |
+| 100 | 31, 38, 31 | 5.76 | 0.016 |
+| 200 | 63, 75, 62 | 12.5 | 0.0004 |
+
+Not at *N* = 20 or 50; yes from *N* = 100 (χ² ≈ *N*·*F*² = *N*/16).
+(c) *F* = 1 gives 0.5 *AA*, 0 *Aa*, 0.5 *aa*: no heterozygotes, as in a set of fully inbred lines (a plant that has selfed for many generations, or Mendel's true-breeding parents mixed together). All points with f(*Aa*) = 0 lie on the base.
+(d) Exactly **on** the parabola, at its top (*q* = 0.5, f(*Aa*) = 0.5), χ² = 0. An F2 is one generation of random union of gametes from *Aa* parents, so it is in HWE. One generation of random mating reaches HWE from any starting genotype frequencies.
+
+**E3.** (a) f(*aa*) = *q*² = **0.01**. (b) With *F* = 0.25: 0.01 + 0.25 × 0.09 = **0.0325**, **3.25 times** as many; heterozygotes fall from 0.18 to 0.135, a factor 1 − *F* = 0.75. (c) *F* = 1/16, *q* = 0.1: 0.01 + 0.09/16 = 0.0156, a factor of **1.56**. *q* = 0.01: 0.0001 + 0.0099/16 = 0.00072, a factor of **7.2**. The rarer the allele, the larger the relative increase, because almost all copies are in heterozygotes and the extra homozygotes (*Fpq*) dwarf *q*². This is why many patients with very rare recessive diseases have related parents.
+
+**E4.** (a) *p*(*M*) = (2 × 1787 + 3039)/(2 × 6129) = 6613/12258 = **0.5395**, *q* = 0.4605. Expected: **1783.8** *MM*, **3045.4** *MN*, **1299.8** *NN*. (b) χ² = **0.027**, df = 1, **p = 0.87**: no evidence against HWE. (c) Practically on the parabola: *H*<sub>obs</sub> = 0.496, *H*<sub>exp</sub> = 0.497, *F* = 0.002.
+:::
+
+## Find it
+
+**F1. Genotype counts in Ensembl.** Open the sickle-cell variant [rs334 in Ensembl](https://www.ensembl.org/Homo_sapiens/Variation/Population?v=rs334) and go to **Population genetics** in the left menu. In the **1000 Genomes Project Phase 3** table, find the populations **YRI** (Yoruba in Ibadan, Nigeria) and **GWD** (Gambian in Western Division). Read the allele frequencies, and the genotype counts or frequencies (the genotype columns, or click the population). The same data in machine-readable form: [`rest.ensembl.org/variation/human/rs334?population_genotypes=1`](https://rest.ensembl.org/variation/human/rs334?population_genotypes=1;content-type=application/json).
+(a) How many people in YRI and in GWD carry each genotype? (The two alleles are T and A on the forward strand; A is HbS.)
+(b) Test HWE in YRI by hand. Comment on the number of HbS homozygotes.
+(c) Which populations outside Africa carry the A allele at all?
+
+**F2. A common stop codon.** Search Ensembl for [rs1815739](https://www.ensembl.org/Homo_sapiens/Variation/Explore?v=rs1815739) in *ACTN3*. What is its **most severe consequence**, and what does it do to the protein (R577X)? In the Population genetics view, read the genotype counts in **GBR** (British). Are the counts consistent with HWE? About what fraction of British people are homozygous for the stop allele?
+
+**F3. Homozygotes in gnomAD.** Open rs334 in [gnomAD v4](https://gnomad.broadinstitute.org/variant/11-5227002-T-A?dataset=gnomad_r4). In the **Genetic Ancestry Group Frequencies** table, read the row **African/African American**, genomes: allele count, allele number and **number of homozygotes**.
+(a) Compute the allele frequency *q* and the number of people (allele number / 2).
+(b) How many homozygotes does HWE predict? Compare with the number observed. Explain the difference.
+
+**F4. Carrier frequency of cystic fibrosis.** Open *CFTR* F508del, [rs113993960 in gnomAD](https://gnomad.broadinstitute.org/variant/7-117559590-ATCT-A?dataset=gnomad_r4). Read the allele frequency in the **European (non-Finnish)** and the **European (Finnish)** groups (genomes).
+(a) Estimate the carrier frequency of F508del in each group (≈ 2*q*), as "1 in …".
+(b) The pedigrees unit used a carrier frequency of 1/50 for PKU. How does the CF carrier frequency in non-Finnish Europeans compare? Why is the carrier frequency for **all** CF alleles higher than for F508del alone?
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+Checked on 20 November 2026 via the Ensembl REST API (release 116; 1000 Genomes phase 3 is a fixed data set) and the gnomAD v4 API. gnomAD counts may change slightly in later releases; the conclusions will not.
+
+**F1.** Click path: ensembl.org → search `rs334` → variant page → **Population genetics** → 1000 Genomes Project Phase 3 table.
+(a) **YRI**: 78 T|T, 30 A|T, **0** A|A (108 people). **GWD**: 87 T|T, 26 A|T, **0** A|A (113 people).
+(b) *q*(A) = 30/216 = 0.139. Expected: 108 × 0.861² = 80.1 *AA*, 108 × 2 × 0.861 × 0.139 = 25.8 *AS*, 108 × 0.139² = **2.1** *SS*. χ² = 0.05 + 0.67 + 2.08 = **2.8** (p = 0.09): not significant, but the expected *SS* count is below 5, so the test is weak. The direction is clear: two *SS* people are expected and none is seen. People with sickle-cell disease are missing from this sample of healthy adults.
+(c) Outside the African populations (YRI, GWD, ESN, LWK, MSL), HbS heterozygotes appear only in populations with recent African ancestry: **ACB** (African Caribbean in Barbados, 9), **ASW** (African ancestry in the southwestern US, 2), **PUR** (Puerto Rican, 3) and **CLM** (Colombian, 2). No European, East Asian or South Asian sample in 1000 Genomes carries it. (Some Mediterranean, Middle Eastern and Indian populations not sampled here do carry HbS.)
+
+**F2.** rs1815739: most severe consequence **stop_gained**. The T allele changes codon 577 from arginine (CGA) to a stop codon (TGA): R577X, a truncated α-actinin-3 that is not made in fast muscle fibres. GBR: **26 C|C, 45 C|T, 20 T|T** (91 people). *p* = 0.533; expected 25.9, 45.3, 19.8; χ² = 0.004 (p = 0.95): in excellent HWE. About **22%** (20/91) of the British sample is homozygous XX and makes no α-actinin-3, without disease. A common homozygous loss-of-function genotype is a good reminder that not all "knockouts" are harmful.
+
+**F3.** gnomAD v4 genomes, African/African American: allele count **1810**, allele number **41 554**, homozygotes **9**.
+(a) *q* = 1810/41 554 = **0.044**; people ≈ 41 554/2 = **20 777**.
+(b) HWE predicts 20 777 × 0.044² ≈ **39** homozygotes; gnomAD has **9**, about a quarter. gnomAD aggregates studies of adults, and people with severe childhood disease are mostly excluded; sickle-cell disease (*SS*) also shortens life. Selection and ascertainment remove *SS* from the sample, so HWE fails for this genotype even though random mating produced it at conception.
+
+**F4.** gnomAD v4 genomes: non-Finnish European allele frequency **0.0143** (972/67 954); Finnish **0.0015** (16/10 612).
+(a) Non-Finnish Europeans: 2*pq* = 0.028, about **1 in 35**. Finns: 0.0030, about **1 in 330**.
+(b) F508del alone gives about 1 in 35, already more common than the PKU carriers (1/50). CF is caused by hundreds of different *CFTR* alleles. A person is a carrier if they carry **any** of them, so the carrier frequency for CF as a whole is higher (about 1 in 25–30 in many north-west European populations) than for F508del alone. The low value in Finland is a population-history effect; see *Drift, selection* and the Finnish disease heritage. (gnomAD also lists 1 F508del homozygote among the non-Finnish Europeans, where HWE predicts about 7: people with CF are under-represented in gnomAD, as for sickle-cell disease.)
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) Genotypes: 13/103 = 0.126, 41/103 = 0.398, 49/103 = 0.476. *p*(C) = (26 + 41)/206 = **0.325**, *q*(G) = **0.675**.
+(b) Expected: 103 × 0.325² = **10.9** *CC*, 103 × 2 × 0.325 × 0.675 = **45.2** *CG*, 103 × 0.675² = **46.9** *GG*.
+(c) χ² = (13 − 10.9)²/10.9 + (41 − 45.2)²/45.2 + (49 − 46.9)²/46.9 = 0.41 + 0.39 + 0.09 = **0.89**. df = 1, critical value 3.84: **do not reject** HWE (p = 0.35).
+
+**B2.** *p* = (120 + 44)/216 = 0.759, *q* = 0.241. Expected 62.3, 39.5, **6.3**. χ² = 0.08 + 0.52 + 0.82 = **1.42** (p = 0.23): consistent with HWE. The largest contribution comes from *TT*, where the expected count (6.3) is small: a difference of 2 people gives 0.8. With expected counts near or below 5, single individuals move χ² a lot and the χ² distribution fits poorly.
+
+**B3.** (a) *p* = 0.6 (all alleles of the 60 *AA*, out of 200). Not in HWE: HWE predicts 48% heterozygotes and there are none. (b) After one generation of random mating: **0.36 *AA*, 0.48 *Aa*, 0.16 *aa***. After two generations: the same. *p* stays 0.6, and one generation is enough to reach HWE.
+
+**B4.** (a) *aa* = 0.81 = *q*², so *q* = **0.9** and *p* = **0.1**. (b) *AA* = 0.01, *Aa* = 2 × 0.1 × 0.9 = 0.18. Among the 0.19 with the dominant phenotype, 0.18/0.19 = **0.95** are heterozygous. A rare dominant phenotype is almost always carried by heterozygotes.
+
+**B5.** (a) *q* = √(1/40 000) = 1/200 = 0.005. Carriers 2*pq* = 2 × 0.995 × 0.005 = 0.00995 ≈ **1 in 100**.
+(b) 1/100 × 1/100 × 1/4 = **1/40 000**, the incidence, as it should be.
+(c) She is an unaffected sibling of a patient, so a carrier with probability 2/3. Risk = 2/3 × 1/100 × 1/4 = **1/600**.
+
+**B6.** (a) *q* = **0.08** (affected males = *q*). (b) Colour-blind women *q*² = **0.0064** (0.64%); carriers 2*pq* = 2 × 0.92 × 0.08 = **0.147** (about 15%). (c) The daughter gets her father's X<sup>a</sup>, so she is at least a carrier. From her mother she gets X<sup>a</sup> with probability *q* = 0.08. Her son gets X<sup>a</sup> from her with probability ½ if she is X<sup>A</sup>X<sup>a</sup> and 1 if she is X<sup>a</sup>X<sup>a</sup>: 0.92 × ½ + 0.08 × 1 = 0.46 + 0.08 = **0.54**.
+
+**B7.** (a) HWE: 2 × 0.6 × 0.4 = **0.48**. *F* = 1 − 0.36/0.48 = **0.25**. (b) *AA* = 0.36 + 0.25 × 0.24 = **0.42**, *Aa* = **0.36**, *aa* = 0.16 + 0.06 = **0.22**. (Check: 0.42 + 0.36 + 0.22 = 1, and *p* = 0.42 + 0.18 = 0.6, unchanged.) (c) Unrelated parents: *q*² = 0.000004 (1 in 250 000). First cousins: 0.000004 + 0.998 × 0.002/16 = 0.000004 + 0.000125 = **0.000129** (about 1 in 7800), about **32 times** higher.
+
+**B8.** (a) Each village: 2 × 0.8 × 0.2 = **0.32**. Pooled: also **0.32**. (b) Pooled *p* = 0.5, so HWE predicts **0.50**. Apparent *F* = 1 − 0.32/0.50 = **0.36**: a heterozygote deficit from population structure, the Wahlund effect. (c) With random mating across villages, *p* = 0.5 for everyone: **0.25, 0.50, 0.25**. The deficit disappears after one generation.
+:::
+
+## Where this leads
+
+Today *p* stood still. In *Drift, selection, mutation, migration* we let it move: by chance in small populations, and by selection, including the heterozygote advantage that keeps HbS common where malaria is. In *Complex traits*, HWE is a quality filter for GWAS data.
+
+**Next:** [Exercise in R](exercise-r.qmd): write `hwe_test()`, apply it to 15 real SNP–population pairs with `pmap`, and draw the de Finetti triangle in ggplot2.

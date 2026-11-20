@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif" width="900" height="420">
+  <!-- The human globin gene family as a duplication tree (topology schematic, branch lengths not to scale).
+       Identities: local blastp 2.12.0+ of human HBB (UniProt P68871) against each UniProt sequence:
+       HBD 93.2%, HBE1 75.5%, HBG2 73.5%, HBG1 72.8%, HBA1 43.4%, HBZ 35.9%, MB 16% (E = 113, not significant); mouse Hbb-b1 80.3%. -->
+  <text x="20" y="24" font-size="16" font-weight="bold" fill="#1b2a3a">The human globin family: one ancestral gene, many duplications</text>
+  <g font-size="12" fill="#5a6b7a" font-weight="bold">
+    <text x="478" y="46">gene</text><text x="560" y="46">chr</text><text x="610" y="46">identity to HBB</text><text x="740" y="46">made in</text>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <!-- beta/delta -->
+    <path d="M420,60 L470,60 M420,90 L470,90 M420,60 L420,90"/>
+    <!-- gamma1/gamma2 -->
+    <path d="M440,130 L470,130 M440,160 L470,160 M440,130 L440,160"/>
+    <!-- gamma/epsilon -->
+    <path d="M390,145 L440,145 M390,190 L470,190 M390,145 L390,190"/>
+    <!-- beta-like -->
+    <path d="M330,75 L420,75 M330,167.5 L390,167.5 M330,75 L330,167.5"/>
+    <!-- alpha-like -->
+    <path d="M400,235 L470,235 M400,265 L470,265 M400,235 L400,265"/>
+    <!-- haemoglobins -->
+    <path d="M260,121 L330,121 M260,250 L400,250 M260,121 L260,250"/>
+    <!-- root -->
+    <path d="M180,185.5 L260,185.5 M180,310 L470,310 M180,185.5 L180,310"/>
+  </g>
+  <g fill="#bc4749">
+    <rect x="414" y="69" width="12" height="12"/><rect x="434" y="139" width="12" height="12"/>
+    <rect x="384" y="161.5" width="12" height="12"/><rect x="324" y="115" width="12" height="12"/>
+    <rect x="394" y="244" width="12" height="12"/><rect x="254" y="179.5" width="12" height="12"/>
+    <rect x="174" y="241.75" width="12" height="12"/>
+  </g>
+  <text x="250" y="148" font-size="12" fill="#5a6b7a" text-anchor="end">β-like</text>
+  <text x="330" y="282" font-size="12" fill="#5a6b7a" text-anchor="end">α-like</text>
+  <text x="172" y="234" font-size="12" fill="#5a6b7a" text-anchor="end">ancestral</text>
+  <text x="172" y="248" font-size="12" fill="#5a6b7a" text-anchor="end">globin</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="478" y="65" font-style="italic" font-weight="bold">HBB</text><text x="560" y="65">11</text><text x="610" y="65">100%</text><text x="740" y="65">adult</text>
+    <text x="478" y="95" font-style="italic">HBD</text><text x="560" y="95">11</text><text x="610" y="95">93%</text><text x="740" y="95">adult (minor)</text>
+    <text x="478" y="135" font-style="italic">HBG1</text><text x="560" y="135">11</text><text x="610" y="135">73%</text><text x="740" y="135">fetus</text>
+    <text x="478" y="165" font-style="italic">HBG2</text><text x="560" y="165">11</text><text x="610" y="165">73%</text><text x="740" y="165">fetus</text>
+    <text x="478" y="195" font-style="italic">HBE1</text><text x="560" y="195">11</text><text x="610" y="195">76%</text><text x="740" y="195">embryo</text>
+    <text x="478" y="240" font-style="italic">HBA1</text><text x="560" y="240">16</text><text x="610" y="240">43%</text><text x="740" y="240">fetus and adult</text>
+    <text x="478" y="270" font-style="italic">HBZ</text><text x="560" y="270">16</text><text x="610" y="270">36%</text><text x="740" y="270">embryo</text>
+    <text x="478" y="315" font-style="italic">MB</text><text x="560" y="315">22</text><text x="610" y="315">not detected</text><text x="740" y="315">muscle (myoglobin)</text>
+  </g>
+  <rect x="20" y="334" width="12" height="12" fill="#bc4749"/>
+  <text x="40" y="345" font-size="13" fill="#1b2a3a">gene duplication. Genes related by duplication within one genome are <tspan font-weight="bold">paralogs</tspan>.</text>
+  <text x="20" y="370" font-size="13" fill="#1b2a3a">Human <tspan font-style="italic">HBB</tspan> and mouse <tspan font-style="italic">Hbb-b1</tspan> (80% identical) are related by speciation: <tspan font-weight="bold">orthologs</tspan>.</text>
+  <text x="20" y="395" font-size="13" fill="#5a6b7a">Identity: BLASTp of human β-globin against each protein. Myoglobin has the same 3-D fold, but its sequence has diverged too far for BLAST to detect.</text>
+  <text x="20" y="413" font-size="13" fill="#5a6b7a">Tree shape is schematic; branch lengths are not to scale.</text>
+</svg>

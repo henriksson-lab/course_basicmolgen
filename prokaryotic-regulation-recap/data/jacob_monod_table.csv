@@ -1,0 +1,16 @@
+# Expected lac phenotypes for classic haploid and merodiploid (F') strains, as in the
+# Jacob & Monod (1961) analysis and its textbook summaries (Hartwell, gene regulation in prokaryotes chapter).
+# Typed in by the course team; these are qualitative results, not measurements.
+# chrom = chromosome genotype, fprime = F' genotype ("none" = haploid). inducible / constitutive / none.
+chrom,fprime,bgal,permease
+I+ O+ Z+ Y+,none,inducible,inducible
+I- O+ Z+ Y+,none,constitutive,constitutive
+I+ Oc Z+ Y+,none,constitutive,constitutive
+Is O+ Z+ Y+,none,none,none
+I- O+ Z+ Y+,I+ O+ Z- Y-,inducible,inducible
+I+ Oc Z+ Y+,I+ O+ Z- Y+,constitutive,constitutive
+I+ Oc Z- Y+,I+ O+ Z+ Y+,inducible,constitutive
+Is O+ Z+ Y+,I+ O+ Z+ Y+,none,none
+Is O+ Z+ Y+,I+ Oc Z+ Y+,constitutive,constitutive
+I+ O+ Z- Y+,I+ O+ Z+ Y-,inducible,inducible
+I- O+ Z+ Y+,I- O+ Z- Y+,constitutive,constitutive

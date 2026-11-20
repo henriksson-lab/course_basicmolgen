@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: somatic vs germline (heritable) editing, and mitochondrial replacement.
+       Three panels: x = 20..290, 310..580, 600..880. Edited DNA in red. -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <g fill="#f4f6f8" stroke-width="2">
+    <rect x="20" y="20" width="270" height="380" rx="8" stroke="#6a994e"/>
+    <rect x="310" y="20" width="270" height="380" rx="8" stroke="#bc4749"/>
+    <rect x="600" y="20" width="280" height="380" rx="8" stroke="#2a6f97"/>
+  </g>
+  <g font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="155" y="48" fill="#6a994e">Somatic editing</text>
+    <text x="445" y="48" fill="#bc4749">Germline editing</text>
+    <text x="740" y="48" fill="#2a6f97">Mitochondrial replacement</text>
+  </g>
+
+  <!-- ===== panel 1: somatic. patient's blood stem cells edited outside the body ===== -->
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="155" y="74">a patient's own blood stem</text>
+    <text x="155" y="92">cells, edited outside the body</text>
+  </g>
+  <!-- cells: grey = unedited body cells, red = edited -->
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <circle cx="95" cy="135" r="15" fill="#c9d3dd"/>
+    <circle cx="135" cy="135" r="15" fill="#bc4749"/>
+    <circle cx="175" cy="135" r="15" fill="#bc4749"/>
+    <circle cx="215" cy="135" r="15" fill="#c9d3dd"/>
+  </g>
+  <line x1="155" y1="158" x2="155" y2="196" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="165" y="174" font-size="13" fill="#5b6b7a">returned to</text>
+  <text x="165" y="190" font-size="13" fill="#5b6b7a">the patient</text>
+  <!-- patient: square, partly filled -->
+  <rect x="137" y="202" width="36" height="36" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+  <rect x="137" y="202" width="18" height="36" fill="#bc4749"/>
+  <rect x="137" y="202" width="36" height="36" fill="none" stroke="#1b2a3a" stroke-width="2"/>
+  <line x1="155" y1="244" x2="155" y2="282" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <circle cx="155" cy="302" r="16" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="180" y="307" font-size="14" fill="#1b2a3a">child: not edited</text>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="155" y="350">Only this person. Like any</text>
+    <text x="155" y="368">therapy, e.g. exa-cel for</text>
+    <text x="155" y="386">sickle cell disease</text>
+  </g>
+
+  <!-- ===== panel 2: germline. edited embryo, every cell and the gametes carry the edit ===== -->
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="445" y="74">a one-cell embryo is edited</text>
+    <text x="445" y="92">(He Jiankui, 2018)</text>
+  </g>
+  <circle cx="420" cy="135" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="420" y1="160" x2="420" y2="196" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="430" y="182" font-size="13" fill="#5b6b7a">born</text>
+  <circle cx="420" cy="220" r="18" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="447" y="215" font-size="13" fill="#1b2a3a">every cell edited,</text>
+  <text x="447" y="231" font-size="13" fill="#1b2a3a">eggs or sperm too</text>
+  <line x1="420" y1="244" x2="420" y2="282" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="402" y="286" width="36" height="36" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="447" y="300" font-size="14" fill="#bc4749" font-weight="bold">child:</text>
+  <text x="447" y="317" font-size="14" fill="#bc4749" font-weight="bold">inherits the edit</text>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="445" y="350">Passed on by Mendel's rules to</text>
+    <text x="445" y="368">future generations who never</text>
+    <text x="445" y="386">consented. Banned in Sweden.</text>
+  </g>
+
+  <!-- ===== panel 3: MRT. nucleus from the mother, mitochondria from a donor egg ===== -->
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="740" y="74">replace the mitochondria,</text>
+    <text x="740" y="92">keep the parents' nuclei</text>
+  </g>
+  <!-- mother's egg: nucleus (dark) + faulty mitochondria (red dots) -->
+  <circle cx="665" cy="152" r="30" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="665" cy="152" r="10" fill="#1b2a3a"/>
+  <g fill="#bc4749"><circle cx="648" cy="134" r="4"/><circle cx="684" cy="138" r="4"/><circle cx="650" cy="172" r="4"/><circle cx="682" cy="170" r="4"/></g>
+  <!-- donor egg: healthy mitochondria (green dots), nucleus removed -->
+  <circle cx="815" cy="152" r="30" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="815" cy="152" r="10" fill="none" stroke="#1b2a3a" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <g fill="#6a994e"><circle cx="798" cy="134" r="4"/><circle cx="834" cy="138" r="4"/><circle cx="800" cy="172" r="4"/><circle cx="832" cy="170" r="4"/></g>
+  <text x="665" y="200" font-size="13" fill="#1b2a3a" text-anchor="middle">mother</text>
+  <text x="815" y="200" font-size="13" fill="#1b2a3a" text-anchor="middle">donor</text>
+  <!-- nucleus moves from mother to donor -->
+  <path d="M676,146 C720,112 760,112 803,146" fill="none" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="740" y="113" font-size="13" fill="#5b6b7a" text-anchor="middle">nucleus</text>
+  <line x1="815" y1="208" x2="770" y2="278" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- child: nuclear DNA from both parents, mtDNA from donor -->
+  <circle cx="755" cy="302" r="18" fill="#fff" stroke="#1b2a3a" stroke-width="2"/>
+  <g fill="#6a994e"><circle cx="747" cy="296" r="3.5"/><circle cx="763" cy="296" r="3.5"/><circle cx="755" cy="311" r="3.5"/></g>
+  <text x="728" y="307" font-size="14" fill="#1b2a3a" text-anchor="end">child</text>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="740" y="350">DNA from three people. A</text>
+    <text x="740" y="368">daughter passes the donor</text>
+    <text x="740" y="386">mtDNA on: it is heritable too</text>
+  </g>
+</svg>

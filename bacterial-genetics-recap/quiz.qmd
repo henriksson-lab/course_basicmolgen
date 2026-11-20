@@ -1,0 +1,107 @@
+---
+title: "Quiz: bacterial genetics (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on bacterial mutants, conjugation, transduction and transformation as mapping tools. This unit is a recap of 5MO103. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** A colony grows on complete medium but not on minimal medium. What kind of mutant is it, and how would you find out which nutrient it needs?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Minimal medium contains only salts, a carbon source and water. What can a wild-type cell make by itself?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+It is an **auxotroph**: it has lost the ability to make some compound that the wild type (a **prototroph**) makes itself, usually because a biosynthetic enzyme gene is broken. Replica-plate the colony onto minimal plates each supplemented with one compound (threonine, leucine, tryptophan, …). The plate on which it grows names the requirement, for example Trp^−^ if it grows only with tryptophan.
+:::
+
+---
+
+**Q2.** What is the difference between **selection** and **screening**? Give one example of each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+On which kind of plate do the unwanted cells still form colonies?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In **selection** only the wanted cells can grow: minimal medium without threonine selects Thr^+^ cells, streptomycin selects *str*^r^ cells. In **screening** all cells grow, but the wanted ones look different: on X-gal, *lac*^+^ colonies are blue and *lac*^−^ white. Selection can find one cell in 10^8^; screening is limited to the colonies you can look at.
+:::
+
+---
+
+**Q3.** An F^+^ cell mates with an F^−^ cell, and separately an Hfr cell mates with an F^−^ cell. In which cross does the recipient usually become a donor, and in which does it gain chromosomal genes? Explain.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where is F, and which part of F is transferred first?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In **F^+^ × F^−^**, the free F plasmid (~100 kb) is transferred whole and quickly, so the recipient **becomes F^+^**, but it gains no chromosomal genes. In **Hfr × F^−^**, F is integrated in the chromosome and transfer starts at *oriT* in the middle of F, so the **chromosome** follows in a fixed order. Transferring the whole chromosome takes about 100 min, and mating pairs nearly always break first, so the end of F rarely arrives: the recipient gains donor genes (by recombination) but **stays F^−^**.
+:::
+
+---
+
+**Q4.** In an interrupted-mating experiment, *azi*^r^ enters at 9 min, *ton*^r^ at 10 min, *lac*^+^ at 16 min and *gal*^+^ at 25 min. Draw the map. How far apart are *lac* and *gal* in minutes, and roughly in kb?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Order by time. 1 min ≈ 46 kb in *E. coli*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Origin – *azi* (9) – *ton* (10) – *lac* (16) – *gal* (25). *lac* to *gal* is 25 − 16 = **9 min**, about 9 × 46 ≈ **410 kb**. (The real distance, from the genome sequence, is 788 831 − 363 231 ≈ 426 kb.)
+:::
+
+---
+
+**Q5.** Why is an *E. coli* Hfr donor in a mapping experiment usually *str*^s^ and the recipient *str*^r^? Where should the *str* gene be relative to the Hfr origin?
+
+::: {.callout-tip collapse="true" title="Hint"}
+After mating, the plate must contain recombinant recipients only.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Streptomycin in the plates kills the **donors**, so every colony comes from a recipient. *str* must lie **far from the origin**, so that it enters very late (or never). If it entered early, many recipients would receive the donor's *str*^s^ allele and die, and markers near *str* could not be scored. (*str*^s^ is also dominant over *str*^r^, so even a partial diploid with the donor allele would be killed.)
+:::
+
+---
+
+**Q6.** In P1 transduction, *leu*^+^ transductants are selected and scored for an unselected marker. 50% are also *azi*^r^, 2% are also *thr*^+^, and none are *lac*^+^. Which marker is closest to *leu*? What can you say about *lac*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How large a piece of DNA does one P1 phage carry?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**High cotransduction means close**: *azi* is closest to *leu*, *thr* is further away. *lac* is never cotransduced with *leu*, so it is more than one transducing fragment (P1: ~100 kb, a little over 2 min) away. Cotransduction cannot say how far; for that you use Hfr mapping. (Real positions: *leuA* 1.8 min, *secA* (*azi*) 2.3 min, *thrA* 0 min, *lacZ* 7.8 min.) Note that the scale runs the opposite way from recombination frequency in eukaryotic mapping.
+:::
+
+---
+
+**Q7.** You transform a *recA*^−^ *trp*^−^ strain with DNA from a *trp*^+^ strain and get no Trp^+^ transformants, although a *recA*^+^ control works. Why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How does a linear piece of donor DNA become part of the recipient's chromosome?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A linear donor fragment can only be kept if it is integrated by **homologous recombination**, two crossovers that swap the donor *trp*^+^ region into the circular chromosome. RecA is the recombinase that does this. Without it the fragment is degraded and the cell stays *trp*^−^. The same holds for Hfr conjugation and transduction (but not for a plasmid that can replicate on its own).
+:::
+
+---
+
+**Q8.** How did Hfr mapping show that the *E. coli* chromosome is circular?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Different Hfr strains have F inserted at different places and in different orientations.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each Hfr strain gives a linear order of entry, starting at its own origin and going in its own direction. When the orders from many Hfrs were lined up, they overlapped, and the only arrangement consistent with all of them was a **circle**: the last genes of one Hfr were the first genes of another. The circular map was later confirmed physically (Cairns, 1963) and by the genome sequence (4 641 652 bp, one circular chromosome).
+:::

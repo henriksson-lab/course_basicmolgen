@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Helvetica, Arial, sans-serif" width="900" height="340">
+  <!-- Genome-browser view of the human beta-globin locus, chr11:5,220,000-5,275,000 (GRCh38), drawn from Ensembl 116 canonical transcripts:
+       HBB 5,225,464-5,227,071; HBD 5,232,838-5,234,483; HBBP1 5,242,120-5,243,537 (pseudogene); HBG1 5,248,269-5,249,857;
+       HBG2 5,253,188-5,254,781; HBE1 5,268,345-5,269,945. All on the minus strand. Scale: x = 120 + (pos - 5,220,000) / 1000 * 13.45. -->
+  <defs><marker id="al" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#5a6b7a"/></marker></defs>
+  <text x="20" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">chr11:5,220,000–5,275,000 (GRCh38): the β-globin gene cluster</text>
+  <!-- ruler -->
+  <line x1="120" y1="50" x2="860" y2="50" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g font-size="12" fill="#4a5866" text-anchor="middle" stroke="#1b2a3a">
+    <line x1="120" y1="50" x2="120" y2="56"/><line x1="254.5" y1="50" x2="254.5" y2="56"/><line x1="389" y1="50" x2="389" y2="56"/>
+    <line x1="523.5" y1="50" x2="523.5" y2="56"/><line x1="658" y1="50" x2="658" y2="56"/><line x1="792.5" y1="50" x2="792.5" y2="56"/>
+  </g>
+  <g font-size="12" fill="#4a5866" text-anchor="middle">
+    <text x="120" y="44">5.22 Mb</text><text x="254.5" y="44">5.23</text><text x="389" y="44">5.24</text>
+    <text x="523.5" y="44">5.25</text><text x="658" y="44">5.26</text><text x="792.5" y="44">5.27</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="end">
+    <text x="108" y="96">genes</text>
+    <text x="108" y="156">expressed in</text>
+    <text x="108" y="214">conservation</text>
+    <text x="108" y="270">variants</text>
+  </g>
+  <!-- gene track -->
+  <line x1="120" y1="92" x2="860" y2="92" stroke="#d6dde4" stroke-width="1"/>
+  <g fill="#2a6f97">
+    <rect x="193.5" y="84" width="21.7" height="16"/>
+    <rect x="292.4" y="84" width="22.1" height="16"/>
+    <rect x="500.2" y="84" width="21.3" height="16"/>
+    <rect x="566.4" y="84" width="21.4" height="16"/>
+    <rect x="770.2" y="84" width="21.5" height="16"/>
+  </g>
+  <rect x="417.3" y="84" width="19.1" height="16" fill="none" stroke="#2a6f97" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <g font-size="13" font-style="italic" fill="#1b2a3a" text-anchor="middle">
+    <text x="204" y="118">HBB</text><text x="303" y="118">HBD</text><text x="427" y="118">HBBP1</text>
+    <text x="511" y="118">HBG1</text><text x="577" y="118">HBG2</text><text x="781" y="118">HBE1</text>
+  </g>
+  <line x1="860" y1="72" x2="700" y2="72" stroke="#5a6b7a" stroke-width="1.5" marker-end="url(#al)"/>
+  <text x="860" y="66" font-size="11" fill="#5a6b7a" text-anchor="end">minus strand: transcribed right to left</text>
+  <!-- expression timing -->
+  <rect x="760" y="142" width="42" height="20" rx="3" fill="#f6e2c2"/><text x="781" y="157" font-size="12" fill="#1b2a3a" text-anchor="middle">embryo</text>
+  <rect x="495" y="142" width="98" height="20" rx="3" fill="#dbe8d1"/><text x="544" y="157" font-size="12" fill="#1b2a3a" text-anchor="middle">fetus</text>
+  <rect x="186" y="142" width="136" height="20" rx="3" fill="#cfe0ec"/><text x="254" y="157" font-size="12" fill="#1b2a3a" text-anchor="middle">adult</text>
+  <text x="427" y="157" font-size="12" fill="#5a6b7a" text-anchor="middle">(not expressed)</text>
+  <!-- conservation -->
+  <line x1="120" y1="226" x2="860" y2="226" stroke="#d6dde4"/>
+  <g fill="#6a994e">
+    <rect x="193" y="194" width="22" height="32"/><rect x="292" y="196" width="22" height="30"/><rect x="417" y="212" width="19" height="14"/>
+    <rect x="500" y="195" width="22" height="31"/><rect x="566" y="195" width="22" height="31"/><rect x="770" y="194" width="22" height="32"/>
+    <rect x="140" y="220" width="10" height="6"/><rect x="250" y="219" width="10" height="7"/><rect x="350" y="221" width="10" height="5"/>
+    <rect x="465" y="218" width="10" height="8"/><rect x="640" y="220" width="10" height="6"/><rect x="700" y="221" width="10" height="5"/>
+    <rect x="830" y="208" width="14" height="18"/>
+  </g>
+  <!-- variants -->
+  <line x1="120" y1="266" x2="860" y2="266" stroke="#d6dde4"/>
+  <line x1="214" y1="256" x2="214" y2="276" stroke="#bc4749" stroke-width="2.5"/>
+  <text x="222" y="271" font-size="12" fill="#bc4749">rs334 (HbS), codon 7 of HBB</text>
+  <g stroke="#9aa5b1" stroke-width="1.5">
+    <line x1="160" y1="260" x2="160" y2="272"/><line x1="425" y1="260" x2="425" y2="272"/>
+    <line x1="470" y1="260" x2="470" y2="272"/><line x1="545" y1="260" x2="545" y2="272"/><line x1="620" y1="260" x2="620" y2="272"/>
+    <line x1="690" y1="260" x2="690" y2="272"/><line x1="735" y1="260" x2="735" y2="272"/><line x1="815" y1="260" x2="815" y2="272"/>
+  </g>
+  <text x="20" y="308" font-size="13" fill="#5a6b7a">The genes lie in the order in which they are switched on during development; a control region (LCR) lies further right, beyond 5.275 Mb.</text>
+  <text x="20" y="326" font-size="13" fill="#5a6b7a">Conservation and variant tracks are schematic; the gene positions are real.</text>
+</svg>

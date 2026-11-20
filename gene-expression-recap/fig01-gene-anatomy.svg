@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif" width="900" height="400">
+  <!-- The human HBB gene (NM_000518.5; 3 exons, introns of 130 and 850 bp; not to scale) and six real
+       disease variants, each verified in ClinVar (see the exercise). Lighter exon parts = UTRs. -->
+  <!-- structure labels -->
+  <g font-size="13" fill="#5a6b7a" text-anchor="middle">
+    <text x="76" y="30">promoter</text>
+    <text x="165" y="30">exon 1</text>
+    <text x="260" y="30">intron 1</text>
+    <text x="380" y="30">exon 2</text>
+    <text x="580" y="30">intron 2 (850 bp)</text>
+    <text x="780" y="30">exon 3</text>
+  </g>
+  <!-- introns -->
+  <line x1="230" y1="65" x2="290" y2="65" stroke="#1b2a3a" stroke-width="2.5"/>
+  <line x1="470" y1="65" x2="690" y2="65" stroke="#1b2a3a" stroke-width="2.5"/>
+  <line x1="95" y1="65" x2="100" y2="65" stroke="#1b2a3a" stroke-width="2.5"/>
+  <!-- intron 2 is long: break marks -->
+  <line x1="572" y1="56" x2="566" y2="74" stroke="#1b2a3a" stroke-width="2"/>
+  <line x1="582" y1="56" x2="576" y2="74" stroke="#1b2a3a" stroke-width="2"/>
+  <!-- promoter -->
+  <rect x="55" y="56" width="40" height="18" rx="3" fill="#fbf6ea" stroke="#d08c2f" stroke-width="1.5"/>
+  <text x="75" y="69" font-size="10" fill="#1b2a3a" text-anchor="middle">TATA</text>
+  <!-- exons: UTR parts light, coding parts dark -->
+  <rect x="100" y="50" width="46" height="30" fill="#cfe0ec" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="146" y="50" width="84" height="30" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="290" y="50" width="180" height="30" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="690" y="50" width="88" height="30" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="778" y="50" width="92" height="30" fill="#cfe0ec" stroke="#2a6f97" stroke-width="1.5"/>
+  <g font-size="11" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="242" y="59">GT</text><text x="278" y="59">AG</text>
+    <text x="482" y="59">GT</text><text x="678" y="59">AG</text>
+  </g>
+  <text x="146" y="46" font-size="11" fill="#5a6b7a" text-anchor="middle">ATG</text>
+  <text x="778" y="46" font-size="11" fill="#5a6b7a" text-anchor="middle">TAA</text>
+  <text x="850" y="46" font-size="11" fill="#5a6b7a" text-anchor="middle">AATAAA</text>
+
+  <!-- variant markers -->
+  <g font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <line x1="80" y1="74" x2="80" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="80" cy="118" r="10" fill="#bc4749"/><text x="80" y="122">1</text>
+    <line x1="164" y1="80" x2="164" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="164" cy="118" r="10" fill="#bc4749"/><text x="164" y="122">2</text>
+    <line x1="232" y1="65" x2="232" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="232" cy="118" r="10" fill="#bc4749"/><text x="232" y="122">3</text>
+    <line x1="280" y1="65" x2="270" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="268" cy="118" r="10" fill="#bc4749"/><text x="268" y="122">4</text>
+    <line x1="311" y1="80" x2="311" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="311" cy="118" r="10" fill="#bc4749"/><text x="311" y="122">5</text>
+    <line x1="854" y1="80" x2="854" y2="108" stroke="#bc4749" stroke-width="1.5"/><circle cx="854" cy="118" r="10" fill="#bc4749"/><text x="854" y="122">6</text>
+  </g>
+
+  <!-- mRNA -->
+  <text x="20" y="168" font-size="13" font-weight="bold" fill="#1b2a3a">mRNA</text>
+  <circle cx="92" cy="164" r="7" fill="#d08c2f"/>
+  <text x="92" y="190" font-size="11" fill="#5a6b7a" text-anchor="middle">cap</text>
+  <rect x="100" y="154" width="46" height="20" fill="#cfe0ec" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="146" y="154" width="84" height="20" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="230" y="154" width="180" height="20" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="410" y="154" width="88" height="20" fill="#2a6f97" stroke="#2a6f97" stroke-width="1.5"/>
+  <rect x="498" y="154" width="92" height="20" fill="#cfe0ec" stroke="#2a6f97" stroke-width="1.5"/>
+  <text x="596" y="169" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#d08c2f">AAAAA…</text>
+  <text x="690" y="169" font-size="13" fill="#5a6b7a">introns spliced out</text>
+
+  <!-- legend of variants -->
+  <line x1="20" y1="208" x2="880" y2="208" stroke="#c9d3dd" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b2a3a">
+    <circle cx="30" cy="232" r="9" fill="#bc4749"/><text x="30" y="236" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">1</text>
+    <text x="48" y="237"><tspan font-family="Courier New, monospace" font-weight="bold">c.-78A&gt;C</tspan>  TATA box: less transcription → β<tspan font-size="9" dy="-5">+</tspan><tspan dy="5">-thalassaemia</tspan></text>
+    <circle cx="30" cy="262" r="9" fill="#bc4749"/><text x="30" y="266" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">2</text>
+    <text x="48" y="267"><tspan font-family="Courier New, monospace" font-weight="bold">c.20A&gt;T</tspan>  codon 7: Glu → Val, missense: HbS, sickle-cell disease</text>
+    <circle cx="30" cy="292" r="9" fill="#bc4749"/><text x="30" y="296" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">3</text>
+    <text x="48" y="297"><tspan font-family="Courier New, monospace" font-weight="bold">c.92+1G&gt;A</tspan>  splice donor GT → AT: no normal splicing → β<tspan font-size="9" dy="-5">0</tspan><tspan dy="5">-thalassaemia</tspan></text>
+    <circle cx="30" cy="322" r="9" fill="#bc4749"/><text x="30" y="326" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">4</text>
+    <text x="48" y="327"><tspan font-family="Courier New, monospace" font-weight="bold">c.93-21G&gt;A</tspan>  creates a new AG in intron 1: wrong splicing of most mRNA → β<tspan font-size="9" dy="-5">+</tspan><tspan dy="5">-thalassaemia</tspan></text>
+    <circle cx="30" cy="352" r="9" fill="#bc4749"/><text x="30" y="356" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">5</text>
+    <text x="48" y="357"><tspan font-family="Courier New, monospace" font-weight="bold">c.118C&gt;T</tspan>  codon 40: CAG → TAG, nonsense → β<tspan font-size="9" dy="-5">0</tspan><tspan dy="5">-thalassaemia</tspan></text>
+    <circle cx="30" cy="382" r="9" fill="#bc4749"/><text x="30" y="386" fill="#fff" font-weight="bold" font-size="11" text-anchor="middle">6</text>
+    <text x="48" y="387"><tspan font-family="Courier New, monospace" font-weight="bold">c.*111A&gt;G</tspan>  poly(A) signal AATAAA → AATGAA: poor 3' end processing → β<tspan font-size="9" dy="-5">+</tspan><tspan dy="5">-thalassaemia</tspan></text>
+  </g>
+</svg>

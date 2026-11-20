@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig02: kinds of genetic testing placed on a life course.
+       Five stage columns, centres at x = 100, 275, 450, 625, 800 (width 160). -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <!-- life-course arrow -->
+  <line x1="20" y1="40" x2="872" y2="40" stroke="#1b2a3a" stroke-width="2.4" marker-end="url(#arr)"/>
+  <g font-size="14" fill="#5b6b7a" text-anchor="middle">
+    <text x="100" y="26">before pregnancy</text>
+    <text x="275" y="26">pregnancy</text>
+    <text x="450" y="26">newborn</text>
+    <text x="625" y="26">ill, with symptoms</text>
+    <text x="800" y="26">healthy, at risk</text>
+  </g>
+  <g fill="#1b2a3a">
+    <circle cx="100" cy="40" r="6"/><circle cx="275" cy="40" r="6"/><circle cx="450" cy="40" r="6"/>
+    <circle cx="625" cy="40" r="6"/><circle cx="800" cy="40" r="6"/>
+  </g>
+  <!-- stage boxes -->
+  <g stroke-width="2">
+    <rect x="20" y="62" width="160" height="196" rx="8" fill="#f4f6f8" stroke="#2a6f97"/>
+    <rect x="195" y="62" width="160" height="196" rx="8" fill="#f4f6f8" stroke="#2a6f97"/>
+    <rect x="370" y="62" width="160" height="196" rx="8" fill="#f4f6f8" stroke="#6a994e"/>
+    <rect x="545" y="62" width="160" height="196" rx="8" fill="#f4f6f8" stroke="#6a994e"/>
+    <rect x="720" y="62" width="160" height="196" rx="8" fill="#f4f6f8" stroke="#bc4749"/>
+  </g>
+  <g font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="100" y="90" fill="#2a6f97">Carrier</text>
+    <text x="275" y="90" fill="#2a6f97">Prenatal</text>
+    <text x="450" y="90" fill="#6a994e">Newborn</text>
+    <text x="450" y="110" fill="#6a994e">screening</text>
+    <text x="625" y="90" fill="#6a994e">Diagnostic</text>
+    <text x="800" y="90" fill="#bc4749">Predictive</text>
+  </g>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="100" y="124">Are we both carriers?</text>
+    <text x="100" y="146">Recessive disease,</text>
+    <text x="100" y="164">e.g. cystic fibrosis:</text>
+    <text x="100" y="182" font-style="italic">Aa × Aa</text>
+    <text x="100" y="200">→ ¼ affected</text>
+    <text x="100" y="226" fill="#5b6b7a">The couple decides</text>
+    <text x="100" y="244" fill="#5b6b7a">about a future child</text>
+
+    <text x="275" y="124">Screening: NIPT,</text>
+    <text x="275" y="142">fetal DNA in the</text>
+    <text x="275" y="160">mother's blood</text>
+    <text x="275" y="186">Diagnosis: fetal cells</text>
+    <text x="275" y="204">(amniocentesis, CVS)</text>
+    <text x="275" y="236" fill="#5b6b7a">About the fetus</text>
+
+    <text x="450" y="142">A heel-prick blood</text>
+    <text x="450" y="160">spot, e.g. PKU:</text>
+    <text x="450" y="178">treat early</text>
+    <text x="450" y="226" fill="#5b6b7a">Sample may be</text>
+    <text x="450" y="244" fill="#5b6b7a">stored in a biobank</text>
+
+    <text x="625" y="124">Which variant</text>
+    <text x="625" y="142">explains the</text>
+    <text x="625" y="160">disease I have?</text>
+    <text x="625" y="226" fill="#5b6b7a">Guides treatment;</text>
+    <text x="625" y="244" fill="#5b6b7a">relatives may be at risk</text>
+
+    <text x="800" y="124">Will I get it?</text>
+    <text x="800" y="152">Huntington disease:</text>
+    <text x="800" y="170">child of an affected</text>
+    <text x="800" y="188">parent → ½ risk</text>
+    <text x="800" y="226" fill="#5b6b7a">Often no cure:</text>
+    <text x="800" y="244" fill="#5b6b7a">to know, or not?</text>
+  </g>
+  <!-- incidental findings band -->
+  <rect x="20" y="276" width="860" height="56" rx="8" fill="#cfe0ec"/>
+  <text x="450" y="300" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Incidental (secondary) findings</text>
+  <text x="168" y="320" font-size="14" fill="#1b2a3a">Any exome or genome test can reveal a variant nobody was looking for, e.g. in <tspan font-style="italic">BRCA1</tspan></text>
+  <!-- legend: who the result is about -->
+  <g font-size="14" fill="#1b2a3a">
+    <rect x="20" y="352" width="18" height="14" fill="#f4f6f8" stroke="#2a6f97" stroke-width="2"/>
+    <text x="46" y="364">reproductive choice</text>
+    <rect x="220" y="352" width="18" height="14" fill="#f4f6f8" stroke="#6a994e" stroke-width="2"/>
+    <text x="246" y="364">health care for a patient</text>
+    <rect x="460" y="352" width="18" height="14" fill="#f4f6f8" stroke="#bc4749" stroke-width="2"/>
+    <text x="486" y="364">foretells a healthy person's future</text>
+  </g>
+</svg>

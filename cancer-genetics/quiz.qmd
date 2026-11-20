@@ -1,0 +1,154 @@
+---
+title: "Quiz: cancer genetics"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on oncogenes, tumour suppressors and the two-hit model. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Cancer is called a genetic disease, yet most cancers are not inherited. Explain how both statements can be true.
+
+::: {.callout-tip collapse="true" title="Hint"}
+In which cells do the mutations that drive a tumour usually arise?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Cancer is caused by changes in DNA, so it is genetic. But most of those changes are **somatic**: they arise during life in one cell lineage (through replication errors or mutagens) and are present only in that cell and its descendants, the tumour. They are not in the germline, so they are not passed to children. Only a minority of patients carry an **inherited** (germline) predisposing allele.
+:::
+
+---
+
+**Q2.** Why is an activating mutation in a proto-oncogene **dominant** at the cell level, while an inactivating mutation in a tumour suppressor is **recessive** at the cell level?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does the remaining normal allele do in each case?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+An oncogenic allele is a **gain of function**: the mutant protein signals all the time, whatever the normal copy does. One allele is enough. A tumour suppressor mutation is a **loss of function**: the remaining normal allele still makes enough protein to act as a brake (the gene is haplosufficient). Only when **both** copies are lost does the cell lose control.
+:::
+
+---
+
+**Q3.** Name three ways in which a proto-oncogene can become an oncogene, with one example each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of a change in the protein, a change in the amount of protein, and a change in where the gene sits.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+1. **Point mutation** that locks the protein in its active state: *KRAS* codon 12 (G12V, G12D).
+2. **Amplification**, many copies of the gene: *ERBB2* (HER2) in some breast cancers, *MYCN* in neuroblastoma.
+3. **Translocation** that creates a fusion gene or puts the gene next to a strong promoter: *BCR–ABL1* from t(9;22) in chronic myeloid leukaemia.
+:::
+
+---
+
+**Q4.** List the four observations that distinguish hereditary from sporadic retinoblastoma, and explain each with Knudson's two-hit model.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Family history, number of eyes, number of tumours, age at diagnosis.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In hereditary retinoblastoma **every** retinal cell already carries hit 1, so each needs only one more hit.
+
+- **Family history**: hit 1 is in the germline, so it is passed on (½ of the children of a carrier).
+- **Both eyes**: with about a million cells at risk, the second hit is likely to happen somewhere in each eye.
+- **Several tumours**: several cells get their second hit independently.
+- **Earlier**: one event needed, so risk rises linearly with age from the start.
+
+In sporadic cases both hits must hit the **same** cell. That is rare, so at most one tumour, in one eye, appearing later (risk rises as age²), and with no inherited allele.
+:::
+
+---
+
+**Q5.** In a simple two-hit model, a carrier's risk of a tumour by age *t* is about *n u t* and a non-carrier's is about *n*(*u t*)². If the mutation rate *u* were doubled (for example by a mutagen), by what factor would each risk change?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Replace *u* by 2*u* in each formula.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Carrier: *n*(2*u*)*t* = 2 × *n u t*, so the risk **doubles**. Non-carrier: *n*(2*u t*)² = 4 × *n*(*u t*)², so the risk is **four times** higher. The more hits a cell needs, the more strongly its risk depends on the mutation rate. (This holds while the risks are small.)
+:::
+
+---
+
+**Q6.** What is **loss of heterozygosity (LOH)**? A patient with hereditary retinoblastoma is heterozygous 1/2 for a DNA marker close to *RB1* in her blood. Her tumour shows only allele 1. Which parent passed on the mutant *RB1* allele, if allele 1 came from her father?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which allele must a tumour cell lose: the mutant or the normal one?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+LOH means that a tumour has lost one of the two alleles at a locus where the person is heterozygous, so markers in that region look homozygous (or hemizygous) in tumour DNA. Mechanisms include deletion, mitotic recombination and loss of the whole chromosome.
+
+The tumour must lose the **normal** *RB1* allele and keep the mutant one. It kept allele 1, which came from the father, and lost allele 2, from the mother. So the mutant *RB1* was on the **father's** chromosome (assuming no recombination between the marker and *RB1*).
+:::
+
+---
+
+**Q7.** *BRCA1* is a tumour suppressor, recessive at the cell level. Why does inherited breast and ovarian cancer due to *BRCA1* show an **autosomal dominant** pattern in pedigrees? Why do some carriers never get cancer?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What is inherited: the cancer, or the first hit? Recall penetrance from Part 1.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A carrier inherits the first hit in every cell. The second hit (often LOH) is very likely to happen in at least one of the many breast or ovarian cells during life, so most carriers get cancer, and each child of a carrier has a ½ chance of inheriting the allele: an autosomal dominant **predisposition**. The second hit is a random event, so some carriers never get it: **incomplete penetrance**. In the pedigree the trait may then skip a generation.
+:::
+
+---
+
+**Q8.** What is a **mutator phenotype**? Why does losing a mismatch-repair gene such as *MLH1* raise the risk of colorectal cancer, even though *MLH1* does not control cell division?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of the hit rate *u* in Knudson's model.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A mutator phenotype is a raised mutation rate in a cell, usually because a DNA-repair gene is lost. With *MLH1* gone, replication errors are not repaired, so the cell and its descendants collect mutations much faster: the hit rate *u* rises for every gene. The hits in gatekeepers such as *APC*, *KRAS* and *TP53* then arrive sooner. Inherited loss of mismatch repair is **Lynch syndrome**.
+:::
+
+---
+
+**Q9.** A tumour genome contains 5000 point mutations. Only a handful are drivers. What distinguishes a **driver** from a **passenger**, and how can you tell them apart in data from many tumours?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Does the mutation give the cell an advantage? Would it be seen again in other patients?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A **driver** gives its cell a growth or survival advantage and was **selected** during tumour evolution. A **passenger** happened by chance in the same lineage and was carried along; it has no effect. Across many tumours, drivers **recur**: the same gene is hit far more often than expected by chance, often at the same codon (hotspots such as *KRAS* G12 or *TP53* R175H), or with many truncating mutations in a tumour suppressor. Passengers are scattered at random.
+:::
+
+---
+
+**Q10.** What is the **Philadelphia chromosome**, and why does the drug imatinib work so well in chronic myeloid leukaemia?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which two genes meet at the junction, and what kind of enzyme does the fusion make?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+It is the small derivative chromosome 22, der(22), from the reciprocal translocation **t(9;22)(q34;q11)**. At the junction *BCR* (22q11) is fused to *ABL1* (9q34), making a BCR–ABL1 **tyrosine kinase that is always active** and drives white blood cells to divide. Imatinib blocks the kinase's ATP-binding pocket, so it switches off the one driver on which the leukaemia depends. Normal cells, which have no BCR–ABL1, are affected far less.
+:::
+
+---
+
+**Q11.** Two cancer genes have these mutation patterns in cBioPortal. Gene X: 80% of mutations are at one codon, all missense. Gene Y: mutations spread along the whole gene, many nonsense and frameshift. Which is likely an oncogene and which a tumour suppressor?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which kind of mutation turns a protein on, and which destroys it?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Gene X is likely an oncogene**: a gain of function needs a specific change that activates the protein, so selection favours the same few codons (a hotspot). **Gene Y is likely a tumour suppressor**: any mutation that destroys the protein will do, so truncating mutations (nonsense, frameshift) appear all along the gene. (*TP53* has both: truncating mutations and missense hotspots.)
+:::

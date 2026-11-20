@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" width="920" height="330" font-family="Helvetica, Arial, sans-serif">
+  <!-- Paracentric inversion heterozygote. Normal homologue (blue): centromere-A-B-C-D-E.
+       Inverted homologue (red): centromere-A-D-C-B-E. To pair gene by gene, they form an
+       inversion loop. One crossover in the loop, between B and C, gives four chromatids:
+       two non-crossover (normal and inverted, both balanced), one dicentric (A B C D A, with
+       two centromeres) and one acentric fragment (E D C B E). Shown as single chromatids for
+       clarity. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">A crossover inside a paracentric inversion loop</text>
+
+  <!-- ===== left: the loop ===== -->
+  <!-- normal homologue: outer path -->
+  <path d="M40,190 L150,190 C150,190 160,190 170,180 A80,80 0 1 1 270,180 C280,190 290,190 290,190 L400,190"
+        fill="none" stroke="#2a6f97" stroke-width="5"/>
+  <!-- inverted homologue: inner path; it crosses itself at the base of the loop (the twist),
+       so it runs through the loop in the opposite direction: A, D, C, B, E -->
+  <path d="M40,206 L150,206 C200,206 240,204 256,190 A62,62 0 1 0 184,190 C200,204 240,206 290,206 L400,206"
+        fill="none" stroke="#bc4749" stroke-width="5"/>
+  <!-- centromeres -->
+  <circle cx="58" cy="190" r="8" fill="#1d4f6c"/>
+  <circle cx="58" cy="206" r="8" fill="#8a3335"/>
+  <!-- loci -->
+  <g font-size="15" font-weight="bold" text-anchor="middle" fill="#1b2a3a">
+    <text x="110" y="182">A</text>
+    <text x="130" y="232">A</text>
+    <text x="340" y="182">E</text>
+    <text x="340" y="232">E</text>
+    <text x="150" y="122">B</text>
+    <text x="220" y="78">C</text>
+    <text x="290" y="122">D</text>
+  </g>
+  <g font-size="12" text-anchor="middle" fill="#5b6b7a">
+    <text x="182" y="146">B</text>
+    <text x="220" y="116">C</text>
+    <text x="258" y="146">D</text>
+  </g>
+  <!-- crossover mark between B and C -->
+  <path d="M160,70 L180,90 M180,70 L160,90" stroke="#1b2a3a" stroke-width="3"/>
+  <text x="84" y="64" font-size="13" fill="#1b2a3a">crossover</text>
+
+  <g font-size="13" fill="#1b2a3a">
+    <rect x="40" y="252" width="16" height="6" fill="#2a6f97"/><text x="62" y="259">normal: centromere A B C D E</text>
+    <rect x="40" y="274" width="16" height="6" fill="#bc4749"/><text x="62" y="281">inverted: centromere A D C B E</text>
+  </g>
+  <text x="40" y="308" font-size="12.5" fill="#5b6b7a">Big letters: normal; small letters: inverted homologue.</text>
+
+  <!-- divider -->
+  <line x1="440" y1="44" x2="440" y2="318" stroke="#e3e7eb" stroke-width="1.5"/>
+
+  <!-- ===== right: the four products ===== -->
+  <text x="460" y="58" font-size="14" font-weight="bold" fill="#1b2a3a">The four chromatids after meiosis I</text>
+
+  <!-- product rows: centromere dot + letters in boxes -->
+  <g font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <!-- 1 normal -->
+    <circle cx="470" cy="90" r="7" fill="#1d4f6c"/>
+    <text x="494" y="95">A</text><text x="518" y="95">B</text><text x="542" y="95">C</text><text x="566" y="95">D</text><text x="590" y="95">E</text>
+    <!-- 2 inverted -->
+    <circle cx="470" cy="134" r="7" fill="#8a3335"/>
+    <text x="494" y="139">A</text><text x="518" y="139">D</text><text x="542" y="139">C</text><text x="566" y="139">B</text><text x="590" y="139">E</text>
+    <!-- 3 dicentric -->
+    <circle cx="470" cy="178" r="7" fill="#1d4f6c"/>
+    <text x="494" y="183">A</text><text x="518" y="183">B</text><text x="542" y="183" fill="#bc4749">C</text><text x="566" y="183" fill="#bc4749">D</text><text x="590" y="183" fill="#bc4749">A</text>
+    <circle cx="614" cy="178" r="7" fill="#8a3335"/>
+    <!-- 4 acentric -->
+    <text x="494" y="227">E</text><text x="518" y="227">D</text><text x="542" y="227">C</text><text x="566" y="227" fill="#bc4749">B</text><text x="590" y="227" fill="#bc4749">E</text>
+  </g>
+  <g font-size="13" fill="#5b6b7a">
+    <text x="640" y="88">no crossover: normal</text>
+    <text x="640" y="104" fill="#2e7d32">balanced, viable</text>
+    <text x="640" y="132">no crossover: inverted</text>
+    <text x="640" y="148" fill="#2e7d32">balanced, viable</text>
+    <text x="640" y="176">dicentric: pulled to both poles,</text>
+    <text x="640" y="192" fill="#bc4749">bridge breaks; unbalanced</text>
+    <text x="640" y="220">acentric fragment:</text>
+    <text x="640" y="236" fill="#bc4749">no centromere, lost</text>
+  </g>
+  <text x="460" y="276" font-size="13.5" fill="#1b2a3a">Only the non-crossover chromatids make viable gametes,</text>
+  <text x="460" y="296" font-size="13.5" fill="#1b2a3a">so crossovers inside the inversion seem to disappear</text>
+  <text x="460" y="316" font-size="13.5" fill="#1b2a3a">from the offspring: the inversion "suppresses" recombination.</text>
+</svg>

@@ -1,0 +1,143 @@
+---
+title: "Quiz: digital analysis of DNA"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on restriction enzymes, gels, PCR and sequencing. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Write the complementary strand of the BamHI site 5'-GGATCC-3' and read it 5'→3'. What do you notice, and why does it matter for the enzyme?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Complement each base (A↔T, G↔C), then reverse the order to read the other strand 5'→3'.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The complement is 3'-CCTAGG-5', which read 5'→3' is **GGATCC**: the same as the top strand. The site is a **palindrome** (it equals its reverse complement). Restriction enzymes like BamHI work as dimers of two identical subunits, each recognising one half-site and cutting one strand, so a symmetric site suits a symmetric enzyme. It also means that the sticky ends left by BamHI (5'-GATC overhangs) can pair with any other BamHI end.
+:::
+
+---
+
+**Q2.** How often would you expect the site of HindIII (AAGCTT) to occur in random DNA? About how many HindIII sites would you expect in the 3.1 × 10^9^ bp human genome?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each of the 6 positions must match by chance, probability ¼ each.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(¼)^6^ = 1/4,096, so about **once every 4,096 bp**. In 3.1 × 10^9^ bp: 3.1 × 10^9^ / 4,096 ≈ **760,000** sites. Real genomes deviate from this estimate because the base composition is not 25% each and because some short sequences are over- or under-represented.
+:::
+
+---
+
+**Q3.** A **circular** plasmid has 3 EcoRI sites. A **linear** DNA molecule also has 3 EcoRI sites. How many fragments does each give?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Draw both and cut them.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Circular: **3** fragments (each cut opens the circle; *k* cuts give *k* pieces). Linear: **4** fragments (*k* cuts give *k* + 1 pieces, because the two ends are already free). In both cases the fragment sizes add up to the total length.
+:::
+
+---
+
+**Q4.** On a 1% agarose gel, a ladder band of 1,000 bp ran 40 mm and a band of 4,000 bp ran 22 mm. An unknown band ran 31 mm. Estimate its size.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Distance is roughly linear in log(size). 31 mm is half-way between 22 and 40 mm.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Half-way in distance means half-way in **log** size: log~10~(1,000) = 3.0 and log~10~(4,000) = 3.6, so the unknown has log~10~(size) ≈ 3.3, that is about **2,000 bp** (the geometric mean of 1,000 and 4,000), not 2,500 bp (the arithmetic mean).
+:::
+
+---
+
+**Q5.** Why does a 37-bp fragment look much fainter on a gel than a 381-bp fragment, even when both come from the same PCR product and are present in the same number of copies?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The stain binds along the DNA. What does the amount of stain in a band depend on?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+DNA stains bind along the length of the double helix, so the signal is proportional to the **mass** of DNA in the band, which is copies × length. The same number of 37-bp molecules carries about 1/10 the mass of 381-bp molecules, so the band is about ten times fainter.
+:::
+
+---
+
+**Q6.** A PCR starts from 100 copies of a template and runs 25 cycles at 100% efficiency. How many copies are there at the end (if no plateau)? And at 90% efficiency?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*N* = *N*~0~ (1 + *E*)^*n*^. 2^10^ ≈ 1,000.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+100% efficiency: 100 × 2^25^ = 100 × 3.36 × 10^7^ ≈ **3.4 × 10^9^** copies. 90%: 100 × 1.9^25^ = 100 × 9.3 × 10^6^ ≈ **9.3 × 10^8^** copies, about 3.6 times fewer. A small loss of efficiency per cycle compounds over many cycles.
+:::
+
+---
+
+**Q7.** In qPCR, sample X crosses the threshold at cycle 22 and sample Y at cycle 25. Assuming 100% efficiency, how much more template did X have?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each cycle doubles the product.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+X reached the threshold 3 cycles earlier, so it started with 2^3^ = **8 times** more template. (A ten-fold difference would be about 3.3 cycles.)
+:::
+
+---
+
+**Q8.** A student designs the primer 5'-GCGCGCGCAATATTGCGCGC-3'. Name two problems with it.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Check the GC content and compare the primer with its own reverse complement.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(1) The primer is **self-complementary**: its reverse complement is GCGCGCAATATTGCGCGCGC, almost the same sequence, so it will fold into a hairpin and pair with copies of itself (**primer-dimers**). (2) Its GC content is 14/20 = **70%**, above the 40–60% guideline, with long GC runs at both ends, so it will bind stably to many partly matching sites. A good primer also has to be unique in the genome, which you would check with Primer-BLAST.
+:::
+
+---
+
+**Q9.** Why must the polymerase used in PCR be heat-stable, and why does a ddNTP stop DNA synthesis in Sanger sequencing?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think about the temperature profile of one PCR cycle, and about which chemical group DNA polymerase needs on the growing strand.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each PCR cycle heats the reaction to ~95 °C to separate the strands; most enzymes would be destroyed, so you would have to add new enzyme every cycle. *Taq* polymerase, from the hot-spring bacterium *Thermus aquaticus*, survives this. DNA polymerase adds each new nucleotide to the **3'-OH** of the growing strand. A dideoxynucleotide has no 3'-OH, so once it has been built in, nothing can be added after it: the chain terminates at that base.
+:::
+
+---
+
+**Q10.** At the sickle-cell site, a Sanger trace from one person shows a single A peak, from another a single T peak, and from a third an A and a T peak of about half height at the same position. What are their genotypes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+c.20A>T: A is the HbA allele, T is the HbS allele. Both of a person's alleles are amplified by PCR.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Single A: **HbA/HbA**. Single T: **HbS/HbS** (sickle-cell disease). Double A + T peak: **HbA/HbS**, a carrier (sickle-cell trait). PCR copies both alleles, so a heterozygote gives a mixed signal at the variant position.
+:::
+
+---
+
+**Q11.** You sequence a 5 Mb bacterial genome with 2 million reads of 150 bases. What is the average coverage? Will every base be covered?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Coverage = number of reads × read length / genome length.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+2 × 10^6^ × 150 / 5 × 10^6^ = **60×**. On average each base is read 60 times, but reads land at random positions, so coverage varies: some bases have far more reads and some fewer. At 60× it is very unlikely that any base has none, but at low coverage (say 2×) a noticeable fraction of the genome would be missed.
+:::

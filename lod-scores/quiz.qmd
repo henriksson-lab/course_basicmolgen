@@ -1,0 +1,155 @@
+---
+title: "Quiz: human linkage & LOD scores"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on linkage analysis in human families. Try each on paper first, then open the answer. Unless the question says otherwise, assume **full penetrance**, a **phase-known** affected parent, and that log~10~ 2 = 0.301.
+
+---
+
+**Q1.** Give three reasons why geneticists mapping a human disease gene cannot simply compute RF = recombinants / total and test it with χ², as in *Drosophila*.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think about who chooses the crosses, family size, and what we know about the parent's chromosomes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Any three of these. (1) No designed crosses: we cannot set up a testcross with a double heterozygote of known phase. (2) Families are small, so each gives only a few meioses, too few for χ² (expected counts below 5). (3) The **phase** of the affected parent is often unknown, so we cannot say which children are recombinant. (4) Not every meiosis is **informative**: the parent must be heterozygous at the marker. The LOD score solves this by computing a likelihood for each family and adding across families.
+:::
+
+---
+
+**Q2.** What makes a meiosis **informative** for linkage between a dominant disease gene and a marker?
+
+::: {.callout-tip collapse="true" title="Hint"}
+You need to be able to say, for each child, which of the parent's two homologues it received.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The parent must be **heterozygous at both loci**: *Dd* at the disease locus (an affected parent with a dominant disease) and heterozygous at the marker (e.g. 1/2). Then each child shows which disease allele (affected or not) and which marker allele it received from that parent. If the parent were 1/1 at the marker, every child would get a 1, and we could not tell recombinants from non-recombinants. It also helps if the other parent's marker alleles differ from the affected parent's, so that the child's paternal allele can be read.
+:::
+
+---
+
+**Q3.** An affected father is *D 1* / *d 2* (phase known). His wife is unaffected and 3/3 at the marker. Classify each child as recombinant (R) or non-recombinant (NR): (a) affected, 1/3; (b) unaffected, 1/3; (c) affected, 2/3; (d) unaffected, 2/3.
+
+::: {.callout-tip collapse="true" title="Hint"}
+The 3 always comes from the mother. Which combination of *D*/*d* and 1/2 did the child get from the father?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) *D* with 1: **NR**. (b) *d* with 1: **R**. (c) *D* with 2: **R**. (d) *d* with 2: **NR**.
+:::
+
+---
+
+**Q4.** Write the likelihood L(θ) for a phase-known family with 8 informative meioses and 2 recombinants. What is θ̂? What is L(0.5)?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each meiosis is R with probability θ and NR with probability 1 − θ, independently.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+L(θ) = θ^2^ (1 − θ)^6^. The maximum is at **θ̂ = k/n = 2/8 = 0.25**. L(0.5) = 0.5^8^ = 1/256 ≈ 0.0039.
+:::
+
+---
+
+**Q5.** For a phase-known family with **no** recombinants, LOD(0) = n × 0.301. How many such meioses do you need to reach LOD 3? What happens to LOD(0) if a single recombinant turns up?
+
+::: {.callout-tip collapse="true" title="Hint"}
+L(0) = 1 if k = 0. If k ≥ 1, what is 0^k^?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+With k = 0, LOD(0) = log~10~(1 / 0.5^n^) = n log~10~ 2 = 0.301 n. For LOD ≥ 3 you need n ≥ 3 / 0.301 = 9.97, so **10 meioses**. With one recombinant, L(0) = 0, so **LOD(0) = −∞**: a single recombinant rules out complete linkage (θ = 0). The maximum then moves to θ̂ = 1/n.
+:::
+
+---
+
+**Q6.** A family gives LOD(0.1) = 1.2. In words, what does this number mean? Is it evidence of linkage?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Undo the logarithm.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+10^1.2^ ≈ 16: the family is about **16 times more probable** if the disease gene and the marker are linked at θ = 0.1 than if they are unlinked. It points towards linkage, but it is far below the threshold of 3 (odds 1000 : 1). On its own it is **inconclusive**; add more families.
+:::
+
+---
+
+**Q7.** Why is the threshold for linkage as high as LOD 3, when odds of 20 : 1 would correspond to the usual 5 % level?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Before you look at any family, how likely is it that a randomly chosen marker is linked to the disease gene?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Because linkage is **unlikely a priori**: only about 1 marker in 50 lies close enough to a given gene to show linkage. Prior odds of about 1 : 49, multiplied by a likelihood ratio of 1000 : 1 (LOD 3), give posterior odds of roughly 20 : 1 in favour of linkage, so about a 5 % chance that the "linkage" is false. A lower threshold would give many false linkages.
+:::
+
+---
+
+**Q8.** Three families have maximum LODs of 1.4 (at θ = 0.05), 1.1 (at θ = 0.10) and 0.9 (at θ = 0.15). A student adds the maxima, gets 3.4, and declares linkage. What is wrong?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which θ does each number belong to?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+LODs add **at the same θ**. The three maxima are at different θ, so their sum is not a LOD at any single θ. Add the three curves θ by θ, then find the maximum of the sum. That maximum is always ≤ 3.4, and may well be below 3.
+:::
+
+---
+
+**Q9.** What does a total LOD of −2.5 at θ = 0.10 (and lower at smaller θ) tell you?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What is the threshold for exclusion?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Since LOD < −2 for every θ ≤ 0.10, linkage at θ ≤ 0.10 is **excluded**: the disease gene is not within about 10 cM of this marker. It does not exclude looser linkage (larger θ). A real example: four DRPLA families gave LOD −2.215 at θ = 0.15 with the HD-linked marker D4S10, showing that DRPLA is not caused by the HD gene.
+:::
+
+---
+
+**Q10.** Why does an unknown phase make a family less informative? Write L(θ) for a phase-unknown family with n = 6 and 1 or 5 recombinants depending on the phase.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each phase has prior probability ½.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+L(θ) = ½ θ^1^ (1 − θ)^5^ + ½ θ^5^ (1 − θ)^1^. We must average over the two possible arrangements, and the wrong one also gets weight. The maximum LOD drops from 0.63 (phase known) to 0.33. Typing the grandparents to determine phase is therefore worth a lot.
+:::
+
+---
+
+**Q11.** Why did microsatellites replace RFLPs as markers for human linkage mapping?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many alleles does each have? What fraction of parents will be heterozygous?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+An RFLP usually has only **two** alleles (site present or absent), so many parents are homozygous and their meioses are uninformative. A microsatellite (e.g. (CA)~n~) has **many** alleles of different lengths, so most people are heterozygous and almost every meiosis is informative. Microsatellites are also typed quickly by PCR instead of Southern blots.
+:::
+
+---
+
+**Q12.** In 1983 Gusella and colleagues showed that Huntington disease is linked to a DNA marker on chromosome 4. Why did it still take until 1993 to find the gene?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How precisely can linkage in families locate a gene? How big is 1 cM in base pairs in humans?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Linkage only gives a **region**: with the meioses available, a gene is placed within a few cM, which in humans is millions of base pairs holding many genes. In 1989 HD was still placed only "about 4 cM distal to D4S10", near the tip of 4p (4p16.3). Finding the gene required more markers, a physical map of the region, and searching it for genes. In 1993 the gene (IT15, now *HTT*) was found to carry an expanded CAG repeat on HD chromosomes in all 75 families examined.
+:::

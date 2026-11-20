@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Helvetica, Arial, sans-serif" width="900" height="330">
+  <!-- The complementation test. Two recessive mutants with the same phenotype (white flowers) are crossed;
+       the F1 carries one chromosome from each. Pathway: colourless -> (enzyme A) -> intermediate -> (enzyme B) -> purple. -->
+  <!-- Left panel: same gene -->
+  <rect x="10" y="10" width="430" height="310" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="26" y="38" font-size="16" font-weight="bold" fill="#1b2a3a">Mutations in the same gene</text>
+  <text x="26" y="62" font-size="13" fill="#5a6b7a">F1 of white mutant 1 × white mutant 2</text>
+  <!-- chromosome from mutant 1 -->
+  <text x="26" y="104" font-size="13" fill="#1b2a3a">from 1</text>
+  <rect x="90" y="90" width="300" height="20" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="140" y="90" width="70" height="20" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.5"/>
+  <text x="175" y="105" font-size="13" font-weight="bold" fill="#bc4749" text-anchor="middle">A m1</text>
+  <rect x="270" y="90" width="70" height="20" fill="#e5efdf" stroke="#6a994e" stroke-width="1.5"/>
+  <text x="305" y="105" font-size="13" font-weight="bold" fill="#6a994e" text-anchor="middle">B</text>
+  <!-- chromosome from mutant 2 -->
+  <text x="26" y="144" font-size="13" fill="#1b2a3a">from 2</text>
+  <rect x="90" y="130" width="300" height="20" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="140" y="130" width="70" height="20" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.5"/>
+  <text x="175" y="145" font-size="13" font-weight="bold" fill="#bc4749" text-anchor="middle">A m2</text>
+  <rect x="270" y="130" width="70" height="20" fill="#e5efdf" stroke="#6a994e" stroke-width="1.5"/>
+  <text x="305" y="145" font-size="13" font-weight="bold" fill="#6a994e" text-anchor="middle">B</text>
+  <!-- pathway -->
+  <text x="26" y="196" font-size="13" fill="#1b2a3a">colourless → <tspan fill="#bc4749" font-weight="bold">blocked (no enzyme A)</tspan> → no pigment</text>
+  <text x="26" y="236" font-size="13" fill="#1b2a3a">Neither chromosome has a working copy of gene A.</text>
+  <circle cx="60" cy="282" r="20" fill="#ffffff" stroke="#8a97a4" stroke-width="2"/>
+  <text x="94" y="279" font-size="15" font-weight="bold" fill="#1b2a3a">white: no complementation (−)</text>
+  <text x="94" y="298" font-size="13" fill="#5a6b7a">1 and 2 are in the same complementation group</text>
+
+  <!-- Right panel: different genes -->
+  <rect x="460" y="10" width="430" height="310" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="476" y="38" font-size="16" font-weight="bold" fill="#1b2a3a">Mutations in different genes</text>
+  <text x="476" y="62" font-size="13" fill="#5a6b7a">F1 of white mutant 1 × white mutant 3</text>
+  <text x="476" y="104" font-size="13" fill="#1b2a3a">from 1</text>
+  <rect x="540" y="90" width="300" height="20" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="590" y="90" width="70" height="20" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.5"/>
+  <text x="625" y="105" font-size="13" font-weight="bold" fill="#bc4749" text-anchor="middle">A m1</text>
+  <rect x="720" y="90" width="70" height="20" fill="#e5efdf" stroke="#6a994e" stroke-width="1.5"/>
+  <text x="755" y="105" font-size="13" font-weight="bold" fill="#6a994e" text-anchor="middle">B</text>
+  <text x="476" y="144" font-size="13" fill="#1b2a3a">from 3</text>
+  <rect x="540" y="130" width="300" height="20" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="590" y="130" width="70" height="20" fill="#e5efdf" stroke="#6a994e" stroke-width="1.5"/>
+  <text x="625" y="145" font-size="13" font-weight="bold" fill="#6a994e" text-anchor="middle">A</text>
+  <rect x="720" y="130" width="70" height="20" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.5"/>
+  <text x="755" y="145" font-size="13" font-weight="bold" fill="#bc4749" text-anchor="middle">B m3</text>
+  <text x="476" y="196" font-size="13" fill="#1b2a3a">colourless → (enzyme A, from 3) → (enzyme B, from 1) → purple</text>
+  <text x="476" y="236" font-size="13" fill="#1b2a3a">Each chromosome supplies what the other lacks.</text>
+  <circle cx="510" cy="282" r="20" fill="#8e5bb5" stroke="#5d3a7a" stroke-width="2"/>
+  <text x="544" y="279" font-size="15" font-weight="bold" fill="#1b2a3a">purple: complementation (+)</text>
+  <text x="544" y="298" font-size="13" fill="#5a6b7a">1 and 3 are in different complementation groups</text>
+</svg>

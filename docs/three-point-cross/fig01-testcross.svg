@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <!-- A three-point testcross in Drosophila. Female: v cv+ ct+ / v+ cv ct (two X chromosomes;
+       the order of the genes is not yet known, so they are listed alphabetically).
+       Male: v cv ct / Y. Every offspring gets one maternal X, which its phenotype shows. -->
+  <text x="190" y="30" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Heterozygous female</text>
+  <text x="190" y="52" font-size="14" fill="#5b6b7a" text-anchor="middle">gene order still unknown</text>
+  <rect x="70" y="92" width="240" height="12" fill="#2a6f97"/>
+  <rect x="70" y="92" width="240" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <rect x="70" y="132" width="240" height="12" fill="#bc4749"/>
+  <rect x="70" y="132" width="240" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="110" y="84" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+<text x="110" y="168" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">v</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="84" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">cv</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="168" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="270" y="84" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">ct</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="270" y="168" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+  <text x="350" y="122" font-size="34" fill="#1b2a3a" text-anchor="middle">×</text>
+  <text x="530" y="30" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Tester male</text>
+  <text x="530" y="52" font-size="14" fill="#5b6b7a" text-anchor="middle">recessive for all three</text>
+  <rect x="410" y="92" width="240" height="12" fill="#8d99a6"/>
+  <rect x="410" y="92" width="240" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+<text x="450" y="84" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+<text x="530" y="84" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="610" y="84" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+  <rect x="410" y="132" width="70" height="12" rx="5" fill="#c3cad2"/>
+  <text x="492" y="143" font-size="16" font-weight="bold" fill="#1b2a3a">Y</text>
+  <line x1="350" y1="190" x2="350" y2="226" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="350" y="254" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">8 classes of offspring = the 8 kinds of egg the female makes</text>
+  <text x="350" y="280" font-size="15" fill="#5b6b7a" text-anchor="middle">the father adds only recessive alleles (daughters) or a Y (sons), so he hides nothing</text>
+  <rect x="672" y="70" width="140" height="96" rx="8" fill="#f4f6f8" stroke="#7a8794"/>
+  <text x="742" y="94" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Why females?</text>
+  <text x="742" y="115" font-size="15" font-weight="normal" fill="#1b2a3a" text-anchor="middle">Drosophila males</text>
+  <text x="742" y="136" font-size="15" font-weight="normal" fill="#1b2a3a" text-anchor="middle">do not cross over</text>
+  <text x="742" y="157" font-size="15" font-weight="normal" fill="#1b2a3a" text-anchor="middle">in meiosis.</text>
+</svg>

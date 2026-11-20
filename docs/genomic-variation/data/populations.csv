@@ -1,0 +1,27 @@
+code,description,superpopulation,superpopulation_name
+CDX,"Chinese Dai in Xishuangbanna, China",EAS,East Asian
+CHB,"Han Chinese in Bejing, China",EAS,East Asian
+JPT,"Japanese in Tokyo, Japan",EAS,East Asian
+KHV,"Kinh in Ho Chi Minh City, Vietnam",EAS,East Asian
+CHS,"Southern Han Chinese, China",EAS,East Asian
+BEB,"Bengali in Bangladesh",SAS,South Asian
+GIH,"Gujarati Indian in Houston,TX",SAS,South Asian
+ITU,"Indian Telugu in the UK",SAS,South Asian
+PJL,"Punjabi in Lahore,Pakistan",SAS,South Asian
+STU,"Sri Lankan Tamil in the UK",SAS,South Asian
+ASW,"African Ancestry in Southwest US",AFR,African
+ACB,"African Caribbean in Barbados",AFR,African
+ESN,"Esan in Nigeria",AFR,African
+GWD,"Gambian in Western Division, The Gambia",AFR,African
+LWK,"Luhya in Webuye, Kenya",AFR,African
+MSL,"Mende in Sierra Leone",AFR,African
+YRI,"Yoruba in Ibadan, Nigeria",AFR,African
+GBR,"British in England and Scotland",EUR,European
+FIN,"Finnish in Finland",EUR,European
+IBS,"Iberian populations in Spain",EUR,European
+TSI,"Toscani in Italy",EUR,European
+CEU,"Utah residents with Northern and Western European ancestry",EUR,European
+CLM,"Colombian in Medellin, Colombia",AMR,Admixed American
+MXL,"Mexican Ancestry in Los Angeles, California",AMR,Admixed American
+PEL,"Peruvian in Lima, Peru",AMR,Admixed American
+PUR,"Puerto Rican in Puerto Rico",AMR,Admixed American

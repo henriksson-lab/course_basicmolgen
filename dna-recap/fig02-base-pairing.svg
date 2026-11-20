@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif" width="900" height="300">
+  <!-- Two antiparallel strands, base pairing with 2 (A-T) or 3 (G-C) hydrogen bonds, and the reverse complement.
+       Sequence: the first 9 nt of the HBB coding sequence (NM_000518.5, positions 51-59). -->
+  <defs><marker id="arrowB" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#2a6f97"/></marker><marker id="arrowR" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#bc4749"/></marker></defs>
+
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#1b2a3a">Two antiparallel strands, held together by base pairs</text>
+
+  <!-- strand directions -->
+  <text x="22" y="76" font-size="15" font-weight="bold" fill="#2a6f97">5'</text>
+  <text x="528" y="76" font-size="15" font-weight="bold" fill="#2a6f97">3'</text>
+  <text x="22" y="224" font-size="15" font-weight="bold" fill="#bc4749">3'</text>
+  <text x="528" y="224" font-size="15" font-weight="bold" fill="#bc4749">5'</text>
+  <!-- backbones -->
+  <line x1="50" y1="48" x2="512" y2="48" stroke="#2a6f97" stroke-width="3" marker-end="url(#arrowB)"/>
+  <line x1="512" y1="252" x2="50" y2="252" stroke="#bc4749" stroke-width="3" marker-end="url(#arrowR)"/>
+  <text x="280" y="40" font-size="12" fill="#2a6f97" text-anchor="middle">sugar–phosphate backbone, read 5' → 3'</text>
+  <text x="280" y="272" font-size="12" fill="#bc4749" text-anchor="middle">partner strand runs the other way</text>
+
+  <!-- top strand bases: A T G G T G C A T -->
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="58" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="74" y="77">A</text>
+    <rect x="110" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="126" y="77">T</text>
+    <rect x="162" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="178" y="77">G</text>
+    <rect x="214" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="230" y="77">G</text>
+    <rect x="266" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="282" y="77">T</text>
+    <rect x="318" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="334" y="77">G</text>
+    <rect x="370" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="386" y="77">C</text>
+    <rect x="422" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="438" y="77">A</text>
+    <rect x="474" y="56" width="32" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="490" y="77">T</text>
+  </g>
+  <!-- bottom strand bases: T A C C A C G T A -->
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="58" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="74" y="235">T</text>
+    <rect x="110" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="126" y="235">A</text>
+    <rect x="162" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="178" y="235">C</text>
+    <rect x="214" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="230" y="235">C</text>
+    <rect x="266" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="282" y="235">A</text>
+    <rect x="318" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="334" y="235">C</text>
+    <rect x="370" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="386" y="235">G</text>
+    <rect x="422" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="438" y="235">T</text>
+    <rect x="474" y="214" width="32" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="490" y="235">A</text>
+  </g>
+  <!-- hydrogen bonds: A-T two dashed lines, G-C three -->
+  <g stroke="#5a6b7a" stroke-width="2" stroke-dasharray="5,4">
+    <line x1="69" y1="92" x2="69" y2="208"/><line x1="79" y1="92" x2="79" y2="208"/>
+    <line x1="121" y1="92" x2="121" y2="208"/><line x1="131" y1="92" x2="131" y2="208"/>
+    <line x1="170" y1="92" x2="170" y2="208"/><line x1="178" y1="92" x2="178" y2="208"/><line x1="186" y1="92" x2="186" y2="208"/>
+    <line x1="222" y1="92" x2="222" y2="208"/><line x1="230" y1="92" x2="230" y2="208"/><line x1="238" y1="92" x2="238" y2="208"/>
+    <line x1="277" y1="92" x2="277" y2="208"/><line x1="287" y1="92" x2="287" y2="208"/>
+    <line x1="326" y1="92" x2="326" y2="208"/><line x1="334" y1="92" x2="334" y2="208"/><line x1="342" y1="92" x2="342" y2="208"/>
+    <line x1="378" y1="92" x2="378" y2="208"/><line x1="386" y1="92" x2="386" y2="208"/><line x1="394" y1="92" x2="394" y2="208"/>
+    <line x1="433" y1="92" x2="433" y2="208"/><line x1="443" y1="92" x2="443" y2="208"/>
+    <line x1="485" y1="92" x2="485" y2="208"/><line x1="495" y1="92" x2="495" y2="208"/>
+  </g>
+
+  <!-- right panel: rules and the reverse complement -->
+  <rect x="566" y="44" width="320" height="212" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="582" y="70" font-size="14" font-weight="bold" fill="#1b2a3a">Rules</text>
+  <text x="582" y="92" font-size="13" fill="#1b2a3a">A pairs with T, G pairs with C, so</text>
+  <text x="582" y="110" font-size="13" fill="#1b2a3a">A = T and G = C (Chargaff).</text>
+  <text x="582" y="128" font-size="13" fill="#1b2a3a">Dashed lines: H-bonds, 2 for A–T, 3 for G–C.</text>
+  <text x="582" y="160" font-size="14" font-weight="bold" fill="#1b2a3a">Reading the partner strand</text>
+  <text x="582" y="182" font-size="13" fill="#1b2a3a">complement, then reverse, so that it</text>
+  <text x="582" y="200" font-size="13" fill="#1b2a3a">is again written 5' → 3':</text>
+  <text x="582" y="226" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#2a6f97">5'-ATGGTGCAT-3'</text>
+  <text x="582" y="246" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#bc4749">5'-ATGCACCAT-3'</text>
+  <text x="780" y="246" font-size="12" fill="#5a6b7a">rev. comp.</text>
+</svg>

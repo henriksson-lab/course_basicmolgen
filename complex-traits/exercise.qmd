@@ -1,0 +1,197 @@
+---
+title: "Exercise: complex traits, heritability & GWAS"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- predict the distribution of a trait controlled by a few additive loci;
+- compute broad- and narrow-sense heritability from variance components, twin correlations and parent–offspring regression slopes;
+- use the breeder's equation and the parent–offspring regression to make predictions, and explain regression towards the mean;
+- explain what heritability does not mean;
+- carry out a simple case–control association test by hand, and explain the genome-wide threshold, LD towers and QQ plots;
+- find the top GWAS associations for a trait in the GWAS Catalog.
+
+Do the pen-and-paper part first. The demos and R come after.
+
+## Background
+
+**Polygenic model.** With *k* additive loci, the number of "+" alleles (0 to 2*k*) in an F2 from *AaBb…* × *AaBb…* follows Binomial(2*k*, ½).
+
+**Variance components.** *V*<sub>P</sub> = *V*<sub>G</sub> + *V*<sub>E</sub>, *V*<sub>G</sub> = *V*<sub>A</sub> + *V*<sub>D</sub> (+ epistasis). Broad sense *H*² = *V*<sub>G</sub>/*V*<sub>P</sub>; narrow sense *h*² = *V*<sub>A</sub>/*V*<sub>P</sub>.
+
+**Estimating *h*².**
+
+- Twins: *h*² ≈ 2 [*r*(MZ) − *r*(DZ)]; shared environment *c*² ≈ 2*r*(DZ) − *r*(MZ).
+- Offspring on midparent: slope *b* = *h*². Offspring on one parent: *b* = *h*²/2.
+- Prediction: expected child deviation from the mean = *h*² × midparent deviation.
+- Breeder's equation: response *R* = *h*² *S*, where *S* is how far the selected parents are above the mean.
+
+**GWAS.** One test per SNP; genome-wide threshold 5 × 10⁻⁸. For a case–control study, compare allele counts in a 2 × 2 table with a χ² test (df = 1); the **odds ratio** OR = (risk/other allele in cases) / (risk/other allele in controls). The expected test statistic grows with effect size × √*N*.
+
+## By hand
+
+**B1. (three loci)** Plant height is controlled by three unlinked additive loci *A*, *B*, *C*. Each capital-letter allele adds 5 cm to a base height of 30 cm (*aabbcc*). Two *AaBbCc* plants are crossed.
+(a) How tall are the shortest and the tallest possible offspring? How many height classes are there?
+(b) What fraction of the offspring are as tall as the tallest class? As the middle class?
+(c) Sketch the distribution. What would it look like with environmental variation added?
+
+**B2. (variance components)** For milk yield in a cattle population: *V*<sub>P</sub> = 50, *V*<sub>A</sub> = 24, *V*<sub>D</sub> = 6, and the rest is environmental. Compute *V*<sub>E</sub>, *H*² and *h*².
+
+**B3. (twins)** For body mass index in a twin registry, *r*(MZ) = 0.74 and *r*(DZ) = 0.40 (round numbers for this exercise).
+(a) Estimate *h*² and the shared-environment component *c*².
+(b) What fraction of the variance is left for the unique (non-shared) environment?
+(c) Give one reason why the estimate of *h*² might be too high.
+
+**B4. (parent–offspring regression)** In a study of a bird population, the slope of offspring beak depth on **one** parent's beak depth is 0.35.
+(a) Estimate *h*².
+(b) A pair of birds has a midparent beak depth 1.0 mm above the population mean. What do you predict for their offspring?
+(c) Why is the prediction less extreme than the parents?
+
+**B5. (breeder's equation)** In the cattle population of B2, a farmer uses only cows and bulls whose own milk yield is on average 8 units above the population mean. What response do you expect in the next generation? What if the farmer selected on a trait with *h*² = 0.05?
+
+**B6. (multiple testing)** A GWAS tests 800 000 independent SNPs, none of which has any real effect.
+(a) How many SNPs do you expect at p < 0.05, p < 10⁻⁵ and p < 5 × 10⁻⁸?
+(b) What should the QQ plot look like?
+
+**B7. (a case–control test)** A SNP is genotyped in 1000 cases of type 2 diabetes and 1000 controls (invented counts). Allele counts:
+
+| | risk allele T | other allele C | total |
+|---|---|---|---|
+| cases | 700 | 1300 | 2000 |
+| controls | 560 | 1440 | 2000 |
+
+(a) Compute the T allele frequency in cases and controls, and the odds ratio.
+(b) Compute χ² for the 2 × 2 table (expected counts from the row and column totals; df = 1).
+(c) Is the SNP significant at p < 0.05? Is it genome-wide significant (χ² for p = 5 × 10⁻⁸ with df = 1 is about 29.7)?
+(d) Roughly how many people would you need to reach genome-wide significance with the same allele frequencies?
+
+**B8. (heritability statements)** True or false? Explain each in one sentence.
+(a) If a trait has *h*² = 0.9, environmental changes cannot change its mean.
+(b) If *h*² is high within two populations, the difference between their means must be genetic.
+(c) A trait that is entirely determined by genes in every person can have a heritability near 0.
+(d) *h*² can differ between populations and between generations.
+
+## Explore: parent–offspring regression {#explore}
+
+Each dot is one simulated family: the midparent value against the child's value, shown in height-like units (170 + 7*z* cm). The solid line is the fitted regression, the dashed line the slope expected under the model, the dotted line slope 1. The slider *c*² adds a **shared family environment**: the child's environment resembles the parents'.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="heritability"></div>
+<script src="../demos/dist/heritability.js"></script>
+```
+
+**E1.** At the start (*h*² = 0.6, *n* = 200), read the fitted slope and its standard error. Is it close to the true *h*²? Now set *n* = 20 and then *n* = 1000. How do the slope and its SE change? Press **new sample** a few times at *n* = 20: how much does the estimate jump?
+
+**E2.** Why is the fitted line flatter than the dotted slope-1 line? A very tall pair of parents has midparent 185 cm: how tall do you predict their child to be, with *h*² = 0.6? What is this effect called?
+
+**E3.** Tick **single parent** (back at *n* = 200). What happens to the slope? How do you turn it into an estimate of *h*², and why? Try *n* = 1000.
+
+**E4.** Press **shared environment** (*h*² = 0.3, *c*² = 0.3). What slope do you get, and what would you wrongly conclude about *h*²? Then set *h*² = 0 and *c*² = 0.4. What does this tell you about using parent–offspring resemblance as evidence for genes? Which study design could separate the two?
+
+::: {.callout-note collapse="true" title="Solutions: Explore (heritability)"}
+
+All numbers are for the default seed.
+
+**E1.** At *h*² = 0.6, *n* = 200: *b* = **0.582 ± 0.099** (SE), *r* = 0.387: close to 0.6, well within one SE. At *n* = 20: *b* = 0.466 ± 0.216; at *n* = 1000: *b* = 0.613 ± 0.042. The SE shrinks roughly as 1/√*n* (5 times more families, SE about 2.3 times smaller). With 20 families an estimate can easily be off by 0.2–0.4. Note that *r* (about 0.4) is not *h*²: *r* also depends on how spread out the midparents are.
+
+**E2.** The child gets only half of each parent's genes, and the parents' deviations are partly environmental, which is not inherited. So children of extreme parents are on average less extreme: **regression towards the mean** (Galton's "regression towards mediocrity"). Prediction: 170 + 0.6 × (185 − 170) = **179 cm**.
+
+**E3.** The slope halves: *b* = **0.309 ± 0.074** at *n* = 200 (expected 0.30), and 0.290 ± 0.031 at *n* = 1000. A child shares half its genes with one parent, so Cov(parent, offspring) = *h*²/2 × *V*<sub>P</sub>, while the variance of one parent is the full *V*<sub>P</sub>. So *h*² = 2*b* = 0.62 (*n* = 200) and 0.58 (*n* = 1000). With the midparent the covariance is the same but the variance is halved, so the slope is *h*² directly.
+
+**E4.** Shared environment, *h*² = 0.3, *c*² = 0.3: *b* = **0.592 ± 0.104** (*n* = 200), 0.609 ± 0.042 (*n* = 1000). You would conclude *h*² ≈ 0.6, **double** the truth. With *h*² = 0 and *c*² = 0.4: *b* = 0.457 ± 0.112 (*n* = 200), 0.383 ± 0.045 (*n* = 1000), clearly above 0 although no gene affects the trait. Families share genes **and** environments (food, habits, income), and the regression cannot tell them apart. **Adoption** studies (adopted children against biological and adoptive parents), **twin** studies (MZ against DZ), and genomic methods in unrelated people can separate them.
+:::
+
+## Explore: a simulated GWAS {#explore-manhattan}
+
+A simulated GWAS of a quantitative trait with 8 400 SNPs on 22 chromosomes. Up to 10 causal loci have small effects (*β* per allele, in trait SD units; every second locus has *β*/2), and neighbouring SNPs are in LD with them. Left: the Manhattan plot with the genome-wide (5 × 10⁻⁸, solid) and suggestive (10⁻⁵, dashed) thresholds; triangles mark the true causal loci. Right: the QQ plot.
+
+```{=html}
+<div data-demo="manhattan"></div>
+<script src="../demos/dist/manhattan.js"></script>
+```
+
+**E5.** Press **N = 5 000**, then **N = 50 000**, then **N = 500 000**. How many of the five causal loci pass the genome-wide line each time? Which loci are found first, and why (look at "(β/2)" in the readout)? What does this tell you about why GWAS of height or type 2 diabetes use hundreds of thousands of people?
+
+**E6.** At *N* = 500 000, look closely at one peak. Why is it a tower of many SNPs rather than one dot? Is the SNP at the top of the tower necessarily the causal SNP? What does this mean for the step from "GWAS hit" to "causal gene"?
+
+**E7.** Press **null (no causal loci)**. About how many of the 8 400 SNPs should have p < 0.05, p < 10⁻³ and p < 10⁻⁵ by chance alone? Compare with what you see. How does the QQ plot look? Why does a real GWAS of about a million SNPs use 5 × 10⁻⁸ rather than 0.05?
+
+**E8.** Back at *N* = 50 000 (press the preset), raise *β* to 0.1, then lower it to 0.02. How many loci are found? The test statistic of a causal SNP is about *β*√(2*f*(1 − *f*)*N*). How much larger must *N* be to detect an effect half as large?
+
+::: {.callout-note collapse="true" title="Solutions: Explore (GWAS)"}
+
+Default seed. The causal loci are on chromosomes 2 (61 Mb, allele frequency *f* = 0.42, effect *β*), 9 (100 Mb, *f* = 0.33, *β*), 10 (113 Mb, *f* = 0.35, *β*/2), 14 (71 Mb, *f* = 0.44, *β*/2) and 17 (45 Mb, *f* = 0.11, *β*).
+
+**E5.** *N* = 5 000: **0 of 5** found; no SNP even passes 10⁻⁵ (the highest point, −log10 p ≈ 4.7, is a chance null SNP). *N* = 50 000: **2 of 5** (chr 2 and chr 9), 3 SNPs above 5 × 10⁻⁸ and 10 above 10⁻⁵. *N* = 500 000: **5 of 5**, 56 SNPs above 5 × 10⁻⁸ in exactly five loci, with no false loci. (*N* = 100 000 finds 3, adding chr 17; *N* = 200 000 finds 4, adding chr 14.) The loci with the full *β* and a common allele come first; the *β*/2 loci and the rare-allele locus (*f* = 0.11) need larger samples. The expected *z* for chr 2 is 2.5 at *N* = 5 000, 7.8 at 50 000 and 24.7 at 500 000, while 5 × 10⁻⁸ needs |*z*| ≈ 5.45. Real effects on complex traits are small, so only very large samples find most of them.
+
+**E6.** SNPs near the causal SNP are in **linkage disequilibrium** with it, so they carry part of its signal: a tower. The top SNP is often but not always the causal one: noise can lift a neighbour above it, and in real data the causal variant may not be genotyped at all. A GWAS hit points to a **region**, often with several genes; fine-mapping and functional experiments are needed to find the causal variant and gene (*TCF7L2* for type 2 diabetes is a well-studied example).
+
+**E7.** Expected by chance: 8 400 × 0.05 = 420; 8 400 × 10⁻³ = 8.4; 8 400 × 10⁻⁵ = 0.08. Observed (null preset): **415**, **9** and **0**; none passes 5 × 10⁻⁸, and the highest point is −log10 p = 4.65. The QQ plot follows the diagonal. With about a million tests, p < 0.05 would give ~50 000 false hits; 5 × 10⁻⁸ = 0.05/10⁶ keeps the chance of even one false hit in the whole scan at about 5%.
+
+**E8.** At *N* = 50 000: *β* = 0.1 finds **4 of 5** loci (32 SNPs above 5 × 10⁻⁸); *β* = 0.05 finds 2; *β* = 0.02 finds **0**. Halving *β* halves *β*√*N*; to keep the same *z*, √*N* must double, so **N must be 4 times larger**.
+:::
+
+## Find it
+
+The [GWAS Catalog](https://www.ebi.ac.uk/gwas/) (EMBL-EBI and NHGRI) collects the significant associations from published GWAS. Each **association** links a SNP (with its risk allele) to a trait, with a p-value, an effect size (odds ratio or beta) and the study. Counts change every month as new studies are added, so give rounded answers.
+
+**F1. Type 2 diabetes.** Open the trait page for [type 2 diabetes mellitus](https://www.ebi.ac.uk/gwas/efotraits/MONDO_0005148). Roughly how many associations and studies are listed (hundreds, thousands, tens of thousands)? In the **Associations** table, sort by **P-value**. Which SNP and which mapped gene come first? The same query through the REST API, which returns machine-readable JSON:
+[`www.ebi.ac.uk/gwas/rest/api/v2/associations?efo_trait=type 2 diabetes mellitus&sort=p_value&direction=asc&size=5`](https://www.ebi.ac.uk/gwas/rest/api/v2/associations?efo_trait=type%202%20diabetes%20mellitus&sort=p_value&direction=asc&size=5). (Very small p-values are stored as `pvalue_mantissa` and `pvalue_exponent`.)
+
+**F2. rs7903146.** Open the variant page [rs7903146](https://www.ebi.ac.uk/gwas/variants/rs7903146).
+(a) On which chromosome and at which position (GRCh38) is it? In which gene, and is it coding?
+(b) In the associations for type 2 diabetes, which allele is the risk allele, and roughly what odds ratios are reported?
+(c) In [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/6934), what is the full name and location of *TCF7L2*? What kind of protein is it?
+(d) You met this SNP in the Hardy–Weinberg exercise. What was the T allele frequency in the CEU sample?
+
+**F3. Height.** Open the trait page for [body height](https://www.ebi.ac.uk/gwas/efotraits/OBA_VT0001253) or use the API: [`…/associations?efo_trait=body height&sort=p_value&direction=asc&size=20`](https://www.ebi.ac.uk/gwas/rest/api/v2/associations?efo_trait=body%20height&sort=p_value&direction=asc&size=20). Roughly how many associations are there, compared with type 2 diabetes? Name three of the mapped genes among the strongest associations. What does the number of associations tell you about the genetic architecture of height?
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+Checked on 20 November 2026 through the GWAS Catalog REST API v2 and NCBI Gene (E-utilities). The counts will grow; the top hits are stable.
+
+**F1.** About **9 700 associations** for "type 2 diabetes mellitus" (MONDO_0005148), from about 240 GWAS (study accessions) in about 140 publications: **thousands**. The top association is **rs7903146** in ***TCF7L2***, with a p-value of about 3 × 10⁻¹³¹⁵ in Suzuki et al. 2024 (*Nature*, PMID 38374256, GCST90492734; about 430 000 cases and 2.1 million controls of six ancestry groups). The next distinct loci include *KCNQ1*, *CDKAL1*, *CDKN2B-AS1*, *FTO* and *IGF2BP2*.
+
+**F2.** (a) Chromosome **10**, position **112 998 590** (GRCh38), in an **intron** of ***TCF7L2***: non-coding. (b) The risk allele is **T**; most studies report odds ratios of about **1.3–1.4** per T allele (some 1.15–1.6). (c) *TCF7L2*, "transcription factor 7 like 2", at **10q25.2–q25.3**: a transcription factor in the Wnt signalling pathway. (d) CEU: 52 *CC*, 32 *CT*, 15 *TT*, so *q*(T) = (32 + 30)/198 = **0.31**.
+
+**F3.** About **45 000** associations for body height: several times more than for type 2 diabetes. Among the strongest: ***ZBTB38*** (3q23), ***LCORL*** (4p15.31), ***GDF5*** (20q11.22; rs143384), *EFEMP1*, *CABLES1*, *LIN28B*. Height is extremely **polygenic**: thousands of loci, each with a tiny effect, together explain a large part of its heritability. *GDF5* encodes a TGF-β family growth factor that, according to its NCBI Gene summary, regulates the development of cartilage and joints, and whose mutations cause skeletal disorders such as brachydactyly: a biologically plausible height gene.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) Shortest *aabbcc* = **30 cm**; tallest *AABBCC* = 30 + 6 × 5 = **60 cm**. 0 to 6 capital alleles: **7 classes** (30, 35, …, 60 cm). (b) The number of capital alleles is Binomial(6, ½). Tallest: (½)⁶ = **1/64**. Middle class (3 capitals, 45 cm): C(6, 3)/64 = **20/64** = 5/16. (c) A symmetric distribution 1 : 6 : 15 : 20 : 15 : 6 : 1. Environmental variation blurs the classes into a bell-shaped curve.
+
+**B2.** *V*<sub>E</sub> = 50 − 24 − 6 = **20**. *H*² = (24 + 6)/50 = **0.60**. *h*² = 24/50 = **0.48**.
+
+**B3.** (a) *h*² ≈ 2 × (0.74 − 0.40) = **0.68**; *c*² ≈ 2 × 0.40 − 0.74 = **0.06**. (b) 1 − 0.68 − 0.06 = **0.26** (equal to 1 − *r*(MZ)): unique environment and measurement error. (c) MZ twins may share more similar environments than DZ twins (they are treated more alike), so the excess MZ similarity is not all genetic; also non-additive genetic effects inflate *r*(MZ) relative to *r*(DZ).
+
+**B4.** (a) Slope on one parent = *h*²/2, so *h*² = **0.70**. (b) 0.70 × 1.0 = **0.7 mm** above the mean. (c) Only additive genetic effects are transmitted; the parents' environmental and non-additive deviations are not. Their offspring regress towards the mean.
+
+**B5.** *R* = *h*² *S* = 0.48 × 8 = **3.8 units** per generation. With *h*² = 0.05: 0.05 × 8 = **0.4 units**. Selection works on heritable variation only; for traits with low *h*² (many fertility traits, for example) progress is slow.
+
+**B6.** (a) 800 000 × 0.05 = **40 000**; 800 000 × 10⁻⁵ = **8**; 800 000 × 5 × 10⁻⁸ = **0.04** (most likely none). (b) The points follow the diagonal: observed = expected −log10 p, with some scatter at the top.
+
+**B7.** (a) Cases: 700/2000 = **0.35**; controls: 560/2000 = **0.28**. OR = (700/1300)/(560/1440) = 0.538/0.389 = **1.38**.
+(b) Totals: T 1260, C 2740, N 4000. Expected T in cases = 2000 × 1260/4000 = 630, C in cases 1370; the same for controls. Each cell differs from its expectation by 70: χ² = 70²/630 + 70²/1370 + 70²/630 + 70²/1370 = 7.78 + 3.58 + 7.78 + 3.58 = **22.7**.
+(c) Yes at 5% (critical value 3.84; p ≈ 2 × 10⁻⁶). **Not** genome-wide significant: 22.7 < 29.7.
+(d) χ² grows in proportion to *N* for fixed frequencies, so we need 29.7/22.7 ≈ 1.3 times as many: about **2 600** people (1 300 cases, 1 300 controls).
+
+**B8.** (a) **False**: heritability describes variation within a given environment; a change of environment can shift the whole distribution (height rose about 10 cm in a century). (b) **False**: within-group heritability says nothing about between-group differences (Lewontin's seeds in two fields). (c) **True**: if everyone has the same genotype for a trait (five fingers), all the remaining variation is environmental and *h*² ≈ 0. (d) **True**: *h*² depends on the genetic and environmental variance in that population at that time.
+:::
+
+## Where this leads
+
+Complex traits bring together the whole course: Mendelian segregation at many loci, Hardy–Weinberg allele frequencies, linkage and LD, drift between populations, and gene regulation. The **ethics** module picks up polygenic scores, direct-to-consumer genomics and the misuse of heritability.
+
+**Next:** [Exercise in R](exercise-r.qmd): simulate the polygenic model, estimate *h*² from Galton's families with `lm`, and build a Manhattan plot from GWAS Catalog data with ggplot2.

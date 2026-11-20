@@ -1,0 +1,220 @@
+---
+title: "Exercise: linkage & recombination"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- recognise **linkage** in testcross data, sort the offspring into **parental** and **recombinant** classes, and compute the **recombination frequency** (RF);
+- tell **coupling** from **repulsion**, and predict testcross offspring from an RF and a phase;
+- explain why one crossover at the **four-strand stage** makes only half of the products recombinant, and why RF never exceeds **0.5**;
+- turn RFs into a **map** with gene order and distances in **centimorgans**, and convert between RF and map distance with **Haldane's** and **Kosambi's** map functions;
+- test for linkage with a **χ² test**;
+- look up the genetic map position of a *Drosophila* gene in **FlyBase**.
+
+## Background
+
+**Linkage.** Genes close together on one chromosome do not assort independently. In a testcross of a dihybrid, the two **parental** combinations (the allele combinations the dihybrid received from its parents) are more common than the two **recombinant** combinations.
+
+**Phase.** **Coupling** (cis): *A B* / *a b*. **Repulsion** (trans): *A b* / *a B*. The slash separates the two homologues. Phase changes which classes are parental, not the RF.
+
+**Recombination frequency.**
+$$\text{RF} = \frac{\text{recombinant offspring}}{\text{all offspring}}, \qquad 0 \le \text{RF} \le 0.5$$
+RF = 0.5 means unlinked (1 : 1 : 1 : 1 in a testcross).
+
+**Crossing over** happens between **non-sister chromatids** after DNA replication, at the **four-strand stage** of prophase I. One crossover makes 2 of the 4 products recombinant. A chromatid is recombinant for two loci if it has an **odd** number of crossovers between them.
+
+**Map distance.** 1 centimorgan (cM) = 1 crossover per 100 chromatids on average. For short intervals, 1 cM ≈ 1% RF. Map distance in morgans = ½ × mean number of chiasmata in the interval. Distances **add** along the chromosome; RF does not, for long intervals.
+
+**Map functions** (*d* in morgans; 1 M = 100 cM):
+
+| | RF from *d* | *d* from RF | Assumes |
+|---|---|---|---|
+| Haldane | RF = ½(1 − e^−2*d*^) | *d* = −½ ln(1 − 2 RF) | independent crossovers |
+| Kosambi | RF = ½ tanh(2*d*) | *d* = ¼ ln[(1 + 2 RF) / (1 − 2 RF)] | interference |
+
+**χ² test for linkage.** Check that each gene segregates 1 : 1. Then test parental vs recombinant against 1 : 1 (H~0~: unlinked), df = 1, critical value 3.84 at α = 0.05.
+
+## By hand
+
+**B1. (two-point testcross, maize)** In maize, *C* (coloured kernels) is dominant to *c* (colourless) and *Sh* (full kernels) is dominant to *sh* (shrunken). A plant from the cross *C Sh* / *C Sh* × *c sh* / *c sh* is testcrossed to *c sh* / *c sh*. The kernels on the ears are (invented numbers):
+
+| Kernels | Number |
+|---|---:|
+| coloured, full | 2008 |
+| colourless, shrunken | 1990 |
+| coloured, shrunken | 72 |
+| colourless, full | 80 |
+
+a) Write the genotype of the heterozygous parent with the slash notation. Is it in coupling or repulsion?
+b) Which classes are parental and which recombinant? Compute the RF.
+c) How far apart are the two genes, in cM?
+
+**B2. (repulsion, *Drosophila*)** *pr* (purple eyes) and *vg* (vestigial wings) are 11.5 cM apart (RF = 0.115). A purple female (*pr vg*^+^ / *pr vg*^+^) is crossed to a vestigial male (*pr*^+^ *vg* / *pr*^+^ *vg*). Their F~1~ daughters are testcrossed to *pr vg* / *pr vg* males.
+
+a) What is the genotype and phase of the F~1~ daughters?
+b) Predict the four offspring classes and their numbers among 1000 offspring.
+c) Which classes would be parental if the F~1~ had been made from wild type × purple vestigial instead?
+
+**B3. (four-strand stage, chiasmata)** In 100 meioses of a plant, a cytologist counts the chiasmata between two loci *A* and *B*: 64 meioses have none, 32 have one and 4 have two.
+
+a) What is the mean number of chiasmata in the interval? What is the map distance?
+b) A meiosis with one chiasma gives what fraction of recombinant products? A meiosis with two chiasmata gives, on average, what fraction? (Assume each chiasma involves two random non-sister chromatids.)
+c) What RF do you expect between *A* and *B*? Compare it with the map distance, and explain the difference.
+
+**B4. (Sturtevant's map, real data)** Sturtevant (1913) measured these percentages of recombinants between X-linked genes of *Drosophila*: *y*–*w* 1.0%, *w*–*v* 29.7%, *y*–*v* 32.2%, *v*–*m* 3.0%, *w*–*m* 33.7%.
+
+a) Find the gene order and draw a map with *y* at 0.
+b) Using the neighbouring intervals, where are *v* and *m*?
+c) *y*–*v* measured directly is 32.2%, but *y*–*w* + *w*–*v* is 30.7%. Give two reasons why they need not agree.
+
+**B5. (saturation)** In the same paper, *v*–*r* was 26.9%, which puts *r* at 30.7 + 26.9 = 57.6 on the map. But *y*–*r* measured directly was only 37.6%.
+
+a) Explain why the direct measurement is so much smaller.
+b) Two genes are 90 cM apart. What RF would you roughly expect in a testcross? Could you tell from that testcross alone that they are on the same chromosome?
+
+**B6. (map functions)** Use a calculator.
+
+a) Convert RF = 0.10, 0.25 and 0.40 into map distances with Haldane's function and with Kosambi's function.
+b) Two genes are 30 cM apart. What RF does each function predict?
+c) Why do the two functions agree for RF = 0.10 but not for RF = 0.40?
+
+**B7. (χ² test for linkage)** A testcross of *A a B b* gives 58 *A B*, 52 *a b*, 47 *A b* and 43 *a B* offspring.
+
+a) Check that each gene segregates 1 : 1.
+b) Test whether the genes are linked (α = 0.05). Give χ², df and your conclusion.
+c) Suppose the same proportions had been found among 2000 offspring. Repeat the test. What do you learn?
+
+**B8. (flies: males and the X)**
+
+a) A male *Drosophila* of genotype *pr vg* / *pr*^+^ *vg*^+^ is testcrossed to *pr vg* / *pr vg* females. What offspring do you expect, and why?
+b) For **X-linked** genes, you do not need a tester: a heterozygous female's **sons** show her gametes directly. Explain why.
+c) A female X^*y w*^ / X^+ +^ (yellow and white on one X, the wild-type alleles on the other) is crossed to a wild-type male. Among 1000 sons, how many do you expect in each class? (*y*–*w*: 1.0 cM, as Sturtevant found.)
+
+## Explore {#explore}
+
+Do the by-hand part first. The demo shows one **bivalent** at the four-strand stage, with two blue sister chromatids from one parent and two red from the other. Loci *A*, *B*, (*C*, *D*) are spaced evenly; blue chromatids carry the upper-case alleles. "1 meiosis" places crossovers at random: their number is Poisson, each falls at a random position and joins one random blue and one random red chromatid (no interference). Below, the four products are drawn spliced, and marked **P** (parental) or **R** (recombinant) for the two outermost loci. The table counts recombinant products for every pair of loci over all meioses so far and compares the observed RF with Haldane's prediction and with *d*/100. The plot shows RF against map distance. Changing the loci or the spacing resets the counts; the random sequence always starts from the same seed.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="crossover" data-loci="2" data-spacing="10"></div>
+<script src="../demos/dist/crossover.js"></script>
+```
+
+**E1.** The demo starts with two loci 10 cM apart. Press "1 meiosis" ten times and note, each time, the number of crossovers and the number of recombinant products. How many of the ten meioses had any crossover between *A* and *B*? When there was a crossover, were all four products recombinant?
+
+**E2.** Now press "+1000". What RF do you observe for *A*–*B*, and how does it compare with *d*/100 = 0.10 and with Haldane's 0.091? Look at the readout: how many meioses had two or more crossovers between *A* and *B*?
+
+**E3.** Choose 3 loci and set the spacing to 25 cM. Press "+1000". Compare the observed RF for *A*–*C* with the sum of the RFs for *A*–*B* and *B*–*C*. Which one adds up: the map distances or the RFs? Why?
+
+**E4.** Choose 4 loci and spacing 40 cM, so *A* and *D* are 120 cM apart, and press "+1000". What is the RF for *A*–*D*? From the readout, what fraction of meioses had at least two crossovers between *A* and *D*? Would a testcross tell you that *A* and *D* are on the same chromosome?
+
+**E5.** Press "simulate the curve". The grey points are 500 meioses at each distance from 5 to 200 cM. Above which distance is the RF always above 0.4? Use Haldane's formula to find the distance at which RF = 0.45, and check it against the points.
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** With the default seed, 9 of the 10 meioses have **no** crossover between *A* and *B* (all four products P). The fourth meiosis has **two** crossovers and gives **2 R + 2 P**: a three-strand double crossover. Never are all four products recombinant from one crossover: a crossover involves only two of the four chromatids. (With 10 cM, the expected number of chiasmata per bivalent is 0.2, so about 2 meioses in 10 have one; this run was a little unlucky.)
+
+**E2.** After "+1000" (on top of your 10 meioses): RF ≈ **0.081** (326/4040), against Haldane 0.091 and *d*/100 = 0.10. The readout shows about 845 meioses with no crossover, 150 with one, 14 with two and 1 with three or more: double crossovers are **rare** at 10 cM, so RF ≈ map distance. (The numbers depend slightly on how many single meioses you ran first.)
+
+**E3.** Observed: *A*–*B* 0.194, *B*–*C* 0.197, *A*–*C* **0.314**. The sum of the RFs would be 0.391, much more than 0.314. The map distances add (25 + 25 = 50 cM), but RFs do not: a chromatid with one crossover in *A*–*B* and one in *B*–*C* is recombinant for both short intervals but **parental** for *A*–*C*. Haldane's prediction for 50 cM is 0.316, matching the simulation.
+
+**E4.** *A*–*D*: RF ≈ **0.462** (Haldane 0.455). Of 1000 meioses, 281 had two and 406 had three or more crossovers between *A* and *D*: **69%** had at least two. An RF of 0.46 is hard to distinguish from 0.5 without a very large sample, so a two-point testcross would suggest the genes are unlinked. You would only see that they share a chromosome by mapping the genes in between (*B* and *C*, each 40 cM from its neighbours).
+
+**E5.** From about **80 cM** on, the points are at or above 0.4 (0.406 at 80 cM). Haldane: 0.45 = ½(1 − e^−2*d*^) → e^−2*d*^ = 0.1 → *d* = ½ ln 10 = **1.15 M = 115 cM**; the simulated point at 115 cM is 0.451. Beyond that, the points scatter between about 0.44 and 0.50: RF has saturated, and the scatter from 500 meioses is larger than the remaining slope.
+:::
+
+## Find it
+
+[FlyBase](https://flybase.org) is the database for *Drosophila* genes. Every gene has a **gene report** page. At the top, the **General Information** box gives the gene's symbol and name, and three locations: the **Recombination map** (the genetic map position, written as *chromosome*-*position in cM*, where chromosome 1 is the X), the **Cytogenetic map** (the band on the giant polytene chromosomes) and the **Sequence location** (in base pairs). Click "full details" next to the recombination map to jump to the section **Genomic Location and Detailed Mapping Data**, which lists published estimates of the position.
+
+**F1.** Open the gene report for *white*, [FBgn0003996](https://flybase.org/reports/FBgn0003996) (or type `w` in the search box on the FlyBase home page and pick the *D. melanogaster* gene *w*). Read the **Recombination map** field. What are the chromosome and the map position? Which chromosome is "1"?
+
+**F2.** Do the same for *yellow* ([*y*, FBgn0004034](https://flybase.org/reports/FBgn0004034)), *crossveinless* ([*cv*, FBgn0000394](https://flybase.org/reports/FBgn0000394)), *vermilion* ([*v*, FBgn0003965](https://flybase.org/reports/FBgn0003965)) and *forked* ([*f*, FBgn0262111](https://flybase.org/reports/FBgn0262111)). Make a table with the five genes in map order, and the distance between neighbours.
+
+a) What RF would you expect between *w* and *cv* in a testcross?
+b) *y* and *f* are both on the X. What RF would you expect between them? Use a map function.
+
+**F3.** On the *cv* page, click "full details" next to the recombination map. Under **Genomic Location and Detailed Mapping Data**, find the older recorded positions of *cv* and the publications they come from. Why does a gene have more than one recombination-map position?
+
+**F4.** Compare FlyBase with Sturtevant's 1913 map (*y* 0.0, *w* 1.0, *v* 30.7, *m* 33.7, *r* 57.6). Look up *miniature* ([*m*, FBgn0002577](https://flybase.org/reports/FBgn0002577)) and *rudimentary* ([*r*, FBgn0003189](https://flybase.org/reports/FBgn0003189)) as well. Is the gene order the same? Which interval differs most?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) *C Sh* / *c sh*: **coupling** (the two dominant alleles came in together from one parent).
+b) Parental: coloured full (*C Sh*, 2008) and colourless shrunken (*c sh*, 1990), the two largest classes. Recombinant: coloured shrunken (*C sh*, 72) and colourless full (*c Sh*, 80). Total 4150. RF = (72 + 80)/4150 = 152/4150 = **0.037 = 3.7%**.
+c) About **3.7 cM**. The interval is short, so RF ≈ map distance.
+
+**B2.** a) *pr vg*^+^ / *pr*^+^ *vg*: **repulsion**.
+b) Parental: purple (*pr vg*^+^) and vestigial (*pr*^+^ *vg*), each (1 − 0.115)/2 = 0.4425 → **442.5** each, about 443 and 442. Recombinant: wild type (*pr*^+^ *vg*^+^) and purple vestigial (*pr vg*), each 0.115/2 = 0.0575 → **57.5** each.
+c) Wild type and purple vestigial would be parental (coupling), as in the lecture example.
+
+**B3.** a) Chiasmata: (0 × 64 + 1 × 32 + 2 × 4)/100 = **0.40** per meiosis. Map distance = ½ × 0.40 = **0.20 M = 20 cM**.
+b) One chiasma: **½** of the products recombinant (2 of 4). Two chiasmata: on average also **½** (two-, three- and four-strand doubles give 0, 2, 2 and 4 recombinants out of 4, average 2).
+c) RF = ½ × (32 + 4)/100 = **0.18**: lower than the map distance (0.20), because the 4 meioses with two chiasmata contribute twice to the distance but only once (½) to the recombinants. Double crossovers are partly hidden.
+
+**B4.** a) *y*–*w* is small and *w*–*v* is large, and *y*–*v* ≈ *y*–*w* + *w*–*v*, so ***w* is between *y* and *v***. *v*–*m* is 3.0 and *w*–*m* (33.7) ≈ *w*–*v* + *v*–*m* (32.7), so ***v* is between *w* and *m***. Order: **y – w – v – m**.
+b) *y* 0, *w* 1.0, *v* 1.0 + 29.7 = **30.7**, *m* 30.7 + 3.0 = **33.7** (Sturtevant's own map).
+c) (1) **Sampling noise**: the RFs come from different crosses with different numbers of flies, each with its own random error. (2) **Double crossovers**: a long interval measured directly hides some double crossovers, so a direct RF tends to be smaller than the sum of shorter intervals. (Here the direct value is actually larger than the sum, so noise dominates: the 29.7% interval itself already hides some double crossovers.)
+
+**B5.** a) The *y*–*r* interval is long. Many chromatids have two (or another even number of) crossovers between *y* and *r*, which restores the parental combination. Those crossovers are invisible with only two markers. RF saturates towards 0.5, so it underestimates the distance.
+b) Haldane: ½(1 − e^−1.8^) = ½(1 − 0.165) = **0.42**; Kosambi: ½ tanh(1.8) = **0.47**. So 42–47%, close to 50%. From a testcross alone you could not distinguish this reliably from unlinked genes; you need genes in between (or a very large sample).
+
+**B6.** a)
+
+| RF | Haldane *d* = −½ ln(1 − 2 RF) | Kosambi *d* = ¼ ln[(1 + 2 RF)/(1 − 2 RF)] |
+|---:|---:|---:|
+| 0.10 | −½ ln 0.8 = **11.2 cM** | ¼ ln(1.2/0.8) = **10.1 cM** |
+| 0.25 | −½ ln 0.5 = **34.7 cM** | ¼ ln(1.5/0.5) = **27.5 cM** |
+| 0.40 | −½ ln 0.2 = **80.5 cM** | ¼ ln(1.8/0.2) = **54.9 cM** |
+
+b) *d* = 0.30 M. Haldane: ½(1 − e^−0.6^) = ½(1 − 0.549) = **0.226**. Kosambi: ½ tanh(0.6) = ½ × 0.537 = **0.269**.
+c) For small RF, double crossovers are rare whatever the model, so both functions give *d* ≈ RF. For large RF, the answer depends on how many hidden double crossovers you assume: many (Haldane, no interference) or fewer (Kosambi, interference). The difference grows quickly as RF approaches 0.5.
+
+**B7.** a) Gene *A*: *A* 58 + 47 = 105, *a* 52 + 43 = 95. χ² = (105 − 100)²/100 + (95 − 100)²/100 = 0.5. Gene *B*: *B* 58 + 43 = 101, *b* 52 + 47 = 99, χ² = 0.02. Both fine (< 3.84).
+b) Parental (*A B* + *a b*) = 110, recombinant (*A b* + *a B*) = 90, expected 100 : 100. χ² = (10² + 10²)/100 = **2.0**, df = 1, p ≈ 0.16 > 0.05. **Not significant**: no evidence for linkage (RF estimate 0.45).
+c) With 2000 offspring: 1100 : 900, expected 1000 : 1000. χ² = (100² + 100²)/1000 = **20**, df = 1, p < 0.001: **linked**, RF ≈ 0.45. Loose linkage is real but needs large samples to detect. The χ² value grows in proportion to the sample size for the same proportions.
+
+**B8.** a) Only the two parental classes, ½ wild type and ½ purple vestigial, with **no recombinants**, because *Drosophila* males have no meiotic crossing over.
+b) A son gets his **X from his mother** and his Y from his father. The Y carries no alleles of X-linked genes, so the son's phenotype for X-linked traits shows exactly which X (and so which gamete) he got from his mother. Males are hemizygous for the X (*Chromosome theory & sex linkage*).
+c) Parental: yellow white (X^*y w*^ Y) and wild type (X^+ +^ Y), each (1 − 0.01)/2 → **495** each. Recombinant: yellow only (X^*y* +^ Y) and white only (X^+ *w*^ Y), each 0.005 → **5** each.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+Checked on FlyBase gene reports on 2026-11-20. Click path: [flybase.org](https://flybase.org) → search box → gene symbol → the *D. melanogaster* gene report → General Information box → **Recombination map**.
+
+**F1.** *w*: **1-1.5**. Chromosome **1 = the X chromosome**, position **1.5 cM** from the tip of the X. (The same box gives the cytogenetic band 3B6 and the sequence location on the X.)
+
+**F2.**
+
+| Gene | Name | Recombination map | Distance to next |
+|---|---|---|---:|
+| *y* | yellow | 1-0 | 1.5 |
+| *w* | white | 1-1.5 | 10.5 |
+| *cv* | crossveinless | 1-12 | 21 |
+| *v* | vermilion | 1-33 | 24 |
+| *f* | forked | 1-57 | |
+
+a) *w*–*cv* = 12 − 1.5 = 10.5 cM, so about **10%** recombinants (Haldane: 0.095).
+b) *y*–*f* = **57 cM**. RF is certainly not 57%: Haldane gives ½(1 − e^−1.14^) = **0.34**, Kosambi ½ tanh(1.14) = **0.41**. Either way below 0.5, but loosely linked.
+
+**F3.** Under **Genomic Location and Detailed Mapping Data**, *cv* has several recombination-map positions: **1-13.7** (Buzzati-Traverso, 1947), **1-14.4** (Comeron et al., 2012), and the FlyBase estimate **1-12** (FlyBase, 2016) shown at the top. The positions differ because they come from **different experiments**: different crosses, fly strains, sample sizes and marker genes. Recombination rates also vary somewhat between strains and conditions. The FlyBase summary value is an estimate that makes the map consistent with the sequence positions of many genes. The differences are a few cM; the order of genes is stable.
+
+**F4.** FlyBase: *y* 1-0, *w* 1-1.5, *v* 1-33, *m* 1-36, *r* 1-54. Sturtevant: 0.0, 1.0, 30.7, 33.7, 57.6. The **order is the same**, and most positions are within 3 cM. The *v*–*r* interval differs most: 26.9 cM in 1913 against 21 cM today, so *r* sits at 54 instead of 57.6. Sturtevant's *v*–*r* value came from 405 flies only, and long intervals are hard to measure precisely. (FlyBase's full details for *r* also list 1-54.5 from Lindsley and Grell, 1968.)
+:::
+
+## Where this leads
+
+With two markers, double crossovers are invisible; with three, they show up as the rarest class of offspring. In **Three-point crosses** you use them to order three genes in one experiment and to measure **interference**, which explains why Kosambi's map function fits better than Haldane's. In **Human linkage & LOD scores** the same RF is estimated from families instead of testcrosses, with the LOD score replacing the χ² test.
+
+**Next:** [Exercise in R](exercise-r.qmd): write `cM_to_rf()` and `rf_to_cM()` with a default `method = "haldane"`, plot both map functions, and re-analyse Sturtevant's 1913 data.

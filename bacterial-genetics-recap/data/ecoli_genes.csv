@@ -1,0 +1,19 @@
+marker,gene,product,start,end,strand,source
+thr,thrA,fused aspartate kinase/homoserine dehydrogenase 1,337,2799,+,NCBI Gene 945803; NC_000913.3; retrieved 2026-11-20
+leu,leuA,2-isopropylmalate synthase,81958,83529,-,NCBI Gene 947465; NC_000913.3; retrieved 2026-11-20
+azi,secA,protein translocation ATPase,108279,110984,+,NCBI Gene 944821; NC_000913.3; retrieved 2026-11-20
+ton,fhuA,ferrichrome outer membrane transporter/phage receptor,167484,169727,+,NCBI Gene 944856; NC_000913.3; retrieved 2026-11-20
+pro,proA,glutamate-5-semialdehyde dehydrogenase,261503,262756,+,NCBI Gene 946680; NC_000913.3; retrieved 2026-11-20
+lac,lacZ,beta-galactosidase,363231,366305,-,NCBI Gene 945006; NC_000913.3; retrieved 2026-11-20
+pur,purE,N(5)-carboxyaminoimidazole ribonucleotide mutase,552591,553100,-,NCBI Gene 949031; NC_000913.3; retrieved 2026-11-20
+gal,galK,galactokinase,788831,789979,-,NCBI Gene 945358; NC_000913.3; retrieved 2026-11-20
+trp,trpA,tryptophan synthase subunit alpha,1316416,1317222,-,NCBI Gene 946204; NC_000913.3; retrieved 2026-11-20
+his,hisG,ATP phosphoribosyltransferase,2090192,2091091,+,NCBI Gene 946549; NC_000913.3; retrieved 2026-11-20
+thy,thyA,thymidylate synthase,2964361,2965155,-,NCBI Gene 949035; NC_000913.3; retrieved 2026-11-20
+str,rpsL,30S ribosomal subunit protein S12,3474178,3474552,-,NCBI Gene 947845; NC_000913.3; retrieved 2026-11-20
+mal,malT,DNA-binding transcriptional activator MalT,3553085,3555790,+,NCBI Gene 947921; NC_000913.3; retrieved 2026-11-20
+xyl,xylA,xylose isomerase,3729443,3730765,-,NCBI Gene 948141; NC_000913.3; retrieved 2026-11-20
+ilv,ilvC,ketol-acid reductoisomerase (NADP(+)),3957970,3959445,+,NCBI Gene 948286; NC_000913.3; retrieved 2026-11-20
+met,metB,O-succinylhomoserine(thiol)-lyase/O-succinylhomoserine lyase,4128672,4129832,+,NCBI Gene 948434; NC_000913.3; retrieved 2026-11-20
+arg,argE,acetylornithine deacetylase,4153696,4154847,-,NCBI Gene 948456; NC_000913.3; retrieved 2026-11-20
+pyr,pyrB,aspartate carbamoyltransferase catalytic subunit,4471460,4472395,-,NCBI Gene 948767; NC_000913.3; retrieved 2026-11-20

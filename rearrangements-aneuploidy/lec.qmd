@@ -1,0 +1,292 @@
+---
+title: "Rearrangements & aneuploidy"
+subtitle: "Part 5: Chromosomes in detail. When the structure or the number of chromosomes changes"
+author: "Basic and molecular genetics (5MO104)"
+format:
+  revealjs:
+    theme: [simple, ../theme.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    transition: none
+    history: false
+    highlight-style: github
+    code-overflow: wrap
+    code-line-numbers: false
+    incremental: false
+    chalkboard: false
+    menu: true
+    html-math-method: katex
+---
+
+## About this lecture
+
+The previous lecture built a normal chromosome: one centromere, two telomeres, a fixed band pattern. This one is about what happens when **structure** or **number** goes wrong, and why the consequences show up in the next generation.
+
+- **Deletions** and **duplications**: dosage changes; recurrent ones caused by repeats.
+- **Inversions**: no DNA lost, yet crossovers inside them give unbalanced gametes.
+- **Translocations**: reciprocal and Robertsonian; how the carrier's chromosomes segregate; the Philadelphia chromosome.
+- **Aneuploidy**: nondisjunction in meiosis I and II; trisomy 21 and the **maternal age effect**; sex-chromosome aneuploidies.
+- **Polyploidy**: crops with whole extra genomes, and why triploids are sterile.
+
+Book: Hartwell, *Genetics: From Genes to Genomes*, the chapter on chromosomal rearrangements and changes in chromosome number.
+
+::: notes
+The genetic thread through the whole lecture is meiosis. A rearrangement or a missing chromosome in one cell is a cytology fact; what makes it genetics is what the carrier passes on. Many carriers of a balanced rearrangement are perfectly healthy, and the problem appears only in their children or as reduced fertility. Students know mitosis, meiosis and nondisjunction from Part 2 (chromosome theory); today's demo is the same meiosis demo, in its nondisjunction mode. Keep the key word "balanced" in view: does a cell or gamete have the right amount of every part of the genome, or not?
+:::
+
+## Four kinds of rearrangement {.smaller}
+
+![](fig01-rearrangement-types.svg){width="66%" fig-align="center"}
+
+A rearrangement starts with **double-strand breaks** that are rejoined the wrong way, or with **recombination between repeats** at the wrong place. **Balanced** rearrangements (inversions, reciprocal translocations) keep every gene, just in a new order; **unbalanced** ones (deletions, duplications) change the amount.
+
+::: notes
+Read the figure row by row. The letters are blocks of genes; the red dot is the centromere. Deletion: a segment is missing. Duplication: a segment is present twice, here in tandem. Inversion: a segment is cut out and put back the other way round; paracentric if the centromere is outside the inverted segment, pericentric if it is inside (which can move the centromere and change the arm ratio). Reciprocal translocation: two non-homologous chromosomes swap ends. The notation from the last lecture applies: del, dup, inv, t, with the breakpoints in parentheses. Ask the room which of these can be seen in a G-banded karyotype: those that change the band pattern by more than a few megabases.
+:::
+
+## Recurrent rearrangements come from repeats {.smaller}
+
+![](fig02-nahr.svg){width="80%" fig-align="center"}
+
+**Non-allelic homologous recombination** (NAHR): crossing over between two similar **low-copy repeats** that are not at the same position. It gives a **deletion** and a reciprocal **duplication** of exactly the segment between the repeats.
+
+::: notes
+Low-copy repeats, also called segmental duplications, are stretches of more than about 10 kb that are more than 95 percent identical and occur at several places in the genome. When homologous chromosomes pair at the wrong copy, a crossover between them is unequal. Because the breakpoints are set by the repeats, unrelated patients carry nearly identical deletions; that is why these are called recurrent genomic disorders and why they have fixed names. 22q11.2 deletion syndrome is the most common, around 1 in 3000 to 1 in 6000 births. The 17p12 pair is the cleanest example of reciprocity: the duplication of a 1.4 Mb segment containing PMP22 causes Charcot–Marie–Tooth disease type 1A, and the deletion of the same segment causes HNPP, a different nerve disease. One gene, three copies versus one copy, two diseases. Sturtevant's Bar eye in Drosophila (1925) was the first unequal crossing over to be studied.
+:::
+
+## Deletions {.smaller}
+
+A heterozygote for a deletion has only **one** copy of the genes in the deleted segment.
+
+- **Haploinsufficiency**: for some genes, one copy is not enough. Large deletions are usually harmful; homozygous deletions are usually lethal.
+- **Pseudodominance**: a recessive allele on the normal homologue is **expressed**, because the deletion uncovers it. *Drosophila* geneticists used overlapping deletions to **map** genes: a recessive mutation is uncovered only by deletions that remove its locus.
+- In meiosis, the normal homologue forms a **deletion loop** where it has no partner.
+
+| Human deletion syndrome | Region | Typical size | Key gene(s) |
+|---|---|---|---|
+| Cri-du-chat | 5p15.2 → 5pter | varies | several |
+| 22q11.2 deletion (DiGeorge) | 22q11.21 | ≈ 2.5–3 Mb | *TBX1* (heart, face) |
+| Williams syndrome | 7q11.23 | ≈ 1.5–1.8 Mb | *ELN* (aortic stenosis) |
+
+::: notes
+Pseudodominance is the genetic signature of a deletion: a recessive phenotype appears in a heterozygote. It made deletion mapping possible: cross a recessive mutant to a series of flies carrying overlapping deletions, and the mutation lies in the region removed by every deletion that uncovers it. The same logic, with molecular deletions in yeast or bacteria, is still used. In humans, the most common deletion syndromes arise by NAHR, as on the previous slide, mostly as new mutations. A deletion syndrome is a contiguous gene syndrome: many genes are lost, and some features can be traced to single genes, such as the narrowing of the aorta in Williams syndrome to the loss of one copy of the elastin gene ELN. Students find these in ClinVar and MedGen in the exercise. Deletions below about 5 Mb are invisible in a routine karyotype; they are found with microarrays or sequencing.
+:::
+
+## Duplications {.smaller}
+
+- **Dosage**: three copies of a gene instead of two can change the phenotype. *Drosophila* **Bar** eye is a tandem duplication; flies with the segment three times on one chromosome (double-Bar) have even smaller eyes. Human **CMT1A** is a duplication of *PMP22*.
+- In meiosis, the duplicated segment forms a **duplication loop**, and the repeat makes further **unequal crossing over** possible: duplications beget duplications.
+- **Evolution**: a duplicated gene is free to change. One copy keeps the old job, the other can gain a new one. Gene families arose like this, for example the **α- and β-globin** genes, and the red and green opsin genes on the X.
+
+Duplications are usually less harmful than deletions of the same size: having a little too much is better tolerated than too little.
+
+::: notes
+Bar is the classic: Sturtevant showed that Bar reverted and also gave double-Bar at a low rate, and explained both by unequal crossing over between the tandem copies; Bridges later saw the duplicated bands in salivary gland chromosomes. The dosage point links to aneuploidy later today: a trisomy is a duplication of a whole chromosome. The evolutionary point links back to the T2T genome: many of the new protein-coding genes in T2T-CHM13 are in recent segmental duplications that the old reference could not resolve. Red–green colour blindness often results from unequal crossing over between the tandem opsin genes on the X, which is why it is so common in men.
+:::
+
+## Inversions {.smaller}
+
+An inversion **loses nothing**: an inversion homozygote, or a heterozygote, usually has a normal phenotype. Exceptions: a breakpoint inside a gene, or a gene moved next to heterochromatin (position-effect variegation, previous lecture).
+
+| | **Paracentric** | **Pericentric** |
+|---|---|---|
+| Centromere | outside the inverted segment | inside it |
+| Band pattern | changes within one arm | can change the arm ratio |
+| Crossover in the loop gives | a **dicentric** + an **acentric** | two chromosomes with a **duplication** and a **deficiency** |
+
+In a heterozygote, the two homologues can only pair gene by gene if one of them forms an **inversion loop**.
+
+A common harmless human variant is the pericentric inversion of chromosome 9, inv(9)(p12q13), found in about 1–3% of people.
+
+::: notes
+The genetic problem with inversions arises in heterozygotes during meiosis, which is the next slide. Inversion homozygotes pair normally and have no problem. Over evolution, inversions are common differences between species: humans and chimpanzees differ by several pericentric inversions, and many Drosophila populations carry inversion polymorphisms that keep favourable combinations of alleles together. Inversions are usually detected by a change in band order, or today by sequencing with long reads.
+:::
+
+## Why crossovers in inversions make bad gametes {.smaller}
+
+![](fig03-inversion-loop.svg){width="88%" fig-align="center"}
+
+- **Paracentric**: the crossover chromatids become a **dicentric** (torn at anaphase I) and an **acentric** fragment (lost). Gametes with them are unbalanced.
+- **Pericentric**: the crossover chromatids each have a **duplication** of one end and a **deficiency** of the other.
+- Either way, only the **non-crossover** chromatids give viable offspring. Inversion heterozygotes have reduced fertility, and recombinants for genes inside the inversion seem to be **suppressed**.
+
+::: notes
+Derive the products on the board using the figure. Normal: centromere A B C D E; inverted: centromere A D C B E. In the loop, one crossover between B and C joins the normal chromatid's centromere part, A B, to the inverted chromatid's centromere part read backwards, C D A: a chromosome with a centromere at each end. The leftover pieces, E D C on one side and B E on the other, join into a fragment with no centromere. The dicentric is stretched between the poles at anaphase I and breaks; the acentric is lost. In animals, the cell often directs the dicentric into the polar body, so the egg can be fine, but in plants and in males fertility drops. Crossing over itself is not suppressed: it happens, but its products die. Geneticists use this: Drosophila balancer chromosomes carry several overlapping inversions, a dominant visible marker and a recessive lethal, and keep a mutation on the homologue intact for generations without selection.
+:::
+
+## Reciprocal translocations {.smaller}
+
+![](fig04-translocation-segregation.svg){width="86%" fig-align="center"}
+
+A balanced carrier is usually healthy. At meiosis I the four chromosomes pair as a **cross** (quadrivalent). Each gamete gets two of the four, and only **alternate** segregation gives balanced gametes.
+
+::: notes
+The cross forms because each part of each chromosome pairs with its homologous part. Then two of the four go to each pole. Alternate segregation, normal plus normal and translocation plus translocation, gives two kinds of balanced gamete: completely normal, and a balanced carrier like the parent. Adjacent-1 keeps homologous centromeres apart but puts one normal and one translocated chromosome together: each gamete has a duplication of one tip and a deficiency of the other. Adjacent-2, where homologous centromeres go to the same pole, is rarer and also unbalanced. In plants this shows up as semisterility: about half of the pollen and ovules abort. In human carriers it shows up as recurrent miscarriage or a child with an unbalanced karyotype. How often each mode happens is measured, not predicted from first principles; if all six ways of sending two chromosomes to each pole were equally likely, a third of gametes would be balanced, and the R exercise simulates exactly that. Translocations also cause pseudolinkage: genes near the breakpoints on the two different chromosomes are inherited together, because only alternate gametes survive.
+:::
+
+## Robertsonian translocations {.smaller}
+
+Two **acrocentric** chromosomes (13, 14, 15, 21, 22) fuse at or near their centromeres. The long arms survive as one chromosome; the tiny short arms (repeats and rDNA) are lost without harm.
+
+- A carrier has **45 chromosomes**, e.g. 45,XX,rob(14;21), and is healthy. About **1 in 1000** people carry a Robertsonian translocation.
+- Their gametes, from a trivalent (14, 21, rob):
+
+| Gamete | Zygote with a normal gamete | Outcome |
+|---|---|---|
+| 14 + 21 | 46, normal | healthy |
+| rob(14;21) | 45, balanced carrier | healthy |
+| rob(14;21) + 21 | 46, but **three copies of 21q** | **translocation Down syndrome** |
+| 14 alone | monosomy 21 | lethal |
+| rob(14;21) + 14 | trisomy 14 | lethal |
+| 21 alone | monosomy 14 | lethal |
+
+About **4%** of Down syndrome is translocation Down syndrome, and it can **recur** in a family.
+
+::: notes
+Students met acrocentric chromosomes last lecture; the five pairs carry the rDNA on their short arms, so losing two short arms is harmless. The trivalent in the carrier can send the three chromosomes to the poles in several ways; the table lists the six two-plus-one outcomes. Several end in early miscarriage. The important clinical difference from ordinary trisomy 21: a translocation trisomy has 46 chromosomes, and one of the parents may be a carrier, so the recurrence risk is much higher than for free trisomy 21. Empirically, the risk of a child with Down syndrome is about 10 to 15 percent when the mother carries rob(14;21), and about 1 percent when the father does. A carrier of rob(21;21) can only make gametes with two copies of 21q or none, so every pregnancy that survives has Down syndrome. That is why a karyotype is done for every child with Down syndrome: it tells the family whether the risk can recur.
+:::
+
+## The Philadelphia chromosome {.smaller}
+
+**Chronic myeloid leukaemia (CML)**: in most patients, the leukaemic cells carry **t(9;22)(q34;q11)**.
+
+- The small derivative chromosome 22, **der(22)**, is the **Philadelphia chromosome** (Nowell and Hungerford, 1960; shown to be a translocation by Janet Rowley in 1973).
+- The breakpoints fall inside two genes: ***BCR*** on 22q11 and ***ABL1*** on 9q34. The joint makes a **fusion gene**, *BCR*::*ABL1*.
+- The fusion protein is a tyrosine kinase that is **always on**, and drives the cells to divide.
+- **Imatinib** (2001) blocks the kinase: one of the first drugs designed against the product of a specific mutation.
+
+This is a **somatic** rearrangement in blood stem cells: it is not inherited.
+
+::: notes
+This is the clearest case of a rearrangement whose effect comes from the breakpoint itself rather than from dosage. Neither BCR nor ABL1 alone is the problem; the fusion is a new gene, with the start of BCR (which makes it dimerise) and the kinase domain of ABL1 (which normally is tightly regulated). The modern notation BCR::ABL1 with a double colon means a fusion. Students look up both genes in NCBI Gene in the exercise; note that BCR lies only about 2 Mb from the 22q11.2 deletion region, so 22q11 shows up twice today for two very different reasons. Cancer genetics in Part 7 comes back to fusion genes and oncogenes. Detection: karyotype, FISH with probes for both genes, or RT-PCR for the fusion transcript, which also measures how well treatment works.
+:::
+
+## Aneuploidy: nondisjunction {.smaller}
+
+**Euploid**: whole sets of chromosomes (n, 2n, 3n…). **Aneuploid**: one or a few chromosomes too many or too few: **monosomy** (2n − 1), **trisomy** (2n + 1), nullisomy (2n − 2), tetrasomy (2n + 2).
+
+Most aneuploidy comes from **nondisjunction**: chromosomes that fail to separate in meiosis.
+
+| Error in | What fails to separate | Gametes from that meiosis |
+|---|---|---|
+| **Meiosis I** | the **homologues** | 2 × n + 1 (one copy from each grandparent), 2 × n − 1 |
+| **Meiosis II** | the **sister chromatids** in one cell | 1 × n + 1 (two identical copies), 1 × n − 1, 2 × n |
+
+A trisomic zygote from an MI error has **two different** homologues from that parent; one from an MII error has **two copies of the same** homologue (apart from crossovers). DNA markers near the centromere tell which division failed.
+
+::: notes
+Students met nondisjunction with Bridges' X chromosomes in Drosophila in Part 2; now we use it on autosomes and in humans. Count the gametes on the board, or use the demo on the next slide. The marker logic is how we know that most trisomy 21 is maternal and mostly from meiosis I: genotype the child, the mother and the father at polymorphic markers on chromosome 21. If the child has two maternal alleles that differ at markers near the centromere, the two chromosomes came from different homologues, so meiosis I. Crossing over makes this rule apply to centromere-near markers only, because a crossover can make the two sister chromatids differ further out. Mitotic nondisjunction after fertilisation gives mosaics, with normal and aneuploid cell lines side by side; about 1 to 2 percent of Down syndrome is mosaic.
+:::
+
+## Try it: nondisjunction in meiosis I and II {.smaller}
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="meiosis" data-mode="nondisjunction" data-names="21,2" data-division="1"></div>
+<script src="../demos/dist/meiosis.js"></script>
+```
+
+::: notes
+Interactive demo from Part 2 (chromosome theory), here in its nondisjunction mode with two chromosome pairs, labelled 21 and 2; only chromosome 21 nondisjoins. Blue is the homologue this person got from their father, red the one from their mother. Step through with Next. In meiosis I mode, both homologues go to the same pole at anaphase I, and the four gametes are two with both a blue and a red 21 (labelled n + 1 = 3) and two with none (n − 1 = 1). Switch to meiosis II mode and step again: meiosis I is normal, then in one cell the sister chromatids stay together, giving one gamete with two identical copies, one with none and two normal ones. Ask: if this person is a woman and the egg with two 21s is fertilised by a normal sperm, which grandparent's chromosome 21 does the child carry in each case? Point out that chromosome 2 segregates normally, so each gamete is n + 1 or n − 1 for chromosome 21 only. The demo has no crossing over, which is a simplification.
+:::
+
+## Human aneuploidies {.smaller}
+
+| Karyotype | Name | Approximate frequency | Notes |
+|---|---|---|---|
+| 47,+21 | **Down syndrome** | ≈ 1 in 700 births without screening | the most common viable autosomal trisomy |
+| 47,+18 | Edwards syndrome | ≈ 1 in 5000 births | most die in the first year |
+| 47,+13 | Patau syndrome | ≈ 1 in 10 000 births | most die in the first year |
+| 45,X | **Turner** syndrome | ≈ 1 in 2500 girls | ≈ 99% of 45,X conceptions miscarry |
+| 47,XXY | **Klinefelter** syndrome | ≈ 1 in 600 boys | tall, infertile; often undiagnosed |
+| 47,XYY | | ≈ 1 in 1000 boys | usually few signs |
+| 47,XXX | triple X | ≈ 1 in 1000 girls | usually few signs |
+
+- **No autosomal monosomy** survives to birth, and of the autosomal trisomies only 13, 18 and 21 (the chromosomes with the fewest genes) do.
+- About **half** of first-trimester miscarriages are chromosomally abnormal; trisomy 16 is the most common, and is never born alive.
+- Sex-chromosome aneuploidies are tolerated because **extra X chromosomes are inactivated**, and the Y carries few genes.
+
+::: notes
+The frequencies are rounded and vary between studies and with maternal age and prenatal screening; the point is the order of magnitude and the pattern. Gene dosage explains the pattern: chromosome 21 is one of the smallest and most gene-poor, so three copies are survivable; the gene-rich chromosomes are not. Chromosome 16 trisomy, the most common trisomy in miscarriages, shows how often aneuploid embryos form, and how strongly selection removes them; aneuploidy in human eggs is far more frequent than in most other species studied. For the sex chromosomes, X inactivation (Part 6) silences all but one X, so 47,XXY and 47,XXX are mild. Turner syndrome is the only viable monosomy, but even it is mostly lethal before birth: survivors are thought to be often mosaic.
+:::
+
+## The maternal age effect {.smaller}
+
+![](fig05-maternal-age.svg){width="72%" fig-align="center"}
+
+The risk of trisomy 21 is ≈ 1 in 1000 pregnancies for mothers aged 20–29 and ≈ 1 in 47 at 40–44. Monosomy X shows **no** such rise.
+
+::: notes
+The data are from a Danish nationwide registry of more than half a million pregnancies followed after first-trimester screening, including diagnoses made before birth, so the numbers are higher than live-birth figures (many affected pregnancies end in miscarriage or termination). On a log scale the trisomy 21 curve rises more than twenty-fold from the twenties to the early forties; trisomy 18 rises even more steeply. Monosomy X is flat: most 45,X cases have lost the paternal sex chromosome, so the mother's age does not matter. Triploidy, mostly from two sperm fertilising one egg, is flat too. The students reproduce this plot in R. Why the mother? About 90 percent of trisomy 21 is maternal in origin, most of it from meiosis I. Human oocytes enter meiosis I before the mother is born and stay arrested in prophase I, with homologues held together by crossovers and cohesin, for up to 50 years. The cohesin is not renewed, so it wears out with age, and the homologues come apart early or go to the same pole. Sperm are made continuously from stem cells, and paternal age has little effect on trisomy.
+:::
+
+## Polyploidy {.smaller}
+
+**Polyploids** have three or more complete sets: triploid (3n), tetraploid (4n) and so on. Rare in animals, common in plants: much of our food is polyploid.
+
+| Crop | Ploidy | Origin |
+|---|---|---|
+| Bread wheat | 6x = 42 (AABBDD) | **allo**polyploid: three ancestral species |
+| Cotton, rapeseed | 4x | allopolyploid of two species |
+| Potato | 4x = 48 | **auto**polyploid: doubled sets of one species |
+| Cultivated strawberry | 8x = 56 | allopolyploid |
+| Banana (Cavendish), seedless watermelon | **3x** | sterile triploids, seedless |
+
+- **Autopolyploid**: extra sets from the same species. **Allopolyploid**: sets from two or more species, after hybridisation and chromosome doubling.
+- Polyploids are often bigger (larger cells), and allopolyploids are fertile because each chromosome has a partner from its own species.
+
+::: notes
+Most flowering plants have a polyploid ancestor somewhere in their history. Bread wheat combines the genomes of three wild grasses, through two rounds of hybridisation and doubling; each of its 21 chromosome types comes in an A, a B and a D version, and they pair only with their exact partner, so meiosis works like a diploid's. Polyploidy can be induced with colchicine, which blocks the spindle so the chromosomes double without cell division. Seedless watermelons are made by crossing a tetraploid with a diploid: the triploid offspring are sterile, which is the point. In animals, polyploidy is rare, partly because it disturbs sex determination; triploid human conceptions occur in about 1 to 2 percent of pregnancies and miscarry. Farmed triploid oysters are sterile and put their energy into growth rather than spawning.
+:::
+
+## Why triploids are sterile {.smaller}
+
+In a triploid, each chromosome has **three** homologues. At meiosis I, a trivalent sends **2** copies to one pole and **1** to the other, at random.
+
+For each chromosome type, the gamete gets 1 or 2 copies with probability ½ each. With *x* chromosome types, a gamete is **balanced** (euploid: all 1 or all 2) with probability
+
+$$P(\text{balanced}) = 2 \times \left(\tfrac{1}{2}\right)^x$$
+
+| | *x* | *P*(balanced gamete) |
+|---|---:|---:|
+| a toy triploid | 3 | 2/8 = 0.25 |
+| banana, 2n = 3x = 33 | 11 | 2/2048 ≈ 0.001 |
+| triploid watermelon, 2n = 3x = 33 | 11 | ≈ 0.001 |
+
+Almost every gamete is aneuploid, so triploids are (nearly) **sterile**. Bananas are propagated by cuttings.
+
+::: notes
+This is the product rule from Part 1 at work. Each trivalent is an independent event, so the probability that all x chromosome types happen to give one copy is one half to the power x, and the same for all giving two copies; add them. With 11 chromosome types it is about one in a thousand, so seeds almost never form; the black specks in a banana are aborted ovules. The same calculation explains why autotetraploids have reduced fertility, and why allopolyploids, which pair as bivalents, do not. The R exercise checks the formula by simulation with rbinom and replicate. The assumption that the extra copy goes to either pole at random is a simplification; trivalents can also fall apart into a bivalent and an unpaired univalent, which makes things worse rather than better.
+:::
+
+## Summary {.smaller}
+
+| Concept | Key fact |
+|---|---|
+| Deletion / duplication | unbalanced; dosage effects; recurrent ones by NAHR between low-copy repeats (22q11.2, 7q11.23, 17p12) |
+| Pseudodominance | a deletion uncovers a recessive allele on the other homologue: used for deletion mapping |
+| Inversion | balanced; crossover in the loop → dicentric + acentric (paracentric) or dup + def (pericentric); recombinants "suppressed" |
+| Reciprocal translocation | balanced carrier; quadrivalent; only alternate segregation gives balanced gametes; semisterility |
+| Robertsonian translocation | two acrocentrics fuse; carrier has 45 chromosomes; can give translocation Down syndrome |
+| Philadelphia chromosome | t(9;22) in CML; *BCR*::*ABL1* fusion kinase; somatic |
+| Nondisjunction | MI: n + 1 gametes carry both homologues; MII: two copies of one |
+| Trisomy 21 | ≈ 90% maternal, mostly MI; risk rises steeply with maternal age |
+| Sex-chromosome aneuploidy | 45,X; 47,XXY; 47,XYY; 47,XXX; tolerated thanks to X inactivation |
+| Polyploidy | auto- and allopolyploids; triploids sterile: P(balanced) = 2 · (½)^*x*^ |
+
+::: notes
+The revision sheet. The common thread: balanced versus unbalanced. A balanced rearrangement is usually harmless for its carrier, but meiosis turns it into unbalanced gametes, so the problems show up as reduced fertility, miscarriages and affected children. Aneuploidy and polyploidy are the same principle at the level of whole chromosomes and whole sets.
+:::
+
+## Where this leads
+
+- **Next: Bacterial genetics (recap).** A very different kind of chromosome: one circle, no meiosis, but genes moved between cells by conjugation, transduction and transformation.
+- **Organelle inheritance.** Mitochondria have their own chromosome, inherited only through the egg, and their own kind of dosage: heteroplasmy.
+- **Part 6: Eukaryotic regulation.** X inactivation, the dosage compensation that makes sex-chromosome aneuploidy survivable.
+- **Part 7: Cancer genetics.** Fusion genes like *BCR*::*ABL1* and the loss of chromosome segments in tumours.
+- **Ethics.** Prenatal screening for trisomies raises its own questions.
+
+::: notes
+Point forward. The exercise has pen-and-paper problems on the products of inversion and translocation heterozygotes, nondisjunction, and the triploid formula; the meiosis demo in nondisjunction mode; database tasks on 22q11.2 deletion, Williams syndrome and BCR and ABL1. The R part plots the Danish maternal-age data on a log scale and simulates the gametes of a translocation carrier and a triploid.
+:::

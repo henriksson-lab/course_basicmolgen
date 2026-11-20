@@ -57,6 +57,8 @@ website:
                 href: intro-genetics/quiz.qmd
               - text: "Exercise"
                 href: intro-genetics/exercise.qmd
+              - text: "Exercise in R"
+                href: intro-genetics/exercise-r.qmd
           - section: "Mendel: segregation & assortment"
             contents:
               - text: "Lecture (slides)"
@@ -67,6 +69,8 @@ website:
                 href: mendel/exercise.qmd
               - text: "Demo: Punnett square & crosses"
                 href: mendel/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: mendel/exercise-r.qmd
           - section: "Probability & the χ² test"
             contents:
               - text: "Lecture (slides)"
@@ -77,6 +81,8 @@ website:
                 href: probability-chisq/exercise.qmd
               - text: "Demo: χ² goodness of fit"
                 href: probability-chisq/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: probability-chisq/exercise-r.qmd
           - section: "Extensions to Mendel"
             contents:
               - text: "Lecture (slides)"
@@ -87,6 +93,8 @@ website:
                 href: mendel-extensions/exercise.qmd
               - text: "Demo: epistasis in a pathway"
                 href: mendel-extensions/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: mendel-extensions/exercise-r.qmd
           - section: "Pedigree analysis"
             contents:
               - text: "Lecture (slides)"
@@ -97,6 +105,284 @@ website:
                 href: pedigrees/exercise.qmd
               - text: "Demo: which mode of inheritance?"
                 href: pedigrees/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: pedigrees/exercise-r.qmd
+      - section: "Part 2: Chromosomes and mapping"
+        contents:
+          - section: "Chromosome theory & sex linkage"
+            contents:
+              - text: "Lecture (slides)"
+                href: chromosome-theory/lec.qmd
+              - text: "Quiz"
+                href: chromosome-theory/quiz.qmd
+              - text: "Exercise"
+                href: chromosome-theory/exercise.qmd
+              - text: "Demo: meiosis & nondisjunction"
+                href: chromosome-theory/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: chromosome-theory/exercise-r.qmd
+          - section: "Linkage & recombination"
+            contents:
+              - text: "Lecture (slides)"
+                href: linkage/lec.qmd
+              - text: "Quiz"
+                href: linkage/quiz.qmd
+              - text: "Exercise"
+                href: linkage/exercise.qmd
+              - text: "Demo: crossovers & map distance"
+                href: linkage/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: linkage/exercise-r.qmd
+          - section: "Three-point crosses"
+            contents:
+              - text: "Lecture (slides)"
+                href: three-point-cross/lec.qmd
+              - text: "Quiz"
+                href: three-point-cross/quiz.qmd
+              - text: "Exercise"
+                href: three-point-cross/exercise.qmd
+              - text: "Demo: three-point cross"
+                href: three-point-cross/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: three-point-cross/exercise-r.qmd
+          - section: "Human linkage & LOD scores"
+            contents:
+              - text: "Lecture (slides)"
+                href: lod-scores/lec.qmd
+              - text: "Quiz"
+                href: lod-scores/quiz.qmd
+              - text: "Exercise"
+                href: lod-scores/exercise.qmd
+              - text: "Demo: LOD score curve"
+                href: lod-scores/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: lod-scores/exercise-r.qmd
+      - section: "Part 3: DNA, mutation & gene function"
+        contents:
+          - section: "DNA structure & replication (recap)"
+            contents:
+              - text: "Lecture (slides)"
+                href: dna-recap/lec.qmd
+              - text: "Quiz"
+                href: dna-recap/quiz.qmd
+              - text: "Exercise"
+                href: dna-recap/exercise.qmd
+              - text: "Exercise in R"
+                href: dna-recap/exercise-r.qmd
+          - section: "Mutation & complementation"
+            contents:
+              - text: "Lecture (slides)"
+                href: mutation/lec.qmd
+              - text: "Quiz"
+                href: mutation/quiz.qmd
+              - text: "Exercise"
+                href: mutation/exercise.qmd
+              - text: "Demo: complementation test"
+                href: mutation/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: mutation/exercise-r.qmd
+          - section: "Gene expression (recap)"
+            contents:
+              - text: "Lecture (slides)"
+                href: gene-expression-recap/lec.qmd
+              - text: "Quiz"
+                href: gene-expression-recap/quiz.qmd
+              - text: "Exercise"
+                href: gene-expression-recap/exercise.qmd
+              - text: "Exercise in R"
+                href: gene-expression-recap/exercise-r.qmd
+      - section: "Part 4: Genome analysis"
+        contents:
+          - section: "Digital analysis of DNA"
+            contents:
+              - text: "Lecture (slides)"
+                href: digital-dna/lec.qmd
+              - text: "Quiz"
+                href: digital-dna/quiz.qmd
+              - text: "Exercise"
+                href: digital-dna/exercise.qmd
+              - text: "Demo: restriction digest & gel"
+                href: digital-dna/exercise.qmd#explore
+              - text: "Demo: PCR cycles"
+                href: digital-dna/exercise.qmd#explore-pcr
+              - text: "Exercise in R"
+                href: digital-dna/exercise-r.qmd
+          - section: "Genome annotation"
+            contents:
+              - text: "Lecture (slides)"
+                href: genome-annotation/lec.qmd
+              - text: "Quiz"
+                href: genome-annotation/quiz.qmd
+              - text: "Exercise"
+                href: genome-annotation/exercise.qmd
+              - text: "Demo: six-frame ORF finder"
+                href: genome-annotation/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: genome-annotation/exercise-r.qmd
+          - section: "Genomic variation"
+            contents:
+              - text: "Lecture (slides)"
+                href: genomic-variation/lec.qmd
+              - text: "Quiz"
+                href: genomic-variation/quiz.qmd
+              - text: "Exercise"
+                href: genomic-variation/exercise.qmd
+              - text: "Exercise in R"
+                href: genomic-variation/exercise-r.qmd
+      - section: "Part 5: Chromosomes in detail"
+        contents:
+          - section: "The eukaryotic chromosome"
+            contents:
+              - text: "Lecture (slides)"
+                href: eukaryotic-chromosome/lec.qmd
+              - text: "Quiz"
+                href: eukaryotic-chromosome/quiz.qmd
+              - text: "Exercise"
+                href: eukaryotic-chromosome/exercise.qmd
+              - text: "Exercise in R"
+                href: eukaryotic-chromosome/exercise-r.qmd
+          - section: "Rearrangements & aneuploidy"
+            contents:
+              - text: "Lecture (slides)"
+                href: rearrangements-aneuploidy/lec.qmd
+              - text: "Quiz"
+                href: rearrangements-aneuploidy/quiz.qmd
+              - text: "Exercise"
+                href: rearrangements-aneuploidy/exercise.qmd
+              - text: "Demo: nondisjunction"
+                href: rearrangements-aneuploidy/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: rearrangements-aneuploidy/exercise-r.qmd
+          - section: "Bacterial genetics (recap)"
+            contents:
+              - text: "Lecture (slides)"
+                href: bacterial-genetics-recap/lec.qmd
+              - text: "Quiz"
+                href: bacterial-genetics-recap/quiz.qmd
+              - text: "Exercise"
+                href: bacterial-genetics-recap/exercise.qmd
+              - text: "Exercise in R"
+                href: bacterial-genetics-recap/exercise-r.qmd
+          - section: "Organelle inheritance"
+            contents:
+              - text: "Lecture (slides)"
+                href: organelle-inheritance/lec.qmd
+              - text: "Quiz"
+                href: organelle-inheritance/quiz.qmd
+              - text: "Exercise"
+                href: organelle-inheritance/exercise.qmd
+              - text: "Demo: heteroplasmy bottleneck"
+                href: organelle-inheritance/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: organelle-inheritance/exercise-r.qmd
+      - section: "Part 6: Gene regulation & development"
+        contents:
+          - section: "Prokaryotic regulation (recap)"
+            contents:
+              - text: "Lecture (slides)"
+                href: prokaryotic-regulation-recap/lec.qmd
+              - text: "Quiz"
+                href: prokaryotic-regulation-recap/quiz.qmd
+              - text: "Exercise"
+                href: prokaryotic-regulation-recap/exercise.qmd
+              - text: "Demo: lac operon merodiploids"
+                href: prokaryotic-regulation-recap/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: prokaryotic-regulation-recap/exercise-r.qmd
+          - section: "Eukaryotic regulation & epigenetics"
+            contents:
+              - text: "Lecture (slides)"
+                href: eukaryotic-regulation/lec.qmd
+              - text: "Quiz"
+                href: eukaryotic-regulation/quiz.qmd
+              - text: "Exercise"
+                href: eukaryotic-regulation/exercise.qmd
+              - text: "Demo: X inactivation mosaic"
+                href: eukaryotic-regulation/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: eukaryotic-regulation/exercise-r.qmd
+          - section: "RNA-mediated regulation"
+            contents:
+              - text: "Lecture (slides)"
+                href: rna-regulation/lec.qmd
+              - text: "Quiz"
+                href: rna-regulation/quiz.qmd
+              - text: "Exercise"
+                href: rna-regulation/exercise.qmd
+              - text: "Exercise in R"
+                href: rna-regulation/exercise-r.qmd
+          - section: "Development & model organisms"
+            contents:
+              - text: "Lecture (slides)"
+                href: development-model-organisms/lec.qmd
+              - text: "Quiz"
+                href: development-model-organisms/quiz.qmd
+              - text: "Exercise"
+                href: development-model-organisms/exercise.qmd
+              - text: "Exercise in R"
+                href: development-model-organisms/exercise-r.qmd
+      - section: "Part 7: Cancer, populations & complex traits"
+        contents:
+          - section: "Cancer genetics"
+            contents:
+              - text: "Lecture (slides)"
+                href: cancer-genetics/lec.qmd
+              - text: "Quiz"
+                href: cancer-genetics/quiz.qmd
+              - text: "Exercise"
+                href: cancer-genetics/exercise.qmd
+              - text: "Demo: two hits"
+                href: cancer-genetics/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: cancer-genetics/exercise-r.qmd
+          - section: "Hardy–Weinberg equilibrium"
+            contents:
+              - text: "Lecture (slides)"
+                href: hardy-weinberg/lec.qmd
+              - text: "Quiz"
+                href: hardy-weinberg/quiz.qmd
+              - text: "Exercise"
+                href: hardy-weinberg/exercise.qmd
+              - text: "Demo: de Finetti triangle"
+                href: hardy-weinberg/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: hardy-weinberg/exercise-r.qmd
+          - section: "Drift, selection, mutation, migration"
+            contents:
+              - text: "Lecture (slides)"
+                href: drift-selection/lec.qmd
+              - text: "Quiz"
+                href: drift-selection/quiz.qmd
+              - text: "Exercise"
+                href: drift-selection/exercise.qmd
+              - text: "Demo: genetic drift"
+                href: drift-selection/exercise.qmd#explore
+              - text: "Exercise in R"
+                href: drift-selection/exercise-r.qmd
+          - section: "Complex traits, heritability & GWAS"
+            contents:
+              - text: "Lecture (slides)"
+                href: complex-traits/lec.qmd
+              - text: "Quiz"
+                href: complex-traits/quiz.qmd
+              - text: "Exercise"
+                href: complex-traits/exercise.qmd
+              - text: "Demo: heritability"
+                href: complex-traits/exercise.qmd#explore
+              - text: "Demo: Manhattan plot"
+                href: complex-traits/exercise.qmd#explore-manhattan
+              - text: "Exercise in R"
+                href: complex-traits/exercise-r.qmd
+      - section: "Ethics"
+        contents:
+          - section: "Ethics of genetic knowledge"
+            contents:
+              - text: "Lecture (slides)"
+                href: ethics/lec.qmd
+              - text: "Quiz"
+                href: ethics/quiz.qmd
+              - text: "Exercise: cases & literature"
+                href: ethics/exercise.qmd
 
 format:
   html:

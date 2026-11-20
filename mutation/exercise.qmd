@@ -1,0 +1,248 @@
+---
+title: "Exercise: Mutation & complementation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- classify a base substitution as a **transition** or **transversion**, and its effect on the protein as **silent**, **missense**, **nonsense** or **frameshift**;
+- write a protein change in database (HGVS) form, such as p.Glu7Val;
+- predict which mutations a mutagen can cause, and interpret an **Ames test**;
+- explain the **fluctuation test** from the mean and variance of resistant counts;
+- relate **loss and gain of function** to dominance;
+- sort recessive mutants into **complementation groups** from a complementation matrix;
+- order the steps of a biosynthetic pathway from the growth of **auxotrophic** mutants;
+- look up a variant in **ClinVar** and **dbSNP** and read its consequence, classification and alleles.
+
+## Background
+
+**Point mutations.** A **transition** replaces a purine by a purine (A↔G) or a pyrimidine by a pyrimidine (C↔T); a **transversion** swaps a purine for a pyrimidine. In a coding sequence a substitution can be **silent** (same amino acid), **missense** (another amino acid) or **nonsense** (a stop codon). An insertion or deletion that is not a multiple of 3 is a **frameshift**.
+
+**Numbering.** Database (HGVS) names count from the A of the start codon (**c.1**) and from the start methionine (**p.1**). So the sickle-cell allele, traditionally Glu6Val, is *HBB* c.20A>T, p.Glu7Val. Codon *n* covers c.(3*n*−2) to c.3*n*.
+
+**The start of the *HBB* coding sequence** (NM_000518.5), codons 1–12:
+
+| codon | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| DNA | ATG | GTG | CAT | CTG | ACT | CCT | GAG | GAG | AAG | TCT | GCC | GTT |
+| amino acid | Met | Val | His | Leu | Thr | Pro | Glu | Glu | Lys | Ser | Ala | Val |
+
+**Mutagens.** EMS: G:C → A:T transitions. Base analogues (5-bromouracil): transitions. Intercalators (proflavin): frameshifts. UV: pyrimidine dimers. X-rays: breaks, deletions.
+
+**Fluctuation test.** If mutations arise at random during growth, before selection, parallel cultures give very variable counts of mutants (jackpots: variance much larger than the mean). If the selective agent induced them, counts would vary like a Poisson distribution (variance ≈ mean).
+
+**Complementation test.** Cross two **recessive** mutants with the same phenotype. F~1~ wild type (+): they **complement**, the mutations are in **different genes**. F~1~ mutant (−): they **fail to complement**, **same gene**. A set of mutations that fail to complement each other is a **complementation group** = one gene.
+
+**Auxotrophs.** A mutant blocked at one step of a pathway grows on any compound made **after** the block.
+
+## By hand
+
+**B1. (classify point mutations)** Use the *HBB* table in the Background. For each change, say whether it is a transition or a transversion, give the new codon and amino acid, classify the effect, and write the protein change in HGVS form (p.Xxx*n*Yyy, with Ter for stop).
+
+a) c.20A>T  b) c.19G>A  c) c.21G>A  d) c.19G>T  e) c.9T>C  f) c.28T>A
+
+**B2. (frameshifts)** a) An extra A is inserted between c.21 and c.22 of *HBB*. Write the new codons from codon 5 to codon 13 and their amino acids.
+b) A second mutation in the same allele deletes c.30 (the T at the end of codon 10 in the original numbering). Write the codons again from codon 5. Which amino acids differ from the normal protein, and from which codon on is the protein normal again?
+c) Which mutagen would you use to make mutations like these? (This is the experiment of the next unit.)
+
+**B3. (which mutagen?)** A plant geneticist treats seeds with **EMS**. Which of the six changes in B1 could EMS have caused directly? Which kind of mutagen would you choose to get mutations like B1a?
+
+**B4. (fluctuation test)** Two sets of counts of phage-resistant colonies (invented numbers):
+
+| | | | | | | | | | | |
+|---|---|---|---|---|---|---|---|---|---|---|
+| set A | 0 | 1 | 0 | 0 | 12 | 0 | 3 | 0 | 0 | 44 |
+| set B | 5 | 7 | 4 | 6 | 5 | 8 | 6 | 4 | 5 | 6 |
+
+One set comes from 10 **parallel cultures**, each started from a few cells, the other from 10 samples of **one** large culture.
+
+a) Compute the mean and the variance of each set. (Variance = sum of squared deviations from the mean, divided by *n* − 1.)
+b) Which set came from the parallel cultures? What do the two sets together tell you about when the resistance mutations arose?
+
+**B5. (Ames test)** A *his*^−^ *Salmonella* strain with a base-substitution mutation, and a second strain with a frameshift mutation, give these revertant colonies per plate (invented numbers):
+
+| | substitution strain | frameshift strain |
+|---|---:|---:|
+| no chemical | 25 | 18 |
+| chemical P, no liver extract | 27 | 20 |
+| chemical P, with liver extract | 410 | 22 |
+| chemical Q, with liver extract | 30 | 350 |
+
+a) Is P a mutagen? Why does it only show up with liver extract?
+b) What kind of mutation does Q cause? Name a class of mutagen that acts like this.
+c) Why is a positive Ames test a warning sign that a chemical may cause cancer?
+
+**B6. (loss and gain of function)** For each allele, say whether you would expect it to be dominant or recessive, and why.
+
+a) A null allele of *PAH* (phenylalanine hydroxylase; phenylketonuria, Part 1).
+b) An allele of a growth-factor receptor gene that keeps the receptor signalling even without its ligand.
+c) A missense allele of a collagen gene: the faulty chain is built into triple helices together with normal chains and makes them weak.
+
+**B7. (complementation groups)** Seven recessive mutants of yeast cannot grow without adenine. Diploids from all pairs give these results (+ = grows without adenine, − = does not; invented data):
+
+|   | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| **1** | − | + | + | − | + | + | − |
+| **2** |   | − | + | + | + | − | + |
+| **3** |   |   | − | + | + | + | + |
+| **4** |   |   |   | − | + | + | − |
+| **5** |   |   |   |   | − | + | + |
+| **6** |   |   |   |   |   | − | + |
+| **7** |   |   |   |   |   |   | − |
+
+a) Sort the mutants into complementation groups. How many genes have you found?
+b) Why is this a minimum number of genes needed to make adenine?
+c) An eighth mutant gives − with 2 and + with all others. Which group is it in?
+
+**B8. (ordering a pathway)** Four *Neurospora* mutants (a–d) all need compound T. Each is tested on minimal medium plus one of the compounds E, F, G or T (+ = growth):
+
+| mutant | E | F | G | T |
+|---|---|---|---|---|
+| a | + | − | + | + |
+| b | − | − | − | + |
+| c | + | + | + | + |
+| d | − | − | + | + |
+
+a) In what order are E, F, G and T made?
+b) Where is each mutant blocked?
+c) Mutant c grows on all four compounds but not on minimal medium. What does that tell you?
+
+## Explore {#explore}
+
+The demo shows a complementation matrix: every pair of recessive mutants has been crossed, and each cell shows whether the offspring is mutant (**−**, fail to complement) or wild type (**+**, complement). Click the grey chip to the left of each row to put that mutant in group A, B, C… (click again to change), then press **check grouping**. Cells that contradict your grouping are outlined. **Sort by group** reorders rows and columns, and **reveal genes** shows the true answer. Click a cell to read that cross in words. The mutant sets are invented.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="complementation" data-preset="two"></div>
+<script src="../demos/dist/complementation.js"></script>
+```
+
+**E1.** Start with **6 mutants**. Group them, check, and then press **sort by group**. Describe the pattern of − and + in the sorted matrix. Why does each gene become a square block?
+
+**E2.** Click **8 mutants**. How many complementation groups are there, and which mutants are in each? Before you check, use the rule "if *x* fails with *y*, and *y* fails with *z*, then *x* fails with *z*" to predict some cells.
+
+**E3.** Click **8, harder**. One gene is hit by only one mutation. Which mutant is it, and how can you recognise it in the matrix? If you were screening for all the genes of a pathway, what would a group with a single mutant suggest about how complete your screen is?
+
+**E4.** On any set, put two mutants that fail to complement into different groups on purpose and press **check grouping**. Read the explanation. Then press **new random set** a few times and solve each set. How many cells do you actually need to read to solve a set of 8 mutants, if you use the rule from E2?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** Groups: **A = {1, 4, 6}** and **B = {2, 3, 5}**: two genes. After sorting, all − cells sit in two square blocks along the diagonal, and every cell outside the blocks is +. A block is square because every mutant in a gene fails to complement every other mutant in the same gene (a full set of − among them), and complements every mutant in other genes.
+
+**E2.** Three groups: **{1, 3, 6}**, **{2, 5, 8}** and **{4, 7}**. Using the rule: 1 × 3 is − and 1 × 6 is −, so 3 × 6 must be − too, and the matrix confirms it. Each new − in a row adds a mutant to an existing group.
+
+**E3.** **Mutant 5** is alone in its gene: its row has − only on the diagonal, and + everywhere else. The four groups are {1, 6}, {2, 4, 7}, {3, 8} and {5}. A group with a single mutant suggests the screen is **not saturated**: if some genes have been hit only once, there are probably other genes that have not been hit at all. When every gene has been hit several times, new mutants keep falling into known groups, and you can be more confident you have found them all.
+
+**E4.** The check outlines every cell that disagrees: a − between different groups (they should be in the same gene) or a + within a group (they should be in different genes), and explains the first one. With the transitivity rule you do not need all 28 cells of the half matrix: compare each new mutant with **one** representative of each group found so far. For 8 mutants in 3 genes that is at most 1 + 2 + 3 + 3 + 3 + 3 + 3 = 18 crosses instead of 28, and often fewer, because you can stop as soon as a mutant fails to complement a representative. (This only works for simple recessive loss-of-function mutations; Q9 of the quiz shows a mutant that breaks the rule.)
+:::
+
+## Find it
+
+[ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) collects reports of human variants and what they do to health. Each record has a **Variation ID**, an HGVS name, the **molecular consequence** (missense, nonsense, …), a **germline classification** (pathogenic, benign, …), a **review status** (how well supported the classification is) and links, including the variant's **dbSNP** rs number. [dbSNP](https://www.ncbi.nlm.nih.gov/snp/) gives each variable position an **rs** number and lists its alleles on the **+ strand** of the reference genome. You met HbS and HbC in [Genetics as information](../intro-genetics/exercise.qmd).
+
+**F1. (HbS)** Open the ClinVar record [VCV000015333](https://www.ncbi.nlm.nih.gov/clinvar/variation/15333/) (or search ClinVar for `HBB[gene] AND c.20A>T`). Read:
+
+a) the HGVS name in the title, and the protein change;
+b) the **molecular consequence**;
+c) the **germline classification** and the **review status**;
+d) the **dbSNP** ID, and the location on GRCh38.
+
+Is c.20A>T a transition or a transversion?
+
+**F2. (HbC)** Open [VCV000015126](https://www.ncbi.nlm.nih.gov/clinvar/variation/15126/). Read the HGVS name, the molecular consequence and the dbSNP ID. Which transcript version does the title use, and why does that not matter for this variant? Is c.19G>A a transition or a transversion? Compare the genomic position with HbS.
+
+**F3. (a nonsense variant)** Search ClinVar for [`CFTR[gene] AND G542X`](https://www.ncbi.nlm.nih.gov/clinvar/?term=CFTR%5Bgene%5D+AND+G542X) and open the record whose title ends in `(p.Gly542Ter)`. Report:
+
+a) the HGVS name and the Variation ID;
+b) the molecular consequence and the condition;
+c) the classification and the review status;
+d) the dbSNP ID. Why is the legacy name "G542X"?
+
+**F4. (one variant, two strands)** Open [rs334 in dbSNP](https://www.ncbi.nlm.nih.gov/snp/rs334). Read the **Alleles** field and the position on GRCh38 (NC_000011.10).
+
+a) Why does dbSNP write T>A, while ClinVar writes c.20A>T for the same HbS change?
+b) dbSNP lists three possible alternative alleles at this position. Which one is HbS?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For F4a, look back at the DNA structure recap: on which strand of chromosome 11 is *HBB*?
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.**
+
+| | change | Ts / Tv | codon | new codon | effect | HGVS protein |
+|---|---|---|---|---|---|---|
+| a | c.20A>T | transversion | 7 GAG | GTG (Val) | missense (HbS) | p.Glu7Val |
+| b | c.19G>A | transition | 7 GAG | AAG (Lys) | missense (HbC) | p.Glu7Lys |
+| c | c.21G>A | transition | 7 GAG | GAA (Glu) | silent | p.Glu7= |
+| d | c.19G>T | transversion | 7 GAG | TAG (stop) | nonsense | p.Glu7Ter |
+| e | c.9T>C | transition | 3 CAT | CAC (His) | silent | p.His3= |
+| f | c.28T>A | transversion | 10 TCT | ACT (Thr) | missense | p.Ser10Thr |
+
+(`=` means "no change" in HGVS.) The two silent changes are both at the **third** codon position.
+
+**B2.** a) Codons 5–13 become ACT CCT GAG **AGA GAA GTC TGC CGT TAC**: Thr Pro Glu **Arg Glu Val Cys Arg Tyr**. Everything from codon 8 is read in the wrong frame.
+b) After also deleting c.30: ACT CCT GAG **AGA GAA GTC** GCC GTT: Thr Pro Glu **Arg Glu Val** Ala Val. Codons 8–10 are wrong (Arg Glu Val instead of Glu Lys Ser), but the frame is restored from codon 11 (Ala) on. A +1 and a −1 frameshift close together **suppress** each other, giving a protein with only a short stretch of wrong amino acids, which is often still functional.
+c) An **intercalator** such as proflavin, which causes +1 and −1 frameshifts. Crick and Brenner used exactly this to show that the code is read in triplets (Gene expression recap).
+
+**B3.** EMS causes G:C → A:T transitions, so it could cause **b (c.19G>A)** and **c (c.21G>A)**: a G on the coding strand becomes A. Change e (c.9T>C) is A:T → G:C, the opposite direction, and a, d and f are transversions, so EMS is unlikely to cause them directly. For B1a (an A:T → T:A transversion) you would need a mutagen that causes transversions, not EMS or a base analogue. In practice no mutagen aims at one base: you treat, then screen many mutants for the change you want.
+
+**B4.** a) Set A: mean = 60/10 = **6.0**, variance = 1730/9 = **192.2**. Set B: mean = 56/10 = **5.6**, variance = 14.4/9 = **1.6**.
+b) **Set A** is from the parallel cultures: its variance is about 30 times the mean, with jackpots (12 and 44). Set B, from one large culture, has variance close to (even below) the mean, as expected for random sampling of one population. Since the means are similar but the parallel cultures fluctuate wildly, the resistance mutations arose **at different times during growth**, before the cells met the phage. The phage selected mutants that were already there.
+
+**B5.** a) **Yes**, P is a mutagen: with liver extract it raises revertants of the substitution strain about 16-fold (410 vs 25). P itself is not mutagenic, but **liver enzymes convert it** into a mutagen (a "promutagen", like benzo[a]pyrene).
+b) Q raises revertants only in the frameshift strain, so it causes **frameshifts** (insertions or deletions of a base), like an **intercalating agent** (proflavin, acridines).
+c) Cancer is caused by **somatic mutations** in genes that control cell division (Part 7). A chemical that mutates bacterial DNA is likely to mutate human DNA as well, so most carcinogens are positive in the Ames test.
+
+**B6.** a) **Recessive**: a heterozygote makes about half the enzyme, which is enough to break down phenylalanine; PKU is autosomal recessive.
+b) **Dominant** (gain of function): the always-on receptor signals even when a normal receptor is present too. (This is how the achondroplasia allele of *FGFR3* works.)
+c) **Dominant** (dominant negative): one faulty chain spoils whole triple helices, so most collagen in a heterozygote is defective, not just half.
+
+**B7.** a) 1 × 4 −, 1 × 7 −, 4 × 7 −: group **{1, 4, 7}**. 2 × 6 −: group **{2, 6}**. 3 and 5 complement everyone: **{3}** and **{5}**. So **four** complementation groups: four genes.
+b) We can only find genes in which our screen produced a mutation. Genes that were not hit, or whose mutations are lethal or give another phenotype, are missed. Two groups have just one mutant, which suggests the screen is far from saturated.
+c) It fails to complement 2, so it is in group **{2, 6}** (a new allele of that gene). It should also give − with 6; if it did not, something is wrong with the data or the assumptions.
+
+**B8.** a) Count how many compounds rescue each mutant: the more compounds, the earlier the block. c is rescued by all four, a by three (E, G, T), d by two (G, T), b only by T. The compound that rescues the earliest-blocked mutant but not the next one comes first: **F → E → G → T**.
+b) **c**: before F (precursor → F). **a**: F → E (rescued by E, G, T but not F). **d**: E → G (rescued by G and T). **b**: G → T (rescued only by T).
+c) Mutant c is blocked **before** F, at a step whose product is not among the compounds tested. All four compounds come after its block, so all rescue it.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+All facts were checked with the NCBI E-utilities on 2026-11-20. Classifications and review statuses can be updated as evidence accumulates; the consequences and identifiers are stable.
+
+**F1.** Click path: ClinVar → search `HBB[gene] AND c.20A>T` (or the direct link) → Variation ID 15333.
+a) **NM_000518.5(HBB):c.20A>T (p.Glu7Val)**; protein change E7V (Glu7Val), the classic Glu6Val.
+b) **Missense variant**.
+c) **Pathogenic**; review status **criteria provided, multiple submitters, no conflicts**. (The conditions list includes "Hb SS disease", that is, sickle-cell anaemia.)
+d) **rs334**; GRCh38 chr11:**5,227,002** (band 11p15.4).
+c.20A>T swaps a purine (A) for a pyrimidine (T): a **transversion**.
+
+**F2.** Variation ID 15126: **NM_000518.4(HBB):c.19G>A (p.Glu7Lys)**, **missense variant**, dbSNP **rs33930165**. The title uses transcript version **.4**, because the record was named before NM_000518.5 existed. The two versions differ only outside the coding sequence, so c.19 is the same base in both. G→A is a **transition**. GRCh38 position **5,227,003**: next to HbS (5,227,002), one base further along chromosome 11, which is one base **earlier** in the *HBB* coding sequence (c.19 vs c.20), because the gene runs on the − strand. (Classification on 2026-11-20: pathogenic/likely pathogenic.)
+
+**F3.** Click path: ClinVar → search `CFTR[gene] AND G542X` → the record titled with (p.Gly542Ter).
+a) **NM_000492.4(CFTR):c.1624G>T (p.Gly542Ter)**, Variation ID **7115** (VCV000007115).
+b) **Nonsense**; condition **cystic fibrosis**.
+c) **Pathogenic**; review status **practice guideline** (the highest level, four stars).
+d) **rs113993959**. Legacy names use one-letter amino acid codes and **X for a stop codon**: glycine (G) at position 542 becomes a stop (X). Unlike the globins, CFTR legacy numbering already counts the start methionine, so 542 is the same in both names.
+
+**F4.** dbSNP rs334: alleles **T>A / T>C / T>G** on NC_000011.10 at position **5,227,002** (GRCh38).
+a) dbSNP reports alleles on the **+ strand** of chromosome 11. *HBB* lies on the **− strand**, so its coding sequence is the reverse complement of the + strand. The A of codon 7 (GAG) pairs with a T on the + strand; the HbS change A>T on the coding strand is **T>A** on the + strand.
+b) **T>A** is HbS (c.20A>T). T>C and T>G on the + strand would be c.20A>G and c.20A>C, other changes at the same base that dbSNP also records (they give Gly or Ala at codon 7).
+:::
+
+## Where this leads
+
+Every change in this exercise was described by what it does to a codon. In **Gene expression (recap)** we follow mutations that act elsewhere: in promoters, splice sites and poly(A) signals, and the frameshift experiments of B2 become Crick and Brenner's proof that the code is read in triplets. Complementation comes back in the **lac operon** (Part 6), where it is used with partial diploids, and in **cancer genetics** (Part 7), where loss of both copies of a tumour suppressor gene is a loss-of-function story.
+
+**Next:** [Exercise in R](exercise-r.qmd): load the genetic code as a named vector, translate *HBB*, and write a function that classifies any point mutation as silent, missense or nonsense.

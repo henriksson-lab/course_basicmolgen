@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="384" viewBox="0 0 900 384" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig03: surname inference (after Gymrek et al. 2013, Science, PMID 23329047).
+       Top: the attack as a pipeline of four boxes. Bottom: why it works, the Y chromosome
+       and the surname both pass from father to son. Y-STR numbers are illustrative only. -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <!-- pipeline boxes: x = 20, 245, 470, 695; width 185 -->
+  <g stroke-width="2">
+    <rect x="20" y="20" width="185" height="150" rx="8" fill="#f4f6f8" stroke="#5b6b7a"/>
+    <rect x="245" y="20" width="185" height="150" rx="8" fill="#f4f6f8" stroke="#2a6f97"/>
+    <rect x="470" y="20" width="185" height="150" rx="8" fill="#f4f6f8" stroke="#2a6f97"/>
+    <rect x="695" y="20" width="185" height="150" rx="8" fill="#fbeaea" stroke="#bc4749"/>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="2.2">
+    <line x1="207" y1="95" x2="241" y2="95" marker-end="url(#arr)"/>
+    <line x1="432" y1="95" x2="466" y2="95" marker-end="url(#arr)"/>
+    <line x1="657" y1="95" x2="691" y2="95" marker-end="url(#arr)"/>
+  </g>
+  <g font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="112" y="46">1. "Anonymous"</text>
+    <text x="112" y="66">genome</text>
+    <text x="337" y="46">2. Read the</text>
+    <text x="337" y="66">Y-STRs</text>
+    <text x="562" y="46">3. Query a genealogy</text>
+    <text x="562" y="66">database</text>
+    <text x="787" y="46" fill="#bc4749">4. Add metadata</text>
+    <text x="787" y="66" fill="#bc4749">→ identity</text>
+  </g>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="112" y="96">research data set,</text>
+    <text x="112" y="114">name removed;</text>
+    <text x="112" y="132">a male donor</text>
+    <text x="112" y="150">has a Y chromosome</text>
+
+    <text x="337" y="96">repeat counts at</text>
+    <text x="337" y="114">Y-chromosome STRs</text>
+    <text x="337" y="140" font-family="Courier New, monospace" font-size="15">13 24 14 11 …</text>
+
+    <text x="562" y="96">public, recreational:</text>
+    <text x="562" y="114">men upload Y-STRs</text>
+    <text x="562" y="132">with their surname</text>
+    <text x="562" y="156" font-weight="bold">→ likely surname</text>
+
+    <text x="787" y="96">surname + other</text>
+    <text x="787" y="114">metadata, such as</text>
+    <text x="787" y="132">age and US state</text>
+    <text x="787" y="156" font-weight="bold">→ one person</text>
+  </g>
+  <!-- why it works -->
+  <text x="20" y="214" font-size="16" font-weight="bold" fill="#1b2a3a">Why it works: the Y chromosome and the surname are both passed from father to son</text>
+  <!-- three generations of males, x = 120, 300, 480; y = 270 -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <line x1="142" y1="270" x2="276" y2="270" marker-end="url(#arr)"/>
+    <line x1="322" y1="270" x2="456" y2="270" marker-end="url(#arr)"/>
+  </g>
+  <g>
+    <rect x="100" y="250" width="40" height="40" fill="#2a6f97" stroke="#1b2a3a" stroke-width="2"/>
+    <rect x="280" y="250" width="40" height="40" fill="#2a6f97" stroke="#1b2a3a" stroke-width="2"/>
+    <rect x="460" y="250" width="40" height="40" fill="#2a6f97" stroke="#1b2a3a" stroke-width="2"/>
+  </g>
+  <g font-size="15" fill="#fff" font-weight="bold" text-anchor="middle">
+    <text x="120" y="276">Y</text><text x="300" y="276">Y</text><text x="480" y="276">Y</text>
+  </g>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="120" y="312">Mr Andersson</text>
+    <text x="300" y="312">son: Andersson</text>
+    <text x="480" y="312">grandson: Andersson</text>
+    <text x="210" y="258" fill="#5b6b7a">father → son</text>
+    <text x="390" y="258" fill="#5b6b7a">father → son</text>
+  </g>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="580" y="262">Y-linked inheritance, as in the</text>
+    <text x="580" y="280">pedigree unit. Distant paternal</text>
+    <text x="580" y="298">relatives share Y-STRs and often</text>
+    <text x="580" y="316">the surname.</text>
+  </g>
+  <text x="20" y="350" font-size="14" fill="#5b6b7a">No hacking needed: every step uses free, public internet resources. With this method, Gymrek et al. (2013)</text>
+  <text x="20" y="368" font-size="14" fill="#5b6b7a">traced the likely identities of several participants in public sequencing projects.</text>
+</svg>

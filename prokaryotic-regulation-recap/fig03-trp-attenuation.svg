@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig03: trp attenuation, simplified. The trp leader mRNA has four regions (1-4). Region 1 holds two
+       Trp codons in a short leader peptide. Left: plenty of Trp, the ribosome reads through region 1
+       and covers region 2, so 3:4 pairs into a terminator hairpin and transcription stops.
+       Right: little Trp, the ribosome stalls on the Trp codons in region 1, 2:3 pairs (antiterminator),
+       3:4 cannot form, and RNA polymerase continues into trpE...trpA. -->
+  <text x="20" y="26" font-size="18" font-weight="bold" fill="#1b2a3a"><tspan font-style="italic">trp</tspan> attenuation: the leader mRNA folds one of two ways</text>
+
+  <!-- ===== left: high Trp ===== -->
+  <text x="20" y="62" font-size="17" font-weight="bold" fill="#1b2a3a">Plenty of tryptophan</text>
+  <line x1="20" y1="200" x2="420" y2="200" stroke="#d08c2f" stroke-width="4"/>
+  <!-- ribosome over regions 1-2 -->
+  <ellipse cx="120" cy="190" rx="58" ry="30" fill="#c9d6e3" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="120" y="186" font-size="14" fill="#1b2a3a" text-anchor="middle">ribosome</text>
+  <text x="120" y="204" font-size="13" fill="#1b2a3a" text-anchor="middle">covers 1–2</text>
+  <!-- 3:4 hairpin -->
+  <path d="M240,200 L240,120 Q260,96 280,120 L280,200" fill="none" stroke="#d08c2f" stroke-width="4"/>
+  <line x1="240" y1="185" x2="280" y2="185" stroke="#d08c2f" stroke-width="2"/>
+  <line x1="240" y1="165" x2="280" y2="165" stroke="#d08c2f" stroke-width="2"/>
+  <line x1="240" y1="145" x2="280" y2="145" stroke="#d08c2f" stroke-width="2"/>
+  <text x="226" y="150" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="end">3</text>
+  <text x="294" y="150" font-size="16" font-weight="bold" fill="#1b2a3a">4</text>
+  <text x="300" y="104" font-size="15" fill="#c62828">3:4 terminator</text>
+  <text x="300" y="232" font-size="15" fill="#1b2a3a">UUUU</text>
+  <text x="20" y="262" font-size="15" fill="#1b2a3a">RNA polymerase falls off after the leader:</text>
+  <text x="20" y="284" font-size="15" font-weight="bold" fill="#c62828"><tspan font-style="italic">trpE</tspan> … <tspan font-style="italic">trpA</tspan> not transcribed</text>
+
+  <line x1="450" y1="50" x2="450" y2="290" stroke="#d5dae0" stroke-width="1.5"/>
+
+  <!-- ===== right: low Trp ===== -->
+  <text x="480" y="62" font-size="17" font-weight="bold" fill="#1b2a3a">Little tryptophan</text>
+  <line x1="480" y1="200" x2="880" y2="200" stroke="#d08c2f" stroke-width="4"/>
+  <ellipse cx="540" cy="190" rx="50" ry="30" fill="#c9d6e3" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="540" y="186" font-size="14" fill="#1b2a3a" text-anchor="middle">stalled at</text>
+  <text x="540" y="204" font-size="13" fill="#1b2a3a" text-anchor="middle">Trp codons (1)</text>
+  <!-- 2:3 hairpin -->
+  <path d="M640,200 L640,120 Q660,96 680,120 L680,200" fill="none" stroke="#d08c2f" stroke-width="4"/>
+  <line x1="640" y1="185" x2="680" y2="185" stroke="#d08c2f" stroke-width="2"/>
+  <line x1="640" y1="165" x2="680" y2="165" stroke="#d08c2f" stroke-width="2"/>
+  <line x1="640" y1="145" x2="680" y2="145" stroke="#d08c2f" stroke-width="2"/>
+  <text x="626" y="150" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="end">2</text>
+  <text x="694" y="150" font-size="16" font-weight="bold" fill="#1b2a3a">3</text>
+  <text x="700" y="104" font-size="15" fill="#2e7d32">2:3 antiterminator</text>
+  <text x="740" y="190" font-size="16" font-weight="bold" fill="#1b2a3a">4</text>
+  <text x="760" y="190" font-size="14" fill="#5c6b7a">single-stranded</text>
+  <text x="480" y="262" font-size="15" fill="#1b2a3a">No terminator forms; RNA polymerase goes on:</text>
+  <text x="480" y="284" font-size="15" font-weight="bold" fill="#2e7d32"><tspan font-style="italic">trpE</tspan> … <tspan font-style="italic">trpA</tspan> transcribed</text>
+</svg>

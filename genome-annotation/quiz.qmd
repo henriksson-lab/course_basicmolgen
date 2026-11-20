@@ -1,0 +1,131 @@
+---
+title: "Quiz: genome annotation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on assembly, gene finding, BLAST, genome browsers and gene families. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Why does a genome assembled from 150-base reads break into many contigs, even at 50× coverage?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of a sequence that occurs at many places in the genome.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Repeats.** A read that lies entirely inside a repeat (a transposable element, a duplicated gene, centromeric satellite DNA) matches every copy equally well, so the assembler cannot tell which copy it came from or which unique sequences flank which copy. More coverage does not help, because every read is still shorter than the repeat. Reads **longer** than the repeat (long-read sequencing) solve it.
+:::
+
+---
+
+**Q2.** How many reading frames does a double-stranded DNA sequence have, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Codons are read in triplets, and either strand can be the template.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Six**: three on each strand. On one strand you can start reading at the 1st, 2nd or 3rd base (the 4th gives the same frame as the 1st), and the complementary strand, read 5'→3' in the other direction, gives three more.
+:::
+
+---
+
+**Q3.** In random DNA with equal base frequencies, what is the chance that a given codon is a stop codon? On average, how long is an open stretch between stops?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many of the 64 codons are stop codons?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+3 of the 64 codons are stops (TAA, TAG, TGA), so P(stop) = **3/64 ≈ 0.047**. The average distance between stops is 64/3 ≈ **21 codons**. An ORF of 300 codons is therefore very unlikely by chance: (61/64)^300^ ≈ 6 × 10^−7^.
+:::
+
+---
+
+**Q4.** Why is it much harder to find genes in the human genome by looking for long ORFs than in *E. coli*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare the structure of a human gene with a bacterial one.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Human genes are split into **exons** separated by **introns**, so the coding sequence is broken into short pieces (an average exon is about 150 bp), and introns usually contain stop codons in all frames. Human genes are also far apart (about 6 per Mb, against about 1 per kb in bacteria), so most of the DNA is non-coding. Gene finders therefore need other evidence: splice sites (GT…AG), codon bias, RNA-seq and homology to known proteins.
+:::
+
+---
+
+**Q5.** Name three kinds of evidence that an annotation pipeline uses to decide that a stretch of human DNA is an exon.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Look at the tracks in the evidence figure in the lecture.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Any three of: **RNA-seq** reads mapping to it (it is transcribed), with split reads marking the exon junctions; **protein homology** (a known protein from another species aligns to it); **conservation** across species; **sequence signals** such as an open reading frame, splice sites (GT at the start and AG at the end of the flanking introns), start or stop codons, and typical codon usage.
+:::
+
+---
+
+**Q6.** A BLASTp search gives two hits: hit A with 35% identity over 140 of 147 query residues, E = 7 × 10^−32^; hit B with 60% identity over 20 residues, E = 0.9. Which one is more likely to be a real homolog?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The E value combines how good and how long the alignment is, given the database size.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Hit A.** Its E value says that a hit this good would be expected by chance about 10^−31^ times, so it is almost certainly homologous, even though only 35% of positions are identical. (Human ζ-globin against β-globin gives numbers like hit A.) Hit B is more identical but over only 20 residues; an E value of 0.9 means you would expect about one such hit by chance in this database. Short, high-identity matches are often chance.
+:::
+
+---
+
+**Q7.** What is the difference between **orthologs** and **paralogs**? Classify: (a) human *HBB* and mouse *Hbb-b1*; (b) human *HBB* and human *HBD*; (c) human *HBA1* and human *HBB*.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What event separated the two genes: a speciation or a gene duplication?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Orthologs** are the "same" gene in different species, separated by a **speciation** event. **Paralogs** are related genes that arose by **gene duplication**, usually within one genome. (a) Orthologs. (b) Paralogs, from a recent duplication (93% identical proteins). (c) Paralogs, from an old duplication that separated the α-like and β-like globins (43% identical, now on chromosomes 16 and 11).
+:::
+
+---
+
+**Q8.** All five β-globin-like genes are on the **minus** strand of chromosome 11. *HBE1* is at about 5.268 Mb and *HBB* at about 5.225 Mb. Which gene lies further **upstream** (5') in the direction of transcription?
+
+::: {.callout-tip collapse="true" title="Hint"}
+On the minus strand, genes are transcribed from higher to lower coordinates.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+On the minus strand, transcription runs from **higher to lower** coordinates, so upstream means higher coordinates. ***HBE1*** (5.268 Mb) is upstream of *HBB* (5.225 Mb). The cluster reads, 5' to 3': *HBE1* – *HBG2* – *HBG1* – (*HBBP1*) – *HBD* – *HBB*, the order in which the genes are switched on during development (embryo, fetus, adult).
+:::
+
+---
+
+**Q9.** A genome browser shows a gene called *HBBP1* in the β-globin cluster, with the biotype "pseudogene". What is a pseudogene, and how does one usually arise?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think about what can happen to an extra gene copy after a duplication.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A **pseudogene** is a sequence that looks like a gene (similar to a functional gene, sometimes with exons and introns) but cannot make a working product, because of stop codons, frameshifts or missing control regions. It usually arises after a **gene duplication**: with a second working copy around, mutations that destroy one copy are not removed by selection, and the copy decays. (Processed pseudogenes arise differently: an mRNA is reverse-transcribed and inserted back into the genome without introns.)
+:::
+
+---
+
+**Q10.** The Ensembl BioMart export in the R exercise has 20,107 protein-coding genes on 3,088 Mb of chromosome sequence. What is the average gene density? Chromosome 19 has 1,479 genes on 58.6 Mb. How many times denser is it than average?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Genes per Mb = genes / Mb.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Average: 20,107 / 3,088 ≈ **6.5 genes per Mb**. Chromosome 19: 1,479 / 58.6 ≈ **25.2 genes per Mb**, about **3.9 times** the average. (Chromosome 13, at 2.8 per Mb, is the least dense autosome.)
+:::

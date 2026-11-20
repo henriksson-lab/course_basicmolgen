@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" font-family="Helvetica, Arial, sans-serif">
+  <!-- Levels of chromatin packaging, left to right: naked DNA (2 nm), nucleosomes on linker DNA
+       (11 nm fibre, beads on a string), a compact chromatin fibre (about 30 nm), loops on a
+       protein scaffold, and the metaphase chromosome (about 1400 nm wide).
+       Blue = DNA, orange = histone octamers, grey = scaffold proteins. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- 1. naked DNA: two intertwined strands -->
+  <g fill="none" stroke-width="3">
+    <path d="M70,60 C100,80 100,100 70,120 C40,140 40,160 70,180 C100,200 100,220 70,240" stroke="#2a6f97"/>
+    <path d="M70,60 C40,80 40,100 70,120 C100,140 100,160 70,180 C40,200 40,220 70,240" stroke="#7fb2d0"/>
+  </g>
+  <g stroke="#9aa7b3" stroke-width="1.5">
+    <line x1="52" y1="90" x2="88" y2="90"/><line x1="52" y1="150" x2="88" y2="150"/><line x1="52" y1="210" x2="88" y2="210"/>
+    <line x1="58" y1="72" x2="82" y2="72"/><line x1="58" y1="108" x2="82" y2="108"/><line x1="58" y1="132" x2="82" y2="132"/>
+    <line x1="58" y1="168" x2="82" y2="168"/><line x1="58" y1="192" x2="82" y2="192"/><line x1="58" y1="228" x2="82" y2="228"/>
+  </g>
+
+  <line x1="118" y1="150" x2="158" y2="150" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 2. beads on a string: nucleosomes joined by linker DNA -->
+  <path d="M215,52 L215,70 M215,102 L232,120 M232,152 L210,170 M210,202 L226,222 M226,254 L226,272" stroke="#2a6f97" stroke-width="3" fill="none"/>
+  <g fill="#f6e2c2" stroke="#d08c2f" stroke-width="2">
+    <ellipse cx="215" cy="86" rx="20" ry="16"/>
+    <ellipse cx="232" cy="136" rx="20" ry="16"/>
+    <ellipse cx="210" cy="186" rx="20" ry="16"/>
+    <ellipse cx="226" cy="238" rx="20" ry="16"/>
+  </g>
+  <g fill="none" stroke="#2a6f97" stroke-width="2.5">
+    <path d="M196,80 Q215,64 234,80 M196,92 Q215,108 234,92"/>
+    <path d="M213,130 Q232,114 251,130 M213,142 Q232,158 251,142"/>
+    <path d="M191,180 Q210,164 229,180 M191,192 Q210,208 229,192"/>
+    <path d="M207,232 Q226,216 245,232 M207,244 Q226,260 245,244"/>
+  </g>
+  <!-- labels for one nucleosome -->
+  <line x1="254" y1="86" x2="236" y2="86" stroke="#7a8794" stroke-width="1.2"/>
+  <text x="258" y="82" font-size="13" fill="#1b2a3a">nucleosome</text>
+  <text x="258" y="98" font-size="12" fill="#5b6b7a">147 bp + octamer</text>
+  <line x1="246" y1="162" x2="224" y2="162" stroke="#7a8794" stroke-width="1.2"/>
+  <text x="250" y="166" font-size="13" fill="#1b2a3a">linker DNA</text>
+
+  <line x1="330" y1="150" x2="370" y2="150" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 3. compact fibre: nucleosomes stacked in a zig-zag -->
+  <rect x="392" y="52" width="66" height="210" rx="30" fill="#f4f6f8" stroke="#c9d1d9" stroke-width="1.5"/>
+  <g fill="#f6e2c2" stroke="#d08c2f" stroke-width="1.6">
+    <ellipse cx="410" cy="72" rx="13" ry="10"/><ellipse cx="440" cy="86" rx="13" ry="10"/>
+    <ellipse cx="410" cy="100" rx="13" ry="10"/><ellipse cx="440" cy="114" rx="13" ry="10"/>
+    <ellipse cx="410" cy="128" rx="13" ry="10"/><ellipse cx="440" cy="142" rx="13" ry="10"/>
+    <ellipse cx="410" cy="156" rx="13" ry="10"/><ellipse cx="440" cy="170" rx="13" ry="10"/>
+    <ellipse cx="410" cy="184" rx="13" ry="10"/><ellipse cx="440" cy="198" rx="13" ry="10"/>
+    <ellipse cx="410" cy="212" rx="13" ry="10"/><ellipse cx="440" cy="226" rx="13" ry="10"/>
+    <ellipse cx="410" cy="240" rx="13" ry="10"/>
+  </g>
+
+  <line x1="478" y1="150" x2="518" y2="150" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4. loops of chromatin anchored to a protein scaffold -->
+  <rect x="590" y="50" width="14" height="214" rx="6" fill="#c9d1d9"/>
+  <g fill="none" stroke="#2a6f97" stroke-width="3">
+    <path d="M592,64 C540,48 530,92 592,84"/>
+    <path d="M602,84 C664,72 668,118 602,106"/>
+    <path d="M592,106 C536,96 532,140 592,128"/>
+    <path d="M602,128 C662,118 666,164 602,150"/>
+    <path d="M592,150 C536,140 532,186 592,172"/>
+    <path d="M602,172 C662,162 666,208 602,194"/>
+    <path d="M592,194 C536,184 532,230 592,216"/>
+    <path d="M602,216 C662,206 666,252 602,240"/>
+  </g>
+
+  <line x1="690" y1="150" x2="730" y2="150" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 5. metaphase chromosome: two sister chromatids joined at the centromere -->
+  <g fill="#2a6f97">
+    <path d="M790,50 Q775,50 775,70 L775,140 Q780,150 775,160 L775,258 Q775,270 790,270 Q805,270 805,258 L805,160 Q800,150 805,140 L805,70 Q805,50 790,50 Z"/>
+    <path d="M836,50 Q821,50 821,70 L821,140 Q826,150 821,160 L821,258 Q821,270 836,270 Q851,270 851,258 L851,160 Q846,150 851,140 L851,70 Q851,50 836,50 Z"/>
+  </g>
+  <rect x="800" y="144" width="26" height="12" fill="#2a6f97"/>
+  <line x1="870" y1="150" x2="854" y2="150" stroke="#7a8794" stroke-width="1.2"/>
+  <text x="874" y="155" font-size="13" fill="#1b2a3a">centromere</text>
+  <line x1="870" y1="210" x2="854" y2="210" stroke="#7a8794" stroke-width="1.2"/>
+  <text x="874" y="206" font-size="13" fill="#1b2a3a">sister</text>
+  <text x="874" y="221" font-size="13" fill="#1b2a3a">chromatid</text>
+
+  <!-- captions -->
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle" font-weight="bold">
+    <text x="70" y="294">DNA</text>
+    <text x="222" y="294">nucleosomes</text>
+    <text x="425" y="294">chromatin fibre</text>
+    <text x="597" y="294">loops on scaffold</text>
+    <text x="813" y="294">metaphase chromosome</text>
+  </g>
+  <g font-size="13" fill="#5b6b7a" text-anchor="middle">
+    <text x="70" y="314">2 nm</text>
+    <text x="222" y="314">11 nm, "beads on a string"</text>
+    <text x="425" y="314">≈ 30 nm (in vitro)</text>
+    <text x="597" y="314">≈ 300 nm</text>
+    <text x="813" y="314">≈ 1400 nm, ≈ 10 000× compacted</text>
+  </g>
+</svg>

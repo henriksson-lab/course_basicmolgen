@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.30">
+
+  <meta name="author" content="Basic and molecular genetics (5MO104)">
+  <title>Basic and molecular genetics – Rearrangements &amp; aneuploidy</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Rearrangements &amp; aneuploidy</h1>
+  <p class="subtitle">Part 5: Chromosomes in detail. When the structure or the number of chromosomes changes</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Basic and molecular genetics (5MO104) 
+</div>
+</div>
+</div>
+
+</section>
+<section id="about-this-lecture" class="slide level2">
+<h2>About this lecture</h2>
+<p>The previous lecture built a normal chromosome: one centromere, two telomeres, a fixed band pattern. This one is about what happens when <strong>structure</strong> or <strong>number</strong> goes wrong, and why the consequences show up in the next generation.</p>
+<ul>
+<li><strong>Deletions</strong> and <strong>duplications</strong>: dosage changes; recurrent ones caused by repeats.</li>
+<li><strong>Inversions</strong>: no DNA lost, yet crossovers inside them give unbalanced gametes.</li>
+<li><strong>Translocations</strong>: reciprocal and Robertsonian; how the carrier’s chromosomes segregate; the Philadelphia chromosome.</li>
+<li><strong>Aneuploidy</strong>: nondisjunction in meiosis I and II; trisomy 21 and the <strong>maternal age effect</strong>; sex-chromosome aneuploidies.</li>
+<li><strong>Polyploidy</strong>: crops with whole extra genomes, and why triploids are sterile.</li>
+</ul>
+<p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the chapter on chromosomal rearrangements and changes in chromosome number.</p>
+<aside class="notes">
+<p>The genetic thread through the whole lecture is meiosis. A rearrangement or a missing chromosome in one cell is a cytology fact; what makes it genetics is what the carrier passes on. Many carriers of a balanced rearrangement are perfectly healthy, and the problem appears only in their children or as reduced fertility. Students know mitosis, meiosis and nondisjunction from Part 2 (chromosome theory); today’s demo is the same meiosis demo, in its nondisjunction mode. Keep the key word “balanced” in view: does a cell or gamete have the right amount of every part of the genome, or not?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="four-kinds-of-rearrangement" class="slide level2 smaller">
+<h2>Four kinds of rearrangement</h2>
+
+<img data-src="fig01-rearrangement-types.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><p>A rearrangement starts with <strong>double-strand breaks</strong> that are rejoined the wrong way, or with <strong>recombination between repeats</strong> at the wrong place. <strong>Balanced</strong> rearrangements (inversions, reciprocal translocations) keep every gene, just in a new order; <strong>unbalanced</strong> ones (deletions, duplications) change the amount.</p>
+<aside class="notes">
+<p>Read the figure row by row. The letters are blocks of genes; the red dot is the centromere. Deletion: a segment is missing. Duplication: a segment is present twice, here in tandem. Inversion: a segment is cut out and put back the other way round; paracentric if the centromere is outside the inverted segment, pericentric if it is inside (which can move the centromere and change the arm ratio). Reciprocal translocation: two non-homologous chromosomes swap ends. The notation from the last lecture applies: del, dup, inv, t, with the breakpoints in parentheses. Ask the room which of these can be seen in a G-banded karyotype: those that change the band pattern by more than a few megabases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="recurrent-rearrangements-come-from-repeats" class="slide level2 smaller">
+<h2>Recurrent rearrangements come from repeats</h2>
+
+<img data-src="fig02-nahr.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p><strong>Non-allelic homologous recombination</strong> (NAHR): crossing over between two similar <strong>low-copy repeats</strong> that are not at the same position. It gives a <strong>deletion</strong> and a reciprocal <strong>duplication</strong> of exactly the segment between the repeats.</p>
+<aside class="notes">
+<p>Low-copy repeats, also called segmental duplications, are stretches of more than about 10 kb that are more than 95 percent identical and occur at several places in the genome. When homologous chromosomes pair at the wrong copy, a crossover between them is unequal. Because the breakpoints are set by the repeats, unrelated patients carry nearly identical deletions; that is why these are called recurrent genomic disorders and why they have fixed names. 22q11.2 deletion syndrome is the most common, around 1 in 3000 to 1 in 6000 births. The 17p12 pair is the cleanest example of reciprocity: the duplication of a 1.4 Mb segment containing PMP22 causes Charcot–Marie–Tooth disease type 1A, and the deletion of the same segment causes HNPP, a different nerve disease. One gene, three copies versus one copy, two diseases. Sturtevant’s Bar eye in Drosophila (1925) was the first unequal crossing over to be studied.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="deletions" class="slide level2 smaller">
+<h2>Deletions</h2>
+<p>A heterozygote for a deletion has only <strong>one</strong> copy of the genes in the deleted segment.</p>
+<ul>
+<li><strong>Haploinsufficiency</strong>: for some genes, one copy is not enough. Large deletions are usually harmful; homozygous deletions are usually lethal.</li>
+<li><strong>Pseudodominance</strong>: a recessive allele on the normal homologue is <strong>expressed</strong>, because the deletion uncovers it. <em>Drosophila</em> geneticists used overlapping deletions to <strong>map</strong> genes: a recessive mutation is uncovered only by deletions that remove its locus.</li>
+<li>In meiosis, the normal homologue forms a <strong>deletion loop</strong> where it has no partner.</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Human deletion syndrome</th>
+<th>Region</th>
+<th>Typical size</th>
+<th>Key gene(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cri-du-chat</td>
+<td>5p15.2 → 5pter</td>
+<td>varies</td>
+<td>several</td>
+</tr>
+<tr class="even">
+<td>22q11.2 deletion (DiGeorge)</td>
+<td>22q11.21</td>
+<td>≈ 2.5–3 Mb</td>
+<td><em>TBX1</em> (heart, face)</td>
+</tr>
+<tr class="odd">
+<td>Williams syndrome</td>
+<td>7q11.23</td>
+<td>≈ 1.5–1.8 Mb</td>
+<td><em>ELN</em> (aortic stenosis)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Pseudodominance is the genetic signature of a deletion: a recessive phenotype appears in a heterozygote. It made deletion mapping possible: cross a recessive mutant to a series of flies carrying overlapping deletions, and the mutation lies in the region removed by every deletion that uncovers it. The same logic, with molecular deletions in yeast or bacteria, is still used. In humans, the most common deletion syndromes arise by NAHR, as on the previous slide, mostly as new mutations. A deletion syndrome is a contiguous gene syndrome: many genes are lost, and some features can be traced to single genes, such as the narrowing of the aorta in Williams syndrome to the loss of one copy of the elastin gene ELN. Students find these in ClinVar and MedGen in the exercise. Deletions below about 5 Mb are invisible in a routine karyotype; they are found with microarrays or sequencing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="duplications" class="slide level2 smaller">
+<h2>Duplications</h2>
+<ul>
+<li><strong>Dosage</strong>: three copies of a gene instead of two can change the phenotype. <em>Drosophila</em> <strong>Bar</strong> eye is a tandem duplication; flies with the segment three times on one chromosome (double-Bar) have even smaller eyes. Human <strong>CMT1A</strong> is a duplication of <em>PMP22</em>.</li>
+<li>In meiosis, the duplicated segment forms a <strong>duplication loop</strong>, and the repeat makes further <strong>unequal crossing over</strong> possible: duplications beget duplications.</li>
+<li><strong>Evolution</strong>: a duplicated gene is free to change. One copy keeps the old job, the other can gain a new one. Gene families arose like this, for example the <strong>α- and β-globin</strong> genes, and the red and green opsin genes on the X.</li>
+</ul>
+<p>Duplications are usually less harmful than deletions of the same size: having a little too much is better tolerated than too little.</p>
+<aside class="notes">
+<p>Bar is the classic: Sturtevant showed that Bar reverted and also gave double-Bar at a low rate, and explained both by unequal crossing over between the tandem copies; Bridges later saw the duplicated bands in salivary gland chromosomes. The dosage point links to aneuploidy later today: a trisomy is a duplication of a whole chromosome. The evolutionary point links back to the T2T genome: many of the new protein-coding genes in T2T-CHM13 are in recent segmental duplications that the old reference could not resolve. Red–green colour blindness often results from unequal crossing over between the tandem opsin genes on the X, which is why it is so common in men.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="inversions" class="slide level2 smaller">
+<h2>Inversions</h2>
+<p>An inversion <strong>loses nothing</strong>: an inversion homozygote, or a heterozygote, usually has a normal phenotype. Exceptions: a breakpoint inside a gene, or a gene moved next to heterochromatin (position-effect variegation, previous lecture).</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Paracentric</strong></th>
+<th><strong>Pericentric</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Centromere</td>
+<td>outside the inverted segment</td>
+<td>inside it</td>
+</tr>
+<tr class="even">
+<td>Band pattern</td>
+<td>changes within one arm</td>
+<td>can change the arm ratio</td>
+</tr>
+<tr class="odd">
+<td>Crossover in the loop gives</td>
+<td>a <strong>dicentric</strong> + an <strong>acentric</strong></td>
+<td>two chromosomes with a <strong>duplication</strong> and a <strong>deficiency</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In a heterozygote, the two homologues can only pair gene by gene if one of them forms an <strong>inversion loop</strong>.</p>
+<p>A common harmless human variant is the pericentric inversion of chromosome 9, inv(9)(p12q13), found in about 1–3% of people.</p>
+<aside class="notes">
+<p>The genetic problem with inversions arises in heterozygotes during meiosis, which is the next slide. Inversion homozygotes pair normally and have no problem. Over evolution, inversions are common differences between species: humans and chimpanzees differ by several pericentric inversions, and many Drosophila populations carry inversion polymorphisms that keep favourable combinations of alleles together. Inversions are usually detected by a change in band order, or today by sequencing with long reads.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-crossovers-in-inversions-make-bad-gametes" class="slide level2 smaller">
+<h2>Why crossovers in inversions make bad gametes</h2>
+
+<img data-src="fig03-inversion-loop.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:88.0%"><ul>
+<li><strong>Paracentric</strong>: the crossover chromatids become a <strong>dicentric</strong> (torn at anaphase I) and an <strong>acentric</strong> fragment (lost). Gametes with them are unbalanced.</li>
+<li><strong>Pericentric</strong>: the crossover chromatids each have a <strong>duplication</strong> of one end and a <strong>deficiency</strong> of the other.</li>
+<li>Either way, only the <strong>non-crossover</strong> chromatids give viable offspring. Inversion heterozygotes have reduced fertility, and recombinants for genes inside the inversion seem to be <strong>suppressed</strong>.</li>
+</ul>
+<aside class="notes">
+<p>Derive the products on the board using the figure. Normal: centromere A B C D E; inverted: centromere A D C B E. In the loop, one crossover between B and C joins the normal chromatid’s centromere part, A B, to the inverted chromatid’s centromere part read backwards, C D A: a chromosome with a centromere at each end. The leftover pieces, E D C on one side and B E on the other, join into a fragment with no centromere. The dicentric is stretched between the poles at anaphase I and breaks; the acentric is lost. In animals, the cell often directs the dicentric into the polar body, so the egg can be fine, but in plants and in males fertility drops. Crossing over itself is not suppressed: it happens, but its products die. Geneticists use this: Drosophila balancer chromosomes carry several overlapping inversions, a dominant visible marker and a recessive lethal, and keep a mutation on the homologue intact for generations without selection.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reciprocal-translocations" class="slide level2 smaller">
+<h2>Reciprocal translocations</h2>
+
+<img data-src="fig04-translocation-segregation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:86.0%"><p>A balanced carrier is usually healthy. At meiosis I the four chromosomes pair as a <strong>cross</strong> (quadrivalent). Each gamete gets two of the four, and only <strong>alternate</strong> segregation gives balanced gametes.</p>
+<aside class="notes">
+<p>The cross forms because each part of each chromosome pairs with its homologous part. Then two of the four go to each pole. Alternate segregation, normal plus normal and translocation plus translocation, gives two kinds of balanced gamete: completely normal, and a balanced carrier like the parent. Adjacent-1 keeps homologous centromeres apart but puts one normal and one translocated chromosome together: each gamete has a duplication of one tip and a deficiency of the other. Adjacent-2, where homologous centromeres go to the same pole, is rarer and also unbalanced. In plants this shows up as semisterility: about half of the pollen and ovules abort. In human carriers it shows up as recurrent miscarriage or a child with an unbalanced karyotype. How often each mode happens is measured, not predicted from first principles; if all six ways of sending two chromosomes to each pole were equally likely, a third of gametes would be balanced, and the R exercise simulates exactly that. Translocations also cause pseudolinkage: genes near the breakpoints on the two different chromosomes are inherited together, because only alternate gametes survive.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="robertsonian-translocations" class="slide level2 smaller">
+<h2>Robertsonian translocations</h2>
+<p>Two <strong>acrocentric</strong> chromosomes (13, 14, 15, 21, 22) fuse at or near their centromeres. The long arms survive as one chromosome; the tiny short arms (repeats and rDNA) are lost without harm.</p>
+<ul>
+<li>A carrier has <strong>45 chromosomes</strong>, e.g.&nbsp;45,XX,rob(14;21), and is healthy. About <strong>1 in 1000</strong> people carry a Robertsonian translocation.</li>
+<li>Their gametes, from a trivalent (14, 21, rob):</li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gamete</th>
+<th>Zygote with a normal gamete</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>14 + 21</td>
+<td>46, normal</td>
+<td>healthy</td>
+</tr>
+<tr class="even">
+<td>rob(14;21)</td>
+<td>45, balanced carrier</td>
+<td>healthy</td>
+</tr>
+<tr class="odd">
+<td>rob(14;21) + 21</td>
+<td>46, but <strong>three copies of 21q</strong></td>
+<td><strong>translocation Down syndrome</strong></td>
+</tr>
+<tr class="even">
+<td>14 alone</td>
+<td>monosomy 21</td>
+<td>lethal</td>
+</tr>
+<tr class="odd">
+<td>rob(14;21) + 14</td>
+<td>trisomy 14</td>
+<td>lethal</td>
+</tr>
+<tr class="even">
+<td>21 alone</td>
+<td>monosomy 14</td>
+<td>lethal</td>
+</tr>
+</tbody>
+</table>
+<p>About <strong>4%</strong> of Down syndrome is translocation Down syndrome, and it can <strong>recur</strong> in a family.</p>
+<aside class="notes">
+<p>Students met acrocentric chromosomes last lecture; the five pairs carry the rDNA on their short arms, so losing two short arms is harmless. The trivalent in the carrier can send the three chromosomes to the poles in several ways; the table lists the six two-plus-one outcomes. Several end in early miscarriage. The important clinical difference from ordinary trisomy 21: a translocation trisomy has 46 chromosomes, and one of the parents may be a carrier, so the recurrence risk is much higher than for free trisomy 21. Empirically, the risk of a child with Down syndrome is about 10 to 15 percent when the mother carries rob(14;21), and about 1 percent when the father does. A carrier of rob(21;21) can only make gametes with two copies of 21q or none, so every pregnancy that survives has Down syndrome. That is why a karyotype is done for every child with Down syndrome: it tells the family whether the risk can recur.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-philadelphia-chromosome" class="slide level2 smaller">
+<h2>The Philadelphia chromosome</h2>
+<p><strong>Chronic myeloid leukaemia (CML)</strong>: in most patients, the leukaemic cells carry <strong>t(9;22)(q34;q11)</strong>.</p>
+<ul>
+<li>The small derivative chromosome 22, <strong>der(22)</strong>, is the <strong>Philadelphia chromosome</strong> (Nowell and Hungerford, 1960; shown to be a translocation by Janet Rowley in 1973).</li>
+<li>The breakpoints fall inside two genes: <strong><em>BCR</em></strong> on 22q11 and <strong><em>ABL1</em></strong> on 9q34. The joint makes a <strong>fusion gene</strong>, <em>BCR</em>::<em>ABL1</em>.</li>
+<li>The fusion protein is a tyrosine kinase that is <strong>always on</strong>, and drives the cells to divide.</li>
+<li><strong>Imatinib</strong> (2001) blocks the kinase: one of the first drugs designed against the product of a specific mutation.</li>
+</ul>
+<p>This is a <strong>somatic</strong> rearrangement in blood stem cells: it is not inherited.</p>
+<aside class="notes">
+<p>This is the clearest case of a rearrangement whose effect comes from the breakpoint itself rather than from dosage. Neither BCR nor ABL1 alone is the problem; the fusion is a new gene, with the start of BCR (which makes it dimerise) and the kinase domain of ABL1 (which normally is tightly regulated). The modern notation BCR::ABL1 with a double colon means a fusion. Students look up both genes in NCBI Gene in the exercise; note that BCR lies only about 2 Mb from the 22q11.2 deletion region, so 22q11 shows up twice today for two very different reasons. Cancer genetics in Part 7 comes back to fusion genes and oncogenes. Detection: karyotype, FISH with probes for both genes, or RT-PCR for the fusion transcript, which also measures how well treatment works.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aneuploidy-nondisjunction" class="slide level2 smaller">
+<h2>Aneuploidy: nondisjunction</h2>
+<p><strong>Euploid</strong>: whole sets of chromosomes (n, 2n, 3n…). <strong>Aneuploid</strong>: one or a few chromosomes too many or too few: <strong>monosomy</strong> (2n − 1), <strong>trisomy</strong> (2n + 1), nullisomy (2n − 2), tetrasomy (2n + 2).</p>
+<p>Most aneuploidy comes from <strong>nondisjunction</strong>: chromosomes that fail to separate in meiosis.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Error in</th>
+<th>What fails to separate</th>
+<th>Gametes from that meiosis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Meiosis I</strong></td>
+<td>the <strong>homologues</strong></td>
+<td>2 × n + 1 (one copy from each grandparent), 2 × n − 1</td>
+</tr>
+<tr class="even">
+<td><strong>Meiosis II</strong></td>
+<td>the <strong>sister chromatids</strong> in one cell</td>
+<td>1 × n + 1 (two identical copies), 1 × n − 1, 2 × n</td>
+</tr>
+</tbody>
+</table>
+<p>A trisomic zygote from an MI error has <strong>two different</strong> homologues from that parent; one from an MII error has <strong>two copies of the same</strong> homologue (apart from crossovers). DNA markers near the centromere tell which division failed.</p>
+<aside class="notes">
+<p>Students met nondisjunction with Bridges’ X chromosomes in Drosophila in Part 2; now we use it on autosomes and in humans. Count the gametes on the board, or use the demo on the next slide. The marker logic is how we know that most trisomy 21 is maternal and mostly from meiosis I: genotype the child, the mother and the father at polymorphic markers on chromosome 21. If the child has two maternal alleles that differ at markers near the centromere, the two chromosomes came from different homologues, so meiosis I. Crossing over makes this rule apply to centromere-near markers only, because a crossover can make the two sister chromatids differ further out. Mitotic nondisjunction after fertilisation gives mosaics, with normal and aneuploid cell lines side by side; about 1 to 2 percent of Down syndrome is mosaic.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="try-it-nondisjunction-in-meiosis-i-and-ii" class="slide level2 smaller">
+<h2>Try it: nondisjunction in meiosis I and II</h2>
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="meiosis" data-mode="nondisjunction" data-names="21,2" data-division="1"></div>
+<script src="../demos/dist/meiosis.js"></script>
+<aside class="notes">
+<p>Interactive demo from Part 2 (chromosome theory), here in its nondisjunction mode with two chromosome pairs, labelled 21 and 2; only chromosome 21 nondisjoins. Blue is the homologue this person got from their father, red the one from their mother. Step through with Next. In meiosis I mode, both homologues go to the same pole at anaphase I, and the four gametes are two with both a blue and a red 21 (labelled n + 1 = 3) and two with none (n − 1 = 1). Switch to meiosis II mode and step again: meiosis I is normal, then in one cell the sister chromatids stay together, giving one gamete with two identical copies, one with none and two normal ones. Ask: if this person is a woman and the egg with two 21s is fertilised by a normal sperm, which grandparent’s chromosome 21 does the child carry in each case? Point out that chromosome 2 segregates normally, so each gamete is n + 1 or n − 1 for chromosome 21 only. The demo has no crossing over, which is a simplification.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="human-aneuploidies" class="slide level2 smaller">
+<h2>Human aneuploidies</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Karyotype</th>
+<th>Name</th>
+<th>Approximate frequency</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>47,+21</td>
+<td><strong>Down syndrome</strong></td>
+<td>≈ 1 in 700 births without screening</td>
+<td>the most common viable autosomal trisomy</td>
+</tr>
+<tr class="even">
+<td>47,+18</td>
+<td>Edwards syndrome</td>
+<td>≈ 1 in 5000 births</td>
+<td>most die in the first year</td>
+</tr>
+<tr class="odd">
+<td>47,+13</td>
+<td>Patau syndrome</td>
+<td>≈ 1 in 10 000 births</td>
+<td>most die in the first year</td>
+</tr>
+<tr class="even">
+<td>45,X</td>
+<td><strong>Turner</strong> syndrome</td>
+<td>≈ 1 in 2500 girls</td>
+<td>≈ 99% of 45,X conceptions miscarry</td>
+</tr>
+<tr class="odd">
+<td>47,XXY</td>
+<td><strong>Klinefelter</strong> syndrome</td>
+<td>≈ 1 in 600 boys</td>
+<td>tall, infertile; often undiagnosed</td>
+</tr>
+<tr class="even">
+<td>47,XYY</td>
+<td></td>
+<td>≈ 1 in 1000 boys</td>
+<td>usually few signs</td>
+</tr>
+<tr class="odd">
+<td>47,XXX</td>
+<td>triple X</td>
+<td>≈ 1 in 1000 girls</td>
+<td>usually few signs</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>No autosomal monosomy</strong> survives to birth, and of the autosomal trisomies only 13, 18 and 21 (the chromosomes with the fewest genes) do.</li>
+<li>About <strong>half</strong> of first-trimester miscarriages are chromosomally abnormal; trisomy 16 is the most common, and is never born alive.</li>
+<li>Sex-chromosome aneuploidies are tolerated because <strong>extra X chromosomes are inactivated</strong>, and the Y carries few genes.</li>
+</ul>
+<aside class="notes">
+<p>The frequencies are rounded and vary between studies and with maternal age and prenatal screening; the point is the order of magnitude and the pattern. Gene dosage explains the pattern: chromosome 21 is one of the smallest and most gene-poor, so three copies are survivable; the gene-rich chromosomes are not. Chromosome 16 trisomy, the most common trisomy in miscarriages, shows how often aneuploid embryos form, and how strongly selection removes them; aneuploidy in human eggs is far more frequent than in most other species studied. For the sex chromosomes, X inactivation (Part 6) silences all but one X, so 47,XXY and 47,XXX are mild. Turner syndrome is the only viable monosomy, but even it is mostly lethal before birth: survivors are thought to be often mosaic.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-maternal-age-effect" class="slide level2 smaller">
+<h2>The maternal age effect</h2>
+
+<img data-src="fig05-maternal-age.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><p>The risk of trisomy 21 is ≈ 1 in 1000 pregnancies for mothers aged 20–29 and ≈ 1 in 47 at 40–44. Monosomy X shows <strong>no</strong> such rise.</p>
+<aside class="notes">
+<p>The data are from a Danish nationwide registry of more than half a million pregnancies followed after first-trimester screening, including diagnoses made before birth, so the numbers are higher than live-birth figures (many affected pregnancies end in miscarriage or termination). On a log scale the trisomy 21 curve rises more than twenty-fold from the twenties to the early forties; trisomy 18 rises even more steeply. Monosomy X is flat: most 45,X cases have lost the paternal sex chromosome, so the mother’s age does not matter. Triploidy, mostly from two sperm fertilising one egg, is flat too. The students reproduce this plot in R. Why the mother? About 90 percent of trisomy 21 is maternal in origin, most of it from meiosis I. Human oocytes enter meiosis I before the mother is born and stay arrested in prophase I, with homologues held together by crossovers and cohesin, for up to 50 years. The cohesin is not renewed, so it wears out with age, and the homologues come apart early or go to the same pole. Sperm are made continuously from stem cells, and paternal age has little effect on trisomy.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="polyploidy" class="slide level2 smaller">
+<h2>Polyploidy</h2>
+<p><strong>Polyploids</strong> have three or more complete sets: triploid (3n), tetraploid (4n) and so on. Rare in animals, common in plants: much of our food is polyploid.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Crop</th>
+<th>Ploidy</th>
+<th>Origin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bread wheat</td>
+<td>6x = 42 (AABBDD)</td>
+<td><strong>allo</strong>polyploid: three ancestral species</td>
+</tr>
+<tr class="even">
+<td>Cotton, rapeseed</td>
+<td>4x</td>
+<td>allopolyploid of two species</td>
+</tr>
+<tr class="odd">
+<td>Potato</td>
+<td>4x = 48</td>
+<td><strong>auto</strong>polyploid: doubled sets of one species</td>
+</tr>
+<tr class="even">
+<td>Cultivated strawberry</td>
+<td>8x = 56</td>
+<td>allopolyploid</td>
+</tr>
+<tr class="odd">
+<td>Banana (Cavendish), seedless watermelon</td>
+<td><strong>3x</strong></td>
+<td>sterile triploids, seedless</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Autopolyploid</strong>: extra sets from the same species. <strong>Allopolyploid</strong>: sets from two or more species, after hybridisation and chromosome doubling.</li>
+<li>Polyploids are often bigger (larger cells), and allopolyploids are fertile because each chromosome has a partner from its own species.</li>
+</ul>
+<aside class="notes">
+<p>Most flowering plants have a polyploid ancestor somewhere in their history. Bread wheat combines the genomes of three wild grasses, through two rounds of hybridisation and doubling; each of its 21 chromosome types comes in an A, a B and a D version, and they pair only with their exact partner, so meiosis works like a diploid’s. Polyploidy can be induced with colchicine, which blocks the spindle so the chromosomes double without cell division. Seedless watermelons are made by crossing a tetraploid with a diploid: the triploid offspring are sterile, which is the point. In animals, polyploidy is rare, partly because it disturbs sex determination; triploid human conceptions occur in about 1 to 2 percent of pregnancies and miscarry. Farmed triploid oysters are sterile and put their energy into growth rather than spawning.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-triploids-are-sterile" class="slide level2 smaller">
+<h2>Why triploids are sterile</h2>
+<p>In a triploid, each chromosome has <strong>three</strong> homologues. At meiosis I, a trivalent sends <strong>2</strong> copies to one pole and <strong>1</strong> to the other, at random.</p>
+<p>For each chromosome type, the gamete gets 1 or 2 copies with probability ½ each. With <em>x</em> chromosome types, a gamete is <strong>balanced</strong> (euploid: all 1 or all 2) with probability</p>
+<p><span class="math display">P(\text{balanced}) = 2 \times \left(\tfrac{1}{2}\right)^x</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;"><em>x</em></th>
+<th style="text-align: right;"><em>P</em>(balanced gamete)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a toy triploid</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2/8 = 0.25</td>
+</tr>
+<tr class="even">
+<td>banana, 2n = 3x = 33</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2/2048 ≈ 0.001</td>
+</tr>
+<tr class="odd">
+<td>triploid watermelon, 2n = 3x = 33</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">≈ 0.001</td>
+</tr>
+</tbody>
+</table>
+<p>Almost every gamete is aneuploid, so triploids are (nearly) <strong>sterile</strong>. Bananas are propagated by cuttings.</p>
+<aside class="notes">
+<p>This is the product rule from Part 1 at work. Each trivalent is an independent event, so the probability that all x chromosome types happen to give one copy is one half to the power x, and the same for all giving two copies; add them. With 11 chromosome types it is about one in a thousand, so seeds almost never form; the black specks in a banana are aborted ovules. The same calculation explains why autotetraploids have reduced fertility, and why allopolyploids, which pair as bivalents, do not. The R exercise checks the formula by simulation with rbinom and replicate. The assumption that the extra copy goes to either pole at random is a simplification; trivalents can also fall apart into a bivalent and an unpaired univalent, which makes things worse rather than better.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary" class="slide level2 smaller">
+<h2>Summary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deletion / duplication</td>
+<td>unbalanced; dosage effects; recurrent ones by NAHR between low-copy repeats (22q11.2, 7q11.23, 17p12)</td>
+</tr>
+<tr class="even">
+<td>Pseudodominance</td>
+<td>a deletion uncovers a recessive allele on the other homologue: used for deletion mapping</td>
+</tr>
+<tr class="odd">
+<td>Inversion</td>
+<td>balanced; crossover in the loop → dicentric + acentric (paracentric) or dup + def (pericentric); recombinants “suppressed”</td>
+</tr>
+<tr class="even">
+<td>Reciprocal translocation</td>
+<td>balanced carrier; quadrivalent; only alternate segregation gives balanced gametes; semisterility</td>
+</tr>
+<tr class="odd">
+<td>Robertsonian translocation</td>
+<td>two acrocentrics fuse; carrier has 45 chromosomes; can give translocation Down syndrome</td>
+</tr>
+<tr class="even">
+<td>Philadelphia chromosome</td>
+<td>t(9;22) in CML; <em>BCR</em>::<em>ABL1</em> fusion kinase; somatic</td>
+</tr>
+<tr class="odd">
+<td>Nondisjunction</td>
+<td>MI: n + 1 gametes carry both homologues; MII: two copies of one</td>
+</tr>
+<tr class="even">
+<td>Trisomy 21</td>
+<td>≈ 90% maternal, mostly MI; risk rises steeply with maternal age</td>
+</tr>
+<tr class="odd">
+<td>Sex-chromosome aneuploidy</td>
+<td>45,X; 47,XXY; 47,XYY; 47,XXX; tolerated thanks to X inactivation</td>
+</tr>
+<tr class="even">
+<td>Polyploidy</td>
+<td>auto- and allopolyploids; triploids sterile: P(balanced) = 2 · (½)<sup><em>x</em></sup></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>The revision sheet. The common thread: balanced versus unbalanced. A balanced rearrangement is usually harmless for its carrier, but meiosis turns it into unbalanced gametes, so the problems show up as reduced fertility, miscarriages and affected children. Aneuploidy and polyploidy are the same principle at the level of whole chromosomes and whole sets.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-this-leads" class="slide level2">
+<h2>Where this leads</h2>
+<ul>
+<li><strong>Next: Bacterial genetics (recap).</strong> A very different kind of chromosome: one circle, no meiosis, but genes moved between cells by conjugation, transduction and transformation.</li>
+<li><strong>Organelle inheritance.</strong> Mitochondria have their own chromosome, inherited only through the egg, and their own kind of dosage: heteroplasmy.</li>
+<li><strong>Part 6: Eukaryotic regulation.</strong> X inactivation, the dosage compensation that makes sex-chromosome aneuploidy survivable.</li>
+<li><strong>Part 7: Cancer genetics.</strong> Fusion genes like <em>BCR</em>::<em>ABL1</em> and the loss of chromosome segments in tumours.</li>
+<li><strong>Ethics.</strong> Prenatal screening for trisomies raises its own questions.</li>
+</ul>
+<aside class="notes">
+<p>Point forward. The exercise has pen-and-paper problems on the products of inversion and translocation heterozygotes, nondisjunction, and the triploid formula; the meiosis demo in nondisjunction mode; database tasks on 22q11.2 deletion, Williams syndrome and BCR and ABL1. The R part plots the Danish maternal-age data on a log scale and simulates the gametes of a translocation carrier and a triploid.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'visible',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

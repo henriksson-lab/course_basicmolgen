@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" font-family="Helvetica, Arial, sans-serif">
+  <!-- Three kinds of conjugation. Donor on the left of each panel, recipient (F-) on the right,
+       joined by a mating bridge. Blue = donor chromosome, red = recipient chromosome,
+       orange = F factor DNA. A single strand is transferred, 5' end (oriT) first. -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#d08c2f"/>
+    </marker>
+    <marker id="arrb" markerWidth="8" markerHeight="8" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#2a6f97"/>
+    </marker>
+  </defs>
+
+  <!-- panel separators -->
+  <line x1="300" y1="15" x2="300" y2="315" stroke="#d5dbe1" stroke-width="1.5"/>
+  <line x1="600" y1="15" x2="600" y2="315" stroke="#d5dbe1" stroke-width="1.5"/>
+
+  <!-- ===================== panel 1: F+ x F- ===================== -->
+  <g>
+    <text x="118" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">F</text>
+    <text x="130" y="23" font-size="12" font-weight="bold" fill="#1b2a3a">+</text>
+    <text x="144" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">× F</text>
+    <text x="173" y="23" font-size="12" font-weight="bold" fill="#1b2a3a">−</text>
+    <!-- bridge -->
+    <rect x="125" y="100" width="54" height="14" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+    <!-- donor cell -->
+    <rect x="15" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="60" cy="107" r="26" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <circle cx="106" cy="86" r="11" fill="none" stroke="#d08c2f" stroke-width="3.5"/>
+    <text x="106" y="73" font-size="13" fill="#d08c2f" text-anchor="middle" font-weight="bold">F</text>
+    <!-- recipient cell -->
+    <rect x="174" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="245" cy="112" r="26" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <!-- transferred F strand -->
+    <path d="M112,96 C 135,107 160,107 198,96" fill="none" stroke="#d08c2f" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="73" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">donor</text>
+    <text x="231" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">recipient</text>
+    <g font-size="14" fill="#1b2a3a">
+      <text x="15" y="212">Only the F plasmid is copied</text>
+      <text x="15" y="231">across.</text>
+      <text x="15" y="258" font-weight="bold">Recipient becomes F<tspan font-size="10" dy="-6">+</tspan><tspan dy="6">.</tspan></text>
+      <text x="15" y="282" fill="#5b6b7a">No chromosomal genes move.</text>
+    </g>
+  </g>
+
+  <!-- ===================== panel 2: Hfr x F- ===================== -->
+  <g>
+    <text x="410" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">Hfr × F</text>
+    <text x="473" y="23" font-size="12" font-weight="bold" fill="#1b2a3a">−</text>
+    <rect x="425" y="100" width="54" height="14" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+    <rect x="315" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="368" cy="107" r="30" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <!-- integrated F: an orange arc on the right side of the chromosome -->
+    <path d="M390.2,86.8 A30,30 0 0 1 398,107" fill="none" stroke="#d08c2f" stroke-width="5"/>
+    <text x="381" y="104" font-size="12" fill="#d08c2f" text-anchor="middle" font-weight="bold">F</text>
+    <rect x="474" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="548" cy="112" r="26" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <!-- transferred chromosomal strand, oriT leading -->
+    <path d="M398,107 C 430,107 470,107 520,95" fill="none" stroke="#2a6f97" stroke-width="2.5" marker-end="url(#arrb)"/>
+    <circle cx="398" cy="107" r="3.5" fill="#d08c2f"/>
+    <text x="461" y="132" font-size="12" fill="#5b6b7a" text-anchor="middle">oriT first</text>
+    <text x="373" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">donor</text>
+    <text x="531" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">recipient</text>
+    <g font-size="14" fill="#1b2a3a">
+      <text x="315" y="212">F is in the chromosome. The</text>
+      <text x="315" y="231">chromosome follows, genes in</text>
+      <text x="315" y="250">a <tspan font-weight="bold">fixed order</tspan>, ~100 min in all.</text>
+      <text x="315" y="277" font-weight="bold">Pair breaks first: recipient stays F<tspan font-size="10" dy="-6">−</tspan><tspan dy="6">.</tspan></text>
+      <text x="315" y="301" fill="#5b6b7a">Donor genes enter by recombination.</text>
+    </g>
+  </g>
+
+  <!-- ===================== panel 3: F' x F- ===================== -->
+  <g>
+    <text x="718" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">F’ × F</text>
+    <text x="773" y="23" font-size="12" font-weight="bold" fill="#1b2a3a">−</text>
+    <rect x="725" y="100" width="54" height="14" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+    <rect x="615" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="655" cy="112" r="24" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <!-- F' plasmid: orange circle with a blue (chromosomal) arc carrying lac+ -->
+    <circle cx="701" cy="82" r="14" fill="none" stroke="#d08c2f" stroke-width="3.5"/>
+    <path d="M687,82 A14,14 0 0 1 701,68" fill="none" stroke="#2a6f97" stroke-width="3.5"/>
+    <text x="660" y="68" font-size="13" fill="#2a6f97" font-style="italic">lac</text>
+    <text x="679" y="62" font-size="10" fill="#2a6f97">+</text>
+    <rect x="774" y="55" width="115" height="104" rx="44" fill="#f4f6f8" stroke="#7a8794" stroke-width="2"/>
+    <circle cx="825" cy="118" r="24" fill="none" stroke="#bc4749" stroke-width="3"/>
+    <text x="812" y="123" font-size="13" fill="#bc4749" font-style="italic">lac</text>
+    <text x="831" y="117" font-size="10" fill="#bc4749">−</text>
+    <!-- copy of F' arriving in recipient -->
+    <circle cx="864" cy="84" r="11" fill="none" stroke="#d08c2f" stroke-width="3"/>
+    <path d="M853,84 A11,11 0 0 1 864,73" fill="none" stroke="#2a6f97" stroke-width="3"/>
+    <path d="M715,90 C 745,104 790,104 846,88" fill="none" stroke="#d08c2f" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="673" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">donor</text>
+    <text x="831" y="178" font-size="13" fill="#5b6b7a" text-anchor="middle">recipient</text>
+    <g font-size="14" fill="#1b2a3a">
+      <text x="615" y="212">F left the chromosome and took</text>
+      <text x="615" y="231">a piece of it (here <tspan font-style="italic">lac</tspan>) along.</text>
+      <text x="615" y="258" font-weight="bold">Recipient becomes F’: a partial</text>
+      <text x="615" y="277" font-weight="bold">diploid (<tspan font-style="italic">lac</tspan><tspan font-size="10" dy="-6">+</tspan><tspan dy="6"> / </tspan><tspan font-style="italic">lac</tspan><tspan font-size="10" dy="-6">−</tspan><tspan dy="6">).</tspan></text>
+      <text x="615" y="301" fill="#5b6b7a">Used for dominance and cis/trans tests.</text>
+    </g>
+  </g>
+</svg>

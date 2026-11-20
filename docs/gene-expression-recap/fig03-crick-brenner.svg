@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" font-family="Helvetica, Arial, sans-serif" width="900" height="290">
+  <!-- Crick, Barnett, Brenner and Watts-Tobin (1961): frameshift mutations in phage T4 rII, explained
+       with a sentence of three-letter words read from a fixed start. X, Y, Z = inserted letters. -->
+  <g font-size="14" font-weight="bold" fill="#5a6b7a">
+    <text x="20" y="24">mutation</text><text x="200" y="24">read in threes from the start</text><text x="730" y="24">phenotype</text>
+  </g>
+  <line x1="20" y1="34" x2="880" y2="34" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <g font-size="19" font-family="Courier New, monospace" font-weight="bold">
+    <!-- wild type -->
+    <text x="200" y="72" fill="#1b2a3a">THE FAT CAT ATE THE RED RAT</text>
+    <!-- +1 -->
+    <text x="200" y="128"><tspan fill="#1b2a3a">THE </tspan><tspan fill="#bc4749">FAX TCA TAT ETH ERE DRA T</tspan></text>
+    <!-- +1 -1 -->
+    <text x="200" y="184"><tspan fill="#1b2a3a">THE </tspan><tspan fill="#bc4749">FAX TCA TTE</tspan><tspan fill="#1b2a3a"> THE RED RAT</tspan></text>
+    <!-- +1 +1 +1 -->
+    <text x="200" y="240"><tspan fill="#1b2a3a">THE </tspan><tspan fill="#bc4749">FAX TCA YTA ZTE</tspan><tspan fill="#1b2a3a"> THE RED RAT</tspan></text>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="20" y="72" font-weight="bold">wild type</text>
+    <text x="20" y="128" font-weight="bold">+1</text>
+    <text x="20" y="146" font-size="12" fill="#5a6b7a">insert X</text>
+    <text x="20" y="184" font-weight="bold">+1 and −1</text>
+    <text x="20" y="202" font-size="12" fill="#5a6b7a">insert X, delete an A</text>
+    <text x="20" y="240" font-weight="bold">+1 +1 +1</text>
+    <text x="20" y="258" font-size="12" fill="#5a6b7a">insert X, Y and Z</text>
+  </g>
+  <g font-size="15" font-weight="bold">
+    <text x="730" y="72" fill="#2a6f97">wild type</text>
+    <text x="730" y="128" fill="#bc4749">mutant</text>
+    <text x="730" y="184" fill="#2a6f97">wild type (or close)</text>
+    <text x="730" y="240" fill="#2a6f97">wild type (or close)</text>
+  </g>
+  <text x="20" y="284" font-size="13" fill="#5a6b7a">Only a short stretch between the changes is misread. One or two insertions shift the frame; three restore it.</text>
+</svg>

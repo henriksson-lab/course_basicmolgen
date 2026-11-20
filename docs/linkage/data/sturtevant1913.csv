@@ -1,0 +1,10 @@
+pair,gene1,gene2,recombinant,total,percent_published
+B(C O),y,w,214,21736,1.0
+B P,y,v,1464,4551,32.2
+B R,y,m,115,324,35.5
+B M,y,r,260,693,37.6
+(C O) P,w,v,471,1584,29.7
+(C O) R,w,m,2062,6116,33.7
+(C O) M,w,r,406,898,45.2
+P R,v,m,17,573,3.0
+P M,v,r,109,405,26.9

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: forward vs reverse genetics. Top: forward, start from many random mutants, screen for a
+       phenotype, then map and clone the gene. Bottom: reverse, start from a known gene sequence, disrupt it
+       on purpose (RNAi, CRISPR knockout), then look for the phenotype. -->
+  <defs>
+    <marker id="arr" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- forward -->
+  <text x="20" y="30" font-size="18" font-weight="bold" fill="#2a6f97">Forward genetics: phenotype → gene</text>
+  <g font-size="15" fill="#1b2a3a" text-anchor="middle">
+    <rect x="20" y="48" width="180" height="70" rx="10" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+    <text x="110" y="78">random mutagenesis</text>
+    <text x="110" y="98">(EMS, X-rays)</text>
+    <rect x="250" y="48" width="180" height="70" rx="10" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+    <text x="340" y="78">screen thousands</text>
+    <text x="340" y="98">for a phenotype</text>
+    <rect x="480" y="48" width="180" height="70" rx="10" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+    <text x="570" y="78">complementation</text>
+    <text x="570" y="98">groups = genes</text>
+    <rect x="710" y="48" width="170" height="70" rx="10" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+    <text x="795" y="78">map and clone</text>
+    <text x="795" y="98">the gene</text>
+  </g>
+  <line x1="202" y1="83" x2="246" y2="83" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="432" y1="83" x2="476" y2="83" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="662" y1="83" x2="706" y2="83" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="20" y="142" font-size="14" fill="#5c6b7a">Unbiased: finds genes nobody suspected (e.g. the <tspan font-style="italic">Drosophila</tspan> segmentation genes, <tspan font-style="italic">lin-4</tspan>).</text>
+
+  <!-- reverse -->
+  <text x="20" y="188" font-size="18" font-weight="bold" fill="#5f9e4a">Reverse genetics: gene → phenotype</text>
+  <g font-size="15" fill="#1b2a3a" text-anchor="middle">
+    <rect x="20" y="206" width="180" height="70" rx="10" fill="#eef6ea" stroke="#5f9e4a" stroke-width="1.5"/>
+    <text x="110" y="236">a gene of interest</text>
+    <text x="110" y="256">(sequence, ortholog)</text>
+    <rect x="250" y="206" width="180" height="70" rx="10" fill="#eef6ea" stroke="#5f9e4a" stroke-width="1.5"/>
+    <text x="340" y="236">disrupt it on purpose</text>
+    <text x="340" y="256">(CRISPR, RNAi)</text>
+    <rect x="480" y="206" width="180" height="70" rx="10" fill="#eef6ea" stroke="#5f9e4a" stroke-width="1.5"/>
+    <text x="570" y="236">look for a</text>
+    <text x="570" y="256">phenotype</text>
+  </g>
+  <line x1="202" y1="241" x2="246" y2="241" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="432" y1="241" x2="476" y2="241" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="690" y="236" font-size="14" fill="#5c6b7a">Targeted: tests a</text>
+  <text x="690" y="254" font-size="14" fill="#5c6b7a">hypothesis about one gene;</text>
+  <text x="690" y="272" font-size="14" fill="#5c6b7a">may show no phenotype.</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 0 900 370" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: two genetic tools. A: the GAL4/UAS system in Drosophila. A driver line has a tissue-specific
+       enhancer driving the yeast transcription factor GAL4; a responder line has UAS (GAL4 binding sites)
+       upstream of a transgene (gene X, or an RNAi hairpin). Neither line expresses X; their progeny express
+       X only where the enhancer is active. B: CRISPR-Cas9. A 20-nt guide RNA leads Cas9 to a matching site
+       next to an NGG PAM; Cas9 cuts both strands about 3 bp from the PAM. Repair by non-homologous end
+       joining often leaves a small insertion or deletion: a frameshift, so a knockout. With a repair
+       template, homology-directed repair can write a precise change. -->
+  <defs>
+    <marker id="arr" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- ===== A: GAL4/UAS ===== -->
+  <text x="20" y="28" font-size="17" font-weight="bold" fill="#1b2a3a">A. GAL4/UAS in <tspan font-style="italic">Drosophila</tspan></text>
+  <text x="20" y="62" font-size="14" fill="#5c6b7a">driver line</text>
+  <line x1="20" y1="84" x2="400" y2="84" stroke="#1b2a3a" stroke-width="2"/>
+  <rect x="40" y="70" width="130" height="28" rx="3" fill="#f6e2c2" stroke="#b8901a" stroke-width="1.5"/>
+  <text x="105" y="89" font-size="13" fill="#1b2a3a" text-anchor="middle">eye enhancer</text>
+  <rect x="190" y="70" width="110" height="28" rx="3" fill="#2a6f97"/>
+  <text x="245" y="89" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">GAL4</text>
+
+  <text x="20" y="132" font-size="14" fill="#5c6b7a">responder line</text>
+  <line x1="20" y1="154" x2="400" y2="154" stroke="#1b2a3a" stroke-width="2"/>
+  <rect x="40" y="140" width="80" height="28" rx="3" fill="#dbe8d1" stroke="#5f9e4a" stroke-width="1.5"/>
+  <text x="80" y="159" font-size="13" fill="#1b2a3a" text-anchor="middle">UAS</text>
+  <rect x="140" y="140" width="160" height="28" rx="3" fill="#7b3fa0"/>
+  <text x="220" y="159" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">gene X or RNAi hairpin</text>
+
+  <line x1="210" y1="180" x2="210" y2="208" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="226" y="200" font-size="14" fill="#1b2a3a">cross: progeny carry both</text>
+  <text x="20" y="236" font-size="14" fill="#1b2a3a">GAL4 is made only where the eye enhancer is active;</text>
+  <text x="20" y="256" font-size="14" fill="#1b2a3a">it binds UAS and switches on X <tspan font-weight="bold">only in the eye</tspan>.</text>
+  <text x="20" y="282" font-size="13" fill="#5c6b7a">Mix and match: hundreds of driver lines × any responder.</text>
+  <text x="20" y="300" font-size="13" fill="#5c6b7a">GAL4 is a yeast factor; flies have no UAS sites of their own.</text>
+
+  <line x1="440" y1="44" x2="440" y2="360" stroke="#d5dae0" stroke-width="1.5"/>
+
+  <!-- ===== B: CRISPR ===== -->
+  <text x="470" y="28" font-size="17" font-weight="bold" fill="#1b2a3a">B. CRISPR–Cas9 knockout</text>
+  <!-- DNA -->
+  <line x1="470" y1="110" x2="880" y2="110" stroke="#1b2a3a" stroke-width="3"/>
+  <line x1="470" y1="124" x2="880" y2="124" stroke="#1b2a3a" stroke-width="3"/>
+  <rect x="560" y="102" width="200" height="30" fill="#fbf0c9" stroke="#b8901a" stroke-width="1.5"/>
+  <text x="660" y="146" font-size="13" fill="#1b2a3a" text-anchor="middle">20-nt target in an exon</text>
+  <rect x="760" y="102" width="44" height="30" fill="#c0392b"/>
+  <text x="782" y="122" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">NGG</text>
+  <text x="782" y="146" font-size="13" fill="#c0392b" text-anchor="middle">PAM</text>
+  <!-- Cas9 + guide -->
+  <ellipse cx="680" cy="80" rx="110" ry="26" fill="#9db4c8" stroke="#1b2a3a" stroke-width="1.5" opacity="0.9"/>
+  <text x="640" y="85" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Cas9</text>
+  <path d="M690,92 L750,92" stroke="#d08c2f" stroke-width="4"/>
+  <text x="796" y="88" font-size="13" fill="#d08c2f">guide RNA</text>
+  <!-- cut -->
+  <line x1="745" y1="96" x2="745" y2="136" stroke="#c62828" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <text x="470" y="172" font-size="13" fill="#c62828">dashed: cut, ~3 bp from the PAM</text>
+
+  <line x1="660" y1="180" x2="580" y2="206" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="700" y1="180" x2="780" y2="206" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="470" y="228" font-size="14" font-weight="bold" fill="#1b2a3a">End joining (NHEJ)</text>
+  <text x="470" y="248" font-size="13" fill="#1b2a3a">small insertion or deletion</text>
+  <text x="470" y="266" font-size="13" fill="#1b2a3a">→ frameshift → <tspan font-weight="bold">knockout</tspan></text>
+  <text x="690" y="228" font-size="14" font-weight="bold" fill="#1b2a3a">With a template (HDR)</text>
+  <text x="690" y="248" font-size="13" fill="#1b2a3a">precise change: a point</text>
+  <text x="690" y="266" font-size="13" fill="#1b2a3a">mutation, a tag, a patient allele</text>
+
+  <text x="470" y="312" font-size="13" fill="#5c6b7a">Works in almost any organism: mice, fish, flies, worms,</text>
+  <text x="470" y="330" font-size="13" fill="#5c6b7a">plants and human cells. The edit is a real allele, inherited</text>
+  <text x="470" y="348" font-size="13" fill="#5c6b7a">in Mendelian fashion if it reaches the germ line.</text>
+</svg>

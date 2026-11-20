@@ -1,0 +1,145 @@
+---
+title: "Quiz: the eukaryotic chromosome"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on chromatin, banding, centromeres, telomeres and artificial chromosomes. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Chromatin is digested briefly with a nuclease that cuts linker DNA, and the DNA is run on a gel. What pattern of fragment sizes do you expect, and what does it tell you?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which parts of the DNA are protected by the histone octamer, and how far apart are they?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A **ladder** of fragments at about 200, 400, 600 bp and so on: multiples of the nucleosome repeat. The nuclease cuts only in the exposed linker DNA, so each fragment holds a whole number of nucleosomes. With longer digestion, the linker is trimmed away and a resistant **147-bp** core fragment remains. This is how the regular spacing of nucleosomes was discovered.
+:::
+
+---
+
+**Q2.** Why do histones bind DNA so tightly regardless of its sequence?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Look at their amino acids, and at what every nucleotide has in common.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Histones are rich in the **positively charged** amino acids lysine and arginine. DNA has a **negatively charged** phosphate in every nucleotide, whatever the base. Much of the binding is electrostatic attraction to the backbone, so it does not depend on the sequence. (Some sequences bend more easily and position nucleosomes better, but every sequence can be wrapped.)
+:::
+
+---
+
+**Q3.** Give three differences between euchromatin and constitutive heterochromatin.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of packing, genes, time of replication and DNA sequence.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Heterochromatin is **compact** in interphase (stains darkly), **gene-poor** and mostly silent, **replicates late** in S phase, and is built largely on **repetitive satellite DNA** (around centromeres, for example). It carries H3K9 methylation bound by HP1. Euchromatin is open, gene-rich, mostly active and replicates early. Constitutive heterochromatin is condensed in every cell; facultative heterochromatin, such as the inactive X, only in some.
+:::
+
+---
+
+**Q4.** A *Drosophila* inversion moves *white^+^* next to centromeric heterochromatin, and the eyes become red-and-white mottled. No base of *white* has changed. Explain the mottling, and why the white areas form patches rather than scattered single cells.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What can heterochromatin do along a chromosome, and what happens to a cell's state when it divides?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Heterochromatin can **spread** along the chromosome into the moved gene and silence it. Whether it spreads is decided, partly at random, in each cell during eye development. Once decided, the state is **inherited by the cell's descendants**, so each early choice gives a patch (a clone) of red or white cells. This is **position-effect variegation**: the phenotype depends on the gene's position, not its sequence.
+:::
+
+---
+
+**Q5.** Decode these: (a) the band 7q31.2, (b) the karyotype 47,XX,+18, (c) 45,X.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Band: chromosome, arm, region, band, sub-band. Karyotype: total number, sex chromosomes, abnormality.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) Chromosome **7**, long arm (**q**), region **3**, band **1**, sub-band **2**. (It is the location of *CFTR*.)
+(b) **47** chromosomes, female (**XX**), with an extra chromosome **18**: trisomy 18 (Edwards syndrome).
+(c) **45** chromosomes with a single **X** and no second sex chromosome: Turner syndrome. Both are in the next unit.
+:::
+
+---
+
+**Q6.** A yeast centromere is about 125 bp, but a human centromere spans several megabases. What do human centromeres consist of, and why is the DNA sequence alone not enough to make a centromere in humans?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What histone variant marks active centromeres? Can a centromere move?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Human centromeres are long arrays of **α-satellite**, a 171-bp repeat organised in higher-order repeats. The active centromere is defined by chromatin containing the histone H3 variant **CENP-A**. Evidence that sequence is not enough: **neocentromeres** can form on DNA with no α-satellite, and in dicentric chromosomes one α-satellite array can be **inactive** (no CENP-A). CENP-A marks the centromere **epigenetically** and is copied to the daughter chromosomes.
+:::
+
+---
+
+**Q7.** Why does replication shorten a linear chromosome, but not a circular bacterial chromosome?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does DNA polymerase need in order to fill the gap left when an RNA primer is removed?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+DNA polymerase can only **extend a 3' end**. When the RNA primer of an Okazaki fragment is removed, the gap is filled by extending the fragment **upstream** of it. At the end of a linear molecule, the last primer has no fragment upstream, so its gap cannot be filled and the new strand is shorter: the **end-replication problem**. A circle has no ends: every primer has another fragment upstream of it.
+:::
+
+---
+
+**Q8.** The template region of human telomerase RNA reads 3'-CAAUCCCAAUC-5'. Which repeat does it add, and to which strand? What would change if a mutation turned the template into 3'-CAAUCCCGAUC-5'?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Write the DNA complement of the template, 5' → 3'.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The complement of 3'-CAAUCCCAAUC-5' is 5'-GTTAGGGTTAG-3', so telomerase adds **TTAGGG** repeats to the **3' end of the G-rich strand**. The first five template bases (3'-CAAUC) pair with the DNA end (GTTAG); the other six (CCAAUC) are copied into GGTTAG. In the mutant template 3'-CAAUC CC**G**AUC-5', the copied part is CCGAUC, so telomerase adds GG**C**TAG instead of GGTTAG: **mutant repeats** appear at the chromosome ends. Blackburn's lab did this experiment in *Tetrahymena* and found the mutant repeats at the cells' telomeres, proving that the RNA is the template.
+:::
+
+---
+
+**Q9.** Most human somatic cells have no telomerase activity. Why is that thought to protect against cancer, and how do cancer cells get around it?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What happens to a cell line whose telomeres keep shortening?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Without telomerase, telomeres shorten with each division until they trigger **senescence** (or cell death) after a limited number of divisions (the Hayflick limit, about 40–60 for cultured fibroblasts). A cell that starts to divide out of control therefore runs out of divisions. About **85–90%** of cancers **re-activate telomerase**, often through mutations in the *TERT* promoter; most of the rest use **ALT**, alternative lengthening of telomeres by recombination.
+:::
+
+---
+
+**Q10.** You want a linear DNA molecule to be inherited stably in yeast. Which three kinds of element must it carry, and what does each do? Why does a YAC also carry two different selectable markers, one on each arm?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Replication, segregation, ends.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+An **origin of replication** (ARS) so it is copied in S phase; a **centromere** (CEN) so that the two copies go to opposite poles at mitosis; and a **telomere** at each end so the ends are protected and fully replicated. The two markers (for example *TRP1* and *URA3*) let you select for cells that carry **both arms**, that is, a complete YAC with the insert between them.
+:::
+
+---
+
+**Q11.** Why was it impossible to sequence human centromeres with short sequencing reads, and what did the T2T Consortium use instead?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How do you place a 150-base read inside a 4-Mb array of nearly identical 171-bp repeats?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A short read from inside a satellite array matches **many places equally well**, so the assembly cannot tell where it belongs or how long the array is. These regions were left as gaps or as computer models in GRCh38. T2T used **long reads**: accurate PacBio HiFi reads (about 20 kb) and ultra-long Oxford Nanopore reads (over 100 kb) that span the rare differences between repeats. They also used **CHM13**, a nearly completely homozygous cell line, so there was only one version of each chromosome to assemble.
+:::

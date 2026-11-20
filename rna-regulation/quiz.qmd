@@ -1,0 +1,131 @@
+---
+title: "Quiz: RNA-mediated regulation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on microRNAs, RNAi and lncRNAs. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** *lin-14*(gf) alleles in *C. elegans* are dominant and delete part of the *lin-14* 3′UTR. Why are they dominant, and why does that point to a cis-acting site?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare with *lacO*^c^. What can the normal *lin-14* allele do about the mutant one?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The mutant mRNA lacks the sites through which *lin-4* RNA represses it, so it makes LIN-14 protein in later stages whatever the other allele does: one escaped copy is enough to give the phenotype (dominant). Only the allele that carries the deletion escapes: the 3′UTR acts **in cis**, on its own mRNA, just as *lacO*^c^ affects only the genes next to it.
+:::
+
+---
+
+**Q2.** The double mutant *lin-4*(lf); *lin-14*(lf) is precocious, like *lin-14*(lf) alone. What does that tell you about the order of the two genes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Epistasis, as in Extensions to Mendel: which phenotype shows in the double mutant?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*lin-14* is **epistatic** to *lin-4*: without *lin-14*, it does not matter whether *lin-4* works. So *lin-14* acts **downstream**, and *lin-4* acts by turning *lin-14* down (a negative regulator).
+:::
+
+---
+
+**Q3.** What did Fire and Mello find when they injected sense, antisense or double-stranded RNA into worms?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which was much more potent, and how many molecules were needed?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Sense and antisense RNA alone silenced the target weakly; **double-stranded RNA** silenced it strongly, with only a few molecules per cell, and the effect spread through the body and into the progeny. This is RNA interference: dsRNA is processed into siRNAs that guide cleavage of the matching mRNA.
+:::
+
+---
+
+**Q4.** Put in order: Dicer, pri-miRNA, RISC/Argonaute, Drosha, pre-miRNA, Exportin-5, miRNA duplex.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Start in the nucleus with the primary transcript.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+pri-miRNA → **Drosha** → pre-miRNA → **Exportin-5** (to the cytoplasm) → **Dicer** → miRNA duplex → guide strand loaded into **RISC/Argonaute**.
+:::
+
+---
+
+**Q5.** The mature miR-1 is 5′-UGGAAUGUAAAGAAGUAUGUAU-3′. Write its seed (nt 2–8) and the 7-nt mRNA site (7mer-m8) that matches it, 5′→3′.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Take nucleotides 2–8, complement them, and read backwards.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Seed (nt 2–8): **GGAAUGU**. Complement: CCUUACA; reversed, 5′→3′: **ACAUUCC**. (An 8mer site would be ACAUUCC**A**.)
+:::
+
+---
+
+**Q6.** About how often would you expect a given 7-nt site by chance in random sequence? How many would you expect in a 3000-nt 3′UTR?
+
+::: {.callout-tip collapse="true" title="Hint"}
+4^7^ = 16 384.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Once every 4^7^ = 16 384 nt, so in 3000 nt about 3000/16 384 ≈ **0.18** sites. The *HMGA2* 3′UTR (2999 nt) has **four** 7mer-m8 matches to *let-7* (one of them part of an 8mer) and three more 7mer-A1 sites: far more than chance, which suggests selection to keep them.
+:::
+
+---
+
+**Q7.** Give two differences between an siRNA and a miRNA.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where do they come from, and how do they pair with their targets?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Any two of: siRNAs come from long double-stranded RNA (viral, transposon or experimental); miRNAs from genome-encoded hairpins processed by Drosha. siRNAs pair **perfectly** with one target and guide its **cleavage**; miRNAs pair mainly through the **seed** with **many** targets and reduce translation and stability. siRNAs mainly defend against viruses and transposons; miRNAs regulate genes in development.
+:::
+
+---
+
+**Q8.** A seed mutation in *MIR96* causes **dominant** hearing loss. Why can a mutation in a miRNA gene be dominant?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does the mutant miRNA still do in the cell, and what has it lost?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Two effects, both from one allele. The mutant miRNA no longer recognises its normal targets, so they are repressed only by the miRNA from the normal allele, at half dose (haploinsufficiency of the miRNA). And the new seed makes it repress **new** targets that it should leave alone: a gain of a wrong function. Either can give a phenotype in a heterozygote.
+:::
+
+---
+
+**Q9.** RNAi against gene *X* gives a phenotype in a cell-culture screen. Name two checks before you conclude that *X* is responsible.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What else can an siRNA turn down?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(1) Use **two or more independent siRNAs** with different sequences against *X*: they should all give the phenotype, while off-target seed effects differ between them. (2) **Rescue**: express a version of *X* that the siRNA cannot target (silent changes in the target site); the phenotype should go away. Also check that *X* mRNA or protein actually went down, and compare with a **CRISPR knockout**.
+:::
+
+---
+
+**Q10.** *XIST* acts **in cis**. What would you expect if an *XIST* transgene, switched on, were inserted into an autosome?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which chromosome does *XIST* RNA coat?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*XIST* RNA coats the chromosome it is made from. The autosome carrying the active transgene would be coated and (at least partly) **silenced**, while the X chromosomes would be unaffected. Experiments like this showed that *XIST* is sufficient to start silencing in cis.
+:::

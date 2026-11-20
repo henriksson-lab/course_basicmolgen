@@ -1,0 +1,107 @@
+---
+title: "Quiz: DNA structure & replication (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the evidence for DNA, base pairing, replication and recombination. This is a recap of 5MO103, so focus on the reasoning: what each experiment shows, and what follows from complementarity.
+
+---
+
+**Q1.** In Avery, MacLeod and McCarty's experiment, extract from heat-killed S cells was treated with protease, RNase or DNase before being added to live R cells. Which result showed that the transforming principle is DNA, and why were the other two treatments needed?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A good experiment rules out the alternatives. What were the alternative candidate molecules?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Only **DNase** abolished transformation (no S colonies). The protease and RNase treatments are the **controls** that rule out the alternatives: destroying protein or RNA left the activity intact, so neither of them can be the transforming principle. Without these controls, one could argue that DNase worked only because of a protein contaminant in the enzyme preparation, or that any harsh treatment kills the activity.
+:::
+
+---
+
+**Q2.** Hershey and Chase labelled phage with ^35^S in one experiment and ^32^P in another. Why these two isotopes? Where did each label end up?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which elements are in proteins but not in DNA, and the other way round?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Protein contains **sulphur** (in cysteine and methionine) but almost no phosphorus; DNA contains **phosphorus** (in its backbone) but no sulphur. So ^35^S labels only the protein coat and ^32^P labels only the DNA. After infection and blending, the ^35^S stayed with the empty coats in the fluid, and the ^32^P went into the bacteria and was passed on to the progeny phage. So DNA carries the information for making new phage.
+:::
+
+---
+
+**Q3.** A DNA sample is 22 % A. What are the percentages of T, G and C? Would this work for a single-stranded RNA virus?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Chargaff's rules: A = T and G = C in double-stranded DNA.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A = T = **22 %**, so A + T = 44 % and G + C = 56 %, giving G = C = **28 %**. This only works for **double-stranded** nucleic acid, where every base has a partner. In a single strand (an RNA virus genome, or one strand of DNA on its own) there is no pairing, and A need not equal U or T.
+:::
+
+---
+
+**Q4.** Write the reverse complement of 5′-`GATTACA`-3′. Is 5′-`GGATCC`-3′ (the BamHI site) its own reverse complement?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Complement each base (A↔T, G↔C), then read the result backwards, so that it is again 5′ → 3′.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Complement: 3′-`CTAATGT`-5′; reversed: 5′-**`TGTAATC`**-3′. For `GGATCC`: complement `CCTAGG`, reversed **`GGATCC`**. Yes, it is its own reverse complement (a palindrome in the DNA sense), so both strands read the same 5′ → 3′. That is why a restriction enzyme can recognise the site on both strands at once.
+:::
+
+---
+
+**Q5.** The sickle-cell mutation is written c.20A>T in ClinVar but T>A in dbSNP (rs334, on the chromosome 11 reference). Explain why both are correct.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which strand does each description use? On which strand of chromosome 11 is *HBB*?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The **c.** name uses the *HBB* coding strand, in the direction the gene is read. dbSNP reports alleles on the **+ strand** of the reference chromosome. *HBB* lies on the **− strand** of chromosome 11, so its coding strand is the reverse complement of the + strand. The A on the coding strand pairs with a T on the + strand; after the mutation, T on the coding strand pairs with A on the + strand. One base-pair change, A:T → T:A, described from the two strands.
+:::
+
+---
+
+**Q6.** Meselson and Stahl moved *E. coli* from ^15^N to ^14^N medium. What bands would they have seen after **three** generations under semiconservative replication? Under conservative replication?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The two original heavy strands are never broken up or destroyed. How many helices are there after three generations, and how many of them contain an old strand?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+After three generations, one helix has become 2^3^ = 8. **Semiconservative**: the two old heavy strands sit in two different helices, which are hybrid; the other six are light. So **¼ hybrid, ¾ light**. **Conservative**: the original helix stays intact (heavy), and the other seven are light: **⅛ heavy, ⅞ light**, and never a hybrid band.
+:::
+
+---
+
+**Q7.** An *E. coli* strain with a mutation in *dnaQ* (*mutD*), the proofreading subunit of DNA polymerase III, is called a **mutator**. What does that mean, and why are mutations in all genes affected?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does proofreading do to the error rate of replication?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Proofreading removes most wrongly inserted bases right after insertion, reducing the error rate by about a hundredfold. Without it, replication errors stay in the DNA, and after the next round of replication they become fixed as mutations. Proofreading works on **every** stretch of DNA that is replicated, so the mutation rate rises in **all** genes: the strain is a mutator. (Defects in mismatch repair, the next step, also give mutators, and in humans they cause Lynch syndrome: Mutation unit.)
+:::
+
+---
+
+**Q8.** Explain in two sentences how a crossover between genes *A* and *B* (Part 2) happens at the level of DNA strands. What is a non-crossover, and why was it invisible in mapping crosses?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of the Holliday junctions and the two ways of cutting them.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In meiosis, a double-strand break in one chromatid is repaired using the homologue as template: a 3′ strand invades the homologue, and the two helices become joined by Holliday junctions. When the junctions are cut one way, the helices swap their flanking regions (**crossover**: *A b*, *a B*). Cut the other way, the flanks stay parental (**non-crossover**: *A B*, *a b*) with only a short heteroduplex patch in between. Mapping crosses score only the flanking markers, so non-crossovers look exactly like no event at all, unless the patch covers a heterozygous site and causes gene conversion.
+:::

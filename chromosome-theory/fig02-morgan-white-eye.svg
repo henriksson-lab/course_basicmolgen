@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" width="940" height="420" font-family="Helvetica, Arial, sans-serif">
+<!-- Morgan 1910: white eyes in Drosophila follow the X chromosome. (a) red female x white male, F1 and F2 (Punnett square of F1 gametes) with Morgan's counts. (b) the reciprocal cross gives criss-cross inheritance. -->
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+<text x="20" y="28" font-size="18" text-anchor="start" fill="#1b2a3a" font-weight="bold">(a) Red <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> × white <tspan font-family="DejaVu Sans, sans-serif">♂</tspan> (Morgan 1910)</text>
+<text x="30" y="70" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">P</text>
+<circle cx="92" cy="64" r="7" fill="#c0392b"/>
+<text x="104" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6" font-family="DejaVu Sans, sans-serif"> ♀</tspan></text>
+<text x="196" y="70" font-size="18" text-anchor="middle" fill="#1b2a3a" font-weight="normal">×</text>
+<circle cx="222" cy="64" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="234" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">Y</tspan><tspan font-family="DejaVu Sans, sans-serif"> ♂</tspan></text>
+<text x="30" y="112" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">F</text>
+<text x="41" y="117" font-size="11" text-anchor="start" fill="#1b2a3a" font-weight="bold">1</text>
+<text x="92" y="112" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="normal">all red:</text>
+<text x="160" y="112" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6" font-family="DejaVu Sans, sans-serif"> ♀</tspan></text>
+<text x="222" y="112" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="normal">and</text>
+<text x="258" y="112" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">Y</tspan><tspan font-family="DejaVu Sans, sans-serif"> ♂</tspan></text>
+<text x="30" y="156" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">F</text>
+<text x="41" y="161" font-size="11" text-anchor="start" fill="#1b2a3a" font-weight="bold">2</text>
+<text x="184" y="190" font-size="14" text-anchor="end" fill="#5b6b7a" font-weight="normal">sperm:</text>
+<text x="275.0" y="190" font-size="16" text-anchor="middle" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">+</tspan></text>
+<text x="445.0" y="190" font-size="16" text-anchor="middle" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>Y</tspan></text>
+<text x="122" y="239.0" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>egg </tspan><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">+</tspan></text>
+<text x="122" y="301.0" font-size="16" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>egg </tspan><tspan>X</tspan><tspan dy="-6" font-size="11" font-style="italic">w</tspan></text>
+<rect x="190" y="202" width="170" height="62" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="218" cy="228.0" r="7" fill="#c0392b"/>
+<text x="232" y="233.0" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan></text>
+<text x="232" y="253.0" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">red <tspan font-family="DejaVu Sans, sans-serif">♀</tspan></text>
+<rect x="360" y="202" width="170" height="62" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="388" cy="228.0" r="7" fill="#c0392b"/>
+<text x="402" y="233.0" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">Y</tspan></text>
+<text x="402" y="253.0" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">red <tspan font-family="DejaVu Sans, sans-serif">♂</tspan></text>
+<rect x="190" y="264" width="170" height="62" fill="#f4f6f8" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="218" cy="290.0" r="7" fill="#c0392b"/>
+<text x="232" y="295.0" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan></text>
+<text x="232" y="315.0" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">red <tspan font-family="DejaVu Sans, sans-serif">♀</tspan></text>
+<rect x="360" y="264" width="170" height="62" fill="#f6e2c2" stroke="#7a8794" stroke-width="1.5"/>
+<circle cx="388" cy="290.0" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="402" y="295.0" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">Y</tspan></text>
+<text x="402" y="315.0" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">white <tspan font-family="DejaVu Sans, sans-serif">♂</tspan></text>
+<text x="20" y="350" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="normal">Expected ½ red <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> : ¼ red <tspan font-family="DejaVu Sans, sans-serif">♂</tspan> : ¼ white <tspan font-family="DejaVu Sans, sans-serif">♂</tspan></text>
+<text x="20" y="374" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">Morgan counted 2459 : 1011 : 782,</text>
+<text x="20" y="398" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">and no white-eyed females.</text>
+<line x1="555" y1="20" x2="555" y2="405" stroke="#d5dbe1" stroke-width="2"/>
+<text x="580" y="28" font-size="18" text-anchor="start" fill="#1b2a3a" font-weight="bold">(b) Reciprocal: white <tspan font-family="DejaVu Sans, sans-serif">♀</tspan> × red <tspan font-family="DejaVu Sans, sans-serif">♂</tspan></text>
+<text x="584" y="70" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">P</text>
+<circle cx="630" cy="64" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="642" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6" font-family="DejaVu Sans, sans-serif"> ♀</tspan></text>
+<text x="730" y="70" font-size="18" text-anchor="middle" fill="#1b2a3a" font-weight="normal">×</text>
+<circle cx="756" cy="64" r="7" fill="#c0392b"/>
+<text x="768" y="70" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">Y</tspan><tspan font-family="DejaVu Sans, sans-serif"> ♂</tspan></text>
+<text x="584" y="118" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">gametes</text>
+<text x="652" y="118" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">eggs: all</text>
+<text x="712" y="118" font-size="15" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="10" font-style="italic">w</tspan></text>
+<text x="752" y="118" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">sperm:</text>
+<text x="800" y="118" font-size="15" text-anchor="start" fill="#5b6b7a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="10" font-style="italic">+</tspan></text>
+<text x="820" y="118" font-size="14" text-anchor="start" fill="#5b6b7a" font-weight="normal">or Y</text>
+<text x="584" y="166" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">F</text>
+<text x="595" y="171" font-size="11" text-anchor="start" fill="#1b2a3a" font-weight="bold">1</text>
+<circle cx="630" cy="160" r="7" fill="#c0392b"/>
+<text x="642" y="166" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">+</tspan><tspan dy="6">X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan></text>
+<text x="720" y="166" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">all daughters red</text>
+<circle cx="630" cy="204" r="7" fill="#ffffff" stroke="#5b6b7a" stroke-width="1.6"/>
+<text x="642" y="210" font-size="17" text-anchor="start" fill="#1b2a3a" font-weight="normal" xml:space="preserve"><tspan>X</tspan><tspan dy="-6" font-size="12" font-style="italic">w</tspan><tspan dy="6">Y</tspan></text>
+<text x="720" y="210" font-size="16" text-anchor="start" fill="#1b2a3a" font-weight="bold">all sons white</text>
+<text x="580" y="268" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="normal">Sons get their only X from the mother,</text>
+<text x="580" y="290" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="normal">daughters get the father's X:</text>
+<text x="580" y="312" font-size="15" text-anchor="start" fill="#1b2a3a" font-weight="bold">criss-cross inheritance.</text>
+<text x="580" y="350" font-size="15" text-anchor="start" fill="#5b6b7a" font-weight="normal">The two reciprocal crosses differ:</text>
+<text x="580" y="372" font-size="15" text-anchor="start" fill="#5b6b7a" font-weight="normal">the gene cannot be on an autosome.</text>
+</svg>

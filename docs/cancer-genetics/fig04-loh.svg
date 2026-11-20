@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: loss of heterozygosity (LOH) at RB1 on chromosome 13 (acrocentric, q arm drawn downwards).
+       Red chromosome = inherited with the rb mutation and marker alleles 1; blue = normal homolog, marker alleles 2.
+       Markers M1 (next to RB1) and M2 (distal). Three routes to a tumour cell with no normal RB1. -->
+  <!-- layout: chromosome body y = 90..290; M1 at y = 140; RB1 band y = 158..174; M2 at y = 250 -->
+
+  <g font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="115" y="30">Blood cells</text>
+    <text x="345" y="30">Tumour: deletion</text>
+    <text x="565" y="30">Tumour: mitotic</text>
+    <text x="780" y="30">Tumour: loss of the</text>
+  </g>
+  <g font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="115" y="52">(constitutional)</text>
+    <text x="345" y="52">of the normal copy</text>
+    <text x="565" y="52">recombination</text>
+    <text x="780" y="52">normal chromosome</text>
+  </g>
+  <line x1="232" y1="20" x2="232" y2="410" stroke="#ddd" stroke-width="1.5"/>
+
+  <!-- ===== panel 1: blood, heterozygous ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="80" y="90" width="26" height="200" rx="13" fill="#f1d3d3"/>
+    <rect x="128" y="90" width="26" height="200" rx="13" fill="#cfe0ec"/>
+  </g>
+  <rect x="80" y="158" width="26" height="16" fill="#bc4749"/>
+  <rect x="128" y="158" width="26" height="16" fill="#6a994e"/>
+  <g stroke="#1b2a3a" stroke-width="2.5">
+    <line x1="80" y1="140" x2="106" y2="140"/><line x1="128" y1="140" x2="154" y2="140"/>
+    <line x1="80" y1="250" x2="106" y2="250"/><line x1="128" y1="250" x2="154" y2="250"/>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="74" y="145" text-anchor="end">M1: 1</text>
+    <text x="160" y="145">2</text>
+    <text x="74" y="171" text-anchor="end" font-style="italic" fill="#bc4749">rb</text>
+    <text x="160" y="171" font-style="italic" fill="#6a994e">RB1</text>
+    <text x="74" y="255" text-anchor="end">M2: 1</text>
+    <text x="160" y="255">2</text>
+  </g>
+
+  <!-- ===== panel 2: deletion of the normal RB1 region (and M1) ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="310" y="90" width="26" height="200" rx="13" fill="#f1d3d3"/>
+    <path d="M358,130 L358,103 A13,13 0 0 1 384,103 L384,130 Z" fill="#cfe0ec"/>
+    <path d="M358,184 L358,277 A13,13 0 0 0 384,277 L384,184 Z" fill="#cfe0ec"/>
+  </g>
+  <rect x="358" y="130" width="26" height="54" fill="none" stroke="#bc4749" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="392" y="161" font-size="14" fill="#bc4749">deleted</text>
+  <rect x="310" y="158" width="26" height="16" fill="#bc4749"/>
+  <g stroke="#1b2a3a" stroke-width="2.5">
+    <line x1="310" y1="140" x2="336" y2="140"/>
+    <line x1="310" y1="250" x2="336" y2="250"/><line x1="358" y1="250" x2="384" y2="250"/>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="304" y="145" text-anchor="end">1</text>
+    <text x="304" y="255" text-anchor="end">1</text>
+    <text x="390" y="255">2</text>
+  </g>
+
+  <!-- ===== panel 3: mitotic recombination proximal to RB1: distal part becomes homozygous ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="530" y="90" width="26" height="200" rx="13" fill="#f1d3d3"/>
+    <path d="M578,122 L578,103 A13,13 0 0 1 604,103 L604,122 Z" fill="#cfe0ec"/>
+    <path d="M578,122 L578,277 A13,13 0 0 0 604,277 L604,122 Z" fill="#f1d3d3"/>
+  </g>
+  <rect x="530" y="158" width="26" height="16" fill="#bc4749"/>
+  <rect x="578" y="158" width="26" height="16" fill="#bc4749"/>
+  <g stroke="#1b2a3a" stroke-width="2.5">
+    <line x1="530" y1="140" x2="556" y2="140"/><line x1="578" y1="140" x2="604" y2="140"/>
+    <line x1="530" y1="250" x2="556" y2="250"/><line x1="578" y1="250" x2="604" y2="250"/>
+  </g>
+  <line x1="566" y1="122" x2="616" y2="122" stroke="#bc4749" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="620" y="118" font-size="14" fill="#bc4749">crossover</text>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="524" y="145" text-anchor="end">1</text>
+    <text x="610" y="145">1</text>
+    <text x="524" y="255" text-anchor="end">1</text>
+    <text x="610" y="255">1</text>
+  </g>
+
+  <!-- ===== panel 4: loss of the normal chromosome, mutant copy duplicated (nondisjunction) ===== -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="745" y="90" width="26" height="200" rx="13" fill="#f1d3d3"/>
+    <rect x="793" y="90" width="26" height="200" rx="13" fill="#f1d3d3"/>
+  </g>
+  <rect x="745" y="158" width="26" height="16" fill="#bc4749"/>
+  <rect x="793" y="158" width="26" height="16" fill="#bc4749"/>
+  <g stroke="#1b2a3a" stroke-width="2.5">
+    <line x1="745" y1="140" x2="771" y2="140"/><line x1="793" y1="140" x2="819" y2="140"/>
+    <line x1="745" y1="250" x2="771" y2="250"/><line x1="793" y1="250" x2="819" y2="250"/>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="739" y="145" text-anchor="end">1</text>
+    <text x="825" y="145">1</text>
+    <text x="739" y="255" text-anchor="end">1</text>
+    <text x="825" y="255">1</text>
+  </g>
+
+  <!-- marker read-outs -->
+  <!-- read-outs: start-anchored pieces at centre - 58 / - 28 / + 8 / + 38 (cairo misplaces tspans in centred text) -->
+  <g font-size="16" fill="#1b2a3a">
+    <text x="57" y="330">M1</text><text x="87" y="330" font-weight="bold">1/2</text><text x="123" y="330">M2</text><text x="153" y="330" font-weight="bold">1/2</text>
+    <text x="287" y="330">M1</text><text x="317" y="330" font-weight="bold" fill="#bc4749">1/–</text><text x="353" y="330">M2</text><text x="383" y="330" font-weight="bold">1/2</text>
+    <text x="507" y="330">M1</text><text x="537" y="330" font-weight="bold" fill="#bc4749">1/1</text><text x="573" y="330">M2</text><text x="603" y="330" font-weight="bold" fill="#bc4749">1/1</text>
+    <text x="722" y="330">M1</text><text x="752" y="330" font-weight="bold" fill="#bc4749">1/1</text><text x="788" y="330">M2</text><text x="818" y="330" font-weight="bold" fill="#bc4749">1/1</text>
+  </g>
+  <g font-size="15" fill="#555" text-anchor="middle">
+    <text x="115" y="354">heterozygous at both markers</text>
+    <text x="345" y="354">only allele 1 left at M1</text>
+    <text x="565" y="354">distal part homozygous</text>
+    <text x="780" y="354">whole chromosome homozygous</text>
+  </g>
+  <text x="250" y="398" font-size="16" fill="#1b2a3a">In each tumour the normal <tspan font-style="italic">RB1</tspan> is gone, and markers near it look homozygous:</text>
+  <text x="250" y="420" font-size="16" font-weight="bold" fill="#1b2a3a">loss of heterozygosity (LOH).</text>
+</svg>

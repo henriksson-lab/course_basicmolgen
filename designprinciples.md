@@ -12,7 +12,9 @@ Genetic reasoning (crosses, pedigrees, mapping, Hardy–Weinberg) is learned wit
 
 ## 3. Exercise structure
 
-`exercise.qmd` follows this structure: **Goal** → **Background** → **By hand** → **Explore** (`{#explore}`, demo) → **Find it** (databases) → **In R** → **Solutions**. Solutions are in collapsed callouts. A unit with no demo omits Explore; a unit with nothing to search omits Find it.
+`exercise.qmd` follows this structure: **Goal** → **Background** → **By hand** → **Explore** (`{#explore}`, demo) → **Find it** (databases) → **Solutions**. Solutions are in collapsed callouts. A unit with no demo omits Explore; a unit with nothing to search omits Find it.
+
+The R part is a separate page, `exercise-r.qmd`, listed in the sidebar as "Exercise in R": **Goal** → **Before you start** → **Tasks** → **Solutions**. It builds on the by-hand work, so it comes after the exercise. Keeping it separate lets students and teachers treat the computing as its own session.
 
 ## 4. Find it: stable facts, explicit links
 

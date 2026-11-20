@@ -1,0 +1,9 @@
+cross,sex,eye,n,source
+F1 x F1,female,red,2459,"Morgan TH (1910) Sex limited inheritance in Drosophila. Science 32:120-122, PMID 17759620; text checked against the ESP reprint (esp.org/foundations/genetics/classical/thm-10a.pdf), 2026-11-20"
+F1 x F1,female,white,0,"Morgan 1910 (as above): 'No white-eyed females appeared.'"
+F1 x F1,male,red,1011,Morgan 1910 (as above)
+F1 x F1,male,white,782,Morgan 1910 (as above)
+white male x F1 female,female,red,129,Morgan 1910 (as above)
+white male x F1 female,male,red,132,Morgan 1910 (as above)
+white male x F1 female,female,white,88,Morgan 1910 (as above)
+white male x F1 female,male,white,86,Morgan 1910 (as above)

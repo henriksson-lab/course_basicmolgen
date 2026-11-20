@@ -1,0 +1,143 @@
+---
+title: "Quiz: rearrangements & aneuploidy"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on deletions, duplications, inversions, translocations, aneuploidy and polyploidy. Try each on paper first, then open the answer.
+
+---
+
+**Q1.** Which of these rearrangements are **balanced**, and which are **unbalanced**: deletion, duplication, paracentric inversion, pericentric inversion, reciprocal translocation, Robertsonian translocation?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Does the carrier have exactly two copies of every part of the genome (apart from repeats)?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Unbalanced**: deletion (too little) and duplication (too much). **Balanced**: both kinds of inversion, reciprocal translocations, and Robertsonian translocations (only the repetitive short arms of two acrocentrics are lost, and copies of them remain on the other acrocentrics). Balanced carriers are usually healthy, but they make unbalanced gametes.
+:::
+
+---
+
+**Q2.** A *Drosophila* female heterozygous for a deletion is crossed to a male homozygous for a recessive mutation *m*. Half of the offspring show the mutant phenotype. What does that tell you about *m*, and what is this phenomenon called?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which offspring have only one copy of the region, and which allele is it?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*m* lies **inside the deleted region**. The offspring that got the deletion chromosome from their mother have only the father's *m* allele in that region, so the recessive phenotype shows: **pseudodominance**. Overlapping deletions that do or do not uncover *m* map it to a small interval: **deletion mapping**.
+:::
+
+---
+
+**Q3.** Why do 22q11.2 deletions in unrelated patients usually have almost the same breakpoints?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What sits at the ends of the deleted segment?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The segment is flanked by **low-copy repeats** (segmental duplications). When homologues pair at the wrong copy, crossing over between the mispaired repeats, **non-allelic homologous recombination**, deletes (or duplicates) exactly the segment between them. The repeats set the breakpoints, so the same deletion arises again and again as a new mutation.
+:::
+
+---
+
+**Q4.** An individual is heterozygous for a **paracentric** inversion. One crossover happens inside the inversion loop in a meiosis. What are the four products of that meiosis, and how many of them can give a normal offspring?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Two chromatids take part in the crossover, two do not.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The two **non-crossover** chromatids are one normal and one inverted chromosome, both balanced. The two crossover chromatids become a **dicentric** chromosome (with two centromeres, torn apart at anaphase I) and an **acentric** fragment (lost). Only the two non-crossover products give viable, balanced gametes, so at most **2 of 4**. That is why recombinants inside the inversion are missing among the offspring.
+:::
+
+---
+
+**Q5.** How do the crossover products differ if the inversion is **pericentric**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where is the centromere? Count centromeres in each crossover product.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each crossover chromatid has **one** centromere, so there is no dicentric or acentric. But each has a **duplication** of one end of the chromosome and a **deficiency** of the other end. Gametes with them are unbalanced, and often give inviable zygotes. The result is the same: the crossover products are lost.
+:::
+
+---
+
+**Q6.** A healthy man is a carrier of a balanced reciprocal translocation between chromosomes 4 and 11. Explain why his partner has had several miscarriages, and what kinds of gametes he makes.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Two of four chromosomes go to each pole. Which combinations are balanced?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+His four chromosomes (normal 4, normal 11, and the two translocated ones) pair as a cross at meiosis I. **Alternate** segregation gives balanced gametes: either both normal chromosomes, or both translocated ones (a balanced carrier like him). **Adjacent-1** and **adjacent-2** segregation give gametes with a **duplication** of one translocated segment and a **deficiency** of the other. Zygotes from these are unbalanced, and most miscarry; some may be born with malformations.
+:::
+
+---
+
+**Q7.** A child with Down syndrome has 46 chromosomes. How is that possible, and why does it matter for the parents?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Can a third copy of 21q sit on another chromosome?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The child has **translocation Down syndrome**: two normal chromosomes 21 plus a **Robertsonian translocation** chromosome that carries a third copy of 21q, fused to another acrocentric (for example rob(14;21)). The total count is 46, but there are three copies of 21q. One parent may be a balanced carrier (45 chromosomes), so the **recurrence risk** in the family is much higher than for ordinary trisomy 21. Both parents should be offered a karyotype.
+:::
+
+---
+
+**Q8.** At markers near the centromere of chromosome 21, a child with trisomy 21 has two **different** alleles from the mother. In which maternal meiotic division did nondisjunction most likely occur? And if the two maternal alleles were **identical**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which division separates homologues, and which separates sister chromatids?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Different alleles mean the child got **both homologues** of the mother: nondisjunction in **meiosis I**. Identical alleles mean two copies of the **same** homologue, that is, two sister chromatids: nondisjunction in **meiosis II**. Markers near the centromere are used because crossing over can make sister chromatids differ further out on the arm.
+:::
+
+---
+
+**Q9.** The risk of trisomy 21 rises steeply with the mother's age, but the risk of 45,X (Turner syndrome) does not. Suggest a reason for each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How long does an oocyte wait in meiosis I? Which parent's chromosome is usually missing in 45,X?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Human oocytes start meiosis I before the mother is born and stay arrested in prophase I until ovulation, up to about 50 years. The cohesin that holds homologues together is not renewed and wears out, so older oocytes are more likely to **nondisjoin in meiosis I**. Most trisomy 21 is of maternal origin. In 45,X, the missing sex chromosome is usually the **paternal** one (lost in the father's meiosis or early after fertilisation), so the mother's age has little effect.
+:::
+
+---
+
+**Q10.** Why do individuals with 47,XXY or 47,XXX have far milder phenotypes than individuals with a trisomy of an autosome of similar size?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What happens to extra X chromosomes in a cell?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**X inactivation**: in every cell, all X chromosomes except one are silenced and condensed into Barr bodies, so most extra X genes are not expressed. (A few genes escape inactivation, which explains the remaining symptoms.) The Y carries few genes. Autosomes have no such dosage compensation, so an extra autosome raises the dose of hundreds of genes.
+:::
+
+---
+
+**Q11.** Bread wheat is hexaploid (2n = 6x = 42, AABBDD) and fully fertile. A triploid banana (2n = 3x = 33) is almost sterile. Explain the difference.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many partners does each chromosome have in meiosis?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Wheat is an **allopolyploid**: each chromosome pairs only with its exact partner from the same ancestral genome (A with A, B with B, D with D), so meiosis forms 21 **bivalents** and every gamete gets one complete ABD set. In a **triploid**, each chromosome has three homologues; each trivalent sends 2 to one pole and 1 to the other at random, so a gamete is balanced only if all 11 chromosome types happen to go the same way: probability 2 × (½)^11^ ≈ 0.001.
+:::

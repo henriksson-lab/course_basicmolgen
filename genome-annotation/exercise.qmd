@@ -1,0 +1,185 @@
+---
+title: "Exercise: genome annotation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- translate a DNA sequence in six frames and find open reading frames (ORFs) by hand;
+- explain with probabilities why a long ORF is evidence for a gene, and why it is not enough in eukaryotes;
+- read the structure of a eukaryotic gene (exons, introns, UTRs, strand) from a genome browser;
+- run a **BLASTp** search and read identity, coverage and E-value;
+- tell **orthologs** from **paralogs**, using the globin family;
+- export a gene list from Ensembl **BioMart**.
+
+## Background
+
+**ORFs.** An open reading frame runs from ATG to the next in-frame stop codon (TAA, TAG, TGA). DNA has six frames: +1, +2, +3 on the given strand and −1, −2, −3 on the reverse complement. In random DNA, P(stop) = 3/64 per codon, so stops come every ~21 codons, and P(no stop in *n* codons) = (61/64)^*n*^.
+
+**Eukaryotic genes** have exons and introns. Introns start with GT and end with AG. Annotation combines ORFs and splice signals with RNA-seq, protein homology and conservation, and it is versioned: always note the release (here Ensembl 116, assembly GRCh38).
+
+**BLAST** finds local alignments: blastn (DNA vs DNA), blastp (protein vs protein), blastx (translated DNA vs protein), tblastn (protein vs translated DNA). Read **Per. Ident**, **Query Cover** and the **E value** (expected chance hits this good; < 10^−10^ means homology).
+
+**Gene families.** Gene duplication makes **paralogs** (related genes in one genome); speciation makes **orthologs** (the same gene in two species). The human β-globin locus on chromosome 11 (minus strand) holds, from 5' to 3', *HBE1* (embryo), *HBG2* and *HBG1* (fetus), the pseudogene *HBBP1*, and *HBD* and *HBB* (adult). The α-like genes (*HBZ*, *HBA2*, *HBA1*) are on chromosome 16.
+
+**Human *HBB*** (Ensembl 116, canonical transcript HBB-201): exons of 142, 223 and 263 nt, introns of 130 and 850 nt; the mRNA is 628 nt, of which 444 nt (147 codons + stop) are coding.
+
+## By hand
+
+**B1. (six frames by hand)** This is a 30-nt stretch of the human *HBB* mRNA:
+
+```
+5'-AGACACCATGGTGCATCTGACTCCTGAGGA-3'
+```
+
+a) Split it into codons in frames +1, +2 and +3 and translate them with a codon table. Which frames contain a stop codon? In which frame is the start of β-globin (Met-Val-His-Leu-Thr-Pro-Glu)?
+b) Write the reverse complement and translate frame −1 (starting at its first base). Does it contain a stop?
+c) Frame −1 has no stop codon in these 30 nt. Does that make it part of a gene? What would you need to know?
+
+**B2. (ORF statistics)** a) In random DNA, what is the chance that 50, 100 and 300 consecutive codons contain no stop codon? b) A 5-Mb bacterial genome has about 6 × 5 × 10^6^ / 64 ≈ 470,000 stop codons in its six frames, and so about as many "open stretches" between stops. About how many of them would be at least 100 codons long by chance alone? *E. coli* has about 4,300 protein-coding genes. What does this tell you about using a 100-codon cut-off on its own?
+
+**B3. (gene structure)** Use the *HBB* numbers in the Background.
+
+a) How long is the primary transcript (exons + introns)? What fraction of it ends up in the mRNA?
+b) How many nucleotides of the mRNA are untranslated (5' UTR + 3' UTR)?
+c) The coding sequence starts at mRNA position 51. Which exon does the start codon lie in, and which exon contains the codon for Glu7 (the HbS site, mRNA positions 69–71)?
+d) A mutation changes the first two bases of intron 2 from GT to AT. What do you predict happens to the mRNA? (Some β-thalassaemia alleles are exactly this kind of mutation.)
+
+**B4. (reading BLAST output)** The human β-globin protein (147 aa) was compared with BLASTp to a set of globins. Part of the result:
+
+| Hit | Per. Ident | Query Cover | E value |
+|---|---:|---:|---:|
+| human δ-globin (*HBD*) | 93% | 100% | 2 × 10^−104^ |
+| mouse β-globin (*Hbb-b1*) | 80% | 100% | 2 × 10^−91^ |
+| human ε-globin (*HBE1*) | 76% | 100% | 4 × 10^−87^ |
+| human γ-globin (*HBG1*) | 73% | 100% | 7 × 10^−84^ |
+| human α-globin (*HBA1*) | 43% | 97% | 2 × 10^−37^ |
+| human myoglobin (*MB*) | 16% | 85% | 113 |
+
+a) Which hits are orthologs of human β-globin and which are paralogs?
+b) Which duplication is the most recent? Explain.
+c) Myoglobin folds into the same 3-D structure as the globins. Is it homologous? What does its E value tell you, and what does it *not* tell you?
+d) Why does the α-globin hit have a query cover below 100%?
+
+**B5. (a genome browser view)** Ensembl 116 places the canonical transcripts of the β-like globin genes on chromosome 11 (GRCh38), all on the **minus** strand:
+
+| Gene | Start | End |
+|---|---:|---:|
+| *HBB* | 5,225,464 | 5,227,071 |
+| *HBD* | 5,232,838 | 5,234,483 |
+| *HBG1* | 5,248,269 | 5,249,857 |
+| *HBG2* | 5,253,188 | 5,254,781 |
+| *HBE1* | 5,268,345 | 5,269,945 |
+
+a) How long is each transcript (from first to last base)? How far is it from the end of *HBE1* (its 3' end) to the start of *HBB*'s transcription?
+b) List the genes in the order in which RNA polymerase would meet them moving 5'→3' along the minus strand. How does this order relate to development?
+c) A student says "*HBB* is at the start of the cluster because it has the lowest coordinate". What is wrong with this?
+
+**B6. (gene density)** From the BioMart export: chromosome 13 has 322 protein-coding genes on 114.4 Mb, chromosome 18 has 267 on 80.4 Mb, chromosome 21 has 221 on 46.7 Mb, and chromosome 19 has 1,479 on 58.6 Mb. Compute genes per Mb for each. The only autosomal trisomies seen in live births involve chromosomes 13, 18 and 21. Suggest a reason.
+
+**B7. (paralogs and function)** After a gene duplication, describe three possible fates of the extra copy, with a globin example for each where you can.
+
+## Explore {#explore}
+
+The demo translates a sequence in all six frames. Grey ticks are stop codons; coloured bars are ORFs (ATG to stop) at least as long as the minimum you set (blue: given strand, red: reverse strand). The green track shows the genes annotated in GenBank. Click an ORF to see its protein.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="orf" data-preset="lambda"></div>
+<script src="../demos/dist/orf.js"></script>
+```
+
+**E1.** The demo starts on 3,340 bp of phage λ (NC_001416.1, positions 36,261–39,600) with a 100-aa minimum. How many ORFs are shown, and which annotated genes do they match? Which annotated gene has no ORF at this cut-off? Lower the minimum until it appears: what length is it?
+
+**E2.** Compare the ORF in frame +3 near position 2,100–2,400 with the annotated *cII* gene. Which is longer, and why might an ORF finder get the start wrong?
+
+**E3.** Click "random DNA" (same length, equal base frequencies). At 100 aa, how many ORFs do you find? Press "new random sequence" a few times. What is the longest ORF you see? Compare with your answer to B2.
+
+**E4.** Click "HBB mRNA". How many ORFs of at least 100 aa are there, in which frame, and how long? Click it and check that the protein starts MVHLTPEEK. Why does a mature mRNA give a much cleaner picture than the genomic DNA of a human gene would?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** Four ORFs: frame −3, 279 aa (*rexA*); frame −2, 237 aa (*cI*, the λ repressor); frame +3, 117 aa (over *cII*); frame +2, 299 aa (*O*). The annotated ***cro*** gene has no ORF at 100 aa: it encodes only **66 aa**. It appears when the minimum is 60 aa or lower, together with a few short ORFs that are not annotated genes.
+
+**E2.** The ORF (117 aa) is longer than the annotated *cII* (97 aa); they share the same stop codon. The ORF finder starts at the first ATG after the previous stop, but the real start codon is a later ATG, chosen by the ribosome-binding site. Start codons are the least certain part of a predicted gene.
+
+**E3.** With seed 1 there are **no** ORFs of 100 aa or more; the longest is 94 aa (at a 50-aa cut-off you see nine). The next nine random sequences (seeds 2–10) give longest ORFs of 86, 202, 144, 70, 117, 72, 84, 87 and 70 aa: usually under 100 aa, but now and then a long one (seed 3 even has a 202-aa ORF). That fits B2: about 0.8% of open stretches reach 100 codons, and this sequence has about 300 stops, so you expect about 2 such stretches, and only some of them contain an early ATG. Random DNA rarely makes long ORFs, but in a whole genome there are enough random stretches that some do.
+
+**E4.** One ORF of **147 aa** in frame **+3** (positions 51–494), which is β-globin: MVHLTPEEKSAVTALWGKVNVDE… The other five frames contain only short ORFs. An mRNA has had its introns removed, so the coding sequence is one continuous ORF. In the genomic DNA the same 147 codons are split across three exons by introns of 130 and 850 bp, which contain stop codons, so no single long ORF would show up.
+:::
+
+## Find it
+
+**F1. (BLASTp: homologs of β-globin)** Open [protein BLAST (blastp)](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&PAGE_TYPE=BlastSearch). As query, enter the RefSeq protein accession **NP_000509.1** (human β-globin). Set "Database" to **UniProtKB/Swiss-Prot (swissprot)** and, under "Organism", type ***Homo sapiens***. Click BLAST. In the Descriptions table, read the **Description**, **Per. Ident** and **E value** of the hits. Which human globins are found, in which order, and which known globin is missing? Then remove the organism limit and run it again: from which kinds of animals are the top hits?
+
+**F2. (one gene in a genome browser)** Open the [Ensembl gene page for *HBB*](https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000244734). In the Summary, read the **Location** (chromosome, coordinates, strand) and look at the transcript table: which transcript is marked as **MANE Select / Ensembl canonical**, how many **exons** does it have and how long is its protein? Then open the region in the [UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr11:5220000-5275000) (chr11:5,220,000–5,275,000, assembly hg38 = GRCh38). Find the five globin genes in the gene track. In the conservation track, where is the signal highest?
+
+**F3. (BioMart: export a gene list)** Open [Ensembl BioMart](https://www.ensembl.org/biomart/martview) and build this query:
+
+1. *Database*: **Ensembl Genes** (the release number is shown, e.g. 116). *Dataset*: **Human genes (GRCh38)**.
+2. *Filters* (left menu) → **Region** → Chromosome/scaffold: **21**. → **Gene** → Gene type: **protein_coding**.
+3. *Attributes* → **Features** → keep only **Gene name**, **Chromosome/scaffold name**, **Gene start (bp)**, **Gene end (bp)**, **Gene type** (untick the default Gene stable ID and Transcript stable ID).
+4. Click **Results** (top left), tick "Unique results only", choose **TSV** and **Go** to download.
+
+How many genes are in the list? Find *APP* (amyloid precursor protein): what are its start and end? Why do people with Down syndrome (trisomy 21) have an increased risk of early Alzheimer disease? The file used in the [Exercise in R](exercise-r.qmd) was made exactly like this, but for all chromosomes.
+
+**F4. (UniProt: what does the protein do?)** Open the [UniProt entry P68871](https://www.uniprot.org/uniprotkb/P68871/entry) (HBB_HUMAN). In **Function**, read the first sentence. In **Interaction** → Subunit, read which chains make up adult haemoglobin A. How long is the protein (Sequence section)?
+
+::: {.callout-tip collapse="true" title="Hint: Ensembl and UCSC"}
+In Ensembl, the Location field reads like "Chromosome 11: 5,225,464-5,229,395 reverse strand". The transcript table lists each transcript with its number of exons (in "Transcript ID" → click it) and protein length ("Protein" column, in aa); flags such as "MANE Select" and "Ensembl Canonical" are shown in a column on the right. In UCSC, tracks are listed below the image; right-click a track to change how it is displayed. See the [UCSC Browser user guide](https://genome.ucsc.edu/goldenPath/help/hgTracksHelp.html).
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a)
+
+| Frame | Codons | Protein |
+|---|---|---|
+| +1 | AGA CAC CAT GGT GCA TCT GAC TCC **TGA** GGA | R H H G A S D S **stop** G |
+| +2 | GAC ACC **ATG** GTG CAT CTG ACT CCT GAG | D T **M V H L T P E** |
+| +3 | ACA CCA TGG TGC ATC **TGA** CTC CTG AGG | T P W C I **stop** L L R |
+
+Frames +1 and +3 have a stop; the β-globin start (MVHLTPE…) is in **frame +2** of this snippet. (In the full mRNA, which starts 43 nt earlier, the same codons are in frame +3, as in the demo.)
+
+b) Reverse complement: 5'-TCCTCAGGAGTCAGATGCACCATGGTGTCT-3'. Frame −1: TCC TCA GGA GTC AGA TGC ACC ATG GTG TCT = S S G V R C T M V S, **no stop**.
+
+c) No. A 10-codon stretch without a stop happens by chance with probability (61/64)^10^ ≈ 0.62, so it means nothing. You would need to see how long the open stretch is in the full sequence, and other evidence: is that strand transcribed (RNA-seq), does the putative protein resemble a known protein (BLAST), is it conserved? Here we know the other strand is the gene.
+
+**B2.** a) (61/64)^50^ ≈ **0.091**; (61/64)^100^ ≈ **0.0082**; (61/64)^300^ ≈ **5.5 × 10^−7^**. b) 470,000 × 0.0082 ≈ **3,900** open stretches of at least 100 codons by chance (somewhat fewer contain an ATG near their start). That is nearly as many as the real genes, so a 100-codon cut-off alone would give many false genes. In real bacterial genomes, ORFs on the opposite strand of real genes are a big part of these; gene finders add codon usage, ribosome-binding sites and homology to reject them.
+
+**B3.** a) 142 + 130 + 223 + 850 + 263 = **1,608 nt**; the mRNA is 142 + 223 + 263 = 628 nt, **39%** of the primary transcript. b) 628 − 444 = **184 nt** of UTR (50 nt 5' UTR before the ATG and 134 nt 3' UTR after the stop). c) Exon 1 spans mRNA positions 1–142, so the start codon (51–53) and codon 7 (69–71) are both in **exon 1**. (That is why the 500-bp PCR product in the last unit, which spans exon 1, detects HbS.) d) GT at the start of the intron is the splice donor signal. Without it, the spliceosome cannot use this site: intron 2 may be **retained** in the mRNA, or a nearby cryptic GT used instead. Either way the reading frame is disrupted or stop codons are read, and little or no normal β-globin is made: **β^0^-thalassaemia**.
+
+**B4.** a) **Ortholog**: mouse β-globin (same gene, different species). **Paralogs**: human δ, ε, γ, α-globin and myoglobin (related by duplication within the human genome). b) The **β/δ duplication**: δ-globin is the most similar (93%), so the two copies have had the least time to diverge. c) Myoglobin **is** homologous to β-globin: the shared fold, gene structure and function show a common ancestor. The E value of 113 only says that BLAST could **not detect** the relationship from sequence alone: after hundreds of millions of years, too few identical residues remain. No significant hit ≠ not homologous. d) α-globin is 141 residues and β-globin 146 (after the start Met): the two differ in length, and the local alignment does not reach the very ends, so 97% of the query is covered.
+
+**B5.** a) *HBB* 1,608 nt; *HBD* 1,646; *HBG1* 1,589; *HBG2* 1,594; *HBE1* 1,601: the genes are all about 1.6 kb (similar 3-exon structure). The 3' end of *HBE1* is its **lowest** coordinate (5,268,345), because it is on the minus strand; the 5' end of *HBB* is its highest (5,227,071). The distance is 5,268,345 − 5,227,071 ≈ **41 kb**. b) On the minus strand, 5'→3' means from high to low coordinates: ***HBE1* → *HBG2* → *HBG1* → *HBD* → *HBB***. That is the order in which they are expressed: embryonic ε, fetal γ, adult δ and β. c) Coordinates are counted along the **plus** strand. For a minus-strand cluster, the lowest coordinate is the 3' end, so *HBB* is the **last** gene of the cluster in the direction of transcription.
+
+**B6.** Chromosome 13: 322 / 114.4 = **2.8 genes/Mb**; 18: 267 / 80.4 = **3.3**; 21: 221 / 46.7 = **4.7**; 19: 1,479 / 58.6 = **25.2**. Chromosomes 13, 18 and 21 carry relatively few genes (21 also because it is the smallest), so an extra copy changes the dosage of fewer genes. A trisomy of a gene-rich chromosome such as 19 upsets the balance of so many genes that the embryo does not survive. (The Rearrangements and aneuploidy unit returns to this.)
+
+**B7.** (1) **Both copies keep the old function**, giving more product (the two α-globin genes *HBA1* and *HBA2* make the same protein; the two γ genes almost the same). (2) **One copy takes a new function** or a new timing (fetal γ-globin binds oxygen more tightly than adult β-globin; embryonic ε). (3) **One copy decays** into a pseudogene (*HBBP1*). A fourth possibility is that the copies split the original functions or expression pattern between them.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Click path: BLAST → Protein BLAST → query NP_000509.1 → Database: UniProtKB/Swiss-Prot, Organism: Homo sapiens → BLAST → Descriptions. The top hit is β-globin itself (HBB_HUMAN, 100%), then δ-globin (**HBD**, ~93%), the embryonic and fetal β-like globins ε (**HBE1**, ~76%) and γ (**HBG2**, **HBG1**, ~73%), then the α-like globins: α (**HBA**, ~43%), θ (HBQ1, ~39%), ζ (**HBZ**, ~36%) and μ (HBM, ~35%), and further down the more distant **cytoglobin** (CYGB, ~29%). **Myoglobin** (MB) is not among the significant hits. (Identities checked on 2026-11-20 with BLASTp 2.12 against the UniProt sequences; the web order may differ slightly, and the E values depend on the database size.) Without the organism limit, the list fills up with **β-globins of other species**, mostly mammals (Swiss-Prot has β-globin sequences for many primates, some identical to ours); the mouse ortholog is about 80% identical. Orthologs from other species rank above human paralogs such as α-globin, because they are more similar.
+
+**F2.** Ensembl Summary: Location **Chromosome 11: 5,225,464–5,229,395, reverse strand** (release 116). The canonical transcript is **HBB-201 (ENST00000335295)**, marked MANE Select and Ensembl Canonical, with **3 exons** and a protein of **147 aa**; it matches RefSeq NM_000518.5. (The number of other transcripts changes between releases.) In UCSC at chr11:5,220,000–5,275,000, the gene track shows, from left to right, *HBB*, *HBD*, *HBBP1*, *HBG1*, *HBG2* and *HBE1*, all with arrows pointing left (minus strand). The Conservation track (in the "Comparative Genomics" group) is highest over the **exons** of the globin genes and low in most introns and intergenic DNA.
+
+**F3.** Click path as listed. With Ensembl 116 the list has **221** protein-coding genes on chromosome 21 (later releases may differ by a few). *APP* is at about **25.88–26.17 Mb** (Gene start 25,880,535, end 26,171,128 in release 116). People with Down syndrome have three copies of chromosome 21 and therefore of *APP*, so they make about 1.5 times as much amyloid precursor protein; its fragment, β-amyloid, forms the plaques of Alzheimer disease. This is a **gene dosage** effect.
+
+**F4.** Function: "**Involved in oxygen transport from the lung to the various peripheral tissues.**" Subunit: haemoglobin A is a **heterotetramer of two α chains and two β chains**. Length: **147 aa** (146 in the mature protein, after the initial Met is removed).
+:::
+
+## Where this leads
+
+The annotation you looked at describes **one** reference genome. In **Genomic variation** you look at how genomes differ between people and between populations, starting with the variant you have met in every unit of this part, rs334 (HbS) in *HBB*, and with lactase persistence.
+
+**Next:** [Exercise in R](exercise-r.qmd): read the BioMart export of all human protein-coding genes with `read_tsv()`, count genes per chromosome, join with chromosome lengths and plot gene density.

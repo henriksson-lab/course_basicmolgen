@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Helvetica, Arial, sans-serif" width="900" height="360">
+  <!-- Genome assembly: overlapping short reads are merged into contigs; a repeat longer than the reads breaks the assembly; a long read that spans the repeat joins the contigs. Schematic. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">1. The unknown genome contains two copies of a repeat (R)</text>
+  <line x1="60" y1="56" x2="860" y2="56" stroke="#1b2a3a" stroke-width="6"/>
+  <rect x="300" y="49" width="90" height="14" fill="#d08c2f"/>
+  <rect x="600" y="49" width="90" height="14" fill="#d08c2f"/>
+  <text x="345" y="44" font-size="13" fill="#d08c2f" text-anchor="middle" font-weight="bold">R</text>
+  <text x="645" y="44" font-size="13" fill="#d08c2f" text-anchor="middle" font-weight="bold">R</text>
+  <text x="54" y="61" font-size="13" fill="#1b2a3a" text-anchor="end">genome</text>
+
+  <text x="20" y="96" font-size="16" font-weight="bold" fill="#1b2a3a">2. Short reads overlap; merge overlapping reads into contigs</text>
+  <g fill="#9db7cc">
+    <rect x="60" y="110" width="70" height="9" rx="2"/><rect x="100" y="123" width="70" height="9" rx="2"/>
+    <rect x="145" y="110" width="70" height="9" rx="2"/><rect x="190" y="123" width="70" height="9" rx="2"/>
+    <rect x="230" y="110" width="70" height="9" rx="2"/><rect x="265" y="136" width="70" height="9" rx="2"/>
+    <rect x="395" y="110" width="70" height="9" rx="2"/><rect x="430" y="123" width="70" height="9" rx="2"/>
+    <rect x="475" y="110" width="70" height="9" rx="2"/><rect x="515" y="123" width="70" height="9" rx="2"/>
+    <rect x="555" y="136" width="70" height="9" rx="2"/>
+    <rect x="695" y="110" width="70" height="9" rx="2"/><rect x="735" y="123" width="70" height="9" rx="2"/>
+    <rect x="790" y="110" width="70" height="9" rx="2"/>
+  </g>
+  <g fill="#d08c2f">
+    <rect x="310" y="149" width="70" height="9" rx="2"/><rect x="615" y="149" width="70" height="9" rx="2"/>
+  </g>
+  <text x="700" y="157" font-size="12" fill="#d08c2f">reads inside R: from which copy?</text>
+  <line x1="60" y1="182" x2="300" y2="182" stroke="#2a6f97" stroke-width="6"/>
+  <line x1="395" y1="182" x2="600" y2="182" stroke="#2a6f97" stroke-width="6"/>
+  <line x1="695" y1="182" x2="860" y2="182" stroke="#2a6f97" stroke-width="6"/>
+  <text x="180" y="202" font-size="13" fill="#2a6f97" text-anchor="middle">contig 1</text>
+  <text x="497" y="202" font-size="13" fill="#2a6f97" text-anchor="middle">contig 2</text>
+  <text x="777" y="202" font-size="13" fill="#2a6f97" text-anchor="middle">contig 3</text>
+  <text x="347" y="202" font-size="12" fill="#bc4749" text-anchor="middle">gap</text>
+  <text x="647" y="202" font-size="12" fill="#bc4749" text-anchor="middle">gap</text>
+
+  <text x="20" y="238" font-size="16" font-weight="bold" fill="#1b2a3a">3. A long read spans the repeat and orders the contigs</text>
+  <rect x="230" y="252" width="510" height="10" rx="2" fill="#6a994e"/>
+  <rect x="300" y="252" width="90" height="10" fill="#d08c2f" opacity="0.8"/>
+  <rect x="600" y="252" width="90" height="10" fill="#d08c2f" opacity="0.8"/>
+  <text x="750" y="262" font-size="12" fill="#6a994e">one long read (10–100 kb)</text>
+  <line x1="60" y1="286" x2="860" y2="286" stroke="#2a6f97" stroke-width="6"/>
+  <rect x="300" y="280" width="90" height="12" fill="#d08c2f"/>
+  <rect x="600" y="280" width="90" height="12" fill="#d08c2f"/>
+  <text x="460" y="310" font-size="13" fill="#2a6f97" text-anchor="middle">one scaffold / chromosome-level assembly</text>
+  <text x="20" y="342" font-size="13" fill="#5a6b7a">Repeats longer than the reads (transposons, gene families, centromeres) are the main reason why short-read assemblies stay in pieces.</text>
+</svg>

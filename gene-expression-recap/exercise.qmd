@@ -1,0 +1,139 @@
+---
+title: "Exercise: Gene expression (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- transcribe and translate a sequence from either strand, and splice a pre-mRNA by hand using the GU…AG rule;
+- predict whether skipping an exon keeps the reading frame;
+- explain how promoter, splice-site, poly(A) and coding mutations differ in their effect on the gene product;
+- reason through Crick and Brenner's frameshift combinations;
+- find a gene's transcripts and **MANE Select** transcript in **Ensembl**, its protein isoforms in **UniProt**, and connect an isoform to an exon.
+
+This is a recap of 5MO103, so the exercise is short.
+
+## Background
+
+**Transcription.** RNA polymerase II starts at the promoter (TATA box about 25–30 bp upstream). The mRNA has the sequence of the **coding strand** (U for T) and is complementary to the **template strand**.
+
+**Processing.** A 5′ cap is added; the RNA is cut after an **AAUAAA** signal and given a poly(A) tail; **introns** are removed by the spliceosome. An intron starts with **GU** (donor) and ends with **AG** (acceptor), with a **branch-point A** upstream of the AG.
+
+**Reading frame.** Translation starts at AUG and continues in one frame until a stop codon (UAA, UAG, UGA). Skipping an exon whose length is a **multiple of 3** keeps the frame; otherwise the frame shifts. A premature stop codon well before the last exon–exon junction triggers **nonsense-mediated decay** (NMD).
+
+**The code** is triplet, non-overlapping, degenerate and nearly universal. Frameshift combinations (Crick and Brenner): (+)(−) or (+)(+)(+) close together restore the frame.
+
+**Codon numbering.** In a coding sequence, codon *n* covers c.(3*n*−2) to c.3*n*.
+
+## By hand
+
+**B1. (strands)** The *HBB* coding strand starts 5′-`ATGGTGCATCTGACTCCTGAGGAG`-3′.
+
+a) Write the template strand, 5′ → 3′.
+b) Write the mRNA and translate it.
+c) An RNA polymerase moves along the template strand. In which direction (3′ → 5′ or 5′ → 3′ of the template)?
+
+**B2. (splicing by hand)** An invented pre-mRNA contains two exons and one intron:
+
+`AUGGCCAAGGUAAGUGACUAACUUUUCCUUUCAGGAAUUCUGGUAA`
+
+The first exon is `AUGGCCAAG`.
+
+a) Find the intron using the GU…AG rule. How long is it?
+b) Write the spliced mRNA and translate it.
+c) A mutation changes the first base of the intron from G to A, and the intron is no longer removed. Translate the unspliced RNA. What happens to the protein?
+
+**B3. (in frame or not?)** The *CFTR* MANE Select transcript (Ensembl 116) has these exon lengths for exons 9–13:
+
+| exon | 9 | 10 | 11 | 12 | 13 |
+|---|---|---|---|---|---|
+| length (nt) | 93 | 183 | 192 | 95 | 87 |
+
+a) For each exon, would skipping it keep the reading frame?
+b) The cystic fibrosis allele c.1585-1G>A destroys the acceptor site of exon 12. If this leads to skipping of exon 12, what happens to the protein?
+
+**B4. (Crick and Brenner)** Predict wild type or mutant for each combination of proflavin-induced frameshifts, all close together near the start of the gene: a) (+)(+); b) (−)(−)(−); c) (+)(−)(+); d) (+)(+)(+)(+); e) (+)(+)(−)(−). Explain the rule.
+
+**B5. (properties of the code)**
+
+a) Why can the code not be a doublet code (2 bases per amino acid)?
+b) If codons **overlapped** (bases 1–3, 2–4, 3–5, …), how many amino acids would a single base change alter? What does HbS (one amino acid changed) tell you?
+
+**B6. (six mutations, one gene)** For each *HBB* variant from the lecture, say whether a patient's haemoglobin would contain an **abnormal β-globin**, a **reduced amount** of normal β-globin, or **no** β-globin from that allele:
+
+a) c.-78A>C (TATA box); b) c.20A>T (HbS); c) c.92+1G>A (splice donor); d) c.93-21G>A (new acceptor); e) c.118C>T (nonsense); f) c.*111A>G (poly(A) signal).
+
+## Find it
+
+[Ensembl](https://www.ensembl.org/Homo_sapiens/Info/Index) shows each gene with all its annotated transcripts; [UniProt](https://www.uniprot.org/) shows the proteins, including **isoforms** made by alternative splicing. Both change between releases: this exercise was written with **Ensembl release 116** (check the release number at the bottom of any Ensembl page).
+
+**F1. (transcripts in Ensembl)** Open the Ensembl gene page for [*CFTR* (ENSG00000001626)](https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000001626).
+
+a) On which chromosome and which strand is *CFTR*?
+b) Click **Show transcript table**. How many transcripts are there? Which one is tagged **MANE Select**, and which RefSeq transcript does it match?
+c) Click the MANE Select transcript ID. In its summary, read the number of exons, the transcript length (bp) and the protein length (aa).
+
+**F2. (isoforms in UniProt)** Open [UniProt P13569](https://www.uniprot.org/uniprotkb/P13569/entry) (CFTR_HUMAN) and go to the **Sequence & Isoforms** section.
+
+a) How many isoforms are listed, and how long is the canonical isoform?
+b) How does isoform 2 differ from isoform 1, and how long is it?
+
+**F3. (which exon?)** Isoform 2 lacks amino acids 404–464.
+
+a) Which coding positions (c.) encode codons 404–464?
+b) Coding position c.1 lies in exon 1, and exons 1–9 contain 1209 coding nucleotides in total. Which exon encodes c.1210 onwards? Use B3: where does that exon end? So which exon does isoform 2 lack?
+
+**F4. (a splicing mutation in ClinVar)** Open the ClinVar record [VCV000007112](https://www.ncbi.nlm.nih.gov/clinvar/variation/7112/) (or search ClinVar for `CFTR[gene] AND c.1585-1G>A`). Read the HGVS name, the **molecular consequence**, the classification and the dbSNP ID. Which exon's splice site does it hit, and which nonsense allele from the mutation unit lies in the same exon?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) Reverse complement: 5′-**`CTCCTCAGGAGTCAGATGCACCAT`**-3′.
+b) mRNA 5′-`AUGGUGCAUCUGACUCCUGAGGAG`-3′: **Met Val His Leu Thr Pro Glu Glu**.
+c) The polymerase makes RNA 5′ → 3′, so it moves along the template **3′ → 5′**.
+
+**B2.** a) The intron starts at the first GU after the exon (`GUAAGU…`) and ends at the AG before `GAAUUC`: **`GUAAGUGACUAACUUUUCCUUUCAG`**, 25 nt.
+b) Spliced: `AUG GCC AAG GAA UUC UGG UAA`: **Met Ala Lys Glu Phe Trp Stop**.
+c) Unspliced, with the mutation: `AUG GCC AAG AUA AGU GAC UAA`: **Met Ala Lys Ile Ser Asp Stop**. The intron is read as if it were coding, and contains a stop codon three codons in: a short, non-functional protein (and in a real cell the mRNA would likely be destroyed by NMD). (The sequence is invented.)
+
+**B3.** a) 93 = 3 × 31: **in frame**. 183 = 3 × 61: **in frame**. 192 = 3 × 64: **in frame**. 95 = 3 × 31 + 2: **frameshift**. 87 = 3 × 29: **in frame**.
+b) Skipping exon 12 (95 nt) shifts the reading frame after exon 11. The following codons are misread until a premature stop codon appears, and the mRNA is likely destroyed by NMD: a **null** allele, like G542X, which lies in the same exon.
+
+**B4.** a) (+)(+): net +2: **mutant**. b) (−)(−)(−): net −3: **wild type** (one amino acid fewer). c) (+)(−)(+): net +1: **mutant**. d) (+)(+)(+)(+): net +4 = one codon plus +1: **mutant**. e) (+)(+)(−)(−): net 0: **wild type**. The rule: the frame is restored downstream when the net change is a **multiple of 3**. Only the short stretch between the first and last change is misread.
+
+**B5.** a) 4^2^ = 16 doublets are too few for 20 amino acids. Triplets give 4^3^ = 64, enough (with degeneracy and stops).
+b) With overlapping triplets, each base would belong to three codons, so one change would alter up to **three adjacent** amino acids. HbS, and other missense alleles, change exactly one amino acid, so codons do **not** overlap.
+
+**B6.** a) **Reduced**: less transcription of a normal gene (β^+^). b) **Abnormal**: β-globin with Val instead of Glu (HbS). c) **None**: no normal splicing (β^0^). d) **Reduced**: most mRNA is mis-spliced, but some normal mRNA is made (β^+^). e) **None**: premature stop, mRNA destroyed by NMD (β^0^). f) **Reduced**: poor 3′-end processing gives less stable mRNA (β^+^). Only the missense change gives an abnormal protein; the other five are thalassaemias, diseases of **quantity**.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+These facts were checked with the Ensembl REST API (release 116), the UniProt REST API and NCBI E-utilities on 2026-11-20.
+
+**F1.** a) Chromosome **7**, **forward** (+) strand (band 7q31.2). The location line gives the span of all transcripts together (7:117,287,120–117,715,971 in release 116).
+b) **45 transcripts** in release 116 (other releases may differ). MANE Select: **ENST00000003084** (CFTR-201), matching RefSeq **NM_000492.4**.
+c) **27 exons**, transcript length **6,070 bp**, protein **1,480 aa**. Click path: gene page → Show transcript table → click ENST00000003084 → transcript summary (or the **Exons** link in the left menu).
+
+**F2.** a) **3 isoforms**; the canonical isoform 1 is **1,480 aa**.
+b) Isoform 2 **lacks residues 404–464** ("Missing" in the Sequence & Isoforms section, or the alternative-sequence feature VSP_022123), and is **1,419 aa** long (1480 − 61). (Isoform 3, 604 aa, differs at the end from residue 589.)
+
+**F3.** a) Codon 404 starts at c.(3 × 404 − 2) = **c.1210**; codon 464 ends at c.(3 × 464) = **c.1392**. So c.1210–c.1392, 183 nt.
+b) c.1210 is the first base of **exon 10**, and exon 10 is 183 nt long (B3), so it ends at c.1392. Isoform 2 lacks **exactly exon 10**: an in-frame exon skip. (The R exercise finds the same with the exon table: the Ensembl transcript CFTR-218, 1,419 aa, has every MANE exon except exon 10.)
+
+**F4.** **NM_000492.4(CFTR):c.1585-1G>A**, molecular consequence **splice acceptor variant**, classification **pathogenic** (review status: practice guideline), condition cystic fibrosis, dbSNP **rs76713772**. c.1585-1 is the last base of intron 11, the G of the AG right before **exon 12** (exon 12 starts at c.1585: 1209 + 183 + 192 = 1584 coding nucleotides in exons 1–11). G542X (c.1624G>T) lies in the same exon. (Its legacy name is 1717-1G>A, from an older numbering of the cDNA.)
+:::
+
+## Where this leads
+
+This unit closes Part 3. You have seen how a gene is stored (DNA recap), how it changes (Mutation & complementation) and how it is read (this unit). **Part 4: Genome analysis** turns to the tools: finding genes and open reading frames in raw sequence, sequencing, and browsing variation across whole genomes. The idea of a gene as exons, introns and alternative transcripts is what a genome browser draws for you.
+
+**Next:** [Exercise in R](exercise-r.qmd): load the exon table of all *CFTR* transcripts, compute exon and transcript lengths with `group_by()` and `summarise()`, find the exon that isoform 2 lacks, and draw the transcripts with `geom_segment()`.

@@ -1,0 +1,266 @@
+---
+title: "Exercise in R: Prokaryotic regulation (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- write the Jacob–Monod rules for the *lac* operon as one R **function**;
+- build every combination of genotypes with **`tidyr::expand_grid()`** and apply your function to each row;
+- check a model against a table of known results with `left_join()`.
+
+## Before you start
+
+This page builds on the by-hand part of the [Exercise](exercise.qmd), so do that first. You need the packages readr, dplyr, tidyr, stringr and purrr. Download [jacob_monod_table.csv](data/jacob_monod_table.csv) and save it in a `data/` folder of your R project. It lists the expected phenotypes of eleven classic strains; the course team typed them in from the textbook summaries of Jacob and Monod's work, so they are qualitative results, not measurements.
+
+```r
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(purrr)
+```
+
+## Tasks
+
+New idiom today: [**`expand_grid()`**](https://tidyr.tidyverse.org/reference/expand_grid.html) from tidyr. It makes a tibble with **one row for every combination** of the vectors you give it, like writing out every cell of a Punnett square. `expand_grid(x = 1:2, y = c("a", "b"))` gives four rows: 1 a, 1 b, 2 a, 2 b.
+
+We write a genotype as a string such as `"I+ O+ Z+ Y+"`, with `-` for loss of function, `s` for the super-repressor and `c` for the constitutive operator. An F′ genotype uses the same format, or `"none"` for a haploid. [`str_match()`](https://stringr.tidyverse.org/reference/str_match.html) pulls out the character after a gene letter: `str_match("I+ Oc Z- Y+", "O(.)")[, 2]` is `"c"`.
+
+**R1. (the rules as a function)** Complete `lac_expression(chrom, fprime, lactose)`. It returns a named logical vector: is active β-galactosidase made, and is permease made? Follow the three steps from the Background of the exercise: which repressor is in the cell, which operators are free, and what each transcribed copy makes.
+
+```r
+lac_expression <- function(chrom, fprime, lactose) {
+  copies <- if (fprime == "none") chrom else c(chrom, fprime)
+  I <- str_match(copies, "I(.)")[, 2]   # one value per copy: "+", "-" or "s"
+  O <- str_match(copies, "O(.)")[, 2]
+  Z <- str_match(copies, "Z(.)")[, 2]
+  Y <- str_match(copies, "Y(.)")[, 2]
+  # step 1: are normal operators blocked? (TRUE/FALSE)
+  repressed <- ...
+  # step 2: which copies are transcribed?
+  on <- ...
+  # step 3: what do the transcribed copies make?
+  c(bgal = any(on & Z == "+"), permease = any(on & Y == "+"))
+}
+
+lac_expression("I+ O+ Z+ Y+", "none", lactose = FALSE)
+lac_expression("I+ O+ Z+ Y+", "none", lactose = TRUE)
+lac_expression("I- O+ Z+ Y+", "I+ O+ Z+ Y+", lactose = FALSE)
+```
+
+**R2. (phenotype)** Write `phenotype(chrom, fprime, enzyme)`, which calls `lac_expression()` without and with lactose and returns `"inducible"`, `"constitutive"` or `"none"` for one enzyme (`"bgal"` or `"permease"`). Test it on *O*^c^ and on F′ *I*^+^ / *I*^s^.
+
+**R3. (every strain)** Use `expand_grid()` to build all single copies: three *lacI* alleles × two *lacO* × two *lacZ* × two *lacY*. Paste each row into a genotype string. Then use `expand_grid()` again to pair every chromosome with every F′ (including `"none"`). Add the two phenotypes with [`map2_chr()`](https://purrr.tidyverse.org/reference/map2.html), which works like `map_chr()` but walks along two vectors at once. How many strains are there? How many are inducible for β-gal?
+
+```r
+copies <- expand_grid(I = c("+", "-", "s"), O = c("+", "c"), Z = c("+", "-"), Y = c("+", "-")) |>
+  mutate(genotype = paste0("I", I, " O", O, " Z", Z, " Y", Y))
+
+all_cells <- expand_grid(chrom = copies$genotype, fprime = c("none", copies$genotype)) |>
+  mutate(bgal     = map2_chr(chrom, fprime, \(c, f) phenotype(c, f, "bgal")),
+         permease = map2_chr(chrom, fprime, \(c, f) phenotype(c, f, "permease")))
+```
+
+**R4. (check against Jacob and Monod)** Read `data/jacob_monod_table.csv`. Join your model's predictions onto it with `left_join()` by `chrom` and `fprime`, and add a column `agree` that is `TRUE` when both enzymes match. Does your function reproduce every classic result?
+
+**R5. (looking for cis action)** Use `filter()` on `all_cells` to list merodiploids whose **chromosome** carries *O*^c^ but whose β-galactosidase is nevertheless **inducible**. What do these strains have in common, and what do they show about *lacO*? Then count the haploid phenotype combinations: how many of the 24 haploids are both β-gal-none and permease-none, and why?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: In R"}
+
+**R1.** Any *I*^s^ repressor blocks every normal operator, whatever the inducer. Otherwise normal repressor blocks normal operators only without inducer. With no working repressor at all, nothing is blocked. An *O*^c^ copy is transcribed whatever happens.
+
+```r
+lac_expression <- function(chrom, fprime, lactose) {
+  copies <- if (fprime == "none") chrom else c(chrom, fprime)
+  I <- str_match(copies, "I(.)")[, 2]
+  O <- str_match(copies, "O(.)")[, 2]
+  Z <- str_match(copies, "Z(.)")[, 2]
+  Y <- str_match(copies, "Y(.)")[, 2]
+  repressed <- if (any(I == "s")) TRUE else if (any(I == "+")) !lactose else FALSE
+  on <- O == "c" | !repressed
+  c(bgal = any(on & Z == "+"), permease = any(on & Y == "+"))
+}
+lac_expression("I+ O+ Z+ Y+", "none", lactose = FALSE)
+```
+```
+    bgal permease
+   FALSE    FALSE
+```
+```r
+lac_expression("I+ O+ Z+ Y+", "none", lactose = TRUE)
+```
+```
+    bgal permease
+    TRUE     TRUE
+```
+```r
+lac_expression("I- O+ Z+ Y+", "I+ O+ Z+ Y+", lactose = FALSE)
+```
+```
+    bgal permease
+   FALSE    FALSE
+```
+
+The last one is F′ *I*^+^ / *I*^−^ without lactose: repressed, because the F′ repressor works in trans.
+
+**R2.**
+
+```r
+phenotype <- function(chrom, fprime, enzyme) {
+  off <- lac_expression(chrom, fprime, lactose = FALSE)[[enzyme]]
+  on  <- lac_expression(chrom, fprime, lactose = TRUE)[[enzyme]]
+  if (off) "constitutive" else if (on) "inducible" else "none"
+}
+phenotype("I+ Oc Z+ Y+", "none", "bgal")
+```
+```
+[1] "constitutive"
+```
+```r
+phenotype("Is O+ Z+ Y+", "I+ O+ Z+ Y+", "bgal")
+```
+```
+[1] "none"
+```
+
+**R3.** 3 × 2 × 2 × 2 = **24** single copies, and 24 chromosomes × 25 F′ choices (24 genotypes plus "none") = **600** strains.
+
+```r
+copies
+```
+```
+# A tibble: 24 × 5
+   I     O     Z     Y     genotype
+   <chr> <chr> <chr> <chr> <chr>
+ 1 +     +     +     +     I+ O+ Z+ Y+
+ 2 +     +     +     -     I+ O+ Z+ Y-
+ 3 +     +     -     +     I+ O+ Z- Y+
+ 4 +     +     -     -     I+ O+ Z- Y-
+ 5 +     c     +     +     I+ Oc Z+ Y+
+ 6 +     c     +     -     I+ Oc Z+ Y-
+ 7 +     c     -     +     I+ Oc Z- Y+
+ 8 +     c     -     -     I+ Oc Z- Y-
+ 9 -     +     +     +     I- O+ Z+ Y+
+10 -     +     +     -     I- O+ Z+ Y-
+# ℹ 14 more rows
+```
+```r
+all_cells
+```
+```
+# A tibble: 600 × 4
+   chrom       fprime      bgal         permease
+   <chr>       <chr>       <chr>        <chr>
+ 1 I+ O+ Z+ Y+ none        inducible    inducible
+ 2 I+ O+ Z+ Y+ I+ O+ Z+ Y+ inducible    inducible
+ 3 I+ O+ Z+ Y+ I+ O+ Z+ Y- inducible    inducible
+ 4 I+ O+ Z+ Y+ I+ O+ Z- Y+ inducible    inducible
+ 5 I+ O+ Z+ Y+ I+ O+ Z- Y- inducible    inducible
+ 6 I+ O+ Z+ Y+ I+ Oc Z+ Y+ constitutive constitutive
+ 7 I+ O+ Z+ Y+ I+ Oc Z+ Y- constitutive inducible
+ 8 I+ O+ Z+ Y+ I+ Oc Z- Y+ inducible    constitutive
+ 9 I+ O+ Z+ Y+ I+ Oc Z- Y- inducible    inducible
+10 I+ O+ Z+ Y+ I- O+ Z+ Y+ inducible    inducible
+# ℹ 590 more rows
+```
+```r
+count(all_cells, bgal)
+```
+```
+# A tibble: 3 × 2
+  bgal             n
+  <chr>        <int>
+1 constitutive   280
+2 inducible       62
+3 none           258
+```
+
+Only **62** of the 600 strains are inducible for β-gal, like the wild type. Most random combinations of mutations break regulation one way or the other. Note row 7: F′ *O*^c^ *Z*^+^ *Y*^−^ / wild type has constitutive β-gal (from the F′) but inducible permease (the only *Y*^+^ is on the chromosome, behind a normal operator).
+
+**R4.**
+
+```r
+classic <- read_csv("data/jacob_monod_table.csv", comment = "#", show_col_types = FALSE)
+check <- classic |>
+  left_join(all_cells, by = c("chrom", "fprime"), suffix = c("_expected", "_model")) |>
+  mutate(agree = bgal_expected == bgal_model & permease_expected == permease_model)
+check |> select(chrom, fprime, bgal_model, permease_model, agree)
+```
+```
+# A tibble: 11 × 5
+   chrom       fprime      bgal_model   permease_model agree
+   <chr>       <chr>       <chr>        <chr>          <lgl>
+ 1 I+ O+ Z+ Y+ none        inducible    inducible      TRUE
+ 2 I- O+ Z+ Y+ none        constitutive constitutive   TRUE
+ 3 I+ Oc Z+ Y+ none        constitutive constitutive   TRUE
+ 4 Is O+ Z+ Y+ none        none         none           TRUE
+ 5 I- O+ Z+ Y+ I+ O+ Z- Y- inducible    inducible      TRUE
+ 6 I+ Oc Z+ Y+ I+ O+ Z- Y+ constitutive constitutive   TRUE
+ 7 I+ Oc Z- Y+ I+ O+ Z+ Y+ inducible    constitutive   TRUE
+ 8 Is O+ Z+ Y+ I+ O+ Z+ Y+ none         none           TRUE
+ 9 Is O+ Z+ Y+ I+ Oc Z+ Y+ constitutive constitutive   TRUE
+10 I+ O+ Z- Y+ I+ O+ Z+ Y- inducible    inducible      TRUE
+11 I- O+ Z+ Y+ I- O+ Z- Y+ constitutive constitutive   TRUE
+```
+```r
+all(check$agree)
+```
+```
+[1] TRUE
+```
+
+All eleven classic results agree. Three short rules (super-repressor beats everything except *O*^c^; normal repressor needs no inducer; *O*^c^ is always on) explain the whole table. That is what Jacob and Monod's model achieved.
+
+**R5.**
+
+```r
+all_cells |>
+  filter(fprime != "none", bgal == "inducible", str_detect(chrom, "Oc")) |>
+  head(4)
+```
+```
+# A tibble: 4 × 4
+  chrom       fprime      bgal      permease
+  <chr>       <chr>       <chr>     <chr>
+1 I+ Oc Z- Y+ I+ O+ Z+ Y+ inducible constitutive
+2 I+ Oc Z- Y+ I+ O+ Z+ Y- inducible constitutive
+3 I+ Oc Z- Y+ I- O+ Z+ Y+ inducible constitutive
+4 I+ Oc Z- Y+ I- O+ Z+ Y- inducible constitutive
+```
+
+In every such strain the chromosome's *O*^c^ copy is ***Z*^−^**, and the working *lacZ* is on the F′ next to a normal operator. The *O*^c^ operator cannot make the *lacZ*^+^ on the other molecule constitutive: it acts only **in cis**, so it is a DNA site. (Its own *Y*^+^ makes permease constitutive.)
+
+```r
+all_cells |>
+  filter(fprime == "none") |>
+  count(bgal, permease)
+```
+```
+# A tibble: 7 × 3
+  bgal         permease         n
+  <chr>        <chr>        <int>
+1 constitutive constitutive     4
+2 constitutive none             4
+3 inducible    inducible        1
+4 inducible    none             1
+5 none         constitutive     4
+6 none         inducible        1
+7 none         none             9
+```
+
+**9** haploids make neither enzyme: the four *I*^s^ *O*^+^ strains (uninducible, whatever *Z* and *Y* are), plus the five other strains that are *Z*^−^ *Y*^−^ (one for each remaining combination of *lacI* and *lacO*: 3 × 2 = 6, minus the *I*^s^ *O*^+^ one already counted).
+:::
+
+## Where this leads
+
+`expand_grid()` comes back whenever you need every combination of a few factors. In **Eukaryotic regulation & epigenetics** you reshape a GTEx expression table with `pivot_longer()` and summarise it by tissue and sex with `group_by()` and `summarise()`.

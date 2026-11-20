@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" font-family="Helvetica, Arial, sans-serif">
+  <!-- Left: a schematic G-banded ideogram (not to scale) with the parts of a chromosome and how a
+       band name such as 1p36.33 is read. Right: the four shapes, by centromere position, with
+       human examples. Dark bands = G-positive (AT-rich, gene-poor); light = G-negative. -->
+
+  <!-- ===== left panel: ideogram ===== -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">Parts of a chromosome</text>
+  <!-- chromosome outline: p arm 60..170, centromere constriction at 175, q arm 180..360 -->
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <!-- p arm bands -->
+    <rect x="150" y="60" width="40" height="12" fill="#ffffff"/>
+    <rect x="150" y="72" width="40" height="16" fill="#3d4b59"/>
+    <rect x="150" y="88" width="40" height="14" fill="#ffffff"/>
+    <rect x="150" y="102" width="40" height="18" fill="#8a96a3"/>
+    <rect x="150" y="120" width="40" height="14" fill="#ffffff"/>
+    <rect x="150" y="134" width="40" height="20" fill="#3d4b59"/>
+    <rect x="150" y="154" width="40" height="14" fill="#ffffff"/>
+    <!-- centromere -->
+    <path d="M150,168 L190,168 L176,177 L190,186 L150,186 L164,177 Z" fill="#bc4749"/>
+    <!-- q arm bands -->
+    <rect x="150" y="186" width="40" height="24" fill="#c9d1d9"/>
+    <rect x="150" y="210" width="40" height="16" fill="#ffffff"/>
+    <rect x="150" y="226" width="40" height="20" fill="#3d4b59"/>
+    <rect x="150" y="246" width="40" height="16" fill="#ffffff"/>
+    <rect x="150" y="262" width="40" height="22" fill="#8a96a3"/>
+    <rect x="150" y="284" width="40" height="16" fill="#ffffff"/>
+    <rect x="150" y="300" width="40" height="24" fill="#3d4b59"/>
+    <rect x="150" y="324" width="40" height="14" fill="#ffffff"/>
+    <rect x="150" y="338" width="40" height="18" fill="#8a96a3"/>
+    <rect x="150" y="356" width="40" height="12" fill="#ffffff"/>
+  </g>
+  <!-- telomere caps -->
+  <rect x="150" y="54" width="40" height="6" fill="#6a994e"/>
+  <rect x="150" y="368" width="40" height="6" fill="#6a994e"/>
+
+  <!-- left-side labels: arms -->
+  <g stroke="#7a8794" stroke-width="1.2" fill="none">
+    <path d="M140,62 L132,62 L132,166 L140,166"/>
+    <path d="M140,188 L132,188 L132,370 L140,370"/>
+  </g>
+  <g font-size="14" fill="#1b2a3a" text-anchor="end">
+    <text x="124" y="110" font-weight="bold">p arm</text>
+    <text x="124" y="126" fill="#5b6b7a" font-size="12.5">(short, "petit")</text>
+    <text x="124" y="276" font-weight="bold">q arm</text>
+    <text x="124" y="292" fill="#5b6b7a" font-size="12.5">(long)</text>
+  </g>
+
+  <!-- right-side labels -->
+  <g stroke="#7a8794" stroke-width="1.2">
+    <line x1="196" y1="57" x2="226" y2="57"/>
+    <line x1="196" y1="177" x2="226" y2="177"/>
+    <line x1="196" y1="80" x2="226" y2="80"/>
+    <line x1="196" y1="95" x2="226" y2="104"/>
+    <line x1="196" y1="198" x2="226" y2="214"/>
+    <line x1="196" y1="371" x2="226" y2="371"/>
+  </g>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="232" y="61">telomere</text>
+    <text x="232" y="84">dark G band: AT-rich, gene-poor</text>
+    <text x="232" y="108">light band: GC-rich, gene-rich</text>
+    <text x="232" y="181">centromere</text>
+    <text x="232" y="218">heterochromatin block</text>
+    <text x="232" y="375">telomere</text>
+  </g>
+
+  <!-- band-name decoding box -->
+  <rect x="232" y="246" width="232" height="104" rx="6" fill="#f4f6f8" stroke="#c9d1d9"/>
+  <text x="244" y="270" font-size="15" fill="#1b2a3a">Reading the band name</text>
+  <text x="244" y="298" font-size="22" font-weight="bold" fill="#2a6f97">1 p 3 6 . 3 3</text>
+  <g font-size="12.5" fill="#5b6b7a">
+    <text x="244" y="320">chromosome 1, p arm, region 3,</text>
+    <text x="244" y="337">band 6, sub-bands .33</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="490" y1="40" x2="490" y2="380" stroke="#e3e7eb" stroke-width="1.5"/>
+
+  <!-- ===== right panel: centromere positions ===== -->
+  <text x="512" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">Where is the centromere?</text>
+  <!-- each chromosome: two chromatids drawn as rounded rects, centromere as red dot -->
+  <!-- metacentric: centromere in the middle -->
+  <g fill="#2a6f97">
+    <rect x="548" y="70" width="14" height="96" rx="7"/><rect x="564" y="70" width="14" height="96" rx="7"/>
+    <rect x="548" y="176" width="14" height="96" rx="7"/><rect x="564" y="176" width="14" height="96" rx="7"/>
+  </g>
+  <circle cx="563" cy="171" r="7" fill="#bc4749"/>
+  <!-- submetacentric -->
+  <g fill="#2a6f97">
+    <rect x="653" y="70" width="14" height="64" rx="7"/><rect x="669" y="70" width="14" height="64" rx="7"/>
+    <rect x="653" y="144" width="14" height="128" rx="7"/><rect x="669" y="144" width="14" height="128" rx="7"/>
+  </g>
+  <circle cx="668" cy="139" r="7" fill="#bc4749"/>
+  <!-- acrocentric: tiny p arm with stalk and satellite -->
+  <g fill="#2a6f97">
+    <circle cx="765" cy="74" r="6"/><circle cx="781" cy="74" r="6"/>
+    <rect x="758" y="96" width="14" height="10" rx="5"/><rect x="774" y="96" width="14" height="10" rx="5"/>
+    <rect x="758" y="116" width="14" height="156" rx="7"/><rect x="774" y="116" width="14" height="156" rx="7"/>
+  </g>
+  <g stroke="#2a6f97" stroke-width="2"><line x1="765" y1="80" x2="765" y2="96"/><line x1="781" y1="80" x2="781" y2="96"/></g>
+  <circle cx="773" cy="111" r="7" fill="#bc4749"/>
+  <!-- telocentric -->
+  <g fill="#2a6f97">
+    <rect x="863" y="80" width="14" height="192" rx="7"/><rect x="879" y="80" width="14" height="192" rx="7"/>
+  </g>
+  <circle cx="878" cy="76" r="7" fill="#bc4749"/>
+
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle" font-weight="bold">
+    <text x="563" y="300">metacentric</text>
+    <text x="668" y="300">submetacentric</text>
+    <text x="773" y="300">acrocentric</text>
+    <text x="878" y="300">telocentric</text>
+  </g>
+  <g font-size="13" fill="#5b6b7a" text-anchor="middle">
+    <text x="563" y="320">1, 3, 16, 19, 20</text>
+    <text x="668" y="320">2, 4–12, 17, 18, X</text>
+    <text x="773" y="320">13–15, 21, 22, Y</text>
+    <text x="878" y="320">none (mouse: all)</text>
+  </g>
+  <text x="512" y="352" font-size="12.5" fill="#5b6b7a">Grey text: human examples. The tiny p arms of the acrocentrics carry</text>
+  <text x="512" y="370" font-size="12.5" fill="#5b6b7a">rDNA arrays on a stalk, ending in a "satellite".</text>
+</svg>

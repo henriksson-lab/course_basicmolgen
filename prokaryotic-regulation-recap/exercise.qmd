@@ -1,0 +1,153 @@
+---
+title: "Exercise: Prokaryotic regulation (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- predict β-galactosidase and permease expression (inducible, constitutive or none) for haploid and merodiploid *lac* strains;
+- use **dominance** and **cis vs trans** to decide whether a mutation changes a **protein** or a **DNA site**;
+- design a merodiploid that tells two mutations with the same haploid phenotype apart;
+- find the *lac* genes in **NCBI Gene** and read their position and strand on the *E. coli* chromosome.
+
+## Background
+
+This is a **recap of 5MO103**, seen through genetics. The *lac* operon has a promoter (P), an operator (O) and three genes transcribed as one mRNA: *lacZ* (β-galactosidase), *lacY* (permease) and *lacA*. The repressor gene *lacI* has its own promoter and is expressed all the time. Repressor binds O and blocks transcription; the inducer (allolactose, or IPTG in the lab) binds the repressor and releases it.
+
+**Alleles.**
+
+| Allele | Defect | Haploid phenotype |
+|---|---|---|
+| *lacI*^−^ | no working repressor | constitutive |
+| *lacI*^s^ | repressor cannot bind inducer (super-repressor) | uninducible |
+| *lacO*^c^ | operator cannot bind repressor | constitutive |
+| *lacZ*^−^ | no active β-galactosidase | no β-gal; permease normal |
+| *lacY*^−^ | no active permease | no permease; β-gal normal |
+
+**Merodiploids** carry a second *lac* region on an F′ plasmid. We write **F′ genotype / chromosome genotype**; genes not mentioned are wild type.
+
+**The logic.** Repressor diffuses, so *lacI* alleles act **in trans** on both copies: *I*^+^ is dominant over *I*^−^, and *I*^s^ is dominant over *I*^+^. The operator is a DNA site, so *lacO* alleles act only **in cis** on the genes of their own copy. To predict a merodiploid: (1) decide which repressor is in the cell; (2) for each copy, decide whether its operator is free; (3) a copy that is transcribed makes β-gal if it is *Z*^+^ and permease if it is *Y*^+^.
+
+**Simplifications.** The inducer reaches the repressor whatever the *lacZ*/*lacY* genotypes (as with IPTG). We ignore CAP–cAMP (glucose) and leaky basal expression.
+
+## By hand
+
+**B1. (haploids)** For each haploid strain, give β-galactosidase and permease as inducible, constitutive or none: a) *I*^+^ *O*^+^ *Z*^+^ *Y*^+^; b) *I*^−^ *Z*^−^; c) *I*^s^; d) *O*^c^ *Y*^−^; e) *I*^s^ *O*^c^.
+
+**B2. (merodiploids)** Do the same for:
+
+a) F′ *I*^+^ *Z*^−^ / *I*^−^ *Z*^+^
+b) F′ *I*^s^ *Z*^−^ / *I*^+^ *Z*^+^
+c) F′ *O*^c^ *Z*^−^ *Y*^+^ / *O*^+^ *Z*^+^ *Y*^−^
+d) F′ *O*^c^ *Z*^+^ *Y*^−^ / *I*^s^ *Z*^−^ *Y*^+^
+e) F′ *I*^−^ *O*^c^ *Z*^+^ / *I*^−^ *O*^+^ *Z*^−^
+
+**B3. (*I*^−^ or *O*^c^?)** You have isolated a new constitutive mutant, *c1*, on the chromosome. It is *Z*^+^. You have an F′ that is *I*^+^ *O*^+^ *Z*^−^ *Y*^+^. Put the F′ into the mutant and measure β-galactosidase. What result do you expect if *c1* is in *lacI*? If it is in *lacO*?
+
+**B4. (an uninducible mutant)** A new mutant, *u1*, makes neither β-gal nor permease, with or without lactose. Two explanations: *u1* is an *I*^s^ allele, or it is a promoter mutation (*P*^−^) that RNA polymerase cannot use.
+
+a) Predict β-gal in F′ *I*^+^ *P*^+^ *O*^+^ *Z*^+^ / *u1* for each explanation.
+b) Which of the two would you call cis-acting?
+
+**B5. (complementation)** Three *lac*^−^ mutants cannot grow on lactose. *m1* and *m3* lack β-galactosidase; *m2* lacks permease. All have normal regulation. Merodiploids give:
+
+| F′ / chromosome | grows on lactose? |
+|---|---|
+| *m1* / *m2* | yes |
+| *m1* / *m3* | no |
+| *m2* / *m3* | yes |
+
+How many genes do the mutations define? Which are in the same gene? Why must you be careful if one of the mutations is a nonsense mutation near the start of *lacZ*?
+
+**B6. (attenuation)** In the *trp* leader peptide, the two Trp codons are changed by mutation to codons for alanine. Will the *trp* operon now respond to tryptophan starvation through attenuation? To which starvation will attenuation respond?
+
+## Explore {#explore}
+
+Do the by-hand part first. In the demo, set the chromosome and the F′ genotypes with the buttons (or "no F′" for a haploid), and switch lactose on and off. The demo draws the repressor on each operator, the mRNA, and the proteins made from each copy, then sums up the phenotype for both inducer states and explains it. The presets are classic strains.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="lacoperon"></div>
+<script src="../demos/dist/lacoperon.js"></script>
+```
+
+**E1.** Click the presets "I⁻" and then "F′ I⁺ / I⁻". What changes in the drawing between the two, and why is this called acting in **trans**?
+
+**E2.** Click "F′ O⁺ Z⁻ / Oᶜ Z⁺" and then "F′ O⁺ Z⁺ / Oᶜ Z⁻". Compare the β-galactosidase phenotypes. Which copy makes the active enzyme in each case?
+
+**E3.** Click "F′ I⁺ / Iˢ" and toggle lactose. Then, keeping the chromosome *I*^s^, change the F′ operator to c. Which copy is now transcribed, and why can the super-repressor not stop it?
+
+**E4.** Set up your answers to B2 c) and d) in the demo and check them.
+
+**E5.** Click "F′ Z⁺ Y⁻ / Z⁻ Y⁺". Which copy makes β-gal and which makes permease? Is the strain able to use lactose?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** In the *I*^−^ haploid there is no repressor, so the operator is free and the operon is transcribed with or without lactose: both enzymes constitutive. Adding F′ *I*^+^ puts normal repressor into the cell, and it sits on **both** operators, the F′ one and the chromosomal one, until lactose is added: both enzymes become inducible. The repressor made from one DNA molecule acts on the other, which is what **trans** means.
+
+**E2.** F′ *O*^+^ *Z*^−^ / *O*^c^ *Z*^+^: β-gal **constitutive**, made from the chromosome, whose *O*^c^ operator never binds repressor. F′ *O*^+^ *Z*^+^ / *O*^c^ *Z*^−^: β-gal **inducible**; the chromosome is still transcribed all the time, but its β-gal is inactive (Z⁻), and active β-gal comes only from the F′, which is repressed until lactose is added. In both strains, permease is constitutive (the *O*^c^ copy is *Y*^+^ and always transcribed).
+
+**E3.** F′ *I*^+^ / *I*^s^: the purple super-repressor sits on both operators, with and without lactose: **no** β-gal and **no** permease. Inducer binds the normal repressor (drawn with an orange diamond) but not *I*^s^. With F′ *O*^c^, the F′ copy is transcribed all the time: both enzymes **constitutive**. *O*^c^ is a change in the DNA that the repressor binds; a repressor of any kind cannot bind it.
+
+**E4.** c) β-gal **inducible** (from the chromosome, *O*^+^ *Z*^+^), permease **constitutive** (from the F′, *O*^c^ *Y*^+^). d) β-gal **constitutive** (from the F′, *O*^c^ *Z*^+^), permease **none** (the only *Y*^+^ is on the chromosome, whose *O*^+^ is blocked by the *I*^s^ repressor).
+
+**E5.** β-gal from the F′ (*Z*^+^), permease from the chromosome (*Y*^+^), both **inducible**. The cell has both proteins, so it can use lactose: the two mutations **complement**.
+:::
+
+## Find it
+
+**NCBI Gene** has one entry per gene and organism. For *E. coli*, use the reference strain K-12 MG1655, whose chromosome is the RefSeq sequence **NC_000913.3**. In a gene page, the **Genomic context** section gives the location as a range on that sequence; "complement" means that the gene is on the minus strand, read from right to left.
+
+**F1.** Open [NCBI Gene for *lacZ* in *E. coli* K-12](https://www.ncbi.nlm.nih.gov/gene/945006). In the **Summary**, read the **Gene description**. In **Genomic context**, read the **Location**. Is *lacZ* on the plus or the minus strand?
+
+**F2.** Open [NCBI Gene for *lacI*](https://www.ncbi.nlm.nih.gov/gene/945007) and read its **Location** the same way. Using F1 and F2, draw the order of *lacI* and *lacZ* along the chromosome and show the direction in which each is transcribed. Is *lacI* upstream or downstream of *lacZ*? Does *lacI* belong to the *lac* operon mRNA?
+
+**F3.** On the *lacZ* and *lacI* pages, scroll to **NCBI Reference Sequences (RefSeq)**, protein (the NP_ accession). How many amino acids long are β-galactosidase and the repressor? (The protein pages say this as "aa" in the first line.) Alternatively, use [EcoCyc](https://ecocyc.org/gene?orgid=ECOLI&id=EG10525), the curated *E. coli* database, for *lacI*.
+
+::: {.callout-tip collapse="true" title="Hint"}
+A gene on the minus strand at complement(*a*..*b*) starts at *b* (its 5′ end) and ends at *a*. A gene "upstream" of *lacZ* lies before the *lacZ* start in the direction of *lacZ* transcription.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) wild type: both **inducible**. b) *I*^−^ *Z*^−^: β-gal **none** (no working *lacZ*), permease **constitutive**. c) *I*^s^: both **none** (uninducible). d) *O*^c^ *Y*^−^: β-gal **constitutive**, permease **none**. e) *I*^s^ *O*^c^: both **constitutive**; the super-repressor cannot bind an *O*^c^ operator.
+
+**B2.**
+a) β-gal **inducible**: the only *Z*^+^ is on the chromosome, and the F′ *I*^+^ repressor reaches that operator in trans. Permease inducible.
+b) both **none**: *I*^s^ on the F′ is trans-dominant and blocks the chromosome's operator.
+c) β-gal **inducible** (chromosome *O*^+^ *Z*^+^), permease **constitutive** (F′ *O*^c^ *Y*^+^).
+d) β-gal **constitutive** (F′ *O*^c^ *Z*^+^), permease **none** (the chromosome's *Y*^+^ is behind an *O*^+^ blocked by *I*^s^).
+e) No working repressor at all (both *I*^−^). β-gal **constitutive** (F′ *Z*^+^); permease **constitutive** (both copies *Y*^+^ and transcribed).
+
+**B3.** If *c1* is *lacI*^−^: the F′ supplies *I*^+^ repressor in trans, which controls the chromosome's *O*^+^ *Z*^+^ → β-gal **inducible** (*c1* is recessive). If *c1* is *lacO*^c^: the chromosome's *Z*^+^ sits next to an operator that repressor cannot bind, whatever the F′ provides → β-gal **constitutive** (*c1* is cis-dominant). The F′ must be *Z*^−^ so that all active β-gal comes from the chromosome; otherwise the F′ copy's own inducible β-gal would muddy the result.
+
+**B4.** a) If *u1* is *I*^s^: the super-repressor blocks the F′ operator too → **none** (dominant, trans). If *u1* is *P*^−^: the F′ copy is normal and regulated by the normal repressor → **inducible** (*u1* recessive; it only fails to transcribe its own copy). b) *P*^−^ is cis-acting: a promoter is a DNA site that only drives the genes next to it.
+
+**B5.** *m1* and *m3* **fail to complement**, so they are in the **same gene** (*lacZ*, since both lack β-gal). *m2* complements both, so it is in a **different gene** (*lacY*). Two genes. Caution: a **polar** nonsense mutation early in *lacZ* reduces expression of the downstream *lacY* from the same mRNA. Such an allele can fail to complement a *lacY* mutation even though the *lacY* gene on that copy is intact, which would wrongly suggest that the two are in the same gene.
+
+**B6.** No. Attenuation reads tryptophan through ribosome stalling at the Trp codons. Without Trp codons in the leader peptide, tryptophan starvation no longer stalls the ribosome there, so the 3:4 terminator forms as usual (the repressor still responds to tryptophan). Instead, **alanine** starvation would now stall the ribosome in region 1 and allow read-through. (Leader peptides of other amino-acid operons use exactly this trick: the *his* leader has seven His codons in a row.)
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Gene description: **beta-galactosidase**. Location: **NC_000913.3 (363231..366305, complement)**, on the **minus strand**. Click path: [ncbi.nlm.nih.gov/gene/945006](https://www.ncbi.nlm.nih.gov/gene/945006) → Summary → Gene description; Genomic context → Location.
+
+**F2.** *lacI*: **NC_000913.3 (366428..367510, complement)**, also on the minus strand. Both genes are read from higher to lower coordinates, so the order in the direction of transcription is *lacI* (366428–367510) → *lacZ* (363231–366305) → *lacY* → *lacA*. *lacI* lies **upstream** of *lacZ*, right next to the operon, but it has **its own promoter** and its own mRNA; it is not part of the *lacZYA* transcript. (That the repressor gene sits next to its target is a convenience of evolution, not a requirement: as the merodiploids show, the repressor works in trans from anywhere in the cell.)
+
+**F3.** β-galactosidase (**NP_414878**) is **1024 aa**; the lac repressor (**NP_414879**) is **360 aa**. Click path: gene page → NCBI Reference Sequences (RefSeq) → mRNA and Protein(s) → the NP_ link → first line of the protein record. (EcoCyc gives the same lengths on its *lacI* and *lacZ* pages, IDs EG10525 and EG10527.)
+:::
+
+## Where this leads
+
+The same reasoning works in eukaryotes. An **enhancer** is a cis-acting DNA site, like *lacO*; a **transcription factor** is a trans-acting protein, like LacI. In **Eukaryotic regulation & epigenetics** we add chromatin, DNA methylation and X inactivation, which bacteria do not have.
+
+**Next:** [Exercise in R](exercise-r.qmd): write the Jacob–Monod logic as one R function, run it over every possible merodiploid with `expand_grid()`, and check it against the classic table.

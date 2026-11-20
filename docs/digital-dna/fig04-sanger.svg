@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 354" font-family="Helvetica, Arial, sans-serif" width="900" height="354">
+  <!-- Sanger (dideoxy) sequencing: products that end at each dye-labelled ddNTP, sorted by length and read as a trace. Dye colours follow the usual convention: A green, C blue, G black, T red. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">1. Chain termination</text>
+  <text x="20" y="50" font-size="13" fill="#5a6b7a">New strand = primer + A C G T T A G C. Rare dye-labelled</text>
+  <text x="20" y="66" font-size="13" fill="#5a6b7a">ddNTPs (no 3'-OH) stop growth at random positions.</text>
+  <g font-size="12" fill="#1b2a3a" transform="translate(0,14)">
+    <!-- primer (grey) + extension (light) + terminating ddNTP (coloured box with letter) -->
+    <rect x="40" y="70" width="70" height="14" fill="#8a97a4"/><rect x="110" y="70" width="0" height="14" fill="#d6dde4"/><rect x="110" y="66" width="22" height="22" rx="3" fill="#6a994e"/><text x="121" y="82" fill="#fff" font-weight="bold" text-anchor="middle">A</text>
+    <rect x="40" y="100" width="70" height="14" fill="#8a97a4"/><rect x="110" y="100" width="26" height="14" fill="#d6dde4"/><rect x="136" y="96" width="22" height="22" rx="3" fill="#2a6f97"/><text x="147" y="112" fill="#fff" font-weight="bold" text-anchor="middle">C</text>
+    <rect x="40" y="130" width="70" height="14" fill="#8a97a4"/><rect x="110" y="130" width="52" height="14" fill="#d6dde4"/><rect x="162" y="126" width="22" height="22" rx="3" fill="#1b2a3a"/><text x="173" y="142" fill="#fff" font-weight="bold" text-anchor="middle">G</text>
+    <rect x="40" y="160" width="70" height="14" fill="#8a97a4"/><rect x="110" y="160" width="78" height="14" fill="#d6dde4"/><rect x="188" y="156" width="22" height="22" rx="3" fill="#bc4749"/><text x="199" y="172" fill="#fff" font-weight="bold" text-anchor="middle">T</text>
+    <rect x="40" y="190" width="70" height="14" fill="#8a97a4"/><rect x="110" y="190" width="104" height="14" fill="#d6dde4"/><rect x="214" y="186" width="22" height="22" rx="3" fill="#bc4749"/><text x="225" y="202" fill="#fff" font-weight="bold" text-anchor="middle">T</text>
+    <rect x="40" y="220" width="70" height="14" fill="#8a97a4"/><rect x="110" y="220" width="130" height="14" fill="#d6dde4"/><rect x="240" y="216" width="22" height="22" rx="3" fill="#6a994e"/><text x="251" y="232" fill="#fff" font-weight="bold" text-anchor="middle">A</text>
+    <rect x="40" y="250" width="70" height="14" fill="#8a97a4"/><rect x="110" y="250" width="156" height="14" fill="#d6dde4"/><rect x="266" y="246" width="22" height="22" rx="3" fill="#1b2a3a"/><text x="277" y="262" fill="#fff" font-weight="bold" text-anchor="middle">G</text>
+    <rect x="40" y="280" width="70" height="14" fill="#8a97a4"/><rect x="110" y="280" width="182" height="14" fill="#d6dde4"/><rect x="292" y="276" width="22" height="22" rx="3" fill="#2a6f97"/><text x="303" y="292" fill="#fff" font-weight="bold" text-anchor="middle">C</text>
+  </g>
+  <text x="75" y="330" font-size="12" fill="#5a6b7a" text-anchor="middle">primer</text>
+  <text x="330" y="140" font-size="13" fill="#1b2a3a">one product</text>
+  <text x="330" y="157" font-size="13" fill="#1b2a3a">for every</text>
+  <text x="330" y="174" font-size="13" fill="#1b2a3a">position, each</text>
+  <text x="330" y="191" font-size="13" fill="#1b2a3a">ending in a</text>
+  <text x="330" y="208" font-size="13" fill="#1b2a3a">coloured ddNTP</text>
+
+  <line x1="440" y1="40" x2="440" y2="320" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="460" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">2. Sort by length, read the colours</text>
+  <text x="460" y="50" font-size="13" fill="#5a6b7a">Capillary electrophoresis: the shortest product reaches the detector first.</text>
+  <line x1="470" y1="260" x2="880" y2="260" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g fill="none" stroke-width="3">
+    <path d="M476,260 C490,260 492,130 500,130 C508,130 510,260 524,260" stroke="#6a994e"/>
+    <path d="M524,260 C538,260 540,150 548,150 C556,150 558,260 572,260" stroke="#2a6f97"/>
+    <path d="M572,260 C586,260 588,120 596,120 C604,120 606,260 620,260" stroke="#1b2a3a"/>
+    <path d="M620,260 C634,260 636,140 644,140 C652,140 654,260 668,260" stroke="#bc4749"/>
+    <path d="M668,260 C682,260 684,160 692,160 C700,160 702,260 716,260" stroke="#bc4749"/>
+    <path d="M716,260 C730,260 732,125 740,125 C748,125 750,260 764,260" stroke="#6a994e"/>
+    <path d="M764,260 C778,260 780,145 788,145 C796,145 798,260 812,260" stroke="#1b2a3a"/>
+    <path d="M812,260 C826,260 828,135 836,135 C844,135 846,260 860,260" stroke="#2a6f97"/>
+  </g>
+  <g font-size="20" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle">
+    <text x="500" y="100" fill="#6a994e">A</text><text x="548" y="100" fill="#2a6f97">C</text>
+    <text x="596" y="100" fill="#1b2a3a">G</text><text x="644" y="100" fill="#bc4749">T</text>
+    <text x="692" y="100" fill="#bc4749">T</text><text x="740" y="100" fill="#6a994e">A</text>
+    <text x="788" y="100" fill="#1b2a3a">G</text><text x="836" y="100" fill="#2a6f97">C</text>
+  </g>
+  <text x="668" y="282" font-size="13" fill="#1b2a3a" text-anchor="middle">time at the detector (= product length) →</text>
+  <text x="460" y="308" font-size="13" fill="#1b2a3a">Read 5'→3' of the new strand: ACGTTAGC.</text>
+  <text x="460" y="326" font-size="13" fill="#1b2a3a">One read: about 700–1,000 bases.</text>
+  <text x="460" y="344" font-size="13" fill="#5a6b7a">A heterozygous site shows two overlapping peaks.</text>
+</svg>

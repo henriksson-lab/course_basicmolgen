@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Helvetica, Arial, sans-serif" width="900" height="360">
+  <!-- Splicing signals and three ways that mutations disturb splicing. Schematic, not to scale.
+       HBB intron 1 is 130 nt; the c.93-21G>A change creates an AG 19 nt upstream of the normal acceptor. -->
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#1b2a3a"/></marker></defs>
+
+  <!-- Row 1: normal -->
+  <text x="20" y="34" font-size="15" font-weight="bold" fill="#1b2a3a">Normal</text>
+  <rect x="150" y="18" width="110" height="26" fill="#2a6f97"/>
+  <text x="205" y="36" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 1</text>
+  <line x1="260" y1="31" x2="450" y2="31" stroke="#1b2a3a" stroke-width="2.5"/>
+  <rect x="450" y="18" width="110" height="26" fill="#2a6f97"/>
+  <text x="505" y="36" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 2</text>
+  <g font-size="13" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a">
+    <text x="264" y="60">GU</text><text x="372" y="60">A</text><text x="428" y="60">AG</text>
+  </g>
+  <g font-size="11" fill="#5a6b7a" text-anchor="middle">
+    <text x="272" y="76">donor</text><text x="376" y="76">branch point</text><text x="438" y="76">acceptor</text>
+  </g>
+  <line x1="580" y1="31" x2="630" y2="31" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="640" y="18" width="110" height="26" fill="#2a6f97"/><rect x="750" y="18" width="110" height="26" fill="#2a6f97" stroke="#ffffff" stroke-width="1"/>
+  <text x="750" y="64" font-size="13" fill="#1b2a3a" text-anchor="middle">exons joined, intron removed</text>
+
+  <line x1="20" y1="92" x2="880" y2="92" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <!-- Row 2: donor destroyed -->
+  <text x="20" y="124" font-size="15" font-weight="bold" fill="#bc4749">Site destroyed</text>
+  <text x="20" y="142" font-size="12" fill="#5a6b7a">HBB c.92+1G&gt;A</text>
+  <rect x="150" y="108" width="110" height="26" fill="#2a6f97"/>
+  <text x="205" y="126" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 1</text>
+  <line x1="260" y1="121" x2="450" y2="121" stroke="#1b2a3a" stroke-width="2.5"/>
+  <rect x="450" y="108" width="110" height="26" fill="#2a6f97"/>
+  <text x="505" y="126" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 2</text>
+  <g font-size="13" font-family="Courier New, monospace" font-weight="bold">
+    <text x="264" y="150" fill="#bc4749">AU</text><text x="428" y="150" fill="#1b2a3a">AG</text>
+  </g>
+  <text x="600" y="118" font-size="13" fill="#1b2a3a">The donor is not recognised: the intron is</text>
+  <text x="600" y="136" font-size="13" fill="#1b2a3a">kept, an exon is skipped, or a cryptic site is</text>
+  <text x="600" y="154" font-size="13" fill="#1b2a3a">used. No normal mRNA (β<tspan font-size="9" dy="-5">0</tspan><tspan dy="5">).</tspan></text>
+
+  <line x1="20" y1="178" x2="880" y2="178" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <!-- Row 3: new site created -->
+  <text x="20" y="210" font-size="15" font-weight="bold" fill="#bc4749">New site created</text>
+  <text x="20" y="228" font-size="12" fill="#5a6b7a">HBB c.93-21G&gt;A</text>
+  <rect x="150" y="194" width="110" height="26" fill="#2a6f97"/>
+  <text x="205" y="212" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 1</text>
+  <line x1="260" y1="207" x2="450" y2="207" stroke="#1b2a3a" stroke-width="2.5"/>
+  <rect x="450" y="194" width="110" height="26" fill="#2a6f97"/>
+  <text x="505" y="212" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 2</text>
+  <rect x="412" y="194" width="38" height="26" fill="#d08c2f" opacity="0.35"/>
+  <g font-size="13" font-family="Courier New, monospace" font-weight="bold">
+    <text x="264" y="236" fill="#1b2a3a">GU</text><text x="388" y="236" fill="#bc4749">AG</text><text x="430" y="236" fill="#1b2a3a">AG</text>
+  </g>
+  <text x="600" y="204" font-size="13" fill="#1b2a3a">Most mRNA is spliced at the new AG and keeps</text>
+  <text x="600" y="222" font-size="13" fill="#1b2a3a">19 nt of intron (shaded): a frameshift. A little</text>
+  <text x="600" y="240" font-size="13" fill="#1b2a3a">normal mRNA is still made (β<tspan font-size="9" dy="-5">+</tspan><tspan dy="5">).</tspan></text>
+
+  <line x1="20" y1="264" x2="880" y2="264" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <!-- Row 4: exon skipping, in frame -->
+  <text x="20" y="296" font-size="15" font-weight="bold" fill="#6a994e">Exon skipped</text>
+  <text x="20" y="314" font-size="12" fill="#5a6b7a">CFTR exon 10</text>
+  <rect x="150" y="282" width="90" height="26" fill="#2a6f97"/>
+  <text x="195" y="300" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 9</text>
+  <line x1="240" y1="295" x2="290" y2="295" stroke="#1b2a3a" stroke-width="2.5"/>
+  <rect x="290" y="282" width="90" height="26" fill="#6a994e"/>
+  <text x="335" y="300" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 10</text>
+  <line x1="380" y1="295" x2="470" y2="295" stroke="#1b2a3a" stroke-width="2.5"/>
+  <rect x="470" y="282" width="90" height="26" fill="#2a6f97"/>
+  <text x="515" y="300" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">exon 11</text>
+  <path d="M240,284 C280,250 430,250 470,284" fill="none" stroke="#6a994e" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="600" y="290" font-size="13" fill="#1b2a3a">Exon 10 is 183 nt = 61 codons, so skipping it</text>
+  <text x="600" y="308" font-size="13" fill="#1b2a3a">keeps the frame: a protein 61 amino acids</text>
+  <text x="600" y="326" font-size="13" fill="#1b2a3a">shorter. Some skipping is normal; a short</text>
+  <text x="600" y="344" font-size="13" fill="#1b2a3a">poly-T tract in intron 9 (5T) makes it common.</text>
+</svg>

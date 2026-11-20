@@ -1,0 +1,1068 @@
+study,study_id,n_sequenced,sample_id,protein_change,mutation_type
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1331-01,R306*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1335-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1336-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1341-01,K320Rfs*25,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1343-01,R209Hfs*5,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1348-01,G266R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1349-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1356-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1357-01,E224Gfs*4,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1360-01,C176F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1361-01,Y234C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1362-01,X225_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1367-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1369-01,R280I,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1516-01,E294*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1542-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1649-01,F270S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1651-01,E343*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1652-01,C176G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-04-1655-01,M237I,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-0364-01,C229_I232del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-0365-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-0369-01,H193R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-1670-01,V272M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-1673-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-1674-01,L188Tfs*21,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-1675-01,P177_H178del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2043-01,C242R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2045-01,H179R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2049-01,G245S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2050-01,L257Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2051-01,P223*,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2053-01,Y163H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-09-2055-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0926-01,Y163C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0927-01,P36Wfs*4,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0931-01,Q136*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0933-01,K132Vfs*15,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0934-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0934-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0935-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-10-0937-01,R282W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0714-01,S127F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0717-01,G244_M246delinsV,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0726-01,R282W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0751-01,L348*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0755-01,X125_splice,Splice_Region
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0757-01,P278S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0760-01,L265P,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0764-01,D281H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0765-01,S260_L264dup,In_Frame_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0768-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0791-01,R273L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0795-01,C135Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0800-01,K132M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0804-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0805-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0807-01,A276P,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0883-01,N239*,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0884-01,R342*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0885-01,W146*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0886-01,V272M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0887-01,R213*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0888-01,X225_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0889-01,F270Lfs*2,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0889-01,S260Lfs*4,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0890-01,X126_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0891-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0893-01,G245D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0894-01,H193Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0897-01,R273C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0897-01,T284Hfs*22,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0899-01,Q317*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0903-01,Y205C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0904-01,G279E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0905-01,R273P,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0910-01,C275Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0911-01,L43Afs*7,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0912-01,F134V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0912-01,X261_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0913-01,P278R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0916-01,R196*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0920-01,Q100*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-0923-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1403-01,X125_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1404-01,C176Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1405-01,R196*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1411-01,C277F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1412-01,M237I,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1481-01,P177R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1482-01,R280I,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1483-01,R306*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1484-01,Y234N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1487-01,M237K,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1488-01,R306*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1489-01,R342*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1491-01,C275Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1492-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1494-01,G105C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1495-01,I195F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1496-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1497-01,R333Vfs*12,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1498-01,X332_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1499-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1500-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1501-01,L145Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1504-01,I251S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1505-01,A76Hfs*47,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1506-01,E62K,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1506-01,M66Tfs*60,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1507-01,T140Mfs*28,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1509-01,L330Ffs*15,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1510-01,R213*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1511-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-1512-01,R273L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2057-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2059-01,H179Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2060-01,H179R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2061-01,H193R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2065-01,V122Dfs*26,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-2071-01,T155_R156del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-A5FT-01,Q144Lfs*5,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-13-A5FU-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-0987-01,G105R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-0991-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1682-01,P278L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1683-01,X225_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1684-01,T253A,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1684-01,T253N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1685-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1686-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-20-1687-01,V157F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1021-01,A159V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1022-01,K164E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1027-01,E198*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1029-01,I251S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1030-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1032-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1110-01,C176Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1111-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1113-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1114-01,X307_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1116-01,X261_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1117-01,Q144Afs*16,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1118-01,P151S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1121-01,N131I,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1122-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1123-01,C176Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1124-01,R156P,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-1809-01,P27Lfs*17,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2072-01,X331_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2077-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2078-01,T256del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2084-01,G154V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2641-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2643-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2645-01,C141Afs*29,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2647-01,M340Sfs*8,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-23-2649-01,Y234*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-0970-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-0980-01,Q167Tfs*14,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-0982-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1103-01,X307_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1104-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1413-01,E198*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1416-01,R282W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1417-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1418-01,D228*,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1419-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1422-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1423-01,P191del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1424-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1425-01,Y234C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1426-01,R273C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1427-01,V272Cfs*73,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1428-01,I195N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1431-01,Q192*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1434-01,N345Mfs*25,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1435-01,V216M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1436-01,X331_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1463-01,V274D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1464-01,N239S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1466-01,R249G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1467-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1469-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1470-01,S261Vfs*84,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1471-01,E271*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1474-01,Q192*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1550-01,E51*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1551-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1552-01,P278H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1562-01,X33_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1564-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1603-01,P316Sfs*21,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1616-01,Y236C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1842-01,E258K,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1843-01,E349*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1844-01,C176S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1845-01,W53*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1846-01,S149Ffs*32,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1847-01,D281V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1849-01,X33_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1850-01,W146*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-1927-01,R342*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2019-01,I232N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2024-01,V272M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2030-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2033-01,G266E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2035-01,Q317Afs*19,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2254-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2260-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2261-01,Y163C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2262-01,K132N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2267-01,T284Qfs*61,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2271-01,K321*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2280-01,Q192*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2281-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2288-01,P250L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2289-01,R196*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2290-01,V274G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2293-01,P152Rfs*18,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2295-01,C238Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-24-2298-01,X225_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1312-01,N210Tfs*37,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1313-01,L145R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1314-01,R196*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1315-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1319-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1320-01,C124*,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1323-01,V272L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1326-01,E286K,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-1329-01,P47Rfs*76,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2042-01,X224_splice,Splice_Region
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2391-01,E51Gfs*6,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2392-01,R273C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2393-01,A138_P142del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2396-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2397-01,R249G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2399-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2400-01,X224_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2401-01,L194R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2404-01,H214R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-25-2409-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1688-01,P278L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1691-01,D228*,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1693-01,T102Pfs*21,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1694-01,X261_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1695-01,C176F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1696-01,V218Cfs*29,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1697-01,C238G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1698-01,H193Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1699-01,R175G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1701-01,X332_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1702-01,Y163C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1703-01,H193Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1705-01,R110L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1707-01,G244S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1710-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1711-01,Y234C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1761-01,V122Dfs*26,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1762-01,R213*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1763-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1764-01,R273C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1766-01,C277Vfs*68,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1768-01,C176F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1769-01,A138_L145del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1770-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1771-01,P177R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1774-01,Q331H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1775-01,Q104*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1776-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1778-01,R248W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1781-01,C242Afs*5,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1783-01,T123Rfs*48,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1784-01,X126_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-1785-01,X307_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-2427-01,G244D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-2429-01,Y126_M133del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-2431-01,S90Pfs*33,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-2432-01,V157F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-2434-01,D281E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-29-A5NZ-01,G266E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1714-01,P151R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1718-01,E294*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1853-01,G245D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1855-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1856-01,V216M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1857-01,Y163C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1862-01,X224_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-30-1891-01,L194R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-31-1950-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-31-1953-01,Q100Gfs*37,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-31-1959-01,C238F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2530-01,C242Afs*5,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2532-01,Y163C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2533-01,T125M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2534-01,Q331*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2537-01,A138V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2538-01,A161D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2542-01,P278R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2543-01,G262V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2544-01,S99Rfs*23,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2545-01,L348Wfs*22,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2547-01,D281Afs*66,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2548-01,X187_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2551-01,L194R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-36-2552-01,Q192*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-3P-A9WA-01,R273L,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2582-01,P191del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2582-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2587-01,C238Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2588-01,F338Lfs*7,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2589-01,C176Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2590-01,E343Gfs*2,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2591-01,V216M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-42-2593-01,V272G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-57-1993-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-57-1994-01,I195Nfs*14,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2348-01,R273C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2350-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2351-01,C141Afs*29,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2352-01,G266V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2354-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2355-01,X331_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2363-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-2372-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-59-A5PD-01,W146*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1722-01,G245D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1725-01,S241A,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1727-01,G245D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1728-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1730-01,K132R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1733-01,K305*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1736-01,G245R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1737-01,D281Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1737-01,X331_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1738-01,R282W,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1740-01,G266R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1741-01,M237K,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1895-01,Y163Lfs*18,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1899-01,X331_splice,Splice_Site
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1900-01,V122Dfs*26,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1901-01,R342Efs*3,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1903-01,G245S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1904-01,R273H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1906-01,P151S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1911-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1913-01,G244S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1914-01,C275S,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1915-01,E221*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1919-01,I195T,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1995-01,C238Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-1998-01,S215R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2000-01,K132E,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2002-01,E204*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2003-01,R175H,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2008-01,T118Dfs*31,Frame_Shift_Ins
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2009-01,V157F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2012-01,Y220C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2016-01,E204*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2018-01,V147G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2087-01,Q192*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2088-01,M237_N239del,In_Frame_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2092-01,D208V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2094-01,L130V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2096-01,H179D,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2101-01,A86Pfs*34,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2102-01,G266R,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2104-01,Y163N,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2109-01,A307Tfs*29,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2110-01,S127Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2111-01,G244C,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2113-01,G266V,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2610-02,G226Afs*21,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2612-01,S241F,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2613-01,V173M,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-61-2614-01,C275Y,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-OY-A56P-01,E286G,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-OY-A56Q-01,Y327*,Nonsense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-VG-A8LO-01,R248Q,Missense_Mutation
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-WR-A838-01,S127Yfs*43,Frame_Shift_Del
+Ovarian serous (TCGA PanCancer Atlas),ov_tcga_pan_can_atlas_2018,523,TCGA-WR-A838-01,Y163C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-3C-AALI-01,S183*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A1-A0SI-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A1-A0SK-01,M133K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A1-A0SO-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A1-A0SP-01,S183*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A04P-01,G108Vfs*15,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A04T-01,D208G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A04T-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A04U-01,Y107Cfs*16,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A04W-01,V272M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0CL-01,R273L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0CM-01,E204Sfs*43,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0CW-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0CX-01,R273C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0D0-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0D1-01,Q331*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0D2-01,P318Tfs*15,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0EQ-01,I162_Y163delinsN,In_Frame_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0EY-01,Y234C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0ST-01,Y163C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0SW-01,R273C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0SX-01,G199V,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0T1-01,R273C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0T2-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0T3-01,E287Pfs*9,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YE-01,I162Tfs*8,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YG-01,X125_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YH-01,P278L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YJ-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YM-01,R333Vfs*12,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A0YT-01,I255S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A1G1-01,X225_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A3XT-01,C135R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A3XV-01,C135F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A3XX-01,L111P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A3Y0-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A4S1-01,R280S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A2-A4S3-01,K132E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A0CE-01,T155P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A0CJ-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A0DA-01,I195T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A13D-01,E221*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A13E-01,P77Gfs*65,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A13E-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A26F-01,C176F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A26G-01,Y220H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A26I-01,G266E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A2KD-01,L93Vfs*55,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A4SD-01,M237I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A4SE-01,X261_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A56D-01,T304Ifs*41,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A5ZV-01,T211Ffs*4,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A6VV-01,Q52*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A6VW-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A6VX-01,P250L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A7-A6VY-01,L299Afs*7,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A06O-01,G279E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A06Q-01,C238Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A06U-01,R209Kfs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A06Z-01,P128Lfs*42,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A075-01,X187_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A079-01,S215I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A07B-01,Q165Afs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A07C-01,F212Sfs*3,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A07O-01,X125_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A07U-01,F328Sfs*17,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A07W-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A081-01,C141Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A08I-01,Y163C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A08P-01,R156Afs*12,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A08R-01,N239*,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A08X-01,C176F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A092-01,C238Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A094-01,R209Kfs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A097-01,I251Sfs*94,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A09N-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A09Q-01,X224_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-A8-A09X-01,M246I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A23C-01,R174Sfs*73,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A2BK-01,S215I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A2QH-01,D281Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A3OD-01,Q144*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A5EH-01,L194R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A5XU-01,R342P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A62X-01,I195T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A6IW-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A7VC-01,P278S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AC-A8OQ-01,E294*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A046-01,E11K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A04C-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0AJ-01,G108Vfs*15,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0AL-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0AR-01,E171Lfs*2,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0AS-01,R110del,In_Frame_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FJ-01,V157Afs*24,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FL-01,X225_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FT-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FV-01,L252P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FX-01,R248W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0FY-01,V173M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0G0-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0XN-01,X126_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0XT-01,X126_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AN-A0XU-01,C275Lfs*67,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A03L-01,X261_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A03N-01,A161T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A03O-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A03R-01,L265R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A03V-01,G245D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0J2-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0J4-01,R282W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0J6-01,T211Lfs*36,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0JB-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0JD-01,H193L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A0JE-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A124-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A128-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A129-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A12D-01,C242Afs*5,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AO-A12G-01,K139_P142del,In_Frame_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AQ-A04H-01,V197G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AQ-A04J-01,L111P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0TP-01,R273P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0TS-01,E198*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0TV-01,V216M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0TX-01,Y205C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0U0-01,L194R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0U1-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0U2-01,C176F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A0U4-01,H193Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AH-01,G108Ffs*40,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AI-01,F270I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AJ-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AN-01,R110Vfs*13,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AP-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AQ-01,R342Efs*3,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AR-01,S90Pfs*33,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AS-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AW-01,R273C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AX-01,L111Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A1AY-01,V122Dfs*26,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24K-01,R110Sfs*14,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24P-01,Y234C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24Q-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24S-01,D281V,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24T-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A24U-01,E51*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A251-01,E285K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A254-01,C124*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A256-01,R110Sfs*14,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A2LH-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-AR-A5QQ-01,R209Kfs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0I1-01,R248Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0I2-01,I162Wfs*10,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0I9-01,C135Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0IE-01,X307_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0IJ-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0IK-01,L194R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0IQ-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0RE-01,S303Afs*42,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0RH-01,Y220S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0RS-01,R273C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0RU-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0WX-01,L114*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0WX-01,R248W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A0X1-01,X331_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A1KF-01,X125_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A1KN-01,L265P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A401-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-B6-A409-01,T253Hfs*11,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0AV-01,R248Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0AW-01,F270S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0B0-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0B3-01,V216M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0B7-01,X187_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0B9-01,P278T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BC-01,R248W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BF-01,G245S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BG-01,L201Ffs*8,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BL-01,P151H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BP-01,K132N,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BR-01,V274F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BT-01,R158G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0BW-01,X125_splice,Splice_Region
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0C0-01,R110Vfs*13,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0C3-01,G187S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0DI-01,I255N,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0DL-01,E286A,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0DZ-01,E258Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0E0-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0E6-01,N239*,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0EE-01,C176Sfs*71,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0GY-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0H7-01,G245D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0HX-01,C135W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0HY-01,G245D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0RX-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A0WA-01,S241C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A18H-01,Q331*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A18Q-01,P77Cfs*73,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A18T-01,Y107D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A18U-01,E285Rfs*54,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A18V-01,E56*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1EY-01,Y126C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1F0-01,V147Lfs*23,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1F2-01,E285K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1F6-01,S127P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1FC-01,X225_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1FD-01,V173L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1FE-01,N247I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1FN-01,R280T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A1FU-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A202-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A203-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A208-01,X187_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A5IZ-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-BH-A5J0-01,E285K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12K-01,I195T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12L-01,C238F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12O-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12P-01,R248W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12Q-01,Y205N,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12V-01,X126_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12W-01,H193Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A12Z-01,R342P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A130-01,N131Tfs*39,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A131-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A134-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A135-01,C242Afs*5,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A138-01,L308Afs*28,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A1HF-01,H179Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A1HG-01,C141R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A1HJ-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A1HK-01,R280*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A1HM-01,L194P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A26V-01,I232S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A26W-01,R273L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A26Y-01,S241F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A275-01,G266E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A278-01,H168P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A27A-01,G199V,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A27B-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-C8-A8HP-01,Q136*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A13Y-01,A138Cfs*27,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A13Z-01,C141Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A142-01,P278A,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A143-01,X331_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A147-01,C176F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1J9-01,V173L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JF-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JG-01,L289F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JJ-01,C141Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JK-01,X331_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JL-01,H193L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1JM-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1X5-01,C238F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XA-01,R306*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XJ-01,R282G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XL-01,R248W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XQ-01,L252Sfs*93,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XT-01,A276P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XW-01,Y126N,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1XZ-01,Q167*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A1Y3-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A27F-01,C242Afs*5,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A27M-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-D8-A27N-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A108-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A109-01,R248Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14N-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14P-01,V157F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14R-01,I195T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14X-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14Y-01,Q136E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A14Z-01,R282W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A150-01,C176*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A152-01,K132E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A155-01,X33_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A158-01,I195T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A159-01,V216M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A15E-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A15M-01,L130V,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1AZ-01,E287D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1AZ-01,R280T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1B0-01,K132N,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1B1-01,P27S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1B6-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1II-01,X126_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1IN-01,V157G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1L7-01,I255F,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1LG-01,I255del,In_Frame_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1LH-01,K132T,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1LK-01,A86Cfs*63,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A1LS-01,E286K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A573-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A574-01,R248Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A574-01,X261_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E2-A9RU-01,F113C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1N5-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1N8-01,T256Nfs*8,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1N9-01,R196*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1NC-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1ND-01,Y220C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1NF-01,F113C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1RB-01,E286Q,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A1RH-01,E339Rfs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A226-01,P152Afs*14,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A22E-01,G245S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A22G-01,E271*,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A243-01,W91*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A243-01,Y220S,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A244-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A248-01,H115Ifs*8,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A5FL-01,H193R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-E9-A6HE-01,R306*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1OY-01,Q192*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1OZ-01,E258*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1P1-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1P4-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1P8-01,R282W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1PA-01,R213*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1PB-01,Y163C,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A1PH-01,K292Gfs*52,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A2FR-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A6S9-01,H179R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A6SB-01,R282W,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-EW-A6SD-01,E286K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A2DB-01,E294*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A2DD-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A2DF-01,X225_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A2DH-01,Q331*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A2DL-01,D281E,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-GM-A3XL-01,R156del,In_Frame_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LD-A74U-01,R280K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LD-A7W5-01,L257R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A5YO-01,L194R,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A5YP-01,R280K,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A6FR-01,R273H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A73Y-01,X225_splice,Splice_Site
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A7SZ-01,V272M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-LL-A8F5-01,R273L,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-OL-A5D6-01,C242G,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-OL-A5D7-01,V272M,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-OL-A5RW-01,R209Kfs*6,Frame_Shift_Del
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-OL-A66I-01,R342*,Nonsense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-OL-A6VO-01,V157D,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-PE-A5DE-01,M169I,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-PL-A8LV-01,C275Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-PL-A8LZ-01,R175H,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-S3-AA0Z-01,S127Y,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-S3-AA10-01,T118Dfs*31,Frame_Shift_Ins
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-UU-A93S-01,Q136P,Missense_Mutation
+Breast invasive carcinoma (TCGA PanCancer Atlas),brca_tcga_pan_can_atlas_2018,1066,TCGA-Z7-A8R6-01,E285K,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-4N-A93T-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-5M-AAT4-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-5M-AAT5-01,S215N,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-5M-AATA-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-5M-AATE-01,S127T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2671-01,V173Efs*7,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2674-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2675-01,E198*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2681-01,L145R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2684-01,V173L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-2685-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-3807-01,Y236*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-3810-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-4105-01,H179R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-5656-01,V157F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-5659-01,C135Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-5660-01,P177_C182del,In_Frame_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-5662-01,Y107D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-5667-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6137-01,V272L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6138-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6142-01,R175C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6142-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6649-01,V274D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6651-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6652-01,A161T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6654-01,E285*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-6782-01,T211I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-A567-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-A6-A56B-01,Q38Kfs*6,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3492-01,P301Qfs*44,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3511-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3655-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3660-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3666-01,F109C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3667-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3673-01,X125_splice,Splice_Region
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3679-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3681-01,G244D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3685-01,Y205C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3688-01,Y234H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3693-01,C124G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3712-01,P278A,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3811-01,H178Tfs*69,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3814-01,C141S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3841-01,E286K,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3842-01,R335Lfs*10,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3844-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3848-01,I195Nfs*14,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3851-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3856-01,P322Hfs*23,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3858-01,L35Ffs*8,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3866-01,C176*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3867-01,P27Lfs*17,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3875-01,L130F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3949-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3955-01,R290Kfs*53,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3956-01,V173M,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3966-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3966-01,R249G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3968-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3971-01,X224_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3975-01,C275Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3976-01,G266*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3977-01,K132T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3977-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3979-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3980-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-3982-01,C141Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A004-01,V173Efs*7,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A010-01,R175C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A017-01,A159P,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A01C-01,C124Afs*46,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A01S-01,P278R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A01T-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A01Z-01,Q331Sfs*6,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A02E-01,K132E,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A02F-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A02H-01,F113C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A02W-01,R196*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AA-A03J-01,K132N,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6548-01,V216G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6888-01,Y236C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6899-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6901-01,G199V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6963-01,I232S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-6965-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-A5EJ-01,G302Rfs*4,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-A5EJ-01,P191del,In_Frame_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AD-A5EK-01,V173L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-2687-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-2690-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-2693-01,X33_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-3911-01,I232N,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-4110-01,P219Afs*3,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-6136-01,S94Cfs*30,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-6655-01,Y205D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-6672-01,G245D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-6672-01,I195F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-A56K-01,R342*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-A56L-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AF-A56N-01,X126_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3591-01,I195T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3592-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3725-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3726-01,E286G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3731-01,X33_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3732-01,K164Sfs*5,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3742-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3882-01,P278A,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3883-01,X331_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3885-01,G262V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3890-01,R335Qfs*2,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3893-01,A138V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3896-01,A159V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3898-01,K319Afs*19,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3902-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-3909-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-4001-01,V122Dfs*26,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-4008-01,P151H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-4015-01,Q331*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-4021-01,Y205S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-4022-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A00C-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A00Y-01,E286K,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A011-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A016-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A01J-01,C275Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A01L-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A01N-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A01W-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A01Y-01,R306*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A020-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A026-01,L35Pfs*10,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A02N-01,T125M,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A02X-01,E285*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AG-A032-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AH-6544-01,L194R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AH-6643-01,F109C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AH-6897-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AM-5821-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AU-3779-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-4070-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-4071-01,M237I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-5543-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-6196-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-6197-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-A54L-01,C242Afs*5,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AY-A8YK-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-4308-01,M237I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-4323-01,I162N,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-4614-01,C176Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-4616-01,S240R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-4681-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-5403-01,A79V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-5403-01,X187_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-5407-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6598-01,C229Yfs*10,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6600-01,D259V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6603-01,K132N,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6605-01,T155I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6606-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-AZ-6607-01,V272M,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CA-5797-01,S127F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CA-6715-01,R213Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CA-6718-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CA-6718-01,S94*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CA-6719-01,X331_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CI-6619-01,P250L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CI-6620-01,Y234Pfs*7,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CI-6621-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CI-6623-01,S215I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CI-6624-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CK-4948-01,C135Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CK-4951-01,R333C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CK-5914-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CK-5916-01,R306*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CK-6747-01,N30del,In_Frame_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CL-4957-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CL-5917-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CL-5918-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-4746-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-4750-01,N239S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-4751-01,G266E,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-4752-01,G266V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5341-01,R158H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5341-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5348-01,Y205C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5860-01,W91*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5862-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5863-01,X125_splice,Splice_Region
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5864-01,A159P,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5864-01,R267L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-5868-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6163-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6164-01,G266V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6165-01,X331_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6166-01,V73Rfs*76,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6167-01,R267W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6169-01,R306*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6172-01,Q100*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6172-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6675-01,R342*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6676-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6677-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-CM-6679-01,E198Gfs*11,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-5538-01,H214R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-5540-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-5541-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6531-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6532-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6533-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6534-01,V203Gfs*5,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6535-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6538-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6539-01,H214R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6539-01,X187_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6540-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6541-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6898-01,T211I,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6922-01,R213L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6924-01,Y163C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6926-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6929-01,R337L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6931-01,R181H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-D5-6932-01,C275Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-4745-01,E180*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-4749-01,I195T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-5869-01,E258G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6154-01,R196*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6155-01,V73Rfs*76,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6157-01,P151S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6157-01,X33_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6158-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6160-01,F109Lfs*36,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6682-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DC-6683-01,C238Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A0XD-01,E224D,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A0XF-01,C176F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A0XF-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D0-01,X307_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D4-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D6-01,P278T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D6-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D7-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D8-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1D9-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1DA-01,P190L,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1DB-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A1HA-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A285-01,X331_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A288-01,M133R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A28A-01,V122Dfs*26,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A28E-01,E285K,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A28F-01,Y220C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DM-A28H-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DT-5265-01,E287*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DY-A0XA-01,Q136*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DY-A1DC-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DY-A1DD-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DY-A1DF-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-DY-A1DG-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EF-5830-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6506-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6506-01,R337S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6507-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6508-01,X187_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6509-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6510-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6511-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6512-01,A138V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6514-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6881-01,R306*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6882-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6883-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6884-01,X126_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6885-01,W53Mfs*4,Frame_Shift_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6917-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-6917-01,R213Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-EI-7002-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6459-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6460-01,R337C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6805-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6807-01,A159P,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6808-01,R342*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6809-01,K132R,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6854-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6854-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F4-6856-01,R306*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6464-01,C275Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6465-01,W146*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6571-01,R196*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6702-01,G266V,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6810-01,T211Ffs*4,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6811-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6812-01,P278T,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6812-01,V272G,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6813-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6814-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6863-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-F5-6864-01,E171*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6294-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6295-01,P151Rfs*27,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6297-01,V143M,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6298-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6299-01,R196*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6302-01,R267Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6303-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6306-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6307-01,D259Y,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6311-01,E336Sfs*9,Frame_Shift_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6315-01,R248W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6317-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6320-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6586-01,R213*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-G4-6626-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A50U-01,R196*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A50V-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A6GA-01,R248Q,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A6GB-01,Q144_L145dup,In_Frame_Ins
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A6GC-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A8F7-01,E286_E287del,In_Frame_Del
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-NH-A8F8-01,R273H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-QG-A5YV-01,R175H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-QG-A5YW-01,X332_splice,Splice_Site
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-QG-A5YX-01,Y236H,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-QG-A5Z1-01,E271*,Nonsense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-QL-A97D-01,R282W,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-RU-A8FL-01,R273C,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-SS-A7HO-01,C176F,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-T9-A92H-01,G245S,Missense_Mutation
+Colorectal adenocarcinoma (TCGA PanCancer Atlas),coadread_tcga_pan_can_atlas_2018,534,TCGA-WS-AB45-01,R175C,Missense_Mutation

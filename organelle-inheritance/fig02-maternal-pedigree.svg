@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig02: transmission of a heteroplasmic mtDNA variant. Left: the mother carries it; every child
+       inherits some, at very different levels. Right: the father carries it; no child does.
+       Red fill from the bottom = fraction of mutant mtDNA; bold red percent = affected (above about 60 %). -->
+  <defs>
+    <clipPath id="c1"><rect x="153.0" y="69.0" width="34" height="34"/></clipPath>
+    <clipPath id="c2"><circle cx="250" cy="86" r="17.0"/></clipPath>
+    <clipPath id="c3"><circle cx="90" cy="196" r="17.0"/></clipPath>
+    <clipPath id="c4"><rect x="153.0" y="179.0" width="34" height="34"/></clipPath>
+    <clipPath id="c5"><circle cx="250" cy="196" r="17.0"/></clipPath>
+    <clipPath id="c6"><rect x="313.0" y="179.0" width="34" height="34"/></clipPath>
+    <clipPath id="c7"><circle cx="410" cy="196" r="17.0"/></clipPath>
+    <clipPath id="c8"><rect x="11.0" y="179.0" width="34" height="34"/></clipPath>
+    <clipPath id="c9"><circle cx="28" cy="306" r="17.0"/></clipPath>
+    <clipPath id="c10"><rect x="73.0" y="289.0" width="34" height="34"/></clipPath>
+    <clipPath id="c11"><rect x="323.0" y="289.0" width="34" height="34"/></clipPath>
+    <clipPath id="c12"><circle cx="400" cy="306" r="17.0"/></clipPath>
+    <clipPath id="c13"><rect x="593.0" y="69.0" width="34" height="34"/></clipPath>
+    <clipPath id="c14"><circle cx="690" cy="86" r="17.0"/></clipPath>
+    <clipPath id="c15"><circle cx="560" cy="196" r="17.0"/></clipPath>
+    <clipPath id="c16"><rect x="603.0" y="179.0" width="34" height="34"/></clipPath>
+    <clipPath id="c17"><circle cx="680" cy="196" r="17.0"/></clipPath>
+    <clipPath id="c18"><rect x="723.0" y="179.0" width="34" height="34"/></clipPath>
+  </defs>
+  <text x="230" y="30" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Mother carries the variant</text>
+  <text x="650" y="30" font-size="18" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Father carries the variant</text>
+  <g fill="#1b2a3a" font-size="17" font-weight="bold"><text x="470" y="92" text-anchor="middle">I</text><text x="470" y="202" text-anchor="middle">II</text><text x="470" y="312" text-anchor="middle">III</text></g>
+  <line x1="490" y1="50" x2="490" y2="380" stroke="#d5dbe1" stroke-width="1.5"/>
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <line x1="187.0" y1="86" x2="233.0" y2="86"/>
+    <line x1="210" y1="86" x2="210" y2="138"/>
+    <line x1="90" y1="138" x2="330" y2="138"/>
+    <line x1="90" y1="138" x2="90" y2="156"/>
+    <line x1="170" y1="138" x2="170" y2="156"/>
+    <line x1="250" y1="138" x2="250" y2="156"/>
+    <line x1="330" y1="138" x2="330" y2="156"/>
+    <line x1="45.0" y1="196" x2="73.0" y2="196"/>
+    <line x1="59" y1="196" x2="59" y2="248"/>
+    <line x1="28" y1="248" x2="90" y2="248"/>
+    <line x1="28" y1="248" x2="28" y2="266"/>
+    <line x1="90" y1="248" x2="90" y2="266"/>
+    <line x1="347.0" y1="196" x2="393.0" y2="196"/>
+    <line x1="370" y1="196" x2="370" y2="248"/>
+    <line x1="340" y1="248" x2="400" y2="248"/>
+    <line x1="340" y1="248" x2="340" y2="266"/>
+    <line x1="400" y1="248" x2="400" y2="266"/>
+    <line x1="627.0" y1="86" x2="673.0" y2="86"/>
+    <line x1="650" y1="86" x2="650" y2="138"/>
+    <line x1="560" y1="138" x2="740" y2="138"/>
+    <line x1="560" y1="138" x2="560" y2="156"/>
+    <line x1="620" y1="138" x2="620" y2="156"/>
+    <line x1="680" y1="138" x2="680" y2="156"/>
+    <line x1="740" y1="138" x2="740" y2="156"/>
+  </g>
+  <g><!-- I-1: M, 0 % -->
+    <g clip-path="url(#c1)"><rect x="153.0" y="69.0" width="34" height="34" fill="#fff"/><rect x="153.0" y="103.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <rect x="153.0" y="69.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="170" y="122.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- I-2: F, 40 % -->
+    <g clip-path="url(#c2)"><rect x="233.0" y="69.0" width="34" height="34" fill="#fff"/><rect x="233.0" y="89.4" width="34" height="13.6" fill="#bc4749"/></g>
+    <circle cx="250" cy="86" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="250" y="122.0" font-size="15" text-anchor="middle" fill="#5b6b7a">40 %</text>
+  </g>
+  <g><!-- II-1: F, 55 % -->
+    <g clip-path="url(#c3)"><rect x="73.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="73.0" y="194.3" width="34" height="18.7" fill="#bc4749"/></g>
+    <circle cx="90" cy="196" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="90" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">55 %</text>
+  </g>
+  <g><!-- II-2: M, 85 % -->
+    <g clip-path="url(#c4)"><rect x="153.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="153.0" y="184.1" width="34" height="28.9" fill="#bc4749"/></g>
+    <rect x="153.0" y="179.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="170" y="232.0" font-size="15" text-anchor="middle" fill="#bc4749" font-weight="bold">85 %</text>
+  </g>
+  <g><!-- II-3: F, 10 % -->
+    <g clip-path="url(#c5)"><rect x="233.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="233.0" y="209.6" width="34" height="3.4" fill="#bc4749"/></g>
+    <circle cx="250" cy="196" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="250" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">10 %</text>
+  </g>
+  <g><!-- II-4: M, 30 % -->
+    <g clip-path="url(#c6)"><rect x="313.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="313.0" y="202.8" width="34" height="10.2" fill="#bc4749"/></g>
+    <rect x="313.0" y="179.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="330" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">30 %</text>
+  </g>
+  <g><!-- II-5: F, 0 % -->
+    <g clip-path="url(#c7)"><rect x="393.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="393.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <circle cx="410" cy="196" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="410" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- II-0: M, 0 % -->
+    <g clip-path="url(#c8)"><rect x="11.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="11.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <rect x="11.0" y="179.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="28" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- III-1: F, 70 % -->
+    <g clip-path="url(#c9)"><rect x="11.0" y="289.0" width="34" height="34" fill="#fff"/><rect x="11.0" y="299.2" width="34" height="23.8" fill="#bc4749"/></g>
+    <circle cx="28" cy="306" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="28" y="342.0" font-size="15" text-anchor="middle" fill="#bc4749" font-weight="bold">70 %</text>
+  </g>
+  <g><!-- III-2: M, 35 % -->
+    <g clip-path="url(#c10)"><rect x="73.0" y="289.0" width="34" height="34" fill="#fff"/><rect x="73.0" y="311.1" width="34" height="11.9" fill="#bc4749"/></g>
+    <rect x="73.0" y="289.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="90" y="342.0" font-size="15" text-anchor="middle" fill="#5b6b7a">35 %</text>
+  </g>
+  <g><!-- III-3: M, 0 % -->
+    <g clip-path="url(#c11)"><rect x="323.0" y="289.0" width="34" height="34" fill="#fff"/><rect x="323.0" y="323.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <rect x="323.0" y="289.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="340" y="342.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- III-4: F, 0 % -->
+    <g clip-path="url(#c12)"><rect x="383.0" y="289.0" width="34" height="34" fill="#fff"/><rect x="383.0" y="323.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <circle cx="400" cy="306" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="400" y="342.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- I-1: M, 90 % -->
+    <g clip-path="url(#c13)"><rect x="593.0" y="69.0" width="34" height="34" fill="#fff"/><rect x="593.0" y="72.4" width="34" height="30.6" fill="#bc4749"/></g>
+    <rect x="593.0" y="69.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="610" y="122.0" font-size="15" text-anchor="middle" fill="#bc4749" font-weight="bold">90 %</text>
+  </g>
+  <g><!-- I-2: F, 0 % -->
+    <g clip-path="url(#c14)"><rect x="673.0" y="69.0" width="34" height="34" fill="#fff"/><rect x="673.0" y="103.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <circle cx="690" cy="86" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="690" y="122.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- II-1: F, 0 % -->
+    <g clip-path="url(#c15)"><rect x="543.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="543.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <circle cx="560" cy="196" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="560" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- II-2: M, 0 % -->
+    <g clip-path="url(#c16)"><rect x="603.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="603.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <rect x="603.0" y="179.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="620" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- II-3: F, 0 % -->
+    <g clip-path="url(#c17)"><rect x="663.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="663.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <circle cx="680" cy="196" r="17.0" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="680" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g><!-- II-4: M, 0 % -->
+    <g clip-path="url(#c18)"><rect x="723.0" y="179.0" width="34" height="34" fill="#fff"/><rect x="723.0" y="213.0" width="34" height="0.0" fill="#bc4749"/></g>
+    <rect x="723.0" y="179.0" width="34" height="34" fill="none" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="740" y="232.0" font-size="15" text-anchor="middle" fill="#5b6b7a">0 %</text>
+  </g>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="560" y="292">Every child: 0 %.</text>
+    <text x="560" y="314">Sperm mitochondria do not</text>
+    <text x="560" y="336">pass on their mtDNA.</text>
+  </g>
+  <g font-size="14" fill="#5b6b7a">
+    <rect x="560" y="358" width="14" height="14" fill="#bc4749"/>
+    <text x="582" y="370">red fill = fraction of mutant mtDNA</text>
+    <text x="560" y="392"><tspan fill="#bc4749" font-weight="bold">bold red %</tspan> = affected (above about 60 %)</text>
+  </g>
+</svg>

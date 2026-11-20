@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 456" font-family="Helvetica, Arial, sans-serif" width="900" height="456">
+  <!-- PCR-RFLP for sickle-cell (HbS). 500-bp HBB product, GRCh38 chr11:5,226,722-5,227,221 (gene orientation).
+       DdeI (C^TNAG) cuts at 37, 217, 418; the HbS change (codon 7 GAG to GTG) destroys the site at 217.
+       Map scale: x = 60 + 1.6 * bp. Gel: y = 215 + 110 * (3 - log10 bp), a drawing, not a photo. -->
+  <defs><marker id="ag" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#6a994e"/></marker></defs>
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">1. The 500-bp HBB PCR product and its DdeI sites</text>
+  <g transform="translate(0,16)">
+  <rect x="60" y="66" width="800" height="12" fill="#d6dde4"/>
+  <rect x="300" y="60" width="227" height="24" rx="3" fill="#2a6f97"/>
+  <rect x="736" y="60" width="124" height="24" rx="3" fill="#2a6f97"/>
+  <text x="413" y="77" font-size="13" fill="#fff" text-anchor="middle">exon 1</text>
+  <text x="798" y="77" font-size="13" fill="#fff" text-anchor="middle">exon 2 (part)</text>
+  <text x="631" y="56" font-size="12" fill="#5a6b7a" text-anchor="middle">intron 1</text>
+  <line x1="60" y1="98" x2="100" y2="98" stroke="#6a994e" stroke-width="4" marker-end="url(#ag)"/>
+  <line x1="860" y1="98" x2="820" y2="98" stroke="#6a994e" stroke-width="4" marker-end="url(#ag)"/>
+  <text x="60" y="118" font-size="12" fill="#6a994e">forward primer</text>
+  <text x="860" y="118" font-size="12" fill="#6a994e" text-anchor="end">reverse primer</text>
+  <!-- DdeI sites -->
+  <line x1="119" y1="52" x2="119" y2="92" stroke="#1b2a3a" stroke-width="2.5"/>
+  <line x1="407" y1="40" x2="407" y2="92" stroke="#bc4749" stroke-width="2.5"/>
+  <line x1="729" y1="52" x2="729" y2="92" stroke="#1b2a3a" stroke-width="2.5"/>
+  <text x="119" y="46" font-size="12" fill="#1b2a3a" text-anchor="middle">DdeI</text>
+  <text x="729" y="46" font-size="12" fill="#1b2a3a" text-anchor="middle">DdeI</text>
+  <text x="413" y="38" font-size="12" fill="#bc4749">codon 7: CTGAG (HbA) → CTGTG (HbS)</text>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="90" y="144">37</text>
+    <text x="263" y="144">180</text>
+    <text x="568" y="144">201</text>
+    <text x="795" y="144">82</text>
+  </g>
+  <text x="20" y="144" font-size="13" fill="#5a6b7a">bp:</text>
+  <line x1="20" y1="162" x2="880" y2="162" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <text x="20" y="188" font-size="16" font-weight="bold" fill="#1b2a3a">2. Cut with DdeI and run on a 2% gel</text>
+  <rect x="100" y="198" width="360" height="196" rx="6" fill="#1f262d"/>
+  <g font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="140" y="214" fill="#f3f0e6">M</text>
+    <text x="230" y="214" fill="#f3f0e6" font-style="italic">AA</text>
+    <text x="320" y="214" fill="#f3f0e6" font-style="italic">AS</text>
+    <text x="410" y="214" fill="#f3f0e6" font-style="italic">SS</text>
+  </g>
+  <g fill="#ffe3a3">
+    <!-- ladder 500, 400, 300, 200, 100 -->
+    <rect x="115" y="246" width="50" height="4" rx="2" opacity="0.75"/>
+    <rect x="115" y="256.5" width="50" height="4" rx="2" opacity="0.75"/>
+    <rect x="115" y="270.5" width="50" height="4" rx="2" opacity="0.75"/>
+    <rect x="115" y="289.5" width="50" height="4" rx="2" opacity="0.75"/>
+    <rect x="115" y="323" width="50" height="4" rx="2" opacity="0.75"/>
+    <!-- AA: 201, 180, 82, 37 -->
+    <rect x="200" y="289.4" width="60" height="5" rx="2"/>
+    <rect x="200" y="294.7" width="60" height="5" rx="2" opacity="0.9"/>
+    <rect x="200" y="332.5" width="60" height="5" rx="2" opacity="0.5"/>
+    <rect x="200" y="370.5" width="60" height="5" rx="2" opacity="0.25"/>
+    <!-- AS: 381, 201, 180, 82, 37 -->
+    <rect x="290" y="258.5" width="60" height="5" rx="2" opacity="0.8"/>
+    <rect x="290" y="289.4" width="60" height="5" rx="2" opacity="0.6"/>
+    <rect x="290" y="294.7" width="60" height="5" rx="2" opacity="0.55"/>
+    <rect x="290" y="332.5" width="60" height="5" rx="2" opacity="0.5"/>
+    <rect x="290" y="370.5" width="60" height="5" rx="2" opacity="0.25"/>
+    <!-- SS: 381, 82, 37 -->
+    <rect x="380" y="258.5" width="60" height="5" rx="2"/>
+    <rect x="380" y="332.5" width="60" height="5" rx="2" opacity="0.5"/>
+    <rect x="380" y="370.5" width="60" height="5" rx="2" opacity="0.25"/>
+  </g>
+  <g font-size="12" fill="#4a5866" text-anchor="end">
+    <text x="94" y="252">500</text><text x="94" y="275">300</text><text x="94" y="295">200</text><text x="94" y="329">100</text>
+  </g>
+  <g font-size="13" fill="#1b2a3a">
+    <text x="478" y="264">381 = 180 + 201 (site lost: HbS)</text>
+    <text x="478" y="294">201 and 180 (site present: HbA)</text>
+    <text x="478" y="338">82 (in every lane)</text>
+    <text x="478" y="376">37 (faint: little DNA mass)</text>
+  </g>
+  <text x="20" y="414" font-size="13" fill="#5a6b7a">A point mutation that creates or destroys a restriction site gives a restriction fragment length</text>
+  <text x="20" y="432" font-size="13" fill="#5a6b7a">polymorphism (RFLP). The carrier lane (AS) shows both alleles: the marker is codominant.</text>
+  </g>
+</svg>

@@ -1,0 +1,107 @@
+---
+title: "Quiz: Gene expression (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on transcription, splicing, translation and the genetic code, seen through mutations. This is a recap of 5MO103, so focus on what each step means for a mutation's effect.
+
+---
+
+**Q1.** The template strand of a short stretch of DNA reads 3′-`TACCACGTA`-5′. Write the mRNA, 5′ → 3′. Which strand has the same sequence as the mRNA?
+
+::: {.callout-tip collapse="true" title="Hint"}
+RNA is made complementary and antiparallel to the template, with U instead of T.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+mRNA 5′-**`AUGGUGCAU`**-3′ (Met Val His, the start of β-globin). It has the same sequence as the **coding strand** 5′-`ATGGTGCAT`-3′, with U for T. That is why gene sequences and c. numbering use the coding strand.
+:::
+
+---
+
+**Q2.** A mutation in the TATA box of the *HBB* promoter causes β^+^-thalassaemia (reduced, not absent, β-globin). Why "reduced" rather than an abnormal protein?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Does the mutation change the coding sequence?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The promoter is not part of the coding sequence, so the protein is **normal**. The mutation makes the promoter work less well, so **less mRNA**, and therefore less β-globin, is made. Promoter mutations change the **amount** of product, not its sequence. (*HBB* c.-78A>C is such a variant.)
+:::
+
+---
+
+**Q3.** *HBB* c.92+1G>A changes the first base of intron 1 from G to A. Why can a single change in an intron be as harmful as a nonsense mutation?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What are the conserved bases at the start of nearly every intron?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Introns start with **GU** (GT in DNA): the 5′ splice site, or donor. c.92+1G>A turns it into AU, so the spliceosome no longer recognises the donor. The intron is kept, an exon is skipped, or a cryptic site is used, and no normal mRNA is made. The allele makes no β-globin: β^0^-thalassaemia, just like a nonsense allele.
+:::
+
+---
+
+**Q4.** An internal exon of 183 nt is skipped. Another internal exon of 95 nt is skipped. Which skip keeps the reading frame, and what happens to the protein in each case?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Divide by 3.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+183 = 3 × 61, so skipping it keeps the frame: the protein lacks **61 amino acids** but is otherwise normal (*CFTR* exon 10, UniProt isoform 2). 95 is not a multiple of 3 (95 = 3 × 31 + 2), so skipping it **shifts the frame**: the following codons are misread, usually until a premature stop codon. Such an mRNA is often destroyed by nonsense-mediated decay. (*CFTR* exon 12 is 95 nt long.)
+:::
+
+---
+
+**Q5.** Ensembl lists 45 transcripts for *CFTR*, but UniProt lists only 3 protein isoforms. Give two reasons for the difference, and say what the **MANE Select** transcript is for.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Look at the biotypes Ensembl gives the transcripts.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Many Ensembl transcripts do not make a full protein: some are fragments with no defined coding sequence, some keep an intron, and some contain a premature stop and are labelled `nonsense_mediated_decay`. Others would code for a protein but there is no protein-level evidence for it, and UniProt lists isoforms only with good evidence. **MANE Select** is one transcript per gene, agreed by NCBI and Ensembl (for *CFTR*, ENST00000003084 = NM_000492.4), used as the default for describing variants, so that everyone numbers c.1624G>T the same way.
+:::
+
+---
+
+**Q6.** The nonsense allele *CFTR* G542X lies in exon 12 of 27. Why does it usually give almost no CFTR protein, rather than a short protein of 541 amino acids?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where is the stop codon relative to the last exon–exon junction?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The premature stop lies far upstream of the last exon–exon junction, so the mRNA is recognised by **nonsense-mediated decay** and destroyed before much protein can be made. The allele behaves as a **null** allele. That is also why most nonsense and frameshift alleles are recessive loss-of-function alleles.
+:::
+
+---
+
+**Q7.** In Crick and Brenner's experiment, why did a (+) and a (−) mutation restore wild type only if they were **close together**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which part of the protein is read in the wrong frame?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Between the (+) and the (−), the codons are read in the wrong frame, giving a stretch of wrong amino acids (and possibly a stop codon). After the (−), the frame is restored. If the two are close, only a few amino acids are wrong, and if that part of the protein is not critical, the protein still works. If they are far apart, the wrong stretch is long, very likely contains a stop codon, and the protein fails.
+:::
+
+---
+
+**Q8.** Why was the triplet nature of the code a genetic result, while the meaning of UUU was a biochemical one?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What did each experiment measure?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Crick and Brenner used only **mutants, crosses and phenotypes** (phage that grow or not on a host strain) to infer that the code is read in groups of three from a fixed start; they never saw a protein sequence. Nirenberg and Matthaei used **cell-free translation**: they added synthetic poly-U RNA to a cell extract and measured which amino acid was built into protein (phenylalanine). Genetics gave the rules of the code; biochemistry gave the dictionary.
+:::

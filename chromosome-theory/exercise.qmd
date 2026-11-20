@@ -1,0 +1,228 @@
+---
+title: "Exercise: chromosome theory & sex linkage"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- count **chromosomes**, **chromatids** and ploidy at each stage of mitosis and meiosis, and say what separates in meiosis I and in meiosis II;
+- explain the **chromosome theory of inheritance**, and why Morgan's white-eyed flies and Bridges' nondisjunction supported it;
+- solve **X-linked crosses** by hand, solving sons and daughters separately, and recognise criss-cross inheritance;
+- predict the gametes and zygotes produced by **nondisjunction** in meiosis I and in meiosis II;
+- compare **sex-determination systems** (XY with *SRY*, X : autosome ratio, XO, ZW, haplodiploidy) and predict the sex of unusual karyotypes;
+- find a species' karyotype in **Ensembl**, a gene's location in **NCBI Gene**, and the inheritance of an X-linked disease in **MedGen** or **OMIM**.
+
+Work on paper first. The demo then shows the chromosomes move, and the [Exercise in R](exercise-r.qmd) scales up the counting.
+
+## Background
+
+**Chromosomes and chromatids.** Count chromosomes by centromeres. After S phase each chromosome has two identical **sister chromatids**. **Homologues** are the two copies of a chromosome in a diploid cell, one from each parent.
+
+| Stage (human, 2n = 46) | Cells | Chromosomes per cell | Chromatids per cell |
+|---|---:|---:|---:|
+| G1 | 1 | 46 | 46 |
+| G2 / prophase I | 1 | 46 | 92 |
+| after meiosis I | 2 | 23 | 46 |
+| after meiosis II (gametes) | 4 | 23 | 23 |
+
+**Meiosis I** separates homologues (reductional, 2n → n); **meiosis II** separates sister chromatids (equational). Independent orientation of the n pairs at metaphase I gives $2^n$ combinations of parental chromosomes in a gamete.
+
+**X-linkage.** Write the allele on the X: X^*A*^X^*a*^ (carrier female), X^*a*^Y (hemizygous male). Sons get their X from the mother; daughters get one X from each parent, and every daughter gets the father's X. A white-eyed female × red-eyed male gives red daughters and white sons (**criss-cross inheritance**). Reciprocal crosses give different results.
+
+**Nondisjunction.** Homologues (in meiosis I) or sister chromatids (in meiosis II) fail to separate. The result is **n + 1** and **n − 1** gametes, which give **trisomic** (2n + 1) and **monosomic** (2n − 1) zygotes when fertilised by a normal gamete.
+
+**Sex determination.**
+
+| | Human | *Drosophila* |
+|---|---|---|
+| XX, XY | female, male | female, male |
+| XXY | male | female |
+| XO | female | male (sterile) |
+| Rule | a Y with *SRY* makes a male | the X : autosome ratio decides |
+
+Other systems: XO (grasshoppers; male XO), ZW (birds; **female** ZW, male ZZ), haplodiploidy (bees, ants, wasps; males are haploid, from unfertilised eggs).
+
+**Morgan's data (1910).** F~2~ of red X^+^X^*w*^ ♀ × red X^+^Y ♂: 2459 red ♀, 1011 red ♂, 782 white ♂, no white ♀.
+
+## By hand
+
+**B1. (counting)** The domestic cat has 2n = 38. For one cell, give the number of chromosomes and chromatids, and say whether the cell is haploid or diploid:
+
+a) a skin cell in G1; b) the same cell in G2; c) a primary spermatocyte in metaphase I; d) a cell just after meiosis I; e) a sperm cell.
+
+f) Ignoring crossing over, how many different combinations of the tomcat's maternal and paternal chromosomes can his sperm carry?
+
+**B2. (which division?)** Each description is of one cell from an organism with 2n = 6. Name the division and the stage (mitosis, meiosis I or meiosis II).
+
+a) Six chromosomes, each with two chromatids, lined up singly on the equator.
+b) Three pairs of homologous chromosomes, paired side by side on the equator.
+c) Three chromosomes, each with two chromatids, lined up on the equator.
+d) Twelve single-chromatid chromosomes moving to the poles, six to each.
+
+**B3. (Morgan's crosses)** In *Drosophila*, white eye (*w*) is an X-linked recessive allele; red (*w*^+^) is wild type.
+
+a) Give the genotypes and phenotypes of the F~1~ and F~2~ (by sex) from red ♀ (X^+^X^+^) × white ♂ (X^*w*^Y).
+b) Do the same for the reciprocal cross, white ♀ × red ♂.
+c) Morgan crossed his original white male with F~1~ daughters. Predict the offspring. He got 129 red ♀, 132 red ♂, 88 white ♀, 86 white ♂. Does the result show that white-eyed females can exist?
+
+**B4. (X-linked plus autosomal)** In *Drosophila*, vestigial wings (*vg*) is autosomal recessive. A white-eyed, vestigial female (X^*w*^X^*w*^ *vg*/*vg*) is crossed to a red-eyed male with normal wings (X^+^Y *vg*^+^/*vg*^+^).
+
+a) Give the F~1~ phenotypes, by sex.
+b) The F~1~ are intercrossed. What fraction of F~2~ **females** are white-eyed with vestigial wings? What fraction of F~2~ **males**? (Use the branch-line method from *Mendel*: solve each gene separately, then multiply.)
+
+**B5. (human X-linked recessive)** Red–green colour blindness is X-linked recessive. A colour-blind man and a woman with normal vision whose father was also colour-blind have children.
+
+a) Give the genotypes of the parents.
+b) What fraction of their sons, and of their daughters, will be colour-blind?
+c) A son with normal vision has children with a woman who is homozygous for normal vision. What is the risk for his children?
+
+**B6. (Bridges, and nondisjunction in the father)** White ♀ (X^*w*^X^*w*^) × red ♂ (X^+^Y).
+
+a) Give the four zygote types from a meiosis I nondisjunction in the **mother** (eggs X^*w*^X^*w*^ and O, fertilised by X^+^ or Y sperm). Which survive, and what are their sex and eye colour in *Drosophila*?
+b) Now suppose nondisjunction happens in meiosis I of the **father** instead, giving X^+^Y and O sperm. Which offspring do you get with normal X^*w*^ eggs? Would Bridges have spotted them as exceptions from their eye colour alone?
+
+**B7. (sex determination)** Predict the sex of each individual and explain briefly.
+
+a) A human with karyotype 47,XXY. b) A *Drosophila* with XXY. c) A human 46,XY whose *SRY* has a loss-of-function mutation. d) A human 46,XX with a piece of Y containing *SRY* on one X. e) A *Drosophila* with XO. f) A honeybee that hatched from an unfertilised egg.
+
+**B8. (Z-linkage in chickens)** In chickens, barred feathers (*B*) are dominant to non-barred (*b*), and the gene is on the Z chromosome. A barred hen is crossed to a non-barred rooster.
+
+a) Write the genotypes of the parents. (Remember which sex is ZW.)
+b) Predict the phenotypes of the chicks by sex. Why is this cross useful to poultry farmers?
+
+**B9. (where did the error happen?)** A woman with Turner syndrome (45,X) is colour-blind. Her father has normal colour vision; her mother has normal vision but is a carrier. In which parent did the nondisjunction (or loss of a sex chromosome) happen? Explain.
+
+## Explore {#explore}
+
+Do the by-hand part first. The demo steps through meiosis for one or two pairs of homologous chromosomes; blue chromosomes came from the father, red from the mother, and the long and short chromosomes are two different pairs. Use **Next** and **Back** (or click a stage), **flip orientation** to change how the last pair lines up at metaphase I, and the **Mode** buttons to add nondisjunction of the first (long) pair in meiosis I or II.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="meiosis" data-pairs="2"></div>
+<script src="../demos/dist/meiosis.js"></script>
+```
+
+**E1.** In normal mode with 2 pairs, step through all nine stages and write down the number of cells, chromosomes per cell and chromatids per cell (the grey line under the drawing helps). Where does the number of chromosomes halve? Where does the number of chromatids per chromosome go from 2 to 1? Compare with the table in the Background (2n = 46).
+
+**E2.** Go to the gametes and write down the colour combination of each (long, short). Then press **flip orientation** and do it again. How many different combinations do you see over the two orientations? How many would there be with 3 pairs? With 23?
+
+**E3.** Switch to **nondisjunction in MI** and step to the gametes. How many gametes are n + 1, n, and n − 1? If each is fertilised by a normal gamete, what is the chromosome number of each zygote (here 2n = 4)? Which egg types in Bridges' crosses correspond to the n + 1 and n − 1 gametes?
+
+**E4.** Switch to **nondisjunction in MII** and step to the gametes. How many gametes are normal now? Compare the **colours** of the two copies of the long chromosome in the n + 1 gamete with those after nondisjunction in MI. How could a geneticist use DNA markers that differ between a mother's two copies of chromosome 21 to tell whether the extra chromosome 21 in a child with Down syndrome came from an error in meiosis I or meiosis II?
+
+**E5.** Choose **1 pair** and **nondisjunction in MI**. Which gametes would be "O" (no copy) if this pair were the X chromosomes of a female fly?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.**
+
+| Stage | Cells | Chromosomes per cell | Chromatids per cell |
+|---|---:|---:|---:|
+| G1 | 1 | 4 | 4 |
+| S phase, prophase I, metaphase I | 1 | 4 | 8 |
+| telophase I, metaphase II | 2 | 2 | 4 |
+| gametes | 4 | 2 | 2 |
+
+The chromosome number halves in **anaphase I**, when homologues go to opposite poles. Chromatids per chromosome go from 2 to 1 in **anaphase II**, when sisters separate. It is the same pattern as for 2n = 46, with 4 and 2 in place of 46 and 23.
+
+**E2.** The demo starts with the father's long and the mother's short chromosome facing the same pole, so the gametes are (blue long, red short) and (red long, blue short), two of each. After flipping: (blue long, blue short) and (red long, red short). That is **4** combinations in total, $2^2$. With 3 pairs: $2^3 = 8$; with 23 pairs: $2^{23} = 8\,388\,608$. Each cell does only one orientation, so one meiosis gives 2 of the combinations; the others come from other meioses.
+
+**E3.** All four gametes are abnormal: **two n + 1** (3 chromosomes, with both a blue and a red long chromosome) and **two n − 1** (1 chromosome, no long one). After fertilisation by a normal gamete (n = 2): 3 + 2 = **5** chromosomes (2n + 1, trisomic for the long chromosome) and 1 + 2 = **3** (2n − 1, monosomic). In Bridges' crosses the n + 1 gametes are the **XX eggs** (X^*w*^X^*w*^) and the n − 1 gametes are the **O eggs** (no X).
+
+**E4.** Now **two gametes are normal** (n = 2), one is n + 1 and one is n − 1. In the n + 1 gamete both long chromosomes have the **same colour**: they are former sister chromatids, copies of one grandparent's chromosome. After nondisjunction in MI, the two copies have **different** colours: one from each grandparent. With DNA markers: if the child has inherited **two different** chromosome 21s from the mother (both of her marker alleles, near the centromere), the error was in meiosis I; if the child has **two copies of the same** maternal chromosome 21 (one of her alleles, twice), the error was in meiosis II. (Crossing over blurs this away from the centromere, which is why markers near the centromere are used. Part 5 has more.)
+
+**E5.** The two gametes on the right, with **no** copy of the chromosome (n − 1 = 0), are the O eggs. The two on the left carry both homologues (XX eggs).
+:::
+
+## Find it
+
+[Ensembl](https://www.ensembl.org) is a genome browser for vertebrates and model organisms. Its **karyotype view** (Location → Genome) draws all the chromosomes of a species; click a chromosome and choose "Chromosome summary" to see its **Length (bps)**. [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/) has one record per gene; read **Location** and **Exon count** in the Summary box. [MedGen](https://www.ncbi.nlm.nih.gov/medgen/) and [OMIM](https://www.omim.org) describe diseases; read **Mode of inheritance** in MedGen, or the **Inheritance** column of the Phenotype-Gene Relationships table in OMIM (XLR = X-linked recessive).
+
+**F1. The human karyotype in Ensembl.** Open the [human karyotype view](https://www.ensembl.org/Homo_sapiens/Location/Genome). How many chromosomes are drawn, and what are they called? Click chromosome **X** and then **Y**, and read the **Length (bps)** in each chromosome summary. How many times longer is the X than the Y? Which assembly (genome version) does Ensembl show?
+
+**F2. The fly karyotype in Ensembl.** Open the [*Drosophila melanogaster* karyotype view](https://www.ensembl.org/Drosophila_melanogaster/Location/Genome). Which chromosome names are shown? *Drosophila* has 2n = 8, that is, four chromosome pairs. Explain how the names fit four chromosomes. Compare the lengths of the X and the Y.
+
+**F3. *SRY* in NCBI Gene.** Open [*SRY* in NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/6736) (or search Gene for "SRY human"). Read **Location** and **Exon count** in the Summary box, and the summary paragraph under "Summary". On which chromosome arm is *SRY*? What kind of protein does it encode? According to the summary, what happens when *SRY* is mutated, and when it is moved to an X chromosome?
+
+**F4. Two X-linked diseases in MedGen.** Open MedGen for [haemophilia A](https://www.ncbi.nlm.nih.gov/medgen/C0019069) (OMIM [306700](https://www.omim.org/entry/306700)) and for [androgen insensitivity syndrome](https://www.ncbi.nlm.nih.gov/medgen/C0039585) (OMIM [300068](https://www.omim.org/entry/300068); MedGen calls it "Androgen resistance syndrome"). For each, read the **Mode of inheritance** and the **gene**, and find the gene's band in NCBI Gene (search "F8 human", "AR human").
+
+a) For haemophilia A, who in a family is usually affected, and why?
+b) Read the definition of androgen insensitivity syndrome. What is the **karyotype** of the affected individuals? They have *SRY*, and they develop testes. Why is their body not male? What does this tell you about *SRY*'s role?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For F4b, *AR* is the androgen receptor: the protein that lets cells respond to testosterone. *SRY* decides whether the gonad becomes a testis; it does not act on every cell of the body.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) **38 chromosomes, 38 chromatids**, diploid. b) **38 chromosomes, 76 chromatids**, diploid. c) **38 chromosomes, 76 chromatids** (19 bivalents), diploid. d) **19 chromosomes, 38 chromatids**, haploid. e) **19 chromosomes, 19 chromatids**, haploid. f) $2^{19} = 524\,288$.
+
+**B2.** a) **Mitosis, metaphase**: all 6 chromosomes, replicated, lined up singly. b) **Meiosis I, metaphase I**: homologues are paired (bivalents). c) **Meiosis II, metaphase II**: only n = 3 chromosomes, still with two chromatids. d) **Mitosis, anaphase**: 12 chromatids separating into 6 + 6 means each pole gets a full diploid set. (In anaphase II there would be 3 + 3.)
+
+**B3.** a) F~1~: X^+^X^*w*^ red ♀, X^+^Y red ♂. F~2~: daughters X^+^X^+^ and X^+^X^*w*^, **all red**; sons X^+^Y red and X^*w*^Y white, **½ each**. Overall ½ red ♀ : ¼ red ♂ : ¼ white ♂.
+
+b) White ♀ X^*w*^X^*w*^ × red ♂ X^+^Y. F~1~: daughters X^+^X^*w*^ **red**, sons X^*w*^Y **white** (criss-cross). F~2~ (X^+^X^*w*^ × X^*w*^Y): daughters ½ X^+^X^*w*^ red, ½ X^*w*^X^*w*^ white; sons ½ X^+^Y red, ½ X^*w*^Y white. All four classes ¼.
+
+c) X^*w*^Y × X^+^X^*w*^: daughters ½ red (X^+^X^*w*^), ½ white (X^*w*^X^*w*^); sons ½ red, ½ white. Expected **1 : 1 : 1 : 1**. Morgan's 88 **white females** prove that white-eyed females are viable, so their absence in the F~2~ was due to X-linkage, not to white being lethal in females. (Both white classes are below the red ones: white flies survive less well. See the Exercise in R.)
+
+**B4.** a) F~1~ females: X^+^X^*w*^ *vg*^+^/*vg*: **red, normal wings**. F~1~ males: X^*w*^Y *vg*^+^/*vg*: **white, normal wings** (criss-cross for eye colour).
+
+b) F~1~ × F~1~: X^+^X^*w*^ *vg*^+^/*vg* × X^*w*^Y *vg*^+^/*vg*. Eye colour: daughters ½ white (X^*w*^X^*w*^); sons ½ white (X^*w*^Y). Wings: *vg*^+^/*vg* × *vg*^+^/*vg* → ¼ vestigial, in both sexes. White and vestigial: **½ × ¼ = 1/8** of females and **1/8** of males.
+
+**B5.** a) Man: X^*c*^Y. Woman: her father gave her X^*c*^, and she has normal vision, so she is X^*C*^X^*c*^ (a carrier).
+b) Sons get her X: **½** colour-blind. Daughters get X^*c*^ from the father and X^*C*^ or X^*c*^ from the mother: **½** colour-blind (X^*c*^X^*c*^) and ½ carriers.
+c) A son with normal vision is X^*C*^Y; his partner is X^*C*^X^*C*^. **No** child is colour-blind, and no daughter is a carrier. (A man cannot pass an X-linked allele to his sons.)
+
+**B6.** a)
+
+| Egg | × X^+^ sperm | × Y sperm |
+|---|---|---|
+| X^*w*^X^*w*^ | X^+^X^*w*^X^*w*^: triplo-X, mostly dies | X^*w*^X^*w*^Y: **white female** (exceptional) |
+| O | X^+^O: **red male**, sterile (exceptional) | YO: no X, dies |
+
+b) X^+^Y sperm × X^*w*^ egg → X^+^X^*w*^Y: a **red female**. O sperm × X^*w*^ egg → X^*w*^O: a **white male** (sterile). These have the **same** eye colours as the regular offspring (red daughters, white sons), so Bridges could **not** spot them by phenotype; he would need to look at the chromosomes or notice that the males are sterile. That is why he used a white mother and a red father: only maternal nondisjunction gives eye colours that stand out.
+
+**B7.** a) **Male** (Klinefelter syndrome): the Y carries *SRY*. b) **Female**: in flies two X with two sets of autosomes gives a female; the Y does not count. c) **Female** body (Swyer syndrome; the gonads do not become testes). d) **Male** (XX male syndrome): *SRY* is enough to start testis development. e) **Male**, sterile: one X per two autosome sets. f) **Male** (a drone): haploid, from an unfertilised egg.
+
+**B8.** a) Barred hen: **Z^*B*^W**. Non-barred rooster: **Z^*b*^Z^*b*^**.
+b) Sons get Z^*B*^ from the mother and Z^*b*^ from the father: **all barred** (Z^*B*^Z^*b*^). Daughters get the mother's W and the father's Z^*b*^: **all non-barred** (Z^*b*^W). This is criss-cross inheritance with the sexes reversed, because the female is the heterogametic sex. Farmers can therefore sort chicks by sex from their plumage, without examining their genitals (a sex-linked, or autosexing, cross).
+
+**B9.** She is colour-blind, so her only X must be X^*c*^. Her father is X^*C*^Y and could only give X^*C*^ or Y, so her X^*c*^ came from her **mother**. She got **no sex chromosome from her father**: the error (nondisjunction or loss of the sex chromosome) happened in the **father's** meiosis, giving a sperm with no X and no Y.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+These facts were checked via the Ensembl REST API (`/info/assembly`) and NCBI E-utilities (Gene and MedGen) on 2026-11-20.
+
+**F1.** Ensembl draws **25** chromosomes for human: **1–22, X, Y** and the mitochondrial genome **MT**. Click path: Ensembl → Human → Location: "Genome" (karyotype view) → click X → "Chromosome summary" → Length (bps). On assembly **GRCh38** (GRCh38.p14), **X is 156,040,895 bp** and **Y is 57,227,415 bp**: the X is about **2.7 times** longer. (Much of the Y is repetitive, and it carries far fewer genes than the X.)
+
+**F2.** The names are **2L, 2R, 3L, 3R, 4, X, Y** (plus the mitochondrial genome). 2L and 2R are the left and right **arms** of chromosome 2, on either side of the centromere, and likewise for chromosome 3. So the four pairs are **X (or X/Y), 2, 3 and 4**, which fits 2n = 8. Lengths on the current assembly (BDGP6): X ≈ **23.5 Mb**, Y ≈ **3.7 Mb**. The Y is mostly repetitive heterochromatin that is hard to assemble, so its real size is larger than the assembled sequence; either way it has few genes. Chromosome 4 is tiny (≈ 1.3 Mb).
+
+**F3.** NCBI Gene ID 6736: **Location Yp11.2** (the short arm, "p", of the Y), **Exon count 1** (the summary calls it an "intronless gene"). It encodes a **transcription factor** of the HMG-box family of DNA-binding proteins, the **testis-determining factor (TDF)** that starts male sex determination. Mutations give **XY females with gonadal dysgenesis (Swyer syndrome)**; translocation of the *SRY* region to the X causes **XX male syndrome**.
+
+**F4.**
+
+| | Disease (MIM) | Mode of inheritance | Gene | Location |
+|---|---|---|---|---|
+| Haemophilia A | MedGen C0019069 (306700) | X-linked recessive | *F8*, coagulation factor VIII | Xq28 |
+| Androgen insensitivity | MedGen C0039585 (300068) | X-linked recessive | *AR*, androgen receptor | Xq12 |
+
+a) Haemophilia A affects mainly **males**: they have one X, so one faulty *F8* allele leaves them with no working factor VIII. Heterozygous women are usually carriers who pass the allele to half their sons.
+
+b) The MedGen definition (from GeneReviews) describes undermasculinised or female external genitalia in individuals with a **46,XY karyotype**. They have a Y with a working *SRY*, so their gonads develop as **testes**, which make testosterone. But without a working androgen receptor their cells cannot **respond** to it, so the body develops along the female path (complete AIS) or is partly masculinised. *SRY* is only the **switch** that makes the gonad a testis; the rest of male development depends on hormones and their receptors, which are encoded by other genes, here one on the X.
+:::
+
+## Where this leads
+
+Genes sit on chromosomes, and there are many more genes than chromosomes. So genes on the same chromosome should travel together. In **Linkage & recombination** we see that they do, except when crossing over between homologues separates them, and that the frequency of crossing over can be used to map genes. Nondisjunction in humans (trisomy 21, XXY and XO) returns in Part 5, *Rearrangements & aneuploidy*, with the same meiosis demo, and X inactivation in Part 6.
+
+**Next:** [Exercise in R](exercise-r.qmd): count gamete combinations, simulate how much of a gamete comes from each grandparent, and test Morgan's counts with χ².

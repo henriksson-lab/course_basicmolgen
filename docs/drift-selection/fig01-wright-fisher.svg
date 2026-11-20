@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="400" viewBox="0 0 980 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: Wright-Fisher model, 2N = 10 gene copies; each copy in the next generation picks a parent copy at random (with replacement). Seeded (Python random, seed 11). -->
+  <line x1="250" y1="64" x2="150" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="300" y1="64" x2="200" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="64" x2="250" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="64" x2="300" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="64" x2="350" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="64" x2="400" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="64" x2="450" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="64" x2="500" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="64" x2="550" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="64" x2="600" y2="114" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="150" y1="142" x2="150" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="200" y1="142" x2="200" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="200" y1="142" x2="250" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="250" y1="142" x2="300" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="250" y1="142" x2="350" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="350" y1="142" x2="400" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="142" x2="450" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="142" x2="500" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="142" x2="550" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="142" x2="600" y2="192" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="150" y1="220" x2="150" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="150" y1="220" x2="200" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="150" y1="220" x2="250" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="200" y1="220" x2="300" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="250" y1="220" x2="350" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="450" y1="220" x2="400" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="220" x2="450" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="220" x2="500" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="220" x2="550" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="220" x2="600" y2="270" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="150" y1="298" x2="150" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="300" y1="298" x2="200" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="300" y1="298" x2="250" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="300" y1="298" x2="300" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="400" y1="298" x2="350" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="298" x2="400" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="500" y1="298" x2="450" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="550" y1="298" x2="500" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="298" x2="550" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <line x1="600" y1="298" x2="600" y2="348" stroke="#9aa5b1" stroke-width="1.4"/>
+  <text x="20" y="55" font-size="15" fill="#1b2a3a">generation 0</text>
+  <circle cx="150" cy="50" r="13" fill="#2a6f97"/>
+  <text x="150" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="200" cy="50" r="13" fill="#2a6f97"/>
+  <text x="200" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="250" cy="50" r="13" fill="#2a6f97"/>
+  <text x="250" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="300" cy="50" r="13" fill="#2a6f97"/>
+  <text x="300" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="350" cy="50" r="13" fill="#2a6f97"/>
+  <text x="350" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="400" cy="50" r="13" fill="#bc4749"/>
+  <text x="400" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="450" cy="50" r="13" fill="#bc4749"/>
+  <text x="450" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="500" cy="50" r="13" fill="#bc4749"/>
+  <text x="500" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="550" cy="50" r="13" fill="#bc4749"/>
+  <text x="550" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="600" cy="50" r="13" fill="#bc4749"/>
+  <text x="600" y="55" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="640" y="55" font-size="16" font-weight="bold" fill="#1b2a3a">p = 0.5</text>
+  <text x="20" y="133" font-size="15" fill="#1b2a3a">generation 1</text>
+  <circle cx="150" cy="128" r="13" fill="#2a6f97"/>
+  <text x="150" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="200" cy="128" r="13" fill="#2a6f97"/>
+  <text x="200" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="250" cy="128" r="13" fill="#bc4749"/>
+  <text x="250" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="300" cy="128" r="13" fill="#bc4749"/>
+  <text x="300" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="350" cy="128" r="13" fill="#bc4749"/>
+  <text x="350" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="400" cy="128" r="13" fill="#bc4749"/>
+  <text x="400" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="450" cy="128" r="13" fill="#bc4749"/>
+  <text x="450" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="500" cy="128" r="13" fill="#bc4749"/>
+  <text x="500" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="550" cy="128" r="13" fill="#bc4749"/>
+  <text x="550" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="600" cy="128" r="13" fill="#bc4749"/>
+  <text x="600" y="133" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="640" y="133" font-size="16" font-weight="bold" fill="#1b2a3a">p = 0.2</text>
+  <text x="20" y="211" font-size="15" fill="#1b2a3a">generation 2</text>
+  <circle cx="150" cy="206" r="13" fill="#2a6f97"/>
+  <text x="150" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="200" cy="206" r="13" fill="#2a6f97"/>
+  <text x="200" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="250" cy="206" r="13" fill="#2a6f97"/>
+  <text x="250" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="300" cy="206" r="13" fill="#bc4749"/>
+  <text x="300" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="350" cy="206" r="13" fill="#bc4749"/>
+  <text x="350" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="400" cy="206" r="13" fill="#bc4749"/>
+  <text x="400" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="450" cy="206" r="13" fill="#bc4749"/>
+  <text x="450" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="500" cy="206" r="13" fill="#bc4749"/>
+  <text x="500" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="550" cy="206" r="13" fill="#bc4749"/>
+  <text x="550" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="600" cy="206" r="13" fill="#bc4749"/>
+  <text x="600" y="211" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="640" y="211" font-size="16" font-weight="bold" fill="#1b2a3a">p = 0.3</text>
+  <text x="20" y="289" font-size="15" fill="#1b2a3a">generation 3</text>
+  <circle cx="150" cy="284" r="13" fill="#2a6f97"/>
+  <text x="150" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="200" cy="284" r="13" fill="#2a6f97"/>
+  <text x="200" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="250" cy="284" r="13" fill="#2a6f97"/>
+  <text x="250" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="300" cy="284" r="13" fill="#2a6f97"/>
+  <text x="300" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="350" cy="284" r="13" fill="#2a6f97"/>
+  <text x="350" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="400" cy="284" r="13" fill="#bc4749"/>
+  <text x="400" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="450" cy="284" r="13" fill="#bc4749"/>
+  <text x="450" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="500" cy="284" r="13" fill="#bc4749"/>
+  <text x="500" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="550" cy="284" r="13" fill="#bc4749"/>
+  <text x="550" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="600" cy="284" r="13" fill="#bc4749"/>
+  <text x="600" y="289" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="640" y="289" font-size="16" font-weight="bold" fill="#1b2a3a">p = 0.5</text>
+  <text x="20" y="367" font-size="15" fill="#1b2a3a">generation 4</text>
+  <circle cx="150" cy="362" r="13" fill="#2a6f97"/>
+  <text x="150" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="200" cy="362" r="13" fill="#2a6f97"/>
+  <text x="200" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="250" cy="362" r="13" fill="#2a6f97"/>
+  <text x="250" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="300" cy="362" r="13" fill="#2a6f97"/>
+  <text x="300" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">A</text>
+  <circle cx="350" cy="362" r="13" fill="#bc4749"/>
+  <text x="350" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="400" cy="362" r="13" fill="#bc4749"/>
+  <text x="400" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="450" cy="362" r="13" fill="#bc4749"/>
+  <text x="450" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="500" cy="362" r="13" fill="#bc4749"/>
+  <text x="500" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="550" cy="362" r="13" fill="#bc4749"/>
+  <text x="550" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <circle cx="600" cy="362" r="13" fill="#bc4749"/>
+  <text x="600" y="367" font-size="13" fill="#fff" text-anchor="middle" font-style="italic">a</text>
+  <text x="640" y="367" font-size="16" font-weight="bold" fill="#1b2a3a">p = 0.4</text>
+  <text x="730" y="80" font-size="16" font-weight="bold" fill="#1b2a3a">Wright–Fisher model</text>
+  <text x="730" y="108" font-size="14" fill="#555">Each new gene copy picks</text>
+  <text x="730" y="130" font-size="14" fill="#555">a parent copy at random.</text>
+  <text x="730" y="152" font-size="14" fill="#555">Some copies leave several</text>
+  <text x="730" y="174" font-size="14" fill="#555">descendants, some none.</text>
+  <text x="730" y="196" font-size="14" fill="#555"></text>
+  <text x="730" y="218" font-size="14" fill="#555">So p wanders by chance:</text>
+  <text x="730" y="240" font-size="14" fill="#555">genetic drift.</text>
+  <text x="730" y="262" font-size="14" fill="#555"></text>
+  <text x="730" y="284" font-size="14" fill="#555">Number of A copies next</text>
+  <text x="730" y="306" font-size="14" fill="#555">generation ~ Binomial(2N, p).</text>
+</svg>

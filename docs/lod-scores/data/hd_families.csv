@@ -1,0 +1,9 @@
+# INVENTED teaching data (not real families). Six families with an autosomal dominant disease, typed for one marker.
+# n = informative meioses scored, k = recombinants between disease and marker, phase = whether the affected parent's phase was known.
+family,n,k,phase
+A,10,1,known
+B,6,0,known
+C,8,1,known
+D,5,0,known
+E,7,1,known
+F,6,1,unknown

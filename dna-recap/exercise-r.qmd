@@ -1,0 +1,184 @@
+---
+title: "Exercise in R: DNA structure & replication (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- handle a DNA sequence as a **string** in R with [stringr](https://stringr.tidyverse.org/): length, substrings and counting;
+- write a function `revcomp()` that returns the reverse complement of a sequence, and a function `gc_content()`.
+
+## Before you start
+
+This page builds on the by-hand part of the [Exercise](exercise.qmd), especially B3 and F2. You need the packages stringr and tibble (stringr installs stringi, which we also use). Download [HBB_NM_000518.5.fasta](data/HBB_NM_000518.5.fasta), the *HBB* mRNA from F2, and save it in a `data/` folder of your R project.
+
+## Tasks
+
+**New idiom: DNA as a string.** In R a sequence is just a character string, and the [stringr](https://stringr.tidyverse.org/) functions work on it like on any text. The ones we need:
+
+| Function | What it does | Example |
+|---|---|---|
+| [`str_length(x)`](https://stringr.tidyverse.org/reference/str_length.html) | number of characters | `str_length("ATG")` is 3 |
+| [`str_sub(x, start, end)`](https://stringr.tidyverse.org/reference/str_sub.html) | the substring from `start` to `end` | `str_sub("ATGGTG", 4, 6)` is `"GTG"` |
+| [`str_count(x, pattern)`](https://stringr.tidyverse.org/reference/str_count.html) | how many times a pattern occurs; `"[GC]"` means G or C | `str_count("GATC", "[GC]")` is 2 |
+| [`str_c(..., collapse = "")`](https://stringr.tidyverse.org/reference/str_c.html) | glue strings together | |
+
+Two more come from base R and stringi: [`chartr(old, new, x)`](https://rdrr.io/r/base/chartr.html) replaces each character of `old` by the character at the same place in `new` (so `chartr("ACGT", "TGCA", x)` complements every base at once), and [`stringi::stri_reverse(x)`](https://stringi.gagolewski.com/rapi/stri_reverse.html) reverses a string.
+
+```r
+library(stringr)
+library(tibble)
+```
+
+**R1. (read the FASTA)** A FASTA file is a header line starting with `>`, followed by the sequence on one or more lines. Read the file with [`readLines()`](https://rdrr.io/r/base/readLines.html), drop the header and glue the rest into one string. How long is the mRNA? Check that positions 51–53 hold the start codon (F2b), and find the stop codon at the end of the CDS (51..494).
+
+```r
+lines <- readLines("data/HBB_NM_000518.5.fasta")
+lines[1]
+hbb <- str_c(lines[-1], collapse = "")   # glue the sequence lines into one string
+str_length(hbb)
+str_sub(hbb, 1, 60)
+str_sub(hbb, 51, 53)      # the start codon
+str_sub(hbb, 492, 494)    # the stop codon
+```
+
+(Part 4 reads FASTA files with several sequences; one sequence is all we need here.)
+
+**R2. (`revcomp()`)** Complement a short sequence with `chartr()`, and reverse it with `stri_reverse()`. Then put both steps in a function `revcomp()`. Test it on your answer to Q4 of the quiz (the EcoRI site `GAATTC` is its own reverse complement), and check that taking the reverse complement twice gives back the original *HBB* sequence.
+
+```r
+chartr("ACGT", "TGCA", "ATGGTGCAT")        # complement
+stringi::stri_reverse("ATGGTGCAT")         # reverse
+
+revcomp <- function(dna) {
+  stringi::stri_reverse(chartr("ACGT", "TGCA", dna))
+}
+revcomp("ATGGTGCAT")
+revcomp("GAATTC")                 # the EcoRI site
+revcomp(revcomp(hbb)) == hbb
+str_sub(revcomp(hbb), 1, 60)
+```
+
+The last line is the start of the *HBB* **− strand** written 5′ → 3′, which is what you would see on the + strand of chromosome 11. Can you find the poly(A) signal `AATAAA` from the end of the mRNA in it? (Hint: what is the reverse complement of `AATAAA`?)
+
+**R3. (`gc_content()`)** Write a function that returns the fraction of G and C in a sequence. Use it on the whole mRNA, on its reverse complement, and on the three regions of the mRNA: 5′ UTR (1–50), coding sequence (51–494) and 3′ UTR (495–628). Then count all four bases on each strand, and on both strands together, to check Chargaff's rules.
+
+```r
+gc_content <- function(dna) {
+  str_count(dna, "[GC]") / str_length(dna)
+}
+gc_content("ATGC")
+gc_content(hbb)
+gc_content(revcomp(hbb))
+
+regions <- tibble(
+  region = c("5' UTR", "coding sequence", "3' UTR"),
+  start  = c(1, 51, 495),
+  end    = c(50, 494, 628)
+)
+regions$seq <- str_sub(hbb, regions$start, regions$end)
+regions$length <- str_length(regions$seq)
+regions$gc <- gc_content(regions$seq)
+regions[, c("region", "start", "end", "length", "gc")]
+
+# Chargaff: count A, C, G, T on one strand, on its partner, and on both
+str_count(hbb, c("A", "C", "G", "T"))
+str_count(revcomp(hbb), c("A", "C", "G", "T"))
+both <- str_c(hbb, revcomp(hbb))
+str_count(both, c("A", "C", "G", "T"))
+```
+
+`str_sub()` and `gc_content()` work on a whole vector at once, so one line handles all three regions.
+
+a. Why is the GC content of a sequence and of its reverse complement the same?
+b. Does Chargaff's rule A = T hold for one strand of the mRNA? For both strands together?
+
+**R4. (the sickle mutation on both strands)** Take positions c.16–24 of the coding sequence (B3). Make the HbS change c.20A>T by assigning to `str_sub()`, and compare the reverse complements of the normal and mutant sequences with your answer to B3.
+
+```r
+cds <- str_sub(hbb, 51, 494)
+str_sub(cds, 16, 24)               # codons 6-8 of the coding sequence
+hbs <- cds
+str_sub(hbs, 20, 20) <- "T"        # c.20A>T
+str_sub(hbs, 16, 24)
+revcomp(str_sub(cds, 16, 24))
+revcomp(str_sub(hbs, 16, 24))
+```
+
+Which base changes in the reverse complement? Relate it to how dbSNP writes rs334.
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: In R"}
+
+All output below is from `Rscript --vanilla` run in the unit folder.
+
+**R1.**
+
+```
+[1] ">NM_000518.5 Homo sapiens hemoglobin subunit beta (HBB), mRNA"
+[1] 628
+[1] "ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATC"
+[1] "ATG"
+[1] "TAA"
+```
+
+628 nt, as on the LOCUS line. Positions 51–53 are the start codon ATG, and 492–494 the stop codon **TAA**.
+
+**R2.**
+
+```
+[1] "TACCACGTA"
+[1] "TACGTGGTA"
+[1] "ATGCACCAT"
+[1] "GAATTC"
+[1] TRUE
+[1] "TTGCAATGAAAATAAATGTTTTTTATTAGGCAGAATCCAGATGCTCAAGGCCCTTCATAA"
+```
+
+Complementing alone gives `TACCACGTA`, which is the partner strand written 3′ → 5′; reversing alone gives `TACGTGGTA`, which is not the partner strand at all. Only both steps together give the reverse complement, `ATGCACCAT` (as in the lecture). `GAATTC` is its own reverse complement, and two reverse complements give back the original. The reverse complement starts with the reverse complement of the mRNA's last bases (`…TTGCAA` at the end of the FASTA becomes `TTGCAA…`). The poly(A) signal `AATAAA` near the end of the mRNA appears in it as its own reverse complement, `TTTATT`, in `…TGTTTTTTATTAGG…`.
+
+**R3.**
+
+```
+[1] 0.5
+[1] 0.5127389
+[1] 0.5127389
+# A tibble: 3 × 5
+  region          start   end length    gc
+  <chr>           <dbl> <dbl>  <int> <dbl>
+1 5' UTR              1    50     50 0.44
+2 coding sequence    51   494    444 0.561
+3 3' UTR            495   628    134 0.381
+[1] 139 157 165 167
+[1] 167 165 157 139
+[1] 306 322 322 306
+```
+
+The mRNA is 51.3 % GC; the coding sequence (56.1 %) is richer in GC than the UTRs (44 % and 38.1 %).
+
+a. Every G on one strand is a C on the other, and every C a G, so G + C is the same on both strands.
+b. On one strand, A (139) ≠ T (167) and G (165) ≠ C (157): Chargaff's rule does **not** hold for a single strand. On both strands together, A = T = 306 and C = G = 322: the rule holds for **double-stranded** DNA, because each A on one strand is a T on the other.
+
+**R4.**
+
+```
+[1] "CCTGAGGAG"
+[1] "CCTGTGGAG"
+[1] "CTCCTCAGG"
+[1] "CTCCACAGG"
+```
+
+On the coding strand, c.20 changes A → T (GAG → GTG, Glu → Val). In the reverse complement, `CTCCTCAGG` becomes `CTCC`**`A`**`CAGG`: the **T** at the matching position becomes **A**. The reverse complement is the + strand of chromosome 11, so dbSNP writes rs334 as T>A. It is one base-pair change seen from the two strands.
+:::
+
+## Where this leads
+
+`revcomp()` and `gc_content()` come back in Part 4, where you scan both strands for restriction sites and design PCR primers. In the next unit, **Mutation & complementation**, you use `str_sub()` to cut a coding sequence into codons, translate it with a genetic-code table, and classify point mutations as silent, missense or nonsense.

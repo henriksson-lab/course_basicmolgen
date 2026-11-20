@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="335" viewBox="0 0 900 335" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig05: three solutions to the same problem, unequal X dosage between the sexes.
+       Bars show transcription from each X (1 = one normally active X).
+       Mammals: XX females silence one X (XIST) -> 1 + 0; XY males 1.
+       Drosophila: XY males double transcription of their single X (MSL complex) -> 2; XX females 1 + 1.
+       C. elegans: XX hermaphrodites halve both X (dosage compensation complex) -> 0.5 + 0.5; XO males 1.
+       In every case the total X output per cell is about the same in both sexes. -->
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">Dosage compensation: equal X output in both sexes, three ways</text>
+
+  <!-- column headers -->
+  <text x="150" y="66" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Mammals</text>
+  <text x="450" y="66" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">Drosophila</tspan></text>
+  <text x="750" y="66" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">C. elegans</tspan></text>
+
+  <!-- baseline y=230; 1 unit = 80 px -->
+  <!-- Mammals: XX female 1+0, XY male 1 -->
+  <rect x="60" y="150" width="34" height="80" fill="#7b3fa0"/>
+  <rect x="100" y="226" width="34" height="4" fill="#9aa5b1"/>
+  <rect x="190" y="150" width="34" height="80" fill="#7b3fa0"/>
+  <text x="97" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XX female</text>
+  <text x="207" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XY male</text>
+  <text x="150" y="280" font-size="13" fill="#5c6b7a" text-anchor="middle">female silences one X</text>
+  <text x="150" y="298" font-size="13" fill="#5c6b7a" text-anchor="middle">(one Barr body per cell)</text>
+
+  <!-- Drosophila: XX female 1+1, XY male 2 -->
+  <rect x="360" y="150" width="34" height="80" fill="#7b3fa0"/>
+  <rect x="400" y="150" width="34" height="80" fill="#7b3fa0"/>
+  <rect x="490" y="70" width="34" height="160" fill="#7b3fa0"/>
+  <text x="397" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XX female</text>
+  <text x="507" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XY male</text>
+  <text x="450" y="280" font-size="13" fill="#5c6b7a" text-anchor="middle">male doubles his one X</text>
+  <text x="450" y="298" font-size="13" fill="#5c6b7a" text-anchor="middle">(the MSL complex)</text>
+
+  <!-- C. elegans: XX herm 0.5+0.5, XO male 1 -->
+  <rect x="660" y="190" width="34" height="40" fill="#7b3fa0"/>
+  <rect x="700" y="190" width="34" height="40" fill="#7b3fa0"/>
+  <rect x="790" y="150" width="34" height="80" fill="#7b3fa0"/>
+  <text x="697" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XX herm.</text>
+  <text x="807" y="252" font-size="14" fill="#1b2a3a" text-anchor="middle">XO male</text>
+  <text x="750" y="280" font-size="13" fill="#5c6b7a" text-anchor="middle">hermaphrodite halves both X</text>
+  <text x="750" y="298" font-size="13" fill="#5c6b7a" text-anchor="middle">(dosage compensation complex)</text>
+
+  <!-- baselines and reference line at 1 unit -->
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <line x1="50" y1="230" x2="250" y2="230"/>
+    <line x1="350" y1="230" x2="550" y2="230"/>
+    <line x1="650" y1="230" x2="850" y2="230"/>
+  </g>
+  <g stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="50" y1="150" x2="250" y2="150"/>
+    <line x1="350" y1="150" x2="550" y2="150"/>
+    <line x1="650" y1="150" x2="850" y2="150"/>
+  </g>
+  <text x="246" y="144" font-size="12" fill="#5c6b7a" text-anchor="end">one active X</text>
+  <text x="20" y="328" font-size="12" fill="#5c6b7a">Bars: transcription from each X chromosome in a cell.</text>
+</svg>

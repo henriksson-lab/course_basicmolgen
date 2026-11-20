@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="Helvetica, Arial, sans-serif" width="900" height="320">
+  <!-- Arginine pathway in Neurospora, after Srb and Horowitz (1944), who used Beadle and Tatum's method.
+       Each mutant class is blocked at one step, and grows on any compound made after its block. -->
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#1b2a3a"/></marker></defs>
+
+  <g font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <rect x="20" y="30" width="130" height="40" rx="6" fill="#f4f7fa" stroke="#8a97a4" stroke-width="1.5"/><text x="85" y="56">precursor</text>
+    <rect x="250" y="30" width="130" height="40" rx="6" fill="#f4f7fa" stroke="#8a97a4" stroke-width="1.5"/><text x="315" y="56">ornithine</text>
+    <rect x="480" y="30" width="130" height="40" rx="6" fill="#f4f7fa" stroke="#8a97a4" stroke-width="1.5"/><text x="545" y="56">citrulline</text>
+    <rect x="710" y="30" width="130" height="40" rx="6" fill="#e5efdf" stroke="#6a994e" stroke-width="1.5"/><text x="775" y="56">arginine</text>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="2">
+    <line x1="152" y1="50" x2="246" y2="50" marker-end="url(#arrow)"/>
+    <line x1="382" y1="50" x2="476" y2="50" marker-end="url(#arrow)"/>
+    <line x1="612" y1="50" x2="706" y2="50" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="13" fill="#5a6b7a" text-anchor="middle">
+    <text x="200" y="22">enzyme 1</text><text x="430" y="22">enzyme 2</text><text x="660" y="22">enzyme 3</text>
+  </g>
+  <!-- blocks -->
+  <g font-size="13" font-weight="bold" fill="#bc4749" text-anchor="middle">
+    <line x1="200" y1="38" x2="200" y2="62" stroke="#bc4749" stroke-width="4"/><text x="200" y="88">class 1</text>
+    <line x1="430" y1="38" x2="430" y2="62" stroke="#bc4749" stroke-width="4"/><text x="430" y="88">class 2</text>
+    <line x1="660" y1="38" x2="660" y2="62" stroke="#bc4749" stroke-width="4"/><text x="660" y="88">class 3</text>
+  </g>
+
+  <!-- growth table -->
+  <text x="20" y="128" font-size="14" font-weight="bold" fill="#1b2a3a">Growth on minimal medium plus:</text>
+  <g font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="330" y="160">nothing</text><text x="460" y="160">ornithine</text><text x="590" y="160">citrulline</text><text x="720" y="160">arginine</text>
+  </g>
+  <line x1="20" y1="170" x2="790" y2="170" stroke="#c9d3dd" stroke-width="1.5"/>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="20" y="196">wild type</text>
+    <text x="20" y="226" fill="#bc4749" font-weight="bold">class 1 mutants</text>
+    <text x="20" y="256" fill="#bc4749" font-weight="bold">class 2 mutants</text>
+    <text x="20" y="286" fill="#bc4749" font-weight="bold">class 3 mutants</text>
+  </g>
+  <g font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="330" y="198" fill="#6a994e">+</text><text x="460" y="198" fill="#6a994e">+</text><text x="590" y="198" fill="#6a994e">+</text><text x="720" y="198" fill="#6a994e">+</text>
+    <text x="330" y="228" fill="#bc4749">−</text><text x="460" y="228" fill="#6a994e">+</text><text x="590" y="228" fill="#6a994e">+</text><text x="720" y="228" fill="#6a994e">+</text>
+    <text x="330" y="258" fill="#bc4749">−</text><text x="460" y="258" fill="#bc4749">−</text><text x="590" y="258" fill="#6a994e">+</text><text x="720" y="258" fill="#6a994e">+</text>
+    <text x="330" y="288" fill="#bc4749">−</text><text x="460" y="288" fill="#bc4749">−</text><text x="590" y="288" fill="#bc4749">−</text><text x="720" y="288" fill="#6a994e">+</text>
+  </g>
+  <text x="20" y="312" font-size="13" fill="#5a6b7a">A mutant grows on any compound made after its block. Each class is one gene, and each gene one enzyme.</text>
+</svg>

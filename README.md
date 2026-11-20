@@ -10,7 +10,8 @@ Each unit is one folder:
 
 - `lec.qmd`: reveal.js lecture with speaker notes. Figures are hand-written SVG (`figNN-*.svg`).
 - `quiz.qmd`: short questions with collapsible hints and answers.
-- `exercise.qmd`: **By hand** → **Explore** (demo) → **Find it** (public databases) → **In R** → solutions.
+- `exercise.qmd`: **By hand** → **Explore** (demo) → **Find it** (public databases) → solutions.
+- `exercise-r.qmd`: the R part, as its own page (Goal → Before you start → Tasks → Solutions).
 - `data/`: snapshots of any data the R part reads, so exercises keep working when databases change.
 
 ## Building this site

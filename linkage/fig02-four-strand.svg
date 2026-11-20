@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" width="900" height="290" font-family="Helvetica, Arial, sans-serif">
+  <!-- One crossover at the four-strand stage. Left: bivalent, chromatids 1-2 blue (sisters),
+       3-4 red (sisters), loci A and B; one crossover (X) between non-sister chromatids 2 and 3.
+       Right: the four products, two parental and two recombinant. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <text x="200" y="24" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Prophase I: four chromatids</text>
+  <text x="680" y="24" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">After meiosis: four products</text>
+
+  <!-- bivalent -->
+  <g font-size="14" fill="#5b6b7a" text-anchor="end">
+    <text x="32" y="80">1</text><text x="32" y="99">2</text><text x="32" y="129">3</text><text x="32" y="148">4</text>
+  </g>
+  <rect x="40" y="70" width="320" height="12" rx="6" fill="#2a6f97"/>
+  <rect x="40" y="89" width="320" height="12" rx="6" fill="#2a6f97"/>
+  <rect x="40" y="119" width="320" height="12" rx="6" fill="#bc4749"/>
+  <rect x="40" y="138" width="320" height="12" rx="6" fill="#bc4749"/>
+  <g font-size="18" font-weight="bold" font-style="italic" text-anchor="middle">
+    <text x="100" y="62" fill="#2a6f97">A</text>
+    <text x="300" y="62" fill="#2a6f97">B</text>
+    <text x="100" y="172" fill="#bc4749">a</text>
+    <text x="300" y="172" fill="#bc4749">b</text>
+  </g>
+  <!-- crossover between chromatids 2 and 3 -->
+  <g stroke="#1b2a3a" stroke-width="3.5" stroke-linecap="round">
+    <line x1="188" y1="95" x2="212" y2="125"/>
+    <line x1="188" y1="125" x2="212" y2="95"/>
+  </g>
+  <text x="200" y="198" font-size="14" fill="#5b6b7a" text-anchor="middle">one crossover (chiasma) between</text>
+  <text x="200" y="215" font-size="14" fill="#5b6b7a" text-anchor="middle">non-sister chromatids 2 and 3</text>
+
+  <line x1="385" y1="110" x2="465" y2="110" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- products -->
+  <g font-size="18" font-weight="bold" font-style="italic" text-anchor="middle">
+    <!-- 1: A B -->
+    <rect x="520" y="56" width="240" height="12" rx="6" fill="#2a6f97"/>
+    <text x="500" y="68" fill="#2a6f97">A</text><text x="780" y="68" fill="#2a6f97">B</text>
+    <!-- 2: A b -->
+    <rect x="520" y="91" width="120" height="12" fill="#2a6f97"/>
+    <rect x="640" y="91" width="120" height="12" fill="#bc4749"/>
+    <text x="500" y="103" fill="#2a6f97">A</text><text x="780" y="103" fill="#bc4749">b</text>
+    <!-- 3: a B -->
+    <rect x="520" y="126" width="120" height="12" fill="#bc4749"/>
+    <rect x="640" y="126" width="120" height="12" fill="#2a6f97"/>
+    <text x="500" y="138" fill="#bc4749">a</text><text x="780" y="138" fill="#2a6f97">B</text>
+    <!-- 4: a b -->
+    <rect x="520" y="161" width="240" height="12" rx="6" fill="#bc4749"/>
+    <text x="500" y="173" fill="#bc4749">a</text><text x="780" y="173" fill="#bc4749">b</text>
+  </g>
+  <g font-size="15">
+    <text x="802" y="67" fill="#5b6b7a">parental</text>
+    <text x="802" y="102" fill="#d08c2f" font-weight="bold">recomb.</text>
+    <text x="802" y="137" fill="#d08c2f" font-weight="bold">recomb.</text>
+    <text x="802" y="172" fill="#5b6b7a">parental</text>
+  </g>
+  <text x="640" y="205" font-size="15" fill="#1b2a3a" text-anchor="middle">2 of 4 products recombinant</text>
+
+  <!-- caption -->
+  <text x="450" y="252" font-size="15.5" fill="#1b2a3a" text-anchor="middle">A crossover involves only 2 of the 4 chromatids, so a meiosis with one crossover between A and B gives ½ recombinants.</text>
+  <text x="450" y="276" font-size="15.5" fill="#1b2a3a" text-anchor="middle">RF = ½ × (fraction of meioses with a crossover between A and B), as long as there is at most one.</text>
+</svg>

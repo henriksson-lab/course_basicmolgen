@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig03: Hox genes and colinearity, simplified. Top: the Drosophila Hox genes in two complexes on
+       chromosome arm 3R (Antennapedia complex: lab, pb, Dfd, Scr, Antp; bithorax complex: Ubx, abd-A, Abd-B),
+       and the body regions where each is mainly expressed. Bottom: one of the four mouse Hox clusters (Hoxb:
+       1-9 and 13), with paralogs coloured like their fly counterparts, and the regions along the mouse
+       axis. Genes at the 3' end act in anterior regions (and early); genes at the 5' end act posteriorly
+       (and later). Non-Hox genes inside the fly ANT-C (zen, bcd, ftz) are omitted. -->
+  <text x="20" y="26" font-size="18" font-weight="bold" fill="#1b2a3a">Hox genes: order on the chromosome = order along the body</text>
+
+  <!-- fly cluster -->
+  <text x="20" y="66" font-size="15" font-weight="bold" fill="#1b2a3a"><tspan font-style="italic">Drosophila</tspan> (3R)</text>
+  <line x1="178" y1="62" x2="880" y2="62" stroke="#1b2a3a" stroke-width="2"/>
+  <g font-size="13" font-weight="bold" font-style="italic" text-anchor="middle">
+    <rect x="180" y="48" width="56" height="28" fill="#c0392b"/><text x="208" y="67" fill="#ffffff">lab</text>
+    <rect x="244" y="48" width="56" height="28" fill="#e07b39"/><text x="272" y="67" fill="#ffffff">pb</text>
+    <rect x="308" y="48" width="56" height="28" fill="#e8b923"/><text x="336" y="67" fill="#1b2a3a">Dfd</text>
+    <rect x="372" y="48" width="56" height="28" fill="#a3c98f"/><text x="400" y="67" fill="#1b2a3a">Scr</text>
+    <rect x="436" y="48" width="56" height="28" fill="#5f9e4a"/><text x="464" y="67" fill="#ffffff">Antp</text>
+    <rect x="600" y="48" width="56" height="28" fill="#2a9d8f"/><text x="628" y="67" fill="#ffffff">Ubx</text>
+    <rect x="664" y="48" width="60" height="28" fill="#2a6f97"/><text x="694" y="67" fill="#ffffff">abd-A</text>
+    <rect x="732" y="48" width="60" height="28" fill="#7b3fa0"/><text x="762" y="67" fill="#ffffff">Abd-B</text>
+  </g>
+  <text x="336" y="98" font-size="12" fill="#5c6b7a" text-anchor="middle">Antennapedia complex</text>
+  <text x="696" y="98" font-size="12" fill="#5c6b7a" text-anchor="middle">bithorax complex</text>
+  <text x="540" y="56" font-size="12" fill="#5c6b7a" text-anchor="middle">(split)</text>
+
+  <!-- fly body -->
+  <g>
+    <rect x="180" y="116" width="150" height="34" rx="14" fill="#f4d8c8"/>
+    <rect x="180" y="116" width="50" height="34" rx="0" fill="#c0392b" opacity="0.8"/>
+    <rect x="230" y="116" width="50" height="34" fill="#e07b39" opacity="0.8"/>
+    <rect x="280" y="116" width="50" height="34" fill="#e8b923" opacity="0.8"/>
+    <rect x="334" y="116" width="66" height="34" fill="#a3c98f"/>
+    <rect x="404" y="116" width="66" height="34" fill="#5f9e4a"/>
+    <rect x="474" y="116" width="66" height="34" fill="#2a9d8f"/>
+    <rect x="544" y="116" width="180" height="34" fill="#2a6f97"/>
+    <rect x="728" y="116" width="64" height="34" rx="0" fill="#7b3fa0"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="255" y="168">head</text><text x="367" y="168">T1</text><text x="437" y="168">T2</text><text x="507" y="168">T3</text>
+    <text x="634" y="168">abdomen A1–A7</text><text x="760" y="168">A8–A9</text>
+  </g>
+
+  <line x1="20" y1="190" x2="880" y2="190" stroke="#d5dae0" stroke-width="1.5"/>
+
+  <!-- mouse Hoxb -->
+  <text x="20" y="236" font-size="15" font-weight="bold" fill="#1b2a3a">Mouse <tspan font-style="italic">Hoxb</tspan> (chr 11)</text>
+  <line x1="178" y1="232" x2="880" y2="232" stroke="#1b2a3a" stroke-width="2"/>
+  <g font-size="13" font-weight="bold" text-anchor="middle">
+    <rect x="180" y="218" width="44" height="28" fill="#c0392b"/><text x="202" y="237" fill="#ffffff">b1</text>
+    <rect x="232" y="218" width="44" height="28" fill="#e07b39"/><text x="254" y="237" fill="#ffffff">b2</text>
+    <rect x="284" y="218" width="44" height="28" fill="#c9ced4"/><text x="306" y="237" fill="#1b2a3a">b3</text>
+    <rect x="336" y="218" width="44" height="28" fill="#e8b923"/><text x="358" y="237" fill="#1b2a3a">b4</text>
+    <rect x="388" y="218" width="44" height="28" fill="#a3c98f"/><text x="410" y="237" fill="#1b2a3a">b5</text>
+    <rect x="440" y="218" width="44" height="28" fill="#5f9e4a"/><text x="462" y="237" fill="#ffffff">b6</text>
+    <rect x="492" y="218" width="44" height="28" fill="#2a9d8f"/><text x="514" y="237" fill="#ffffff">b7</text>
+    <rect x="544" y="218" width="44" height="28" fill="#2a6f97"/><text x="566" y="237" fill="#ffffff">b8</text>
+    <rect x="596" y="218" width="44" height="28" fill="#7b3fa0"/><text x="618" y="237" fill="#ffffff">b9</text>
+    <rect x="744" y="218" width="48" height="28" fill="#7b3fa0"/><text x="768" y="237" fill="#ffffff">b13</text>
+  </g>
+  <text x="692" y="224" font-size="12" fill="#5c6b7a" text-anchor="middle">(no b10–b12)</text>
+
+  <!-- mouse axis -->
+  <g>
+    <rect x="180" y="270" width="96" height="34" rx="14" fill="#e07b39" opacity="0.85"/>
+    <rect x="280" y="270" width="100" height="34" fill="#e8b923" opacity="0.85"/>
+    <rect x="384" y="270" width="200" height="34" fill="#4f9a6a"/>
+    <rect x="588" y="270" width="110" height="34" fill="#7b3fa0" opacity="0.75"/>
+    <rect x="702" y="270" width="90" height="34" rx="14" fill="#7b3fa0"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="228" y="322">hindbrain</text><text x="330" y="322">neck</text><text x="484" y="322">thorax (ribs)</text>
+    <text x="643" y="322">lumbar, sacral</text><text x="747" y="322">tail</text>
+  </g>
+
+  <!-- direction arrows -->
+  <text x="180" y="356" font-size="14" fill="#1b2a3a">3&apos; end: anterior, expressed early</text>
+  <text x="792" y="356" font-size="14" fill="#1b2a3a" text-anchor="end">5&apos; end: posterior, expressed later</text>
+  <text x="20" y="388" font-size="13" fill="#5c6b7a">Mammals have four clusters (Hoxa–d) from duplications of one ancestral cluster; same colour = same paralog group as the fly gene. Simplified.</text>
+</svg>

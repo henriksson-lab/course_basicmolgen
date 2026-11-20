@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Helvetica, Arial, sans-serif" width="900" height="380">
+  <!-- Double-strand-break model of homologous recombination, simplified. Each homologue is shown as one
+       double helix (two lines). Blue = chromatid carrying A ... B, red = homologous chromatid carrying a ... b. -->
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#1b2a3a"/></marker></defs>
+
+  <!-- Panel 1: break -->
+  <g transform="translate(10,8)">
+    <text x="10" y="18" font-size="15" font-weight="bold" fill="#1b2a3a">1. A double-strand break in one chromatid</text>
+    <g stroke-width="4" stroke-linecap="round">
+      <line x1="30" y1="60" x2="190" y2="60" stroke="#2a6f97"/><line x1="230" y1="60" x2="400" y2="60" stroke="#2a6f97"/>
+      <line x1="30" y1="70" x2="190" y2="70" stroke="#2a6f97"/><line x1="230" y1="70" x2="400" y2="70" stroke="#2a6f97"/>
+      <line x1="30" y1="110" x2="400" y2="110" stroke="#bc4749"/>
+      <line x1="30" y1="120" x2="400" y2="120" stroke="#bc4749"/>
+    </g>
+    <g font-size="16" font-style="italic" font-weight="bold">
+      <text x="40" y="48" fill="#2a6f97">A</text><text x="384" y="48" fill="#2a6f97">B</text>
+      <text x="40" y="146" fill="#bc4749">a</text><text x="384" y="146" fill="#bc4749">b</text>
+    </g>
+    <text x="210" y="48" font-size="13" fill="#5a6b7a" text-anchor="middle">break</text>
+  </g>
+
+  <!-- Panel 2: invasion -->
+  <g transform="translate(460,8)">
+    <text x="10" y="18" font-size="15" font-weight="bold" fill="#1b2a3a">2. A 3' end invades the homologue</text>
+    <g stroke-width="4" stroke-linecap="round" fill="none">
+      <line x1="30" y1="60" x2="150" y2="60" stroke="#2a6f97"/>
+      <path d="M150,60 C170,60 170,115 190,115 L240,115" stroke="#2a6f97"/>
+      <line x1="30" y1="70" x2="120" y2="70" stroke="#2a6f97"/>
+      <line x1="230" y1="70" x2="400" y2="70" stroke="#2a6f97"/>
+      <line x1="300" y1="60" x2="400" y2="60" stroke="#2a6f97"/>
+      <path d="M30,110 L170,110 C190,110 190,88 215,88 C240,88 250,110 270,110 L400,110" stroke="#bc4749"/>
+      <line x1="30" y1="120" x2="400" y2="120" stroke="#bc4749"/>
+    </g>
+    <line x1="244" y1="115" x2="266" y2="115" stroke="#2a6f97" stroke-width="3" stroke-dasharray="4,3"/>
+    <text x="236" y="84" font-size="13" fill="#5a6b7a">D-loop</text>
+    <text x="30" y="146" font-size="13" fill="#5a6b7a">The blue strand pairs with the red partner strand</text>
+    <text x="30" y="162" font-size="13" fill="#5a6b7a">and is extended (dashed), using red as template.</text>
+  </g>
+
+  <!-- Panel 3: double Holliday junction -->
+  <g transform="translate(10,196)">
+    <text x="10" y="18" font-size="15" font-weight="bold" fill="#1b2a3a">3. Two Holliday junctions</text>
+    <g stroke-width="4" stroke-linecap="round" fill="none">
+      <line x1="30" y1="60" x2="400" y2="60" stroke="#2a6f97"/>
+      <path d="M30,70 L160,70 L190,110 L260,110 L290,70 L400,70" stroke="#2a6f97"/>
+      <path d="M30,110 L160,110 L190,70 L260,70 L290,110 L400,110" stroke="#bc4749"/>
+      <line x1="30" y1="120" x2="400" y2="120" stroke="#bc4749"/>
+    </g>
+    <text x="175" y="160" font-size="13" fill="#1b2a3a" text-anchor="middle">junction</text>
+    <text x="275" y="160" font-size="13" fill="#1b2a3a" text-anchor="middle">junction</text>
+    <line x1="175" y1="146" x2="175" y2="128" stroke="#1b2a3a" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="275" y1="146" x2="275" y2="128" stroke="#1b2a3a" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="40" y="46" font-size="13" fill="#5a6b7a">Between the junctions: heteroduplex DNA (one blue, one red strand).</text>
+  </g>
+
+  <!-- Panel 4: resolution -->
+  <g transform="translate(460,196)">
+    <text x="10" y="18" font-size="15" font-weight="bold" fill="#1b2a3a">4. Cutting the junctions: two outcomes</text>
+    <!-- non-crossover -->
+    <g stroke-width="4" stroke-linecap="round">
+      <line x1="20" y1="60" x2="190" y2="60" stroke="#2a6f97"/>
+      <line x1="20" y1="70" x2="80" y2="70" stroke="#2a6f97"/><line x1="80" y1="70" x2="130" y2="70" stroke="#bc4749"/><line x1="130" y1="70" x2="190" y2="70" stroke="#2a6f97"/>
+      <line x1="20" y1="110" x2="80" y2="110" stroke="#bc4749"/><line x1="80" y1="110" x2="130" y2="110" stroke="#2a6f97"/><line x1="130" y1="110" x2="190" y2="110" stroke="#bc4749"/>
+      <line x1="20" y1="120" x2="190" y2="120" stroke="#bc4749"/>
+    </g>
+    <g font-size="16" font-style="italic" font-weight="bold">
+      <text x="24" y="48" fill="#2a6f97">A</text><text x="176" y="48" fill="#2a6f97">B</text>
+      <text x="24" y="146" fill="#bc4749">a</text><text x="176" y="146" fill="#bc4749">b</text>
+    </g>
+    <text x="105" y="168" font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">non-crossover</text>
+    <!-- crossover -->
+    <g stroke-width="4" stroke-linecap="round">
+      <line x1="230" y1="60" x2="315" y2="60" stroke="#2a6f97"/><line x1="315" y1="60" x2="400" y2="60" stroke="#bc4749"/>
+      <line x1="230" y1="70" x2="315" y2="70" stroke="#2a6f97"/><line x1="315" y1="70" x2="400" y2="70" stroke="#bc4749"/>
+      <line x1="230" y1="110" x2="315" y2="110" stroke="#bc4749"/><line x1="315" y1="110" x2="400" y2="110" stroke="#2a6f97"/>
+      <line x1="230" y1="120" x2="315" y2="120" stroke="#bc4749"/><line x1="315" y1="120" x2="400" y2="120" stroke="#2a6f97"/>
+    </g>
+    <g font-size="16" font-style="italic" font-weight="bold">
+      <text x="234" y="48" fill="#2a6f97">A</text><text x="386" y="48" fill="#bc4749">b</text>
+      <text x="234" y="146" fill="#bc4749">a</text><text x="386" y="146" fill="#2a6f97">B</text>
+    </g>
+    <text x="315" y="168" font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">crossover</text>
+  </g>
+</svg>

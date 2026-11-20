@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif" width="900" height="300">
+  <!-- The Ames test, schematic. Colony dots are illustrative. -->
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#1b2a3a"/></marker></defs>
+
+  <!-- step boxes -->
+  <rect x="20" y="20" width="250" height="118" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="34" y="46" font-size="15" font-weight="bold" fill="#1b2a3a">1. Tester bacteria</text>
+  <text x="34" y="70" font-size="13" fill="#1b2a3a"><tspan font-style="italic">Salmonella</tspan> his<tspan font-size="10" dy="-5">−</tspan><tspan dy="5">: a point mutation in</tspan></text>
+  <text x="34" y="88" font-size="13" fill="#1b2a3a">a histidine gene, so they cannot</text>
+  <text x="34" y="106" font-size="13" fill="#1b2a3a">grow without histidine. Only a new</text>
+  <text x="34" y="124" font-size="13" fill="#1b2a3a">mutation (a reversion) restores it.</text>
+
+  <rect x="320" y="20" width="250" height="118" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="334" y="46" font-size="15" font-weight="bold" fill="#1b2a3a">2. Add the chemical</text>
+  <text x="334" y="70" font-size="13" fill="#1b2a3a">together with <tspan font-weight="bold">rat liver extract</tspan></text>
+  <text x="334" y="88" font-size="13" fill="#1b2a3a">(S9), whose enzymes turn some</text>
+  <text x="334" y="106" font-size="13" fill="#1b2a3a">harmless chemicals into mutagens,</text>
+  <text x="334" y="124" font-size="13" fill="#1b2a3a">as our own liver does.</text>
+
+  <rect x="620" y="20" width="260" height="118" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="634" y="46" font-size="15" font-weight="bold" fill="#1b2a3a">3. Plate without histidine</text>
+  <text x="634" y="70" font-size="13" fill="#1b2a3a">Only his<tspan font-size="10" dy="-5">+</tspan><tspan dy="5"> revertants form colonies.</tspan></text>
+  <text x="634" y="88" font-size="13" fill="#1b2a3a">Count them, and compare with a</text>
+  <text x="634" y="106" font-size="13" fill="#1b2a3a">plate that got no chemical.</text>
+
+  <line x1="274" y1="79" x2="314" y2="79" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="574" y1="79" x2="614" y2="79" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- plates -->
+  <circle cx="200" cy="215" r="62" fill="#fbf6ea" stroke="#8a97a4" stroke-width="3"/>
+  <g fill="#d08c2f">
+    <circle cx="175" cy="195" r="4"/><circle cx="222" cy="232" r="4"/><circle cx="205" cy="180" r="4"/><circle cx="183" cy="246" r="4"/>
+  </g>
+  <text x="290" y="200" font-size="14" font-weight="bold" fill="#1b2a3a">no chemical</text>
+  <text x="290" y="220" font-size="13" fill="#1b2a3a">a few spontaneous</text>
+  <text x="290" y="238" font-size="13" fill="#1b2a3a">revertants</text>
+
+  <circle cx="560" cy="215" r="62" fill="#fbf6ea" stroke="#8a97a4" stroke-width="3"/>
+  <g fill="#d08c2f">
+    <circle cx="530" cy="190" r="4"/><circle cx="548" cy="176" r="4"/><circle cx="572" cy="181" r="4"/><circle cx="592" cy="197" r="4"/>
+    <circle cx="520" cy="214" r="4"/><circle cx="541" cy="203" r="4"/><circle cx="563" cy="200" r="4"/><circle cx="585" cy="220" r="4"/>
+    <circle cx="604" cy="214" r="4"/><circle cx="530" cy="236" r="4"/><circle cx="552" cy="226" r="4"/><circle cx="574" cy="240" r="4"/>
+    <circle cx="596" cy="240" r="4"/><circle cx="545" cy="252" r="4"/><circle cx="566" cy="262" r="4"/><circle cx="512" cy="232" r="4"/>
+    <circle cx="556" cy="160" r="4"/><circle cx="582" cy="160" r="4"/><circle cx="530" cy="165" r="4"/><circle cx="612" cy="232" r="4"/>
+  </g>
+  <text x="650" y="200" font-size="14" font-weight="bold" fill="#1b2a3a">with chemical + S9</text>
+  <text x="650" y="220" font-size="13" fill="#1b2a3a">many revertants:</text>
+  <text x="650" y="238" font-size="13" fill="#1b2a3a">the chemical is a <tspan font-weight="bold">mutagen</tspan></text>
+</svg>

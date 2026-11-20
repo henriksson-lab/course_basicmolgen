@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Helvetica, Arial, sans-serif" width="900" height="330">
+  <!-- BLAST idea: seed word hit, extension, and the reported alignment. Sequences: human beta-globin (UniProt P68871) vs mouse beta-1 globin (P02088), residues 1-40; full length 118/147 identical, no gaps. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">How BLAST finds and scores a match</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="20" y="58"><tspan font-weight="bold" fill="#2a6f97">1. Seed.</tspan> Find short words (3 amino acids, or 11+ bases) shared by the query and a database sequence.</text>
+    <text x="20" y="80"><tspan font-weight="bold" fill="#2a6f97">2. Extend.</tspan> Grow the match in both directions while the score keeps rising: +points for matches, −points for mismatches and gaps.</text>
+    <text x="20" y="102"><tspan font-weight="bold" fill="#2a6f97">3. Report.</tspan> Keep alignments whose score is too high to be chance (small E-value).</text>
+  </g>
+  <rect x="20" y="122" width="860" height="112" rx="6" fill="#f4f7fa" stroke="#c9d3dd"/>
+  <g font-family="Courier New, monospace" font-size="17" font-weight="bold" fill="#1b2a3a">
+    <text x="40" y="158">Query 1</text>
+    <text x="40" y="206">Sbjct 1</text>
+  </g>
+  <g font-family="Courier New, monospace" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="150.0" y="158">M</text><text x="150.0" y="206">M</text>
+    <text x="165.5" y="158">V</text><text x="165.5" y="206">V</text>
+    <text x="181.0" y="158">H</text><text x="181.0" y="206">H</text>
+    <text x="196.5" y="158">L</text><text x="196.5" y="206">L</text>
+    <text x="212.0" y="158">T</text><text x="212.0" y="206">T</text>
+    <text x="227.5" y="158">P</text><text x="227.5" y="206">D</text>
+    <text x="243.0" y="158">E</text><text x="243.0" y="206">A</text>
+    <text x="258.5" y="158">E</text><text x="258.5" y="206">E</text>
+    <text x="274.0" y="158">K</text><text x="274.0" y="206">K</text>
+    <text x="289.5" y="158">S</text><text x="289.5" y="206">A</text>
+    <text x="305.0" y="158">A</text><text x="305.0" y="206">A</text>
+    <text x="320.5" y="158">V</text><text x="320.5" y="206">V</text>
+    <text x="336.0" y="158">T</text><text x="336.0" y="206">S</text>
+    <text x="351.5" y="158">A</text><text x="351.5" y="206">C</text>
+    <text x="367.0" y="158">L</text><text x="367.0" y="206">L</text>
+    <text x="382.5" y="158">W</text><text x="382.5" y="206">W</text>
+    <text x="398.0" y="158">G</text><text x="398.0" y="206">G</text>
+    <text x="413.5" y="158">K</text><text x="413.5" y="206">K</text>
+    <text x="429.0" y="158">V</text><text x="429.0" y="206">V</text>
+    <text x="444.5" y="158">N</text><text x="444.5" y="206">N</text>
+    <text x="460.0" y="158">V</text><text x="460.0" y="206">S</text>
+    <text x="475.5" y="158">D</text><text x="475.5" y="206">D</text>
+    <text x="491.0" y="158">E</text><text x="491.0" y="206">E</text>
+    <text x="506.5" y="158">V</text><text x="506.5" y="206">V</text>
+    <text x="522.0" y="158">G</text><text x="522.0" y="206">G</text>
+    <text x="537.5" y="158">G</text><text x="537.5" y="206">G</text>
+    <text x="553.0" y="158">E</text><text x="553.0" y="206">E</text>
+    <text x="568.5" y="158">A</text><text x="568.5" y="206">A</text>
+    <text x="584.0" y="158">L</text><text x="584.0" y="206">L</text>
+    <text x="599.5" y="158">G</text><text x="599.5" y="206">G</text>
+    <text x="615.0" y="158">R</text><text x="615.0" y="206">R</text>
+    <text x="630.5" y="158">L</text><text x="630.5" y="206">L</text>
+    <text x="646.0" y="158">L</text><text x="646.0" y="206">L</text>
+    <text x="661.5" y="158">V</text><text x="661.5" y="206">V</text>
+    <text x="677.0" y="158">V</text><text x="677.0" y="206">V</text>
+    <text x="692.5" y="158">Y</text><text x="692.5" y="206">Y</text>
+    <text x="708.0" y="158">P</text><text x="708.0" y="206">P</text>
+    <text x="723.5" y="158">W</text><text x="723.5" y="206">W</text>
+    <text x="739.0" y="158">T</text><text x="739.0" y="206">T</text>
+    <text x="754.5" y="158">Q</text><text x="754.5" y="206">Q</text>
+  </g>
+  <g stroke="#6a994e" stroke-width="2">
+    <line x1="150.0" y1="168" x2="150.0" y2="186"/>
+    <line x1="165.5" y1="168" x2="165.5" y2="186"/>
+    <line x1="181.0" y1="168" x2="181.0" y2="186"/>
+    <line x1="196.5" y1="168" x2="196.5" y2="186"/>
+    <line x1="212.0" y1="168" x2="212.0" y2="186"/>
+    <line x1="258.5" y1="168" x2="258.5" y2="186"/>
+    <line x1="274.0" y1="168" x2="274.0" y2="186"/>
+    <line x1="305.0" y1="168" x2="305.0" y2="186"/>
+    <line x1="320.5" y1="168" x2="320.5" y2="186"/>
+    <line x1="367.0" y1="168" x2="367.0" y2="186"/>
+    <line x1="382.5" y1="168" x2="382.5" y2="186"/>
+    <line x1="398.0" y1="168" x2="398.0" y2="186"/>
+    <line x1="413.5" y1="168" x2="413.5" y2="186"/>
+    <line x1="429.0" y1="168" x2="429.0" y2="186"/>
+    <line x1="444.5" y1="168" x2="444.5" y2="186"/>
+    <line x1="475.5" y1="168" x2="475.5" y2="186"/>
+    <line x1="491.0" y1="168" x2="491.0" y2="186"/>
+    <line x1="506.5" y1="168" x2="506.5" y2="186"/>
+    <line x1="522.0" y1="168" x2="522.0" y2="186"/>
+    <line x1="537.5" y1="168" x2="537.5" y2="186"/>
+    <line x1="553.0" y1="168" x2="553.0" y2="186"/>
+    <line x1="568.5" y1="168" x2="568.5" y2="186"/>
+    <line x1="584.0" y1="168" x2="584.0" y2="186"/>
+    <line x1="599.5" y1="168" x2="599.5" y2="186"/>
+    <line x1="615.0" y1="168" x2="615.0" y2="186"/>
+    <line x1="630.5" y1="168" x2="630.5" y2="186"/>
+    <line x1="646.0" y1="168" x2="646.0" y2="186"/>
+    <line x1="661.5" y1="168" x2="661.5" y2="186"/>
+    <line x1="677.0" y1="168" x2="677.0" y2="186"/>
+    <line x1="692.5" y1="168" x2="692.5" y2="186"/>
+    <line x1="708.0" y1="168" x2="708.0" y2="186"/>
+    <line x1="723.5" y1="168" x2="723.5" y2="186"/>
+    <line x1="739.0" y1="168" x2="739.0" y2="186"/>
+    <line x1="754.5" y1="168" x2="754.5" y2="186"/>
+  </g>
+  <text x="776.5" y="158" font-family="Courier New, monospace" font-size="17" font-weight="bold" fill="#1b2a3a">40</text>
+  <text x="776.5" y="206" font-family="Courier New, monospace" font-size="17" font-weight="bold" fill="#1b2a3a">40</text>
+  <rect x="544.0" y="138" width="111.0" height="76" rx="3" fill="none" stroke="#d08c2f" stroke-width="2.5"/>
+  <text x="599.5" y="228" font-size="12" fill="#d08c2f" text-anchor="middle">seed word hit</text>
+  <text x="675.0" y="228" font-size="12" fill="#5a6b7a">← extend both ways →</text>
+  <g font-size="14" fill="#1b2a3a">
+    <text x="20" y="262">Query: human β-globin (P68871). Hit: mouse β-globin (P02088). Over all 147 residues: <tspan font-weight="bold">118 identical (80%)</tspan>, no gaps.</text>
+    <text x="20" y="288"><tspan font-weight="bold">Read:</tspan> Per. Ident (identical positions in the alignment), Query Cover (how much of the query aligns),</text>
+    <text x="20" y="308">E value (expected number of hits this good by chance; 10<tspan dy="-6" font-size="10">−10</tspan><tspan dy="6"> or smaller means real homology).</tspan></text>
+  </g>
+</svg>

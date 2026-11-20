@@ -1,0 +1,236 @@
+---
+title: "Exercise: three-point crosses"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- sort the 8 classes of a three-point testcross into **reciprocal pairs**, and recognise the **parental**, **single crossover** and **double crossover** classes;
+- read the **phase** of the heterozygote from the parental classes;
+- find the **gene order** from the double crossover classes;
+- compute the two **map distances**, counting the double crossovers in both intervals, and explain why a two-point cross underestimates the outer distance;
+- compute the **expected** number of double crossovers, the **coefficient of coincidence** and the **interference**, and judge whether a small DCO count says much;
+- predict the class counts of a three-point cross from a map and an interference value.
+
+Work on paper first. The demo then shows the same reasoning on the chromosomes, and the [Exercise in R](exercise-r.qmd) turns the recipe into a function.
+
+## Background
+
+**The cross.** A heterozygote for three linked genes is crossed to a tester that is recessive for all three. Each offspring shows which of the $2^3 = 8$ allele combinations it got from the heterozygote. The 8 classes come in 4 **reciprocal pairs** (exact opposites, similar counts). In *Drosophila* the heterozygote must be a **female**, since males do not cross over.
+
+**The recipe.**
+
+1. **Pair up** the classes.
+2. **Parentals** = the largest pair. They give the phase of the heterozygote.
+3. **Double crossovers (DCO)** = the smallest pair. Compare a DCO class with the parental class it resembles: the one gene that differs is the **middle** gene. Rewrite all classes in the correct order.
+4. **Distances.** For each interval, RF = (single crossovers in that interval + DCO) / N; × 100 for cM. The outer distance is the sum.
+5. **Interference.** Expected DCO = RF~I~ × RF~II~ × N. **CoC** = observed DCO / expected DCO. **I** = 1 − CoC.
+
+| CoC | I | Meaning |
+|---|---|---|
+| 1 | 0 | no interference: crossovers in the two intervals independent |
+| between 0 and 1 | between 0 and 1 | positive interference: fewer DCOs than expected (usual) |
+| 0 | 1 | complete interference: no DCOs |
+| > 1 | < 0 | negative interference (rare; first check the gene order) |
+
+**Two-point vs three-point.** Scored for the outer genes only, a DCO looks parental. So RF~two-point~(outer) = RF~I~ + RF~II~ − 2 × DCO / N.
+
+**Predicting a cross.** P(DCO) = (1 − I) × RF~I~ × RF~II~; P(SCO in I) = RF~I~ − P(DCO); P(SCO in II) = RF~II~ − P(DCO); P(parental) = what is left. Each probability is split equally between the two classes of its pair.
+
+## By hand
+
+**B1. (maize, coupling)** A maize plant heterozygous for three recessive mutations, *lg* (liguleless), *gl* (glossy) and *bm* (brown midrib), is testcrossed to *lg gl bm* / *lg gl bm*. The 1000 offspring (invented teaching counts):
+
+| *lg* | *gl* | *bm* | Count |
+|:-:|:-:|:-:|---:|
+| *lg* | *gl* | *bm* | 286 |
+| + | + | + | 301 |
+| *lg* | *gl* | + | 98 |
+| + | + | *bm* | 92 |
+| + | *gl* | *bm* | 112 |
+| *lg* | + | + | 98 |
+| + | *gl* | + | 7 |
+| *lg* | + | *bm* | 6 |
+
+a) Pair up the classes. Which are parental? What was the genotype (phase) of the heterozygous parent?
+b) Which are the DCO classes? Which gene is in the middle?
+c) Rewrite the table in the correct gene order and label each pair (parental, SCO in I, SCO in II, DCO).
+d) Compute the two distances and draw the map.
+e) Compute the expected number of DCOs, the CoC and the interference.
+
+**B2. (order from two-point crosses)** Three two-point testcrosses give *a*–*b* 12 cM, *b*–*c* 5 cM and *a*–*c* 16 cM.
+
+a) What is the most likely order?
+b) Why is *a*–*c* smaller than *a*–*b* + *b*–*c*? Assuming each two-point estimate is exact, what fraction of the gametes were double crossovers between *a* and *c*?
+
+**B3. (Drosophila, mixed phase)** Three recessive mutations on chromosome 2 of *Drosophila*: *b* (black body), *pr* (purple eyes) and *vg* (vestigial wings). Heterozygous females, of unknown phase, are crossed to *b pr vg* / *b pr vg* males. The 1000 offspring (invented teaching counts):
+
+| *vg* | *b* | *pr* | Count |
+|:-:|:-:|:-:|---:|
+| *vg* | *b* | + | 412 |
+| + | + | *pr* | 407 |
+| *vg* | + | + | 29 |
+| + | *b* | *pr* | 27 |
+| + | *b* | + | 63 |
+| *vg* | + | *pr* | 58 |
+| *vg* | *b* | *pr* | 2 |
+| + | + | + | 2 |
+
+a) What were the two chromosomes of the heterozygous female?
+b) Find the gene order.
+c) Compute the distances and the interference.
+d) A two-point cross scoring only *b* and *vg* would have given what distance? Compare with the three-point map.
+
+**B4. (missing classes)** *Drosophila* females heterozygous for the X-linked recessives *y* (yellow body), *w* (white eyes) and *ec* (echinus, rough eyes), *y w ec* / + + +, are crossed to *y w ec* / Y males. Among 2000 offspring (invented teaching counts) there are six classes:
+
+| *y* | *w* | *ec* | Count |
+|:-:|:-:|:-:|---:|
+| *y* | *w* | *ec* | 956 |
+| + | + | + | 944 |
+| *y* | *w* | + | 36 |
+| + | + | *ec* | 34 |
+| *y* | + | + | 16 |
+| + | *w* | *ec* | 14 |
+
+a) Which two classes are missing? What kind of class are they?
+b) What is the gene order? (Hint: which gene would a double crossover have moved?)
+c) Compute the two distances.
+d) How many DCOs would you expect with no interference? Can you conclude from these data that interference is complete? Use P(0) ≈ e^−expected^ for a rare event.
+
+**B5. (predict a cross)** In tomato, three genes lie in the order *P*–*Q*–*R* with *P*–*Q* = 10 cM and *Q*–*R* = 20 cM (invented values), and the interference in this region is I = 0.3. A plant *P q R* / *p Q r* is testcrossed to *p q r* / *p q r* and gives 2000 offspring.
+
+a) Compute the probability of a DCO, of an SCO in each interval and of a parental gamete.
+b) Give the expected count of each of the 8 classes.
+
+**B6. (interference from a large cross)** Two intervals of 4 cM and 3 cM are measured in a cross with 5000 offspring, and **no** double crossovers are found.
+
+a) Compute the expected DCOs, the CoC and I.
+b) Compare with B4 d). Why is the conclusion "interference is (close to) complete" much safer here?
+
+**B7. (design the cross)** You have three true-breeding *Drosophila* lines: wild type, *b pr vg* (all three mutant), and *b* + + . You want to map *b*, *pr* and *vg* with a three-point testcross.
+
+a) Which two lines do you cross to make the triple heterozygote, and which sex of the F~1~ do you use?
+b) What do you cross the F~1~ to?
+c) Why can you not simply intercross F~1~ females and males (F~1~ × F~1~) and score the F~2~?
+
+**B8. (wrong order)** Use the data of B3, but suppose you (wrongly) put *b* in the middle.
+
+a) Which pair would you call the DCOs? Compute the expected number of DCOs for this order and the CoC.
+b) Why is a CoC like this a sign of the wrong order?
+
+## Explore {#explore}
+
+Do the by-hand part first. The demo shows the 8 classes of a three-point testcross. Each class is drawn as the chromosome it came from: an allele is **blue** if it sits on the same parental chromosome as the most common class, **red** if it came from the other one. A colour switch between two loci is a crossover. Pick a gene order: the demo groups the classes into parental, single crossover (SCO, in region I or II) and double crossover (DCO), computes the distances, the expected DCOs, the CoC and the interference, and draws the map. "random" makes a new simulated data set.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="threepoint" data-preset="fly"></div>
+<script src="../demos/dist/threepoint.js"></script>
+```
+
+**E1.** The demo starts on the *Drosophila* data of the lecture, with no order chosen. Which two classes are a single colour? Which classes have a colour switch between every pair of neighbouring loci in the current column order? Now click each of the three orders. For each, write down the "DCO" count and the CoC. Which order is right, and how does the demo tell you?
+
+**E2.** In the correct order, how many crossovers (×) does the chromosome of each DCO class show? Switch to a wrong order: how many does the same class show now? Explain in one sentence.
+
+**E3.** Click "maize". Check your answers to B1 a)–e) against the demo. Why are the parental classes here all-mutant and all-wild-type, while for the flies they were not?
+
+**E4.** Click "random" several times. For each data set, call the middle gene **before** you click an order, by finding the rarest pair and comparing it with the most common pair. Note N, the DCO count and the CoC of the correct order. Do you find data sets with a DCO count of 0, 1 or 2? How much would you trust the CoC there?
+
+::: {.callout-note collapse="true" title="Solutions: Explore"}
+
+**E1.** The parentals *v* + + (812, all blue) and + *cv ct* (799, all red) are single-coloured. With the columns in the data order *v*, *cv*, *ct*, the classes + + *ct* (66) and *v cv* + (63) switch colour twice: in this column order they would need two crossovers, yet they are not the rarest pair, a first hint that *cv* is not in the middle. Clicking the orders:
+
+| Order (middle gene) | Pair called "DCO" | CoC | Demo says |
+|---|---:|---:|---|
+| *cv* – ***v*** – *ct* | 249 | 5.07 | not this order |
+| *v* – ***cv*** – *ct* | 129 | 4.88 | not this order |
+| *v* – ***ct*** – *cv* | 11 | 0.60 | DCO pair is the rarest ✓ |
+
+Only with *ct* in the middle is the "DCO" pair the rarest pair. The demo then gives *v*–*ct* 13.0 cM, *ct*–*cv* 7.0 cM, expected DCO 18.2, CoC 0.60, I 0.40, as in the lecture.
+
+**E2.** In the correct order, each DCO chromosome shows **two** crossovers, one on each side of *ct*. In a wrong order, the same class (*v ct* + or + + *cv*) shows only **one**, because *ct* now sits at an end and a single colour switch separates it. Which classes need two crossovers depends on the order; the right order is the one where the classes that need two crossovers are the rarest.
+
+**E3.** The demo agrees with B1: parentals *lg gl bm* and + + +, DCO + *gl* + and *lg* + *bm*, order *lg*–*gl*–*bm*, distances 22.3 and 20.3 cM, expected DCO 45.3, CoC 0.29, I 0.71. The maize parent was in **coupling** (*lg gl bm* / + + +): all mutant alleles came in on one chromosome. The fly female carried *v* on one X and *cv ct* on the other (mixed phase), so the parentals were *v* + + and + *cv ct*.
+
+**E4.** Answers depend on the data set. With N = 500 and two short intervals, the expected DCO count is often only 1–3, and you will see data sets with 0, 1 or 2 DCOs. A CoC computed from such small counts is very noisy: one DCO more or less changes it by 30–100%. The gene order can still be found, as long as the DCO pair is clearly smaller than both SCO pairs. When an SCO pair is also small (a very short interval), the order becomes harder to call, which is exactly the problem with mapping close genes.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) Pairs: (*lg gl bm* 286, + + + 301), (*lg gl* + 98, + + *bm* 92), (+ *gl bm* 112, *lg* + + 98), (+ *gl* + 7, *lg* + *bm* 6). Parentals: the largest pair, ***lg gl bm*** and **+ + +**. The parent was in **coupling**: *lg gl bm* / + + +.
+
+b) DCO: the smallest pair, + *gl* + (7) and *lg* + *bm* (6). + *gl* + differs from the parental + + + only at *gl*, so ***gl* is in the middle**: order *lg*–*gl*–*bm*.
+
+c)
+
+| *lg* | *gl* | *bm* | Count | Class |
+|:-:|:-:|:-:|---:|---|
+| *lg* | *gl* | *bm* | 286 | parental |
+| + | + | + | 301 | parental |
+| + | *gl* | *bm* | 112 | SCO in I (*lg*–*gl*) |
+| *lg* | + | + | 98 | SCO in I |
+| *lg* | *gl* | + | 98 | SCO in II (*gl*–*bm*) |
+| + | + | *bm* | 92 | SCO in II |
+| + | *gl* | + | 7 | DCO |
+| *lg* | + | *bm* | 6 | DCO |
+
+d) *lg*–*gl*: (112 + 98 + 7 + 6) / 1000 = 223 / 1000 = **22.3 cM**. *gl*–*bm*: (98 + 92 + 13) / 1000 = 203 / 1000 = **20.3 cM**. Map: *lg* — 22.3 — *gl* — 20.3 — *bm* (42.6 cM end to end).
+
+e) Expected DCO = 0.223 × 0.203 × 1000 = **45.3**. CoC = 13 / 45.3 = **0.29**; I = **0.71**. Strong positive interference: only about 3 in 10 of the expected double crossovers happened. (Over distances this long, a single map function would be needed to turn RF into true map distance; here we keep RF × 100.)
+
+**B2.** a) The largest distance (*a*–*c*, 16) spans the other two, so ***b* is in the middle**: *a*–*b*–*c*.
+b) Double crossovers between *a* and *c* leave *a* and *c* in the parental combination, so the two-point cross misses them. 12 + 5 − 16 = 1 cM = 2 × DCO fraction, so about **0.5%** of the gametes were DCOs. (With no interference we would expect 0.12 × 0.05 = 0.6%, so these numbers are plausible.)
+
+**B3.** a) Parentals (largest pair): *vg b* + (412) and + + *pr* (407). The female was ***b vg* / *pr*** (in full: *b pr*^+^ *vg* / *b*^+^ *pr vg*^+^): *b* and *vg* on one chromosome, *pr* on the other.
+
+b) DCOs (smallest pair): *vg b pr* (2) and + + + (2). *vg b pr* differs from the parental *vg b* + only at *pr*, so ***pr* is in the middle**: order *b*–*pr*–*vg*.
+
+c) In the order *b*–*pr*–*vg*: SCO in I (*b* has switched): *vg* + + (29) and + *b pr* (27), together 56. SCO in II (*vg* has switched): + *b* + (63) and *vg* + *pr* (58), together 121.
+*b*–*pr*: (56 + 4) / 1000 = **6.0 cM**; *pr*–*vg*: (121 + 4) / 1000 = **12.5 cM**. Expected DCO = 0.060 × 0.125 × 1000 = **7.5**; CoC = 4 / 7.5 = **0.53**; I = **0.47**.
+
+d) Scoring only *b* and *vg*, the recombinants are the two SCO pairs: (56 + 121) / 1000 = **17.7 cM**, against 6.0 + 12.5 = **18.5 cM** from the three-point map (difference 2 × 4 / 1000 = 0.8 cM). For comparison, the standard map puts *b* at 2-49, *pr* at 2-54 and *vg* at 2-67 ([NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/34791), field MapLocation), so about 5 and 13 cM: the invented counts fit the real map well.
+
+**B4.** a) The missing pair is *y* + *ec* and + *w* +. Since these are missing, not just rare, they are the **DCO** classes (expected to be the rarest).
+b) *y* + *ec* differs from the parental *y w ec* only at *w*, so ***w* is in the middle**: *y*–*w*–*ec*.
+c) SCO in I (*y* has switched): *y* + + (16) and + *w ec* (14), 30. SCO in II (*ec* has switched): *y w* + (36) and + + *ec* (34), 70. *y*–*w* = 30 / 2000 = **1.5 cM**; *w*–*ec* = 70 / 2000 = **3.5 cM**. (The standard map: *y* 1-0, *w* 1-1.5, *ec* 1-5.)
+d) Expected DCO = 0.015 × 0.035 × 2000 = **1.05**. Observed 0, so CoC = 0 and I = 1 on paper. But with about 1 expected, getting 0 by chance has probability e^−1.05^ ≈ **0.35**. The data are consistent with complete interference but do not show it.
+
+**B5.** a) P(DCO) = (1 − 0.3) × 0.10 × 0.20 = **0.014**. P(SCO in I) = 0.10 − 0.014 = **0.086**. P(SCO in II) = 0.20 − 0.014 = **0.186**. P(parental) = 1 − 0.014 − 0.086 − 0.186 = **0.714**.
+b) Split each probability equally over its pair, × 2000:
+
+| Class | Type | Expected |
+|---|---|---:|
+| *P q R* | parental | 714 |
+| *p Q r* | parental | 714 |
+| *p q R* | SCO in I (*P* switched) | 86 |
+| *P Q r* | SCO in I | 86 |
+| *P q r* | SCO in II (*R* switched) | 186 |
+| *p Q R* | SCO in II | 186 |
+| *P Q R* | DCO (*Q* switched) | 14 |
+| *p q r* | DCO | 14 |
+
+**B6.** a) Expected DCO = 0.04 × 0.03 × 5000 = **6**. CoC = 0 / 6 = **0**; I = **1**.
+b) With 6 expected, zero by chance has probability e^−6^ ≈ **0.0025**, about 1 in 400. Here the absence of DCOs is strong evidence of (near-)complete interference, which is typical over short distances. In B4 the expected number (1.05) was too small for the absence to mean much.
+
+**B7.** a) Cross the *b pr vg* line with wild type: the F~1~ is *b pr vg* / + + + (coupling). Use **F~1~ females**, because *Drosophila* males do not cross over.
+b) To ***b pr vg* / *b pr vg*** males (the triple recessive tester line).
+c) In an F~2~, both parents' gametes vary and dominance hides one of them, so most phenotype classes are mixtures of several gamete combinations. The testcross makes each offspring's phenotype a direct readout of one female gamete. (In addition, F~1~ males make no recombinant gametes.) The *b* + + line is not needed.
+
+**B8.** a) With *b* in the middle (order *pr*–*b*–*vg*), the "DCO" pair would be the classes where only *b* has switched: *vg* + + (29) and + *b pr* (27), 56. Region I (*pr*–*b*) recombinants: classes where *pr* and *b* are in a non-parental combination: 56 + 4 = 60; region II (*b*–*vg*): 56 + 121 = 177. Expected "DCO" = 0.060 × 0.177 × 1000 = 10.6; CoC = 56 / 10.6 = **5.3**.
+b) A CoC far above 1 says that "double crossovers" are more common than single crossovers would predict, which makes no biological sense in a normal cross. The pair you called DCO is really a single crossover pair: the order is wrong.
+:::
+
+## Where this leads
+
+The *Drosophila* maps of the 1910s–1930s were built from thousands of crosses like these. In humans we cannot set up a testcross, and families are small. **Human linkage & LOD scores** keeps the idea of counting recombinants, but adds up the evidence from many small families with a likelihood, the **LOD score**. In Part 5, **Rearrangements & aneuploidy**, a chromosomal inversion shows up in three-point data as recombination that has mysteriously vanished.
+
+**Next:** [Exercise in R](exercise-r.qmd): write one function that analyses a three-point cross for a given gene order, run it over all three orders with `map()`, and simulate how noisy the coefficient of coincidence is.

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" width="820" height="430" font-family="Helvetica, Arial, sans-serif">
+  <!-- The worked Drosophila data (invented counts), rewritten in the order cv - ct - v.
+       Each class drawn as the maternal X: blue = from the v cv+ ct+ chromosome, red = from v+ cv ct.
+       Classes grouped by crossover type; at the bottom the resulting map. -->
+  <text x="70" y="26" font-size="15" font-weight="bold" font-style="italic" fill="#5b6b7a" text-anchor="middle">cv</text>
+  <text x="130" y="26" font-size="15" font-weight="bold" font-style="italic" fill="#5b6b7a" text-anchor="middle">ct</text>
+  <text x="190" y="26" font-size="15" font-weight="bold" font-style="italic" fill="#5b6b7a" text-anchor="middle">v</text>
+  <text x="320" y="26" font-size="15" font-weight="bold" fill="#5b6b7a" text-anchor="middle">maternal X</text>
+  <text x="460" y="26" font-size="15" font-weight="bold" fill="#5b6b7a" text-anchor="end">count</text>
+  <text x="660" y="26" font-size="15" font-weight="bold" fill="#5b6b7a" text-anchor="middle">class (pair total)</text>
+  <rect x="20" y="36" width="780" height="72" rx="8" fill="#eef1f4"/>
+<text x="70" y="60.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">cv</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="130" y="60.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">ct</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="60.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+  <rect x="235" y="48.0" width="170" height="12" fill="#2a6f97"/>
+  <rect x="235" y="48.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <text x="460" y="60.0" font-size="17" fill="#1b2a3a" text-anchor="end">812</text>
+  <rect x="474" y="47.0" width="100.0" height="14" fill="#1b2a3a" opacity="0.8"/>
+  <text x="660" y="78.0" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">parental (1611)</text>
+<text x="70" y="96.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="130" y="96.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+<text x="190" y="96.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">v</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+  <rect x="235" y="84.0" width="170" height="12" fill="#bc4749"/>
+  <rect x="235" y="84.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <text x="460" y="96.0" font-size="17" fill="#1b2a3a" text-anchor="end">799</text>
+  <rect x="474" y="83.0" width="98.4" height="14" fill="#1b2a3a" opacity="0.8"/>
+  <rect x="20" y="116" width="780" height="72" rx="8" fill="#dbe8d1"/>
+<text x="70" y="140.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="130" y="140.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">ct</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="140.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+  <rect x="235" y="128.0" width="52.5" height="12" fill="#bc4749"/>
+  <rect x="287.5" y="128.0" width="117.5" height="12" fill="#2a6f97"/>
+  <rect x="235" y="128.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M281.5,122.0 L293.5,146.0 M293.5,122.0 L281.5,146.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="140.0" font-size="17" fill="#1b2a3a" text-anchor="end">63</text>
+  <rect x="474" y="127.0" width="7.8" height="14" fill="#4f7a37" opacity="0.8"/>
+  <text x="660" y="158.0" font-size="17" font-weight="bold" fill="#4f7a37" text-anchor="middle">SCO cv–ct (129)</text>
+<text x="70" y="176.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">cv</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="130" y="176.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+<text x="190" y="176.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">v</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+  <rect x="235" y="164.0" width="52.5" height="12" fill="#2a6f97"/>
+  <rect x="287.5" y="164.0" width="117.5" height="12" fill="#bc4749"/>
+  <rect x="235" y="164.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M281.5,158.0 L293.5,182.0 M293.5,158.0 L281.5,182.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="176.0" font-size="17" fill="#1b2a3a" text-anchor="end">66</text>
+  <rect x="474" y="163.0" width="8.1" height="14" fill="#4f7a37" opacity="0.8"/>
+  <rect x="20" y="196" width="780" height="72" rx="8" fill="#e3dcef"/>
+<text x="70" y="220.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">cv</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="130" y="220.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">ct</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="220.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">v</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+  <rect x="235" y="208.0" width="117.5" height="12" fill="#2a6f97"/>
+  <rect x="352.5" y="208.0" width="52.5" height="12" fill="#bc4749"/>
+  <rect x="235" y="208.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M346.5,202.0 L358.5,226.0 M358.5,202.0 L346.5,226.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="220.0" font-size="17" fill="#1b2a3a" text-anchor="end">128</text>
+  <rect x="474" y="207.0" width="15.8" height="14" fill="#5d4690" opacity="0.8"/>
+  <text x="660" y="238.0" font-size="17" font-weight="bold" fill="#5d4690" text-anchor="middle">SCO ct–v (249)</text>
+<text x="70" y="256.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="130" y="256.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+<text x="190" y="256.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+  <rect x="235" y="244.0" width="117.5" height="12" fill="#bc4749"/>
+  <rect x="352.5" y="244.0" width="52.5" height="12" fill="#2a6f97"/>
+  <rect x="235" y="244.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M346.5,238.0 L358.5,262.0 M358.5,238.0 L346.5,262.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="256.0" font-size="17" fill="#1b2a3a" text-anchor="end">121</text>
+  <rect x="474" y="243.0" width="14.9" height="14" fill="#5d4690" opacity="0.8"/>
+  <rect x="20" y="276" width="780" height="72" rx="8" fill="#f6e2c2"/>
+<text x="70" y="300.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">cv</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="130" y="300.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+<text x="190" y="300.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+  <rect x="235" y="288.0" width="52.5" height="12" fill="#2a6f97"/>
+  <rect x="287.5" y="288.0" width="65.0" height="12" fill="#bc4749"/>
+  <rect x="352.5" y="288.0" width="52.5" height="12" fill="#2a6f97"/>
+  <rect x="235" y="288.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M281.5,282.0 L293.5,306.0 M293.5,282.0 L281.5,306.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <path d="M346.5,282.0 L358.5,306.0 M358.5,282.0 L346.5,306.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="300.0" font-size="17" fill="#1b2a3a" text-anchor="end">6</text>
+  <rect x="474" y="287.0" width="2.0" height="14" fill="#a5650f" opacity="0.8"/>
+  <text x="660" y="318.0" font-size="17" font-weight="bold" fill="#a5650f" text-anchor="middle">DCO (11)</text>
+<text x="70" y="336.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+<text x="130" y="336.0" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="middle"><tspan font-style="italic">ct</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+<text x="190" y="336.0" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="middle"><tspan font-style="italic">v</tspan><tspan font-size="12" dy="-7">+</tspan></text>
+  <rect x="235" y="324.0" width="52.5" height="12" fill="#bc4749"/>
+  <rect x="287.5" y="324.0" width="65.0" height="12" fill="#2a6f97"/>
+  <rect x="352.5" y="324.0" width="52.5" height="12" fill="#bc4749"/>
+  <rect x="235" y="324.0" width="170" height="12" rx="5" fill="none" stroke="#1b2a3a" stroke-opacity="0.25"/>
+  <path d="M281.5,318.0 L293.5,342.0 M293.5,318.0 L281.5,342.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <path d="M346.5,318.0 L358.5,342.0 M358.5,318.0 L346.5,342.0" stroke="#1b2a3a" stroke-width="2.4"/>
+  <text x="460" y="336.0" font-size="17" fill="#1b2a3a" text-anchor="end">5</text>
+  <rect x="474" y="323.0" width="2.0" height="14" fill="#a5650f" opacity="0.8"/>
+  <line x1="90" y1="386" x2="750" y2="386" stroke="#1b2a3a" stroke-width="3"/>
+  <line x1="120" y1="376" x2="120" y2="396" stroke="#1b2a3a" stroke-width="3"/>
+<text x="120" y="418" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">cv</tspan></text>
+  <line x1="330.0" y1="376" x2="330.0" y2="396" stroke="#1b2a3a" stroke-width="3"/>
+<text x="330.0" y="418" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">ct</tspan></text>
+  <line x1="720" y1="376" x2="720" y2="396" stroke="#1b2a3a" stroke-width="3"/>
+<text x="720" y="418" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">v</tspan></text>
+  <text x="225.0" y="372" font-size="16" fill="#1b2a3a" text-anchor="middle">(129 + 11) / 2000 = 7.0 cM</text>
+  <text x="525.0" y="372" font-size="16" fill="#1b2a3a" text-anchor="middle">(249 + 11) / 2000 = 13.0 cM</text>
+</svg>

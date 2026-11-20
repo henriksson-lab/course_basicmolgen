@@ -1,0 +1,139 @@
+---
+title: "Exercise: RNA-mediated regulation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- extract the **seed** of a microRNA and write the matching **target site** in an mRNA;
+- classify a site as 8mer, 7mer-m8, 7mer-A1 or 6mer, and estimate how often such a site turns up by chance;
+- reason about miRNA genetics: **dominance**, **epistasis**, and cis vs trans for 3′UTR sites and miRNA genes;
+- explain the difference between siRNA and miRNA, and the strengths and limits of RNAi as a tool;
+- look up a microRNA in **miRBase** and its predicted targets in **TargetScan**.
+
+## Background
+
+**Biogenesis.** pri-miRNA (RNA pol II) → **Drosha** → pre-miRNA hairpin → Exportin-5 → **Dicer** → ~22-nt duplex → guide strand in **Argonaute** (RISC). siRNAs come from long double-stranded RNA, also through Dicer and Argonaute.
+
+**Seed and sites.** The seed is nucleotides **2–8** of the mature miRNA, counted from its 5′ end. An mRNA site pairs antiparallel with it, so the site is the **reverse complement** of the seed, written 5′→3′ in the mRNA. To get it: take nt 2–8, complement each base (A↔U, G↔C), then read backwards. Site types, from strongest to weakest:
+
+| Site | mRNA pairs with | Example for *let-7* (seed GAGGUAG) |
+|---|---|---|
+| 8mer | nt 2–8, plus an A opposite nt 1 | CUACCUC**A** |
+| 7mer-m8 | nt 2–8 | CUACCUC |
+| 7mer-A1 | nt 2–7, plus an A opposite nt 1 | UACCUC**A** |
+| 6mer | nt 2–7 | UACCUC |
+
+**Chance.** In random sequence with equal base frequencies, a given *k*-nt word occurs about once every 4^*k*^ nt.
+
+**Genetics.** A 3′UTR site acts **in cis** (only on its own mRNA); a miRNA acts **in trans**. Loss of sites gives a **dominant gain of function** of the target (*lin-14*(gf), *HMGA2* in tumours). RNAi gives a **knockdown** (hypomorph), with possible **off-target** effects through the siRNA's seed.
+
+## By hand
+
+**B1. (seeds)** The mature miRNAs below are written 5′→3′. For each, write the seed (nt 2–8) and the 7mer-m8 site in the target mRNA (5′→3′).
+
+a) human miR-21-5p: UAGCUUAUCAGACUGAUGUUGACU
+b) human miR-1-3p: UGGAAUGUAAAGAAGUAUGUAU
+c) *C. elegans lin-4*: UCCCUGAGACCUCAAGUGUGA
+
+**B2. (site types)** Here are four 9-nt stretches from 3′UTRs, 5′→3′. Which contain a *let-7* site, and of which type? a) GCUACCUCA; b) AUACCUCAG; c) GCUACCUCU; d) AUACCUCGU.
+
+**B3. (chance)** a) How many 7mer-m8 matches to one given seed do you expect by chance in a 3′UTR of 1200 nt? b) In all human 3′UTRs together (about 30 Mb)? c) What does that mean for predictions based on a single site? Name two features that make a predicted site more believable.
+
+**B4. (heterochronic genetics)** In *C. elegans*, *lin-4*(lf) is retarded (cells repeat L1 fates), *lin-14*(lf) is precocious (cells skip L1 fates), and *lin-14*(gf) alleles, which delete part of the 3′UTR, are retarded.
+
+a) Which of the three classes would you expect to be dominant? Why?
+b) Predict the phenotype of the double mutant *lin-4*(lf); *lin-14*(lf). What does it tell you about the pathway?
+c) A *lin-14*(gf) / *lin-14*(lf) heterozygote: which allele's mRNA makes protein in L3? Predict the phenotype.
+
+**B5. (*HMGA2* in tumours)** In some benign tumours a translocation breaks chromosome 12 within *HMGA2*, after the exons that encode the DNA-binding domains, so the mRNA lacks its normal 3′UTR. The other *HMGA2* allele is intact.
+
+a) Why could this make *HMGA2* behave as an oncogene, even if the protein is normal or nearly so?
+b) Is this a dominant or a recessive change? Cis or trans?
+c) Which experiment would show that the loss of *let-7* sites is the key change?
+
+**B6. (designing an siRNA)** You want to knock down a human mRNA that contains the 19-nt stretch 5′-GCAAGCUGACCCUGAAGUU-3′.
+
+a) Write the 19-nt **guide** (antisense) strand that pairs with it, 5′→3′.
+b) What is the seed of that guide, and what kind of off-target mRNAs could it hit?
+c) Name two controls that would convince you that a phenotype is due to the intended target.
+
+**B7. (RNAi vs mutants)** a) Why is an RNAi phenotype genetically like a hypomorphic allele and not a null? b) Give one advantage and one drawback of this for a geneticist. c) Why can you not do a classical complementation test with RNAi knockdowns?
+
+**B8. (miRNA mutations)** A seed mutation in the human *MIR96* gene causes dominant, progressive hearing loss. A deletion of a miRNA gene that has a close paralog with the same seed elsewhere in the genome often has no visible phenotype. Explain both observations.
+
+## Find it
+
+**miRBase** ([mirbase.org](https://www.mirbase.org/)) is the registry of microRNAs. Each **hairpin** (precursor) has an accession MI…, each **mature** miRNA an accession MIMAT…. Names start with a species code (*hsa* = human, *cel* = *C. elegans*), and -5p/-3p says which arm of the hairpin the mature RNA comes from.
+
+**TargetScan** ([targetscan.org](https://www.targetscan.org/)) predicts targets by searching 3′UTRs for seed matches. Results are grouped by **miRNA family** (miRNAs with the same seed).
+
+**F1.** Open the miRBase page of human [hsa-let-7a-5p (MIMAT0000062)](https://www.mirbase.org/mature/MIMAT0000062). Read the **Sequence**. Then look at **Hairpins**: how many different hairpin genes produce this same mature miRNA? Open each and read the **Genome context**: on which chromosomes are they?
+
+**F2.** Open the worm precursor [cel-let-7 (MI0000001)](https://www.mirbase.org/hairpin/MI0000001) (the very first entry in miRBase) and read the mature sequence (upper case in the hairpin, or follow the link to the mature miRNA). Compare it with the human sequence from F1. What do you conclude?
+
+**F3.** In [TargetScanHuman](https://www.targetscan.org/vert_80/), choose human and enter the miRNA name **let-7a-5p**, then submit. In the table of predicted targets, find ***HMGA2***. How many **conserved sites** does it have in total, and how are they split between 8mer, 7mer-m8 and 7mer-A1? Is ***LIN28B*** also on the list?
+
+**F4.** Still in TargetScan, why is the table titled for a miRNA **family** (let-7-5p/miR-98-5p) rather than for let-7a alone?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For F3, the columns of the TargetScan table are grouped: "Conserved sites" has a **total** column followed by one column per site type (8mer, 7mer-m8, 7mer-A1). Use the browser's find function (Ctrl/Cmd-F) to jump to *HMGA2*.
+:::
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.**
+a) miR-21-5p: seed (nt 2–8) **AGCUUAU**; complement UCGAAUA; reversed: site **AUAAGCU**.
+b) miR-1-3p: seed **GGAAUGU**; site **ACAUUCC**.
+c) *lin-4*: seed **CCCUGAG**; complement GGGACUC; reversed: site **CUCAGGG**.
+
+**B2.** The *let-7* 7mer-m8 site is CUACCUC; the 8mer is CUACCUCA; the 6mer core is UACCUC.
+a) GCUACCUCA contains CUACCUCA: an **8mer**.
+b) AUACCUCAG: UACCUC followed by A, preceded by A (not C): a **7mer-A1**.
+c) GCUACCUCU: CUACCUC, followed by U: a **7mer-m8**.
+d) AUACCUCGU: UACCUC with neither the C before nor the A after: a **6mer** only.
+
+**B3.** a) 1200/4^7^ = 1200/16 384 ≈ **0.07**. b) 3 × 10^7^/16 384 ≈ **1800** sites by chance for every seed. c) A single 7-nt match is weak evidence on its own. More believable: **conservation** of the site across species (TargetScan's "conserved sites"), **several sites** in the same UTR, a stronger **site type** (8mer), sites away from the very middle of long UTRs, and **co-expression** of the miRNA and the mRNA in the same cells.
+
+**B4.** a) ***lin-14*(gf)** is dominant: the mutant mRNA escapes *lin-4* in cis, whatever the other allele does. *lin-4*(lf) and *lin-14*(lf) are recessive losses of function: one working copy of *lin-4* makes enough RNA to repress both *lin-14* alleles; one working copy of *lin-14* is enough in L1.
+b) **Precocious**, like *lin-14*(lf). *lin-14* is epistatic, so it acts downstream; *lin-4* acts by repressing *lin-14*.
+c) In L3, the *lin-14*(gf) allele's mRNA, which lacks the sites, still makes protein; the *lin-14*(lf) allele makes no working protein anyway. LIN-14 stays high: **retarded**, like *lin-14*(gf) homozygotes (the gf allele is dominant even over a null).
+
+**B5.** a) Without its 3′UTR the *HMGA2* mRNA has none of its seven *let-7* sites, so it escapes repression and the cell makes far more HMGA2, a protein that promotes growth. Over-expression of a normal protein can be oncogenic.
+b) **Dominant** (one rearranged allele is enough) and **cis** (only the rearranged allele's mRNA escapes; the intact allele is still repressed). Just like *lin-14*(gf).
+c) Express *HMGA2* with its normal 3′UTR, with the 3′UTR removed, and with the 3′UTR but point mutations in the seed matches only. If the version with mutated sites behaves like the truncated one (more protein, more growth), the sites are what matter. (This is the experiment of Mayr, Hemann and Bartel, 2007.)
+
+**B6.** a) Guide = reverse complement of the target: target 5′-GCAAGCUGACCCUGAAGUU-3′ → complement CGUUCGACUGGGACUUCAA → reversed: **5′-AACUUCAGGGUCAGCUUGC-3′**.
+b) Seed = nt 2–8 of the guide: **ACUUCAG**. Any mRNA whose 3′UTR contains its reverse complement, **CUGAAGU**, could be turned down a little, as by a miRNA: off-target effects.
+c) Two or more **independent siRNAs** against different parts of the mRNA should give the same phenotype; a **rescue** construct with silent changes in the target site should reverse it. Also confirm that the target mRNA or protein went down.
+
+**B7.** a) RNAi lowers the mRNA but rarely removes it completely, so some protein is left: a partial loss of function. b) Advantage: you can see phenotypes for genes whose null alleles are lethal early, and you can adjust the dose. Drawback: weak knockdown can hide a phenotype, and the degree of knockdown varies between experiments and cells. c) Complementation asks whether two **mutations** in one organism, on homologous chromosomes, can restore function. An RNAi knockdown is not an allele; it acts on all copies of the mRNA in trans, so there is nothing to put in trans to it.
+
+**B8.** *MIR96* seed mutation: the mutant miRNA loses its normal targets (half dose of the normal miRNA) and gains new targets with the new seed; either effect can give a phenotype in a heterozygote, so it is dominant (compare with dominant gain-of-function alleles in Extensions to Mendel). A deleted miRNA with a paralog of the same seed: the paralog represses the same targets, so the loss is compensated: **genetic redundancy**, like the duplicate genes that give a 15 : 1 ratio.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+**F1.** Sequence of hsa-let-7a-5p in miRBase 23.1: **UGAGGUAGUAGGUUGUAUAGUUU** (23 nt; older releases list the 22-nt form without the last U). **Three** hairpins give the same mature miRNA: **hsa-let-7a-1** (chr9), **hsa-let-7a-2** (chr11) and **hsa-let-7a-3** (chr22). Click path: [mirbase.org](https://www.mirbase.org/) → search "hsa-let-7a" → mature hsa-let-7a-5p → Sequence; Hairpins → each hairpin page → Genome context.
+
+**F2.** cel-let-7-5p (MIMAT0000001): **UGAGGUAGUAGGUUGUAUAGUU** (22 nt). It is **identical** to the first 22 nt of human let-7a-5p, including the whole seed (GAGGUAG). The sequence has been conserved since the last common ancestor of worms and humans, more than 500 million years ago, which suggests strong selection on it (and on its target sites).
+
+**F3.** TargetScanHuman 8.0: *HMGA2* has **7 conserved sites**: **1 8mer, 3 7mer-m8 and 3 7mer-A1**. It is among the top predicted targets. ***LIN28B*** is also on the list (4 conserved sites). Click path: [targetscan.org/vert_80](https://www.targetscan.org/vert_80/) → Species: Human; "Enter a microRNA name": let-7a-5p → Submit → table → find HMGA2 → "Conserved sites" columns. In the R exercise you find the same seven sites (plus one 6mer) in the Ensembl *HMGA2* 3′UTR.
+
+**F4.** All let-7 family members (let-7a to let-7i, miR-98) share the **same seed**. Because targeting depends mainly on the seed, they are predicted to hit the same sites, so TargetScan reports them together as one family.
+:::
+
+## Where this leads
+
+Finding *lin-4* and *let-7* was forward genetics: from a phenotype to a gene. RNAi made the opposite direction, reverse genetics, routine. **Development & model organisms** puts both approaches to work on how an embryo is built.
+
+**Next:** [Exercise in R](exercise-r.qmd): read a 3′UTR from a FASTA file, extract the *let-7* seed, find every site with `str_locate_all()`, classify them, plot them along the UTR and compare with chance.

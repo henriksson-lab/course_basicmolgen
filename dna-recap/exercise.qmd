@@ -1,0 +1,129 @@
+---
+title: "Exercise: DNA structure & replication (recap)"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- explain what the Griffith, Avery and Hershey–Chase experiments each showed, and which controls made them convincing;
+- use base pairing (Chargaff's rules) and write the **reverse complement** of a sequence;
+- explain why one mutation can be written differently on the two strands (*HBB* c.20A>T vs + strand T>A);
+- predict Meselson–Stahl band patterns under the three models of replication;
+- describe crossing over at the level of DNA strands, and explain gene conversion;
+- find a RefSeq mRNA in **NCBI Nucleotide**, read its features, and download it as **FASTA**.
+
+This is a recap of 5MO103, so the exercise is short.
+
+## Background
+
+**DNA.** Two antiparallel strands, each written 5′ → 3′. A pairs with T (2 hydrogen bonds), G with C (3). In double-stranded DNA, A = T and G = C (Chargaff's rules). The **reverse complement** of a sequence is its partner strand written 5′ → 3′: complement every base, then reverse the order.
+
+**Strands in databases.** Genome records (dbSNP, genome browsers) give alleles on the **+ strand** of the reference chromosome. Gene-based names (HGVS **c.** names, as in ClinVar) use the gene's own coding strand. For a gene on the − strand, such as *HBB*, the two are reverse complements.
+
+**Replication** is **semiconservative**: each daughter helix has one old and one new strand. Polymerases need a primer and extend only 3′ ends, so one strand is made continuously (leading) and the other in Okazaki fragments (lagging). Proofreading and mismatch repair bring the error rate down to about 1 in 10^9^–10^10^ bases.
+
+**Homologous recombination.** A double-strand break → a 3′ end invades the homologue → two **Holliday junctions** → cut one way (**crossover**: flanking markers swapped) or the other (**non-crossover**: flanks parental, short heteroduplex). Mismatch repair of a heteroduplex can cause **gene conversion** (3 : 1 instead of 2 : 2 in a tetrad).
+
+## By hand
+
+**B1. (the evidence)** In Griffith's experiment, a mouse injected with live R cells plus heat-killed S cells died, and live S cells were recovered from it.
+
+a) Which two control injections are needed to conclude that the R cells were **transformed**, and what does each rule out?
+b) Hershey and Chase found ^32^P, but very little ^35^S, inside the infected bacteria. Suppose instead that both labels had entered the cells equally. What could you then conclude about the genetic material of the phage?
+
+**B2. (Chargaff)**
+
+a) DNA from the bacterium *Micrococcus luteus* is about 72 % G + C. Give the percentage of each of the four bases.
+b) A DNA sample from a small phage has 25 % A, 33 % T, 24 % G and 18 % C (invented numbers). What is unusual about this DNA?
+
+**B3. (reverse complement)** The *HBB* coding sequence, positions c.16–24 (codons 6–8), reads 5′-`CCTGAGGAG`-3′.
+
+a) Write the partner strand 5′ → 3′.
+b) In HbS, c.20 is changed from A to T. Write the mutant coding sequence and its reverse complement. Which base changes on the partner strand, and to what?
+c) dbSNP lists rs334 as T>A on the chromosome 11 reference. On which strand of chromosome 11 does *HBB* lie?
+
+**B4. (Meselson–Stahl)** Draw the expected bands (heavy, hybrid, light) in a CsCl gradient for each model of replication:
+
+a) cells grown for many generations in ^15^N, then for **one** generation in ^14^N;
+b) the same cells, then returned to ^15^N for **one** more generation.
+
+**B5. (polymerase direction)** A template strand reads 3′-`TACGGATTC`-5′.
+
+a) Write the new strand that a DNA polymerase makes on it, with its 5′ and 3′ ends.
+b) In which direction (left to right, or right to left) does the polymerase move along the template?
+
+**B6. (recombination and gene conversion)** A yeast diploid is heterozygous at three loci in a row on one chromosome: *A* — *m* — *B* on one homologue and *a* — *m*^+^ — *b* on the other. (*m* is a mutation in a gene for an amino acid; *m*^+^ is wild type.)
+
+a) A single crossover between *A* and *B* happens in a meiosis. What combinations of the flanking markers do the four spores carry?
+b) Another tetrad gives 3 *m*^+^ : 1 *m* spores, and all spores have the parental flanking combinations *A B* or *a b*. Explain this result with the model of recombination from the lecture.
+
+## Find it
+
+[NCBI Nucleotide](https://www.ncbi.nlm.nih.gov/nuccore/) stores nucleotide sequences, each with a stable **accession** and a **version** (the number after the dot, raised whenever the sequence changes). **RefSeq** records curated by NCBI start with `NM_` (mRNA), `NP_` (protein) or `NC_` (complete chromosome). A record opens in **GenBank** format: a header (LOCUS, DEFINITION, ACCESSION, KEYWORDS), a **FEATURES** table and the sequence at the bottom.
+
+**F1. (a RefSeq mRNA)** Search NCBI Nucleotide for [`NM_000518`](https://www.ncbi.nlm.nih.gov/nuccore/NM_000518). Read:
+
+a) the **DEFINITION** line (which gene and organism?) and the current **VERSION**;
+b) the length on the **LOCUS** line, and the molecule type;
+c) the **KEYWORDS** line: what does "MANE Select" mean?
+d) in the FEATURES table, the location of the **CDS** and its **protein_id**. How many amino acids does the CDS encode? (Remember the stop codon.)
+
+**F2. (download a FASTA)** On the same record, click **FASTA** (just below the title), then use **Send to → File → Format: FASTA → Create File**. Open the file in a text editor.
+
+a) What is on the first line, and what character does it start with?
+b) Count from the start of the sequence to positions 51–53. Which codon is there? Save the file: you need it in the [Exercise in R](exercise-r.qmd).
+
+**F3. (which strand?)** Open [*HBB* in NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/3043). In the section **Genomic context**, read the location on the GRCh38 chromosome (NC_000011.10). What does the word in brackets tell you, and does it agree with your answer to B3c?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** a) **Heat-killed S alone** (the mouse lives): rules out that a few S cells survived the heating. **Live R alone** (the mouse lives): rules out that R cells turn into S on their own in the mouse. With both controls, the live S cells must have come from R cells changed by something in the dead S cells. Showing that the recovered S cells keep breeding true to S makes it a heritable change.
+b) Nothing clear. If both protein and DNA entered, either could carry the information for new phage. The experiment works because only one of the two enters.
+
+**B2.** a) G = C = 72/2 = **36 %**; A = T = 28/2 = **14 %**.
+b) A ≠ T and G ≠ C, so the bases are not paired: the phage has **single-stranded** DNA. (Real examples exist, such as phage ΦX174.)
+
+**B3.** a) Complement 3′-`GGACTCCTC`-5′, written 5′ → 3′: **5′-`CTCCTCAGG`-3′**.
+b) Mutant coding sequence 5′-`CCTGTGGAG`-3′ (GAG → GTG); its reverse complement 5′-**`CTCCACAGG`**-3′. On the partner strand, the **T** opposite c.20 becomes an **A**. The base pair A:T became T:A.
+c) dbSNP gives the + strand of chromosome 11, and shows T>A. That is the partner strand of the *HBB* coding sequence, so *HBB* lies on the **− strand**. (The R exercise checks a–b with code.)
+
+**B4.** a) **Semiconservative**: one hybrid band. **Conservative**: one heavy and one light band, 1 : 1. **Dispersive**: one hybrid band.
+b) After one more generation in ^15^N, each hybrid helix separates into a heavy strand and a light strand, and each gets a new heavy partner. **Semiconservative**: ½ heavy, ½ hybrid. **Conservative**: the parental heavy helix stays heavy and makes a new heavy copy; the light helix stays light and makes a new heavy copy: ¾ heavy, ¼ light, no hybrid. **Dispersive**: one band between hybrid and heavy.
+
+**B5.** a) New strand 5′-**`ATGCCTAAG`**-3′ (complement of each base, antiparallel: its 5′ end lies opposite the template's 3′ end).
+b) The polymerase adds to the 3′ end of the new strand, so it moves along the template from the template's 3′ end to its 5′ end: here **left to right**.
+
+**B6.** a) Only two of the four chromatids take part in a crossover. The spores are **A B** and **a b** (parental, from the two chromatids that did not cross over) and **A b** and **a B** (recombinant).
+b) **Gene conversion** in a non-crossover. A strand from one homologue invaded the other at the *m* gene, making a heteroduplex (one *m* strand paired with one *m*^+^ strand) at that site. The Holliday junctions were cut the non-crossover way, so the flanking markers stayed parental. Mismatch repair then "corrected" the mismatch using the *m*^+^ strand as template, turning one *m* chromatid into *m*^+^. The result: 3 *m*^+^ : 1 *m* instead of the Mendelian 2 : 2.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: Find it"}
+
+These facts were checked against NCBI E-utilities (record updated 2026-09-06).
+
+**F1.** Click path: NCBI Nucleotide → search `NM_000518` → the record opens in GenBank format.
+a) DEFINITION: "*Homo sapiens* hemoglobin subunit beta (*HBB*), mRNA". VERSION: **NM_000518.5** (if the version is higher when you look, the sequence has been updated since this exercise was written).
+b) LOCUS: **628 bp**, **mRNA**, linear.
+c) KEYWORDS: "RefSeq; MANE Select". **MANE Select** (Matched Annotation from NCBI and EMBL-EBI) is the one transcript per gene that NCBI and Ensembl agree to use as the default; this record matches Ensembl ENST00000335295.4.
+d) CDS **51..494**, protein_id **NP_000509.1**. 494 − 51 + 1 = 444 nt = 148 codons, of which the last is the stop codon, so **147 amino acids**. (The features also show the three exons: 1..142, 143..365, 366..628.)
+
+**F2.** a) The header line, starting with **`>`**: `>NM_000518.5 Homo sapiens hemoglobin subunit beta (HBB), mRNA`. The sequence follows on lines of 70 characters.
+b) Positions 51–53 are **`ATG`**, the start codon, as the CDS feature said. The sequence is in DNA letters (T, not U), as in all NCBI nucleotide records.
+
+**F3.** Genomic context: NC_000011.10 (5225464..5227071, **complement**). "Complement" means that the gene lies on the **− strand**, so it is read from right to left on the chromosome's coordinates. This agrees with B3c: the + strand shows the reverse complement of the *HBB* coding sequence, which is why dbSNP writes rs334 as T>A.
+:::
+
+## Where this leads
+
+Every mutation in the next unit is a change in this double-stranded text: a wrong base inserted during replication and not repaired, or damage that is copied before it is fixed. In **Mutation & complementation** you classify such changes by what they do to the protein, and use the complementation test to ask whether two mutations hit the same gene. In **Part 4**, `revcomp()` and base pairing come back in primer design and restriction mapping.
+
+**Next:** [Exercise in R](exercise-r.qmd): read the *HBB* FASTA into R, write a `revcomp()` function, and compute GC content with stringr.

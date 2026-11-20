@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Helvetica, Arial, sans-serif" width="900" height="380">
+  <!-- Agarose gel with ladder and an unknown band; standard curve log10(size) vs distance. Illustrative numbers: log10(bp) = 4.3 - 0.03 * distance(mm). -->
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">1. The gel</text>
+  <rect x="70" y="62" width="250" height="276" rx="6" fill="#1f262d"/>
+  <text x="135" y="54" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">ladder</text>
+  <text x="250" y="54" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">sample</text>
+  <rect x="105" y="76" width="60" height="7" fill="#0b0f12" stroke="#58636d"/>
+  <rect x="220" y="76" width="60" height="7" fill="#0b0f12" stroke="#58636d"/>
+  <g fill="#ffe3a3">
+    <rect x="105" y="120" width="60" height="5" rx="2"/>
+    <rect x="105" y="160" width="60" height="5" rx="2"/>
+    <rect x="105" y="189" width="60" height="5" rx="2"/>
+    <rect x="105" y="213" width="60" height="5" rx="2"/>
+    <rect x="105" y="253" width="60" height="5" rx="2"/>
+    <rect x="105" y="293" width="60" height="5" rx="2"/>
+    <rect x="220" y="200" width="60" height="5" rx="2"/>
+  </g>
+  <g font-size="13" fill="#4a5866" text-anchor="end">
+    <text x="64" y="127">10,000</text>
+    <text x="64" y="167">5,000</text>
+    <text x="64" y="196">3,000</text>
+    <text x="64" y="220">2,000</text>
+    <text x="64" y="260">1,000</text>
+    <text x="64" y="300">500</text>
+  </g>
+  <text x="250" y="226" font-size="14" fill="#ffe3a3" text-anchor="middle">?</text>
+  <text x="58" y="76" font-size="22" font-weight="bold" fill="#1b2a3a" text-anchor="end">−</text>
+  <text x="58" y="336" font-size="22" font-weight="bold" fill="#bc4749" text-anchor="end">+</text>
+  <line x1="342" y1="90" x2="342" y2="320" stroke="#1b2a3a" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="356" y="190" font-size="13" fill="#1b2a3a">DNA is</text>
+  <text x="356" y="207" font-size="13" fill="#1b2a3a">negative:</text>
+  <text x="356" y="224" font-size="13" fill="#1b2a3a">runs to +;</text>
+  <text x="356" y="241" font-size="13" fill="#1b2a3a">short runs</text>
+  <text x="356" y="258" font-size="13" fill="#1b2a3a">farthest</text>
+  <text x="20" y="366" font-size="13" fill="#5a6b7a">Bands are seen with a DNA stain under UV or blue light.</text>
+
+  <text x="470" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">2. Read the size from the ladder</text>
+  <!-- plot area x 520..858 (0..65 mm), y 300 (log 2.5) .. 60 (log 4.2) -->
+  <g stroke="#e3e3e3" stroke-width="1">
+    <line x1="520" y1="271.9" x2="858" y2="271.9"/>
+    <line x1="520" y1="229.4" x2="858" y2="229.4"/>
+    <line x1="520" y1="186.9" x2="858" y2="186.9"/>
+    <line x1="520" y1="130.7" x2="858" y2="130.7"/>
+    <line x1="520" y1="88.2" x2="858" y2="88.2"/>
+  </g>
+  <line x1="520" y1="300" x2="858" y2="300" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="520" y1="60" x2="520" y2="300" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g font-size="13" fill="#4a5866" text-anchor="end">
+    <text x="514" y="276">500</text>
+    <text x="514" y="234">1,000</text>
+    <text x="514" y="191">2,000</text>
+    <text x="514" y="135">5,000</text>
+    <text x="514" y="93">10,000</text>
+  </g>
+  <g font-size="13" fill="#4a5866" text-anchor="middle">
+    <text x="520" y="318">0</text><text x="572" y="318">10</text><text x="624" y="318">20</text>
+    <text x="676" y="318">30</text><text x="728" y="318">40</text><text x="780" y="318">50</text><text x="832" y="318">60</text>
+  </g>
+  <text x="689" y="340" font-size="13" fill="#1b2a3a" text-anchor="middle">distance run (mm)</text>
+  <text x="456" y="180" font-size="13" fill="#1b2a3a" text-anchor="middle" transform="rotate(-90 456 180)">size (bp, log scale)</text>
+  <line x1="540" y1="62.2" x2="832" y2="299.8" stroke="#2a6f97" stroke-width="2"/>
+  <g fill="#2a6f97">
+    <circle cx="572" cy="88.2" r="5"/><circle cx="624.2" cy="130.7" r="5"/><circle cx="662.6" cy="162.1" r="5"/>
+    <circle cx="693.2" cy="186.9" r="5"/><circle cx="745.2" cy="229.4" r="5"/><circle cx="797.7" cy="271.9" r="5"/>
+  </g>
+  <line x1="676" y1="300" x2="676" y2="172.9" stroke="#bc4749" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <line x1="676" y1="172.9" x2="520" y2="172.9" stroke="#bc4749" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <circle cx="676" cy="172.9" r="6" fill="#bc4749"/>
+  <text x="690" y="160" font-size="13" fill="#bc4749">unknown band: 30 mm</text>
+  <text x="690" y="176" font-size="13" fill="#bc4749">→ about 2,500 bp</text>
+  <text x="470" y="366" font-size="13" fill="#5a6b7a">Ladder points (blue) lie close to a straight line when size is on a log scale.</text>
+</svg>

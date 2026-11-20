@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Helvetica, Arial, sans-serif" width="900" height="380">
+  <!-- Evidence used to annotate a eukaryotic gene, drawn as genome-browser tracks over one locus. Schematic, not to scale; exon layout like HBB (3 exons). -->
+  <g font-size="13" fill="#1b2a3a" text-anchor="end">
+    <text x="150" y="44">DNA signals</text>
+    <text x="150" y="104">RNA-seq reads</text>
+    <text x="150" y="184">protein homology</text>
+    <text x="150" y="236">conservation</text>
+    <text x="150" y="312">gene model</text>
+  </g>
+  <!-- DNA signals: ATG, GT/AG splice sites, stop -->
+  <line x1="165" y1="40" x2="880" y2="40" stroke="#c9d3dd" stroke-width="2"/>
+  <g font-size="12" font-family="Courier New, monospace" font-weight="bold" text-anchor="middle">
+    <text x="215" y="34" fill="#6a994e">ATG</text>
+    <text x="300" y="34" fill="#2a6f97">GT</text><text x="430" y="34" fill="#2a6f97">AG</text>
+    <text x="580" y="34" fill="#2a6f97">GT</text><text x="720" y="34" fill="#2a6f97">AG</text>
+    <text x="820" y="34" fill="#bc4749">TAA</text>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <line x1="215" y1="37" x2="215" y2="44"/><line x1="300" y1="37" x2="300" y2="44"/><line x1="430" y1="37" x2="430" y2="44"/>
+    <line x1="580" y1="37" x2="580" y2="44"/><line x1="720" y1="37" x2="720" y2="44"/><line x1="820" y1="37" x2="820" y2="44"/>
+  </g>
+  <text x="880" y="58" font-size="11" fill="#5a6b7a" text-anchor="end">splice sites almost always start GT and end AG</text>
+  <!-- RNA-seq: reads pile up on exons; split reads jump the introns -->
+  <g fill="#9db7cc">
+    <rect x="185" y="72" width="60" height="7" rx="2"/><rect x="230" y="72" width="60" height="7" rx="2"/>
+    <rect x="200" y="82" width="60" height="7" rx="2"/><rect x="440" y="72" width="60" height="7" rx="2"/>
+    <rect x="500" y="72" width="60" height="7" rx="2"/><rect x="460" y="82" width="60" height="7" rx="2"/>
+    <rect x="730" y="72" width="60" height="7" rx="2"/><rect x="760" y="82" width="60" height="7" rx="2"/>
+    <rect x="800" y="72" width="40" height="7" rx="2"/><rect x="740" y="92" width="60" height="7" rx="2"/>
+  </g>
+  <!-- split reads -->
+  <g stroke="#2a6f97" stroke-width="1.2" fill="#2a6f97">
+    <rect x="265" y="102" width="35" height="7" rx="2" stroke="none"/><line x1="300" y1="105.5" x2="430" y2="105.5"/><rect x="430" y="102" width="25" height="7" rx="2" stroke="none"/>
+    <rect x="550" y="112" width="30" height="7" rx="2" stroke="none"/><line x1="580" y1="115.5" x2="720" y2="115.5"/><rect x="720" y="112" width="30" height="7" rx="2" stroke="none"/>
+    <rect x="275" y="122" width="25" height="7" rx="2" stroke="none"/><line x1="300" y1="125.5" x2="430" y2="125.5"/><rect x="430" y="122" width="35" height="7" rx="2" stroke="none"/>
+  </g>
+  <text x="880" y="140" font-size="11" fill="#5a6b7a" text-anchor="end">split reads (blue) jump an intron: they show the exon junctions</text>
+  <!-- protein homology: a mouse protein aligned back to the genome -->
+  <g fill="#d08c2f">
+    <rect x="215" y="174" width="85" height="12"/><rect x="430" y="174" width="150" height="12"/><rect x="720" y="174" width="100" height="12"/>
+  </g>
+  <line x1="300" y1="180" x2="430" y2="180" stroke="#d08c2f" stroke-width="1.5"/>
+  <line x1="580" y1="180" x2="720" y2="180" stroke="#d08c2f" stroke-width="1.5"/>
+  <text x="880" y="200" font-size="11" fill="#5a6b7a" text-anchor="end">a related protein (e.g. mouse β-globin) aligned to the DNA</text>
+  <!-- conservation -->
+  <line x1="165" y1="262" x2="880" y2="262" stroke="#c9d3dd"/>
+  <g fill="#6a994e">
+    <rect x="170" y="252" width="8" height="10"/><rect x="180" y="248" width="8" height="14"/><rect x="190" y="230" width="8" height="32"/>
+    <rect x="200" y="224" width="8" height="38"/><rect x="215" y="220" width="8" height="42"/><rect x="230" y="218" width="8" height="44"/>
+    <rect x="245" y="221" width="8" height="41"/><rect x="260" y="219" width="8" height="43"/><rect x="275" y="222" width="8" height="40"/>
+    <rect x="290" y="226" width="8" height="36"/><rect x="310" y="250" width="8" height="12"/><rect x="330" y="256" width="8" height="6"/>
+    <rect x="350" y="254" width="8" height="8"/><rect x="370" y="252" width="8" height="10"/><rect x="390" y="257" width="8" height="5"/>
+    <rect x="410" y="250" width="8" height="12"/><rect x="430" y="222" width="8" height="40"/><rect x="445" y="219" width="8" height="43"/>
+    <rect x="460" y="218" width="8" height="44"/><rect x="475" y="220" width="8" height="42"/><rect x="490" y="223" width="8" height="39"/>
+    <rect x="505" y="219" width="8" height="43"/><rect x="520" y="221" width="8" height="41"/><rect x="535" y="218" width="8" height="44"/>
+    <rect x="550" y="220" width="8" height="42"/><rect x="565" y="224" width="8" height="38"/><rect x="590" y="255" width="8" height="7"/>
+    <rect x="610" y="252" width="8" height="10"/><rect x="630" y="257" width="8" height="5"/><rect x="650" y="241" width="8" height="21"/>
+    <rect x="670" y="255" width="8" height="7"/><rect x="690" y="253" width="8" height="9"/><rect x="720" y="221" width="8" height="41"/>
+    <rect x="735" y="218" width="8" height="44"/><rect x="750" y="220" width="8" height="42"/><rect x="765" y="219" width="8" height="43"/>
+    <rect x="780" y="222" width="8" height="40"/><rect x="795" y="220" width="8" height="42"/><rect x="810" y="223" width="8" height="39"/>
+    <rect x="830" y="236" width="8" height="26"/><rect x="845" y="246" width="8" height="16"/><rect x="860" y="254" width="8" height="8"/>
+  </g>
+  <text x="880" y="280" font-size="11" fill="#5a6b7a" text-anchor="end">high where many species keep the same sequence: exons</text>
+  <!-- final model -->
+  <line x1="185" y1="308" x2="860" y2="308" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="185" y="300" width="30" height="16" fill="#8fb3cf"/>
+  <rect x="215" y="296" width="85" height="24" fill="#2a6f97"/>
+  <rect x="430" y="296" width="150" height="24" fill="#2a6f97"/>
+  <rect x="720" y="296" width="100" height="24" fill="#2a6f97"/>
+  <rect x="820" y="300" width="40" height="16" fill="#8fb3cf"/>
+  <text x="257" y="337" font-size="12" fill="#1b2a3a" text-anchor="middle">exon 1</text>
+  <text x="505" y="337" font-size="12" fill="#1b2a3a" text-anchor="middle">exon 2</text>
+  <text x="770" y="337" font-size="12" fill="#1b2a3a" text-anchor="middle">exon 3</text>
+  <text x="365" y="300" font-size="12" fill="#5a6b7a" text-anchor="middle">intron</text>
+  <text x="650" y="300" font-size="12" fill="#5a6b7a" text-anchor="middle">intron</text>
+  <text x="20" y="366" font-size="13" fill="#5a6b7a">Thick boxes: coding sequence; thin boxes: untranslated regions (UTRs). No single track is enough; annotation combines them.</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Helvetica, Arial, sans-serif" width="900" height="340">
+  <!-- Two kinds of natural selection behind the frequency differences: balancing selection (heterozygote advantage) for HbS where
+       malaria is common, and positive selection for lactase persistence where people drank milk. Bar heights are schematic. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">1. HbS where malaria is common: heterozygote advantage</text>
+  <line x1="60" y1="210" x2="420" y2="210" stroke="#1b2a3a" stroke-width="1.5"/>
+  <rect x="80" y="110" width="80" height="100" fill="#9db7cc"/>
+  <rect x="200" y="60" width="80" height="150" fill="#2a6f97"/>
+  <rect x="320" y="170" width="80" height="40" fill="#bc4749"/>
+  <g font-size="14" font-style="italic" fill="#1b2a3a" text-anchor="middle">
+    <text x="120" y="230">AA</text><text x="240" y="230">AS</text><text x="360" y="230">SS</text>
+  </g>
+  <g font-size="12" fill="#1b2a3a" text-anchor="middle">
+    <text x="120" y="250">more severe</text><text x="120" y="265">malaria</text>
+    <text x="240" y="250">protected,</text><text x="240" y="265">healthy</text>
+    <text x="360" y="250">sickle-cell</text><text x="360" y="265">disease</text>
+  </g>
+  <text x="44" y="135" font-size="13" fill="#1b2a3a" text-anchor="middle" transform="rotate(-90 44 135)">survival (schematic)</text>
+  <text x="60" y="296" font-size="13" fill="#1b2a3a">The carrier survives best, so selection keeps</text>
+  <text x="60" y="314" font-size="13" fill="#1b2a3a"><tspan font-weight="bold">both</tspan> alleles: a balanced polymorphism.</text>
+
+  <line x1="460" y1="40" x2="460" y2="320" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="480" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">2. Lactase persistence where people drank milk</text>
+  <g font-size="13" fill="#1b2a3a">
+    <text x="480" y="62">Most mammals, and most humans, stop making</text>
+    <text x="480" y="80">lactase after weaning: milk sugar is poorly digested.</text>
+    <text x="480" y="112">The <tspan font-weight="bold">T allele</tspan> at −13910 (rs4988235 A on the plus</text>
+    <text x="480" y="130">strand) keeps the <tspan font-style="italic">LCT</tspan> enhancer active in adults.</text>
+    <text x="480" y="148">One copy is enough: lactase persistence is <tspan font-weight="bold">dominant</tspan>.</text>
+    <text x="480" y="180">Where milk was a food, carriers had more energy</text>
+    <text x="480" y="198">and fluid: <tspan font-weight="bold">positive selection</tspan> raised the allele</text>
+    <text x="480" y="216">from rare to common in a few thousand years,</text>
+    <text x="480" y="234">on a long shared haplotype.</text>
+    <text x="480" y="266">Other persistence alleles near the same enhancer</text>
+    <text x="480" y="284">arose independently in East African and Middle</text>
+    <text x="480" y="302">Eastern herders: convergent evolution.</text>
+  </g>
+</svg>
