@@ -2,8 +2,124 @@
 title: "Glossary"
 ---
 
-A running glossary of the genetics, database and R terms used in this course. Definitions are kept short and link to the unit where the term is introduced.
+A running glossary of the genetics, database and statistics terms used in this course. Definitions are kept short, and each one links to the unit where the term is introduced.
 
 ## Part 1: Mendelian genetics
 
-<!-- Units append terms here, alphabetically within the part. -->
+### Genes and genomes
+
+**Allele**: one version of a gene. Alleles differ in DNA sequence. See [Genetics as information](intro-genetics/lec.qmd).
+
+**C-value paradox**: genome size does not follow gene number or organism complexity, because most of a large genome is non-coding DNA. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Dominant / recessive**: if *Aa* has the same phenotype as *AA*, then *A* is dominant and *a* is recessive, for that phenotype. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Gene**: a DNA segment that carries the information for one functional product, usually a protein. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Genotype**: the alleles an individual carries at a locus, e.g. *Aa*. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Hemizygous**: having only one copy of a gene, as males do for genes on the X chromosome. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Homozygous / heterozygous**: carrying two identical alleles, or two different alleles, at a locus. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Locus**: the position of a gene on a chromosome. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Model organism**: a species that is easy to grow and cross, used because many of its genes are shared with other species. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Ortholog**: genes in different species that descend from one gene in their common ancestor. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Paralog**: genes related by a duplication within one genome. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Phenotype**: an observable or measurable trait, from a disease to a protein band on a gel. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Wild type**: the standard allele or phenotype in a lab population, written with a +, e.g. *w*^+^. See [Genetics as information](intro-genetics/lec.qmd).
+
+### Mendel's crosses
+
+**Branch-line (forked-line) method**: solving a multi-gene cross one gene at a time, then multiplying the probabilities along each branch. See [Mendel](mendel/lec.qmd).
+
+**Dihybrid cross**: a cross between individuals heterozygous for two genes (*AaBb* × *AaBb*). It gives 9 : 3 : 3 : 1 phenotypes when the genes are unlinked. See [Mendel](mendel/lec.qmd).
+
+**Law of independent assortment**: alleles of different genes enter gametes independently, because homologue pairs orient independently at metaphase I. It holds for unlinked genes. See [Mendel](mendel/lec.qmd).
+
+**Law of segregation**: the two alleles of a gene separate into different gametes, ½ each, because homologues separate in meiosis I. See [Mendel](mendel/lec.qmd).
+
+**Monohybrid cross**: a cross between individuals heterozygous for one gene (*Aa* × *Aa*). It gives 1 : 2 : 1 genotypes and 3 : 1 phenotypes. See [Mendel](mendel/lec.qmd).
+
+**Punnett square**: a grid of one parent's gametes against the other parent's gametes. Each cell is one equally likely fertilisation. See [Mendel](mendel/lec.qmd).
+
+**Reciprocal cross**: the same cross done both ways round, to test whether it matters which parent carries the allele. See [Mendel](mendel/lec.qmd).
+
+**Testcross**: a cross to a homozygous recessive individual. The offspring phenotypes show the other parent's gametes directly. See [Mendel](mendel/lec.qmd).
+
+**True-breeding line**: a line that gives only offspring like itself when self-fertilised, because it is homozygous. See [Mendel](mendel/lec.qmd).
+
+### Probability and the χ² test
+
+**Binomial distribution**: the probability of k outcomes of one kind in n independent trials, (n choose k) pᵏ(1 − p)ⁿ⁻ᵏ. It is used for family composition. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**χ² goodness-of-fit test**: a test of whether observed counts fit the counts expected from a hypothesised ratio, using χ² = Σ(O − E)²/E. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Conditional probability**: the probability of an event given that another event is known to have happened. For example, P(carrier | unaffected child of *Aa* × *Aa*) = 2/3. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Critical value**: the χ² value that is exceeded with probability 0.05 under H0 (3.84 for df = 1). See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Degrees of freedom (df)**: the number of counts that are free to vary once the total is fixed. It is k − 1 for k classes and a ratio given in advance. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Fail to reject**: the outcome when p ≥ 0.05. The data are consistent with H0, but this does not prove H0. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Null hypothesis (H0)**: the hypothesis being tested, here a Mendelian ratio such as 3:1. Expected counts are computed assuming it is true. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**p-value**: the probability, if H0 is true, of a result at least as extreme as the one observed. It is not the probability that H0 is true. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Product rule**: the probability that independent events all happen is the product of their probabilities, e.g. P(*aabbcc*) = (¼)³. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+**Sum rule**: the probability that one of several mutually exclusive events happens is the sum of their probabilities. See [Probability & the χ² test](probability-chisq/lec.qmd).
+
+### Extensions to Mendel
+
+**Codominance**: the heterozygote shows the phenotypes of both alleles in full, as in blood type AB (*I^A^I^B^*). See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Complementary genes**: two genes that are both needed for a phenotype, giving a 9 : 7 F₂ ratio. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Dominant negative**: a mutant protein that interferes with the normal protein from the other allele, for example in a dimer. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Duplicate genes**: two redundant genes, where one working copy of either is enough, giving a 15 : 1 F₂ ratio. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Epistasis**: the genotype at one gene hides the effect of another gene. This changes the dihybrid 9 : 3 : 3 : 1 ratio into ratios such as 9 : 3 : 4 or 9 : 7. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Expressivity**: how strongly a phenotype shows in the individuals who have it. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Haploinsufficiency**: one working copy of a gene does not make enough product for a normal phenotype, so a loss-of-function allele is dominant. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Incomplete dominance**: the heterozygote's phenotype lies between those of the two homozygotes, so the F₂ phenotypes are 1 : 2 : 1, as in snapdragon flower colour. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Multiple alleles**: more than two alleles of a gene exist in a population, as in the ABO blood group. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Penetrance**: the fraction of individuals with a given genotype who show the expected phenotype at all. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Pleiotropy**: one gene or allele affecting several different traits. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Recessive lethal allele**: an allele that kills homozygotes. Among the survivors of a heterozygote cross this gives a 2 : 1 ratio, as for the yellow mouse allele *A^Y^*. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+### Pedigrees
+
+**Ascertainment bias**: distortion of observed ratios caused by the way families are found, for example only through an affected child. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Consanguinity**: a mating between related people, drawn as a double line. It raises the risk of recessive disease. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Male-to-male transmission**: a trait passed from father to son. It rules out X-linked dominant inheritance and makes X-linked recessive inheritance unlikely. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Obligate carrier**: an unaffected person who must be heterozygous because of where they are in the pedigree, for example a parent of a child with a recessive disease. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Pedigree**: a family tree drawn with standard symbols that shows who is affected by a trait and how they are related. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Proband**: the affected person through whom a family first comes to attention, marked with an arrow. See [Pedigree analysis](pedigrees/lec.qmd).
+
+### Databases
+
+**ClinVar**: the NCBI database that links human variants to clinical interpretations. Each record has a classification and a review status. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**HGVS notation**: the standard naming of variants, e.g. `c.1222C>T` (coding DNA) and `p.Arg408Trp` (protein). See [Pedigree analysis](pedigrees/lec.qmd).
+
+**MIM number**: the six-digit identifier of a gene or disease entry in OMIM. See [Pedigree analysis](pedigrees/lec.qmd).

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 887 330" font-family="Helvetica, Arial, sans-serif" width="887" height="330">
+  <!-- Four approaches to genetics, doubling as a map of the course parts -->
+  <rect x="14" y="10" width="205" height="310" rx="8" fill="#eaf1f7" stroke="#2a6f97" stroke-width="2"/>
+  <rect x="14" y="10" width="205" height="40" rx="8" fill="#2a6f97"/>
+  <rect x="14" y="38" width="205" height="12" fill="#2a6f97"/>
+  <text x="116" y="37" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Transmission</text>
+  <text x="116" y="78" font-size="14" font-weight="bold" fill="#2a6f97" text-anchor="middle">How are traits inherited?</text>
+  <text x="116" y="106" font-size="13" fill="#1b2a3a" text-anchor="middle">Cross organisms or follow</text>
+  <text x="116" y="124" font-size="13" fill="#1b2a3a" text-anchor="middle">families; count offspring.</text>
+  <line x1="34" y1="158" x2="199" y2="158" stroke="#2a6f97" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="116" y="180" font-size="12" fill="#5a6b7a" text-anchor="middle">in this course</text>
+  <text x="116" y="202" font-size="13" fill="#1b2a3a" text-anchor="middle">Part 1: Mendel, pedigrees</text>
+  <text x="116" y="220" font-size="13" fill="#1b2a3a" text-anchor="middle">Part 2: chromosomes, mapping</text>
+  <line x1="34" y1="262" x2="199" y2="262" stroke="#2a6f97" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="116" y="284" font-size="12" fill="#5a6b7a" text-anchor="middle">example</text>
+  <text x="116" y="304" font-size="13" font-style="italic" fill="#1b2a3a" text-anchor="middle">Mendel's peas; a pedigree</text>
+  <rect x="232" y="10" width="205" height="310" rx="8" fill="#f2f6ee" stroke="#6a994e" stroke-width="2"/>
+  <rect x="232" y="10" width="205" height="40" rx="8" fill="#6a994e"/>
+  <rect x="232" y="38" width="205" height="12" fill="#6a994e"/>
+  <text x="334" y="37" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Molecular</text>
+  <text x="334" y="78" font-size="14" font-weight="bold" fill="#6a994e" text-anchor="middle">What does a gene do?</text>
+  <text x="334" y="106" font-size="13" fill="#1b2a3a" text-anchor="middle">Study DNA, RNA and protein</text>
+  <text x="334" y="124" font-size="13" fill="#1b2a3a" text-anchor="middle">of one gene at a time.</text>
+  <line x1="252" y1="158" x2="417" y2="158" stroke="#6a994e" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="334" y="180" font-size="12" fill="#5a6b7a" text-anchor="middle">in this course</text>
+  <text x="334" y="202" font-size="13" fill="#1b2a3a" text-anchor="middle">Part 3: DNA, mutation</text>
+  <text x="334" y="220" font-size="13" fill="#1b2a3a" text-anchor="middle">Parts 5, 6: chromosomes,</text>
+  <text x="334" y="238" font-size="13" fill="#1b2a3a" text-anchor="middle">regulation, development</text>
+  <line x1="252" y1="262" x2="417" y2="262" stroke="#6a994e" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="334" y="284" font-size="12" fill="#5a6b7a" text-anchor="middle">example</text>
+  <text x="334" y="304" font-size="13" font-style="italic" fill="#1b2a3a" text-anchor="middle">Glu→Val in β-globin</text>
+  <rect x="450" y="10" width="205" height="310" rx="8" fill="#f1edf7" stroke="#7d5ba6" stroke-width="2"/>
+  <rect x="450" y="10" width="205" height="40" rx="8" fill="#7d5ba6"/>
+  <rect x="450" y="38" width="205" height="12" fill="#7d5ba6"/>
+  <text x="552" y="37" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Genomic</text>
+  <text x="552" y="78" font-size="14" font-weight="bold" fill="#7d5ba6" text-anchor="middle">Which genes, and where?</text>
+  <text x="552" y="106" font-size="13" fill="#1b2a3a" text-anchor="middle">Sequence and compare</text>
+  <text x="552" y="124" font-size="13" fill="#1b2a3a" text-anchor="middle">whole genomes.</text>
+  <line x1="470" y1="158" x2="635" y2="158" stroke="#7d5ba6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="552" y="180" font-size="12" fill="#5a6b7a" text-anchor="middle">in this course</text>
+  <text x="552" y="202" font-size="13" fill="#1b2a3a" text-anchor="middle">Part 4: sequencing,</text>
+  <text x="552" y="220" font-size="13" fill="#1b2a3a" text-anchor="middle">annotation, variation</text>
+  <line x1="470" y1="262" x2="635" y2="262" stroke="#7d5ba6" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="552" y="284" font-size="12" fill="#5a6b7a" text-anchor="middle">example</text>
+  <text x="552" y="304" font-size="13" font-style="italic" fill="#1b2a3a" text-anchor="middle">CFTR in human and mouse</text>
+  <rect x="668" y="10" width="205" height="310" rx="8" fill="#f8eded" stroke="#bc4749" stroke-width="2"/>
+  <rect x="668" y="10" width="205" height="40" rx="8" fill="#bc4749"/>
+  <rect x="668" y="38" width="205" height="12" fill="#bc4749"/>
+  <text x="770" y="37" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">Population</text>
+  <text x="770" y="78" font-size="14" font-weight="bold" fill="#bc4749" text-anchor="middle">How do alleles spread?</text>
+  <text x="770" y="106" font-size="13" fill="#1b2a3a" text-anchor="middle">Measure allele frequencies</text>
+  <text x="770" y="124" font-size="13" fill="#1b2a3a" text-anchor="middle">in groups of individuals.</text>
+  <line x1="688" y1="158" x2="853" y2="158" stroke="#bc4749" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="770" y="180" font-size="12" fill="#5a6b7a" text-anchor="middle">in this course</text>
+  <text x="770" y="202" font-size="13" fill="#1b2a3a" text-anchor="middle">Part 7: Hardy–Weinberg,</text>
+  <text x="770" y="220" font-size="13" fill="#1b2a3a" text-anchor="middle">drift, selection, GWAS</text>
+  <line x1="688" y1="262" x2="853" y2="262" stroke="#bc4749" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="770" y="284" font-size="12" fill="#5a6b7a" text-anchor="middle">example</text>
+  <text x="770" y="304" font-size="13" font-style="italic" fill="#1b2a3a" text-anchor="middle">HbS is common in malaria areas</text>
+</svg>

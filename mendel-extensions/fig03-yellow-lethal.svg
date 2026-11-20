@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="318" viewBox="0 0 860 318" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig03: yellow mouse, A^Y a x A^Y a. The A^Y A^Y class dies, so the survivors are 2 yellow : 1 agouti.
+       Superscripts use tspan + dy; text with tspans is start-anchored (cairo centres each tspan chunk). -->
+
+  <!-- title: cross -->
+  <text x="20" y="32" font-size="20" font-weight="bold" fill="#1b2a3a">Yellow × yellow:  <tspan font-style="italic">A</tspan><tspan dy="-8" font-size="13" font-style="italic">Y</tspan><tspan dy="8" font-style="italic">a</tspan> × <tspan font-style="italic">A</tspan><tspan dy="-8" font-size="13" font-style="italic">Y</tspan><tspan dy="8" font-style="italic">a</tspan></text>
+
+  <!-- gamete headers: columns -->
+  <text x="148" y="72" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a">A<tspan dy="-7" font-size="12">Y</tspan></text>
+  <text x="263" y="72" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a">a</text>
+  <!-- rows -->
+  <text x="62" y="141" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a">A<tspan dy="-7" font-size="12">Y</tspan></text>
+  <text x="66" y="251" font-size="18" font-style="italic" font-weight="bold" fill="#1b2a3a">a</text>
+
+  <!-- cells: x 95..315, y 82..302, 110 each -->
+  <!-- AY AY: dies -->
+  <rect x="97" y="84" width="106" height="106" rx="6" fill="#eceef1" stroke="#9aa5b1" stroke-dasharray="6 4"/>
+  <line x1="132" y1="124" x2="168" y2="160" stroke="#c62828" stroke-width="3"/>
+  <line x1="168" y1="124" x2="132" y2="160" stroke="#c62828" stroke-width="3"/>
+  <text x="131" y="112" font-size="17" font-style="italic" fill="#1b2a3a">A<tspan dy="-7" font-size="11">Y</tspan><tspan dy="7">A</tspan><tspan dy="-7" font-size="11">Y</tspan></text>
+  <text x="150" y="182" font-size="15" font-weight="bold" fill="#c62828" text-anchor="middle">dies</text>
+  <!-- AY a: yellow -->
+  <rect x="207" y="84" width="106" height="106" rx="6" fill="#e8b923" stroke="#9aa5b1"/>
+  <text x="246" y="132" font-size="17" font-style="italic" fill="#1b2a3a">A<tspan dy="-7" font-size="11">Y</tspan><tspan dy="7">a</tspan></text>
+  <text x="260" y="156" font-size="15" fill="#1b2a3a" text-anchor="middle">yellow</text>
+  <!-- a AY: yellow -->
+  <rect x="97" y="194" width="106" height="106" rx="6" fill="#e8b923" stroke="#9aa5b1"/>
+  <text x="136" y="242" font-size="17" font-style="italic" fill="#1b2a3a">A<tspan dy="-7" font-size="11">Y</tspan><tspan dy="7">a</tspan></text>
+  <text x="150" y="266" font-size="15" fill="#1b2a3a" text-anchor="middle">yellow</text>
+  <!-- a a: agouti -->
+  <rect x="207" y="194" width="106" height="106" rx="6" fill="#7a6248" stroke="#9aa5b1"/>
+  <text x="260" y="242" font-size="17" font-style="italic" fill="#ffffff" text-anchor="middle">aa</text>
+  <text x="260" y="266" font-size="15" fill="#ffffff" text-anchor="middle">agouti</text>
+
+  <!-- right: the arithmetic -->
+  <text x="350" y="100" font-size="17" fill="#5c6b7a">expected at fertilisation</text>
+  <text x="350" y="126" font-size="18" fill="#1b2a3a">1 : 2 : 1, so 3 yellow : 1 agouti</text>
+  <text x="350" y="170" font-size="17" fill="#5c6b7a">the <tspan font-style="italic">A</tspan><tspan dy="-7" font-size="11" font-style="italic">Y</tspan><tspan dy="7" font-style="italic">A</tspan><tspan dy="-7" font-size="11" font-style="italic">Y</tspan><tspan dy="7"> embryos die in the uterus</tspan></text>
+  <text x="350" y="204" font-size="20" font-weight="bold" fill="#1b2a3a">born: 2 yellow : 1 agouti</text>
+
+  <!-- pleiotropy box -->
+  <rect x="345" y="226" width="500" height="76" rx="10" fill="#f4f6f8" stroke="#d5dce3"/>
+  <text x="360" y="254" font-size="16" fill="#1b2a3a"><tspan font-weight="bold">One allele, two traits (pleiotropy):</tspan></text>
+  <text x="360" y="284" font-size="16" fill="#1b2a3a">coat colour: dominant  ·  survival: recessive lethal</text>
+</svg>

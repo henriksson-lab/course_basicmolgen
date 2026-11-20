@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="Helvetica, Arial, sans-serif" width="900" height="340">
+  <!-- Left: a homologous pair with a locus and two alleles. Right: the three genotypes. -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- homologous pair: two vertical chromosomes -->
+  <text x="20" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">one pair of homologous chromosomes</text>
+  <g stroke="#1b2a3a" stroke-width="2">
+    <rect x="80"  y="40" width="36" height="270" rx="18" fill="#eaf1f7"/>
+    <rect x="164" y="40" width="36" height="270" rx="18" fill="#f4f7fa"/>
+  </g>
+  <!-- centromeres -->
+  <g fill="#8a97a4">
+    <ellipse cx="98"  cy="120" rx="18" ry="6"/>
+    <ellipse cx="182" cy="120" rx="18" ry="6"/>
+  </g>
+  <text x="98"  y="330" font-size="13" fill="#5a6b7a" text-anchor="middle">from mother</text>
+  <text x="182" y="330" font-size="13" fill="#5a6b7a" text-anchor="middle">from father</text>
+
+  <!-- the locus band -->
+  <rect x="80"  y="210" width="36" height="22" fill="#2a6f97"/>
+  <rect x="164" y="210" width="36" height="22" fill="#bc4749"/>
+  <text x="62" y="226" font-size="18" font-style="italic" fill="#2a6f97" text-anchor="end">A</text>
+  <text x="218" y="226" font-size="18" font-style="italic" fill="#bc4749">a</text>
+
+  <!-- dashed line marking the locus -->
+  <line x1="122" y1="221" x2="158" y2="221" stroke="#1b2a3a" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- annotations -->
+  <g font-size="14" fill="#1b2a3a">
+    <text x="250" y="180">locus: the position of the gene</text>
+    <text x="250" y="198">(the same on both homologues)</text>
+    <text x="250" y="252">alleles: two versions of the gene,</text>
+    <text x="250" y="270"><tspan font-style="italic">A</tspan> and <tspan font-style="italic">a</tspan>, differing in DNA sequence</text>
+  </g>
+  <line x1="246" y1="186" x2="203" y2="211" stroke="#1b2a3a" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="246" y1="250" x2="230" y2="228" stroke="#1b2a3a" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- right panel: genotype -> phenotype table -->
+  <text x="545" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">genotype → phenotype (if <tspan font-style="italic">A</tspan> is dominant)</text>
+  <g font-size="14" fill="#5a6b7a">
+    <text x="535" y="62">genotype</text>
+    <text x="635" y="62">name</text>
+    <text x="750" y="62">phenotype</text>
+  </g>
+  <line x1="530" y1="72" x2="840" y2="72" stroke="#c9d3dd" stroke-width="1.5"/>
+
+  <!-- row AA -->
+  <rect x="535" y="88" width="14" height="30" rx="4" fill="#2a6f97"/>
+  <rect x="555" y="88" width="14" height="30" rx="4" fill="#2a6f97"/>
+  <text x="580" y="109" font-size="18" font-style="italic" fill="#1b2a3a">AA</text>
+  <text x="635" y="109" font-size="14" fill="#1b2a3a">homozygous</text>
+  <circle cx="760" cy="103" r="13" fill="#2a6f97"/>
+  <text x="780" y="109" font-size="14" fill="#1b2a3a">dominant</text>
+
+  <!-- row Aa -->
+  <rect x="535" y="158" width="14" height="30" rx="4" fill="#2a6f97"/>
+  <rect x="555" y="158" width="14" height="30" rx="4" fill="#bc4749"/>
+  <text x="580" y="179" font-size="18" font-style="italic" fill="#1b2a3a">Aa</text>
+  <text x="635" y="179" font-size="14" fill="#1b2a3a">heterozygous</text>
+  <circle cx="760" cy="173" r="13" fill="#2a6f97"/>
+  <text x="780" y="179" font-size="14" fill="#1b2a3a">dominant</text>
+
+  <!-- row aa -->
+  <rect x="535" y="228" width="14" height="30" rx="4" fill="#bc4749"/>
+  <rect x="555" y="228" width="14" height="30" rx="4" fill="#bc4749"/>
+  <text x="580" y="249" font-size="18" font-style="italic" fill="#1b2a3a">aa</text>
+  <text x="635" y="249" font-size="14" fill="#1b2a3a">homozygous</text>
+  <circle cx="760" cy="243" r="13" fill="#bc4749"/>
+  <text x="780" y="249" font-size="14" fill="#1b2a3a">recessive</text>
+
+  <line x1="530" y1="278" x2="840" y2="278" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="535" y="302" font-size="13" fill="#5a6b7a">The heterozygote looks like <tspan font-style="italic">AA</tspan>:</text>
+  <text x="535" y="320" font-size="13" fill="#5a6b7a">that is what "<tspan font-style="italic">A</tspan> is dominant to <tspan font-style="italic">a</tspan>" means.</text>
+</svg>

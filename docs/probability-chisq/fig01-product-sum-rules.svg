@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" font-family="Helvetica, Arial, sans-serif">
+  <!-- Product and sum rules on an Aa x Aa Punnett square.
+       Square: x 90..290, y 70..270, cells 100 x 100. Text panel from x = 330. -->
+
+  <!-- header -->
+  <text x="190" y="22" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle"><tspan font-style="italic">Aa</tspan> × <tspan font-style="italic">Aa</tspan></text>
+
+  <!-- gamete labels: father across the top, mother down the side -->
+  <g font-size="15" fill="#1b2a3a" text-anchor="middle">
+    <text x="131" y="60" font-style="italic" text-anchor="end">A</text>
+    <text x="137" y="60" text-anchor="start">(½)</text>
+    <text x="231" y="60" font-style="italic" text-anchor="end">a</text>
+    <text x="237" y="60" text-anchor="start">(½)</text>
+    <text x="50" y="125"><tspan font-style="italic">A</tspan></text>
+    <text x="50" y="143">(½)</text>
+    <text x="50" y="225"><tspan font-style="italic">a</tspan></text>
+    <text x="50" y="243">(½)</text>
+  </g>
+  <text x="190" y="40" font-size="12.5" fill="#5c6b7a" text-anchor="middle">sperm</text>
+  <text x="18" y="170" font-size="12.5" fill="#5c6b7a" text-anchor="middle" transform="rotate(-90 18 170)">eggs</text>
+
+  <!-- cells: dominant phenotype blue, recessive red -->
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <rect x="90" y="70" width="100" height="100" fill="#eaf1f7"/>
+    <rect x="190" y="70" width="100" height="100" fill="#eaf1f7"/>
+    <rect x="90" y="170" width="100" height="100" fill="#eaf1f7"/>
+    <rect x="190" y="170" width="100" height="100" fill="#f6e1e1"/>
+  </g>
+  <g font-size="20" fill="#1b2a3a" text-anchor="middle" font-style="italic">
+    <text x="140" y="118">AA</text>
+    <text x="240" y="118">Aa</text>
+    <text x="140" y="218">Aa</text>
+    <text x="240" y="218">aa</text>
+  </g>
+  <g font-size="14" fill="#2a6f97" text-anchor="middle">
+    <text x="140" y="142">½ × ½ = ¼</text>
+    <text x="240" y="142">¼</text>
+    <text x="140" y="242">¼</text>
+  </g>
+  <text x="240" y="242" font-size="14" fill="#bc4749" text-anchor="middle">¼</text>
+
+  <!-- product rule -->
+  <text x="330" y="92" font-size="17" font-weight="bold" fill="#1b2a3a">Product rule (AND)</text>
+  <text x="330" y="116" font-size="14.5" fill="#1b2a3a">independent events: multiply</text>
+  <text x="330" y="140" font-size="14.5" fill="#2a6f97">P(<tspan font-style="italic">A</tspan> egg AND <tspan font-style="italic">A</tspan> sperm) = ½ × ½ = ¼</text>
+
+  <!-- sum rule -->
+  <text x="330" y="190" font-size="17" font-weight="bold" fill="#1b2a3a">Sum rule (OR)</text>
+  <text x="330" y="214" font-size="14.5" fill="#1b2a3a">mutually exclusive events: add</text>
+  <text x="330" y="238" font-size="14.5" fill="#2a6f97">P(dominant phenotype) = ¼ + ¼ + ¼ = ¾</text>
+  <text x="330" y="262" font-size="14.5" fill="#bc4749">P(<tspan font-style="italic">aa</tspan>) = ¼, and ¾ + ¼ = 1</text>
+</svg>

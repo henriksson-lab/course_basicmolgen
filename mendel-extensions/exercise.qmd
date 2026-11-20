@@ -1,0 +1,385 @@
+---
+title: "Exercise: extensions to Mendel"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- predict F₁ and F₂ phenotypes with **incomplete dominance**, **codominance** and **multiple alleles** (ABO, an allelic series);
+- explain at the molecular level why an allele is dominant or recessive;
+- recognise a **recessive lethal** from a 2 : 1 ratio, and use **penetrance** in a probability calculation;
+- derive the modified dihybrid ratios **9 : 3 : 4, 9 : 7, 12 : 3 : 1, 13 : 3 and 15 : 1** from a pathway and a Punnett square;
+- turn an F₂ into 16ths, pick candidate ratios, and test them with χ²;
+- look up a gene's location in NCBI Gene and a disease's mode of inheritance in MedGen/OMIM;
+- in R, **apply one function to a whole list of hypotheses** with `purrr::map_dbl()` or `sapply()`, and collect the results in a tibble.
+
+## Background
+
+**One gene.**
+
+- **Complete dominance:** the heterozygote looks like one homozygote; F₂ 3 : 1.
+- **Incomplete dominance:** the heterozygote is intermediate; F₂ phenotypes 1 : 2 : 1 (snapdragons: red, pink, white).
+- **Codominance:** the heterozygote shows both phenotypes; *I^A^I^B^* is blood type AB.
+- **Multiple alleles:** *I^A^*, *I^B^*, *i* give 6 genotypes and 4 blood types. Rabbit coat: *C* > *c^ch^* > *c^h^* > *c*.
+- **Recessive lethal:** a 1 : 2 : 1 with the homozygous class dead gives **2 : 1** among survivors (yellow mice, *A^Y^*).
+- **Penetrance:** P(phenotype | genotype). **Expressivity:** how strongly the phenotype shows.
+
+**Two genes.** Start from the dihybrid F₂, 9 *A_B_* : 3 *A_bb* : 3 *aaB_* : 1 *aabb*, and merge the classes that look the same:
+
+| F₂ ratio | Name | Merged classes | Test cross *AaBb* × *aabb* |
+|---|---|---|---|
+| 9 : 3 : 4 | recessive epistasis | *aaB_* + *aabb* | 1 : 1 : 2 |
+| 9 : 7 | complementary genes | *A_bb* + *aaB_* + *aabb* | 1 : 3 |
+| 12 : 3 : 1 | dominant epistasis | *A_B_* + *A_bb* | 2 : 1 : 1 |
+| 13 : 3 | dominant suppression | *A_B_* + *A_bb* + *aabb* | 3 : 1 |
+| 15 : 1 | duplicate genes | *A_B_* + *A_bb* + *aaB_* | 3 : 1 |
+
+**χ² goodness of fit** (from *Probability and the χ² test*): $\chi^2 = \sum (O - E)^2 / E$, with df = number of classes − 1. The critical value at α = 0.05 is 3.84 for df = 1, 5.99 for df = 2 and 7.81 for df = 3.
+
+## By hand
+
+**B1. (incomplete dominance)** In snapdragons, *C^R^C^R^* is red, *C^R^C^W^* pink and *C^W^C^W^* white. Give the phenotype ratios from (a) pink × pink, (b) pink × white, (c) red × white. Which of the three crosses would you use to get the most pink seed?
+
+**B2. (ABO)** A woman with blood type AB has a child with a man of blood type O.
+(a) Which blood types are possible for the child, and in what proportions?
+(b) Could this couple have a child with type O? With type AB?
+
+**B3. (allelic series)** In rabbits, *C* (full colour) > *c^ch^* (chinchilla) > *c^h^* (Himalayan) > *c* (albino). A chinchilla rabbit crossed with a Himalayan rabbit gives 1/2 chinchilla, 1/4 Himalayan and 1/4 albino offspring. What are the genotypes of the two parents?
+
+**B4. (lethal allele)** Yellow mice (*A^Y^a*) are crossed with each other, and give litters with on average 8 live pups.
+(a) What fraction of the zygotes die?
+(b) Among the live pups, what fraction are yellow?
+(c) If each litter of yellow × agouti also starts from the same number of zygotes, which cross gives larger litters, and by how much?
+
+**B5. (penetrance)** Polydactyly in a family is inherited as an autosomal dominant trait with 70% penetrance. A man without extra digits has an affected father and an unaffected mother who does not carry the allele. His partner does not carry the allele.
+(a) What is the probability that the man carries the allele? (Hint: use the fact that he is unaffected.)
+(b) What is the probability that their first child has extra digits?
+
+**B6. (recessive epistasis)** In Labradors, *B_* gives black and *bb* brown (chocolate) pigment, but *ee* dogs are yellow whatever their *B* genotype.
+(a) Give the F₂ phenotype ratio from *BbEe* × *BbEe*, and explain it with a pathway.
+(b) A black dog is crossed with a yellow *bbee* dog. Their pups are 3 black, 2 chocolate and 5 yellow. What is the genotype of the black dog?
+(c) Can two yellow Labradors have a black pup? Explain.
+
+**B7. (complementary genes)** Two pure-breeding white-flowered sweet pea lines, W1 and W2, are crossed. All F₁ plants are purple, and the F₂ has 9 purple : 7 white.
+(a) Give the genotypes of W1, W2 and the F₁.
+(b) What fraction of the **white** F₂ plants would breed true if selfed (give only white offspring)?
+(c) A third white line, W3, crossed with W1 gives only white F₁ plants. What does that tell you about the mutation in W3?
+
+**B8. (identify the ratio)** Summer squash plants from a dihybrid cross give an F₂ of **205 white, 52 yellow and 15 green** fruit.
+(a) Express the counts in 16ths and suggest a ratio.
+(b) Test it with χ² by hand.
+(c) Draw a pathway that explains the ratio, and say which genotypes give green fruit.
+
+**B9. (dominant suppression and duplicate genes)** (a) White Leghorn chickens (*CCII*) are crossed with White Wyandottes (*ccii*). *C* is needed for coloured feathers, and *I* suppresses colour. What are the F₁ and F₂ phenotypes? (b) A dihybrid F₂ gives 15 : 1 for triangular : ovoid seed capsules. What ratio would an F₁ test cross give, and why can a test cross not separate 15 : 1 from 13 : 3?
+
+## Explore {#explore}
+
+The demo shows the 16 squares of *AaBb* × *AaBb* coloured by phenotype, next to the pathway that explains the colours. Click a square to see which enzymes that genotype has and how far down the pathway it gets.
+
+```{=html}
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="epistasis" data-preset="recessive"></div>
+<script src="../demos/dist/epistasis.js"></script>
+```
+
+**E1.** In *recessive epistasis 9 : 3 : 4*, click *aaBB*, then *aabb*. Both are yellow. Which enzyme is missing in each, and why does the *B* genotype not matter? Which class of 16ths has merged with which?
+
+**E2.** Switch to *complementary 9 : 7*. Click *AAbb* and *aaBB* (the two white parents) and then *AaBb* (their F₁). Explain why two white parents can give a purple F₁. How many different genotypes are white?
+
+**E3.** Compare *dominant epistasis 12 : 3 : 1* with *dominant suppression 13 : 3*. In both, *A_* switches an inhibitor on. Click *aabb* in each. Why is *aabb* a class of its own in one preset and merged with white in the other?
+
+**E4.** Go through all six presets and, for each one, write down which of the four classes *A_B_*, *A_bb*, *aaB_*, *aabb* are merged. Check your answers against the table in the Background.
+
+**E5.** In *duplicate genes 15 : 1*, how many of the 16 squares have no working enzyme? How many have exactly one *kind* of working enzyme? Why would a geneticist who knocked out only gene A see no phenotype?
+
+::: {.callout-note collapse="true" title="Solutions"}
+
+**E1.** *aaBB* lacks enzyme A, so the yellow precursor is never turned into brown, and enzyme B has nothing to work on. *aabb* lacks both enzymes. Both stop at yellow. The *B* genotype only matters if step A happens, so *aa* hides *B*/*b*: *aa* is epistatic. The 3 *aaB_* and the 1 *aabb* merge into **4**.
+
+**E2.** *AAbb* has enzyme A but not B; *aaBB* has B but not A. Both are white. The F₁ *AaBb* gets a working *A* from one parent and a working *B* from the other, so both steps work and it is purple: the two mutations **complement** each other. White squares: *AAbb*, *Aabb*, *aaBB*, *aaBb*, *aabb*, which are **5 genotypes** in 7 of the 16 squares.
+
+**E3.** In dominant epistasis, the inhibitor blocks the first step (white → green). *aabb* has no inhibitor, so it makes green, but it has no enzyme B to make yellow: it stays **green**, a class of its own (1/16). In dominant suppression, the pathway has only one step, done by enzyme B. *aabb* has no inhibitor but also no enzyme B, so it is colourless, like the inhibited plants: 9 + 3 + 1 = **13**.
+
+**E4.** None merged: 9 : 3 : 3 : 1. Recessive epistasis: *aaB_* + *aabb*. Complementary: *A_bb* + *aaB_* + *aabb*. Dominant epistasis: *A_B_* + *A_bb*. Dominant suppression: *A_B_* + *A_bb* + *aabb*. Duplicate: *A_B_* + *A_bb* + *aaB_*.
+
+**E5.** Only **1** square (*aabb*) has no working enzyme. Squares with only enzyme A are the 3 *A_bb*, and squares with only enzyme B are the 3 *aaB_*: **6** squares have exactly one kind. An *aa* knockout still has enzyme B (if it is *B_*), which makes the product on its own. Redundant genes have to be knocked out together before a phenotype appears.
+:::
+
+## Find it
+
+**F1. The *ABO* gene.** Open [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/) and search for `ABO[sym] AND human[orgn]`. Open the *ABO* entry. In the **Summary** box, read the **Location** field and the full gene name. On which chromosome is *ABO*, and in which cytogenetic band? What kind of enzyme does the gene encode, according to its name?
+
+**F2. A disease with incomplete penetrance.** Open [MedGen](https://www.ncbi.nlm.nih.gov/medgen/) and search for `hereditary breast ovarian cancer syndrome`. Open the entry with that name. Read the **Mode of inheritance** field. Then open the *BRCA1* gene in [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/672) and read **Location**. The OMIM entry for the *BRCA1*-related disease is [MIM 604370](https://omim.org/entry/604370) (Breast-ovarian cancer, familial, susceptibility to, 1). Does everyone who inherits a pathogenic *BRCA1* variant get cancer? What word from the lecture describes this?
+
+**F3. Achondroplasia.** Open the [MedlinePlus Genetics page on achondroplasia](https://medlineplus.gov/genetics/condition/achondroplasia/) and read the **Causes** and **Inheritance** sections. Then check the mode of inheritance in [MedGen](https://www.ncbi.nlm.nih.gov/medgen/?term=achondroplasia) (entry *Achondroplasia*). OMIM: [MIM 100800](https://omim.org/entry/100800).
+(a) What is the mode of inheritance, and which gene is involved?
+(b) About what fraction of people with achondroplasia have parents of average height? What does that tell you about where their allele came from?
+(c) What happens to a child who inherits two altered copies? Which idea from the lecture is this?
+(d) Is the altered protein less active or more active than normal? Which molecular kind of dominance is it?
+
+**F4. Where is *FGFR3*?** In [NCBI Gene](https://www.ncbi.nlm.nih.gov/gene/2261), read the **Location** of human *FGFR3*. Is it on the same chromosome as *ABO*?
+
+::: {.callout-note collapse="true" title="Solutions"}
+
+**F1.** NCBI Gene → search `ABO[sym] AND human[orgn]` → *ABO* (Gene ID 28) → Summary. **Location: 9q34.2**, so chromosome **9**, long arm (q), band 34.2. The full name is "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase": a **glycosyltransferase**. The A allele adds N-acetylgalactosamine and the B allele galactose to the H antigen, which is why A and B are codominant.
+
+**F2.** MedGen → *Hereditary breast ovarian cancer syndrome* (concept C0677776) → **Mode of inheritance: autosomal dominant inheritance**. NCBI Gene *BRCA1* (Gene ID 672): **Location 17q21.31**. Not everyone who carries a pathogenic *BRCA1* variant develops cancer: they inherit a raised risk, not the disease itself. This is **incomplete penetrance**. (We do not ask for a penetrance number, because the estimates differ between studies and change over time.)
+
+**F3.** (a) **Autosomal dominant**; gene ***FGFR3*** (MedlinePlus Inheritance section; MedGen *Achondroplasia*, C0001080: "Autosomal dominant inheritance").
+(b) **About 80%** of people with achondroplasia are born to parents of average height. Their *FGFR3* allele is a **new (de novo) mutation**, usually arising in a parent's germ line.
+(c) Children with two altered copies have a severe form, with very short bones and a small rib cage; they are usually **stillborn or die soon after birth**. The allele is dominant for short stature and **recessive lethal**, like *A^Y^* in mice.
+(d) MedlinePlus: the variants "cause the FGFR3 protein to be overly active". This is a **gain-of-function** allele.
+
+**F4.** NCBI Gene → *FGFR3* (Gene ID 2261) → **Location 4p16.3**: chromosome **4**, short arm. Not the same chromosome as *ABO* (9q34.2).
+:::
+
+## In R
+
+New idiom today: **apply one function to every element of a list**. You write a function once, put the hypotheses in a named list, and let [`purrr::map_dbl()`](https://purrr.tidyverse.org/reference/map.html) (or base R [`sapply()`](https://rdrr.io/r/base/lapply.html)) call the function for each hypothesis. `map_dbl(xs, f)` returns a numeric vector, one value per element of `xs`, named like `xs`. Inside `map_dbl()` you can write a short function as `\(h) ...`, where `h` is one element of the list.
+
+**The data.** [`data/labrador_f2.csv`](data/labrador_f2.csv) has coat colours of 384 Labrador pups from matings between black *BbEe* parents. **This is an invented teaching dataset**, shaped like pooled kennel records. The recorder split the yellow pups into "fox red" and "cream", because she wondered if the shade was a third Mendelian class. (In real yellow Labradors the shade varies a lot and is not explained by *B* or *E*: this is variable expressivity.)
+
+**R1.** Load the data and look at it. Add a column with each count expressed in 16ths. Which ratio do the 16ths suggest?
+
+```r
+library(readr)
+library(dplyr)
+library(purrr)
+library(tidyr)
+library(ggplot2)
+
+f2 <- read_csv("data/labrador_f2.csv", show_col_types = FALSE)
+f2
+f2 |> mutate(sixteenths = round(16 * count / sum(count), 2))
+```
+
+**R2.** Write two functions: `chisq_stat(obs, ratio)`, which returns the χ² statistic for observed counts `obs` and a ratio such as `c(9, 3, 4)`, and `chisq_p(obs, ratio)`, which returns the p-value with df = number of classes − 1 (use [`pchisq()`](https://rdrr.io/r/stats/Chisquare.html) with `lower.tail = FALSE`). Check `chisq_p(obs, c(9, 3, 3, 1))` against [`chisq.test()`](https://rdrr.io/r/stats/chisq.test.html).
+
+```r
+obs <- setNames(f2$count, f2$coat)   # a named vector: black, chocolate, fox red, cream
+
+chisq_stat <- function(obs, ratio) {
+  expected <- sum(obs) * ratio / sum(ratio)
+  # ... return the chi-square statistic
+}
+chisq_p <- function(obs, ratio) {
+  # ... use chisq_stat() and pchisq()
+}
+```
+
+**R3.** Each hypothesis says which recorded classes belong together and what the ratio is. `group` gives, for each of the four recorded classes (black, chocolate, fox red, cream), the number of the class it belongs to under that hypothesis. [`tapply()`](https://rdrr.io/r/base/tapply.html) adds up the counts within each group. Use `map_dbl()` to compute χ² and p for every hypothesis, and collect them in a tibble sorted by p. Then get the same p-values with `sapply()`.
+
+```r
+collapse <- function(obs, group) tapply(obs, group, sum)
+
+hypotheses <- list(
+  "9:3:3:1" = list(group = c(1, 2, 3, 4), ratio = c(9, 3, 3, 1)),
+  "9:3:4"   = list(group = c(1, 2, 3, 3), ratio = c(9, 3, 4)),
+  "9:7"     = list(group = c(1, 2, 2, 2), ratio = c(9, 7)),
+  "12:3:1"  = list(group = c(1, 1, 2, 3), ratio = c(12, 3, 1)),
+  "15:1"    = list(group = c(1, 1, 1, 2), ratio = c(15, 1))
+)
+collapse(obs, hypotheses[["9:3:4"]]$group)   # black, chocolate, all yellow
+
+results <- tibble(
+  hypothesis = names(hypotheses),
+  df    = map_int(hypotheses, \(h) length(h$ratio) - 1L),
+  chisq = map_dbl(hypotheses, \(h) chisq_stat(collapse(obs, h$group), h$ratio)),
+  p     = map_dbl(hypotheses, \(h) chisq_p(collapse(obs, h$group), h$ratio))
+) |>
+  arrange(desc(p))
+results
+```
+
+Which hypotheses are rejected at α = 0.05? Two hypotheses fit. Which one would you choose, and why?
+
+**R4.** Make a tibble of observed and expected counts for the best-fitting ratio, 9 : 3 : 4 (black, chocolate, yellow), and plot them side by side with `pivot_longer()` and `geom_col(position = "dodge")`.
+
+**R5. (yellow mice)** Yellow × yellow mice gave **118 yellow and 62 agouti** pups (invented counts). Put the two hypotheses `2:1` and `3:1` in a named list and use your `chisq_stat()` and `chisq_p()` with `map_dbl()` to test both. Which fits? What does that tell you about *A^Y^A^Y^*?
+
+## Solutions
+
+::: {.callout-note collapse="true" title="Solutions: By hand"}
+
+**B1.** (a) Pink × pink (*C^R^C^W^* × *C^R^C^W^*): **1 red : 2 pink : 1 white**. (b) Pink × white (*C^R^C^W^* × *C^W^C^W^*): **1 pink : 1 white**. (c) Red × white (*C^R^C^R^* × *C^W^C^W^*): **all pink**. Cross (c) gives the most pink seed (100%), and since pink plants do not breed true you must make this cross every season.
+
+**B2.** The mother is *I^A^I^B^* and the father *ii*. (a) The child gets *I^A^* or *I^B^* from the mother (1/2 each) and *i* from the father: **1/2 type A (*I^A^i*) and 1/2 type B (*I^B^i*)**. (b) **Neither O nor AB** is possible: every child gets exactly one of *I^A^* or *I^B^* from the mother, and *i* from the father.
+
+**B3.** Albino offspring (*cc*) mean both parents carry *c*. A chinchilla parent *c^ch^c* × a Himalayan parent *c^h^c* gives 1/4 *c^ch^c^h^* (chinchilla), 1/4 *c^ch^c* (chinchilla), 1/4 *c^h^c* (Himalayan), 1/4 *cc* (albino) = **1/2 chinchilla : 1/4 Himalayan : 1/4 albino**. The parents are ***c^ch^c*** and ***c^h^c***.
+
+**B4.** (a) *A^Y^a* × *A^Y^a* gives 1/4 *A^Y^A^Y^*, which die: **1/4 of the zygotes**. (b) The survivors are 2 *A^Y^a* : 1 *aa*: **2/3 yellow**. (c) Yellow × agouti (*A^Y^a* × *aa*) gives 1/2 *A^Y^a* and 1/2 *aa*, with no deaths. If 8 live pups are 3/4 of the zygotes, a litter starts from about 8 / (3/4) ≈ 10.7 zygotes, so yellow × agouti litters are about **4/3 times as large** (≈ 10.7 pups instead of 8).
+
+**B5.** (a) Before we know his phenotype, P(carrier) = 1/2 (affected father is heterozygous; mother is +/+). Then use the fact that he is unaffected:
+P(unaffected and carrier) = 1/2 × 0.3 = 0.15; P(unaffected and not carrier) = 1/2 × 1 = 0.5.
+P(carrier | unaffected) = 0.15 / (0.15 + 0.5) = 0.15 / 0.65 ≈ **0.23**.
+(b) P(child affected) = P(man carrier) × P(passes it on) × penetrance = 0.23 × 1/2 × 0.7 ≈ **0.081**, about 8%.
+
+**B6.** (a) **9 black (*B_E_*) : 3 chocolate (*bbE_*) : 4 yellow (*B_ee* + *bbee*)**. Pathway: *E_* is needed to put dark pigment in the hair at all; *B_* makes that dark pigment black rather than brown. *ee* stops the pathway before *B* matters, so *ee* is epistatic to *B*.
+(b) Chocolate pups (*bbE_*) mean the black parent carries *b*; yellow pups (*ee*) mean it carries *e*. So the black dog is ***BbEe***, and this is a test cross: expected 1 black : 1 chocolate : 2 yellow, close to 3 : 2 : 5 in a litter of 10.
+(c) **No.** Yellow dogs are *ee*, so all their pups are *ee* and yellow (whatever their *B* genotype; their noses may differ).
+
+**B7.** (a) W1 = ***AAbb***, W2 = ***aaBB*** (or the other way round), F₁ = ***AaBb***.
+(b) White F₂ plants: 1 *AAbb*, 2 *Aabb*, 1 *aaBB*, 2 *aaBb*, 1 *aabb* (7/16). Every one of them lacks a working copy of at least one gene for good: *A_bb* plants are *bb*, so all their offspring are *bb* and white; *aaB_* plants are *aa*, so all offspring are white; *aabb* likewise. So **all 7/7 white F₂ plants breed true** for white.
+(c) W3 × W1 gives a white F₁, so W3 does **not complement** W1: the W3 mutation is in the **same gene** as W1's (gene *B* if W1 is *AAbb*).
+
+**B8.** (a) Total = 272. In 16ths: 205/272 × 16 = **12.06**, 52/272 × 16 = **3.06**, 15/272 × 16 = **0.88**. Suggests **12 : 3 : 1** (dominant epistasis).
+(b) Expected: 272 × 12/16 = 204, 272 × 3/16 = 51, 272 × 1/16 = 17.
+χ² = (205 − 204)²/204 + (52 − 51)²/51 + (15 − 17)²/17 = 0.0049 + 0.0196 + 0.2353 = **0.26**, df = 2. Since 0.26 < 5.99, do not reject; *p* ≈ 0.88. (For comparison, 9 : 3 : 4 in the same order gives χ² ≈ 46.8, clearly rejected.)
+(c) White precursor → (step 1) → green → (enzyme from *Y*) → yellow, and the dominant *W* allele blocks step 1. *W_* is white; *wwY_* is yellow; ***wwyy*** is green.
+
+**B9.** (a) F₁ *CcIi*: **white** (*I* suppresses colour). F₂: coloured only if *C_ii* (3/16); *C_I_* (9), *ccI_* (3) and *ccii* (1) are white: **13 white : 3 coloured**.
+(b) F₁ test cross *AaBb* × *aabb* gives *AaBb*, *Aabb*, *aaBb*, *aabb* in 1 : 1 : 1 : 1. Under 15 : 1 only *aabb* lacks the product: **3 triangular : 1 ovoid**. Under 13 : 3 (coloured only *aaBb*) the test cross is also **3 : 1**. Both merge three of the four test-cross classes, so the test cross cannot tell them apart; only the F₂ (15 : 1 vs 13 : 3) can.
+:::
+
+::: {.callout-note collapse="true" title="Solutions: In R"}
+
+**R1.** The 16ths are about 8.8 : 3.2 : 2.2 : 1.9. Black and chocolate look like 9 and 3, but fox red and cream are close to 2 and 2, not 3 and 1. Together they make 4.0, which suggests **9 : 3 : 4**.
+
+```r
+f2
+```
+```
+# A tibble: 4 × 2
+  coat      count
+  <chr>     <dbl>
+1 black       211
+2 chocolate    76
+3 fox red      52
+4 cream        45
+```
+```r
+f2 |> mutate(sixteenths = round(16 * count / sum(count), 2))
+```
+```
+# A tibble: 4 × 3
+  coat      count sixteenths
+  <chr>     <dbl>      <dbl>
+1 black       211       8.79
+2 chocolate    76       3.17
+3 fox red      52       2.17
+4 cream        45       1.88
+```
+
+**R2.**
+
+```r
+chisq_stat <- function(obs, ratio) {
+  expected <- sum(obs) * ratio / sum(ratio)
+  sum((obs - expected)^2 / expected)
+}
+chisq_p <- function(obs, ratio) {
+  pchisq(chisq_stat(obs, ratio), df = length(obs) - 1, lower.tail = FALSE)
+}
+obs <- setNames(f2$count, f2$coat)
+chisq_p(obs, c(9, 3, 3, 1))
+```
+```
+[1] 2.195437e-05
+```
+```r
+chisq.test(obs, p = c(9, 3, 3, 1) / 16)
+```
+```
+
+	Chi-squared test for given probabilities
+
+data:  obs
+X-squared = 24.269, df = 3, p-value = 2.195e-05
+```
+
+The same p-value. 9 : 3 : 3 : 1 is rejected: the split of yellow into fox red and cream is not 3 : 1.
+
+**R3.**
+
+```r
+collapse(obs, hypotheses[["9:3:4"]]$group)
+```
+```
+  1   2   3
+211  76  97
+```
+```r
+results
+```
+```
+# A tibble: 5 × 4
+  hypothesis    df  chisq          p
+  <chr>      <int>  <dbl>      <dbl>
+1 9:3:4          2  0.348 0.840
+2 9:7            1  0.265 0.607
+3 9:3:3:1        3 24.3   0.0000220
+4 15:1           1 19.6   0.00000955
+5 12:3:1         2 23.9   0.00000635
+```
+```r
+sapply(hypotheses, \(h) chisq_p(collapse(obs, h$group), h$ratio))
+```
+```
+     9:3:3:1        9:3:4          9:7       12:3:1         15:1
+2.195437e-05 8.401374e-01 6.070112e-01 6.350266e-06 9.546920e-06
+```
+
+9 : 3 : 3 : 1, 12 : 3 : 1 and 15 : 1 are rejected (p < 0.001). **9 : 3 : 4** and **9 : 7** both fit. Choose **9 : 3 : 4**. The 9 : 7 model is just 9 : 3 : 4 with chocolate and yellow merged, so it fits whenever 9 : 3 : 4 fits; but chocolate and yellow pups clearly look different, and 9 : 7 cannot explain that. A model has to explain every class you can tell apart. Do not pick a model just because its p-value is highest; here the two p-values are for tests with different df and different data groupings. The fox red / cream split is not a Mendelian class: it is variation in the shade of yellow (expressivity).
+
+**R4.**
+
+```r
+best <- hypotheses[["9:3:4"]]
+fit <- tibble(
+  phenotype = c("black", "chocolate", "yellow"),
+  observed  = as.vector(collapse(obs, best$group)),
+  expected  = sum(obs) * best$ratio / sum(best$ratio)
+)
+fit
+```
+```
+# A tibble: 3 × 3
+  phenotype observed expected
+  <chr>        <dbl>    <dbl>
+1 black          211      216
+2 chocolate       76       72
+3 yellow          97       96
+```
+```r
+fit |>
+  pivot_longer(c(observed, expected), names_to = "type", values_to = "count") |>
+  ggplot(aes(phenotype, count, fill = type)) +
+  geom_col(position = "dodge") +
+  labs(x = "coat colour", y = "number of pups",
+       title = "Labrador F2: observed vs expected under 9:3:4")
+```
+
+The bars for observed and expected are almost the same height in every class: 211 vs 216, 76 vs 72, 97 vs 96.
+
+**R5.**
+
+```r
+mice <- c(yellow = 118, agouti = 62)
+mouse_hyp <- list("2:1" = c(2, 1), "3:1" = c(3, 1))
+tibble(
+  hypothesis = names(mouse_hyp),
+  chisq = map_dbl(mouse_hyp, \(r) chisq_stat(mice, r)),
+  p     = map_dbl(mouse_hyp, \(r) chisq_p(mice, r))
+)
+```
+```
+# A tibble: 2 × 3
+  hypothesis chisq       p
+  <chr>      <dbl>   <dbl>
+1 2:1         0.1  0.752
+2 3:1         8.56 0.00343
+```
+
+**2 : 1 fits** (expected 120 : 60, χ² = 0.1) and 3 : 1 is rejected (expected 135 : 45, χ² = 8.56, *p* = 0.003). So the *A^Y^A^Y^* class (1/4 of zygotes) is missing among the live pups: *A^Y^* is a recessive lethal.
+:::
+
+## Where this leads
+
+Incomplete penetrance and de novo mutations (as in achondroplasia) come back in *Pedigree analysis*, where they make human family trees harder to read. The 9 : 7 cross of two white lines is the logic of the **complementation test** in *Mutation*. And when a dihybrid F₂ is not 9 : 3 : 3 : 1 because the genes sit close together on a chromosome, that is **linkage**, which starts Part 2.

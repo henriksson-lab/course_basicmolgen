@@ -1,0 +1,11 @@
+organism,common_name,group,genome_mb,protein_coding_genes,source
+Escherichia coli,E. coli,bacterium,4.6,4290,NCBI Datasets GCF_000005845.2 K-12 MG1655 (RefSeq annotation 2026-09)
+Saccharomyces cerevisiae,baker's yeast,fungus,12.1,6021,NCBI Datasets GCF_000146045.2 (SGD R64-5-1)
+Caenorhabditis elegans,nematode worm,animal,100.3,19983,NCBI Datasets GCF_000002985.6 (WormBase WS298)
+Drosophila melanogaster,fruit fly,animal,143.7,13962,NCBI Datasets GCF_000001215.4 (FlyBase 6.54)
+Arabidopsis thaliana,thale cress,plant,119.1,27562,NCBI Datasets GCF_000001735.4 (TAIR/Araport)
+Danio rerio,zebrafish,animal,1455.3,28509,NCBI Datasets GCF_052040795.2 (RefSeq annotation 2026-08)
+Mus musculus,house mouse,animal,2728.2,22198,NCBI Datasets GCF_000001635.27 (RefSeq annotation 2024-02)
+Homo sapiens,human,animal,3099.4,20054,NCBI Datasets GCF_000001405.40 (RefSeq annotation 2026-11)
+Triticum aestivum,bread wheat,plant,14566.5,103793,NCBI Datasets GCF_018294505.1 (RefSeq annotation 2025-04)
+Ambystoma mexicanum,axolotl,animal,29117.8,24121,NCBI Datasets GCF_040938575.1 (RefSeq annotation 2024-10)

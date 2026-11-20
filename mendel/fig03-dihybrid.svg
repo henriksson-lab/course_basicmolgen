@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 880 372" width="880" height="372" font-family="Helvetica, Arial, sans-serif">
+  <!-- Mendel's dihybrid cross: F1 Rr Yy selfed. Left: 4x4 Punnett square of the F1 gametes, cells
+       tinted by phenotype class (blue R_Y_, green R_yy, orange rrY_, red rryy). Right: the four
+       phenotypes with seed drawings, expected fraction, Mendel's counts (556 seeds) and 556 x 9:3:3:1. -->
+  <defs>
+    <path id="wr" d="M21.2,0.0 L22.6,2.0 L21.9,3.9 L20.5,5.5 L19.5,7.1 L18.8,8.8 L17.4,10.0 L15.0,10.5 L12.7,10.7 L11.9,11.9 L12.4,14.7 L12.7,18.2 L11.7,20.3 L9.5,20.4 L7.1,19.5 L5.1,19.0 L3.4,19.2 L1.7,19.2 L0.0,18.2 L-1.5,17.1 L-3.1,17.5 L-5.2,19.6 L-7.9,21.6 L-10.1,21.6 L-11.2,19.3 L-11.4,16.3 L-11.8,14.1 L-13.1,13.1 L-14.4,12.1 L-15.2,10.6 L-15.6,9.0 L-17.1,8.0 L-19.9,7.2 L-22.7,6.1 L-23.4,4.1 L-21.6,1.9 L-18.8,0.0 L-17.3,-1.5 L-17.5,-3.1 L-18.2,-4.9 L-18.1,-6.6 L-17.4,-8.1 L-17.2,-10.0 L-17.8,-12.4 L-17.9,-15.0 L-16.4,-16.4 L-13.3,-15.9 L-10.2,-14.6 L-8.3,-14.3 L-7.4,-15.8 L-6.6,-18.1 L-5.3,-19.7 L-3.6,-20.2 L-1.8,-20.7 L-0.0,-21.8 L2.0,-22.8 L3.9,-21.9 L5.1,-19.1 L5.8,-16.0 L6.8,-14.6 L8.8,-15.3 L11.6,-16.5 L13.9,-16.5 L15.2,-15.2 L16.2,-13.6 L17.6,-12.3 L19.0,-11.0 L19.2,-8.9 L17.7,-6.5 L16.0,-4.3 L16.0,-2.8 L18.3,-1.6 Z"/>
+  </defs>
+
+  <!-- title -->
+  <text x="14" y="26" font-size="18" font-weight="bold" fill="#1b2a3a">F<tspan font-size="13" dy="4">1</tspan><tspan dy="-4"> selfed:</tspan></text>
+  <text x="104" y="26" font-size="18" font-weight="bold" font-style="italic" fill="#1b2a3a">Rr Yy  ×  Rr Yy</text>
+  <text x="14" y="50" font-size="14" fill="#5b6b7a">each parent makes 4 kinds of gamete, ¼ each; 16 equally likely cells</text>
+
+  <!-- everything below the title is shifted up 20 px -->
+  <g transform="translate(0,-20)">
+  <!-- Punnett square: column = gamete from one parent, row = gamete from the other -->
+  <text x="129" y="106" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="middle">RY</text>
+  <text x="195" y="106" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="middle">Ry</text>
+  <text x="261" y="106" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="middle">rY</text>
+  <text x="327" y="106" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="middle">ry</text>
+  <text x="84" y="152" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="end">RY</text>
+  <text x="84" y="208" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="end">Ry</text>
+  <text x="84" y="264" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="end">rY</text>
+  <text x="84" y="320" font-size="17" font-weight="bold" font-style="italic" fill="#1b2a3a" text-anchor="end">ry</text>
+  <rect x="96" y="118" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="129" y="151" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RRYY</text>
+  <rect x="162" y="118" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="195" y="151" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RRYy</text>
+  <rect x="228" y="118" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="261" y="151" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYY</text>
+  <rect x="294" y="118" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="327" y="151" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYy</text>
+  <rect x="96" y="174" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="129" y="207" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RRYy</text>
+  <rect x="162" y="174" width="66" height="56" fill="#dbe8d1" stroke="#fff" stroke-width="3"/>
+  <text x="195" y="207" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RRyy</text>
+  <rect x="228" y="174" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="261" y="207" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYy</text>
+  <rect x="294" y="174" width="66" height="56" fill="#dbe8d1" stroke="#fff" stroke-width="3"/>
+  <text x="327" y="207" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">Rryy</text>
+  <rect x="96" y="230" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="129" y="263" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYY</text>
+  <rect x="162" y="230" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="195" y="263" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYy</text>
+  <rect x="228" y="230" width="66" height="56" fill="#f6e2c2" stroke="#fff" stroke-width="3"/>
+  <text x="261" y="263" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">rrYY</text>
+  <rect x="294" y="230" width="66" height="56" fill="#f6e2c2" stroke="#fff" stroke-width="3"/>
+  <text x="327" y="263" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">rrYy</text>
+  <rect x="96" y="286" width="66" height="56" fill="#cfe0ec" stroke="#fff" stroke-width="3"/>
+  <text x="129" y="319" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">RrYy</text>
+  <rect x="162" y="286" width="66" height="56" fill="#dbe8d1" stroke="#fff" stroke-width="3"/>
+  <text x="195" y="319" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">Rryy</text>
+  <rect x="228" y="286" width="66" height="56" fill="#f6e2c2" stroke="#fff" stroke-width="3"/>
+  <text x="261" y="319" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">rrYy</text>
+  <rect x="294" y="286" width="66" height="56" fill="#f1d3d3" stroke="#fff" stroke-width="3"/>
+  <text x="327" y="319" font-size="15" font-style="italic" fill="#1b2a3a" text-anchor="middle">rryy</text>
+  <rect x="96" y="118" width="264" height="224" fill="none" stroke="#1b2a3a" stroke-width="1.5"/>
+
+  <!-- phenotype table -->
+  <g font-size="14" fill="#5b6b7a">
+    <text x="480" y="100">phenotype</text>
+    <text x="670" y="100" text-anchor="middle">cells</text>
+    <text x="760" y="100" text-anchor="end">Mendel</text>
+    <text x="860" y="100" text-anchor="end">expected</text>
+  </g>
+  <line x1="420" y1="110" x2="865" y2="110" stroke="#c9d3dd" stroke-width="1"/>
+  <!-- round yellow -->
+  <rect x="420" y="118" width="8" height="48" fill="#2a6f97"/>
+  <circle cx="454" cy="142" r="20" fill="#e9d27c" stroke="#6b6b3a" stroke-width="2"/>
+  <text x="486" y="139" font-size="16" fill="#1b2a3a">round yellow</text>
+  <text x="486" y="158" font-size="14" font-style="italic" fill="#5b6b7a">R_ Y_</text>
+  <text x="670" y="148" font-size="16" fill="#1b2a3a" text-anchor="middle">9/16</text>
+  <text x="760" y="148" font-size="17" font-weight="bold" fill="#2a6f97" text-anchor="end">315</text>
+  <text x="860" y="148" font-size="16" fill="#1b2a3a" text-anchor="end">312.75</text>
+  <!-- round green -->
+  <rect x="420" y="174" width="8" height="48" fill="#6a994e"/>
+  <circle cx="454" cy="198" r="20" fill="#a8c47a" stroke="#6b6b3a" stroke-width="2"/>
+  <text x="486" y="195" font-size="16" fill="#1b2a3a">round green</text>
+  <text x="486" y="214" font-size="14" font-style="italic" fill="#5b6b7a">R_ yy</text>
+  <text x="670" y="204" font-size="16" fill="#1b2a3a" text-anchor="middle">3/16</text>
+  <text x="760" y="204" font-size="17" font-weight="bold" fill="#6a994e" text-anchor="end">108</text>
+  <text x="860" y="204" font-size="16" fill="#1b2a3a" text-anchor="end">104.25</text>
+  <!-- wrinkled yellow -->
+  <rect x="420" y="230" width="8" height="48" fill="#d08c2f"/>
+  <use xlink:href="#wr" x="454" y="254" fill="#e9d27c" stroke="#6b6b3a" stroke-width="2" stroke-linejoin="round"/>
+  <text x="486" y="251" font-size="16" fill="#1b2a3a">wrinkled yellow</text>
+  <text x="486" y="270" font-size="14" font-style="italic" fill="#5b6b7a">rr Y_</text>
+  <text x="670" y="260" font-size="16" fill="#1b2a3a" text-anchor="middle">3/16</text>
+  <text x="760" y="260" font-size="17" font-weight="bold" fill="#d08c2f" text-anchor="end">101</text>
+  <text x="860" y="260" font-size="16" fill="#1b2a3a" text-anchor="end">104.25</text>
+  <!-- wrinkled green -->
+  <rect x="420" y="286" width="8" height="48" fill="#bc4749"/>
+  <use xlink:href="#wr" x="454" y="310" fill="#a8c47a" stroke="#6b6b3a" stroke-width="2" stroke-linejoin="round"/>
+  <text x="486" y="307" font-size="16" fill="#1b2a3a">wrinkled green</text>
+  <text x="486" y="326" font-size="14" font-style="italic" fill="#5b6b7a">rr yy</text>
+  <text x="670" y="316" font-size="16" fill="#1b2a3a" text-anchor="middle">1/16</text>
+  <text x="760" y="316" font-size="17" font-weight="bold" fill="#bc4749" text-anchor="end">32</text>
+  <text x="860" y="316" font-size="16" fill="#1b2a3a" text-anchor="end">34.75</text>
+  <line x1="420" y1="342" x2="865" y2="342" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="486" y="364" font-size="15" fill="#1b2a3a">total, 9 : 3 : 3 : 1</text>
+  <text x="760" y="364" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="end">556</text>
+  <text x="860" y="364" font-size="15" fill="#1b2a3a" text-anchor="end">556</text>
+  </g>
+</svg>

@@ -1,0 +1,159 @@
+---
+title: "Quiz: extensions to Mendel"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on dominance, multiple alleles, lethal alleles, penetrance and epistasis. Try each on paper first, then open the answer. For the two-gene questions, start from the 16 squares of a dihybrid Punnett square: 9 *A_B_* : 3 *A_bb* : 3 *aaB_* : 1 *aabb*.
+
+---
+
+**Q1.** Red snapdragons crossed with white snapdragons give an all-pink F₁. What phenotypes, in what ratio, do you expect in the F₂? Why does this show that the parental alleles did not blend?
+
+::: {.callout-tip collapse="true" title="Hint"}
+With incomplete dominance, each genotype has its own phenotype. What is the genotype ratio of an F₂?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**1 red : 2 pink : 1 white.** The F₁ is *C^R^C^W^*, and the F₂ genotypes are 1 *C^R^C^R^* : 2 *C^R^C^W^* : 1 *C^W^C^W^*. With incomplete dominance the phenotype ratio equals the genotype ratio. Red and white come back unchanged in the F₂, so the alleles stayed separate in the pink F₁. Only the phenotype of the heterozygote was intermediate.
+:::
+
+---
+
+**Q2.** What is the difference between incomplete dominance and codominance? Give one example of each.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Is the heterozygote an average of the two homozygotes, or does it show both of them?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+In **incomplete dominance** the heterozygote is **intermediate** (pink snapdragons, from red × white). In **codominance** the heterozygote shows **both** parental phenotypes in full (blood type AB: *I^A^I^B^* red cells carry both A and B antigens). In both cases the F₂ phenotype ratio is 1 : 2 : 1.
+:::
+
+---
+
+**Q3.** A mother has blood type A and a father has blood type B. Their first child has type O. What are the parents' genotypes, and what is the probability that their next child has type AB?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A type O child is *ii*. Where did each *i* come from?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The child is *ii*, so each parent carries *i*: the mother is *I^A^i* and the father *I^B^i*. The next child gets *I^A^* from the mother with probability 1/2 and *I^B^* from the father with probability 1/2, so P(AB) = 1/2 × 1/2 = **1/4**. (The four blood types A, B, AB and O are equally likely from this cross.)
+:::
+
+---
+
+**Q4.** Most loss-of-function alleles are recessive. Explain why, and name two ways in which a mutant allele can still be dominant.
+
+::: {.callout-tip collapse="true" title="Hint"}
+How much protein does a heterozygote make, and is that usually enough?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A heterozygote for a null allele still makes about half the normal protein, and for most genes that is enough for a normal phenotype (the gene is **haplosufficient**). A mutant allele can be dominant through any of:
+
+- **haploinsufficiency:** half the protein is not enough;
+- **dominant negative:** the mutant protein spoils the normal protein, for example in a dimer or a collagen triple helix;
+- **gain of function:** the mutant protein is over-active or does something new, as with *FGFR3* in achondroplasia.
+:::
+
+---
+
+**Q5.** A protein works as a dimer. A heterozygote makes normal and dominant-negative subunits in equal amounts, and they pair at random. What fraction of the dimers is fully normal? Compare with a heterozygote for a null allele that makes no protein.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each subunit in a dimer is normal with probability 1/2. Use the product rule.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A dimer is fully normal only if **both** subunits are normal: 1/2 × 1/2 = **1/4**. A null heterozygote makes only normal subunits, at half the amount, so it has **1/2** of the normal amount of working dimer. The dominant-negative allele does more damage than losing the gene altogether. (For a tetramer, the fraction would be (1/2)⁴ = 1/16.)
+:::
+
+---
+
+**Q6.** Yellow mice crossed with yellow mice give 2 yellow : 1 agouti, never 3 : 1. Explain. What would you expect from yellow × agouti?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which genotype class of a 1 : 2 : 1 is missing?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+All yellow mice are *A^Y^a*. Yellow × yellow gives 1 *A^Y^A^Y^* : 2 *A^Y^a* : 1 *aa*, but *A^Y^A^Y^* embryos die. The survivors are **2 yellow : 1 agouti**. *A^Y^* is dominant for coat colour and recessive for lethality (pleiotropy). Yellow × agouti (*A^Y^a* × *aa*) gives **1 yellow : 1 agouti**, with no deaths, because no *A^Y^A^Y^* offspring can form.
+:::
+
+---
+
+**Q7.** A dominant allele causes a disorder with 80% penetrance. A heterozygous parent and a homozygous normal parent have a child. What is the probability that the child is affected?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Two things must both happen: the child must inherit the allele, *and* the allele must show.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(inherits the allele) = 1/2. P(affected | has the allele) = 0.8. P(affected) = 1/2 × 0.8 = **0.4**. So 40% of children are affected and 10% carry the allele without showing it, which is how a dominant trait can skip a generation.
+:::
+
+---
+
+**Q8.** What is the difference between **dominance** and **epistasis**?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many genes are involved in each?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Dominance** is a relation between two **alleles of the same gene**: which allele's phenotype shows in the heterozygote. **Epistasis** is a relation between **two different genes**: the genotype at one gene hides the effect of the other gene (as *ee* hides *B*/*b* in Labrador coat colour).
+:::
+
+---
+
+**Q9.** Two pure-breeding white-flowered sweet pea lines are crossed. The F₁ is all purple. The F₁ is selfed and gives 9 purple : 7 white. Explain with a pathway, and give the genotypes of the two white parents.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which of the 16 squares are purple? What must the F₁ have that neither parent has?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Colour needs two steps in a row, enzyme A and then enzyme B (colourless → colourless → purple). Only *A_B_* plants (9/16) make pigment. *A_bb*, *aaB_* and *aabb* are all white (3 + 3 + 1 = 7). The parents were ***AAbb*** and ***aaBB***. Each lacks a different enzyme, so the F₁ *AaBb* has both and is purple: the two white mutations **complement** each other.
+:::
+
+---
+
+**Q10.** In summer squash, *WwYy* × *WwYy* gives white, yellow and green fruit in 12 : 3 : 1. Which genotypes are green, and which gene is epistatic?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which class of 16ths is the "1"?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Green is the 1/16 class, ***wwyy***. Yellow is *wwY_* (3/16). Everything with at least one *W* is white (*W_Y_* + *W_yy* = 9 + 3 = 12). The dominant *W* allele is **epistatic** to *Y*/*y* (dominant epistasis). *Y* only shows its effect in *ww* plants.
+:::
+
+---
+
+**Q11.** An F₂ from a dihybrid cross has 151 plants with triangular seed capsules and 9 with ovoid capsules. Which ratio would you test first, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Convert to 16ths: count ÷ total × 16.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The total is 160. In 16ths: 151/160 × 16 = **15.1** and 9/160 × 16 = **0.9**. So test **15 : 1** (duplicate genes): only *aabb* lacks the product. Expected counts are 150 and 10, and χ² = 1²/150 + 1²/10 = 0.107, df = 1, *p* ≈ 0.74, which fits. (This is the shepherd's purse pattern.)
+:::
+
+---
+
+**Q12.** A dihybrid F₂ has three phenotype classes in 9 : 3 : 4. A student says: "9 : 7 also fits, with *p* = 0.6, so both models are fine." What is wrong with this?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How do you get 9 : 7 from 9 : 3 : 4?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+9 : 7 is 9 : 3 : 4 with the "3" and the "4" merged. If the finer ratio fits, the coarser one will usually fit too, because merging classes throws information away. But you **can see** three phenotypes, and 9 : 7 predicts only two. A model has to explain every phenotype class you can tell apart. So 9 : 3 : 4 is the answer, and χ² alone cannot make that choice for you.
+:::

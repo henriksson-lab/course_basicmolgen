@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.30">
+
+  <meta name="author" content="Basic and molecular genetics (5MO104)">
+  <title>Basic and molecular genetics – Mendel: segregation &amp; assortment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Mendel: segregation &amp; assortment</h1>
+  <p class="subtitle">Part 1: Mendelian genetics. Monohybrid and dihybrid crosses, and why meiosis explains them</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Basic and molecular genetics (5MO104) 
+</div>
+</div>
+</div>
+
+</section>
+<section id="about-this-lecture" class="slide level2">
+<h2>About this lecture</h2>
+<p>In the 1850s and 1860s, Gregor Mendel crossed garden peas and <strong>counted</strong> the offspring. From the numbers alone he deduced that inheritance works through discrete <strong>factors</strong> (we now say <em>genes</em>), present in pairs, that separate cleanly when gametes form.</p>
+<ul>
+<li>Mendel’s <strong>experimental design</strong>: true-breeding lines, controlled crosses, reciprocal crosses, seven clear-cut traits.</li>
+<li>The <strong>monohybrid cross</strong>: P → F<sub>1</sub> → F<sub>2</sub>, the <strong>3 : 1</strong> phenotype ratio and the <strong>1 : 2 : 1</strong> genotype ratio.</li>
+<li>The <strong>law of segregation</strong>, and why <strong>meiosis</strong> makes it true.</li>
+<li>The <strong>testcross</strong>, to read an unknown genotype.</li>
+<li>The <strong>dihybrid cross</strong> (9 : 3 : 3 : 1), the <strong>law of independent assortment</strong>, and its basis in meiosis.</li>
+<li>Shortcuts for many genes: the <strong>branch-line method</strong>, the <strong>product rule</strong>, and counting <span class="math inline">3^n</span> genotypes and <span class="math inline">2^n</span> gametes.</li>
+</ul>
+<p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, Mendel’s principles of heredity chapter.</p>
+<aside class="notes">
+<p>This is the foundation of the whole of Part 1. Students have seen Punnett squares at school, so the risk is that they think they already know it. The new things today are the reasoning (how Mendel got from counts to a model), the link to meiosis (why the rules hold), and the shortcuts for several genes. Keep two simplifications in view and name them: complete dominance (the Extensions to Mendel unit relaxes it) and unlinked genes (the Linkage unit in Part 2 relaxes it). Testing whether observed numbers fit a ratio, the chi-square test, is the next unit.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-peas-mendels-experimental-design" class="slide level2 smaller">
+<h2>Why peas? Mendel’s experimental design</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design choice</th>
+<th>Why it mattered</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>True-breeding lines</strong>: each line, when self-fertilised for generations, gave only one form of the trait</td>
+<td>Mendel knew exactly what each parent would pass on</td>
+</tr>
+<tr class="even">
+<td><strong>Controlled crosses</strong>: remove the anthers of one flower, dust its stigma with pollen from another</td>
+<td>He chose both parents; peas normally self-fertilise, so nothing else got in</td>
+</tr>
+<tr class="odd">
+<td><strong>Reciprocal crosses</strong>: round ♀ × wrinkled ♂ <em>and</em> wrinkled ♀ × round ♂</td>
+<td>Same result both ways, so it does not matter which parent gives which form</td>
+</tr>
+<tr class="even">
+<td><strong>Either/or traits</strong>: round or wrinkled, never “medium”</td>
+<td>Offspring can be sorted into classes and <strong>counted</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Large numbers and several generations</strong></td>
+<td>Ratios become visible above the noise</td>
+</tr>
+</tbody>
+</table>
+<p>Mendel’s real innovation was <strong>quantitative</strong>: he counted, and he looked for ratios.</p>
+<aside class="notes">
+<p>The point of this slide is that the design made the answer possible. Before Mendel, the dominant idea was blending inheritance: offspring are an average of the parents, like mixing paint. Blending predicts that variation should disappear over generations, which it does not. Mendel avoided the traps others fell into by starting from pure lines, by controlling pollination, and by counting. The reciprocal crosses showed that the egg and the pollen contribute equally, which is not obvious and is not true for every trait (sex-linked genes in Part 2, mitochondrial genes in Part 5). Keep the emphasis on counting: this is the link to the chi-square test in the next unit and to the R part of today’s exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-seven-traits" class="slide level2 smaller">
+<h2>The seven traits</h2>
+<p>Mendel studied seven traits. In every case the F<sub>1</sub> showed only one form (the <strong>dominant</strong> one), and the F<sub>2</sub> showed both, at about 3 : 1.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trait</th>
+<th>Dominant</th>
+<th>Recessive</th>
+<th style="text-align: right;">F<sub>2</sub> dominant</th>
+<th style="text-align: right;">F<sub>2</sub> recessive</th>
+<th style="text-align: right;">Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Seed shape</td>
+<td>round</td>
+<td>wrinkled</td>
+<td style="text-align: right;">5474</td>
+<td style="text-align: right;">1850</td>
+<td style="text-align: right;">2.96 : 1</td>
+</tr>
+<tr class="even">
+<td>Seed colour</td>
+<td>yellow</td>
+<td>green</td>
+<td style="text-align: right;">6022</td>
+<td style="text-align: right;">2001</td>
+<td style="text-align: right;">3.01 : 1</td>
+</tr>
+<tr class="odd">
+<td>Flower colour</td>
+<td>purple</td>
+<td>white</td>
+<td style="text-align: right;">705</td>
+<td style="text-align: right;">224</td>
+<td style="text-align: right;">3.15 : 1</td>
+</tr>
+<tr class="even">
+<td>Pod shape</td>
+<td>inflated</td>
+<td>constricted</td>
+<td style="text-align: right;">882</td>
+<td style="text-align: right;">299</td>
+<td style="text-align: right;">2.95 : 1</td>
+</tr>
+<tr class="odd">
+<td>Pod colour</td>
+<td>green</td>
+<td>yellow</td>
+<td style="text-align: right;">428</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">2.82 : 1</td>
+</tr>
+<tr class="even">
+<td>Flower position</td>
+<td>axial</td>
+<td>terminal</td>
+<td style="text-align: right;">651</td>
+<td style="text-align: right;">207</td>
+<td style="text-align: right;">3.14 : 1</td>
+</tr>
+<tr class="odd">
+<td>Stem length</td>
+<td>tall</td>
+<td>dwarf</td>
+<td style="text-align: right;">787</td>
+<td style="text-align: right;">277</td>
+<td style="text-align: right;">2.84 : 1</td>
+</tr>
+</tbody>
+</table>
+<p>None of the ratios is exactly 3 : 1. That is what <strong>random sampling</strong> looks like. Whether 2.82 : 1 is “close enough” is a question for the χ² test, in the next unit.</p>
+<aside class="notes">
+<p>Read the table row by row, quickly. Point out two things. First, “dominant” is a relation between two alleles, not a statement about which form is more common or better; green pods are dominant, while green seeds are recessive. That kills the common misconception that dominant means frequent. Second, the ratios scatter around 3 to 1, and the smaller samples (pod colour, 580 plants) scatter more than the large ones (seed shape, 7324 seeds). That is sampling noise; the demo and the R exercise make it visible, and the next unit gives the test. The numbers are those Mendel published in 1866.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-monohybrid-cross" class="slide level2 smaller">
+<h2>The monohybrid cross</h2>
+<p>Follow <strong>one</strong> trait through three generations.</p>
+
+<img data-src="fig01-monohybrid.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
+<li><strong>P</strong>: true-breeding round × true-breeding wrinkled.</li>
+<li><strong>F<sub>1</sub></strong>: all round. Wrinkled seems to have vanished, but…</li>
+<li><strong>F<sub>2</sub></strong> (F<sub>1</sub> self-fertilised): wrinkled comes back, in about <strong>a quarter</strong> of the seeds.</li>
+</ul>
+<aside class="notes">
+<p>The surprise is the F2. Under blending, wrinkled should be gone for good once it was “diluted” in the F1. Instead it comes back unchanged: the F2 wrinkled seeds are just as wrinkled as the original parent. So the wrinkled factor must have been present in the F1, hidden but intact. A monohybrid cross is a cross between parents that differ in one trait, or, equivalently, a cross between two individuals heterozygous for one gene (the F1 x F1 step). Mendel did the same for all seven traits and got the same pattern each time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mendels-model" class="slide level2 smaller">
+<h2>Mendel’s model</h2>
+<p>Mendel explained the numbers with five ideas. In modern words (recap of the vocabulary from Genetics as information):</p>
+<ol type="1">
+<li>Each trait is controlled by a <strong>gene</strong>, which comes in alternative forms, <strong>alleles</strong>: <em>R</em> (round) and <em>r</em> (wrinkled).</li>
+<li>Each plant carries <strong>two</strong> alleles of the gene, one from each parent. <em>RR</em> and <em>rr</em> are <strong>homozygous</strong>; <em>Rr</em> is <strong>heterozygous</strong>.</li>
+<li>In <em>Rr</em>, the <strong>dominant</strong> allele <em>R</em> decides the phenotype; <em>r</em> is <strong>recessive</strong>. So <em>RR</em> and <em>Rr</em> look the same.</li>
+<li>Each <strong>gamete</strong> carries <strong>one</strong> allele, chosen at random: an <em>Rr</em> plant makes ½ <em>R</em> and ½ <em>r</em> gametes.</li>
+<li>Fertilisation combines gametes <strong>at random</strong>.</li>
+</ol>
+<p>The <strong>genotype</strong> is the pair of alleles (<em>Rr</em>). The <strong>phenotype</strong> is what you see (round).</p>
+<aside class="notes">
+<p>These five points are the whole model; everything else today follows from them. Point 4 is the key one and gets its own name on the next slides: the law of segregation. Point 5 is what makes the Punnett square work: each cell is equally likely because gametes meet at random. Stress the notation: italics for alleles and genotypes, upper case for the dominant allele, the same letter for both alleles of one gene. R_ (R blank) means “at least one R”, that is RR or Rr, and is the usual shorthand for the dominant phenotype.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-punnett-square-1-2-1-and-3-1" class="slide level2 smaller">
+<h2>The Punnett square: 1 : 2 : 1 and 3 : 1</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><em>Rr</em> × <em>Rr</em>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>½ <em>R</em></th>
+<th>½ <em>r</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>½ <em>R</em></strong></td>
+<td><em>RR</em></td>
+<td><em>Rr</em></td>
+</tr>
+<tr class="even">
+<td><strong>½ <em>r</em></strong></td>
+<td><em>Rr</em></td>
+<td><em>rr</em></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:58%;">
+<p>Four equally likely cells, each with probability ½ × ½ = ¼:</p>
+<ul>
+<li><strong>Genotypes</strong>: ¼ <em>RR</em> : ½ <em>Rr</em> : ¼ <em>rr</em>, a <strong>1 : 2 : 1</strong> ratio.</li>
+<li><strong>Phenotypes</strong>: ¾ round (<em>R_</em>) : ¼ wrinkled (<em>rr</em>), a <strong>3 : 1</strong> ratio.</li>
+</ul>
+<p>Mendel: 7324 seeds → expected 5493 round : 1831 wrinkled. Observed <strong>5474 : 1850</strong>.</p>
+</div></div>
+<p>The 3 : 1 ratio is a 1 : 2 : 1 ratio in disguise: dominance merges <em>RR</em> and <em>Rr</em> into one phenotype.</p>
+<aside class="notes">
+<p>Work through the square on the board. Rows and columns are the gametes of the two parents, each with its frequency; a cell is one fertilisation and its probability is the product of the two gamete frequencies. Because Rr appears in two cells, the genotype ratio is 1:2:1. Then collapse it by phenotype: RR and Rr are both round, so 1 + 2 = 3 round to 1 wrinkled. The expected numbers are 7324 x 3/4 = 5493 and 7324 x 1/4 = 1831; Mendel was off by 19 in each class. Ask the room: is 19 out of 7324 suspicious? We cannot answer without a measure of how big chance deviations usually are, which is what the chi-square test gives in the next unit.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checking-the-1-2-among-the-dominant-f2" class="slide level2 smaller">
+<h2>Checking the 1 : 2 among the dominant F<sub>2</sub></h2>
+<p>The model makes a <strong>prediction</strong> you can test: among the round F<sub>2</sub> plants, ⅓ should be <em>RR</em> and ⅔ should be <em>Rr</em>.</p>
+<p>Mendel tested it by <strong>selfing</strong> the F<sub>2</sub> plants and looking at their offspring (the F<sub>3</sub>):</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>F<sub>2</sub> round plant</th>
+<th>Its selfed offspring</th>
+<th>Expected share</th>
+<th style="text-align: right;">Mendel’s count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>RR</em></td>
+<td>all round (breeds true)</td>
+<td>⅓</td>
+<td style="text-align: right;">193</td>
+</tr>
+<tr class="even">
+<td><em>Rr</em></td>
+<td>round and wrinkled, 3 : 1</td>
+<td>⅔</td>
+<td style="text-align: right;">372</td>
+</tr>
+</tbody>
+</table>
+<p>193 : 372 is <strong>1 : 1.93</strong>, close to the predicted 1 : 2 among 565 plants.</p>
+<p>The wrinkled F<sub>2</sub> plants (<em>rr</em>) always bred true, as the model says they must.</p>
+<aside class="notes">
+<p>This is good science: the model was built to explain the 3 to 1 in the F2, and here it predicts something new, the hidden 1 to 2 split among plants that all look the same. Why one third and two thirds and not one quarter and one half? Because we have already removed the rr quarter: among the three quarters that are round, RR is 1/4 out of 3/4, that is 1/3. This conditional reasoning comes back in the pedigree unit, where an unaffected sibling of a cystic fibrosis patient has a 2/3 chance of being a carrier.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-law-of-segregation-explained-by-meiosis" class="slide level2 smaller">
+<h2>The law of segregation, explained by meiosis</h2>
+<blockquote>
+<p><strong>Law of segregation.</strong> The two alleles of a gene separate (segregate) during gamete formation, so each gamete gets <strong>one</strong> of them, with equal probability.</p>
+</blockquote>
+
+<img data-src="fig02-segregation-meiosis.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><p>The two alleles sit on the two <strong>homologous chromosomes</strong>. In <strong>meiosis I</strong> the homologues go to opposite poles, so an <em>Aa</em> cell gives ½ <em>A</em> and ½ <em>a</em> gametes.</p>
+<aside class="notes">
+<p>Mendel knew nothing about chromosomes; his law was an inference from counts. About 35 years later Sutton and Boveri noticed that chromosomes in meiosis behave exactly like Mendel’s factors: they come in pairs, the pairs separate, and each gamete gets one of each pair. That is the chromosome theory of inheritance, which is the next block of the course. Walk through the figure: the A allele is on one homologue (blue), a on the other (red). After DNA replication each homologue is two sister chromatids. Meiosis I separates the homologues, meiosis II the sister chromatids. Four gametes, two A and two a. Half and half is not a statistical tendency of the cell; it is built into the mechanics.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-testcross" class="slide level2 smaller">
+<h2>The testcross</h2>
+<p>A round plant can be <em>RR</em> or <em>Rr</em>. How do you tell them apart? Cross it to the <strong>homozygous recessive</strong> (<em>rr</em>):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Unknown parent</th>
+<th>× <em>rr</em> gives</th>
+<th>Offspring</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>RR</em></td>
+<td>all <em>Rr</em></td>
+<td><strong>all round</strong></td>
+</tr>
+<tr class="even">
+<td><em>Rr</em></td>
+<td>½ <em>Rr</em>, ½ <em>rr</em></td>
+<td><strong>1 round : 1 wrinkled</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <em>rr</em> parent only gives <em>r</em> gametes, so it <strong>hides nothing</strong>: each offspring’s phenotype shows directly which allele came from the unknown parent.</p>
+<p>A single wrinkled offspring proves that the unknown parent is <em>Rr</em>. Many round offspring and no wrinkled ones make <em>RR</em> likely, but never certain: with <em>n</em> offspring from an <em>Rr</em> parent, the chance that all are round is (½)<sup><em>n</em></sup>.</p>
+<aside class="notes">
+<p>The testcross is the workhorse of genetic analysis in plants, flies and mice. The trick is that the tester contributes only recessive alleles, so the offspring’s phenotypes are a direct readout of the gametes of the unknown parent. That is why testcross ratios are so clean: 1:1 for one gene, 1:1:1:1 for two unlinked genes. We will use exactly this logic in Part 2 to measure recombination: a testcross counts the gamete types directly. Note the asymmetry: one recessive offspring proves heterozygosity, but all-dominant offspring only make homozygosity likely. With 5 offspring the chance of no wrinkled ones from an Rr parent is 1/32, about 3 percent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-dihybrid-cross" class="slide level2 smaller">
+<h2>The dihybrid cross</h2>
+<p>Now follow <strong>two</strong> traits at once: seed shape (<em>R</em>/<em>r</em>) and seed colour (<em>Y</em> yellow / <em>y</em> green).</p>
+<p>P: <em>RR YY</em> (round yellow) × <em>rr yy</em> (wrinkled green) → F<sub>1</sub>: all <em>Rr Yy</em> (round yellow) → selfed:</p>
+
+<img data-src="fig03-dihybrid.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><p>Mendel’s 556 F<sub>2</sub> seeds: <strong>315 : 108 : 101 : 32</strong>, close to <strong>9 : 3 : 3 : 1</strong>.</p>
+<aside class="notes">
+<p>A dihybrid is heterozygous for two genes. Mendel asked whether the two traits are inherited as a package (round always going with yellow, as in the parent) or separately. If they travelled together, the F1 would make only RY and ry gametes and the F2 would be 3 round yellow to 1 wrinkled green, with no new combinations. Instead he saw four classes, including two new combinations (round green, wrinkled yellow) that neither P parent had. The Punnett square has 16 equally likely cells because each F1 makes 4 gamete types in equal proportions. The expected counts are 556 x 9/16 = 312.75 and so on; Mendel’s numbers fit very well.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="each-gene-on-its-own-is-still-3-1" class="slide level2 smaller">
+<h2>Each gene on its own is still 3 : 1</h2>
+<p>Collapse Mendel’s dihybrid counts to one trait at a time:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th></th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Shape</strong></td>
+<td>round 315 + 108 = <strong>423</strong></td>
+<td>wrinkled 101 + 32 = <strong>133</strong></td>
+<td>3.18 : 1</td>
+</tr>
+<tr class="even">
+<td><strong>Colour</strong></td>
+<td>yellow 315 + 101 = <strong>416</strong></td>
+<td>green 108 + 32 = <strong>140</strong></td>
+<td>2.97 : 1</td>
+</tr>
+</tbody>
+</table>
+<p>So 9 : 3 : 3 : 1 is just <strong>(3 : 1) × (3 : 1)</strong>: ¾ × ¾ = 9/16, ¾ × ¼ = 3/16, ¼ × ¾ = 3/16, ¼ × ¼ = 1/16.</p>
+<blockquote>
+<p><strong>Law of independent assortment.</strong> Alleles of different genes go into gametes <strong>independently</strong> of each other. An <em>Rr Yy</em> plant makes <em>RY</em>, <em>Ry</em>, <em>rY</em> and <em>ry</em> gametes, ¼ each.</p>
+</blockquote>
+<aside class="notes">
+<p>This is the key insight: the dihybrid ratio is the product of two monohybrid ratios. Whether a seed is round tells you nothing about whether it is yellow. That is exactly what “independent” means in probability, and it is why we can multiply: P(round and yellow) = P(round) x P(yellow). The product rule gets a proper treatment in the next unit, but it is already doing all the work here. Independent assortment is a statement about gametes: all four combinations are equally frequent. The 9:3:3:1 among offspring is a consequence of that plus random fertilisation plus dominance.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="independent-assortment-explained-by-meiosis" class="slide level2 smaller">
+<h2>Independent assortment, explained by meiosis</h2>
+
+<img data-src="fig04-assortment-meiosis.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>Genes on <strong>different chromosomes</strong>: at metaphase I each homologue pair lines up <strong>independently</strong> of the other. Both orientations are equally likely, so the four gamete types are equally frequent: ¼ <em>RY</em>, ¼ <em>ry</em>, ¼ <em>Ry</em>, ¼ <em>rY</em>.</p>
+<p><strong>Warning:</strong> this needs the two genes to be on different chromosomes (or far apart on the same one). Genes close together on one chromosome are <strong>linked</strong> and do <em>not</em> assort independently. That is Part 2 of the course.</p>
+<aside class="notes">
+<p>Walk through the two panels. Blue chromosomes came from the round yellow parent, red ones from the wrinkled green parent. In orientation 1 both blue chromosomes go to the same pole, giving the parental combinations RY and ry. In orientation 2 they go to opposite poles, giving the new combinations Ry and rY. Each cell does one or the other, with equal probability, and across the millions of meioses in a plant the four types come out equal. This is the chromosomal reason for Mendel’s second law. Mendel was lucky, or careful: his seven traits behave as if unlinked. Peas have seven chromosome pairs, but some of his genes do share a chromosome; they are far enough apart that crossing over makes them assort almost independently. The full story of linkage and crossing over is Part 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-branch-line-method" class="slide level2 smaller">
+<h2>The branch-line method</h2>
+<p>A Punnett square for two genes has 16 cells; for three genes, 64. The <strong>branch-line</strong> (forked-line) method is faster: treat each gene <strong>separately</strong>, then <strong>multiply</strong> along each branch.</p>
+
+<img data-src="fig05-branch-line.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>It works because the genes assort independently: each gene contributes its own ratio, and the <strong>product rule</strong> combines them.</p>
+<aside class="notes">
+<p>Draw this on the board from left to right. The first column is the monohybrid result for seed shape, three quarters and one quarter. Each branch then splits by seed colour, again three quarters and one quarter. Multiply along each path to get the probability of that combination. Four paths, four phenotypes, the same 9:3:3:1 as the 16-cell square. The method scales: a third gene adds a third column and doubles the number of paths. It also works for genotypes (1/4, 1/2, 1/4 on each branch) and for crosses where each gene has a different parental genotype, for example Aa x aa for one gene and Bb x Bb for the other.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="many-genes-the-product-rule" class="slide level2 smaller">
+<h2>Many genes: the product rule</h2>
+<p><em>Aa Bb Cc</em> × <em>Aa Bb Cc</em>, three unlinked genes, complete dominance. Treat each gene as its own monohybrid cross, then multiply.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Per gene</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P(<em>aa bb cc</em>)</td>
+<td>¼ · ¼ · ¼</td>
+<td><strong>1/64</strong></td>
+</tr>
+<tr class="even">
+<td>P(<em>A_ B_ C_</em>), dominant for all three</td>
+<td>¾ · ¾ · ¾</td>
+<td><strong>27/64</strong></td>
+</tr>
+<tr class="odd">
+<td>P(<em>Aa Bb Cc</em>), heterozygous for all three</td>
+<td>½ · ½ · ½</td>
+<td><strong>1/8</strong></td>
+</tr>
+<tr class="even">
+<td>P(<em>A_ bb C_</em>)</td>
+<td>¾ · ¼ · ¾</td>
+<td><strong>9/64</strong></td>
+</tr>
+<tr class="odd">
+<td>P(<em>AA bb Cc</em>)</td>
+<td>¼ · ¼ · ½</td>
+<td><strong>1/32</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Phenotype ratio: (3 : 1)<sup>3</sup> = <strong>27 : 9 : 9 : 9 : 3 : 3 : 3 : 1</strong>.</p>
+<p>The Punnett square would have 8 × 8 = 64 cells. The product rule needs three fractions.</p>
+<aside class="notes">
+<p>This is the skill students should leave with: break a multi-gene cross into single-gene crosses, answer each with the 1:2:1 or 3:1 they already know, and multiply. Do one row slowly on the board, then let them do the rest. The phenotype ratio 27:9:9:9:3:3:3:1 comes from expanding (3+1) cubed: one class dominant for all three (27), three classes recessive for exactly one gene (9 each), three classes recessive for exactly two (3 each), one class recessive for all (1). The products only hold if the genes are unlinked; that assumption is easy to forget.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="counting-genotypes-and-gametes" class="slide level2 smaller">
+<h2>Counting genotypes and gametes</h2>
+<p>For an individual heterozygous for <em>n</em> unlinked genes, crossed to another one like it:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><em>n</em> genes</th>
+<th style="text-align: right;">Gamete types per parent</th>
+<th style="text-align: right;">Punnett cells</th>
+<th style="text-align: right;">Genotypes</th>
+<th style="text-align: right;">Phenotypes (complete dominance)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><em>n</em></td>
+<td style="text-align: right;"><strong>2<sup><em>n</em></sup></strong></td>
+<td style="text-align: right;">4<sup><em>n</em></sup></td>
+<td style="text-align: right;"><strong>3<sup><em>n</em></sup></strong></td>
+<td style="text-align: right;">2<sup><em>n</em></sup></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>2<sup><em>n</em></sup> gametes</strong>: each gene independently gives one of 2 alleles.</li>
+<li><strong>3<sup><em>n</em></sup> genotypes</strong>: each gene independently gives one of 3 genotypes (<em>AA</em>, <em>Aa</em>, <em>aa</em>).</li>
+<li>Smallest class (homozygous recessive for all): (¼)<sup><em>n</em></sup>. With <em>n</em> = 10, that is about 1 in a million.</li>
+</ul>
+<aside class="notes">
+<p>The pattern is the multiplication principle again: independent choices multiply. Gametes: two choices per gene, so 2 to the n.&nbsp;Genotypes in the offspring: three per gene, so 3 to the n.&nbsp;The last bullet explains why classical geneticists rarely tried to recover a plant recessive for many genes at once from a single cross: with ten genes you would need about a million offspring to expect one. It is also a first hint of why traits controlled by many genes look continuous rather than falling into neat classes: that is the complex traits unit at the end of the course.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="try-it-punnett-squares-and-sampling-noise" class="slide level2 smaller">
+<h2>Try it: Punnett squares and sampling noise</h2>
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="punnett" data-preset="di" data-n="16"></div>
+<script src="../demos/dist/punnett.js"></script>
+<aside class="notes">
+<p>Interactive demo. It starts on the dihybrid F1 x F1 with 16 offspring. Left: the gametes of each parent with their frequencies, and the Punnett square collapsed to the distinct gametes, coloured by phenotype. Right: the genotype ratio (1:2:1:2:4:2:1:2:1) and the phenotype ratio (9:3:3:1), with fractions, then simulated offspring as filled bars next to the expected counts as dashed bars. Suggested tour: at N = 16, seed 1 gives 8 : 3 : 4 : 1 against an expected 9 : 3 : 3 : 1; press “draw again” a few times (6 : 5 : 4 : 1 on seed 3). Switch to N = 1000: 553 : 200 : 195 : 52 against 562.5 : 187.5 : 187.5 : 62.5; the bars hug the expected ones. Then click “testcross”: 1:1. Then set parent 2 to AA by hand: the square collapses to one row and all offspring are dominant, which is what a testcross of an RR plant would show from the other side. Finally “dihybrid testcross”: four equal classes, the clean readout of the four gamete types. The point to land: even with a perfect 9:3:3:1 mechanism, a small sample rarely looks like 9:3:3:1. How far off is too far is the chi-square test, next unit.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mendel-in-humans" class="slide level2 smaller">
+<h2>Mendel in humans</h2>
+<p>Human single-gene diseases follow the same two laws. Two examples you will look up in the exercise:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Cystic fibrosis</th>
+<th>Huntington disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gene</td>
+<td><em>CFTR</em></td>
+<td><em>HTT</em></td>
+</tr>
+<tr class="even">
+<td>Inheritance</td>
+<td>autosomal <strong>recessive</strong></td>
+<td>autosomal <strong>dominant</strong></td>
+</tr>
+<tr class="odd">
+<td>Affected genotype</td>
+<td><em>aa</em> (two faulty alleles)</td>
+<td><em>Aa</em> (one faulty allele is enough)</td>
+</tr>
+<tr class="even">
+<td>Typical family</td>
+<td>two <strong>unaffected carrier</strong> parents, <em>Aa</em> × <em>Aa</em></td>
+<td>one affected parent, <em>Aa</em> × <em>aa</em></td>
+</tr>
+<tr class="odd">
+<td>Risk for each child</td>
+<td>¼ (the monohybrid cross)</td>
+<td>½ (a testcross!)</td>
+</tr>
+</tbody>
+</table>
+<p>An <em>Aa</em> × <em>Aa</em> couple has a ¼ chance for each child, <strong>independently</strong>: having one affected child does not change the risk for the next.</p>
+<aside class="notes">
+<p>Bring the abstract crosses back to people. Cystic fibrosis: carriers are healthy, so the disease often appears “out of nowhere” in a family; the parents are both Aa and the cross is exactly Mendel’s F1 x F1. Huntington disease: one affected parent (Aa) and one unaffected (aa) is formally a testcross, so each child has a 1 in 2 risk. Stress the independence point: each child is a new fertilisation, like a new draw in the simulation; the coin has no memory. Families often believe that “one in four” means that after one affected child the next three are safe. Pedigree analysis, including how to infer the mode of inheritance from a family tree, is its own unit later in Part 1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-we-have-simplified" class="slide level2 smaller">
+<h2>What we have simplified</h2>
+<p>Today’s ratios rest on assumptions. Each one is relaxed later in the course:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Assumption today</th>
+<th>What really happens</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Complete dominance</strong></td>
+<td>incomplete dominance, codominance, multiple alleles</td>
+<td>Extensions to Mendel</td>
+</tr>
+<tr class="even">
+<td>One gene → one trait, every genotype viable</td>
+<td>epistasis, lethal alleles, penetrance</td>
+<td>Extensions to Mendel</td>
+</tr>
+<tr class="odd">
+<td>Genes <strong>assort independently</strong></td>
+<td><strong>linked</strong> genes on one chromosome stay together</td>
+<td>Linkage (Part 2)</td>
+</tr>
+<tr class="even">
+<td>Observed ≈ expected</td>
+<td>random <strong>sampling noise</strong>; is the deviation too big?</td>
+<td>Probability &amp; the χ² test (next)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Being honest about the simplifications is part of understanding the laws. Nothing on this slide breaks Mendel’s laws in the strict sense: segregation holds for every nuclear gene in a normal meiosis. What changes is how genotypes map to phenotypes (dominance, epistasis, lethals) and whether two genes are independent (linkage). The last row is the bridge to the next unit: we have been saying “close to 3:1” all lecture; next time we make “close” precise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary" class="slide level2 smaller">
+<h2>Summary</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Key fact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>True-breeding line</td>
+<td>always gives the same phenotype when selfed (homozygous)</td>
+</tr>
+<tr class="even">
+<td>Monohybrid F<sub>1</sub> × F<sub>1</sub></td>
+<td><em>Aa</em> × <em>Aa</em> → 1 <em>AA</em> : 2 <em>Aa</em> : 1 <em>aa</em>; 3 dominant : 1 recessive</td>
+</tr>
+<tr class="odd">
+<td>Law of segregation</td>
+<td>the two alleles separate into different gametes, ½ each; <strong>homologues separate in meiosis I</strong></td>
+</tr>
+<tr class="even">
+<td>Testcross</td>
+<td>× homozygous recessive; offspring phenotypes read off the unknown parent’s gametes (1 : 1 if <em>Aa</em>)</td>
+</tr>
+<tr class="odd">
+<td>Dihybrid F<sub>1</sub> × F<sub>1</sub></td>
+<td><em>AaBb</em> × <em>AaBb</em> → 9 : 3 : 3 : 1 = (3 : 1) × (3 : 1)</td>
+</tr>
+<tr class="even">
+<td>Law of independent assortment</td>
+<td>alleles of different genes enter gametes independently; <strong>homologue pairs orient independently at metaphase I</strong></td>
+</tr>
+<tr class="odd">
+<td>Branch-line / product rule</td>
+<td>solve each gene separately, multiply along branches</td>
+</tr>
+<tr class="even">
+<td>Counting</td>
+<td>2<sup><em>n</em></sup> gamete types, 3<sup><em>n</em></sup> genotypes, (¼)<sup><em>n</em></sup> fully recessive</td>
+</tr>
+<tr class="odd">
+<td>Mendel’s numbers</td>
+<td>5474 : 1850 (2.96 : 1); 315 : 108 : 101 : 32 (≈ 9 : 3 : 3 : 1)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>The summary is the revision sheet. If they remember only two things: the two laws, each with its meiotic reason, and the habit of breaking multi-gene crosses into single genes and multiplying. Remind them that both laws are statements about gametes, and that the offspring ratios follow from the gametes, random fertilisation and the dominance relationships.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="where-this-leads" class="slide level2">
+<h2>Where this leads</h2>
+<ul>
+<li><strong>Next: Probability &amp; the χ² test.</strong> We said “close to 3 : 1” many times. The χ² goodness-of-fit test (<code>chisq.test</code> in R) tells us whether a deviation like 5474 : 1850 is ordinary sampling noise.</li>
+<li><strong>Extensions to Mendel.</strong> Real alleles are not always completely dominant, and genes interact (epistasis), giving modified ratios such as 9 : 7 and 12 : 3 : 1.</li>
+<li><strong>Pedigree analysis.</strong> Applying segregation to human families, where we cannot choose the crosses.</li>
+<li><strong>Part 2: Linkage.</strong> Independent assortment fails for genes close together on the same chromosome, and that failure is how genes are mapped.</li>
+</ul>
+<aside class="notes">
+<p>Point forward. The exercise today has three parts beyond the paper problems: the Punnett demo, looking up cystic fibrosis and Huntington disease in OMIM, and writing a small R function that simulates a cross with sample(). That simulation is the start of a thread: in the next unit we use the same simulated crosses to see what the chi-square statistic looks like when the null hypothesis is true.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'visible',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

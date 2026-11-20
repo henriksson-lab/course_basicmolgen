@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: X-linked recessive pedigree; half-filled = carrier -->
+  <!-- layout: x = 80 + slot*70; y = 40 + (generation-1)*105; symbols 34px -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#bc4749"/></marker>
+  </defs>
+  <!-- generation numerals -->
+  <g fill="#1b2a3a" font-size="18" font-weight="bold">
+    <text x="16" y="46">I</text>
+    <text x="16" y="151">II</text>
+    <text x="16" y="256">III</text>
+  </g>
+  <!-- mating lines (double = consanguineous) and descent lines -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <!-- i1 x i2 -->
+    <line x1="342.0" y1="40" x2="378.0" y2="40"/>
+    <line x1="360.0" y1="40" x2="360.0" y2="104.0"/>
+    <line x1="220" y1="104.0" x2="500" y2="104.0"/>
+    <line x1="220" y1="104.0" x2="220" y2="128.0"/>
+    <line x1="360" y1="104.0" x2="360" y2="128.0"/>
+    <line x1="500" y1="104.0" x2="500" y2="128.0"/>
+    <!-- s1 x d -->
+    <line x1="167.0" y1="145" x2="203.0" y2="145"/>
+    <line x1="185.0" y1="145" x2="185.0" y2="209.0"/>
+    <line x1="80" y1="209.0" x2="290" y2="209.0"/>
+    <line x1="80" y1="209.0" x2="80" y2="233.0"/>
+    <line x1="150" y1="209.0" x2="150" y2="233.0"/>
+    <line x1="220" y1="209.0" x2="220" y2="233.0"/>
+    <line x1="290" y1="209.0" x2="290" y2="233.0"/>
+    <!-- e x s2 -->
+    <line x1="517.0" y1="145" x2="553.0" y2="145"/>
+    <line x1="535.0" y1="145" x2="535.0" y2="209.0"/>
+    <line x1="500" y1="209.0" x2="570" y2="209.0"/>
+    <line x1="500" y1="209.0" x2="500" y2="233.0"/>
+    <line x1="570" y1="209.0" x2="570" y2="233.0"/>
+  </g>
+  <!-- individuals: square = male, circle = female, filled = affected, half = carrier -->
+  <g><!-- i1: M n -->
+    <rect x="308.0" y="23.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="325.0" y="74.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- i2: F c -->
+    <circle cx="395.0" cy="40" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <path d="M395.0,23.0 A17.0,17.0 0 0 0 395.0,57.0 Z" fill="#1b2a3a"/>
+    <text x="395.0" y="74.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- s1: M n -->
+    <rect x="133.0" y="128.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="150" y="179.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- d: F c -->
+    <circle cx="220" cy="145" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <path d="M220,128.0 A17.0,17.0 0 0 0 220,162.0 Z" fill="#1b2a3a"/>
+    <text x="220" y="179.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- g: M n -->
+    <rect x="343.0" y="128.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="360" y="179.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- e: M a -->
+    <rect x="483.0" y="128.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="500" y="179.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- s2: F n -->
+    <circle cx="570" cy="145" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="570" y="179.0" font-size="13" fill="#555" text-anchor="middle">5</text>
+  </g>
+  <g><!-- k1: M a -->
+    <rect x="63.0" y="233.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="80" y="284.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- k2: F n -->
+    <circle cx="150" cy="250" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="150" y="284.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- k3: M n -->
+    <rect x="203.0" y="233.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="220" y="284.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- k4: M a -->
+    <rect x="273.0" y="233.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <line x1="247.0" y1="289.0" x2="268.0" y2="272.0" stroke="#1b2a3a" stroke-width="2.2" marker-end="url(#arr)"/>
+    <text x="290" y="284.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- k5: F c -->
+    <circle cx="500" cy="250" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <path d="M500,233.0 A17.0,17.0 0 0 0 500,267.0 Z" fill="#1b2a3a"/>
+    <text x="500" y="284.0" font-size="13" fill="#555" text-anchor="middle">5</text>
+  </g>
+  <g><!-- k6: M n -->
+    <rect x="553.0" y="233.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="570" y="284.0" font-size="13" fill="#555" text-anchor="middle">6</text>
+  </g>
+  <!-- annotations -->
+  <g font-size="15" fill="#1b2a3a">
+    <text x="680" y="60" font-size="17" font-weight="bold" fill="#1b2a3a">X-linked recessive</text>
+    <text x="680" y="88">• mostly males affected</text>
+    <text x="680" y="114">• affected males are related</text>
+    <text x="694" y="134">through carrier females</text>
+    <text x="694" y="154">(I-2, II-2)</text>
+    <text x="680" y="180">• an affected father gives his X<tspan dy="-6" font-size="11">a</tspan><tspan dy="6"> </tspan></text>
+    <text x="694" y="200">to every daughter (III-5 is a</text>
+    <text x="694" y="220">carrier) and to no son</text>
+    <text x="680" y="246">• no male-to-male transmission</text>
+  </g>
+</svg>

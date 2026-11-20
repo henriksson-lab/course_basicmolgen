@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="368" viewBox="0 0 790 368" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: Y-linked (left) and mitochondrial (right) transmission -->
+  <!-- layout: x = 110 + slot*62; y = 70 + (generation-1)*105; symbols 34px -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#bc4749"/></marker>
+  </defs>
+  <!-- generation numerals -->
+  <g fill="#1b2a3a" font-size="18" font-weight="bold">
+    <text x="16" y="76">I</text>
+    <text x="16" y="181">II</text>
+    <text x="16" y="286">III</text>
+  </g>
+  <!-- mating lines (double = consanguineous) and descent lines -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <!-- yi1 x yi2 -->
+    <line x1="220.0" y1="70" x2="248.0" y2="70"/>
+    <line x1="234.0" y1="70" x2="234.0" y2="134.0"/>
+    <line x1="172" y1="134.0" x2="296" y2="134.0"/>
+    <line x1="172" y1="134.0" x2="172" y2="158.0"/>
+    <line x1="296" y1="134.0" x2="296" y2="158.0"/>
+    <!-- ys1 x ya -->
+    <line x1="127.0" y1="175" x2="155.0" y2="175"/>
+    <line x1="141.0" y1="175" x2="141.0" y2="239.0"/>
+    <line x1="79.0" y1="239.0" x2="203.0" y2="239.0"/>
+    <line x1="79.0" y1="239.0" x2="79.0" y2="263.0"/>
+    <line x1="141.0" y1="239.0" x2="141.0" y2="263.0"/>
+    <line x1="203.0" y1="239.0" x2="203.0" y2="263.0"/>
+    <!-- yb x ys2 -->
+    <line x1="313.0" y1="175" x2="341.0" y2="175"/>
+    <line x1="327.0" y1="175" x2="327.0" y2="239.0"/>
+    <line x1="296" y1="239.0" x2="358" y2="239.0"/>
+    <line x1="296" y1="239.0" x2="296" y2="263.0"/>
+    <line x1="358" y1="239.0" x2="358" y2="263.0"/>
+    <!-- mi1 x mi2 -->
+    <line x1="592.0" y1="70" x2="620.0" y2="70"/>
+    <line x1="606.0" y1="70" x2="606.0" y2="134.0"/>
+    <line x1="544" y1="134.0" x2="668" y2="134.0"/>
+    <line x1="544" y1="134.0" x2="544" y2="158.0"/>
+    <line x1="668" y1="134.0" x2="668" y2="158.0"/>
+    <!-- ms1 x ma -->
+    <line x1="499.0" y1="175" x2="527.0" y2="175"/>
+    <line x1="513.0" y1="175" x2="513.0" y2="239.0"/>
+    <line x1="482" y1="239.0" x2="544" y2="239.0"/>
+    <line x1="482" y1="239.0" x2="482" y2="263.0"/>
+    <line x1="544" y1="239.0" x2="544" y2="263.0"/>
+    <!-- mb x ms2 -->
+    <line x1="685.0" y1="175" x2="713.0" y2="175"/>
+    <line x1="699.0" y1="175" x2="699.0" y2="239.0"/>
+    <line x1="668" y1="239.0" x2="730" y2="239.0"/>
+    <line x1="668" y1="239.0" x2="668" y2="263.0"/>
+    <line x1="730" y1="239.0" x2="730" y2="263.0"/>
+  </g>
+  <!-- individuals: square = male, circle = female, filled = affected, half = carrier -->
+  <g><!-- yi1: M a -->
+    <rect x="186.0" y="53.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="203.0" y="104.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- yi2: F n -->
+    <circle cx="265.0" cy="70" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="265.0" y="104.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- ys1: F n -->
+    <circle cx="110" cy="175" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="110" y="209.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- ya: M a -->
+    <rect x="155.0" y="158.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="172" y="209.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- yb: F n -->
+    <circle cx="296" cy="175" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="296" y="209.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- ys2: M n -->
+    <rect x="341.0" y="158.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="358" y="209.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- yk1: M a -->
+    <rect x="62.0" y="263.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="79.0" y="314.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- yk2: M a -->
+    <rect x="124.0" y="263.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="141.0" y="314.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- yk3: F n -->
+    <circle cx="203.0" cy="280" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="203.0" y="314.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- yk4: M n -->
+    <rect x="279.0" y="263.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="296" y="314.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- yk5: F n -->
+    <circle cx="358" cy="280" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="358" y="314.0" font-size="13" fill="#555" text-anchor="middle">5</text>
+  </g>
+  <g><!-- mi1: M n -->
+    <rect x="558.0" y="53.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="575.0" y="104.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- mi2: F a -->
+    <circle cx="637.0" cy="70" r="17.0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="637.0" y="104.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- ms1: F n -->
+    <circle cx="482" cy="175" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="482" y="209.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- ma: M a -->
+    <rect x="527.0" y="158.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="544" y="209.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- mb: F a -->
+    <circle cx="668" cy="175" r="17.0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="668" y="209.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- ms2: M n -->
+    <rect x="713.0" y="158.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="730" y="209.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- mk1: M n -->
+    <rect x="465.0" y="263.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="482" y="314.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- mk2: F n -->
+    <circle cx="544" cy="280" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="544" y="314.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- mk3: M a -->
+    <rect x="651.0" y="263.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="668" y="314.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- mk4: F a -->
+    <circle cx="730" cy="280" r="17.0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="730" y="314.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <!-- annotations -->
+  <g fill="#1b2a3a">
+    <text x="234" y="30" font-size="17" font-weight="bold" text-anchor="middle">Y-linked</text>
+    <text x="234" y="338" font-size="15" text-anchor="middle">affected father → every son;</text>
+    <text x="234" y="358" font-size="15" text-anchor="middle">never daughters</text>
+    <text x="606" y="30" font-size="17" font-weight="bold" text-anchor="middle">Mitochondrial (Part 5)</text>
+    <text x="606" y="338" font-size="15" text-anchor="middle">affected mother → all children;</text>
+    <text x="606" y="358" font-size="15" text-anchor="middle">fathers never transmit</text>
+  </g>
+  <line x1="420" y1="18" x2="420" y2="352" stroke="#c9d3dd" stroke-width="1.5"/>
+</svg>

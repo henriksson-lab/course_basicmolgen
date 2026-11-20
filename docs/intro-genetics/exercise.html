@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exercise: genetics as information – Basic and molecular genetics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d37fb74fd9c61f52627c5754f4dbd5bd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Basic and molecular genetics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Part 1: Mendelian genetics</li><li class="breadcrumb-item"><a href="../intro-genetics/lec.html">Genetics as information</a></li><li class="breadcrumb-item"><a href="../intro-genetics/exercise.html">Exercise</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../elo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dictionary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part 1: Mendelian genetics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Genetics as information</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/exercise.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Mendel: segregation &amp; assortment</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: Punnett square &amp; crosses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Probability &amp; the χ² test</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: χ² goodness of fit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extensions to Mendel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: epistasis in a pathway</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pedigree analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: which mode of inheritance?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#by-hand" id="toc-by-hand" class="nav-link" data-scroll-target="#by-hand">By hand</a></li>
+  <li><a href="#find-it" id="toc-find-it" class="nav-link" data-scroll-target="#find-it">Find it</a></li>
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R</a></li>
+  <li><a href="#hints" id="toc-hints" class="nav-link" data-scroll-target="#hints">Hints</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#where-this-leads" id="toc-where-this-leads" class="nav-link" data-scroll-target="#where-this-leads">Where this leads</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Part 1: Mendelian genetics</li><li class="breadcrumb-item"><a href="../intro-genetics/lec.html">Genetics as information</a></li><li class="breadcrumb-item"><a href="../intro-genetics/exercise.html">Exercise</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exercise: genetics as information</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>By the end of this exercise you should be able to:</p>
+<ul>
+<li>use the words <strong>gene, locus, allele, genotype, phenotype, homozygous, heterozygous, wild type, mutant, dominant</strong> and <strong>recessive</strong> correctly;</li>
+<li>follow one gene, <em>HBB</em>, from a base change in the DNA to the sickle-cell phenotype;</li>
+<li>explain why “dominant” and “recessive” depend on which phenotype you look at;</li>
+<li>explain why genome size and gene number are not proportional (the <strong>C-value paradox</strong>);</li>
+<li>tell <strong>orthologs</strong> from <strong>paralogs</strong>, and explain why model organisms are useful;</li>
+<li>look up a gene in <strong>NCBI Gene</strong> and <strong>Ensembl</strong> and read its chromosome, location, transcripts and orthologs;</li>
+<li>read a CSV file into R, add a column with <code>mutate</code>, and plot on <strong>log-scale axes</strong> with <strong>text labels</strong>.</li>
+</ul>
+<p>There is no demo in this unit. Do the pen-and-paper part first.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p><strong>Recap from 5MO103.</strong> Information flows DNA → RNA → protein → phenotype. A <strong>gene</strong> is a DNA segment that encodes a functional product. Its position on a chromosome is its <strong>locus</strong>.</p>
+<p><strong>Vocabulary.</strong></p>
+<ul>
+<li>An <strong>allele</strong> is one version of a gene. A diploid individual carries two alleles at each autosomal locus.</li>
+<li><strong>Genotype</strong>: the alleles carried, e.g.&nbsp;<em>AA</em>, <em>Aa</em>, <em>aa</em>. <strong>Phenotype</strong>: what is observed or measured.</li>
+<li><strong>Homozygous</strong>: two identical alleles. <strong>Heterozygous</strong>: two different alleles.</li>
+<li><strong>Wild type</strong> (<em>w</em><sup>+</sup>): the standard allele in a lab population. <strong>Mutant</strong>: a changed allele.</li>
+<li>If <em>Aa</em> has the same phenotype as <em>AA</em>, then <em>A</em> is <strong>dominant</strong> and <em>a</em> is <strong>recessive</strong> <em>for that phenotype</em>. In this unit we assume complete dominance; Extensions to Mendel adds the other cases.</li>
+</ul>
+<p><strong>Sickle-cell disease.</strong> The human gene <em>HBB</em> (chromosome 11) encodes β-globin. In the sickle allele HbS, codon 6 changes from GAG to GTG, and glutamate (Glu) becomes valine (Val). Databases count the start methionine too, so they write this change as <strong>c.20A&gt;T, p.Glu7Val</strong>.</p>
+<p><strong>Genomes.</strong> Genome size (in megabases, <strong>Mb</strong> = 10<sup>6</sup> bp) varies more than 10,000-fold across life, but the number of protein-coding genes varies far less. Most of a large genome is non-coding: introns, intergenic DNA, repeats such as transposable elements. Some genomes are also large because of <strong>polyploidy</strong>.</p>
+<p><strong>Orthologs</strong> are genes in different species that descend from one gene in their common ancestor. <strong>Paralogs</strong> arise by duplication within one genome.</p>
+<p>A small part of the genetic code, enough for this exercise:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Codon</th>
+<th>Amino acid</th>
+<th>Codon</th>
+<th>Amino acid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATG</td>
+<td>Met (M)</td>
+<td>CCT</td>
+<td>Pro (P)</td>
+</tr>
+<tr class="even">
+<td>GTG</td>
+<td>Val (V)</td>
+<td>GAG</td>
+<td>Glu (E)</td>
+</tr>
+<tr class="odd">
+<td>CAT</td>
+<td>His (H)</td>
+<td>AAG</td>
+<td>Lys (K)</td>
+</tr>
+<tr class="even">
+<td>CTG</td>
+<td>Leu (L)</td>
+<td>GCG</td>
+<td>Ala (A)</td>
+</tr>
+<tr class="odd">
+<td>ACT</td>
+<td>Thr (T)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="by-hand" class="level2">
+<h2 class="anchored" data-anchor-id="by-hand">By hand</h2>
+<p><strong>B1. (vocabulary)</strong> For each genotype, say whether it is homozygous or heterozygous, and give the phenotype. In the fly, <em>w</em><sup>+</sup> (red eyes) is dominant to <em>w</em> (white eyes).</p>
+<ol type="a">
+<li><em>w</em><sup>+</sup>/<em>w</em><sup>+</sup> &nbsp;&nbsp; b. <em>w</em><sup>+</sup>/<em>w</em> &nbsp;&nbsp; c.&nbsp;<em>w</em>/<em>w</em></li>
+</ol>
+<p>Which allele is the wild type, and which is the mutant?</p>
+<p><strong>B2. (gene vs allele)</strong> Fill in the blanks with <em>gene</em>, <em>allele</em>, <em>locus</em>, <em>genotype</em> or <em>phenotype</em>: “<em>HBB</em> is a ___ at a ___ on chromosome 11. HbA and HbS are two <strong><em>s of it. A person with the </em></strong> HbS/HbS has the ___ sickle-cell disease.”</p>
+<p><strong>B3. (translate)</strong> The coding sequence of <em>HBB</em> starts like this (coding strand, 5′→3′):</p>
+<pre><code>ATG GTG CAT CTG ACT CCT GAG GAG AAG</code></pre>
+<ol type="a">
+<li>Translate it with the codon table above.</li>
+<li>The start Met is removed from the mature protein. Number the remaining amino acids from 1 (so Val = 1). Which amino acid is number 6?</li>
+<li>Now number the <em>nucleotides</em> of the coding sequence from 1 (A of ATG = 1). Which nucleotide is number 20? Change it from A to T and translate again. Which codon and which amino acid changed? Write the change in both the traditional form (Glu6Val) and the database form (p.Glu7Val).</li>
+</ol>
+<p><strong>B4. (another allele)</strong> A different <em>HBB</em> allele, HbC, has the change c.19G&gt;A. Using the sequence in B3, which codon changes, what is the new codon, and what is the new amino acid? Write the change in the database form p.Xxx#Yyy.</p>
+<p><strong>B5. (dominance depends on the phenotype)</strong> For HbA/HbA, HbA/HbS and HbS/HbS, the following is observed:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>HbA/HbA</th>
+<th>HbA/HbS</th>
+<th>HbS/HbS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sickle-cell disease</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Haemoglobin bands on a gel</td>
+<td>HbA</td>
+<td>HbA and HbS</td>
+<td>HbS</td>
+</tr>
+</tbody>
+</table>
+<p>For each row, say whether HbS is dominant, recessive or codominant. Why is this not a contradiction?</p>
+<p><strong>B6. (genes per Mb)</strong> Use these values from NCBI Datasets: <em>E. coli</em> 4.6 Mb and 4,290 protein-coding genes; baker’s yeast 12.1 Mb and 6,021 genes; human 3,099.4 Mb and 20,054 genes.</p>
+<ol type="a">
+<li>Compute the number of genes per Mb for each.</li>
+<li>If the human genome were packed as densely as the <em>E. coli</em> genome, how many Mb would it need for its 20,054 genes?</li>
+<li>What fills the rest of the human genome?</li>
+</ol>
+<p><strong>B7. (orthologs and paralogs)</strong> An ancestral gene <em>G</em> duplicated into <em>G1</em> and <em>G2</em>. Later, the human and mouse lineages split, and each kept both copies: human <em>G1</em>, human <em>G2</em>, mouse <em>G1</em>, mouse <em>G2</em>.</p>
+<ol type="a">
+<li>Draw the gene tree.</li>
+<li>Which pairs are orthologs, and which are paralogs?</li>
+<li>If the duplication had instead happened <em>after</em> the split, and only in the human lineage, what would the mouse have, and how would the orthology change?</li>
+</ol>
+<p><strong>B8. (choosing the approach)</strong> For each question, name the approach (transmission, molecular, genomic or population) and a suitable organism from: yeast, fly, mouse, human families.</p>
+<ol type="a">
+<li>Do children of two HbA/HbS carriers get the disease in about 1 in 4 cases?</li>
+<li>Which genes are needed for a cell to divide? You want to test thousands of mutants quickly.</li>
+<li>Does a mouse with no working <em>Cftr</em> gene get lung and gut problems like people with cystic fibrosis?</li>
+<li>Is HbS more common in regions where malaria was common?</li>
+</ol>
+</section>
+<section id="find-it" class="level2">
+<h2 class="anchored" data-anchor-id="find-it">Find it</h2>
+<p>These are your first database tasks. Take them slowly and check the <strong>organism</strong> every time: searching a gene symbol gives hits in many species.</p>
+<p><strong>F1. NCBI Gene: <em>HBB</em>.</strong> Go to <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a>. Type <code>HBB human</code> in the search box and press Search. In the results table, click the row where the <strong>Name/Gene ID</strong> is <em>HBB</em> and the <strong>Organism</strong> is <em>Homo sapiens</em>.</p>
+<p>On the gene page, read the <strong>Summary</strong> box at the top:</p>
+<ol type="a">
+<li>What is the <strong>Official Full Name</strong>?</li>
+<li>What is the <strong>Gene ID</strong> (a number)?</li>
+<li>On which <strong>chromosome</strong> is <em>HBB</em>? (Look for “Chromosome” in the Genomic context section, or “Location” in the summary.)</li>
+<li>What is the <strong>cytogenetic location</strong>? (The field is called “Location” or “Map location” and looks like 11p15.4.) What do the “p” and “15.4” mean?</li>
+<li>Under “Also known as”, which familiar name for the protein do you see?</li>
+</ol>
+<p><strong>F2. Ensembl: <em>HBB</em>.</strong> Go to <a href="https://www.ensembl.org/">Ensembl</a>. Choose <strong>Human</strong> in the species box, type <code>HBB</code> and press Go. Click the gene result <em>HBB</em> (Human Gene). On the gene page:</p>
+<ol type="a">
+<li>What is the Ensembl gene ID (it starts with ENSG)?</li>
+<li>The <strong>Location</strong> line gives the chromosome, start and end, and strand. Write it down. Is the gene on the forward or the reverse strand?</li>
+<li>Click <strong>Show transcript table</strong>. How many transcripts are listed? This number changes between Ensembl releases, so also note the release number (bottom of the page).</li>
+<li>One transcript is flagged <strong>MANE Select</strong> (and Ensembl canonical). What is its name (HBB-2xx), and how long is its protein (aa)?</li>
+</ol>
+<p><strong>F3. <em>CFTR</em>: chromosome and mouse ortholog.</strong> a. In <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a>, search <code>CFTR human</code> and open the <em>Homo sapiens</em> entry. On which <strong>chromosome</strong> is <em>CFTR</em>, and what is its cytogenetic location? What is the official full name? b. In <a href="https://www.ensembl.org/">Ensembl</a>, open human <em>CFTR</em>. In the left-hand menu, under <strong>Comparative Genomics</strong>, click <strong>Orthologues</strong>. Find <strong>Mouse</strong> in the table. What is the mouse gene called? What type of orthology is it (the “Type” column, e.g.&nbsp;1-to-1)? What is the “Target %id”? c.&nbsp;Click the mouse gene. On which mouse chromosome is it?</p>
+<p><strong>F4. (optional) The Alliance of Genome Resources: is there a <em>CFTR</em> in fly or yeast?</strong> Go to the <a href="https://www.alliancegenome.org/">Alliance of Genome Resources</a>, search <code>CFTR</code> and open the <em>Homo sapiens</em> gene. Scroll to <strong>Orthology</strong>.</p>
+<ol type="a">
+<li>With the default (stringent) filter, which species are listed?</li>
+<li>Change the stringency filter to the least strict setting (“No filter”/“All”). Do any fly (<em>D. melanogaster</em>) or yeast (<em>S. cerevisiae</em>) genes appear? How many prediction methods support them?</li>
+<li>What does this tell you about whether fly or yeast has a true <em>CFTR</em> ortholog?</li>
+</ol>
+</section>
+<section id="in-r" class="level2">
+<h2 class="anchored" data-anchor-id="in-r">In R</h2>
+<p>The data for this part is in <a href="data/genomes.csv"><code>data/genomes.csv</code></a> (download it and put it in a <code>data/</code> folder next to your script). It lists ten organisms with genome size and protein-coding gene count. Every value comes from the <strong>NCBI Datasets</strong> reference genome and its current annotation, and the <code>source</code> column gives the assembly accession for each row.</p>
+<p><strong>New idiom: log-scale axes and text labels.</strong> When values span many orders of magnitude (here 4.6 to 29,118 Mb), a linear axis squashes most points into a corner. <code>scale_x_log10()</code> and <code>scale_y_log10()</code> space the axis by powers of ten instead, so 10, 100 and 1,000 are equally far apart. <code>geom_text(aes(label = ...))</code> writes a label at each point, so you can see which organism is which without a legend.</p>
+<p><strong>R1. Build the table.</strong> Create the tibble with <a href="https://tibble.tidyverse.org/reference/tribble.html"><code>tribble()</code></a> (one row per line, easy to read) and save it with <a href="https://readr.tidyverse.org/reference/write_delim.html"><code>write_csv()</code></a>. If you downloaded the CSV, you can skip straight to R2, but read the code so you know where each number came from.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>genomes <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="sc">~</span>organism,                  <span class="sc">~</span>common_name,    <span class="sc">~</span>group,      <span class="sc">~</span>genome_mb, <span class="sc">~</span>protein_coding_genes, <span class="sc">~</span>source,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Escherichia coli"</span>,         <span class="st">"E. coli"</span>,       <span class="st">"bacterium"</span>,     <span class="fl">4.6</span>,    <span class="dv">4290</span>, <span class="st">"NCBI Datasets GCF_000005845.2 K-12 MG1655 (RefSeq annotation 2026-09)"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Saccharomyces cerevisiae"</span>, <span class="st">"baker's yeast"</span>, <span class="st">"fungus"</span>,       <span class="fl">12.1</span>,    <span class="dv">6021</span>, <span class="st">"NCBI Datasets GCF_000146045.2 (SGD R64-5-1)"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Caenorhabditis elegans"</span>,   <span class="st">"nematode worm"</span>, <span class="st">"animal"</span>,      <span class="fl">100.3</span>,   <span class="dv">19983</span>, <span class="st">"NCBI Datasets GCF_000002985.6 (WormBase WS298)"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Drosophila melanogaster"</span>,  <span class="st">"fruit fly"</span>,     <span class="st">"animal"</span>,      <span class="fl">143.7</span>,   <span class="dv">13962</span>, <span class="st">"NCBI Datasets GCF_000001215.4 (FlyBase 6.54)"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Arabidopsis thaliana"</span>,     <span class="st">"thale cress"</span>,   <span class="st">"plant"</span>,       <span class="fl">119.1</span>,   <span class="dv">27562</span>, <span class="st">"NCBI Datasets GCF_000001735.4 (TAIR/Araport)"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Danio rerio"</span>,              <span class="st">"zebrafish"</span>,     <span class="st">"animal"</span>,     <span class="fl">1455.3</span>,   <span class="dv">28509</span>, <span class="st">"NCBI Datasets GCF_052040795.2 (RefSeq annotation 2026-08)"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Mus musculus"</span>,             <span class="st">"house mouse"</span>,   <span class="st">"animal"</span>,     <span class="fl">2728.2</span>,   <span class="dv">22198</span>, <span class="st">"NCBI Datasets GCF_000001635.27 (RefSeq annotation 2024-02)"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Homo sapiens"</span>,             <span class="st">"human"</span>,         <span class="st">"animal"</span>,     <span class="fl">3099.4</span>,   <span class="dv">20054</span>, <span class="st">"NCBI Datasets GCF_000001405.40 (RefSeq annotation 2026-11)"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Triticum aestivum"</span>,        <span class="st">"bread wheat"</span>,   <span class="st">"plant"</span>,     <span class="fl">14566.5</span>,  <span class="dv">103793</span>, <span class="st">"NCBI Datasets GCF_018294505.1 (RefSeq annotation 2025-04)"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Ambystoma mexicanum"</span>,      <span class="st">"axolotl"</span>,       <span class="st">"animal"</span>,    <span class="fl">29117.8</span>,   <span class="dv">24121</span>, <span class="st">"NCBI Datasets GCF_040938575.1 (RefSeq annotation 2024-10)"</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>genomes</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(genomes, <span class="st">"data/genomes.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R2. Read it back.</strong> Load the file with <a href="https://readr.tidyverse.org/reference/read_delim.html"><code>read_csv()</code></a>. Which columns did <code>read_csv</code> read as numbers (<code>dbl</code>) and which as text (<code>chr</code>)?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>genomes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/genomes.csv"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>genomes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R3. Genes per Mb.</strong> Add a column <code>genes_per_mb</code> with <a href="https://dplyr.tidyverse.org/reference/mutate.html"><code>mutate()</code></a>, then show it sorted from densest to least dense genome with <a href="https://dplyr.tidyverse.org/reference/arrange.html"><code>arrange(desc(...))</code></a>. Check the <em>E. coli</em>, yeast and human values against your answer to <strong>B6</strong>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>genomes <span class="ot">&lt;-</span> genomes <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">genes_per_mb =</span> protein_coding_genes <span class="sc">/</span> genome_mb)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>genomes <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(common_name, genome_mb, protein_coding_genes, genes_per_mb) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(genes_per_mb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R4. First, a linear plot.</strong> Plot gene count against genome size on ordinary axes. Where do most of the organisms end up?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(genomes, <span class="fu">aes</span>(<span class="at">x =</span> genome_mb, <span class="at">y =</span> protein_coding_genes)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> group), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> common_name), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">3.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R5. Now on log scales.</strong> Add <a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html"><code>scale_x_log10()</code></a> and <code>scale_y_log10()</code>. <code>hjust = -0.15</code> in <a href="https://ggplot2.tidyverse.org/reference/geom_text.html"><code>geom_text()</code></a> puts each label just to the right of its point; <code>limits</code> makes room on the right for the axolotl’s label, and <code>scales::label_comma()</code> writes 10,000 instead of 1e+04.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(genomes, <span class="fu">aes</span>(<span class="at">x =</span> genome_mb, <span class="at">y =</span> protein_coding_genes)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> group), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> common_name), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.15</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">100000</span>), <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Genome size (Mb, log scale)"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Protein-coding genes (log scale)"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">colour =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="a">
+<li>Which organisms lie far to the <strong>right</strong> of the others with only an average number of genes?</li>
+<li>Which organism has many more genes than the rest, and why (see the Background)?</li>
+<li>Among the <strong>animals</strong> only, by what factor does genome size vary, and by what factor does gene number vary? Use <code>filter()</code> and <code>summarise()</code> to find out.</li>
+</ol>
+<p><strong>R6. The C-value paradox in words.</strong> Using your plot and table, write three or four sentences explaining why genome size and gene number are not proportional. Name at least two kinds of DNA that make large genomes large.</p>
+</section>
+<section id="hints" class="level2">
+<h2 class="anchored" data-anchor-id="hints">Hints</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint B3: counting codons and nucleotides">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint B3: counting codons and nucleotides
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Write the sequence in triplets and number the codons 1, 2, 3, … from ATG. Codon <em>n</em> covers nucleotides <span class="math inline">\(3n-2\)</span> to <span class="math inline">\(3n\)</span>. So nucleotide 20 is in codon 7 (nucleotides 19–21). Codon 7 counting the Met is amino acid 6 without the Met.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint B7: orthologs and paralogs">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint B7: orthologs and paralogs
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Find the node in the tree where two genes last shared an ancestor. If that node is a <strong>speciation</strong> (the human–mouse split), the genes are orthologs. If it is a <strong>duplication</strong>, they are paralogs.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint F1–F3: finding your way in NCBI Gene and Ensembl">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint F1–F3: finding your way in NCBI Gene and Ensembl
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a>, the search result is a table with columns Name/Gene ID, Description, Location and Organism. The Location column already shows the cytogenetic band. In <a href="https://www.ensembl.org/">Ensembl</a>, the gene page has a left-hand menu; <strong>Orthologues</strong> is under <em>Comparative Genomics</em>. If you land on a “Search results” page, make sure you click a <strong>Gene</strong> result for <strong>Human</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint R5c: filter and summarise">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint R5c: filter and summarise
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use <a href="https://dplyr.tidyverse.org/reference/filter.html"><code>filter()</code></a> to keep <code>group == "animal"</code>, then <a href="https://dplyr.tidyverse.org/reference/summarise.html"><code>summarise()</code></a> with <code>max(genome_mb) / min(genome_mb)</code> and <code>max(protein_coding_genes) / min(protein_coding_genes)</code>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions" class="level2">
+<h2 class="anchored" data-anchor-id="solutions">Solutions</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: By hand">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: By hand
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>B1.</strong> a. <em>w</em><sup>+</sup>/<em>w</em><sup>+</sup>: homozygous, red eyes. b. <em>w</em><sup>+</sup>/<em>w</em>: heterozygous, red eyes (<em>w</em><sup>+</sup> is dominant). c.&nbsp;<em>w</em>/<em>w</em>: homozygous, white eyes. <em>w</em><sup>+</sup> is the wild type; <em>w</em> is the mutant.</p>
+<p><strong>B2.</strong> “<em>HBB</em> is a <strong>gene</strong> at a <strong>locus</strong> on chromosome 11. HbA and HbS are two <strong>alleles</strong> of it. A person with the <strong>genotype</strong> HbS/HbS has the <strong>phenotype</strong> sickle-cell disease.”</p>
+<p><strong>B3.</strong> a. ATG GTG CAT CTG ACT CCT GAG GAG AAG → <strong>Met Val His Leu Thr Pro Glu Glu Lys</strong>. b. Without Met: Val(1) His(2) Leu(3) Thr(4) Pro(5) <strong>Glu(6)</strong> Glu(7) Lys(8). Amino acid 6 is <strong>glutamate</strong>. c.&nbsp;Nucleotides 19–21 are codon 7 (GAG), so nucleotide 20 is the <strong>A</strong> in the middle of GAG. A→T gives <strong>GTG</strong>, which codes for <strong>Val</strong>. The protein becomes Met Val His Leu Thr Pro <strong>Val</strong> Glu Lys. Traditional name: <strong>Glu6Val</strong>; database name: <strong>c.20A&gt;T, p.Glu7Val</strong> (the same change, counted with the Met).</p>
+<p><strong>B4.</strong> c.19 is the first base of codon 7 (GAG). G→A gives <strong>AAG</strong>, which codes for <strong>Lys</strong>. The change is <strong>p.Glu7Lys</strong> (traditionally Glu6Lys). This is the haemoglobin C allele; ClinVar lists NM_000518.4(HBB):c.19G&gt;A (p.Glu7Lys).</p>
+<p><strong>B5.</strong> Disease row: the heterozygote looks like HbA/HbA, so HbS is <strong>recessive</strong> for disease. Gel row: the heterozygote shows both bands, so the alleles are <strong>codominant</strong> for the haemoglobin protein. It is not a contradiction because dominance is a statement about <strong>one phenotype</strong>. Each allele makes its own protein (codominance at the protein level), but half normal haemoglobin is enough to avoid disease under normal conditions (recessive at the level of disease).</p>
+<p><strong>B6.</strong> a. <em>E. coli</em>: <span class="math inline">\(4{,}290 / 4.6 \approx 933\)</span> genes per Mb. Yeast: <span class="math inline">\(6{,}021 / 12.1 \approx 498\)</span>. Human: <span class="math inline">\(20{,}054 / 3{,}099.4 \approx 6.5\)</span>. b. <span class="math inline">\(20{,}054 / 933 \approx 21.5\)</span> Mb, which is less than 1% of the real 3,099 Mb. c.&nbsp;Introns, large intergenic regions, and repeated sequences (especially transposable elements), plus centromeres, telomeres, regulatory DNA and genes for non-coding RNAs.</p>
+<p><strong>B7.</strong> a. The tree has a duplication node at the root (<em>G</em> → <em>G1</em>, <em>G2</em>). Below each of <em>G1</em> and <em>G2</em> is a speciation node (human, mouse). b. <strong>Orthologs</strong>: human <em>G1</em>–mouse <em>G1</em>, and human <em>G2</em>–mouse <em>G2</em> (they last shared an ancestor at the speciation). <strong>Paralogs</strong>: human <em>G1</em>–human <em>G2</em>, mouse <em>G1</em>–mouse <em>G2</em>, and also human <em>G1</em>–mouse <em>G2</em> and human <em>G2</em>–mouse <em>G1</em> (their last common ancestor is the duplication). c.&nbsp;The mouse would have a single gene <em>G</em>. Both human <em>G1</em> and human <em>G2</em> would be orthologs of mouse <em>G</em>: a <strong>one-to-many</strong> (in Ensembl, “1-to-many”) orthology. Human <em>G1</em> and <em>G2</em> would be paralogs of each other. This is roughly what has happened in the β-globin cluster, which is why there is no simple 1-to-1 mouse ortholog of human <em>HBB</em>.</p>
+<p><strong>B8.</strong> a. <strong>Transmission</strong>, human families (a pedigree or family study). b. <strong>Molecular/transmission genetics</strong> in <strong>yeast</strong>: a fast, single-celled organism where thousands of mutants can be screened. (A genomic screen, testing every gene, also fits.) c.&nbsp;<strong>Molecular</strong>, in the <strong>mouse</strong>: knock out the <em>Cftr</em> ortholog and look at the phenotype. The mouse is a mammal with lungs and a gut similar to ours. d.&nbsp;<strong>Population</strong>, in <strong>humans</strong>: compare HbS allele frequencies between populations.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: Find it">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: Find it
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>All facts checked in November 2026 (NCBI Gene; Ensembl release 116 on GRCh38; Alliance of Genome Resources).</p>
+<p><strong>F1. NCBI Gene, <em>HBB</em>.</strong> Click path: <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a> → search <code>HBB human</code> → row <em>HBB</em>, <em>Homo sapiens</em> → <a href="https://www.ncbi.nlm.nih.gov/gene/3043">Gene ID 3043</a>. a. Official full name: <strong>hemoglobin subunit beta</strong>. b. Gene ID: <strong>3043</strong>. c.&nbsp;Chromosome <strong>11</strong>. d.&nbsp;Location <strong>11p15.4</strong>: “p” is the short arm of chromosome 11 (“q” is the long arm), and 15.4 is the band (region 1, band 5, sub-band 4) counted outwards from the centromere. <em>HBB</em> lies near the tip of the short arm. e. Also known as: <strong>beta-globin</strong> (other aliases listed are CD113t-C and ECYT6). The gene has <strong>3 exons</strong>.</p>
+<p><strong>F2. Ensembl, <em>HBB</em>.</strong> Click path: <a href="https://www.ensembl.org/">Ensembl</a> → Human → <code>HBB</code> → Go → <em>HBB</em> (Human Gene) → <a href="https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000244734">ENSG00000244734</a>. a. <strong>ENSG00000244734</strong>. b. <strong>Chromosome 11: 5,225,464–5,229,395, reverse strand</strong> (GRCh38). The gene is read from right to left on the standard chromosome map. c.&nbsp;In release 116 the transcript table lists <strong>19 transcripts</strong> (most protein-coding, some “nonsense mediated decay” or “retained intron”). Your number may differ in a later release, which is why we note the release. Many extra transcripts come from new long-read evidence; most of the protein is made from one main transcript. d.&nbsp;<strong>HBB-201</strong> (ENST00000335295) is the MANE Select and Ensembl canonical transcript. It matches RefSeq NM_000518.5 and encodes <strong>147 aa</strong> (146 aa in the mature chain, after the start Met is removed).</p>
+<p>Optional observation: if you open <strong>Orthologues</strong> for <em>HBB</em>, Ensembl lists orthologs in many species, but <strong>no mouse</strong> gene. The β-globin genes duplicated separately in the primate and rodent lineages, so mouse <em>Hbb-bs</em> and <em>Hbb-bt</em> do not pair one-to-one with human <em>HBB</em> (compare B7c). That is why F3 uses <em>CFTR</em> for the mouse ortholog.</p>
+<p><strong>F3. <em>CFTR</em>.</strong> a. Click path: <a href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a> → <code>CFTR human</code> → <a href="https://www.ncbi.nlm.nih.gov/gene/1080">Gene ID 1080</a>. Chromosome <strong>7</strong>, location <strong>7q31.2</strong> (long arm). Official full name: <strong>CF transmembrane conductance regulator</strong> (the older name “cystic fibrosis transmembrane conductance regulator” is still widely used). b. Click path: Ensembl → Human → <code>CFTR</code> → <a href="https://www.ensembl.org/Homo_sapiens/Gene/Summary?g=ENSG00000001626">ENSG00000001626</a> → Comparative Genomics → Orthologues → Mouse. The mouse gene is <strong><em>Cftr</em></strong> (ENSMUSG00000041301). Type: <strong>1-to-1</strong>. Target %id: about <strong>79%</strong> (78.7% in release 116), meaning about 79% of the mouse protein’s amino acids are identical to the aligned human ones. c.&nbsp;Mouse <em>Cftr</em> is on mouse <strong>chromosome 6</strong> (GRCm39). Chromosome numbers are not shared between species.</p>
+<p><strong>F4. Alliance of Genome Resources.</strong> Click path: <a href="https://www.alliancegenome.org/">alliancegenome.org</a> → search <code>CFTR</code> → <em>CFTR</em> (<em>Homo sapiens</em>, <a href="https://www.alliancegenome.org/gene/HGNC:1884">HGNC:1884</a>) → Orthology. a. With the stringent default filter, only vertebrates are listed: <strong>zebrafish</strong> <em>cftr</em>, <strong>mouse</strong> <em>Cftr</em>, <strong>rat</strong> <em>Cftr</em>, and <strong>frog</strong> (<em>Xenopus tropicalis</em> <em>cftr</em>; <em>X. laevis</em> <em>cftr.L</em> and <em>cftr.S</em>). b. With no filter, many fly and yeast genes appear: in fly a gene actually named <em>Cftr</em>, plus <em>Mrp4</em>, <em>Mrp5</em>, <em>Sur</em> and several CG-numbered genes; in yeast <em>YOR1</em>, <em>YCF1</em>, <em>STE6</em>, <em>YBT1</em> and others. Each is supported by only <strong>one or two</strong> prediction methods (e.g.&nbsp;Ensembl Compara, PANTHER), against about ten for the mouse ortholog. c.&nbsp;Fly and yeast have <strong>related ABC-transporter genes</strong>, the same protein family as CFTR, but no high-confidence one-to-one ortholog. Gene <strong>families</strong> are conserved across all eukaryotes; a specific member like CFTR may only be clearly traceable among vertebrates.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: In R">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: In R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Run from the unit folder with <code>Rscript --vanilla</code>. The output below is real output from R 4.6.2.</p>
+<p><strong>R1.</strong> Printing <code>genomes</code> gives:</p>
+<pre><code># A tibble: 10 × 6
+   organism              common_name group genome_mb protein_coding_genes source
+   &lt;chr&gt;                 &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;                &lt;dbl&gt; &lt;chr&gt;
+ 1 Escherichia coli      E. coli     bact…       4.6                 4290 NCBI …
+ 2 Saccharomyces cerevi… baker's ye… fung…      12.1                 6021 NCBI …
+ 3 Caenorhabditis elega… nematode w… anim…     100.                 19983 NCBI …
+ 4 Drosophila melanogas… fruit fly   anim…     144.                 13962 NCBI …
+ 5 Arabidopsis thaliana  thale cress plant     119.                 27562 NCBI …
+ 6 Danio rerio           zebrafish   anim…    1455.                 28509 NCBI …
+ 7 Mus musculus          house mouse anim…    2728.                 22198 NCBI …
+ 8 Homo sapiens          human       anim…    3099.                 20054 NCBI …
+ 9 Triticum aestivum     bread wheat plant   14566.                103793 NCBI …
+10 Ambystoma mexicanum   axolotl     anim…   29118.                 24121 NCBI …</code></pre>
+<p>and <code>write_csv</code> writes <code>data/genomes.csv</code>, identical to the file on this page.</p>
+<p><strong>R2.</strong> <code>read_csv</code> reports:</p>
+<pre><code>Rows: 10 Columns: 6
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (4): organism, common_name, group, source
+dbl (2): genome_mb, protein_coding_genes</code></pre>
+<p>The two numeric columns are <code>genome_mb</code> and <code>protein_coding_genes</code>; the rest are text. The tibble printed is the same as in R1.</p>
+<p><strong>R3.</strong></p>
+<pre><code># A tibble: 10 × 4
+   common_name   genome_mb protein_coding_genes genes_per_mb
+   &lt;chr&gt;             &lt;dbl&gt;                &lt;dbl&gt;        &lt;dbl&gt;
+ 1 E. coli             4.6                 4290      933.
+ 2 baker's yeast      12.1                 6021      498.
+ 3 thale cress       119.                 27562      231.
+ 4 nematode worm     100.                 19983      199.
+ 5 fruit fly         144.                 13962       97.2
+ 6 zebrafish        1455.                 28509       19.6
+ 7 house mouse      2728.                 22198        8.14
+ 8 bread wheat     14566.                103793        7.13
+ 9 human            3099.                 20054        6.47
+10 axolotl         29118.                 24121        0.828</code></pre>
+<p><em>E. coli</em> 933, yeast 498 and human 6.47 genes per Mb agree with B6. Gene density falls by more than a thousandfold from <em>E. coli</em> to the axolotl.</p>
+<p><strong>R4.</strong> On linear axes, the axolotl and wheat sit far to the right, and the eight other organisms are squashed into the bottom-left corner. You cannot read <em>E. coli</em> and yeast apart, or the worm, fly and cress. This is why we need log axes for data that span orders of magnitude.</p>
+<p><strong>R5.</strong> The log-log plot:</p>
+<p><img src="genome_plot.png" class="img-fluid" style="width:85.0%"></p>
+<ol type="a">
+<li>The <strong>axolotl</strong> (and to a lesser extent wheat, mouse and human) lies far to the right: its genome is about ten times larger than ours with a similar number of genes.</li>
+<li><strong>Bread wheat</strong> has about 104,000 protein-coding genes. It is <strong>hexaploid</strong>: it carries three ancestral genomes (A, B and D), so most genes are present in three copies.</li>
+<li></li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>genomes <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(group <span class="sc">==</span> <span class="st">"animal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">size_range =</span> <span class="fu">max</span>(genome_mb) <span class="sc">/</span> <span class="fu">min</span>(genome_mb),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">gene_range =</span> <span class="fu">max</span>(protein_coding_genes) <span class="sc">/</span> <span class="fu">min</span>(protein_coding_genes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code># A tibble: 1 × 2
+  size_range gene_range
+       &lt;dbl&gt;      &lt;dbl&gt;
+1       290.       2.04</code></pre>
+<p>Among the animals, genome size varies about <strong>290-fold</strong> (worm 100 Mb to axolotl 29,118 Mb), but gene number only about <strong>2-fold</strong> (fly 13,962 to zebrafish 28,509).</p>
+<p><strong>R6.</strong> Example answer: Genome size varies more than 6,000-fold in this table, but gene number only about 25-fold, and among animals 290-fold against 2-fold. Large genomes are not large because they have more genes, but because they have more non-coding DNA: long introns, large intergenic regions and especially repeated sequences such as transposable elements. Polyploidy (wheat) adds whole extra genomes, and with them extra gene copies. So the amount of DNA (the C-value) says little about the number of genes or the complexity of the organism.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="where-this-leads" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-leads">Where this leads</h2>
+<p>The next unit, <strong>Mendel</strong>, uses the vocabulary from today to predict what happens when two heterozygotes are crossed (<em>Aa</em> × <em>Aa</em>), first by hand and then by simulating the cross in R. You will look up the <em>HBB</em> gene again in <strong>Mutation</strong> (its variants in ClinVar) and in <strong>Hardy–Weinberg</strong> (allele frequencies).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

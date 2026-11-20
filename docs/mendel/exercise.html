@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.30">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exercise: Mendel, segregation &amp; assortment – Basic and molecular genetics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-662ae1889177880cb371f83234c0a158.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d37fb74fd9c61f52627c5754f4dbd5bd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Basic and molecular genetics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Part 1: Mendelian genetics</li><li class="breadcrumb-item"><a href="../mendel/lec.html">Mendel: segregation &amp; assortment</a></li><li class="breadcrumb-item"><a href="../mendel/exercise.html">Exercise</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Course info</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../elo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro/install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dictionary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part 1: Mendelian genetics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Genetics as information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro-genetics/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Mendel: segregation &amp; assortment</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/exercise.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: Punnett square &amp; crosses</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Probability &amp; the χ² test</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability-chisq/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: χ² goodness of fit</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Extensions to Mendel</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../mendel-extensions/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: epistasis in a pathway</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Pedigree analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/lec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture (slides)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pedigrees/exercise.html#explore" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demo: which mode of inheritance?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#goal" id="toc-goal" class="nav-link active" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#by-hand" id="toc-by-hand" class="nav-link" data-scroll-target="#by-hand">By hand</a></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">Explore</a></li>
+  <li><a href="#find-it" id="toc-find-it" class="nav-link" data-scroll-target="#find-it">Find it</a></li>
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
+  <li><a href="#where-this-leads" id="toc-where-this-leads" class="nav-link" data-scroll-target="#where-this-leads">Where this leads</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Part 1: Mendelian genetics</li><li class="breadcrumb-item"><a href="../mendel/lec.html">Mendel: segregation &amp; assortment</a></li><li class="breadcrumb-item"><a href="../mendel/exercise.html">Exercise</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exercise: Mendel, segregation &amp; assortment</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>By the end of this exercise you should be able to:</p>
+<ul>
+<li>predict the genotype and phenotype ratios of a <strong>monohybrid</strong> cross (1 : 2 : 1 and 3 : 1) and a <strong>testcross</strong> (1 : 1) with a Punnett square;</li>
+<li>predict the outcome of a <strong>dihybrid</strong> cross (9 : 3 : 3 : 1) and a dihybrid testcross (1 : 1 : 1 : 1);</li>
+<li>explain the <strong>law of segregation</strong> and the <strong>law of independent assortment</strong> in terms of what chromosomes do in meiosis;</li>
+<li>use the <strong>branch-line method</strong> and the <strong>product rule</strong> for crosses with three or more genes, and count <span class="math inline">\(2^n\)</span> gamete types and <span class="math inline">\(3^n\)</span> genotypes;</li>
+<li>look up the mode of inheritance and the gene of a human disease in <strong>OMIM</strong> (or NCBI MedGen);</li>
+<li>write a small R <strong>function</strong> that uses <code>sample()</code> to simulate a cross, and see how observed ratios approach the expected ones as the number of offspring grows.</li>
+</ul>
+<p>Work on paper first. The demo and R then show the same crosses with random sampling added.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p><strong>Notation.</strong> Each gene has two alleles; upper case is dominant (<em>R</em>, round), lower case is recessive (<em>r</em>, wrinkled). A diploid genotype has two alleles: <em>RR</em> and <em>rr</em> are <strong>homozygous</strong>, <em>Rr</em> is <strong>heterozygous</strong>. <em>R_</em> means “<em>RR</em> or <em>Rr</em>”, that is, the dominant phenotype. Throughout, we assume <strong>complete dominance</strong> (the Extensions to Mendel unit relaxes this) and <strong>unlinked genes</strong> (Linkage, Part 2, relaxes this).</p>
+<p><strong>Law of segregation.</strong> The two alleles of a gene separate into different gametes, so an <em>Rr</em> plant makes ½ <em>R</em> and ½ <em>r</em> gametes. The reason is meiosis I: the two homologous chromosomes, one carrying <em>R</em> and one carrying <em>r</em>, go to opposite poles.</p>
+<p><strong>Law of independent assortment.</strong> Alleles of different genes go into gametes independently. An <em>Rr Yy</em> plant makes <em>RY</em>, <em>Ry</em>, <em>rY</em>, <em>ry</em>, ¼ each. The reason: at metaphase I, each homologue pair lines up independently of the others. This holds for genes on different chromosomes.</p>
+<p><strong>Key ratios.</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cross</th>
+<th>Genotypes</th>
+<th>Phenotypes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Aa</em> × <em>Aa</em></td>
+<td>1 <em>AA</em> : 2 <em>Aa</em> : 1 <em>aa</em></td>
+<td>3 : 1</td>
+</tr>
+<tr class="even">
+<td><em>Aa</em> × <em>aa</em> (testcross)</td>
+<td>1 <em>Aa</em> : 1 <em>aa</em></td>
+<td>1 : 1</td>
+</tr>
+<tr class="odd">
+<td><em>AaBb</em> × <em>AaBb</em></td>
+<td>9 genotypes, 1 : 2 : 1 : 2 : 4 : 2 : 1 : 2 : 1</td>
+<td>9 : 3 : 3 : 1</td>
+</tr>
+<tr class="even">
+<td><em>AaBb</em> × <em>aabb</em> (testcross)</td>
+<td>1 : 1 : 1 : 1</td>
+<td>1 : 1 : 1 : 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Product rule.</strong> For independent genes, the probability of a combination is the product of the per-gene probabilities: P(<em>aa bb cc</em>) = ¼ · ¼ · ¼ = 1/64. An individual heterozygous for <em>n</em> genes makes <span class="math inline">\(2^n\)</span> gamete types; a cross between two such individuals gives <span class="math inline">\(3^n\)</span> genotypes.</p>
+<p><strong>Mendel’s numbers.</strong> Seed shape F<sub>2</sub>: 5474 round : 1850 wrinkled. Dihybrid F<sub>2</sub> (shape × colour): 315 round yellow : 108 round green : 101 wrinkled yellow : 32 wrinkled green.</p>
+</section>
+<section id="by-hand" class="level2">
+<h2 class="anchored" data-anchor-id="by-hand">By hand</h2>
+<p><strong>B1. (monohybrid, peas)</strong> In peas, yellow seeds (<em>Y</em>) are dominant to green (<em>y</em>). Mendel crossed a true-breeding yellow line with a true-breeding green line, then selfed the F<sub>1</sub>.</p>
+<ol type="a">
+<li>Give the genotypes of the P plants, the F<sub>1</sub> and the F<sub>1</sub> gametes.</li>
+<li>Draw the Punnett square for the F<sub>2</sub> and give the genotype and phenotype ratios.</li>
+<li>Mendel counted 8023 F<sub>2</sub> seeds. How many yellow and green seeds do you expect? He observed 6022 yellow and 2001 green.</li>
+</ol>
+<p><strong>B2. (hidden genotypes)</strong> Among the yellow F<sub>2</sub> seeds of B1, what fraction are <em>YY</em> and what fraction are <em>Yy</em>? Describe an experiment Mendel could do (and did) to tell them apart without a testcross.</p>
+<p><strong>B3. (testcross, mouse)</strong> In mice, black coat (<em>B</em>) is dominant to brown (<em>b</em>). A black male is crossed to a brown female.</p>
+<ol type="a">
+<li>What offspring do you expect if the male is <em>BB</em>? If he is <em>Bb</em>?</li>
+<li>The litter has 4 black and 3 brown pups. What is the male’s genotype?</li>
+<li>Another black male sires 6 pups, all black, with brown females. Can you be sure he is <em>BB</em>? What is the probability of this result if he is actually <em>Bb</em>?</li>
+</ol>
+<p><strong>B4. (dihybrid, peas)</strong> Mendel crossed true-breeding round yellow (<em>RR YY</em>) with wrinkled green (<em>rr yy</em>) peas and selfed the F<sub>1</sub>.</p>
+<ol type="a">
+<li>What gametes does the F<sub>1</sub> make, and in what proportions? Which law are you using?</li>
+<li>Give the four F<sub>2</sub> phenotype classes with their expected fractions.</li>
+<li>Mendel counted 556 F<sub>2</sub> seeds. Compute the expected number in each class and compare with 315 : 108 : 101 : 32.</li>
+<li>Add up the counts for seed shape alone, and for seed colour alone. What ratios do you get?</li>
+</ol>
+<p><strong>B5. (dihybrid testcross)</strong> The F<sub>1</sub> from B4 (<em>Rr Yy</em>) is crossed to a wrinkled green plant (<em>rr yy</em>).</p>
+<ol type="a">
+<li>Give the expected offspring phenotypes and their ratio.</li>
+<li>Why does the testcross show the F<sub>1</sub>’s gametes directly?</li>
+<li>Suppose instead that <em>R</em> and <em>Y</em> were so close together on one chromosome that they never separated. What would the testcross give?</li>
+</ol>
+<p><strong>B6. (branch-line)</strong> Use the branch-line method for <em>Rr Yy</em> × <em>Rr yy</em>. Give every phenotype class and its probability.</p>
+<p><strong>B7. (product rule, three genes)</strong> Tall stem (<em>T</em>) is dominant to dwarf (<em>t</em>). Consider <em>Tt Rr Yy</em> × <em>Tt Rr Yy</em>.</p>
+<ol type="a">
+<li>How many kinds of gamete does each parent make? How many different genotypes can the offspring have?</li>
+<li>What fraction of the offspring is tall, round and green?</li>
+<li>What fraction is <em>tt rr yy</em>? What fraction is <em>Tt Rr Yy</em>?</li>
+<li>What fraction is dominant for all three traits?</li>
+</ol>
+<p><strong>B8. (working backwards)</strong> In peas, purple flowers (<em>P</em>) are dominant to white (<em>p</em>), and axial flowers (<em>A</em>) are dominant to terminal (<em>a</em>). Two plants are crossed, giving offspring in the ratio 3 purple axial : 3 purple terminal : 1 white axial : 1 white terminal. What are the parents’ genotypes?</p>
+<p><strong>B9. (humans)</strong> Cystic fibrosis is autosomal recessive; Huntington disease is autosomal dominant.</p>
+<ol type="a">
+<li>Two unaffected parents have a child with cystic fibrosis. What are the parents’ genotypes? What is the chance that their next child is affected? That their next two children are both unaffected?</li>
+<li>An unaffected sister of the affected child wants to know if she is a carrier. What is the probability?</li>
+<li>A man with Huntington disease (heterozygous) and an unaffected woman have a child. What is the risk for the child? Which kind of cross is this?</li>
+</ol>
+</section>
+<section id="explore" class="level2">
+<h2 class="anchored" data-anchor-id="explore">Explore</h2>
+<p>Do the by-hand part first. In the demo you choose 1 or 2 genes and each parent’s genotype. You see each parent’s gametes with their frequencies, the Punnett square (coloured by phenotype, assuming complete dominance), and the genotype and phenotype ratios. Below, the demo simulates <em>N</em> offspring: filled bars are the observed counts, dashed bars the expected ones. “draw again” gives a new random sample (the seed number goes up by one).</p>
+<link rel="stylesheet" href="../demos/dist/demo.css">
+<div data-demo="punnett" data-genes="1" data-preset="mono"></div>
+<script src="../demos/dist/punnett.js"></script>
+<p><strong>E1.</strong> The demo starts on the monohybrid F<sub>1</sub> × F<sub>1</sub> (<em>Aa</em> × <em>Aa</em>). Check the gametes, the Punnett square and both ratios against your answer to B1. Now set N = 16 and press “draw again” a few times, writing down the number of <em>aa</em> offspring each time. How often do you get exactly the expected 4?</p>
+<p><strong>E2.</strong> Set N = 1000. Compare the proportion of <em>aa</em> offspring with N = 16 and with N = 1000. In which case is the proportion closer to ¼? Which of Mendel’s seven traits would you expect to deviate most from 3 : 1?</p>
+<p><strong>E3.</strong> Click “dihybrid F1 × F1”. How many distinct gametes does each parent make, how many cells does the square have, and how many genotypes and phenotypes are there? Switch the bars to “genotypes”: which genotype is the most common, and why?</p>
+<p><strong>E4.</strong> Click “dihybrid testcross”. Why does the Punnett square have only one row? Compare the four phenotype classes with the gametes of the <em>AaBb</em> parent. Then look at N = 100: are the four classes equal?</p>
+<p><strong>E5.</strong> Before you click, predict the phenotype ratio of <em>AA Bb</em> × <em>aa bb</em>. Then set it up with the genotype buttons and check.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: Explore">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: Explore
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>E1.</strong> Each parent makes <em>A</em> and <em>a</em>, ½ each; the square has 4 cells: genotypes 1 : 2 : 1 (¼ <em>AA</em>, ½ <em>Aa</em>, ¼ <em>aa</em>) and phenotypes 3 : 1 (¾ <em>A_</em>, ¼ <em>aa</em>), as in B1. With N = 16, seed 1 gives exactly 12 <em>A_</em> : 4 <em>aa</em>, but the next draws give 15 : 1 (seed 2) and 13 : 3 (seed 3). Hitting the expected count exactly is the exception, not the rule. A 3 : 1 mechanism does not guarantee a 3 : 1 sample.</p>
+<p><strong>E2.</strong> At N = 1000 (seed 1) there are 757 <em>A_</em> : 243 <em>aa</em>, so the proportion of <em>aa</em> is 0.243. At N = 16 the proportion jumped between 1/16 = 0.06 and 4/16 = 0.25 in the first three draws. Larger samples come closer to ¼ <strong>in proportion</strong>, even though the difference in counts (here 7) can be larger than at N = 16. Among Mendel’s traits, pod colour (580 plants: 2.82 : 1) and stem length (1064 plants: 2.84 : 1) have the smallest samples and deviate most; seed shape and seed colour (7324 and 8023 seeds) are closest to 3 : 1.</p>
+<p><strong>E3.</strong> Each parent makes <strong>4</strong> gametes (<em>AB</em>, <em>Ab</em>, <em>aB</em>, <em>ab</em>, ¼ each), so the square has 4 × 4 = <strong>16</strong> cells. There are <strong>9</strong> genotypes (3<sup>2</sup>), with ratio 1 : 2 : 1 : 2 : 4 : 2 : 1 : 2 : 1, and <strong>4</strong> phenotypes (9 : 3 : 3 : 1). The most common genotype is <em>AaBb</em> (4/16 = ¼): it is heterozygous for both genes, and heterozygous is the most likely outcome for each gene (½ · ½ = ¼).</p>
+<p><strong>E4.</strong> The <em>aabb</em> parent makes only one kind of gamete (<em>ab</em>), so there is one row. The four cells (<em>AaBb</em>, <em>Aabb</em>, <em>aaBb</em>, <em>aabb</em>) correspond one to one to the four gametes of the <em>AaBb</em> parent (<em>AB</em>, <em>Ab</em>, <em>aB</em>, <em>ab</em>): the testcross reads off the gametes. Expected 1 : 1 : 1 : 1, that is 25 each at N = 100, but seed 1 gives 24 : 18 : 34 : 24. Even at N = 100, a class can be off by 9 by chance.</p>
+<p><strong>E5.</strong> <em>AA Bb</em> makes <em>AB</em> and <em>Ab</em> gametes (½ each); <em>aa bb</em> makes only <em>ab</em>. Offspring: ½ <em>AaBb</em> (<em>A_B_</em>) and ½ <em>Aabb</em> (<em>A_bb</em>), so the phenotype ratio is <strong>1 : 1</strong>, and all offspring show the dominant <em>A</em> phenotype. The square is 2 × 1.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="find-it" class="level2">
+<h2 class="anchored" data-anchor-id="find-it">Find it</h2>
+<p>The <strong>Online Mendelian Inheritance in Man</strong> database (<a href="https://www.omim.org/">OMIM</a>) has one entry per human genetic disease, each with a stable six-digit <strong>MIM number</strong>. At the top of a disease entry, the <strong>Phenotype–Gene Relationships</strong> table gives the chromosome location, the <strong>Inheritance</strong> (for example AR = autosomal recessive, AD = autosomal dominant) and the <strong>Gene/Locus</strong>. OMIM sometimes asks for a login or blocks heavy use; if so, use the NCBI pages linked in each task, which give the same facts.</p>
+<p><strong>F1.</strong> Open the OMIM entry for <strong>cystic fibrosis</strong>, <a href="https://www.omim.org/entry/219700">MIM 219700</a>. In the Phenotype–Gene Relationships table, read the <strong>Inheritance</strong> column and the <strong>Gene/Locus</strong> column. What is the mode of inheritance, and which gene is it? (Alternative: <a href="https://www.ncbi.nlm.nih.gov/medgen/C0010674">NCBI MedGen, cystic fibrosis</a>, section “Modes of inheritance”.)</p>
+<p><strong>F2.</strong> Do the same for <strong>Huntington disease</strong>, <a href="https://www.omim.org/entry/143100">MIM 143100</a>. (Alternative: <a href="https://www.ncbi.nlm.nih.gov/medgen/C0020179">NCBI MedGen, Huntington disease</a>.)</p>
+<p><strong>F3.</strong> Open the NCBI Gene pages for the two genes, <a href="https://www.ncbi.nlm.nih.gov/gene/1080"><em>CFTR</em></a> and <a href="https://www.ncbi.nlm.nih.gov/gene/3064"><em>HTT</em></a>. In the <strong>Summary</strong> box at the top, read the <strong>Location</strong> field. On which chromosomes are the two genes? Would you expect them to assort independently in a family that carries both disease alleles?</p>
+<p><strong>F4.</strong> In two or three sentences each:</p>
+<ol type="a">
+<li>Which of Mendel’s laws does the transmission of each disease illustrate, and which of Mendel’s crosses does a typical affected family resemble?</li>
+<li>Why can a recessive disease such as cystic fibrosis appear in a child whose parents are both unaffected, while Huntington disease (with full penetrance) almost always has an affected parent?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For F4, write the parents’ genotypes with <em>A</em>/<em>a</em> and draw the Punnett square. What does each parent’s gamete carry?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="in-r" class="level2">
+<h2 class="anchored" data-anchor-id="in-r">In R</h2>
+<p>In R we simulate crosses. The new idiom is <strong>writing your own function</strong> and using <a href="https://rdrr.io/r/base/sample.html"><code>sample()</code></a> to draw at random. A function packs a few lines of code under one name, so you can run them again with different inputs:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_function <span class="ot">&lt;-</span> <span class="cf">function</span>(input1, input2) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ... code that uses input1 and input2 ...</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  result            <span class="co"># the last value is what the function returns</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>sample(x, n, replace = TRUE)</code> draws <code>n</code> values from the vector <code>x</code> at random, with each value equally likely and the same value allowed more than once. That is exactly what a parent does when it passes one of its two alleles to each offspring.</p>
+<p>We use <a href="https://rdrr.io/r/base/Random.html"><code>set.seed()</code></a> before each simulation, so you get the same random numbers as in the solutions.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R1. (two functions)</strong> Write <code>gametes(genotype)</code>, which splits a genotype like <code>"Aa"</code> into its two alleles, and <code>cross(p1, p2, n)</code>, which simulates <code>n</code> offspring of a single-gene cross: each offspring gets one allele drawn at random from each parent.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gametes <span class="ot">&lt;-</span> <span class="cf">function</span>(genotype) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">strsplit</span>(genotype, <span class="st">""</span>)[[<span class="dv">1</span>]]          <span class="co"># "Aa" -&gt; c("A", "a")</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cross <span class="ot">&lt;-</span> <span class="cf">function</span>(p1, p2, n) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  a1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">gametes</span>(p1), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)   <span class="co"># one allele from parent 1</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  a2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">gametes</span>(p2), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)   <span class="co"># one allele from parent 2</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># write the dominant (upper-case) allele first, so "aA" becomes "Aa"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(a1 <span class="sc">==</span> <span class="fu">toupper</span>(a1), <span class="fu">paste0</span>(a1, a2), <span class="fu">paste0</span>(a2, a1))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">gametes</span>(<span class="st">"Aa"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"Aa"</span>, <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Count the genotypes in your 16 offspring by eye. Do you get exactly 4 : 8 : 4?</p>
+<p><strong>R2. (monohybrid: 1 : 2 : 1 and 3 : 1)</strong> Simulate 1000 offspring of <em>Aa</em> × <em>Aa</em>. Use <a href="https://rdrr.io/r/base/table.html"><code>table()</code></a> and <a href="https://rdrr.io/r/base/proportions.html"><code>prop.table()</code></a> to get the genotype counts and proportions, and compare them with 1 : 2 : 1. Then turn genotypes into phenotypes and compare with 3 : 1. Finally, compute the expected numbers for Mendel’s 7324 seeds and his observed ratio.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>offspring <span class="ot">&lt;-</span> <span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"Aa"</span>, <span class="dv">1000</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>geno <span class="ot">&lt;-</span> <span class="fu">factor</span>(offspring, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"AA"</span>, <span class="st">"Aa"</span>, <span class="st">"aa"</span>))   <span class="co"># fixes the order</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(geno)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(geno))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>pheno <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(offspring <span class="sc">==</span> <span class="st">"aa"</span>, <span class="st">"aa"</span>, <span class="st">"A_"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(pheno))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="dv">7324</span> <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)     <span class="co"># Mendel's 7324 seeds, expected round : wrinkled</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="dv">5474</span> <span class="sc">/</span> <span class="dv">1850</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R3. (testcross)</strong> Reuse <code>cross()</code> for the testcross <em>Aa</em> × <em>aa</em> with 1000 offspring. What ratio do you expect, and what do you get?</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tc <span class="ot">&lt;-</span> <span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"aa"</span>, <span class="dv">1000</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">factor</span>(tc, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Aa"</span>, <span class="st">"aa"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R4. (two genes: 9 : 3 : 3 : 1)</strong> Independent assortment means that we can simulate each gene <strong>separately</strong> and put the results side by side. Simulate 1000 offspring of <em>AaBb</em> × <em>AaBb</em>, build the phenotype of each offspring, count the four classes with <a href="https://dplyr.tidyverse.org/reference/count.html"><code>count()</code></a>, and compare the proportions with 9/16, 3/16, 3/16, 1/16. Then compute the expected numbers for Mendel’s 556 seeds.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">44</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dihybrid <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">A =</span> <span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"Aa"</span>, n),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">B =</span> <span class="fu">cross</span>(<span class="st">"Bb"</span>, <span class="st">"Bb"</span>, n)) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pheno =</span> <span class="fu">paste0</span>(<span class="fu">ifelse</span>(A <span class="sc">==</span> <span class="st">"aa"</span>, <span class="st">"aa"</span>, <span class="st">"A_"</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ifelse</span>(B <span class="sc">==</span> <span class="st">"bb"</span>, <span class="st">"bb"</span>, <span class="st">"B_"</span>)),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">pheno =</span> <span class="fu">factor</span>(pheno, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"A_B_"</span>, <span class="st">"A_bb"</span>, <span class="st">"aaB_"</span>, <span class="st">"aabb"</span>)))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>dihybrid <span class="sc">|&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(pheno) <span class="sc">|&gt;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">observed =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">expected =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">16</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="dv">556</span> <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">16</span>     <span class="co"># Mendel's 556 seeds</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>R5. (more offspring, less noise)</strong> Write a function <code>prop_aa(n)</code> that simulates one <em>Aa</em> × <em>Aa</em> cross with <code>n</code> offspring and returns the proportion of <em>aa</em>. Run it 20 times for each of n = 16, 160, 1600 and 16000, summarise, and plot the results with ggplot2. <a href="https://rdrr.io/r/base/lapply.html"><code>sapply()</code></a> calls a function once for each value in a vector and collects the answers; we meet it again in Part 2.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prop_aa <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(<span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"Aa"</span>, n) <span class="sc">==</span> <span class="st">"aa"</span>)     <span class="co"># TRUE counts as 1, FALSE as 0</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">5</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">n =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">160</span>, <span class="dv">1600</span>, <span class="dv">16000</span>), <span class="at">each =</span> <span class="dv">20</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sims<span class="sc">$</span>prop_aa <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sims<span class="sc">$</span>n, prop_aa)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>sims <span class="sc">|&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(n) <span class="sc">|&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lowest =</span> <span class="fu">min</span>(prop_aa), <span class="at">mean =</span> <span class="fu">mean</span>(prop_aa), <span class="at">highest =</span> <span class="fu">max</span>(prop_aa))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sims, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> prop_aa)) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.05</span>, <span class="at">height =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">160</span>, <span class="dv">1600</span>, <span class="dv">16000</span>)) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"number of offspring (log scale)"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"proportion aa"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"20 simulated Aa x Aa crosses for each n"</span>) <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How much does the spread shrink each time n grows ten-fold? Where would Mendel’s 7324 seeds sit on this plot?</p>
+<p><strong>R6. (three genes: the product rule)</strong> Simulate 64000 offspring of <em>AaBbCc</em> × <em>AaBbCc</em>. Check the fraction that is <em>aa bb cc</em> against 1/64, the fraction dominant for all three traits against 27/64, and count the distinct genotypes (compare with <span class="math inline">\(3^3\)</span>).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">64000</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tri <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">A =</span> <span class="fu">cross</span>(<span class="st">"Aa"</span>, <span class="st">"Aa"</span>, n),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">B =</span> <span class="fu">cross</span>(<span class="st">"Bb"</span>, <span class="st">"Bb"</span>, n),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">C =</span> <span class="fu">cross</span>(<span class="st">"Cc"</span>, <span class="st">"Cc"</span>, n))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(tri<span class="sc">$</span>A <span class="sc">==</span> <span class="st">"aa"</span> <span class="sc">&amp;</span> tri<span class="sc">$</span>B <span class="sc">==</span> <span class="st">"bb"</span> <span class="sc">&amp;</span> tri<span class="sc">$</span>C <span class="sc">==</span> <span class="st">"cc"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">64</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(tri<span class="sc">$</span>A <span class="sc">!=</span> <span class="st">"aa"</span> <span class="sc">&amp;</span> tri<span class="sc">$</span>B <span class="sc">!=</span> <span class="st">"bb"</span> <span class="sc">&amp;</span> tri<span class="sc">$</span>C <span class="sc">!=</span> <span class="st">"cc"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="dv">27</span><span class="sc">/</span><span class="dv">64</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>tri <span class="sc">|&gt;</span> <span class="fu">distinct</span>(A, B, C) <span class="sc">|&gt;</span> <span class="fu">nrow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In every task, observed and expected are close but not equal. To decide whether a difference is small enough to be chance, we need a test: the χ² goodness-of-fit test (<code>chisq.test()</code>), in the next unit.</p>
+</section>
+<section id="solutions" class="level2">
+<h2 class="anchored" data-anchor-id="solutions">Solutions</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: By hand">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: By hand
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>B1.</strong> a) P: <em>YY</em> (yellow) × <em>yy</em> (green). F<sub>1</sub>: all <em>Yy</em> (yellow). F<sub>1</sub> gametes: ½ <em>Y</em>, ½ <em>y</em>.</p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>½ <em>Y</em></th>
+<th>½ <em>y</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>½ <em>Y</em></strong></td>
+<td><em>YY</em></td>
+<td><em>Yy</em></td>
+</tr>
+<tr class="even">
+<td><strong>½ <em>y</em></strong></td>
+<td><em>Yy</em></td>
+<td><em>yy</em></td>
+</tr>
+</tbody>
+</table>
+<p>Genotypes 1 <em>YY</em> : 2 <em>Yy</em> : 1 <em>yy</em>; phenotypes 3 yellow : 1 green.</p>
+<ol start="3" type="a">
+<li>8023 × ¾ = <strong>6017.25</strong> yellow and 8023 × ¼ = <strong>2005.75</strong> green. Observed 6022 : 2001 (3.01 : 1), very close.</li>
+</ol>
+<p><strong>B2.</strong> Among yellow seeds, <em>YY</em> : <em>Yy</em> = ¼ : ½ = 1 : 2, so <strong>⅓ <em>YY</em></strong> and <strong>⅔ <em>Yy</em></strong>. Experiment: grow each yellow seed into a plant and <strong>self</strong> it. A <em>YY</em> plant gives only yellow seeds; a <em>Yy</em> plant gives yellow and green, 3 : 1. (Mendel did this for seed shape: of 565 round F<sub>2</sub> plants, 193 bred true and 372 segregated.)</p>
+<p><strong>B3.</strong> a) <em>BB</em> × <em>bb</em>: all <em>Bb</em>, all black. <em>Bb</em> × <em>bb</em>: ½ <em>Bb</em> black, ½ <em>bb</em> brown (1 : 1). b) Brown pups (<em>bb</em>) must have received <em>b</em> from the father, so he is <strong><em>Bb</em></strong>. 4 : 3 is close to 1 : 1. c) No.&nbsp;If he were <em>Bb</em>, each pup would be black with probability ½, so 6 black pups has probability (½)<sup>6</sup> = <strong>1/64 ≈ 0.016</strong>. <em>BB</em> is likely but not certain.</p>
+<p><strong>B4.</strong> a) <em>Rr Yy</em> makes <em>RY</em>, <em>Ry</em>, <em>rY</em>, <em>ry</em>, <strong>¼ each</strong> (law of segregation for each gene, plus independent assortment between the genes). b) round yellow (<em>R_Y_</em>) 9/16; round green (<em>R_yy</em>) 3/16; wrinkled yellow (<em>rrY_</em>) 3/16; wrinkled green (<em>rryy</em>) 1/16. c) 556 × 9/16 = <strong>312.75</strong>; 556 × 3/16 = <strong>104.25</strong> (twice); 556 × 1/16 = <strong>34.75</strong>. Observed 315 : 108 : 101 : 32, all within a few seeds of the expectation. d) Shape: round 315 + 108 = <strong>423</strong>, wrinkled 101 + 32 = <strong>133</strong>, 3.18 : 1. Colour: yellow 315 + 101 = <strong>416</strong>, green 108 + 32 = <strong>140</strong>, 2.97 : 1. Both ≈ 3 : 1, so each gene still segregates normally.</p>
+<p><strong>B5.</strong> a) round yellow : round green : wrinkled yellow : wrinkled green = <strong>1 : 1 : 1 : 1</strong> (<em>RrYy</em>, <em>Rryy</em>, <em>rrYy</em>, <em>rryy</em>). b) The <em>rr yy</em> parent only gives <em>ry</em> gametes, which add only recessive alleles. So each offspring’s phenotype shows which alleles came from the F<sub>1</sub> parent: offspring class = F<sub>1</sub> gamete type. c) The F<sub>1</sub> would make only the parental gametes <em>RY</em> and <em>ry</em> (½ each), so the testcross would give <strong>1 round yellow : 1 wrinkled green</strong> and no round green or wrinkled yellow. (Real linked genes give mostly parental types plus a few recombinants: the Linkage unit.)</p>
+<p><strong>B6.</strong> Shape: <em>Rr</em> × <em>Rr</em> → ¾ round, ¼ wrinkled. Colour: <em>Yy</em> × <em>yy</em> → ½ yellow, ½ green.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Shape</th>
+<th>Colour</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¾ round</td>
+<td>½ yellow</td>
+<td><strong>3/8</strong> round yellow</td>
+</tr>
+<tr class="even">
+<td>¾ round</td>
+<td>½ green</td>
+<td><strong>3/8</strong> round green</td>
+</tr>
+<tr class="odd">
+<td>¼ wrinkled</td>
+<td>½ yellow</td>
+<td><strong>1/8</strong> wrinkled yellow</td>
+</tr>
+<tr class="even">
+<td>¼ wrinkled</td>
+<td>½ green</td>
+<td><strong>1/8</strong> wrinkled green</td>
+</tr>
+</tbody>
+</table>
+<p>Ratio 3 : 3 : 1 : 1.</p>
+<p><strong>B7.</strong> a) Gametes: 2<sup>3</sup> = <strong>8</strong> kinds per parent. Genotypes: 3<sup>3</sup> = <strong>27</strong>. b) Tall ¾ × round ¾ × green ¼ = <strong>9/64</strong>. c) <em>tt rr yy</em>: ¼ · ¼ · ¼ = <strong>1/64</strong>. <em>Tt Rr Yy</em>: ½ · ½ · ½ = <strong>1/8</strong>. d) ¾ · ¾ · ¾ = <strong>27/64</strong>.</p>
+<p><strong>B8.</strong> Split the ratio by trait. Flower colour: purple 3 + 3 = 6, white 1 + 1 = 2, so <strong>3 : 1</strong> → <em>Pp</em> × <em>Pp</em>. Position: axial 3 + 1 = 4, terminal 3 + 1 = 4, so <strong>1 : 1</strong> → <em>Aa</em> × <em>aa</em> (a testcross for this gene). Parents: <strong><em>Pp Aa</em> × <em>Pp aa</em></strong>. Check: (¾ purple, ¼ white) × (½ axial, ½ terminal) = 3/8 : 3/8 : 1/8 : 1/8 ✓.</p>
+<p><strong>B9.</strong> a) Both parents are carriers, <strong><em>Aa</em> × <em>Aa</em></strong>. Next child affected: <strong>¼</strong>. Two unaffected children: ¾ × ¾ = <strong>9/16</strong> (the children are independent). b) She is unaffected, so she is not <em>aa</em>. Among <em>AA</em> : <em>Aa</em> = 1 : 2, P(carrier) = <strong>⅔</strong> (the same reasoning as B2). c) <em>Aa</em> × <em>aa</em>: risk <strong>½</strong>. This is formally a <strong>testcross</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: Find it">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: Find it
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>F1.</strong> Cystic fibrosis (MIM 219700): <strong>autosomal recessive</strong> (Inheritance column: AR); gene <strong><em>CFTR</em></strong> (CF transmembrane conductance regulator, gene MIM 602421), location <strong>7q31.2</strong>. Click path: <a href="https://www.omim.org/entry/219700">omim.org/entry/219700</a> → Phenotype–Gene Relationships table at the top → Inheritance and Gene/Locus columns. On MedGen (<a href="https://www.ncbi.nlm.nih.gov/medgen/C0010674">C0010674</a>), “Modes of inheritance” says “Autosomal recessive inheritance” and the genes section lists <em>CFTR</em>. (MedGen also lists modifier genes such as <em>TGFB1</em>; <em>CFTR</em> is the disease gene.)</p>
+<p><strong>F2.</strong> Huntington disease (MIM 143100): <strong>autosomal dominant</strong> (AD); gene <strong><em>HTT</em></strong> (huntingtin, gene MIM 613004), location <strong>4p16.3</strong>. Click path: <a href="https://www.omim.org/entry/143100">omim.org/entry/143100</a> → Phenotype–Gene Relationships table. MedGen (<a href="https://www.ncbi.nlm.nih.gov/medgen/C0020179">C0020179</a>): “Autosomal dominant inheritance”, gene <em>HTT</em>.</p>
+<p><strong>F3.</strong> NCBI Gene → Summary → Location: <em>CFTR</em> is at <strong>7q31.2</strong> (chromosome 7) and <em>HTT</em> at <strong>4p16.3</strong> (chromosome 4). They are on different chromosomes, so they <strong>assort independently</strong>: in a parent who carries a disease allele of each, the four gamete combinations are equally likely, ¼ each.</p>
+<p><strong>F4.</strong> a) Both diseases show the <strong>law of segregation</strong>: an affected or carrier parent (<em>Aa</em>) passes the disease allele to half of the gametes. A cystic fibrosis family with two carrier parents is Mendel’s monohybrid F<sub>1</sub> × F<sub>1</sub> (<em>Aa</em> × <em>Aa</em>: ¼ affected). A Huntington family with one affected parent is a testcross (<em>Aa</em> × <em>aa</em>: ½ affected). b) For a recessive disease, carriers (<em>Aa</em>) are <strong>unaffected</strong>, because one working allele is enough. Two carrier parents each pass <em>a</em> with probability ½, so ¼ of their children are <em>aa</em> and affected, although neither parent is. For a dominant disease, one copy of the allele is enough to cause it, so a child who has the allele usually got it from an affected parent (exceptions: new mutations, or a parent who died before the late onset).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Solutions: In R">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions: In R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>All output below is from <code>Rscript --vanilla</code> run in the unit folder. Note that <code>table()</code> sorts names alphabetically, and the order of “A” and “a” depends on your computer’s language settings. That is why we use <code>factor(..., levels = ...)</code> to fix the order.</p>
+<p><strong>R1.</strong></p>
+<pre><code>[1] "A" "a"
+ [1] "Aa" "aa" "Aa" "AA" "Aa" "AA" "AA" "AA" "Aa" "Aa" "Aa" "AA" "AA" "Aa" "Aa"
+[16] "aa"</code></pre>
+<p>Counting by eye gives 6 <em>AA</em> : 8 <em>Aa</em> : 2 <em>aa</em>, not 4 : 8 : 4. With 16 offspring, chance alone easily moves a class by 2.</p>
+<p><strong>R2.</strong></p>
+<pre><code>geno
+ AA  Aa  aa
+247 503 250
+geno
+   AA    Aa    aa
+0.247 0.503 0.250
+pheno
+  A_   aa
+0.75 0.25
+[1] 5493 1831
+[1] 2.958919</code></pre>
+<p>The genotype proportions 0.247 : 0.503 : 0.250 are close to ¼ : ½ : ¼, and the phenotypes happen to come out at exactly 0.75 : 0.25. For Mendel’s 7324 seeds, the expected numbers are 5493 : 1831; he observed 5474 : 1850, a ratio of 2.96 : 1.</p>
+<p><strong>R3.</strong></p>
+<pre><code> Aa  aa
+493 507</code></pre>
+<p>Expected 1 : 1 (500 : 500); observed 493 : 507.</p>
+<p><strong>R4.</strong></p>
+<pre><code># A tibble: 4 × 4
+  pheno     n observed expected
+  &lt;fct&gt; &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+1 A_B_    571    0.571   0.562
+2 A_bb    182    0.182   0.188
+3 aaB_    186    0.186   0.188
+4 aabb     61    0.061   0.0625
+[1] 312.75 104.25 104.25  34.75</code></pre>
+<p>Approximately 9 : 3 : 3 : 1, just from simulating each gene separately: independence alone produces the dihybrid ratio. Mendel’s 315 : 108 : 101 : 32 are as close to 312.75 : 104.25 : 104.25 : 34.75 as our simulation is to its expected values.</p>
+<p><strong>R5.</strong></p>
+<pre><code># A tibble: 4 × 4
+      n lowest  mean highest
+  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+1    16 0.0625 0.259   0.5
+2   160 0.181  0.249   0.325
+3  1600 0.234  0.250   0.269
+4 16000 0.243  0.250   0.257</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="r-convergence.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>The range of the 20 crosses shrinks by roughly a factor of 3 for each ten-fold increase in n (0.06–0.50, then 0.18–0.33, 0.23–0.27, 0.24–0.26). Noise in a proportion falls with <span class="math inline">\(\sqrt{n}\)</span>, and <span class="math inline">\(\sqrt{10} \approx 3.2\)</span>. Mendel’s 7324 seeds sit between 1600 and 16000; his wrinkled proportion, 1850/7324 = 0.253, lies well inside the spread we would expect there.</p>
+<p><strong>R6.</strong></p>
+<pre><code>[1] 0.01460938
+[1] 0.015625
+[1] 0.42025
+[1] 0.421875
+[1] 27</code></pre>
+<p><em>aa bb cc</em>: 0.0146 against 1/64 = 0.0156. Dominant for all three: 0.420 against 27/64 = 0.422. All <strong>27</strong> = 3<sup>3</sup> genotypes appear.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="where-this-leads" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-leads">Where this leads</h2>
+<p>Every simulated cross above was a little off from its expected ratio, and so were all of Mendel’s. In <strong>Probability &amp; the χ² test</strong> we turn “a little off” into a number: the χ² goodness-of-fit test (<code>chisq.test()</code> in R) asks whether a deviation like 5474 : 1850 against 3 : 1 is the size that chance usually produces. Later, <strong>Linkage</strong> (Part 2) shows what happens when two genes sit close together on one chromosome and independent assortment fails.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

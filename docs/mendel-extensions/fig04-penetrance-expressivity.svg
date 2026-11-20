@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: penetrance (does a carrier show the trait at all?) vs expressivity (how strongly?).
+       Every circle is a person who carries the same dominant allele. -->
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker></defs>
+  <!-- ===== row 1: penetrance ===== -->
+  <text x="20" y="34" font-size="20" font-weight="bold" fill="#1b2a3a">Penetrance:<tspan font-size="16" font-weight="normal" fill="#5c6b7a"> what fraction of carriers show the trait at all?</tspan></text>
+  <circle cx="50" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="50" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="108" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="108" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="166" cy="86" r="22" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="166" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="224" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="224" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="282" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="282" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="340" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="340" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="398" cy="86" r="22" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="398" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="456" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="456" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="514" cy="86" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="514" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <circle cx="572" cy="86" r="22" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="572" y="128" font-size="14" font-style="italic" fill="#5c6b7a" text-anchor="middle">Dd</text>
+  <text x="630" y="80" font-size="17" fill="#1b2a3a">7 of 10 carriers affected</text>
+  <text x="630" y="106" font-size="19" font-weight="bold" fill="#1b2a3a">penetrance = 70%</text>
+  <line x1="20" y1="150" x2="880" y2="150" stroke="#d5dce3" stroke-width="1.5"/>
+  <!-- ===== row 2: expressivity ===== -->
+  <text x="20" y="184" font-size="20" font-weight="bold" fill="#1b2a3a">Expressivity:<tspan font-size="16" font-weight="normal" fill="#5c6b7a"> among those affected, how strongly?</tspan></text>
+  <circle cx="50" cy="230" r="22" fill="#f2d4d5" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="108" cy="230" r="22" fill="#e6b1b3" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="166" cy="230" r="22" fill="#d98e91" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="224" cy="230" r="22" fill="#cc6b6f" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="282" cy="230" r="22" fill="#bc4749" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="340" cy="230" r="22" fill="#9e3537" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="398" cy="230" r="22" fill="#7f2628" stroke="#1b2a3a" stroke-width="2"/>
+  <line x1="40" y1="274" x2="410" y2="274" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="30" y="294" font-size="14" fill="#5c6b7a">mild</text>
+  <text x="420" y="294" font-size="14" fill="#5c6b7a" text-anchor="end">severe</text>
+  <text x="480" y="224" font-size="17" fill="#1b2a3a">e.g. polydactyly: one small extra digit</text>
+  <text x="480" y="250" font-size="17" fill="#1b2a3a">in one person, extra digits on hands</text>
+  <text x="480" y="276" font-size="17" fill="#1b2a3a">and feet in a relative</text>
+</svg>

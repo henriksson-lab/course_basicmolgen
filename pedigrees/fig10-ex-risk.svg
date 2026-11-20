@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="284" viewBox="0 0 740 284" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig10: risk pedigrees for an autosomal recessive disease; ? = the child at risk -->
+  <!-- layout: x = 80 + slot*66; y = 50 + (generation-1)*105; symbols 34px -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#1b2a3a"/></marker>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3 L0,6 Z" fill="#bc4749"/></marker>
+  </defs>
+  <!-- generation numerals -->
+  <g fill="#1b2a3a" font-size="18" font-weight="bold">
+    <text x="16" y="56">I</text>
+    <text x="16" y="161">II</text>
+    <text x="16" y="266">III</text>
+  </g>
+  <!-- mating lines (double = consanguineous) and descent lines -->
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <!-- a1 x a2 -->
+    <line x1="163.0" y1="50" x2="195.0" y2="50"/>
+    <line x1="179.0" y1="50" x2="179.0" y2="114.0"/>
+    <line x1="146" y1="114.0" x2="212" y2="114.0"/>
+    <line x1="146" y1="114.0" x2="146" y2="138.0"/>
+    <line x1="212" y1="114.0" x2="212" y2="138.0"/>
+    <!-- ab x as_ -->
+    <line x1="229.0" y1="155" x2="261.0" y2="155"/>
+    <line x1="245.0" y1="155" x2="245.0" y2="219.0"/>
+    <line x1="245.0" y1="219.0" x2="245.0" y2="219.0"/>
+    <line x1="245.0" y1="219.0" x2="245.0" y2="243.0"/>
+    <!-- b1 x b2 -->
+    <line x1="427.0" y1="50" x2="459.0" y2="50"/>
+    <line x1="443.0" y1="50" x2="443.0" y2="114.0"/>
+    <line x1="410" y1="114.0" x2="476" y2="114.0"/>
+    <line x1="410" y1="114.0" x2="410" y2="138.0"/>
+    <line x1="476" y1="114.0" x2="476" y2="138.0"/>
+    <!-- b3 x b4 -->
+    <line x1="625.0" y1="50" x2="657.0" y2="50"/>
+    <line x1="641.0" y1="50" x2="641.0" y2="114.0"/>
+    <line x1="608" y1="114.0" x2="674" y2="114.0"/>
+    <line x1="608" y1="114.0" x2="608" y2="138.0"/>
+    <line x1="674" y1="114.0" x2="674" y2="138.0"/>
+    <!-- bc x bd -->
+    <line x1="493.0" y1="155" x2="591.0" y2="155"/>
+    <line x1="542.0" y1="155" x2="542.0" y2="219.0"/>
+    <line x1="542.0" y1="219.0" x2="542.0" y2="219.0"/>
+    <line x1="542" y1="219.0" x2="542" y2="243.0"/>
+  </g>
+  <!-- individuals: square = male, circle = female, filled = affected, half = carrier -->
+  <g><!-- a1: M n -->
+    <rect x="129.0" y="33.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="146" y="84.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- a2: F n -->
+    <circle cx="212" cy="50" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="212" y="84.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- aa: M a -->
+    <rect x="129.0" y="138.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="146" y="189.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- ab: F n -->
+    <circle cx="212" cy="155" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="212" y="189.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- as_: M n -->
+    <rect x="261.0" y="138.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="278" y="189.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- aq: U q -->
+    <path d="M245.0,240.0 L265.0,260 L245.0,280.0 L225.0,260 Z" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="245.0" y="267" font-size="20" font-weight="bold" fill="#bc4749" text-anchor="middle">?</text>
+    <text x="245.0" y="294.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- b1: M n -->
+    <rect x="393.0" y="33.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="410" y="84.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- b2: F n -->
+    <circle cx="476" cy="50" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="476" y="84.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- b3: M n -->
+    <rect x="591.0" y="33.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="608" y="84.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- b4: F n -->
+    <circle cx="674" cy="50" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="674" y="84.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- ba: M a -->
+    <rect x="393.0" y="138.0" width="34" height="34" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="410" y="189.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <g><!-- bc: M n -->
+    <rect x="459.0" y="138.0" width="34" height="34" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="476" y="189.0" font-size="13" fill="#555" text-anchor="middle">2</text>
+  </g>
+  <g><!-- bd: F n -->
+    <circle cx="608" cy="155" r="17.0" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="608" y="189.0" font-size="13" fill="#555" text-anchor="middle">3</text>
+  </g>
+  <g><!-- bb: F a -->
+    <circle cx="674" cy="155" r="17.0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="674" y="189.0" font-size="13" fill="#555" text-anchor="middle">4</text>
+  </g>
+  <g><!-- bq: U q -->
+    <path d="M542,240.0 L562.0,260 L542,280.0 L522.0,260 Z" fill="#fff" stroke="#1b2a3a" stroke-width="2.2"/>
+    <text x="542" y="267" font-size="20" font-weight="bold" fill="#bc4749" text-anchor="middle">?</text>
+    <text x="542" y="294.0" font-size="13" fill="#555" text-anchor="middle">1</text>
+  </g>
+  <!-- annotations -->
+  <g fill="#1b2a3a" font-size="20" font-weight="bold">
+    <text x="54" y="30">(a)</text>
+    <text x="342" y="30">(b)</text>
+  </g>
+  <line x1="330" y1="22" x2="330" y2="270" stroke="#c9d3dd" stroke-width="1.5"/>
+</svg>

@@ -56,11 +56,11 @@ The sidebar groups units by topic block in book order, with no weeks or dates. E
 
 | Unit (folder) | Ch | Find it | In R | Demo |
 |---|---|---|---|---|
-| `intro-genetics`: genetics as information | 1 | NCBI Gene and Ensembl: find one human gene, its chromosome and its orthologs | Warm-up: vectors and `table()` | — |
-| `mendel`: segregation and independent assortment | 2 | OMIM: find one recessive and one dominant monogenic disease | `sample()` to simulate a monohybrid or dihybrid cross; `chisq.test` against 3:1 and 9:3:3:1 | `punnett`: Punnett square / cross simulator |
-| `probability-chisq`: probability rules and the χ² test | 2 | — | χ² by hand, then in R; p-values | `chisq`: observed vs expected, χ² distribution |
+| `intro-genetics`: genetics as information | 1 | NCBI Gene and Ensembl: *HBB* and *CFTR*, chromosome, transcripts, mouse ortholog of *CFTR* | Genome size vs gene count table (NCBI Datasets snapshot); `mutate`, log-scale ggplot with `geom_text` | — |
+| `mendel`: segregation and independent assortment | 2 | OMIM: find one recessive and one dominant monogenic disease | `sample()` and a `cross()` function to simulate a monohybrid or dihybrid cross (χ² is left to the next unit) | `punnett`: Punnett square / cross simulator |
+| `probability-chisq`: probability rules and the χ² test | 2 | PubMed: reanalyses of Mendel's data ("too good to be true") | χ² by hand, then in R; p-values | `chisq`: observed vs expected, χ² distribution |
 | `mendel-extensions`: dominance, lethals, epistasis, penetrance | 3 | OMIM: penetrance and expressivity of a real disease | Modified dihybrid ratios such as 9:7 and 12:3:1; testing which ratio fits | `epistasis`: pathway toggles change the ratio |
-| `pedigrees`: pedigree analysis | 2–3 | OMIM and ClinVar | Simple probability calculations in R | `pedigree`: guess the mode of inheritance |
+| `pedigrees`: pedigree analysis | 2–3 | OMIM/MedGen (DMD, Marfan, PKU, XLH) and ClinVar (*PAH* R408W) | Risk function; `rbinom` + `replicate` sibships; ascertainment bias with `filter` | `pedigree`: guess the mode of inheritance |
 
 ### Part 2: Chromosomes and mapping (Ch 4–5)
 
@@ -76,7 +76,7 @@ The sidebar groups units by topic block in book order, with no weeks or dates. E
 | Unit | Ch | Find it | In R | Demo |
 |---|---|---|---|---|
 | `dna-recap`: DNA structure and replication (recap from 5MO103) | 6 | NCBI Nucleotide: download a FASTA | Strings: `chartr` reverse complement, GC content | — |
-| `mutation`: mutation types, complementation, the one gene–one enzyme idea | 7 | ClinVar and dbSNP: one missense and one nonsense variant | Codon table as a named vector; translate a short ORF and see a point mutation's effect | `complementation`: complementation-test grid |
+| `mutation`: mutation types, complementation, the one gene–one enzyme idea | 7 | ClinVar and dbSNP: one missense and one nonsense variant (reuse *HBB* HbS/HbC from intro-genetics) | Codon table as a named vector; translate a short ORF and see a point mutation's effect | `complementation`: complementation-test grid |
 | `gene-expression-recap`: from DNA to protein, splicing (short) | 8 | Ensembl transcripts and UniProt: isoforms of one gene | — | — |
 
 ### Part 4: Genome analysis (Ch 9–11). This block has the most bioinformatics.
@@ -136,11 +136,11 @@ Students already know base R and the tidyverse. Use the tidyverse (dplyr, ggplot
 | 2 | Functions with arguments and defaults (RF → cM); `purrr::map` or `sapply` over parameter values (LOD curve) |
 | 3 | stringr: reverse complement, GC content, codon lookup with a named vector or a join |
 | 4 | Reading FASTA by hand; `str_locate_all` for restriction sites; `read_tsv` of a BioMart export; `left_join` across populations |
-| 5 | Simulation with `rbinom` and `replicate`; distributions in ggplot2 |
+| 5 | Reuse `rbinom`/`replicate` (introduced in pedigrees) for bottleneck simulations; distributions in ggplot2 |
 | 6 | `group_by` and `summarise` on GTEx data; long vs wide format with `pivot_longer` |
 | 7 | A Wright–Fisher loop; `lm` for heritability; a Manhattan plot built from scratch in ggplot2 |
 
-Every R exercise uses a data snapshot committed under `<unit>/data/`. This keeps exercises working when databases change their output. Each Find it task asks for a fact that is stable over time, such as a chromosome, a gene function or a variant's consequence, rather than exact counts.
+Every R exercise uses a data snapshot committed under `<unit>/data/`, recording the source accession or release so it stays reproducible. This keeps exercises working when databases change their output. Each Find it task asks for a fact that is stable over time, such as a chromosome, a gene function or a variant's consequence, rather than exact counts.
 
 ## 5. Design principles
 

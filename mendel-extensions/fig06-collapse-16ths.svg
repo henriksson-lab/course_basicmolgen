@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="904" height="356" viewBox="0 0 904 356" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: every modified dihybrid ratio is the 9 : 3 : 3 : 1 classes with some classes merged.
+       The 16 squares are always A_B_ (9), A_bb (3), aaB_ (3), aabb (1); colour = phenotype. -->
+  <text x="483" y="34" font-size="16" font-style="italic" fill="#1b2a3a" text-anchor="middle">A_B_</text>
+  <text x="483" y="56" font-size="14" fill="#5c6b7a" text-anchor="middle">9/16</text>
+  <line x1="333" y1="64" x2="633" y2="64" stroke="#5c6b7a" stroke-width="2"/>
+  <text x="687" y="34" font-size="16" font-style="italic" fill="#1b2a3a" text-anchor="middle">A_bb</text>
+  <text x="687" y="56" font-size="14" fill="#5c6b7a" text-anchor="middle">3/16</text>
+  <line x1="639" y1="64" x2="735" y2="64" stroke="#5c6b7a" stroke-width="2"/>
+  <text x="789" y="34" font-size="16" font-style="italic" fill="#1b2a3a" text-anchor="middle">aaB_</text>
+  <text x="789" y="56" font-size="14" fill="#5c6b7a" text-anchor="middle">3/16</text>
+  <line x1="741" y1="64" x2="837" y2="64" stroke="#5c6b7a" stroke-width="2"/>
+  <text x="857" y="34" font-size="16" font-style="italic" fill="#1b2a3a" text-anchor="middle">aabb</text>
+  <text x="857" y="56" font-size="14" fill="#5c6b7a" text-anchor="middle">1/16</text>
+  <line x1="843" y1="64" x2="871" y2="64" stroke="#5c6b7a" stroke-width="2"/>
+  <text x="20" y="56" font-size="15" fill="#5c6b7a">F<tspan dy="4" font-size="11">2</tspan><tspan dy="-4"> ratio and its name</tspan></text>
+  <!-- 9 : 3 : 3 : 1: no interaction -->
+  <text x="20" y="97" font-size="20" font-weight="bold" fill="#1b2a3a">9 : 3 : 3 : 1</text>
+  <text x="140" y="97" font-size="16" fill="#1b2a3a">no interaction</text>
+  <rect x="331" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="75" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="75" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="75" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="75" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="75" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="75" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="75" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="75" width="32" height="34" rx="3" fill="#f6f3ea" stroke="#9aa5b1" stroke-width="1"/>
+  <!-- 9 : 3 : 4: recessive epistasis -->
+  <text x="20" y="143" font-size="20" font-weight="bold" fill="#1b2a3a">9 : 3 : 4</text>
+  <text x="140" y="143" font-size="16" fill="#1b2a3a">recessive epistasis</text>
+  <rect x="331" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="121" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="121" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="121" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="121" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="121" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="121" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="121" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="121" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <!-- 9 : 7: complementary genes -->
+  <text x="20" y="189" font-size="20" font-weight="bold" fill="#1b2a3a">9 : 7</text>
+  <text x="140" y="189" font-size="16" fill="#1b2a3a">complementary genes</text>
+  <rect x="331" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="167" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="167" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <!-- 12 : 3 : 1: dominant epistasis -->
+  <text x="20" y="235" font-size="20" font-weight="bold" fill="#1b2a3a">12 : 3 : 1</text>
+  <text x="140" y="235" font-size="16" fill="#1b2a3a">dominant epistasis</text>
+  <rect x="331" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="213" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="213" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="213" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="213" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="213" width="32" height="34" rx="3" fill="#bc4749" stroke="#9aa5b1" stroke-width="1"/>
+  <!-- 13 : 3: dominant suppression -->
+  <text x="20" y="281" font-size="20" font-weight="bold" fill="#1b2a3a">13 : 3</text>
+  <text x="140" y="281" font-size="16" fill="#1b2a3a">dominant suppression</text>
+  <rect x="331" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="259" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="259" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="259" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="259" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <!-- 15 : 1: duplicate genes -->
+  <text x="20" y="327" font-size="20" font-weight="bold" fill="#1b2a3a">15 : 1</text>
+  <text x="140" y="327" font-size="16" fill="#1b2a3a">duplicate genes</text>
+  <rect x="331" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="365" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="399" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="433" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="467" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="501" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="535" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="569" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="603" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="637" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="671" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="705" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="739" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="773" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="807" y="305" width="32" height="34" rx="3" fill="#2a6f97" stroke="#9aa5b1" stroke-width="1"/>
+  <rect x="841" y="305" width="32" height="34" rx="3" fill="#e8b923" stroke="#9aa5b1" stroke-width="1"/>
+</svg>

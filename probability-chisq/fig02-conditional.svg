@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 290" width="660" height="290" font-family="Helvetica, Arial, sans-serif">
+  <!-- Conditional probability: an unaffected child of Aa x Aa.
+       The aa cell is ruled out (grey); 2 of the 3 remaining equally likely cells are carriers. -->
+
+  <text x="190" y="22" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">We know: the child is unaffected</text>
+
+  <g font-size="15" fill="#1b2a3a" text-anchor="middle" font-style="italic">
+    <text x="140" y="56">A</text>
+    <text x="240" y="56">a</text>
+    <text x="72" y="125">A</text>
+    <text x="72" y="225">a</text>
+  </g>
+
+  <!-- cells: AA plain, carriers orange, aa ruled out (grey, crossed) -->
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <rect x="90" y="70" width="100" height="100" fill="#eaf1f7"/>
+    <rect x="190" y="70" width="100" height="100" fill="#fbe7cf"/>
+    <rect x="90" y="170" width="100" height="100" fill="#fbe7cf"/>
+    <rect x="190" y="170" width="100" height="100" fill="#eeeeee"/>
+  </g>
+  <g font-size="20" text-anchor="middle" font-style="italic">
+    <text x="140" y="126" fill="#1b2a3a">AA</text>
+    <text x="240" y="126" fill="#b5651d">Aa</text>
+    <text x="140" y="226" fill="#b5651d">Aa</text>
+    <text x="240" y="220" fill="#9a9a9a">aa</text>
+  </g>
+  <text x="240" y="246" font-size="13" fill="#6f6f6f" text-anchor="middle">ruled out</text>
+
+  <!-- reasoning -->
+  <text x="330" y="88" font-size="15" fill="#1b2a3a">Before we know anything: P(<tspan font-style="italic">Aa</tspan>) = ½</text>
+  <text x="330" y="124" font-size="15" fill="#1b2a3a">Knowing the child is unaffected leaves</text>
+  <text x="330" y="146" font-size="15" fill="#1b2a3a">3 equally likely cells, 2 of them carriers.</text>
+  <text x="330" y="194" font-size="18" font-weight="bold" fill="#b5651d">P(carrier | unaffected) = 2/3</text>
+  <text x="330" y="230" font-size="14" fill="#1b2a3a">P(B | C) = P(B and C) / P(C) = (½) / (¾) = 2/3</text>
+  <text x="330" y="254" font-size="13" fill="#5c6b7a">"|" reads "given"</text>
+</svg>

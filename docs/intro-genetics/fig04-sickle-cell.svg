@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Helvetica, Arial, sans-serif" width="900" height="400">
+  <!-- Sickle-cell disease from DNA to phenotype. HBB coding sequence from Ensembl ENST00000335295; amino acids numbered traditionally (mature chain, no Met). -->
+  <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+  <text x="20" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">1. DNA and protein: one base, one amino acid</text>
+  <g font-size="11" fill="#8a97a4" text-anchor="middle">
+    <text x="116" y="48">2</text>
+    <text x="162" y="48">3</text>
+    <text x="208" y="48">4</text>
+    <text x="254" y="48">5</text>
+    <text x="300" y="48">6</text>
+    <text x="346" y="48">7</text>
+    <text x="392" y="48">8</text>
+  </g>
+  <text x="20" y="76" font-size="14" font-weight="bold" fill="#2a6f97">HbA</text>
+  <rect x="96" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="116" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CAT</text>
+  <text x="116" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">His</text>
+  <rect x="142" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="162" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CTG</text>
+  <text x="162" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Leu</text>
+  <rect x="188" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="208" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">ACT</text>
+  <text x="208" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Thr</text>
+  <rect x="234" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="254" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CCT</text>
+  <text x="254" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Pro</text>
+  <rect x="280" y="56" width="40" height="28" rx="3" fill="#e3eef6" stroke="#2a6f97" stroke-width="1.5"/>
+  <text x="300" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">GAG</text>
+  <text x="300" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu</text>
+  <rect x="326" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="346" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">GAG</text>
+  <text x="346" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu</text>
+  <rect x="372" y="56" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="392" y="75" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">AAG</text>
+  <text x="392" y="102" font-size="13" fill="#1b2a3a" text-anchor="middle">Lys</text>
+  <text x="20" y="144" font-size="14" font-weight="bold" fill="#bc4749">HbS</text>
+  <rect x="96" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="116" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CAT</text>
+  <text x="116" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">His</text>
+  <rect x="142" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="162" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CTG</text>
+  <text x="162" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">Leu</text>
+  <rect x="188" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="208" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">ACT</text>
+  <text x="208" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">Thr</text>
+  <rect x="234" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="254" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">CCT</text>
+  <text x="254" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">Pro</text>
+  <rect x="280" y="124" width="40" height="28" rx="3" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.5"/>
+  <text x="300" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">GTG</text>
+  <text x="300" y="170" font-size="13" fill="#bc4749" text-anchor="middle">Val</text>
+  <rect x="326" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="346" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">GAG</text>
+  <text x="346" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu</text>
+  <rect x="372" y="124" width="40" height="28" rx="3" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="392" y="143" font-size="14" font-family="Courier New, monospace" font-weight="bold" fill="#1b2a3a" text-anchor="middle">AAG</text>
+  <text x="392" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">Lys</text>
+  <text x="20" y="214" font-size="13" fill="#5a6b7a">Codon 6: GAG → GTG (A → T), so glutamate → valine.</text>
+  <text x="20" y="232" font-size="13" fill="#5a6b7a">HGVS names count the start Met: c.20A&gt;T, p.Glu7Val.</text>
+  <text x="470" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">2. Protein to cell</text>
+  <text x="470" y="56" font-size="14" fill="#1b2a3a">Valine is hydrophobic: deoxygenated HbS</text>
+  <text x="470" y="74" font-size="14" fill="#1b2a3a">molecules stick together into long fibres.</text>
+  <ellipse cx="560" cy="150" rx="46" ry="34" fill="#e8b4b4" stroke="#bc4749" stroke-width="2"/>
+  <ellipse cx="560" cy="150" rx="20" ry="13" fill="#f2d4d4"/>
+  <text x="560" y="206" font-size="13" fill="#1b2a3a" text-anchor="middle">normal red cell</text>
+  <line x1="625" y1="150" x2="700" y2="150" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="644" y="134" font-size="13" fill="#5a6b7a">low O<tspan font-size="9" dy="4">2</tspan></text>
+  <path d="M 716 172 Q 770 100 860 128 Q 800 128 770 162 Q 745 186 716 172 Z" fill="#e8b4b4" stroke="#bc4749" stroke-width="2"/>
+  <text x="785" y="206" font-size="13" fill="#1b2a3a" text-anchor="middle">sickled cell</text>
+  <text x="470" y="236" font-size="13" fill="#5a6b7a">Sickled cells block small vessels and break down early.</text>
+  <line x1="20" y1="256" x2="880" y2="256" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="20" y="282" font-size="15" font-weight="bold" fill="#1b2a3a">3. Genotype to phenotype</text>
+  <rect x="20" y="296" width="270" height="94" rx="6" fill="#f4f7fa" stroke="#2a6f97" stroke-width="2"/>
+  <text x="34" y="320" font-size="15" font-weight="bold" fill="#2a6f97">HbA / HbA</text>
+  <text x="34" y="344" font-size="13" fill="#1b2a3a">no disease</text>
+  <rect x="310" y="296" width="270" height="94" rx="6" fill="#f4f7fa" stroke="#5a6b7a" stroke-width="2"/>
+  <text x="324" y="320" font-size="15" font-weight="bold" fill="#5a6b7a">HbA / HbS</text>
+  <text x="324" y="344" font-size="13" fill="#1b2a3a">sickle-cell trait (carrier):</text>
+  <text x="324" y="363" font-size="13" fill="#1b2a3a">usually healthy; some protection</text>
+  <text x="324" y="382" font-size="13" fill="#1b2a3a">against severe malaria</text>
+  <rect x="600" y="296" width="270" height="94" rx="6" fill="#f4f7fa" stroke="#bc4749" stroke-width="2"/>
+  <text x="614" y="320" font-size="15" font-weight="bold" fill="#bc4749">HbS / HbS</text>
+  <text x="614" y="344" font-size="13" fill="#1b2a3a">sickle-cell disease:</text>
+  <text x="614" y="363" font-size="13" fill="#1b2a3a">anaemia, pain crises,</text>
+  <text x="614" y="382" font-size="13" fill="#1b2a3a">organ damage</text>
+</svg>

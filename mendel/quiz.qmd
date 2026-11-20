@@ -1,0 +1,155 @@
+---
+title: "Quiz: Mendel, segregation & assortment"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on monohybrid and dihybrid crosses and the two laws. Try each on paper first, then open the answer. Unless the question says otherwise, assume **complete dominance** and **unlinked genes**.
+
+---
+
+**Q1.** What is a **true-breeding** line, and why did Mendel need true-breeding parents?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What happens when a true-breeding plant is self-fertilised? What genotype must it have?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+A true-breeding line gives only offspring like itself when self-fertilised, generation after generation. That means it is **homozygous** (*RR* or *rr*). Mendel needed this so that he knew exactly what each parent passes on: every gamete of a true-breeding round plant carries *R*. Without that, the F~1~ and F~2~ ratios could not be interpreted.
+:::
+
+---
+
+**Q2.** Mendel crossed round ♀ × wrinkled ♂ and also wrinkled ♀ × round ♂. What are these called, and what did the identical results tell him?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which parent supplies the egg, and which the pollen?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+They are **reciprocal crosses**. Getting the same F~1~ (all round) either way showed that the egg and the pollen contribute equally to the trait: it does not matter which sex the allele comes from. (This is not always true: sex-linked and mitochondrial genes, later in the course, give different results in reciprocal crosses.)
+:::
+
+---
+
+**Q3.** In Mendel's F~2~ for seed shape there were 5474 round and 1850 wrinkled seeds. What are the expected numbers under a 3 : 1 ratio? Does the deviation prove that the model is wrong?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Total = 5474 + 1850. Multiply by ¾ and ¼.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Total = 7324. Expected: 7324 × ¾ = **5493** round and 7324 × ¼ = **1831** wrinkled. Observed is 19 fewer round and 19 more wrinkled. A small deviation like this is expected from **random sampling**: each seed is an independent draw, and a sample of draws almost never matches the probabilities exactly. Whether 19 is "too big" needs a test, the χ² goodness-of-fit test, in the next unit.
+:::
+
+---
+
+**Q4.** An F~2~ plant from *Rr* × *Rr* has round seeds. What is the probability that it is heterozygous?
+
+::: {.callout-tip collapse="true" title="Hint"}
+You already know it is not *rr*. Of the ¾ that are round, how much is *Rr*?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Among all F~2~ plants: ¼ *RR*, ½ *Rr*, ¼ *rr*. Given round, only *RR* and *Rr* remain, in a ratio of ¼ : ½ = 1 : 2. So P(*Rr* | round) = ½ ÷ ¾ = **⅔**. Mendel confirmed this: when he selfed 565 round F~2~ plants, 193 bred true and 372 gave both round and wrinkled offspring, close to 1 : 2.
+:::
+
+---
+
+**Q5.** State the **law of segregation** and name the event in meiosis that makes it true.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Where are the two alleles of one gene in a diploid cell?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The two alleles of a gene separate during gamete formation, so each gamete gets **one** allele, and each allele goes to half of the gametes. The two alleles sit on the two **homologous chromosomes**, and in **anaphase of meiosis I** the homologues move to opposite poles. Every gamete therefore gets one homologue, and so one allele, of each pair.
+:::
+
+---
+
+**Q6.** A purple-flowered pea plant (purple *P* is dominant over white *p*) is crossed to a white-flowered plant. The cross gives 12 purple and 0 white offspring. What is the purple plant's genotype? How sure can you be?
+
+::: {.callout-tip collapse="true" title="Hint"}
+This is a testcross. If the purple plant were *Pp*, what is the chance that all 12 offspring are purple?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+This is a **testcross**. The result fits *PP* (all offspring *Pp*, purple). It does not *prove* it: if the plant were *Pp*, each offspring would be purple with probability ½, so all 12 purple has probability (½)^12^ = 1/4096 ≈ 0.00024. That is unlikely, so *PP* is very probably right. One white offspring would have proved *Pp*.
+:::
+
+---
+
+**Q7.** Why is the F~2~ of a dihybrid cross 9 : 3 : 3 : 1? Answer in one line, using the monohybrid ratio.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Multiply (¾ + ¼) by (¾ + ¼).
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Each gene on its own gives 3 : 1, and the two genes are independent, so the classes are ¾ · ¾ = 9/16, ¾ · ¼ = 3/16, ¼ · ¾ = 3/16 and ¼ · ¼ = 1/16. In short, 9 : 3 : 3 : 1 = (3 : 1) × (3 : 1). Mendel's 315 : 108 : 101 : 32 collapses to 423 : 133 for shape and 416 : 140 for colour, both close to 3 : 1.
+:::
+
+---
+
+**Q8.** An *Rr Yy* plant makes four kinds of gamete, ¼ each. Explain this with what the chromosomes do in meiosis. When would it **not** be true?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Think of two homologue pairs at metaphase I. How many ways can they line up?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+If *R*/*r* and *Y*/*y* are on **different chromosomes**, the two homologue pairs line up at metaphase I independently of each other. Half of the meioses put *R* and *Y* on the same side (giving *RY* and *ry* gametes); the other half put *R* with *y* (giving *Ry* and *rY*). Overall each of the four types is ¼. This fails when the genes are **linked**, that is, close together on the same chromosome. Then the parental combinations (*RY*, *ry*) are more common than ¼ each. That is the Linkage unit in Part 2.
+:::
+
+---
+
+**Q9.** In *Aa Bb Cc* × *Aa Bb Cc*, what fraction of the offspring is (a) *aa bb cc*, (b) dominant for all three traits, (c) *Aa Bb Cc*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Answer each gene as its own monohybrid cross, then use the product rule.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+(a) ¼ · ¼ · ¼ = **1/64**. (b) ¾ · ¾ · ¾ = **27/64**. (c) ½ · ½ · ½ = **1/8**. A Punnett square would need 8 × 8 = 64 cells; the branch-line method or product rule needs three fractions.
+:::
+
+---
+
+**Q10.** A plant is heterozygous for 4 unlinked genes (*Aa Bb Cc Dd*). How many kinds of gamete does it make? If it is selfed, how many different genotypes can the offspring have?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Per gene: how many alleles can a gamete carry? How many genotypes can an offspring have?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Gametes: 2 choices per gene, so 2^4^ = **16** kinds. Offspring genotypes: 3 per gene (*AA*, *Aa*, *aa*), so 3^4^ = **81**. With complete dominance there are 2^4^ = 16 phenotypes, and the fully recessive class is (¼)^4^ = 1/256 of the offspring.
+:::
+
+---
+
+**Q11.** Two parents without cystic fibrosis (an autosomal recessive disease) have a child with cystic fibrosis. What are the parents' genotypes, and what is the risk for their next child?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The child must have received a faulty allele from each parent. Which of Mendel's crosses is this?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The child is *aa*, so each parent gave an *a*. Both parents are unaffected, so both are carriers: *Aa* × *Aa*. This is Mendel's monohybrid F~1~ × F~1~ cross, and the risk for each child is **¼**. The previous child does not change this: each child comes from a new, independent fertilisation.
+:::
+
+---
+
+**Q12.** "Dominant alleles are more common in the population than recessive ones." True or false? Give an example from Mendel's seven traits or from human disease.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does "dominant" describe: a relation between two alleles in one individual, or a frequency in a population?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**False.** Dominance describes what the heterozygote looks like; it says nothing about how common an allele is. The Huntington disease allele is dominant but rare, while recessive alleles can be very common (in peas, all plants of a wrinkled line carry only *r*). Allele frequencies in populations are the topic of the Hardy–Weinberg unit.
+:::

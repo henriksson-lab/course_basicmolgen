@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" font-family="Helvetica, Arial, sans-serif" width="900" height="290">
+  <!-- Information flow DNA -> RNA -> protein -> phenotype, with the HBB example under each box -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- recap bracket over the first two steps -->
+  <path d="M 30 40 L 30 30 L 600 30 L 600 40" fill="none" stroke="#8a97a4" stroke-width="1.5"/>
+  <text x="315" y="22" font-size="14" fill="#5a6b7a" text-anchor="middle">recap from 5MO103: transcription and translation</text>
+
+  <!-- four boxes, 180 wide, gap 50 -->
+  <g stroke-width="2">
+    <rect x="20"  y="50" width="180" height="70" rx="8" fill="#eaf1f7" stroke="#2a6f97"/>
+    <rect x="250" y="50" width="180" height="70" rx="8" fill="#eaf1f7" stroke="#2a6f97"/>
+    <rect x="480" y="50" width="180" height="70" rx="8" fill="#eaf1f7" stroke="#2a6f97"/>
+    <rect x="710" y="50" width="170" height="70" rx="8" fill="#f2f6ee" stroke="#6a994e"/>
+  </g>
+  <g font-size="22" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="110" y="93">DNA</text>
+    <text x="340" y="93">RNA</text>
+    <text x="570" y="93">protein</text>
+    <text x="795" y="93">phenotype</text>
+  </g>
+
+  <!-- arrows between boxes -->
+  <g stroke="#1b2a3a" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="202" y1="85" x2="244" y2="85"/>
+    <line x1="432" y1="85" x2="474" y2="85"/>
+    <line x1="662" y1="85" x2="704" y2="85"/>
+  </g>
+  <g font-size="13" fill="#5a6b7a" text-anchor="middle">
+    <text x="225" y="140">transcription</text>
+    <text x="455" y="140">translation</text>
+    <text x="685" y="140">function</text>
+  </g>
+
+  <!-- example row: HBB -->
+  <text x="20" y="178" font-size="14" font-weight="bold" fill="#bc4749">Example: the β-globin gene</text>
+  <g font-size="14" fill="#1b2a3a" text-anchor="middle">
+    <text x="110" y="205" font-style="italic">HBB</text>
+    <text x="110" y="225">chromosome 11</text>
+    <text x="110" y="245">3 exons</text>
+    <text x="336" y="205" font-style="italic" text-anchor="end">HBB</text>
+    <text x="340" y="205" text-anchor="start">mRNA</text>
+    <text x="340" y="225">exons spliced</text>
+    <text x="340" y="245">together</text>
+    <text x="570" y="205">β-globin chain</text>
+    <text x="570" y="225">147 amino acids,</text>
+    <text x="570" y="245">part of haemoglobin</text>
+    <text x="795" y="205">red blood cells</text>
+    <text x="795" y="225">carry oxygen</text>
+  </g>
+
+  <!-- genetics question underneath -->
+  <text x="450" y="280" font-size="15" fill="#2a6f97" text-anchor="middle">Genetics asks: how does a difference in the DNA become a difference in the phenotype?</text>
+</svg>

@@ -48,3 +48,9 @@ The reference implementation is `/home/mahogny/github/course/quantbio-3MB00A`. C
   2. 5–12 glossary entries for `dictionary.qmd`, each in the form `**Term**: definition. See [Unit title](unit/lec.qmd).`;
   3. any database fact you could not verify;
   4. anything you think should change in the plan.
+
+## Lessons from Part 1
+
+- OMIM returns 403 to automated requests. Verify facts through NCBI MedGen and Gene (E-utilities), and link the OMIM page for students.
+- Data snapshots record their source accession or release in a column or a comment.
+- Check whether `plan/plan.md` §4 has already introduced an R idiom in an earlier unit. If it has, reuse it rather than re-teach it.

@@ -9,13 +9,35 @@
 - From biochemistry: proteins, enzymes and metabolic pathways. Pathway thinking is useful for epistasis.
 - Some genetics from upper-secondary school: Punnett squares and dominant/recessive. Expect misconceptions, for example that dominant means common.
 
-### R
-- **They know base R and the tidyverse:** vectors, data frames, indexing, `read_csv`, dplyr verbs and ggplot2.
-- **Not yet fluent at:** writing their own functions, loops and simulation (`sample`, `rbinom`, `replicate`), string handling for sequences, joining tables, or reading bioinformatics formats (FASTA, TSV exports from databases).
-- The aim is a **modest lift**. Each new idiom is introduced once, with a sentence of explanation, and then reused. No Bioconductor in the core.
+### R and computing
+Students learn R and computing in the year-1 course *Data Analysis in Life Sciences* (5KE232). Its material is in `/home/mahogny/github/course/introcomputing`; see its `contentplan.md`. That course is still growing, and students also practise some R in other courses before this one, such as lab data analysis in biochemistry and physiology. So assume they are **reasonably comfortable** with everyday R, a bit beyond 5KE232's current content. We don't need to re-explain data import, dplyr verbs or ggplot2 basics.
+
+- **Known from 5KE232:**
+  - RStudio projects and relative paths.
+  - Base R objects and vectors, and a consistent `readr`/`dplyr`/`ggplot2` vocabulary for tables and plots.
+  - Data checking: missing values, types and identifiers.
+  - Grouped summaries.
+  - R Markdown reports.
+  - `t.test` and `lm`.
+  - Basic terminal use (`ls`, `cd`, `grep`, pipes) and files and paths.
+- **Explicitly deferred by 5KE232, so it is new here:**
+  - writing their own functions;
+  - loops and simulation (`sample`, `rbinom`, `replicate`);
+  - string handling for sequences;
+  - joining tables;
+  - bioinformatics formats (FASTA, TSV exports from databases);
+  - databases and BLAST.
+- The aim is a **modest lift**. Introduce each new idiom once, with a sentence of explanation, and then reuse it. Follow 5KE232's rule of one consistent syntax: tidyverse for tables and plots, and base R for simple calculations and random sampling. Do not show parallel base-R and tidyverse solutions. No Bioconductor in the core.
 
 ### Statistics
-- Descriptive statistics, the idea of a p-value and hypothesis tests by name. **The χ² goodness-of-fit test is taught here** from scratch, because it is the core statistical tool of transmission genetics.
+- **Known from 5KE232:**
+  - mean, median, variance and SD;
+  - biological vs technical replicates;
+  - the null hypothesis, and the p-value as the probability of a result at least this extreme under H0;
+  - the Welch t-test and the paired t-test;
+  - confidence intervals;
+  - straight-line fits with `lm`.
+- **Not known:** ANOVA, multiple testing, count models and the χ² test. **The χ² goodness-of-fit test is taught here** from scratch, because it is the core statistical tool of transmission genetics. Heritability regression in Part 7 can reuse `lm` directly.
 
 ### Mathematics
 - Upper-secondary level. Fractions and probability (product and sum rules) are recapped in the probability unit. Introduce notation slowly and always with numbers next to it.

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="318" viewBox="0 0 960 318" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig01: complete dominance, incomplete dominance, codominance. Three genotypes per panel. -->
+  <!-- panel: Complete dominance -->
+  <rect x="10" y="8" width="300" height="302" rx="12" fill="#f4f6f8" stroke="#d5dce3"/>
+  <text x="160" y="38" font-size="20" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Complete dominance</text>
+  <text x="160" y="62" font-size="15" font-style="italic" fill="#5c6b7a" text-anchor="middle">pea flower colour</text>
+  <circle cx="65.0" cy="121.0" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="81.2" cy="132.7" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="75.0" cy="151.8" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="55.0" cy="151.8" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="48.8" cy="132.7" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="65" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="65" y="206" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">PP</text>
+  <text x="65" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">purple</text>
+  <circle cx="160.0" cy="121.0" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="176.2" cy="132.7" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="170.0" cy="151.8" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="150.0" cy="151.8" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="143.8" cy="132.7" r="17" fill="#7b3fa0" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="160" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="160" y="206" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">Pp</text>
+  <text x="160" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">purple</text>
+  <circle cx="255.0" cy="121.0" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="271.2" cy="132.7" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="265.0" cy="151.8" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="245.0" cy="151.8" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="238.8" cy="132.7" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="255" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="255" y="206" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">pp</text>
+  <text x="255" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">white</text>
+  <text x="82" y="264" font-size="16" fill="#1b2a3a">F<tspan dy="4" font-size="12">2</tspan><tspan dy="-4"> genotypes</tspan> 1 : 2 : 1</text>
+  <text x="160" y="290" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">phenotypes 3 : 1</text>
+  <!-- panel: Incomplete dominance -->
+  <rect x="330" y="8" width="300" height="302" rx="12" fill="#f4f6f8" stroke="#d5dce3"/>
+  <text x="480" y="38" font-size="20" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Incomplete dominance</text>
+  <text x="480" y="62" font-size="15" font-style="italic" fill="#5c6b7a" text-anchor="middle">snapdragon flower colour</text>
+  <circle cx="385.0" cy="121.0" r="17" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="401.2" cy="132.7" r="17" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="395.0" cy="151.8" r="17" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="375.0" cy="151.8" r="17" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="368.8" cy="132.7" r="17" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="385" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="364" y="206" font-size="18" font-style="italic" fill="#1b2a3a">C<tspan dy="-7" font-size="12">R</tspan><tspan dy="7">C</tspan><tspan dy="-7" font-size="12">R</tspan></text>
+  <text x="385" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">red</text>
+  <circle cx="480.0" cy="121.0" r="17" fill="#eaa0b4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="496.2" cy="132.7" r="17" fill="#eaa0b4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="490.0" cy="151.8" r="17" fill="#eaa0b4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="470.0" cy="151.8" r="17" fill="#eaa0b4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="463.8" cy="132.7" r="17" fill="#eaa0b4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="480" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="459" y="206" font-size="18" font-style="italic" fill="#1b2a3a">C<tspan dy="-7" font-size="12">R</tspan><tspan dy="7">C</tspan><tspan dy="-7" font-size="12">W</tspan></text>
+  <text x="480" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">pink</text>
+  <circle cx="575.0" cy="121.0" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="591.2" cy="132.7" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="585.0" cy="151.8" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="565.0" cy="151.8" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="558.8" cy="132.7" r="17" fill="#f6f3ea" stroke="#1b2a3a" stroke-width="1.2"/>
+  <circle cx="575" cy="138" r="8" fill="#e8b923" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="554" y="206" font-size="18" font-style="italic" fill="#1b2a3a">C<tspan dy="-7" font-size="12">W</tspan><tspan dy="7">C</tspan><tspan dy="-7" font-size="12">W</tspan></text>
+  <text x="575" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">white</text>
+  <text x="402" y="264" font-size="16" fill="#1b2a3a">F<tspan dy="4" font-size="12">2</tspan><tspan dy="-4"> genotypes</tspan> 1 : 2 : 1</text>
+  <text x="480" y="290" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">phenotypes 1 : 2 : 1</text>
+  <!-- panel: Codominance -->
+  <rect x="650" y="8" width="300" height="302" rx="12" fill="#f4f6f8" stroke="#d5dce3"/>
+  <text x="800" y="38" font-size="20" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Codominance</text>
+  <text x="800" y="62" font-size="15" font-style="italic" fill="#5c6b7a" text-anchor="middle">ABO blood group</text>
+  <circle cx="705" cy="138" r="32" fill="#f3c9c4" stroke="#bc4749" stroke-width="2"/>
+  <polygon points="745.0,138.0 734.0,143.2 734.0,132.8" fill="#2a6f97"/>
+  <polygon points="733.3,166.3 721.8,162.1 729.1,154.8" fill="#2a6f97"/>
+  <polygon points="705.0,178.0 699.8,167.0 710.2,167.0" fill="#2a6f97"/>
+  <polygon points="676.7,166.3 680.9,154.8 688.2,162.1" fill="#2a6f97"/>
+  <polygon points="665.0,138.0 676.0,132.8 676.0,143.2" fill="#2a6f97"/>
+  <polygon points="676.7,109.7 688.2,113.9 680.9,121.2" fill="#2a6f97"/>
+  <polygon points="705.0,98.0 710.2,109.0 699.8,109.0" fill="#2a6f97"/>
+  <polygon points="733.3,109.7 729.1,121.2 721.8,113.9" fill="#2a6f97"/>
+  <text x="691" y="206" font-size="18" font-style="italic" fill="#1b2a3a">I<tspan dy="-7" font-size="12">A</tspan><tspan dy="7">I</tspan><tspan dy="-7" font-size="12">A</tspan></text>
+  <text x="705" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">type A</text>
+  <circle cx="800" cy="138" r="32" fill="#f3c9c4" stroke="#bc4749" stroke-width="2"/>
+  <polygon points="840.0,138.0 829.0,143.2 829.0,132.8" fill="#2a6f97"/>
+  <rect x="817.6" y="155.6" width="10" height="10" fill="#6a994e" transform="rotate(45 822.6 160.6)"/>
+  <polygon points="800.0,178.0 794.8,167.0 805.2,167.0" fill="#2a6f97"/>
+  <rect x="772.4" y="155.6" width="10" height="10" fill="#6a994e" transform="rotate(135 777.4 160.6)"/>
+  <polygon points="760.0,138.0 771.0,132.8 771.0,143.2" fill="#2a6f97"/>
+  <rect x="772.4" y="110.4" width="10" height="10" fill="#6a994e" transform="rotate(225 777.4 115.4)"/>
+  <polygon points="800.0,98.0 805.2,109.0 794.8,109.0" fill="#2a6f97"/>
+  <rect x="817.6" y="110.4" width="10" height="10" fill="#6a994e" transform="rotate(315 822.6 115.4)"/>
+  <text x="786" y="206" font-size="18" font-style="italic" fill="#1b2a3a">I<tspan dy="-7" font-size="12">A</tspan><tspan dy="7">I</tspan><tspan dy="-7" font-size="12">B</tspan></text>
+  <text x="800" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">type AB</text>
+  <circle cx="895" cy="138" r="32" fill="#f3c9c4" stroke="#bc4749" stroke-width="2"/>
+  <rect x="922.0" y="133.0" width="10" height="10" fill="#6a994e" transform="rotate(0 927.0 138.0)"/>
+  <rect x="912.6" y="155.6" width="10" height="10" fill="#6a994e" transform="rotate(45 917.6 160.6)"/>
+  <rect x="890.0" y="165.0" width="10" height="10" fill="#6a994e" transform="rotate(90 895.0 170.0)"/>
+  <rect x="867.4" y="155.6" width="10" height="10" fill="#6a994e" transform="rotate(135 872.4 160.6)"/>
+  <rect x="858.0" y="133.0" width="10" height="10" fill="#6a994e" transform="rotate(180 863.0 138.0)"/>
+  <rect x="867.4" y="110.4" width="10" height="10" fill="#6a994e" transform="rotate(225 872.4 115.4)"/>
+  <rect x="890.0" y="101.0" width="10" height="10" fill="#6a994e" transform="rotate(270 895.0 106.0)"/>
+  <rect x="912.6" y="110.4" width="10" height="10" fill="#6a994e" transform="rotate(315 917.6 115.4)"/>
+  <text x="881" y="206" font-size="18" font-style="italic" fill="#1b2a3a">I<tspan dy="-7" font-size="12">B</tspan><tspan dy="7">I</tspan><tspan dy="-7" font-size="12">B</tspan></text>
+  <text x="895" y="229" font-size="15" fill="#5c6b7a" text-anchor="middle">type B</text>
+  <text x="722" y="264" font-size="16" fill="#1b2a3a">F<tspan dy="4" font-size="12">2</tspan><tspan dy="-4"> genotypes</tspan> 1 : 2 : 1</text>
+  <text x="800" y="290" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">phenotypes 1 : 2 : 1</text>
+  <!-- antigen key -->
+  <polygon points="700,76 694,86 706,86" fill="#2a6f97"/><text x="711" y="86" font-size="13" fill="#5c6b7a">A antigen</text>
+  <rect x="805" y="77" width="10" height="10" fill="#6a994e"/><text x="820" y="86" font-size="13" fill="#5c6b7a">B antigen</text>
+</svg>

@@ -1,0 +1,136 @@
+---
+title: "Quiz: genetics as information"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+Short questions on the vocabulary and ideas of the first lecture. Try each one on paper first, then open the answer.
+
+---
+
+**Q1.** What is the difference between a **gene**, an **allele** and a **locus**? Use *HBB* and sickle-cell disease in your answer.
+
+::: {.callout-tip collapse="true" title="Hint"}
+One is an address, one is what lives there, and one is a version of it.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The **locus** is the position on the chromosome (for *HBB*, band 11p15.4 on chromosome 11). The **gene** is the DNA sequence at that position that encodes a product (*HBB*, encoding β-globin). An **allele** is one version of the gene: HbA (normal) and HbS (sickle) are two alleles of *HBB*.
+:::
+
+---
+
+**Q2.** A person has the genotype HbA/HbS. Are they homozygous or heterozygous at *HBB*? How many different *HBB* alleles can one person carry at most, and why?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many copies of chromosome 11 does a body cell have?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**Heterozygous**: the two alleles differ. One person carries at most **two** alleles at an autosomal locus, because a diploid cell has two copies of each autosome, one from each parent. A population can contain many more alleles than two.
+:::
+
+---
+
+**Q3.** "Huntington disease is caused by a dominant allele, so it must be common." What is wrong with this statement?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Does dominance say anything about how many people carry the allele?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Dominance describes what the **heterozygote** looks like: if *Aa* shows the same phenotype as *AA*, then *A* is dominant. It says nothing about the **frequency** of the allele in the population. The Huntington allele is dominant and rare. Allele frequencies are a question for population genetics.
+:::
+
+---
+
+**Q4.** In sickle-cell disease, one base change in *HBB* changes codon 6 from GAG to GTG. Which amino acid change does this cause, and why does it make the haemoglobin behave differently?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Look up GAG and GTG in the genetic code. One of the two amino acids is charged, the other hydrophobic.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+GAG codes for **glutamate** (Glu, negatively charged) and GTG for **valine** (Val, hydrophobic). The valine sits on the surface of the protein and makes a sticky patch, so deoxygenated HbS molecules stick together into long fibres that distort the red cell into a sickle shape.
+:::
+
+---
+
+**Q5.** Is the sickle allele HbS dominant, recessive or codominant to HbA? Explain why there is more than one correct answer.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Compare the heterozygote with the two homozygotes for (a) disease, and (b) the types of haemoglobin found in the blood.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+For **the disease**, HbS is **recessive**: HbA/HbS carriers are usually healthy, and only HbS/HbS has the disease. For **the haemoglobin protein**, the alleles are **codominant**: a heterozygote makes both HbA and HbS, and both appear on a gel. Dominance is defined for one phenotype at a time, so the answer depends on which phenotype you look at.
+:::
+
+---
+
+**Q6.** A database search lists *HBB* with the organism "*Homo sapiens*", and *Hbb-bs* with "*Mus musculus*". Why is one written in capitals and the other not? Are they the same gene?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Gene naming conventions differ between species. "Same gene" in two species has a technical name.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Human gene symbols are written all in capitals; mouse symbols have only the first letter capitalised. Both are β-globin genes, but because the β-globin cluster has duplicated separately in different mammal lineages, the mouse genes do not pair one-to-one with human *HBB*. Genes in different species that descend from one ancestral gene are **orthologs**; for *HBB* the relationship is complicated by duplications (**paralogs**). For a clean one-to-one example, see human *CFTR* and mouse *Cftr*.
+:::
+
+---
+
+**Q7.** The human genome is about 3,100 Mb with about 20,000 protein-coding genes. The axolotl genome is about 29,000 Mb with about 24,000 protein-coding genes. Compute the genes per Mb for each. What explains the difference?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Divide genes by Mb. Then think about what fills the rest of a large genome.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Human: $20{,}000 / 3{,}100 \approx 6.5$ genes per Mb. Axolotl: $24{,}000 / 29{,}000 \approx 0.8$ genes per Mb, about eight times fewer. The axolotl does not have many more genes; its genome is larger because it has more **non-coding DNA**, mostly repeated sequences such as transposable elements, and very long introns. This is the **C-value paradox**: genome size does not follow gene number or complexity.
+:::
+
+---
+
+**Q8.** Why can we learn about a human disease gene by studying a mouse, a zebrafish or even a fly?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What is an ortholog, and what tends to happen to the function of a gene over evolution?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Many genes are **conserved**: the human gene has an **ortholog** in the model organism that descends from the same ancestral gene and often has a similar function. For example, human *CFTR* and mouse *Cftr* are one-to-one orthologs whose proteins are about 79% identical. Model organisms can be crossed, mutated and studied in ways that are impossible in humans, and the results often carry over.
+:::
+
+---
+
+**Q9.** Which of the four approaches (transmission, molecular, genomic, population) is each study using?
+
+a. Counting how many children of two carriers have sickle-cell disease.
+b. Sequencing *HBB* to find the GAG→GTG change.
+c. Comparing the frequency of HbS in regions with and without malaria.
+d. Comparing the whole genomes of human and mouse to find shared genes.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Ask what is being measured: offspring of crosses, one gene's DNA or protein, whole genomes, or allele frequencies in groups.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+a. **Transmission** (inheritance in families). b. **Molecular** (one gene's DNA). c. **Population** (allele frequencies in groups). d. **Genomic** (whole genomes).
+:::
+
+---
+
+**Q10.** A fly with white eyes carries two copies of the mutant allele *w*. The normal red-eyed allele is written *w*^+^. What does the "+" mean, and what does the name of the *white* gene tell you about how it was discovered?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Is the white gene needed to make white eyes or red eyes?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The "+" marks the **wild-type** allele, the standard allele in laboratory stocks. The gene is named after its **mutant phenotype**: it was found because flies lacking a working copy had white eyes. The working gene is in fact needed to make red eyes.
+:::

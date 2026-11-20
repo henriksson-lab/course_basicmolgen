@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" width="680" height="290" font-family="Helvetica, Arial, sans-serif">
+  <!-- Sampling variation: 15 simulated F2 families (set.seed(7), rbinom) of size N under 3:1.
+       Each dot is the observed fraction dominant in one family. x: 0.45..0.95 maps to 170..650. -->
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#1b2a3a">Fraction dominant in 15 simulated F2 families, true value ¾</text>
+  <line x1="218.0" y1="50" x2="218.0" y2="232" stroke="#c9d3dd" stroke-width="1"/>
+  <line x1="314.0" y1="50" x2="314.0" y2="232" stroke="#c9d3dd" stroke-width="1"/>
+  <line x1="410.0" y1="50" x2="410.0" y2="232" stroke="#c9d3dd" stroke-width="1"/>
+  <line x1="506.0" y1="50" x2="506.0" y2="232" stroke="#c9d3dd" stroke-width="1"/>
+  <line x1="602.0" y1="50" x2="602.0" y2="232" stroke="#c9d3dd" stroke-width="1"/>
+  <line x1="458.0" y1="46" x2="458.0" y2="232" stroke="#bc4749" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="464.0" y="58" font-size="13" fill="#bc4749">expected 0.75</text>
+  <text x="20" y="95" font-size="15" fill="#1b2a3a">N = 20 seeds</text>
+  <line x1="170" y1="90" x2="650" y2="90" stroke="#e3e8ee" stroke-width="1"/>
+  <circle cx="218.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="506.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="554.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="602.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="506.0" cy="81" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="362.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="506.0" cy="99" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="266.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="554.0" cy="81" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="554.0" cy="99" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="506.0" cy="72" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="410.0" cy="90" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="554.0" cy="72" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="81" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <text x="20" y="155" font-size="15" fill="#1b2a3a">N = 200 seeds</text>
+  <line x1="170" y1="150" x2="650" y2="150" stroke="#e3e8ee" stroke-width="1"/>
+  <circle cx="472.4" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="501.2" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="453.2" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="472.4" cy="141" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="482.0" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="453.2" cy="141" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="438.8" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="515.6" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="453.2" cy="159" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="453.2" cy="132" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="429.2" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="424.4" cy="150" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="141" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="438.8" cy="141" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <text x="20" y="215" font-size="15" fill="#1b2a3a">N = 2000 seeds</text>
+  <line x1="170" y1="210" x2="650" y2="210" stroke="#e3e8ee" stroke-width="1"/>
+  <circle cx="459.0" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="449.4" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="449.4" cy="201" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="451.3" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="452.2" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="443.6" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="451.3" cy="201" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="201" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="449.4" cy="219" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="458.0" cy="219" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="466.6" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="453.2" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="475.3" cy="210" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <circle cx="466.6" cy="201" r="5" fill="#2a6f97" fill-opacity="0.7"/>
+  <line x1="170" y1="240" x2="650" y2="240" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="218.0" y1="240" x2="218.0" y2="245" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="218.0" y="261" font-size="13" fill="#1b2a3a" text-anchor="middle">0.5</text>
+  <line x1="314.0" y1="240" x2="314.0" y2="245" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="314.0" y="261" font-size="13" fill="#1b2a3a" text-anchor="middle">0.6</text>
+  <line x1="410.0" y1="240" x2="410.0" y2="245" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="410.0" y="261" font-size="13" fill="#1b2a3a" text-anchor="middle">0.7</text>
+  <line x1="506.0" y1="240" x2="506.0" y2="245" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="506.0" y="261" font-size="13" fill="#1b2a3a" text-anchor="middle">0.8</text>
+  <line x1="602.0" y1="240" x2="602.0" y2="245" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="602.0" y="261" font-size="13" fill="#1b2a3a" text-anchor="middle">0.9</text>
+  <text x="410" y="283" font-size="14" fill="#1b2a3a" text-anchor="middle">observed fraction with the dominant phenotype</text>
+</svg>
