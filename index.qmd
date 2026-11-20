@@ -1,0 +1,31 @@
+---
+title: 'Basic and molecular genetics'
+title-block-banner: false
+---
+
+Course material for **Basic and molecular genetics** (**5MO104**, 15 ECTS, Umeå University). The material follows the course book, Hartwell et al., *Genetics: From Genes to Genomes*. On top of the genetics, every unit trains you to **find information in public databases** and to **analyse it in R**.
+
+## Where to start
+
+- [**Learning outcomes**](elo.md): what we are trying to teach.
+- [**Install R and the packages you need**](intro/install.qmd): do this before the first exercise.
+- [**Glossary**](dictionary.qmd): the terms used in the course.
+
+## How each unit works
+
+Work through the sidebar from top to bottom. Each unit has:
+
+- a **lecture** (slides, in green);
+- a **quiz** (in blue) to check that you understood the concepts;
+- an **exercise**, in this order:
+  - **By hand:** genetics problems on paper.
+  - **Explore:** an interactive demo (in orange).
+  - **Find it:** look up real genes, diseases and variants in public databases.
+  - **In R:** a small analysis or simulation.
+
+## Topics
+
+- **Part 1: Mendelian genetics.** Genes and alleles, Mendel's laws, probability and the χ² test, extensions to Mendel (dominance, lethality, epistasis, penetrance), and pedigree analysis.
+- *More parts follow the course book: chromosomes and mapping, DNA and mutation, genome analysis, chromosomes in detail, gene regulation and development, and population and complex-trait genetics.*
+
+**See Canvas for the most up-to-date study instructions.**

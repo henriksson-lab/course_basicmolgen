@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Basic and molecular genetics",
+    "section": "",
+    "text": "Course material for Basic and molecular genetics (5MO104, 15 ECTS, Umeå University). The material follows the course book, Hartwell et al., Genetics: From Genes to Genomes. On top of the genetics, every unit trains you to find information in public databases and to analyse it in R.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#where-to-start",
+    "href": "index.html#where-to-start",
+    "title": "Basic and molecular genetics",
+    "section": "Where to start",
+    "text": "Where to start\n\nLearning outcomes: what we are trying to teach.\nInstall R and the packages you need: do this before the first exercise.\nGlossary: the terms used in the course.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#how-each-unit-works",
+    "href": "index.html#how-each-unit-works",
+    "title": "Basic and molecular genetics",
+    "section": "How each unit works",
+    "text": "How each unit works\nWork through the sidebar from top to bottom. Each unit has:\n\na lecture (slides, in green);\na quiz (in blue) to check that you understood the concepts;\nan exercise, in this order:\n\nBy hand: genetics problems on paper.\nExplore: an interactive demo (in orange).\nFind it: look up real genes, diseases and variants in public databases.\nIn R: a small analysis or simulation.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#topics",
+    "href": "index.html#topics",
+    "title": "Basic and molecular genetics",
+    "section": "Topics",
+    "text": "Topics\n\nPart 1: Mendelian genetics. Genes and alleles, Mendel’s laws, probability and the χ² test, extensions to Mendel (dominance, lethality, epistasis, penetrance), and pedigree analysis.\nMore parts follow the course book: chromosomes and mapping, DNA and mutation, genome analysis, chromosomes in detail, gene regulation and development, and population and complex-trait genetics.\n\nSee Canvas for the most up-to-date study instructions.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "elo.html",
+    "href": "elo.html",
+    "title": "Expected learning outcomes",
+    "section": "",
+    "text": "5MO104 Basic and molecular genetics, 15 ECTS, Umeå University. This site covers the theory and ethics content. The course book is Hartwell et al., Genetics: From Genes to Genomes, and the site follows its order.\n\n\nAfter the course, a student should be able to:\n\nshow knowledge of basic genetics, and understanding of how inheritance is governed by molecular mechanisms;\nexplain how inheritance is studied at the level of cells and organisms, and how allele frequencies in populations vary with different factors;\ntest, interpret and statistically evaluate results;\nstudy, present and discuss original literature in English;\nreflect on ethical problems in the application of genetic knowledge.\n\n\n\n\nRunning through every part, a student should be able to:\n\nB1. find a gene, variant, disease or organism in the core public databases (NCBI, Ensembl, OMIM, ClinVar, gnomAD, model-organism databases) and extract a specific fact;\nB2. run a sequence similarity search (BLAST) and read the result;\nB3. search PubMed for original papers on a genetic question;\nB4. use R to test genetic ratios and Hardy–Weinberg equilibrium (χ²);\nB5. use R to simulate simple genetic processes, such as crosses, drift and bottlenecks;\nB6. load a downloaded table or sequence (TSV, CSV, FASTA) into R and summarise or plot it;\nB7. write small R functions of their own.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnit\nA student can…\nELO\n\n\n\n\nGenetics as information\ndescribe DNA → gene → protein → phenotype; distinguish gene, allele, locus, genotype and phenotype; find a gene in NCBI Gene and Ensembl\n1, B1\n\n\nMendel\npredict monohybrid and dihybrid outcomes with Punnett squares and the branch-line method; explain segregation and independent assortment in terms of meiosis; simulate a cross in R\n1, 2, B5, B7\n\n\nProbability & χ²\napply the product and sum rules and the binomial; carry out a χ² goodness-of-fit test by hand and in R and interpret the p-value\n3, B4\n\n\nExtensions to Mendel\nrecognise incomplete dominance, codominance, multiple alleles, lethal alleles, epistasis, penetrance and expressivity from ratios and descriptions; test which modified ratio fits\n1, 3, B1, B4\n\n\nPedigree analysis\nread pedigrees; decide between autosomal/X-linked and dominant/recessive inheritance; compute carrier and risk probabilities; look up a disease’s inheritance in OMIM\n1, 2, B1",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Learning outcomes"
+    ]
+  },
+  {
+    "objectID": "elo.html#outcomes-from-the-syllabus",
+    "href": "elo.html#outcomes-from-the-syllabus",
+    "title": "Expected learning outcomes",
+    "section": "",
+    "text": "After the course, a student should be able to:\n\nshow knowledge of basic genetics, and understanding of how inheritance is governed by molecular mechanisms;\nexplain how inheritance is studied at the level of cells and organisms, and how allele frequencies in populations vary with different factors;\ntest, interpret and statistically evaluate results;\nstudy, present and discuss original literature in English;\nreflect on ethical problems in the application of genetic knowledge.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Learning outcomes"
+    ]
+  },
+  {
+    "objectID": "elo.html#bioinformatics-outcomes-in-addition-to-the-syllabus",
+    "href": "elo.html#bioinformatics-outcomes-in-addition-to-the-syllabus",
+    "title": "Expected learning outcomes",
+    "section": "",
+    "text": "Running through every part, a student should be able to:\n\nB1. find a gene, variant, disease or organism in the core public databases (NCBI, Ensembl, OMIM, ClinVar, gnomAD, model-organism databases) and extract a specific fact;\nB2. run a sequence similarity search (BLAST) and read the result;\nB3. search PubMed for original papers on a genetic question;\nB4. use R to test genetic ratios and Hardy–Weinberg equilibrium (χ²);\nB5. use R to simulate simple genetic processes, such as crosses, drift and bottlenecks;\nB6. load a downloaded table or sequence (TSV, CSV, FASTA) into R and summarise or plot it;\nB7. write small R functions of their own.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Learning outcomes"
+    ]
+  },
+  {
+    "objectID": "elo.html#outcomes-by-unit",
+    "href": "elo.html#outcomes-by-unit",
+    "title": "Expected learning outcomes",
+    "section": "",
+    "text": "Unit\nA student can…\nELO\n\n\n\n\nGenetics as information\ndescribe DNA → gene → protein → phenotype; distinguish gene, allele, locus, genotype and phenotype; find a gene in NCBI Gene and Ensembl\n1, B1\n\n\nMendel\npredict monohybrid and dihybrid outcomes with Punnett squares and the branch-line method; explain segregation and independent assortment in terms of meiosis; simulate a cross in R\n1, 2, B5, B7\n\n\nProbability & χ²\napply the product and sum rules and the binomial; carry out a χ² goodness-of-fit test by hand and in R and interpret the p-value\n3, B4\n\n\nExtensions to Mendel\nrecognise incomplete dominance, codominance, multiple alleles, lethal alleles, epistasis, penetrance and expressivity from ratios and descriptions; test which modified ratio fits\n1, 3, B1, B4\n\n\nPedigree analysis\nread pedigrees; decide between autosomal/X-linked and dominant/recessive inheritance; compute carrier and risk probabilities; look up a disease’s inheritance in OMIM\n1, 2, B1",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Learning outcomes"
+    ]
+  },
+  {
+    "objectID": "dictionary.html",
+    "href": "dictionary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "A running glossary of the genetics, database and R terms used in this course. Definitions are kept short and link to the unit where the term is introduced.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "dictionary.html#part-1-mendelian-genetics",
+    "href": "dictionary.html#part-1-mendelian-genetics",
+    "title": "Glossary",
+    "section": "Part 1: Mendelian genetics",
+    "text": "Part 1: Mendelian genetics",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Glossary"
+    ]
+  },
+  {
+    "objectID": "intro/install.html",
+    "href": "intro/install.html",
+    "title": "Install R and the packages you need",
+    "section": "",
+    "text": "You have used R before. Check that your installation is recent and has the packages below.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Install R"
+    ]
+  },
+  {
+    "objectID": "intro/install.html#r-and-an-editor",
+    "href": "intro/install.html#r-and-an-editor",
+    "title": "Install R and the packages you need",
+    "section": "1. R and an editor",
+    "text": "1. R and an editor\nInstall a recent R (4.3 or newer) and RStudio Desktop, or another editor you like.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Install R"
+    ]
+  },
+  {
+    "objectID": "intro/install.html#packages",
+    "href": "intro/install.html#packages",
+    "title": "Install R and the packages you need",
+    "section": "2. Packages",
+    "text": "2. Packages\ninstall.packages(\"tidyverse\")   # dplyr, ggplot2, readr, stringr, tidyr, purrr\nThat is all the core material needs. Any data an exercise uses can be downloaded from that exercise’s page.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Install R"
+    ]
+  },
+  {
+    "objectID": "intro/install.html#check-it-works",
+    "href": "intro/install.html#check-it-works",
+    "title": "Install R and the packages you need",
+    "section": "3. Check it works",
+    "text": "3. Check it works\nlibrary(tidyverse)\ncrosses &lt;- sample(c(\"A\", \"a\"), 1000, replace = TRUE)\ntable(crosses)\nIf that prints two counts close to 500 without an error, you are ready.",
+    "crumbs": [
+      "Home",
+      "Course info",
+      "Install R"
+    ]
+  }
+]

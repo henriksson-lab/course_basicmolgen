@@ -1,0 +1,27 @@
+---
+title: "Install R and the packages you need"
+---
+
+You have used R before. Check that your installation is recent and has the packages below.
+
+## 1. R and an editor
+
+Install a recent [R](https://cran.r-project.org/) (4.3 or newer) and [RStudio Desktop](https://posit.co/download/rstudio-desktop/), or another editor you like.
+
+## 2. Packages
+
+```r
+install.packages("tidyverse")   # dplyr, ggplot2, readr, stringr, tidyr, purrr
+```
+
+That is all the core material needs. Any data an exercise uses can be downloaded from that exercise's page.
+
+## 3. Check it works
+
+```r
+library(tidyverse)
+crosses <- sample(c("A", "a"), 1000, replace = TRUE)
+table(crosses)
+```
+
+If that prints two counts close to 500 without an error, you are ready.

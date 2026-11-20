@@ -1,0 +1,9 @@
+---
+title: "Glossary"
+---
+
+A running glossary of the genetics, database and R terms used in this course. Definitions are kept short and link to the unit where the term is introduced.
+
+## Part 1: Mendelian genetics
+
+<!-- Units append terms here, alphabetically within the part. -->

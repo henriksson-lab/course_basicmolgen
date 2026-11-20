@@ -1,0 +1,113 @@
+project:
+  type: website
+  output-dir: docs
+  # Built interactive demos (make demos), copied into docs/ on render.
+  resources:
+    - demos/dist/
+  render:
+    # Order is set by the sidebar below, not by these globs. One level deep per
+    # unit; plan/ holds internal working docs and is excluded from the site.
+    - "*.qmd"
+    - "*.md"
+    - "*/*.qmd"
+    - "*/*.md"
+    - "!plan/"
+    - "!tools/"
+    - "!node_modules/"
+    - "!demos/"
+    # Teacher-only pages: kept in the repo (read them on GitHub), not published.
+    - "!README.md"
+    - "!audience.md"
+    - "!designprinciples.md"
+    - "!CODE_AUDIT_CHECKLIST.md"
+
+website:
+  title: "Basic and molecular genetics"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - text: Home
+        href: index.qmd
+      - section: "Course info"
+        contents:
+          - text: Learning outcomes
+            href: elo.md
+          - text: Install R
+            href: intro/install.qmd
+          - text: Glossary
+            href: dictionary.qmd
+      # ----------------------------------------------------------------------
+      # Order is defined HERE, not in filenames. To reorder a unit, move its
+      # block; never rename its folder. The agreed order is in
+      # plan/course-order.md. styles.css colours leaf links by filename:
+      # *lec* → green, *quiz* → blue, #explore → orange.
+      # ----------------------------------------------------------------------
+      - section: "Part 1: Mendelian genetics"
+        contents:
+          - section: "Genetics as information"
+            contents:
+              - text: "Lecture (slides)"
+                href: intro-genetics/lec.qmd
+              - text: "Quiz"
+                href: intro-genetics/quiz.qmd
+              - text: "Exercise"
+                href: intro-genetics/exercise.qmd
+          - section: "Mendel: segregation & assortment"
+            contents:
+              - text: "Lecture (slides)"
+                href: mendel/lec.qmd
+              - text: "Quiz"
+                href: mendel/quiz.qmd
+              - text: "Exercise"
+                href: mendel/exercise.qmd
+              - text: "Demo: Punnett square & crosses"
+                href: mendel/exercise.qmd#explore
+          - section: "Probability & the χ² test"
+            contents:
+              - text: "Lecture (slides)"
+                href: probability-chisq/lec.qmd
+              - text: "Quiz"
+                href: probability-chisq/quiz.qmd
+              - text: "Exercise"
+                href: probability-chisq/exercise.qmd
+              - text: "Demo: χ² goodness of fit"
+                href: probability-chisq/exercise.qmd#explore
+          - section: "Extensions to Mendel"
+            contents:
+              - text: "Lecture (slides)"
+                href: mendel-extensions/lec.qmd
+              - text: "Quiz"
+                href: mendel-extensions/quiz.qmd
+              - text: "Exercise"
+                href: mendel-extensions/exercise.qmd
+              - text: "Demo: epistasis in a pathway"
+                href: mendel-extensions/exercise.qmd#explore
+          - section: "Pedigree analysis"
+            contents:
+              - text: "Lecture (slides)"
+                href: pedigrees/lec.qmd
+              - text: "Quiz"
+                href: pedigrees/quiz.qmd
+              - text: "Exercise"
+                href: pedigrees/exercise.qmd
+              - text: "Demo: which mode of inheritance?"
+                href: pedigrees/exercise.qmd#explore
+
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    theme: cosmo
+    css: styles.css
+
+# reveal.js navigation arrows for every lecture deck (lec.qmd).
+controls: true
+controls-layout: edges
+controls-back-arrows: visible
