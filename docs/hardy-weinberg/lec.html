@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -160,10 +160,10 @@ Basic and molecular genetics (5MO104)
 <p>So far we followed alleles through <strong>one family</strong>. Now we follow them through a whole <strong>population</strong>: what fraction of people carry each allele and each genotype?</p>
 <ul>
 <li><strong>Allele</strong> and <strong>genotype frequencies</strong>, and how to count them.</li>
-<li>The <strong>Hardy–Weinberg principle</strong>: random mating turns allele frequencies <em>p</em> and <em>q</em> into genotype frequencies <em>p</em>², 2<em>pq</em>, <em>q</em>², and keeps them there.</li>
-<li>Its <strong>assumptions</strong>, and the <strong>χ² test</strong> for HWE (df = 1).</li>
+<li>The <strong>Hardy–Weinberg principle</strong>, derived step by step: random mating turns allele frequencies <em>p</em> and <em>q</em> into genotype frequencies <em>p</em>², 2<em>pq</em>, <em>q</em>², and keeps them there.</li>
+<li>Its <strong>assumptions</strong>, and the <strong>χ² test</strong> for HWE (df = 1), worked through on real data.</li>
 <li>The <strong>de Finetti triangle</strong>, a picture of all possible populations.</li>
-<li>Uses: <strong>carrier frequencies</strong> from disease incidence (the 1/50 from the pedigrees unit), <strong>X-linked</strong> traits, and <strong>inbreeding</strong> (<em>F</em>).</li>
+<li>Uses: <strong>carrier frequencies</strong> from disease incidence (the 1/50 from the pedigrees unit), <strong>X-linked</strong> traits, and <strong>inbreeding</strong> (<em>F</em>), with the common mistakes to avoid.</li>
 </ul>
 <p>Book: Hartwell, the population genetics chapter. You need the product rule and the χ² test from Part 1.</p>
 <aside class="notes">
@@ -229,16 +229,128 @@ p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.5
           display:block!important;
       }</style></aside>
 </section>
-<section id="random-mating-the-populations-punnett-square" class="slide level2 smaller">
-<h2>Random mating: the population’s Punnett square</h2>
+<section id="step-1-from-genotypes-to-the-gene-pool" class="slide level2">
+<h2>Step 1: from genotypes to the gene pool</h2>
+<p>Take a population that is <strong>not</strong> in equilibrium: 50% <em>AA</em>, 20% <em>Aa</em>, 30% <em>aa</em>. Which gametes does it make?</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parent genotype</th>
+<th>frequency</th>
+<th>gametes it makes</th>
+<th>contributes <em>A</em></th>
+<th>contributes <em>a</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>AA</em></td>
+<td>0.50</td>
+<td>all <em>A</em></td>
+<td>0.50</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><em>Aa</em></td>
+<td>0.20</td>
+<td>½ <em>A</em>, ½ <em>a</em> (Mendel’s first law)</td>
+<td>0.10</td>
+<td>0.10</td>
+</tr>
+<tr class="odd">
+<td><em>aa</em></td>
+<td>0.30</td>
+<td>all <em>a</em></td>
+<td>0</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td><strong>gene pool</strong></td>
+<td></td>
+<td></td>
+<td><strong><em>p</em> = 0.60</strong></td>
+<td><strong><em>q</em> = 0.40</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The gamete frequencies <strong>are</strong> the allele frequencies: <em>p</em> = f(<em>AA</em>) + ½ f(<em>Aa</em>).</p>
+<aside class="notes">
+<p>The derivation has three steps, and this is the first. Each parent makes gametes by Mendelian segregation; the heterozygotes make half A and half a. Pool all the gametes of the population and the fraction carrying A is just the allele frequency p.&nbsp;Nothing about the genotype frequencies other than p survives into the gene pool: two populations with very different genotype frequencies but the same p give exactly the same gene pool. That is the reason the next generation forgets the past. We assume that all genotypes are equally fertile, which is the “no selection” assumption.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-random-union-of-gametes" class="slide level2 smaller">
+<h2>Step 2: random union of gametes</h2>
 
 <img data-src="fig01-random-mating.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:82.0%"><ul>
 <li>If gametes meet <strong>at random</strong>, an egg carrying <em>A</em> (probability <em>p</em>) meets a sperm carrying <em>A</em> (probability <em>p</em>) with probability <em>p</em>², by the product rule.</li>
-<li>So the genotype frequencies are **<em>p_² : 2_pq</em> : _q_²**, and they add up to (<em>p</em> + <em>q</em>)² = 1.</li>
-<li>The allele frequency in the next generation is <em>p</em>² + <em>pq</em> = <em>p</em>: <strong>unchanged</strong>.</li>
+<li><em>Aa</em> arises in <strong>two</strong> ways (<em>A</em> egg + <em>a</em> sperm, or <em>a</em> egg + <em>A</em> sperm): <em>pq</em> + <em>qp</em> = <strong>2<em>pq</em></strong>.</li>
+<li>So the genotype frequencies are <strong><em>p</em></strong>² : 2<strong><em>pq</em></strong> : <strong><em>q</em></strong>², and they add up to (<em>p</em> + <em>q</em>)² = 1. In our example: 0.6² = <strong>0.36</strong>, 2 × 0.6 × 0.4 = <strong>0.48</strong>, 0.4² = <strong>0.16</strong>.</li>
 </ul>
 <aside class="notes">
-<p>This is the whole derivation. The product rule from the probability unit does all the work: two independent draws from a gene pool. The heterozygote appears twice, A from the egg and a from the sperm or the other way round, which is the source of the 2. The last line is the important one: random mating does not change the allele frequency. Hardy, a mathematician, wrote this in 1908 to answer the question why dominant alleles do not spread until they take over the population: they do not, because dominance changes how a genotype looks, not how often an allele is passed on. Weinberg found it independently the same year.</p>
+<p>This is the Punnett square of a population. The figure uses p equals 0.7, so the areas are 0.49, 0.21 twice, and 0.09; the example in the text uses the 0.6 from step 1. The product rule from the probability unit does all the work: two independent draws from a gene pool. The heterozygote appears twice, which is the source of the 2. Random mating between individuals gives the same result as random union of gametes; one can show this by listing all nine mating types, but the gamete argument is shorter. Hardy, a mathematician, wrote this in 1908 to answer the question why dominant alleles do not spread until they take over the population. Weinberg, a German physician, found it independently the same year.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-3-the-allele-frequency-does-not-change" class="slide level2">
+<h2>Step 3: the allele frequency does not change</h2>
+<p>Count the <em>A</em> alleles in the new generation, as in step 1:</p>
+<p><span class="math display">
+p' = f(AA) + \tfrac{1}{2} f(Aa) = p^2 + \tfrac{1}{2}\cdot 2pq = p\,(p + q) = p.
+</span></p>
+<p>In numbers: <em>p</em>′ = 0.36 + 0.48/2 = 0.36 + 0.24 = <strong>0.60</strong>, the same as before.</p>
+<ul>
+<li>So the gene pool of the next generation is the same, and so are its genotype frequencies: the population has reached an <strong>equilibrium</strong>.</li>
+<li>Segregation is fair: each heterozygote passes on <em>A</em> and <em>a</em> equally often, and <strong>nothing</strong> in Mendel’s laws favours the dominant allele.</li>
+</ul>
+<aside class="notes">
+<p>The algebra is one line: factor out p, and p plus q is one. Walk through the numbers too, because many students trust numbers more than symbols. The important consequence is that Mendelian inheritance by itself conserves allele frequencies. This answers the question Hardy was asked by the geneticist Punnett: why does a dominant allele not take over? Because dominance is about how a heterozygote looks, not about which allele it transmits. Anything that changes p must therefore be something outside Mendel’s laws: selection, drift, mutation or migration, the subject of the next unit.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-generation-is-enough" class="slide level2 smaller">
+<h2>One generation is enough</h2>
+
+<img data-src="fig05-one-generation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:86.0%"><ul>
+<li>Generation 0 had <strong>too few</strong> heterozygotes (0.20 instead of 0.48). After <strong>one</strong> round of random mating the genotypes are at <em>p</em>², 2<em>pq</em>, <em>q</em>² and stay there.</li>
+<li>The starting genotype frequencies do not matter, only <em>p</em>. This is why many real loci sit close to HWE even when the population’s history was messy.</li>
+</ul>
+<aside class="notes">
+<p>This is unusual for an equilibrium: most systems approach equilibrium gradually, but HWE for one autosomal locus is reached in a single generation. Two caveats for later: for X-linked loci with unequal frequencies in the two sexes, it takes several generations, with the frequencies oscillating; and for two loci considered jointly, the approach to equilibrium (linkage equilibrium) is gradual, which is why linkage disequilibrium exists at all, something we use in GWAS. Exercise B3 asks the same question with a population of pure homozygotes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -255,8 +367,8 @@ p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.5
 <h2>The Hardy–Weinberg principle</h2>
 <p>In a large, randomly mating population with no selection, mutation or migration:</p>
 <ol type="1">
-<li>Genotype frequencies are **<em>p_², 2_pq</em>, _q_²<strong>, after </strong>one** generation of random mating, whatever they were before.</li>
-<li>Allele and genotype frequencies then stay <strong>constant</strong> from generation to generation.</li>
+<li>Genotype frequencies are <strong><em>p</em></strong>², 2<strong><em>pq</em></strong>, <strong><em>q</em></strong>², after <strong>one</strong> generation of random mating, whatever they were before (step 2).</li>
+<li>Allele and genotype frequencies then stay <strong>constant</strong> from generation to generation (step 3).</li>
 </ol>
 <p>Note what it does <strong>not</strong> say:</p>
 <ul>
@@ -288,6 +400,33 @@ p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.5
 </ul>
 <aside class="notes">
 <p>Read the plot at q equals 0.1. The orange curve is at 0.18, the red one at 0.01. The ratio 2pq over q squared is 2p over q, about 2 over q for rare alleles. At q equals 0.01 that is about 200 carriers per affected person. This matters for medicine: carrier screening finds far more people than disease screening. It matters for evolution: even if every aa person died, the allele frequency would fall only very slowly, because selection cannot see the carriers. Mention eugenics here briefly: early twentieth-century proposals to remove recessive diseases by sterilising affected people would have had almost no effect on allele frequencies, exactly for this reason.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="when-heterozygotes-are-hidden-start-from-aa" class="slide level2">
+<h2>When heterozygotes are hidden: start from <em>aa</em></h2>
+<p>With <strong>complete dominance</strong>, <em>AA</em> and <em>Aa</em> look the same, so we cannot count alleles directly. Only <em>aa</em> is visible. If we <strong>assume</strong> HWE:</p>
+<p><span class="math display">
+f(aa) = q^2 \;\Rightarrow\; q = \sqrt{f(aa)}.
+</span></p>
+<p>Example: 16% of a population show a recessive phenotype.</p>
+<ol type="1">
+<li><em>q</em> = √0.16 = <strong>0.4</strong>, so <em>p</em> = 0.6.</li>
+<li><em>AA</em> = 0.36, <em>Aa</em> = 0.48: together the 84% with the dominant phenotype.</li>
+<li>Fraction of dominant-phenotype people who are carriers: 0.48 / 0.84 = <strong>0.57</strong>.</li>
+</ol>
+<p>Caution: here HWE is an <strong>assumption</strong>, not a result. With only two visible classes there is no degree of freedom left to test it.</p>
+<aside class="notes">
+<p>This is the situation for most recessive diseases and for many textbook traits. The trick is that the one class we can see, the recessive homozygotes, is q squared under HWE. Taking the square root is the step students forget: they often use the frequency of aa as q. Step 3 is the kind of question exercise B4 asks with other numbers. The caveat matters: with two phenotype classes and one estimated parameter, df equals zero, so the data cannot tell us whether HWE holds. If there is inbreeding, the square root of the aa frequency overestimates q, because inbreeding inflates the aa class. The carrier-frequency calculation later in the lecture uses exactly this step.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -363,19 +502,130 @@ p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.5
           display:block!important;
       }</style></aside>
 </section>
-<section id="testing-hwe-with-χ²" class="slide level2">
-<h2>Testing HWE with χ²</h2>
-<p><em>TCF7L2</em> SNP rs7903146 in 99 people of north-west European ancestry (CEU, 1000 Genomes): 52 <em>CC</em>, 32 <em>CT</em>, 15 <em>TT</em>.</p>
-<ol type="1">
-<li><em>p</em> = (2 × 52 + 32)/198 = 0.687, <em>q</em> = 0.313.</li>
-<li>Expected: 99 × 0.687² = <strong>46.7</strong>, 99 × 2 × 0.687 × 0.313 = <strong>42.6</strong>, 99 × 0.313² = <strong>9.7</strong>.</li>
-<li>χ² = (52 − 46.7)²/46.7 + (32 − 42.6)²/42.6 + (15 − 9.7)²/9.7 = <strong>6.1</strong>.</li>
-<li><strong>df = 3 − 1 − 1 = 1</strong>: three classes, minus 1 because the counts add up to <em>N</em>, minus 1 because <em>p</em> was <strong>estimated from the same data</strong>.</li>
-<li>p = 0.013 &lt; 0.05: reject HWE at the 5% level? Fewer heterozygotes than expected (<em>F</em> = 0.25).</li>
-</ol>
-<p>But we tested <strong>15</strong> SNP–population pairs in the exercise; one at p ≈ 0.01 is roughly what chance gives. More on this in GWAS.</p>
+<section id="χ²-test-for-hwe-step-1-expected-counts" class="slide level2">
+<h2>χ² test for HWE, step 1: expected counts</h2>
+<p><em>TCF7L2</em> SNP rs7903146 in 99 people of north-west European ancestry (CEU, 1000 Genomes): 52 <em>CC</em>, 32 <em>CT</em>, 15 <em>TT</em>. Is this sample in HWE?</p>
+<p><strong>1a. Estimate <em>p</em> from the data</strong> (count alleles): <em>p</em> = (2 × 52 + 32)/198 = 136/198 = <strong>0.687</strong>, <em>q</em> = <strong>0.313</strong>.</p>
+<p><strong>1b. Expected counts</strong> = <em>N</em> × HWE frequency:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>CC</em></th>
+<th><em>CT</em></th>
+<th><em>TT</em></th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HWE frequency</td>
+<td><em>p</em>² = 0.472</td>
+<td>2<em>pq</em> = 0.430</td>
+<td><em>q</em>² = 0.098</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>expected <em>E</em></td>
+<td>99 × 0.472 = <strong>46.7</strong></td>
+<td>99 × 0.430 = <strong>42.6</strong></td>
+<td>99 × 0.098 = <strong>9.7</strong></td>
+<td>99</td>
+</tr>
+<tr class="odd">
+<td>observed <em>O</em></td>
+<td>52</td>
+<td>32</td>
+<td>15</td>
+<td>99</td>
+</tr>
+</tbody>
+</table>
+<p>Check: the expected counts add up to <em>N</em>.</p>
 <aside class="notes">
-<p>Go step by step; this is the χ² from Part 1 with one new idea, the lost degree of freedom. In Mendel’s crosses the expected ratio came from theory, so df was the number of classes minus one. Here p is estimated from the same counts, and each estimated parameter costs one degree of freedom, leaving 1. The critical value at 5% with df 1 is 3.84. The data are real: from the 1000 Genomes CEU sample, via Ensembl. Is this population really out of HWE? Probably not: in the R exercise students test 15 SNP–population pairs, and with 15 tests at 5% we expect about 0.75 false rejections. This is the multiple-testing problem that returns with the 5 times 10 to the minus 8 threshold in the complex traits unit. Another sample of the same population would likely not reject.</p>
+<p>Go slowly; this is the χ² from Part 1 with one new idea. The expected counts do not come from a theoretical ratio like 1:2:1 but from the allele frequency estimated from the same sample. Always check that the expected counts add up to N; it catches most arithmetic slips. Keep two or three decimals in p, or rounding errors grow in the χ² sum. The data are real: from the 1000 Genomes CEU sample, via Ensembl. Ask the class which genotype class looks short before computing anything: heterozygotes, 32 against about 43.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="χ²-test-step-2-the-statistic-and-its-degrees-of-freedom" class="slide level2">
+<h2>χ² test, step 2: the statistic and its degrees of freedom</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th><em>CC</em></th>
+<th><em>CT</em></th>
+<th><em>TT</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>O</em> − <em>E</em></td>
+<td>52 − 46.7 = 5.3</td>
+<td>32 − 42.6 = −10.6</td>
+<td>15 − 9.7 = 5.3</td>
+</tr>
+<tr class="even">
+<td>(<em>O</em> − <em>E</em>)²/<em>E</em></td>
+<td>0.60</td>
+<td>2.63</td>
+<td>2.89</td>
+</tr>
+</tbody>
+</table>
+<p>χ² = 0.60 + 2.63 + 2.89 = <strong>6.1</strong></p>
+<p><strong>df = 3 − 1 − 1 = 1</strong>:</p>
+<ul>
+<li>3 classes,</li>
+<li>− 1 because the counts must add up to <em>N</em>,</li>
+<li>− 1 because <em>p</em> was <strong>estimated from the same data</strong>.</li>
+</ul>
+<p>Critical value at 5% with df = 1: <strong>3.84</strong>. (With df = 2 it would be 5.99: using the wrong df changes the decision for χ² between 3.84 and 5.99.)</p>
+<aside class="notes">
+<p>In Mendel’s crosses the expected ratio came from theory, so df was the number of classes minus one. Here we used the data once to estimate p, and each estimated parameter costs one degree of freedom. Intuition: once p is fixed and N is fixed, knowing one of the three counts determines the other two if the population is in HWE, so only one number is free to disagree with the model. The two homozygote classes contribute about equally here, because the missing heterozygotes went into both. The smallest class, TT, contributes most per person, because its expected count is small.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="χ²-test-step-3-decide-and-interpret" class="slide level2">
+<h2>χ² test, step 3: decide, and interpret</h2>
+<ul>
+<li>χ² = 6.1 &gt; 3.84, p = 0.013: <strong>reject</strong> HWE at the 5% level.</li>
+<li>Direction: <strong>fewer heterozygotes</strong> than expected. <em>F</em> = 1 − <em>H</em><sub>obs</sub>/<em>H</em><sub>exp</sub> = 1 − (32/99)/0.430 = <strong>0.25</strong>.</li>
+<li>A useful check: for the HWE test, χ² = <em>N</em> <em>F</em>² = 99 × 0.25² ≈ 6.1.</li>
+</ul>
+<p>But is this population really out of HWE? Probably not:</p>
+<ul>
+<li>In the R exercise we test <strong>15</strong> SNP–population pairs. At the 5% level we expect 15 × 0.05 ≈ 0.75 false rejections, so one p ≈ 0.01 is roughly what chance gives.</li>
+<li>A real biological cause (inbreeding, structure) would affect <strong>all</strong> loci, not one.</li>
+<li>This is the <strong>multiple-testing</strong> problem; it returns with the 5 × 10⁻⁸ threshold in GWAS.</li>
+</ul>
+<aside class="notes">
+<p>The decision rule is the same as in Part 1. The interpretation is where students need help. A significant departure has three kinds of explanation: biology at this locus (selection), biology of the population (inbreeding, structure, which would show at many loci), or chance and technical artefacts (multiple testing, genotyping errors). The N F squared identity is exact for the HWE test with df 1, and the demo shows it. Another sample of the same population would likely not reject. The same sample tested at many SNPs is how one would check for inbreeding or structure.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -585,16 +835,66 @@ p = f(M) = \frac{2 \times 1787 + 3039}{2 \times 6129} = \frac{6613}{12258} = 0.5
           display:block!important;
       }</style></aside>
 </section>
-<section id="inbreeding-and-the-inbreeding-coefficient-f" class="slide level2">
-<h2>Inbreeding and the inbreeding coefficient <em>F</em></h2>
-<p><strong>F</strong> = the probability that the two alleles in a person are <strong>identical by descent</strong>: copies of one ancestral allele. With inbreeding, genotype frequencies become</p>
+<section id="inbreeding-where-the-formulas-come-from" class="slide level2">
+<h2>Inbreeding: where the formulas come from</h2>
+<p><strong>F</strong> = the probability that the two alleles in a person are <strong>identical by descent</strong> (IBD): copies of one ancestral allele. Build <em>f</em>(<em>aa</em>) in two cases:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Case</th>
+<th>probability</th>
+<th>P(<em>aa</em>) in this case</th>
+<th>contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>the two alleles are IBD: really <strong>one</strong> allele, copied</td>
+<td><em>F</em></td>
+<td><em>q</em> (one draw)</td>
+<td><em>F q</em></td>
+</tr>
+<tr class="even">
+<td>not IBD: two <strong>independent</strong> draws, as in HWE</td>
+<td>1 − <em>F</em></td>
+<td><em>q</em>²</td>
+<td>(1 − <em>F</em>) <em>q</em>²</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">
+f(aa) = Fq + (1-F)\,q^2 = q^2 + F(q - q^2) = q^2 + Fpq.
+</span></p>
+<p>The same argument gives <em>f</em>(<em>AA</em>) = <em>p</em>² + <em>Fpq</em> and <em>f</em>(<em>Aa</em>) = 2<em>pq</em>(1 − <em>F</em>): an IBD pair can never be heterozygous.</p>
+<aside class="notes">
+<p>This is a direct use of the sum rule from the probability unit: split into two exclusive cases and add. If the two alleles are identical by descent, they are copies of one ancestral allele, so the person is aa if that one allele is a, with probability q. Otherwise the two alleles are independent draws from the population, as in Hardy–Weinberg. The algebra then factors: q minus q squared is q times p.&nbsp;Students met F for a child of first cousins in the pedigrees unit as a path-counting probability; this is how F enters genotype frequencies.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="inbreeding-raises-aa-most-for-rare-alleles" class="slide level2">
+<h2>Inbreeding raises <em>aa</em> most for rare alleles</h2>
 <p><span class="math display">
 f(AA) = p^2 + Fpq, \qquad f(Aa) = 2pq(1-F), \qquad f(aa) = q^2 + Fpq.
 </span></p>
 <ul>
 <li>Heterozygotes fall by a factor (1 − <em>F</em>); the missing ones become homozygotes. <strong>Allele frequencies do not change.</strong></li>
 <li>Child of first cousins: <em>F</em> = 1/16 (pedigrees unit). Selfing plants approach <em>F</em> = 1.</li>
-<li>The <strong>rarer</strong> the allele, the bigger the effect on <em>aa</em>:</li>
+<li>The <strong>rarer</strong> the allele, the bigger the relative effect on <em>aa</em>:</li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -640,6 +940,64 @@ f(AA) = p^2 + Fpq, \qquad f(Aa) = 2pq(1-F), \qquad f(aa) = q^2 + Fpq.
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Using a genotype frequency as an allele frequency</td>
+<td><em>p</em> = f(<em>AA</em>) + ½ f(<em>Aa</em>): count gene copies, two per person</td>
+</tr>
+<tr class="even">
+<td>Using the incidence of a recessive disease as <em>q</em></td>
+<td>incidence = <em>q</em>², so <em>q</em> = √incidence (1/10 000 → <em>q</em> = 1/100)</td>
+</tr>
+<tr class="odd">
+<td>df = 2 in the χ² test for HWE</td>
+<td>df = 1: one more is lost because <em>p</em> is estimated from the data</td>
+</tr>
+<tr class="even">
+<td>Expected counts from 1 : 2 : 1</td>
+<td>expected counts from the sample’s own <em>p</em>: <em>Np</em>², 2<em>Npq</em>, <em>Nq</em>²</td>
+</tr>
+<tr class="odd">
+<td>“Dominant alleles become common”</td>
+<td>dominance changes phenotypes, not transmission: <em>p</em> stays constant</td>
+</tr>
+<tr class="even">
+<td>X-linked: males affected at <em>q</em>²</td>
+<td>males are hemizygous: affected males = <em>q</em>; females <em>q</em>²</td>
+</tr>
+<tr class="odd">
+<td>A heterozygote deficit proves inbreeding</td>
+<td>it can also be structure (Wahlund), selection, or genotyping error</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Use this as a check-yourself slide: cover the right column and ask the class for the fix. The first three cover most errors in exam answers on this topic. The fourth comes from Part 1, where 1:2:1 was correct for an F2 cross; in a population the expected ratio depends on p.&nbsp;The last one is a reasoning error: one pattern, several possible causes, so look at many loci and at how the sample was collected before deciding.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="what-hwe-is-used-for" class="slide level2">
 <h2>What HWE is used for</h2>
 <ul>
@@ -666,12 +1024,13 @@ f(AA) = p^2 + Fpq, \qquad f(Aa) = 2pq(1-F), \qquad f(aa) = q^2 + Fpq.
 <h2>Summary</h2>
 <ul>
 <li>Allele frequency: count gene copies, <em>p</em> = f(<em>AA</em>) + ½ f(<em>Aa</em>).</li>
-<li>Random mating gives **<em>p_², 2_pq</em>, _q_²** in one generation, and keeps <em>p</em> constant. Dominance does not change allele frequencies.</li>
+<li>Derivation: gene pool (<em>p</em>) → random union of gametes (product rule) → <strong><em>p</em></strong>², 2<strong><em>pq</em></strong>, <strong><em>q</em></strong>² in one generation, with <em>p</em> constant. Dominance does not change allele frequencies.</li>
 <li>Assumptions: random mating, large population, no selection, mutation or migration, one population.</li>
-<li><strong>χ² test for HWE</strong>: expected counts from the estimated <em>p</em>, <strong>df = 1</strong>.</li>
+<li>With complete dominance, <em>q</em> = √f(<em>aa</em>), assuming HWE.</li>
+<li><strong>χ² test for HWE</strong>: expected counts from the estimated <em>p</em>, <strong>df = 1</strong>; interpret with multiple testing in mind.</li>
 <li>Rare alleles are mostly in <strong>carriers</strong>: carrier frequency ≈ 2√incidence (PKU: 1/10 000 → 1/50).</li>
 <li>X-linked: males affected at <em>q</em>, females at <em>q</em>².</li>
-<li>Inbreeding (<em>F</em>) and population structure (Wahlund) both give a <strong>heterozygote deficit</strong>; heterozygote advantage can give an excess.</li>
+<li>Inbreeding (<em>F</em>: <em>aa</em> = <em>q</em>² + <em>Fpq</em>) and population structure (Wahlund) both give a <strong>heterozygote deficit</strong>; heterozygote advantage can give an excess.</li>
 </ul>
 <aside class="notes">
 <p>The three numbers to remember: p squared, 2pq, q squared; df equals 1; and carrier frequency about 2 times the square root of the incidence. Students should be able to do the χ² test for HWE by hand in an exam.</p>

@@ -141,3 +141,15 @@ Which pair of classes does the wrong order call "double crossovers"?
 ::: {.callout-note collapse="true" title="Answer"}
 With the wrong gene in the middle, the "double crossover" classes are really a **single** crossover pair, which is far more common. Its count is then compared with an expected number computed as if it were rare, so observed ≫ expected and CoC ≫ 1. A CoC far above 1 is a warning sign that the order is wrong, which is why the correct order is the one where the DCO pair is the rarest.
 :::
+
+---
+
+**Q12.** Three genes lie in the order *A*–*B*–*C*, with *A*–*B* = 10 cM and *B*–*C* = 20 cM, and the interference is I = 0.5. Among 1000 testcross offspring, how many do you expect in each **type** of class: parental, SCO in I, SCO in II and DCO?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Start with the DCOs: P(DCO) = (1 − I) × RF~I~ × RF~II~. Each interval's RF already includes the DCOs.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(DCO) = 0.5 × 0.10 × 0.20 = 0.01 → **10** (5 in each DCO class). P(SCO in I) = 0.10 − 0.01 = 0.09 → **90**. P(SCO in II) = 0.20 − 0.01 = 0.19 → **190**. P(parental) = 1 − 0.01 − 0.09 − 0.19 = 0.71 → **710**. Check: 10 + 90 + 190 + 710 = 1000. (A common mistake is to use 100 and 200 for the singles, which counts the DCOs twice.)
+:::

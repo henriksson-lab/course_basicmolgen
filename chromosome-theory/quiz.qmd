@@ -144,3 +144,15 @@ In meiosis I, what fails to separate: homologues or sisters?
 ::: {.callout-note collapse="true" title="Answer"}
 **Meiosis I**: the two **homologues** fail to separate, so the n + 1 gamete carries two **different** copies, one from each of the parent's own parents; all four gametes are abnormal (two n + 1, two n − 1). **Meiosis II**: two **sister chromatids** fail to separate, so the n + 1 gamete carries two **identical** copies; the other cell divides normally, giving two normal gametes, one n + 1 and one n − 1. (Ignoring crossing over, which makes the distinction partial near the chromosome ends.)
 :::
+
+---
+
+**Q12.** A colour-blind woman (X^*c*^X^*c*^) and a man with normal vision (X^*C*^Y) have a son who is **47,XXY** and **colour-blind**. In which parent did the nondisjunction happen? Can you tell whether it was in meiosis I or meiosis II?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Write the son's genotype first. Which parent could have given him two X^*c*^? Then ask whether the mother's two X chromosomes can be told apart.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+He is X^*c*^X^*c*^Y. The father has no *c*, so **both X came from the mother** and the Y from the father: the error was in the **mother**. But she is homozygous, X^*c*^X^*c*^, so her two homologues carry the same allele: two different homologues (meiosis I error) and two sister copies of one (meiosis II error) look the same. With this gene you **cannot tell** which division; you would need a marker for which the mother is heterozygous, ideally near the centromere.
+:::

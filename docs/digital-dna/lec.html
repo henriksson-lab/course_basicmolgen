@@ -29,7 +29,23 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -148,10 +164,10 @@ Basic and molecular genetics (5MO104)
 <li><strong>Copy</strong>: cloning in a plasmid vector (briefly), and the <strong>polymerase chain reaction</strong> (PCR), which copies one stretch of DNA a billion-fold.</li>
 <li><strong>Read</strong>: <strong>Sanger sequencing</strong> reads one PCR product; <strong>next-generation sequencing</strong> reads millions of short pieces at once.</li>
 </ul>
-<p>The running example is the sickle-cell allele of <em>HBB</em> from Genetics as information: we will detect it in a family with PCR and a restriction enzyme.</p>
+<p>The running example is the sickle-cell allele of <em>HBB</em> from Genetics as information: we detect it in a family with PCR and a restriction enzyme, and then by sequencing. Along the way we work through the by-hand skills step by step: reading a gel against a ladder, building a restriction map, PCR arithmetic, writing primers and reading a Sanger trace.</p>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, chapter on digital analysis of DNA.</p>
 <aside class="notes">
-<p>This lecture opens Part 4, the most bioinformatic block of the course, but the questions stay genetic: which allele does this person carry, and how do we know? Remind students of HbS from the first unit: one base change, GAG to GTG in codon 7 (traditionally codon 6). Today we see how a lab detects that one base. The book calls this “digital” because DNA, once read, is a string of four letters that can be copied, compared and searched like any other digital data. The exercise has two demos (a virtual gel and a PCR curve) and the R part finds restriction sites in the genome of phage lambda.</p>
+<p>This lecture opens Part 4, the most bioinformatic block of the course, but the questions stay genetic: which allele does this person carry, and how do we know? Remind students of HbS from the first unit: one base change, GAG to GTG in codon 7 (traditionally codon 6). Today we see how a lab detects that one base. The book calls this “digital” because DNA, once read, is a string of four letters that can be copied, compared and searched like any other digital data. The worked examples in this deck use the same methods as the by-hand problems in the exercise, but with different numbers, so students can follow the method and then do the exercise themselves. The exercise has two demos (a virtual gel and a PCR curve) and the R part finds restriction sites in the genome of phage lambda.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -335,7 +351,131 @@ Basic and molecular genetics (5MO104)
 <li>Higher % agarose resolves short fragments (100–1,000 bp); lower % resolves long ones (1–20 kb).</li>
 </ul>
 <aside class="notes">
-<p>Every DNA molecule has the same charge per unit length, so charge alone would not separate them; it is the gel matrix that does, by sieving. That is why distance depends on size, and in practice on the log of size. Show how to read the plot: find the unknown band’s distance, go up to the line, read across. Doing it by eye on a log scale is a skill students will need in the lab. Two practical details: the DNA is invisible until stained, and band brightness depends on mass, so a 37 bp fragment carries much less stain than a 400 bp fragment present in the same number of copies. Very large fragments (above about 20 to 30 kb) all run together near the well on a normal gel; separating them needs pulsed-field electrophoresis.</p>
+<p>Every DNA molecule has the same charge per unit length, so charge alone would not separate them; it is the gel matrix that does, by sieving. That is why distance depends on size, and in practice on the log of size. The figure shows the idea; the next slide does the reading step by step with numbers. Two practical details: the DNA is invisible until stained, and band brightness depends on mass, so a 37 bp fragment carries much less stain than a 400 bp fragment present in the same number of copies. Very large fragments (above about 20 to 30 kb) all run together near the well on a normal gel; separating them needs pulsed-field electrophoresis.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-a-gel-against-a-ladder-step-by-step" class="slide level2">
+<h2>Reading a gel against a ladder, step by step</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p>The ladder in the figure, measured from the wells:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Ladder band (bp)</th>
+<th style="text-align: right;">Distance (mm)</th>
+<th style="text-align: right;">log<sub>10</sub>(size)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">4.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">20.0</td>
+<td style="text-align: right;">3.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3,000</td>
+<td style="text-align: right;">27.4</td>
+<td style="text-align: right;">3.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2,000</td>
+<td style="text-align: right;">33.3</td>
+<td style="text-align: right;">3.30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">43.3</td>
+<td style="text-align: right;">3.00</td>
+</tr>
+</tbody>
+</table>
+<p>Unknown band: <strong>30.0 mm</strong>.</p>
+</div><div class="column" style="width:58%;">
+<ol type="1">
+<li><strong>Bracket</strong> the unknown with the two nearest ladder bands: 3,000 bp (27.4 mm) and 2,000 bp (33.3 mm).</li>
+<li><strong>How far along?</strong> From the 2,000 band: (33.3 − 30.0) / (33.3 − 27.4) = 3.3 / 5.9 = <strong>0.56</strong> of the way.</li>
+<li><strong>Interpolate the log</strong>, not the size: 3.30 + 0.56 × (3.48 − 3.30) = <strong>3.40</strong>.</li>
+<li><strong>Back-transform</strong>: 10<sup>3.40</sup> ≈ <strong>2,500 bp</strong>.</li>
+<li><strong>Check</strong>: the answer lies between the two ladder bands, and nearer the one it ran nearer to.</li>
+</ol>
+<p><em>Wrong way</em>: interpolating sizes linearly between 1,000 and 5,000 bp gives about 3,300 bp, 30% too large.</p>
+</div></div>
+<aside class="notes">
+<p>This is the method for B4 in the exercise and for every gel students will run in the lab. The ladder numbers here are the illustrative ones behind the figure on the previous slide, where log size falls by 0.03 per millimetre. The key idea is that equal distances correspond to equal ratios of size, not equal differences. So half-way between a 1,000 and a 9,000 bp band on the gel is 3,000 bp (the geometric mean), not 5,000. Always bracket with the nearest bands: the line is only roughly straight, and a short interpolation is more accurate than a long one. In practice gel software does this with a fitted curve, but the logic is the same. The linear mistake at the bottom: going 0.57 of the way from 1,000 to 5,000 in bp gives 3,280, whereas 0.57 of the way in log units gives 2,500.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-what-can-fool-you-on-a-gel" class="slide level2 smaller">
+<h2>Check yourself: what can fool you on a gel</h2>
+<div class="columns">
+<div class="column" style="width:34%;">
+<p><img data-src="img/gel-photo.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_2.jpg" class="photo-credit">Photo: Mnolf, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p>A real gel under UV: ladder on the left, five samples.</p>
+</div><div class="column" style="width:66%;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you see</th>
+<th>What it can mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>uncut plasmid runs <strong>ahead</strong> of the linear plasmid</td>
+<td><strong>supercoiled</strong> circles are compact and run fast: an uncut circle does not give its size</td>
+</tr>
+<tr class="even">
+<td>an expected small band is missing</td>
+<td>it is faint (little mass), or it ran off the end of the gel</td>
+</tr>
+<tr class="odd">
+<td>fewer bands than expected</td>
+<td>two fragments of nearly the same size <strong>comigrate</strong> (λ EcoRI + BamHI: 3,775 and 3,758 bp)</td>
+</tr>
+<tr class="even">
+<td>more bands than expected, adding up to more than the molecule</td>
+<td>a <strong>partial digest</strong>: some sites were not cut, leaving larger intermediate pieces</td>
+</tr>
+<tr class="odd">
+<td>bands do not sum to the known length</td>
+<td>a misread size, a missing small band, or a doublet</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>sum check</strong> is the simplest test of a reading: fragments of a complete digest add up to the length of the molecule.</p>
+</div></div>
+<aside class="notes">
+<p>The photo is a real agarose gel stained with a DNA dye and photographed under UV light, from Wikimedia Commons. Point out the ladder in the first lane, that bands differ in brightness (more DNA mass, brighter band), and that some lanes are fuzzy or have faint extra bands: real gels are messier than the diagrams. These are the errors students actually make, and the exercise touches several of them (E3 on supercoiling, E2 and R4 on the HindIII ladder). Partial digests happen when there is too little enzyme or too short a time: then some molecules are cut at every site, others at only some, and you see the complete products plus larger pieces that are sums of neighbouring fragments. That is itself useful information in classical restriction mapping, because a partial product shows which fragments are neighbours. Comigrating fragments are recognised by brightness: a doublet carries twice the mass of a single band of the same size.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -388,7 +528,29 @@ Basic and molecular genetics (5MO104)
 <li>A fragment that survives the double digest unchanged (5,505; 3,530) contains no site for the other enzyme. Fragments that split show where the other sites are.</li>
 </ul>
 <aside class="notes">
-<p>Restriction mapping is the oldest kind of physical map, and the logic is a puzzle like the three-point cross in Part 2: you have pieces and must find the order. Walk through one example. The BamHI 5,505 fragment survives the double digest, so it has no EcoRI site; it is at an end of the molecule (it is in fact the left end, positions 1 to 5,505). The EcoRI 21,226 fragment, the left end, is cut by BamHI into 5,505 and 15,721. The numbers are computed from the real sequence; students reproduce them in R. Note that 3,775 and 3,758 differ by only 17 bp and would look like one bright band on a gel: a gel cannot resolve everything.</p>
+<p>Restriction mapping is the oldest kind of physical map, and the logic is a puzzle like the three-point cross in Part 2: you have pieces and must find the order. The next slide walks through it. The numbers are computed from the real sequence; students reproduce them in R. Note that 3,775 and 3,758 differ by only 17 bp and would look like one bright band on a gel: a gel cannot resolve everything.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="building-the-λ-map-step-by-step" class="slide level2 smaller">
+<h2>Building the λ map, step by step</h2>
+
+<img data-src="fig07-lambda-map.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><ol type="1">
+<li><strong>Survivors.</strong> BamHI 5,505 and EcoRI 3,530 appear unchanged in the double digest, so each holds no site of the other enzyme.</li>
+<li><strong>Splits.</strong> EcoRI 21,226 is missing from the double digest; 5,505 + 15,721 = 21,226, so BamHI cuts it 5,505 bp from one end. Both 21,226 and 5,505 must then be the <strong>same end</strong> of λ.</li>
+<li><strong>Repeat</strong> for each missing fragment: find the double-digest pieces that sum to it, and place the cut. Check that every single-digest fragment is accounted for.</li>
+</ol>
+<aside class="notes">
+<p>This is the reasoning for B3 in the exercise, shown on real data. Step 1: a fragment that survives both digests has no site for the other enzyme inside it. Step 2: the EcoRI 21,226 piece is not in the double digest, so BamHI cuts it, and the only pair of double-digest fragments that sums to 21,226 and includes a survivor is 5,505 plus 15,721. Since the BamHI 5,505 piece is an end fragment of the BamHI digest (it has a BamHI cut on only one side and no EcoRI site), both pieces sit at the left end. Step 3 continues the same way along the molecule. For a small problem you can also simply try each arrangement and check which one gives the observed double digest; for a real genome you let R do it, as in the R exercise. A map built from fragment sizes is unique only up to orientation: it can always be flipped end to end.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -469,7 +631,70 @@ Basic and molecular genetics (5MO104)
 <li>Ingredients: template DNA, two primers, dNTPs, Mg<sup>2+</sup>, buffer, <em>Taq</em> polymerase.</li>
 </ul>
 <aside class="notes">
-<p>PCR was invented by Kary Mullis in the 1980s. The trick that made it practical was the polymerase from Thermus aquaticus, a bacterium from hot springs, which survives the denaturation step, so you do not have to add new enzyme every cycle. Make sure students see why the product has defined ends: the first cycles make longer strands that start at a primer but run past the other primer site, but from cycle 3 on, strands that start at one primer and end at the other dominate, and after 30 cycles they are essentially all of the product. The product length is therefore set by the primer positions, which is what Primer-BLAST reports in the exercise.</p>
+<p>PCR was invented by Kary Mullis in the 1980s. The trick that made it practical was the polymerase from Thermus aquaticus, a bacterium from hot springs, which survives the denaturation step, so you do not have to add new enzyme every cycle. The figure simplifies one thing: it treats every copy as the final product. The next slide shows why that is nearly, but not exactly, true.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-the-product-has-defined-ends-the-first-three-cycles" class="slide level2 smaller">
+<h2>Why the product has defined ends: the first three cycles</h2>
+
+<img data-src="fig08-pcr-cycles.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cycle <em>n</em></th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+<th style="text-align: right;">10</th>
+<th style="text-align: right;">30</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>duplexes (2<sup><em>n</em></sup>)</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">1,024</td>
+<td style="text-align: right;">1.07 × 10<sup>9</sup></td>
+</tr>
+<tr class="even">
+<td>target length (2<sup><em>n</em></sup> − 2<em>n</em>)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">1,004</td>
+<td style="text-align: right;">all but 60</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Go through the columns one at a time. Cycle 1: each original strand is copied from a primer, but the polymerase runs on past the far primer site, so the new strands are long, with one defined end. Cycle 2: copying a long strand from the other primer stops at its end, which is the first primer: this gives the first strand with two defined ends, the short product, still paired with a long strand. Cycle 3: copying a short strand gives a short strand, so the first two duplexes of exactly the target length appear. From then on the short products grow exponentially, while the originals stay at 2 and the long products grow only by 2 per cycle. That is the 2 to the n minus 2n in the table, which we checked by counting duplexes in a small simulation. After 30 cycles, all but 60 of a billion duplexes are the target. So the product length is set by the primer positions, which is what Primer-BLAST reports in the exercise. A common misconception is that PCR copies “the gene”; it copies only the stretch between the primers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -522,6 +747,27 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>The point of this table is that exponential growth is extremely sensitive to both the number of cycles and the efficiency: 90 percent instead of 100 percent efficiency gives five times fewer copies after 30 cycles. That is why quantitative PCR does not read the end point, which saturates, but the threshold cycle, which sits in the exponential phase. The rule of 3.3 cycles per ten-fold is worth deriving on the board: 2 to the power x equals 10 gives x equals log 10 over log 2, about 3.32. At 90 percent efficiency it is log 10 over log 1.9, about 3.6, which the demo shows. Sensitivity has a dark side: a single contaminating molecule can be amplified too, so every PCR has a no-template control.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-pcr-arithmetic" class="slide level2">
+<h2>Worked example: PCR arithmetic</h2>
+<p><strong>How many templates?</strong> One haploid human genome is 3.1 × 10<sup>9</sup> bp × 650 g/mol per bp ÷ 6.0 × 10<sup>23</sup> per mol ≈ <strong>3.3 pg</strong>. So 10 ng of genomic DNA holds 10,000 pg / 3.3 pg ≈ <strong>3,000 copies</strong> of a single-copy gene such as <em>HBB</em>.</p>
+<p><strong>How many copies after 30 cycles at <em>E</em> = 0.9?</strong> <em>N</em> = 3,000 × 1.9<sup>30</sup> = 3,000 × 2.3 × 10<sup>8</sup> ≈ <strong>6.9 × 10<sup>11</sup></strong>: close to the plateau of about 10<sup>12</sup>, so 30 cycles is enough.</p>
+<p><strong>How many cycles to reach 10<sup>11</sup> copies?</strong> Solve 3,000 × 1.9<sup><em>n</em></sup> = 10<sup>11</sup> with logs:</p>
+<p><span class="math display">n = \frac{\log(10^{11} / 3{,}000)}{\log 1.9} = \frac{7.52}{0.279} \approx 27 \text{ cycles}</span></p>
+<p><strong>What does a difference in Ct mean?</strong> Two samples cross the threshold 5.0 cycles apart. At <em>E</em> = 1 the earlier one had 2<sup>5</sup> = <strong>32 times</strong> more template; at <em>E</em> = 0.9, 1.9<sup>5</sup> ≈ <strong>25 times</strong>.</p>
+<aside class="notes">
+<p>These are the three kinds of PCR calculation students meet in the exercise (B5) and the quiz, done with different numbers. The first line is worth doing once: it turns a mass of DNA, which is what you measure in the lab, into a number of template molecules, which is what PCR counts. 650 grams per mole is the average mass of one base pair. The second line uses the formula from the previous slide. The third line is the only step that needs logarithms: take the log of both sides, so the exponent comes down. Any base of logarithm works, as long as you use the same one above and below the line; here base 10. The last line is the qPCR rule turned round: each cycle earlier means one factor of 1 plus E more template. Remind students that the plateau stops all of this: past about 10 to the 12 copies in a normal reaction, nothing is exponential any more.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -589,6 +835,62 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-writing-a-primer-pair" class="slide level2">
+<h2>Worked example: writing a primer pair</h2>
+<p>You want to amplify a stretch whose <strong>top strand</strong> (5’→3’) starts and ends like this (an invented sequence):</p>
+<pre><code>5'-AGGTCTGACCAAGTTCAGCAC ········ 260 bp ········ GCCTACGAGTTCAACCTGCA-3'</code></pre>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Forward primer</th>
+<th>Reverse primer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rule</td>
+<td><strong>copy</strong> the start of the top strand</td>
+<td><strong>reverse complement</strong> of the end of the top strand</td>
+</tr>
+<tr class="even">
+<td>Sequence (5’→3’)</td>
+<td>AGGTCTGACCAAGTTCAGCAC</td>
+<td>TGCAGGTTGAACTCGTAGGC</td>
+</tr>
+<tr class="odd">
+<td>Length; G + C</td>
+<td>21 nt; 11 (52%)</td>
+<td>20 nt; 11 (55%)</td>
+</tr>
+<tr class="even">
+<td>Wallace Tm</td>
+<td>2 × 10 + 4 × 11 = 64 °C</td>
+<td>2 × 9 + 4 × 11 = 62 °C</td>
+</tr>
+</tbody>
+</table>
+<p>Product: 21 + 260 + 20 = <strong>301 bp</strong>. Both primers end in C, are within 2 °C of each other, and are 40–60% GC.</p>
+<p><em>Common mistake</em>: writing GCCTACGAGTTCAACCTGCA (the top strand itself) as the reverse primer. It would pair with the same strand as the forward primer, both would extend in the same direction, and there would be no exponential product.</p>
+<aside class="notes">
+<p>Students reliably make the strand mistake once, so it is worth a slide. Draw the two strands on the board. The forward primer has the same sequence as the top strand and anneals to the bottom strand; it is extended to the right. The reverse primer must anneal to the top strand, so it is complementary to it, and since every primer is written 5’ to 3’, its sequence is the reverse complement of the top-strand stretch. A second, quieter mistake is to complement without reversing, which gives a sequence that is written backwards. Check the reverse primer by reverse-complementing it again: you must get the top strand back. The sequence here is invented for the example; in the exercise, B6 does the same with the real sickle-cell primers, and Primer-BLAST in Find it designs primers for HBB automatically.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="try-it-pcr-cycle-by-cycle" class="slide level2 smaller">
 <h2>Try it: PCR, cycle by cycle</h2>
 <link rel="stylesheet" href="../demos/dist/demo.css">
@@ -610,10 +912,62 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="pcr-plus-a-restriction-enzyme-genotyping-hbs" class="slide level2 smaller">
 <h2>PCR plus a restriction enzyme: genotyping HbS</h2>
-
-<img data-src="fig06-hbs-rflp.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><p>The sickle-cell change (codon 7 GAG → GTG, c.20A&gt;T) destroys a <strong>DdeI</strong> site (CTGAG → CTGTG). Amplify 500 bp around it, cut with DdeI, run a gel: <em>AA</em> = HbA/HbA, <em>AS</em> = carrier, <em>SS</em> = sickle-cell disease.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="fig06-hbs-rflp.svg" class="quarto-figure quarto-figure-center" style="width:72.0%"></p>
+</figure>
+</div>
+<p>The sickle-cell change (codon 7 GAG → GTG, c.20A&gt;T) destroys a <strong>DdeI</strong> site (CTGAG → CTGTG). Amplify 500 bp around it, cut with DdeI, run a gel: <em>AA</em> = HbA/HbA, <em>AS</em> = carrier, <em>SS</em> = sickle-cell disease.</p>
 <aside class="notes">
 <p>This is a classic diagnostic method called PCR-RFLP. It ties together everything so far: the mutation from Genetics as information and from the Mutation unit, PCR to get enough DNA from a cheek swab or a blood spot, a restriction enzyme to “read” one base, and a gel to see the result. The primers and fragment sizes are real: the 500 bp product spans exon 1 and intron 1 of HBB on chromosome 11 (GRCh38), and we checked with Primer-BLAST that the primers give a single product in the human genome. The carrier lane shows both alleles: at the DNA level, HbA and HbS are codominant, even though sickle-cell disease is recessive at the level of the phenotype. Before PCR, the same site was detected with the enzyme MstII on Southern blots. In a pedigree, this test turns “probably a carrier, 2/3” into a yes or no.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="predicting-the-bands-from-the-site-positions" class="slide level2">
+<h2>Predicting the bands from the site positions</h2>
+<p>The 500-bp product has DdeI sites (C^TNAG, cut after the C) at positions <strong>37, 217 and 418</strong>. Each cut position becomes a fragment boundary:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Boundaries</th>
+<th>Fragments (bp)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HbA allele</td>
+<td>0 · 37 · 217 · 418 · 500</td>
+<td>37 · <strong>180</strong> · <strong>201</strong> · 82</td>
+</tr>
+<tr class="even">
+<td>HbS allele (site at 217 lost)</td>
+<td>0 · 37 · 418 · 500</td>
+<td>37 · <strong>381</strong> · 82</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A person has <strong>two</strong> alleles, and PCR copies both: the lane is the <strong>union</strong> of the two allele patterns.</li>
+<li><strong>Diagnostic</strong> bands: 381 (an HbS allele is present), 201 + 180 (an HbA allele is present).</li>
+<li><strong>Control</strong> bands: 82 and 37 appear in every genotype and show that the enzyme cut.</li>
+</ul>
+<aside class="notes">
+<p>This is the reasoning students need for B7 and for E1 in the gel demo. Write the boundaries as a list, sort them, and take the differences; that is exactly what the digest function in the R exercise does with diff. The union point is the one students miss: a heterozygote does not show a “half” band or an intermediate band, it shows both sets of bands. The control bands are good experimental design: an incomplete digest leaves uncut or partly cut product, for example a 418 bp piece (37 plus 381) or the full 500 bp, which could be misread as an HbS band. The 82 and 37 bands at full strength show that the enzyme cut properly.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -666,6 +1020,71 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-from-products-to-sequence" class="slide level2">
+<h2>Worked example: from products to sequence</h2>
+<p>A reaction with an <strong>18-nt primer</strong> gave these products (in the order they were listed, not by size):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Length (nt)</th>
+<th>21</th>
+<th>19</th>
+<th>23</th>
+<th>20</th>
+<th>24</th>
+<th>22</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Last base (dye)</td>
+<td>T</td>
+<td>G</td>
+<td>C</td>
+<td>A</td>
+<td>A</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><strong>Sort by length.</strong> 19 G, 20 A, 21 T, 22 T, 23 C, 24 A. The shortest product ends at the first base after the primer (position 19).</li>
+<li><strong>Read the new strand 5’→3’</strong>: 5’-<strong>GATTCA</strong>-3’.</li>
+<li><strong>Template strand</strong>: complementary and antiparallel: 3’-CTAAGT-5’, which written 5’→3’ is <strong>5’-TGAATC-3’</strong>.</li>
+</ol>
+<p>The trace you get from the sequencer is the <strong>new strand</strong>. To report the other strand, reverse-complement it.</p>
+<aside class="notes">
+<p>This is the logic of B8 with different numbers. The step students skip is the last one: the colours give the strand that was synthesised, which is complementary to the template. Sequencing labs usually sequence both strands, with a forward and a reverse primer, and the reverse read must be reverse-complemented before it can be compared with the forward read. Also point out that the products do not include anything shorter than the primer plus one, because every product starts with the primer.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sanger-traces-at-the-sickle-cell-site" class="slide level2">
+<h2>Sanger traces at the sickle-cell site</h2>
+
+<img data-src="fig09-sanger-hbs.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>PCR copies <strong>both</strong> alleles, and the sequencing reaction reads both at once. At a heterozygous site the two dyes share the signal: two peaks of about half height at the same position. Everywhere else the alleles are identical and the peaks are single.</p>
+<aside class="notes">
+<p>These traces are schematic, drawn to show the principle; real traces are noisier and peak heights vary from base to base. The sequence is the real HBB coding strand around codon 7: CCT GAG GAG, with the HbS change at the middle base of codon 7. The carrier trace is the sequencing version of the carrier lane in the PCR-RFLP gel: both alleles are present, so both signals are seen. Base-calling software marks such positions with N or with an IUPAC code; W means A or T. A good habit is to confirm a heterozygous call on the reverse strand: there it shows up as a T and an A peak on the complementary strand, at the same site.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="reading-a-sanger-trace" class="slide level2 smaller">
 <h2>Reading a Sanger trace</h2>
 <table class="caption-top">
@@ -698,9 +1117,11 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
-<p>An HbA/HbS carrier shows an <strong>A and a T peak together</strong> at c.20 (forward strand).</p>
+<p>An HbA/HbS carrier shows an <strong>A and a T peak together</strong> at c.20 (forward strand), as on the previous slide.</p>
+
+<img data-src="img/sanger-read.png" class="quarto-figure quarto-figure-center r-stretch" style="width:85.0%"><p><a href="https://commons.wikimedia.org/wiki/File:Sanger_sequencing_read_display.png" class="photo-credit">Real trace (start of a read from a plasmid; shaded: low-quality start). Loris, public domain, via Wikimedia Commons</a></p>
 <aside class="notes">
-<p>Reading a trace is a practical skill students may meet in lab courses and in clinical genetics reports. The double peak is the sequencing version of the carrier lane in the PCR-RFLP gel: both alleles are amplified and both are read at once. Make the link to the pedigree unit: a Sanger trace is how a clinical lab confirms that both parents of a child with a recessive disease are carriers. The indel case is worth a sentence: after a heterozygous one-base deletion, every subsequent position has two different bases, so the trace becomes unreadable from that point on, which itself tells you there is an indel.</p>
+<p>Reading a trace is a practical skill students may meet in lab courses and in clinical genetics reports. This table generalises the previous slide. The trace at the bottom is a real one, the first 95 bases of a read from a plasmid: in the shaded first 30 bases the peaks are small and uneven, and the base caller has written an N, while from about base 35 the peaks are clean and evenly spaced. Make the link to the pedigree unit: a Sanger trace is how a clinical lab confirms that both parents of a child with a recessive disease are carriers. The indel case is worth a sentence: after a heterozygous one-base deletion, every subsequent position has two different bases, so the trace becomes unreadable from that point on, which itself tells you there is an indel.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -715,14 +1136,166 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="next-generation-sequencing-reads-and-coverage" class="slide level2 smaller">
 <h2>Next-generation sequencing: reads and coverage</h2>
-
-<img data-src="fig05-ngs-coverage.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:64.0%"><ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="fig05-ngs-coverage.svg" class="quarto-figure quarto-figure-center" style="width:68.0%"></p>
+</figure>
+</div>
+<ul>
 <li>Fragment the genome, sequence <strong>millions of short reads</strong> (typically 100–300 bases) in parallel, and <strong>map</strong> each read to a reference genome.</li>
 <li><strong>Coverage</strong> = number of reads × read length ÷ genome length. A human genome at 30× needs about 90 Gb of reads.</li>
 <li>Coverage varies by chance, so a heterozygous site is called only where enough reads cover it.</li>
 </ul>
 <aside class="notes">
 <p>The details of the chemistry vary between platforms and change every few years, so we stay at the level of concepts that do not change: reads, mapping and coverage. Short-read platforms such as Illumina dominate; long-read platforms (PacBio, Oxford Nanopore) give reads of tens of kilobases, which help with repeats and assembly in the next unit. The figure is simulated: 40 reads of 50 bases on a 400 base window, mean coverage 5 times. Even so, some bases are not covered at all. This is why 30 times is the usual target for a human genome: at 30 times, very few bases have so few reads that a heterozygous site could be missed. Calling a heterozygote is like the double peak in Sanger, only counted: about half the reads show each allele. The Genomic variation unit uses data from exactly this kind of sequencing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-coverage-and-calling-a-heterozygote" class="slide level2">
+<h2>Worked example: coverage and calling a heterozygote</h2>
+<p><strong>Reads needed.</strong> <em>E. coli</em> K-12 has a 4.6 Mb genome. For 50× coverage with 150-base reads:</p>
+<p>reads = coverage × genome length / read length = 50 × 4.6 × 10<sup>6</sup> / 150 ≈ <strong>1.5 million reads</strong>.</p>
+<p><strong>Why depth matters for a diploid genome.</strong> At a heterozygous site each read comes from either chromosome with probability ½. The chance that <strong>all</strong> <em>n</em> reads show the same allele, so that the site looks homozygous, is 2 × (½)<sup><em>n</em></sup>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Reads covering the site (<em>n</em>)</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">10</th>
+<th style="text-align: right;">30</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P(heterozygote missed)</td>
+<td style="text-align: right;">1/8 = 0.125</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">2 × 10<sup>−9</sup></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>average</strong> is not enough: coverage varies by chance, and the sites with few reads are where heterozygotes are missed.</p>
+<aside class="notes">
+<p>The first part is the coverage formula turned round, the same calculation as B9 but for a bacterial genome. A bacterium is haploid, so there are no heterozygotes to call; the second part is about diploid genomes such as ours. It is the product rule from the probability unit: each read independently picks one of the two chromosomes, so the chance that all n reads pick the same one is one half to the n, times two because it could be either chromosome. With 4 reads, one heterozygote in 8 would be missed. That is why 30x is the standard for a human genome: even the poorly covered sites usually have 10 or more reads. For the curious: if reads land at random, the number covering a base is roughly Poisson, and the fraction of bases with no read at all is e to the minus coverage, about 0.7 percent at 5x and essentially zero at 30x.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="identifying-a-read-blast-in-one-slide" class="slide level2">
+<h2>Identifying a read: BLAST in one slide</h2>
+<p>A read of 200 bases can be traced to its gene and organism by searching all known sequences with <strong>BLAST</strong> (blastn for DNA). In the hit table, read:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Description</strong>, <strong>Scientific Name</strong></td>
+<td>which sequence, from which organism?</td>
+</tr>
+<tr class="even">
+<td><strong>Per. Ident</strong></td>
+<td>how many bases of the alignment are identical?</td>
+</tr>
+<tr class="odd">
+<td><strong>Query Cover</strong></td>
+<td>how much of your read is in the alignment?</td>
+</tr>
+<tr class="even">
+<td><strong>E value</strong></td>
+<td>how many hits this good would you expect <strong>by chance</strong> in a database this size?</td>
+</tr>
+</tbody>
+</table>
+<p>A hit with ~100% identity over the whole read and an E value like 10<sup>−90</sup> is the same sequence. Several identical hits may be the gene itself, other entries of the same gene, or <strong>vectors</strong> that carry a copy of it.</p>
+<aside class="notes">
+<p>This slide prepares Find it F3, the mystery read, which is the first time students use BLAST. Keep it practical: which columns to read and what a convincing hit looks like. How BLAST finds the hits, how the score is computed and what the E value really means come in the next unit, Genome annotation, where BLAST gets several slides. The vector point is a real-world lesson: a database contains whatever people have sequenced, and laboratory constructs are a large part of it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“A circular plasmid with <em>k</em> sites gives <em>k</em> + 1 fragments.”</td>
+<td>Circular: <em>k</em>; linear: <em>k</em> + 1.</td>
+</tr>
+<tr class="even">
+<td>Interpolating band sizes linearly between ladder bands.</td>
+<td>Interpolate log(size); use the two nearest bands.</td>
+</tr>
+<tr class="odd">
+<td>Reading the size of an <strong>uncut</strong> plasmid from its band.</td>
+<td>Supercoiled DNA runs faster than its linear size.</td>
+</tr>
+<tr class="even">
+<td>Writing the reverse primer as the top-strand sequence.</td>
+<td>Reverse primer = reverse complement of the top strand.</td>
+</tr>
+<tr class="odd">
+<td>“More cycles always give more product.”</td>
+<td>The reaction plateaus; end-point PCR is not quantitative.</td>
+</tr>
+<tr class="even">
+<td>“PCR copies the whole gene.”</td>
+<td>It copies only the stretch between the primers.</td>
+</tr>
+<tr class="odd">
+<td>Treating a double peak in a trace as noise.</td>
+<td>Two clean half-height peaks at one site = a heterozygote.</td>
+</tr>
+<tr class="even">
+<td>“30× coverage: every base is read 30 times.”</td>
+<td>30 is the average; some bases get far fewer reads.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>A revision slide built from the errors students make most often in the exercise and the exam. Ask the room to explain one or two of them before revealing the right-hand column. Each line points back to one of the worked examples.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -759,36 +1332,40 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="odd">
 <td>Gel</td>
-<td>distance ∝ −log(size); read sizes from a ladder; brightness ∝ mass</td>
+<td>distance ∝ −log(size); interpolate log(size) between the nearest ladder bands; brightness ∝ mass</td>
 </tr>
 <tr class="even">
+<td>Restriction map</td>
+<td>survivors of a double digest hold no site of the other enzyme; split fragments locate the sites</td>
+</tr>
+<tr class="odd">
 <td>Vector</td>
 <td>origin + selectable marker + unique cloning sites (pUC19)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>PCR</td>
-<td>two primers define the product; <em>N</em> = <em>N</em><sub>0</sub>(1 + <em>E</em>)<sup><em>n</em></sup> until a plateau; 3.3 cycles per 10×</td>
+<td>two primers define the product (from cycle 3 on); <em>N</em> = <em>N</em><sub>0</sub>(1 + <em>E</em>)<sup><em>n</em></sup> until a plateau; 3.3 cycles per 10×</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Primers</td>
-<td>18–25 nt, 40–60% GC, matched Tm, no 3’ complementarity, unique (Primer-BLAST)</td>
-</tr>
-<tr class="odd">
-<td>PCR-RFLP</td>
-<td>HbS destroys a DdeI site: 201 + 180 bp (HbA) vs 381 bp (HbS)</td>
+<td>18–25 nt, 40–60% GC, matched Tm, no 3’ complementarity, unique; reverse primer = reverse complement</td>
 </tr>
 <tr class="even">
-<td>Sanger</td>
-<td>ddNTPs stop synthesis; sort by length; a heterozygote gives double peaks</td>
+<td>PCR-RFLP</td>
+<td>HbS destroys a DdeI site: 201 + 180 bp (HbA) vs 381 bp (HbS); a carrier shows both</td>
 </tr>
 <tr class="odd">
+<td>Sanger</td>
+<td>ddNTPs stop synthesis; sort by length; read the new strand; a heterozygote gives double peaks</td>
+</tr>
+<tr class="even">
 <td>NGS</td>
-<td>millions of short reads mapped to a reference; coverage = reads × length / genome</td>
+<td>millions of short reads mapped to a reference; coverage = reads × length / genome; depth to call heterozygotes</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>This is the revision table. The numbers students should be able to reproduce: 4 to the 6 equals 4,096; k plus 1 fragments for a linear molecule; 2 to the 30 is about a billion; 3.3 cycles per ten-fold; and the coverage formula. The HbS fragment sizes are not to be memorised, but students should be able to predict which bands a carrier shows.</p>
+<p>This is the revision table. The numbers students should be able to reproduce: 4 to the 6 equals 4,096; k plus 1 fragments for a linear molecule; 2 to the 30 is about a billion; 3.3 cycles per ten-fold; and the coverage formula. The methods they should be able to carry out: read a gel on a log scale, place sites from a double digest, compute PCR yields and cycles with logs, write a reverse primer, read a sequence from a set of products. The HbS fragment sizes are not to be memorised, but students should be able to predict which bands a carrier shows.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -804,7 +1381,7 @@ Basic and molecular genetics (5MO104)
 <section id="where-this-leads" class="slide level2">
 <h2>Where this leads</h2>
 <ul>
-<li><strong>Exercise</strong>: estimate sizes from a gel, design primers, BLAST a mystery read, and look up an enzyme in REBASE.</li>
+<li><strong>Exercise</strong>: the by-hand problems use the methods of today’s worked examples (gel, map, PCR, primers, Sanger, coverage); then BLAST a mystery read and look up an enzyme in REBASE.</li>
 <li><strong>Exercise in R</strong>: read the phage λ genome from a FASTA file, find the EcoRI and BamHI sites with <code>str_locate_all()</code>, and draw your own virtual gel.</li>
 <li><strong>Next: Genome annotation.</strong> Once a genome is sequenced, where are the genes? ORFs, homology (BLAST), genome browsers.</li>
 <li><strong>Genomic variation.</strong> Sequencing many people reveals millions of variants, such as the HbS allele, and how their frequencies differ between populations.</li>

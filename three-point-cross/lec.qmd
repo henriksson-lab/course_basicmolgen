@@ -19,14 +19,16 @@ format:
     html-math-method: katex
 ---
 
-## About this lecture
+## About this lecture {.smaller}
 
 In **Linkage & recombination** we measured the distance between **two** genes from a testcross. Following **three** linked genes in one cross gives more than three distances: it gives the **order** of the genes, and it shows the **double crossovers** that a two-point cross cannot see.
 
 - The **three-point testcross**: a triple heterozygote × a triple recessive tester; **8** offspring classes.
 - A five-step recipe: **parentals** (most common), **double crossovers** (rarest), the **gene in the middle**, the two **distances**.
 - Why the outer distance must count the double crossovers **twice**.
-- **Expected** double crossovers from the product rule; the **coefficient of coincidence** and **interference**.
+- **Checking the order**: what goes wrong when you put the wrong gene in the middle.
+- **Expected** double crossovers from the product rule; the **coefficient of coincidence** and **interference**, and how noisy they are.
+- Running the recipe **backwards**: predicting the eight classes from a map and an interference value.
 - A worked *Drosophila* example on the X chromosome: *cv*, *ct* and *v*.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, linkage and recombination chapter (the three-point cross sections).
@@ -129,12 +131,31 @@ $$cv \;-\; ct \;-\; v \qquad (\text{or } v - ct - cv\text{: the same map read ba
 The parental chromosomes in the true order: *cv*^+^ *ct*^+^ *v* / *cv ct v*^+^.
 
 ::: notes
-This is the whole trick. Pick a DCO class, find the parental class that agrees with it at two of the three loci; the locus where they disagree is the middle one. Check with the other DCO class: it must give the same answer. The direction of the map does not matter; cv-ct-v and v-ct-cv are the same order. A useful check: if you try the other two orders, the class you would call "double crossover" is much more common than the singles, which makes no sense. The R exercise does exactly this for all three orders, and so does the demo.
+This is the whole trick. Pick a DCO class, find the parental class that agrees with it at two of the three loci; the locus where they disagree is the middle one. Check with the other DCO class: it must give the same answer. The direction of the map does not matter; cv-ct-v and v-ct-cv are the same order. A useful check: if you try the other two orders, the class you would call "double crossover" is much more common than the singles, which makes no sense. The next slide does exactly that.
+:::
+
+## Check the order: try all three {.smaller}
+
+There are only three orders, one for each gene in the middle. For each, ask: which pair would be the "double crossovers", and does that make sense?
+
+| Gene in the middle | "DCO" pair = classes where only that gene switched | Count | Expected if DCO | CoC |
+|---|---|---:|---:|---:|
+| *v* (*cv*–*v*–*ct*) | + + + and *v cv ct* | 249 | 49.1 | 5.07 |
+| *cv* (*v*–*cv*–*ct*) | + + *ct* and *v cv* + | 129 | 26.5 | 4.88 |
+| ***ct*** (*cv*–*ct*–*v*) | *v* + *ct* and + *cv* + | **11** | 18.2 | **0.60** |
+
+- In a wrong order, the "DCO" pair is really a **single** crossover pair, so it is far too common: CoC ≈ 5, "five times more double crossovers than chance allows".
+- In the right order, the DCO pair is the **rarest** pair, and CoC is at or below 1.
+
+A CoC far above 1 almost always means **the order is wrong**, not that the biology is strange.
+
+::: notes
+These are the numbers the demo and the R exercise produce. How the expected values come about for a wrong order, for example v in the middle: region I, cv to v, now contains the classes where cv and v are in a new combination, 129 plus 249 = 378, so RF 0.189; region II, v to ct, contains 249 plus 11 = 260, RF 0.13; expected DCO 0.189 times 0.13 times 2000 = 49. Observed "DCO" 249. The point for students: the three-order check is a safety net. In an exam, if your CoC comes out above 1, go back and check which gene you put in the middle.
 :::
 
 ## Rewrite the classes in the right order
 
-![](fig03-fly-classes.svg){width="80%" fig-align="center"}
+![](fig03-fly-classes.svg){width="75%" fig-align="center"}
 
 In the order *cv*–*ct*–*v*, each class shows its crossovers: one switch of colour = one crossover.
 
@@ -223,8 +244,51 @@ Only **11** double crossovers were observed. Small counts are noisy:
 
 A CoC computed from 2 or 3 double crossovers says very little. Rare classes need **large** crosses.
 
+**Zero DCOs?** For a rare class, P(0 observed) ≈ e^−expected^. With 2 DCOs expected, finding none happens about 1 time in 7 (e^−2^ = 0.14) even without interference; with 5 expected, about 1 time in 150 (e^−5^ = 0.007).
+
 ::: notes
-This brings back the theme of sampling noise from Part 1. CoC is a ratio of two counts, one of them small, so it is noisy. The simulation in R gives a feel for the spread; a proper test would compare the observed DCO count with the expected count, for example with a Poisson or binomial model, which is beyond what we need. Practical message: if a three-point cross has zero double crossovers in 200 offspring, you cannot conclude complete interference: with 2 expected, zero happens about one time in seven.
+This brings back the theme of sampling noise from Part 1. CoC is a ratio of two counts, one of them small, so it is noisy. The simulation in R gives a feel for the spread; a proper test would compare the observed DCO count with the expected count, for example with a Poisson or binomial model, which is beyond what we need. Practical message: if a three-point cross has zero double crossovers in 200 offspring, you cannot conclude complete interference: with 2 expected, zero happens about one time in seven. The e to the minus expected rule is the Poisson probability of zero, which is a good approximation for rare classes; students use it in the exercise when a DCO class is missing altogether.
+:::
+
+## Running the recipe backwards: predict a cross {.smaller}
+
+Map: *A* — 12 cM — *B* — 8 cM — *C*, interference **I = 0.25** (invented values). A plant *A B C* / *a b c* is testcrossed; predict 1000 offspring.
+
+| Step | Class type | Calculation | Probability |
+|---|---|---|---:|
+| 1 | DCO | (1 − I) × RF~I~ × RF~II~ = 0.75 × 0.12 × 0.08 | **0.0072** |
+| 2 | SCO in I only | RF~I~ − P(DCO) = 0.12 − 0.0072 | **0.1128** |
+| 3 | SCO in II only | RF~II~ − P(DCO) = 0.08 − 0.0072 | **0.0728** |
+| 4 | parental | 1 − (the three above) | **0.8072** |
+
+- Start with the DCOs: the interference acts on them.
+- Subtract the DCOs from each interval, because RF~I~ and RF~II~ **include** the double crossovers.
+- Check: the four probabilities add up to 1.
+
+::: notes
+This is the three-point recipe run in reverse, the kind of prediction a breeder makes when planning how many plants to grow to get a particular recombinant. The order of steps matters. Step 1 uses the product rule corrected by interference: with I = 0.25, only three quarters of the independent expectation happen. Steps 2 and 3 are where students go wrong: an RF of 12 percent for interval I counts every chromatid with a crossover in interval I, including the double crossovers, so the singles are 12 percent minus the doubles. Step 4 is whatever is left. Exercise B5 has the same structure with other numbers.
+:::
+
+## Predict a cross, step 5: split into the eight classes {.smaller}
+
+Each probability is shared **equally** by the two reciprocal classes of its pair. × 1000:
+
+| Class | Type | Expected count |
+|---|---|---:|
+| *A B C* | parental | 403.6 |
+| *a b c* | parental | 403.6 |
+| *a B C* | SCO in I (*A* switched) | 56.4 |
+| *A b c* | SCO in I | 56.4 |
+| *A B c* | SCO in II (*C* switched) | 36.4 |
+| *a b C* | SCO in II | 36.4 |
+| *A b C* | DCO (*B* switched) | 3.6 |
+| *a B c* | DCO | 3.6 |
+| | total | 1000 |
+
+With only 7 DCOs expected in 1000 offspring, a cross this size measures interference poorly: compare the previous slides.
+
+::: notes
+To write the classes, start from the parental chromosomes and switch the right gene: the end gene for a single crossover in its interval, the middle gene for a double. Decimal expected counts are fine; they are expectations, not flies. A useful closing check: run the forward recipe on these numbers and you get back RF I = (112.8 + 7.2) / 1000 = 0.12, RF II = 0.08, and CoC = 7.2 / 9.6 = 0.75, so I = 0.25. The exercise problem uses a mixed-phase parent, which only changes which classes are called what.
 :::
 
 ## Try it: find the middle gene {.smaller}
@@ -237,6 +301,24 @@ This brings back the theme of sampling noise from Part 1. CoC is a ratio of two 
 
 ::: notes
 Interactive demo. It starts on the fly data with no order chosen; each class is drawn as a chromosome, blue for alleles from the most common class's chromosome, red for the other. Click each of the three orders in turn. With v in the middle or cv in the middle, the demo says "not this order": the pair it would call double crossovers has 249 or 129 offspring, more than a single crossover pair, and the CoC comes out far above 1. With ct in the middle, the rarest pair, 6 and 5, is the DCO, the distances are 7.0 and 13.0 cM, CoC 0.60 and I 0.40. Then click maize: here the female is in coupling, so the parentals are all mutant and all wild type, and the middle gene is gl. Finally click random a few times and let the room call the order before you click.
+:::
+
+## Check yourself: which gene is in the middle? {.smaller}
+
+For each data set, the two largest classes and the two smallest classes are given. Find the middle gene before you look at the notes.
+
+| | Parental pair (largest) | DCO pair (smallest) | Middle gene? |
+|---|---|---|---|
+| 1 | *D e F* and *d E f* | *D E F* and *d e f* | ? |
+| 2 | + + + and *x y z* | *x* + *z* and + *y* + | ? |
+| 3 | *p* + + and + *q r* | + + + and *p q r* | ? |
+
+**Method:** take one DCO class, find the parental class that matches it at **two** of the three genes. The gene where they differ is the middle one. Check with the other DCO class.
+
+Data set 3 is in **mixed phase**, like the fly example: + + + and *p q r* are the rarest, not the most common classes.
+
+::: notes
+Answers. 1: D E F matches D e F at D and F, differs at E: E is in the middle, order D E F. Check: d e f matches d E f except at E. 2: x + z matches x y z except at y: y is in the middle. 3: + + + matches p + + except at p: p is in the middle, order q p r (or r p q). The third case is the one that catches people, because the all-wild-type and all-mutant classes are the double crossovers. Give the room a minute; this is the single most examined skill of the unit.
 :::
 
 ## The recipe, and the usual mistakes {.smaller}
@@ -282,6 +364,8 @@ Close the loop with the real chromosome. The counts in the worked example are in
 | Expected DCO | RF~I~ × RF~II~ × N (product rule, if independent) |
 | Coefficient of coincidence | CoC = observed DCO / expected DCO |
 | Interference | I = 1 − CoC; usually positive (fewer DCOs than expected) |
+| Wrong order check | a "DCO" pair that is not the rarest gives CoC ≫ 1 |
+| Predicting a cross | P(DCO) = (1 − I) RF~I~ RF~II~; SCO = RF − P(DCO); split each pair equally |
 | Worked example | *cv* – 7.0 cM – *ct* – 13.0 cM – *v*; CoC 0.60, I 0.40 |
 
 ::: notes

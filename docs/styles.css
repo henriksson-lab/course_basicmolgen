@@ -1,5 +1,8 @@
 /* Sidebar tweaks for the course website (HTML pages only — slides use theme.scss). */
 
+/* Credit line under a photo on exercise pages. */
+.photo-credit { display: block; font-size: 0.8em; color: #777; text-align: center; text-decoration: none; }
+
 /* Bold the collapsible section headers in the docked sidebar
    ("Course info", "Before you start", "Day 1 — ...", "Day 2 — ...", etc.)
    so they stand out from the leaf-page entries below them. */

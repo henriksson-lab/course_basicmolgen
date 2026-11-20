@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -161,7 +161,7 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li><strong>Probability rules</strong>: the product rule (AND), the sum rule (OR) and conditional probability (“given that …”).</li>
 <li><strong>Families</strong>: the chance that 2 of 4 children are affected (the binomial), and “at least one”.</li>
-<li><strong>Testing a ratio</strong>: why observed counts never match the expected ones exactly, and the <strong>χ² goodness-of-fit test</strong>, which tells us whether the gap is bigger than chance would give.</li>
+<li><strong>Testing a ratio</strong>: why observed counts never match the expected ones exactly, and the <strong>χ² goodness-of-fit test</strong>, which tells us whether the gap is bigger than chance would give. A six-step recipe, one example that fits, one that does not, and the common mistakes.</li>
 <li><strong>p-values</strong>: what they mean, what “fail to reject” means, and Fisher’s claim that Mendel’s data fit <em>too</em> well.</li>
 </ul>
 <p>Book: Hartwell, Mendel’s principles chapter (the sections on probability and on the chi-square test).</p>
@@ -584,6 +584,31 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-χ²-test-in-six-steps" class="slide level2">
+<h2>The χ² test in six steps</h2>
+<ol type="1">
+<li><strong>State H0 as a ratio</strong> and turn it into proportions: 3 : 1 → ¾, ¼.</li>
+<li><strong>Expected counts:</strong> E = N × proportion, with N the total observed. Do <strong>not</strong> round E.</li>
+<li><strong>Statistic:</strong> χ² = Σ (O − E)²/E over all classes. Check: Σ O = Σ E, and Σ (O − E) = 0.</li>
+<li><strong>Degrees of freedom:</strong> df = number of classes − 1.</li>
+<li><strong>Compare</strong> χ² with the critical value for that df (3.84, 5.99, 7.81, …), or compute <em>p</em>.</li>
+<li><strong>Conclude in words, about the biology:</strong> “reject 3 : 1: there are too few recessives” or “consistent with 3 : 1”.</li>
+</ol>
+<p>The next two slides are two worked examples: one that fits, and one that does not.</p>
+<aside class="notes">
+<p>This collects the recipe that was spread over the last few slides into one list students can copy. Step 3 has two free checks that catch most arithmetic errors. Step 6 is where most marks are lost in exams: a bare “p &lt; 0.05” is not a conclusion. Say what is rejected, in which direction the data deviate, and what that could mean biologically. Then two examples: Mendel’s dihybrid cross, which fits, and a cross that does not, so they see the whole recipe end in both possible ways.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="worked-example-mendels-dihybrid-cross" class="slide level2">
 <h2>Worked example: Mendel’s dihybrid cross</h2>
 <p>F2 of round yellow × wrinkled green: 556 seeds. H0: 9:3:3:1 (independent assortment).</p>
@@ -644,6 +669,137 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-a-ratio-that-does-not-fit" class="slide level2">
+<h2>Worked example: a ratio that does not fit</h2>
+<p>An F2 from <em>Aa</em> × <em>Aa</em> gives <strong>290 dominant : 70 recessive</strong> (N = 360; illustrative counts). H0: 3 : 1.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>class</th>
+<th>O</th>
+<th>E</th>
+<th>O − E</th>
+<th>(O − E)²/E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dominant</td>
+<td>290</td>
+<td>360 × ¾ = 270</td>
+<td>+20</td>
+<td>400/270 = 1.48</td>
+</tr>
+<tr class="even">
+<td>recessive</td>
+<td>70</td>
+<td>360 × ¼ = 90</td>
+<td>−20</td>
+<td>400/90 = 4.44</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>360</td>
+<td>360</td>
+<td>0</td>
+<td><strong>χ² = 5.93</strong></td>
+</tr>
+</tbody>
+</table>
+<p>df = 1. 5.93 &gt; 3.84, so <em>p</em> &lt; 0.05 (exactly, <em>p</em> = 0.015): <strong>reject 3 : 1 at the 5% level</strong>. (But 5.93 &lt; 6.63, so not at the 1% level.)</p>
+<p><strong>Now the biology.</strong> Which way do the data deviate? <strong>Too few recessives</strong>: 70 instead of 90. Possible reasons:</p>
+<ul>
+<li><em>aa</em> individuals <strong>survive less well</strong> (reduced viability), so some died before they were counted;</li>
+<li><em>aa</em> is hard to score, and some were <strong>misclassified</strong> as dominant;</li>
+<li>the trait is not controlled by one gene in the way we assumed.</li>
+</ul>
+<p>The test tells us <strong>that</strong> the model fails, not <strong>why</strong>. The next experiment has to decide.</p>
+<aside class="notes">
+<p>Students rarely see a worked rejection, so do this one in full. The arithmetic is the same as before; the new parts are the conclusion and the interpretation. Point out that the whole χ² comes mostly from the recessive class, where the expected count is smallest. The 1% remark is a reminder that the 5% level is a convention: here the evidence is moderate, not overwhelming. Then the biology: a deficit of recessives is the commonest real-life deviation, and reduced viability of the homozygous mutant is the usual explanation. The yellow mouse in the next unit is an extreme case, where the missing class is dead before birth. Stress the last line: χ² can reject a model, but it cannot tell you which alternative is right.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="common-mistakes-with-χ²" class="slide level2">
+<h2>Common mistakes with χ²</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Why it is wrong</th>
+<th>Do instead</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Using the ratio numbers as E (E = 3 and 1)</td>
+<td>E must be counts on the same scale as O</td>
+<td>E = N × ¾, N × ¼</td>
+</tr>
+<tr class="even">
+<td>Using percentages or proportions as O</td>
+<td>χ² grows with N; percentages pretend N = 100</td>
+<td>always use <strong>counts</strong></td>
+</tr>
+<tr class="odd">
+<td>Rounding E to whole numbers</td>
+<td>E is an average, not a count; rounding changes χ²</td>
+<td>keep E as decimals</td>
+</tr>
+<tr class="even">
+<td>df = number of classes</td>
+<td>one count is fixed by the total</td>
+<td>df = classes − 1</td>
+</tr>
+<tr class="odd">
+<td>“p = 0.3, so the ratio is proven”</td>
+<td>failing to reject is not proof</td>
+<td>“consistent with 3 : 1”</td>
+</tr>
+<tr class="even">
+<td>“p = 0.03, so the hypothesis has a 3% chance of being true”</td>
+<td><em>p</em> is computed <strong>assuming</strong> H0</td>
+<td>“data this far off happen 3% of the time if H0 is true”</td>
+</tr>
+<tr class="odd">
+<td>Testing with a class that expects 1.2</td>
+<td>the χ² curve is a poor approximation</td>
+<td>pool classes or get more data (E ≥ 5)</td>
+</tr>
+<tr class="even">
+<td>Picking the ratio <strong>after</strong> seeing the data, then testing it</td>
+<td>the test assumes the ratio is given in advance</td>
+<td>state H0 from the genetics first</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>These are the errors that show up again and again in exams and lab reports. Go through them quickly; most were already mentioned, so this is a checklist. The last row is subtle and worth a sentence: if you look at the data, find the ratio that fits best and then test it, you will almost always “fit”. In the next unit we compare a handful of candidate ratios that each come from a genetic model, which is fine, as long as the model explains every class you can see.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="try-it-χ²-goodness-of-fit" class="slide level2">
 <h2>Try it: χ² goodness of fit</h2>
 <link rel="stylesheet" href="../demos/dist/demo.css">
@@ -665,8 +821,14 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="fisher-mendels-data-fit-too-well" class="slide level2 smaller">
 <h2>Fisher: Mendel’s data fit too well</h2>
-
-<img data-src="fig06-too-good.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:62.0%"><ul>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p><img data-src="fig06-too-good.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:22%;">
+<p><img data-src="img/fisher-1913.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Youngronaldfisher2.JPG" class="photo-credit">Photo: unknown author, public domain, via Wikimedia Commons</a></p>
+<p>R. A. Fisher, 1913.</p>
+</div></div>
+<ul>
 <li>In 1936 R. A. Fisher added up χ² over many of Mendel’s experiments. The total was <strong>smaller</strong> than chance would usually allow.</li>
 <li>With honest sampling, p-values are spread evenly between 0 and 1. A whole series of p-values close to 1 is itself suspicious.</li>
 <li>Here: the 7 monohybrid experiments give a total of 2.14 on 7 df. A fit this close happens only about 1 time in 20.</li>
@@ -737,10 +899,14 @@ Basic and molecular genetics (5MO104)
 <td>consistent with H0, not proof of it</td>
 </tr>
 <tr class="even">
+<td>Reject</td>
+<td>say which way the data deviate, and suggest a biological reason (e.g.&nbsp;reduced viability)</td>
+</tr>
+<tr class="odd">
 <td>Rules</td>
 <td>counts not percentages; all E ≥ 5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Too good</td>
 <td>χ² far below df, repeatedly, is suspicious too</td>
 </tr>

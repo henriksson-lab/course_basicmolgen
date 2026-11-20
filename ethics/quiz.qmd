@@ -172,3 +172,15 @@ For a rare recessive allele with frequency *q*, affected people (*aa*) make up a
 
 The sterilisation laws (1934:171 and 1941:282) were replaced in 1975 by a law that allows sterilisation only at a person's own request. 93% of those sterilised in 1935–1975 were women.
 :::
+
+---
+
+**Q12.** A man has familial hypercholesterolaemia (autosomal dominant, treatable with lipid-lowering drugs from childhood) and refuses to tell his siblings. Compare this with a man with Huntington disease who refuses to tell his siblings. Why do the principles weigh differently in the two cases? Should his 12-year-old child be tested?
+
+::: {.callout-tip collapse="true" title="Hint"}
+In both cases each sibling has a ½ prior risk. What can a sibling **do** with the information in each case?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The genetics is the same: each sibling has a **½** risk. The difference is what knowing allows. For FH, early treatment prevents serious, avoidable harm, so **beneficence** and **non-maleficence** towards the siblings weigh heavily against his **confidentiality**; a family letter through the patient, and repeated counselling, are the usual routes, and disclosure without consent is at most a last resort. For Huntington disease there is no cure, so the siblings' **right not to know** counts strongly and there is little harm to prevent: his refusal weighs more. The child: FH is treated from childhood, so testing now serves the child's own interest (with parental consent); for an adult-onset condition without treatment in childhood, testing would normally wait until the child can decide.
+:::

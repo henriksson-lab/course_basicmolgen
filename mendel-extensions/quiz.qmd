@@ -157,3 +157,15 @@ How do you get 9 : 7 from 9 : 3 : 4?
 ::: {.callout-note collapse="true" title="Answer"}
 9 : 7 is 9 : 3 : 4 with the "3" and the "4" merged. If the finer ratio fits, the coarser one will usually fit too, because merging classes throws information away. But you **can see** three phenotypes, and 9 : 7 predicts only two. A model has to explain every phenotype class you can tell apart. So 9 : 3 : 4 is the answer, and χ² alone cannot make that choice for you.
 :::
+
+---
+
+**Q13.** Three pure-breeding white-flowered lines, W1, W2 and W3, each carry one recessive mutation. You cross them in pairs: W1 × W2 gives purple hybrids, W1 × W3 gives white hybrids, and W2 × W3 gives purple hybrids. How many genes are mutated among the three lines, and which lines share a gene?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A wild-type (purple) hybrid means the two mutations complement. What does that say about the genes they are in?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+W1 and W3 **fail to complement** (white hybrid), so their mutations are in the **same gene**. W2 complements both W1 and W3 (purple hybrids), so its mutation is in a **different gene**. There are **two genes**: one mutated in W1 and W3, the other in W2. This is the complementation test, the same logic as the purple F₁ of the 9 : 7 sweet pea cross.
+:::

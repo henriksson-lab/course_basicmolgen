@@ -141,3 +141,39 @@ What does end joining usually leave behind? And are all cells of the founder edi
 ::: {.callout-note collapse="true" title="Answer"}
 Cas9 cuts; error-prone end joining usually leaves a small **insertion or deletion**. Unless it is a multiple of 3 nt, it shifts the **reading frame**, giving a premature stop codon and no working protein. Founders are usually **mosaics** (different cells carry different edits, or none), so you cross them to get offspring that carry one defined allele in every cell, then intercross heterozygotes to get homozygotes (¼ of the progeny).
 :::
+
+---
+
+**Q12.** In the snail *Lymnaea*, dextral coiling (*D*) is dominant over sinistral (*d*) and acts as a maternal effect. A *Dd* snail that is **sinistral** is self-fertilised. What is the coiling of its offspring, and what are their genotypes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Whose genotype decides the coiling of an offspring? Is the sinistral snail's own genotype or phenotype the one that counts for its offspring?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**All dextral**, because their mother is *Dd*, and *D* is dominant. The snail itself is sinistral only because *its* mother was *dd*. The offspring genotypes are the usual 1 *DD* : 2 *Dd* : 1 *dd*; the *dd* quarter look dextral, but all their own offspring will be sinistral.
+:::
+
+---
+
+**Q13.** *Contrabithorax* is a dominant allele of *Ultrabithorax* that switches *Ubx* on in the second thoracic segment, where it is normally off. The wings become more like halteres. Is this a transformation towards a more anterior or a more posterior identity? Compare with *Ubx* loss of function.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Ubx normally gives T3 its identity. What does T2 become when it gets the T3 gene?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**More posterior**: T2 develops like T3, so the wing becomes haltere-like. A Hox gene switched on in the wrong place pushes the segment towards a more posterior identity, and one such allele is enough, so it is dominant. *Ubx* loss of function goes the other way: T3 falls back to T2 identity (haltere → wing), a more **anterior** identity, and it is recessive.
+:::
+
+---
+
+**Q14.** Mouse *Brachyury* (*T*) heterozygotes have short tails; *T*/*T* embryos die in mid-gestation. Among the live-born pups of *T*/+ × *T*/+, what fraction have short tails? Is *T* dominant or recessive?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Start from 1 : 2 : 1, remove the class that dies, and renormalise.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+¼ +/+ : ½ *T*/+ : ¼ *T*/*T* (dead). Among survivors, **⅔ short-tailed** and ⅓ normal. *T* is **dominant** for the tail phenotype (haploinsufficiency: one copy is not enough for a full tail) and **recessive** for lethality. Dominance describes a phenotype, not an allele.
+:::

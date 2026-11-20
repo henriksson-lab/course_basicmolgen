@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig09: skewing by chance with N = 10 progenitor cells.
+       Number of ways (out of 2^10 = 1024) that k of 10 progenitors choose the maternal X:
+       binomial coefficients 1 10 45 120 210 252 210 120 45 10 1.
+       Skewed at least 80:20 means k <= 2 or k >= 8 (red): (1 + 10 + 45) x 2 = 112, so P = 112/1024 = 0.109.
+       Scale: y = 320 - count x 0.923 ; bar centres x = 125 + 70k ; bar width 50. -->
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">Skewing by chance: 10 progenitors, each picks an X at random</text>
+
+  <!-- axes -->
+  <line x1="90" y1="320" x2="860" y2="320" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="90" y1="70" x2="90" y2="320" stroke="#1b2a3a" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b2a3a" text-anchor="end">
+    <text x="82" y="324">0</text>
+    <text x="82" y="278">50</text>
+    <text x="82" y="232">100</text>
+    <text x="82" y="186">150</text>
+    <text x="82" y="139">200</text>
+    <text x="82" y="93">250</text>
+  </g>
+  <g stroke="#1b2a3a" stroke-width="1.5">
+    <line x1="85" y1="320" x2="90" y2="320"/>
+    <line x1="85" y1="273.8" x2="90" y2="273.8"/>
+    <line x1="85" y1="227.7" x2="90" y2="227.7"/>
+    <line x1="85" y1="181.5" x2="90" y2="181.5"/>
+    <line x1="85" y1="135.4" x2="90" y2="135.4"/>
+    <line x1="85" y1="89.2" x2="90" y2="89.2"/>
+  </g>
+  <text transform="translate(34,195) rotate(-90)" font-size="14" fill="#1b2a3a" text-anchor="middle">number of ways, out of 1024</text>
+
+  <!-- bars -->
+  <g stroke="#1b2a3a" stroke-width="1">
+    <rect x="100" y="319.1" width="50" height="0.9" fill="#c0392b"/>
+    <rect x="170" y="310.8" width="50" height="9.2" fill="#c0392b"/>
+    <rect x="240" y="278.5" width="50" height="41.5" fill="#c0392b"/>
+    <rect x="310" y="209.2" width="50" height="110.8" fill="#9db4c8"/>
+    <rect x="380" y="126.2" width="50" height="193.8" fill="#9db4c8"/>
+    <rect x="450" y="87.4" width="50" height="232.6" fill="#9db4c8"/>
+    <rect x="520" y="126.2" width="50" height="193.8" fill="#9db4c8"/>
+    <rect x="590" y="209.2" width="50" height="110.8" fill="#9db4c8"/>
+    <rect x="660" y="278.5" width="50" height="41.5" fill="#c0392b"/>
+    <rect x="730" y="310.8" width="50" height="9.2" fill="#c0392b"/>
+    <rect x="800" y="319.1" width="50" height="0.9" fill="#c0392b"/>
+  </g>
+  <!-- counts above bars -->
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="125" y="312">1</text>
+    <text x="195" y="304">10</text>
+    <text x="265" y="272">45</text>
+    <text x="335" y="203">120</text>
+    <text x="405" y="120">210</text>
+    <text x="475" y="81">252</text>
+    <text x="545" y="120">210</text>
+    <text x="615" y="203">120</text>
+    <text x="685" y="272">45</text>
+    <text x="755" y="304">10</text>
+    <text x="825" y="312">1</text>
+  </g>
+  <!-- x tick labels: k and percent maternal -->
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="125" y="338">0</text><text x="195" y="338">1</text><text x="265" y="338">2</text>
+    <text x="335" y="338">3</text><text x="405" y="338">4</text><text x="475" y="338">5</text>
+    <text x="545" y="338">6</text><text x="615" y="338">7</text><text x="685" y="338">8</text>
+    <text x="755" y="338">9</text><text x="825" y="338">10</text>
+  </g>
+  <g font-size="12" fill="#5c6b7a" text-anchor="middle">
+    <text x="125" y="355">0 %</text><text x="195" y="355">10 %</text><text x="265" y="355">20 %</text>
+    <text x="335" y="355">30 %</text><text x="405" y="355">40 %</text><text x="475" y="355">50 %</text>
+    <text x="545" y="355">60 %</text><text x="615" y="355">70 %</text><text x="685" y="355">80 %</text>
+    <text x="755" y="355">90 %</text><text x="825" y="355">100 %</text>
+  </g>
+  <text x="475" y="382" font-size="14" fill="#1b2a3a" text-anchor="middle">k = progenitors that chose the maternal X (and % maternal)</text>
+
+  <!-- annotation -->
+  <rect x="110" y="66" width="250" height="78" rx="8" fill="#fbeeee" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="124" y="90" font-size="14" font-weight="bold" fill="#c0392b">skewed ≥ 80 : 20 (red)</text>
+  <text x="124" y="110" font-size="14" fill="#1b2a3a">k ≤ 2 or k ≥ 8: (1 + 10 + 45) × 2</text>
+  <text x="124" y="130" font-size="14" fill="#1b2a3a">= 112 of 1024 ≈ 11 %</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" font-family="Helvetica, Arial, sans-serif" width="900" height="360">
+  <!-- The reverse complement in two steps, and the two common mistakes.
+       Sequence: the first 9 nt of the HBB coding sequence (NM_000518.5, positions 51-59), as in fig02. -->
+  <defs>
+    <marker id="arrR" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#bc4749"/></marker>
+    <marker id="arrG" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7a"/></marker>
+  </defs>
+
+  <!-- row labels -->
+  <text x="20" y="44" font-size="15" font-weight="bold" fill="#1b2a3a">1. The strand you have</text>
+  <text x="20" y="62" font-size="13" fill="#5a6b7a">written 5' → 3'</text>
+  <text x="20" y="142" font-size="15" font-weight="bold" fill="#1b2a3a">2. Complement each base</text>
+  <text x="20" y="160" font-size="13" fill="#5a6b7a">A with T, G with C: it runs 3' → 5'</text>
+  <text x="20" y="252" font-size="15" font-weight="bold" fill="#1b2a3a">3. Reverse the order</text>
+  <text x="20" y="270" font-size="13" fill="#5a6b7a">the partner strand, written 5' → 3'</text>
+
+  <!-- row 1: 5'-ATGGTGCAT-3' ; boxes at x = 310 + 46k -->
+  <text x="286" y="56" font-size="15" font-weight="bold" fill="#2a6f97" text-anchor="middle">5'</text>
+  <text x="742" y="56" font-size="15" font-weight="bold" fill="#2a6f97" text-anchor="middle">3'</text>
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="310" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="327" y="55">A</text>
+    <rect x="356" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="373" y="55">T</text>
+    <rect x="402" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="419" y="55">G</text>
+    <rect x="448" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="465" y="55">G</text>
+    <rect x="494" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="511" y="55">T</text>
+    <rect x="540" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="557" y="55">G</text>
+    <rect x="586" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="603" y="55">C</text>
+    <rect x="632" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="649" y="55">A</text>
+    <rect x="678" y="34" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="695" y="55">T</text>
+  </g>
+
+  <!-- pairing ticks between row 1 and row 2 -->
+  <g stroke="#8a97a4" stroke-width="2" stroke-dasharray="4,3">
+    <line x1="327" y1="70" x2="327" y2="124"/><line x1="373" y1="70" x2="373" y2="124"/>
+    <line x1="419" y1="70" x2="419" y2="124"/><line x1="465" y1="70" x2="465" y2="124"/>
+    <line x1="511" y1="70" x2="511" y2="124"/><line x1="557" y1="70" x2="557" y2="124"/>
+    <line x1="603" y1="70" x2="603" y2="124"/><line x1="649" y1="70" x2="649" y2="124"/>
+    <line x1="695" y1="70" x2="695" y2="124"/>
+  </g>
+
+  <!-- row 2: 3'-TACCACGTA-5' -->
+  <text x="286" y="152" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">3'</text>
+  <text x="742" y="152" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">5'</text>
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="310" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="327" y="151">T</text>
+    <rect x="356" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="373" y="151">A</text>
+    <rect x="402" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="419" y="151">C</text>
+    <rect x="448" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="465" y="151">C</text>
+    <rect x="494" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="511" y="151">A</text>
+    <rect x="540" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="557" y="151">C</text>
+    <rect x="586" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="603" y="151">G</text>
+    <rect x="632" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="649" y="151">T</text>
+    <rect x="678" y="130" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="695" y="151">A</text>
+  </g>
+  <!-- reading arrow: right to left along row 2 -->
+  <line x1="712" y1="180" x2="314" y2="180" stroke="#bc4749" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="511" y="200" font-size="13" fill="#bc4749" text-anchor="middle">read it from its 5' end (right to left)</text>
+
+  <!-- row 3: 5'-ATGCACCAT-3' -->
+  <text x="286" y="262" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">5'</text>
+  <text x="742" y="262" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">3'</text>
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="310" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="327" y="261">A</text>
+    <rect x="356" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="373" y="261">T</text>
+    <rect x="402" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="419" y="261">G</text>
+    <rect x="448" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="465" y="261">C</text>
+    <rect x="494" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="511" y="261">A</text>
+    <rect x="540" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="557" y="261">C</text>
+    <rect x="586" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="603" y="261">C</text>
+    <rect x="632" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="649" y="261">A</text>
+    <rect x="678" y="240" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="695" y="261">T</text>
+  </g>
+  <text x="768" y="252" font-size="13" font-weight="bold" fill="#bc4749">reverse</text>
+  <text x="768" y="268" font-size="13" font-weight="bold" fill="#bc4749">complement</text>
+
+  <!-- common mistakes -->
+  <rect x="20" y="298" width="860" height="54" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="36" y="320" font-size="13" font-weight="bold" fill="#1b2a3a">Common mistakes</text>
+  <text x="170" y="320" font-size="13" fill="#1b2a3a">complement only:</text>
+  <text x="290" y="320" font-size="14" font-weight="bold" font-family="Courier New, monospace" fill="#5a6b7a">TACCACGTA</text>
+  <text x="390" y="320" font-size="13" fill="#5a6b7a">right bases, but written 3' → 5'</text>
+  <text x="170" y="341" font-size="13" fill="#1b2a3a">reverse only:</text>
+  <text x="290" y="341" font-size="14" font-weight="bold" font-family="Courier New, monospace" fill="#5a6b7a">TACGTGGTA</text>
+  <text x="390" y="341" font-size="13" fill="#5a6b7a">not the partner strand at all</text>
+</svg>

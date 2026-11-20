@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 32 900 270" font-family="Helvetica, Arial, sans-serif" width="900" height="270">
+  <!-- The sickle-cell site on both strands of chromosome 11 (GRCh38), positions 5,226,998-5,227,006.
+       Plus strand CTCCTCAGG; minus strand (HBB coding strand, read right to left) = c.16-24 CCT GAG GAG.
+       Checked against the HBB PCR product (digital-dna/data/hbb_pcr.fasta, gene strand): c.n = 5,227,022 - n. -->
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L7,3.5 L0,7 Z" fill="#bc4749"/></marker></defs>
+  <!-- highlight of the variant column -->
+  <rect x="430" y="62" width="40" height="96" rx="4" fill="#f4e3c1"/>
+  <!-- coordinates -->
+  <g font-size="12" fill="#4a5866" text-anchor="middle">
+    <text x="210" y="54">5,226,998</text><text x="450" y="54" font-weight="bold" fill="#1b2a3a">5,227,002</text><text x="690" y="54">5,227,006</text>
+  </g>
+  <text x="760" y="54" font-size="12" fill="#4a5866">coordinate →</text>
+  <!-- strand labels -->
+  <g font-size="14" fill="#1b2a3a">
+    <text x="20" y="99" font-weight="bold">plus strand</text>
+    <text x="20" y="139" font-weight="bold" fill="#bc4749">minus strand</text>
+    <text x="20" y="155" font-size="12" fill="#bc4749">(<tspan font-style="italic">HBB</tspan> coding strand)</text>
+    <text x="170" y="99">5'</text><text x="720" y="99">3'</text>
+    <text x="170" y="139" fill="#bc4749">3'</text><text x="720" y="139" fill="#bc4749">5'</text>
+  </g>
+  <!-- bases -->
+  <g font-size="22" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <text x="210" y="101">C</text><text x="270" y="101">T</text><text x="330" y="101">C</text><text x="390" y="101">C</text>
+    <text x="450" y="101">T</text><text x="510" y="101">C</text><text x="570" y="101">A</text><text x="630" y="101">G</text><text x="690" y="101">G</text>
+  </g>
+  <g font-size="22" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#bc4749">
+    <text x="210" y="141">G</text><text x="270" y="141">A</text><text x="330" y="141">G</text><text x="390" y="141">G</text>
+    <text x="450" y="141">A</text><text x="510" y="141">G</text><text x="570" y="141">T</text><text x="630" y="141">C</text><text x="690" y="141">C</text>
+  </g>
+  <!-- codon brackets on the minus strand -->
+  <g stroke="#8a97a4" stroke-width="1.5">
+    <line x1="192" y1="166" x2="348" y2="166"/><line x1="372" y1="166" x2="528" y2="166"/><line x1="552" y1="166" x2="708" y2="166"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="270" y="184">codon 8: GAG (Glu)</text>
+    <text x="450" y="184" font-weight="bold">codon 7: GAG (Glu)</text>
+    <text x="630" y="184">codon 6: CCT (Pro)</text>
+  </g>
+  <line x1="700" y1="204" x2="200" y2="204" stroke="#bc4749" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="235" y="226" font-size="13" fill="#bc4749"><tspan font-style="italic">HBB</tspan> is transcribed and read from right to left: 5'→3' on the minus strand</text>
+  <!-- names -->
+  <text x="20" y="262" font-size="14" fill="#1b2a3a"><tspan font-weight="bold">Plus strand</tspan> (dbSNP, Ensembl, gnomAD): rs334 = NC_000011.10:g.5227002<tspan font-weight="bold">T&gt;A</tspan></text>
+  <text x="20" y="288" font-size="14" fill="#bc4749"><tspan font-weight="bold">Gene strand</tspan> (clinic): NM_000518.5:c.20<tspan font-weight="bold">A&gt;T</tspan>, codon 7 GAG → GTG, p.Glu7Val (HbS)</text>
+</svg>

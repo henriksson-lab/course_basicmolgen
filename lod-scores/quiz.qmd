@@ -153,3 +153,15 @@ How precisely can linkage in families locate a gene? How big is 1 cM in base pai
 ::: {.callout-note collapse="true" title="Answer"}
 Linkage only gives a **region**: with the meioses available, a gene is placed within a few cM, which in humans is millions of base pairs holding many genes. In 1989 HD was still placed only "about 4 cM distal to D4S10", near the tip of 4p (4p16.3). Finding the gene required more markers, a physical map of the region, and searching it for genes. In 1993 the gene (IT15, now *HTT*) was found to carry an expanded CAG repeat on HD chromosomes in all 75 families examined.
 :::
+
+---
+
+**Q13.** At θ = 0.2, how much does each **non-recombinant** meiosis add to the LOD, and each **recombinant** one? Use these terms to compute LOD(0.2) for a phase-known family with 9 non-recombinant and 1 recombinant child. (log~10~ 1.6 = 0.204, log~10~ 0.4 = −0.398.)
+
+::: {.callout-tip collapse="true" title="Hint"}
+LOD(θ) = log~10~[L(θ) / L(0.5)] is a sum with one term per meiosis: log~10~[(1 − θ)/0.5] for NR, log~10~(θ/0.5) for R.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+NR: log~10~(0.8 / 0.5) = log~10~ 1.6 = **+0.204**. R: log~10~(0.2 / 0.5) = log~10~ 0.4 = **−0.398**. Family: 9 × 0.204 − 0.398 = 1.836 − 0.398 = **1.44**. (Check with the formula: log~10~ 0.2 + 9 log~10~ 0.8 + 10 × 0.301 = −0.699 − 0.872 + 3.010 = 1.44.) One recombinant cancels about two non-recombinants at this θ.
+:::

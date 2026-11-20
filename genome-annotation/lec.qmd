@@ -25,9 +25,9 @@ The last unit read DNA in pieces: one PCR product, or millions of short reads. A
 
 - **Assembly**: from reads to contigs to chromosomes, and why repeats make it hard.
 - **Finding genes**: open reading frames (ORFs) in bacteria; exons, splice signals and codon bias in eukaryotes.
-- **Evidence**: RNA-seq, homology (**BLAST**) and conservation.
-- **Genome browsers**: one gene seen as stacked tracks.
-- **Comparative genomics** and **gene families**: orthologs, paralogs, and the globins as an example.
+- **Evidence**: RNA-seq, homology (**BLAST**: how a hit is scored, what the E value means, and what a hit does and does not prove) and conservation.
+- **Genome browsers**: one gene seen as stacked tracks; coordinates and strands.
+- **Comparative genomics** and **gene families**: orthologs and paralogs on a gene tree, with the globins as an example.
 
 The running example is again *HBB*, now seen in its genomic neighbourhood.
 
@@ -67,6 +67,46 @@ The table is not for memorising; it shows the pace. The first genomes were read 
 Assembly is a puzzle with millions of pieces, many of them identical. The key concept is the repeat: about half of the human genome consists of repeated sequences, mostly transposable elements, plus segmental duplications and the huge satellite arrays at centromeres. With 150-base reads, any repeat longer than about 150 bases is ambiguous. That is why the early human genome had hundreds of gaps, and why long-read technologies changed genome assembly. Gene families come back at the end of the lecture: recently duplicated genes are themselves long repeats and are hard to assemble.
 :::
 
+## Assembly by overlap, step by step {.smaller}
+
+:::: {.columns}
+::: {.column width="62%"}
+
+Four 10-base reads, in the order the sequencer gave them:
+
+```
+GCTTAACGCA   GATTACAGGC   TAACGCATGC   ACAGGCTTAA
+```
+
+1. Find a read whose **end** matches the **start** of another: GATTACAGGC ends with ACAGGC, and ACAGGCTTAA starts with it (6-base overlap).
+2. Chain the overlaps and stack the reads:
+
+```
+GATTACAGGC
+    ACAGGCTTAA
+        GCTTAACGCA
+           TAACGCATGC
+GATTACAGGCTTAACGCATGC     contig, 21 bases
+```
+
+3. **The repeat problem**: if a stretch longer than the reads occurs twice, a read inside it fits both copies, and the chain breaks.
+
+:::
+::: {.column width="38%"}
+
+![](img/minion.png){width="100%"}
+
+[Photo: Mongan A.E., CC BY 4.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:MinION_portable_sequencer.png){.photo-credit}
+
+A pocket-sized **long-read** sequencer (Oxford Nanopore MinION). Reads of tens of kb span most repeats.
+
+:::
+::::
+
+::: notes
+The toy example is invented, but the logic is that of real assemblers: find overlaps between reads, then find a path through them that uses every read. Real assemblers allow a few mismatches, because reads contain errors, and they use millions of reads, so they build a graph of overlaps rather than doing it by eye. The repeat point is the important one. Imagine the stretch GCTTAA occurred a second time elsewhere in the genome: a read lying entirely within it could belong to either place, and the assembler cannot tell which neighbours belong together. Longer reads solve this. The photo shows a MinION being loaded; it plugs into a laptop by USB and reads single DNA molecules as they pass through a protein pore, giving reads of tens of kilobases, sometimes much longer. Long reads were key to the gap-free human genome of 2022.
+:::
+
 ## What does annotation mean? {.smaller}
 
 | Kind | Question | Example for *HBB* |
@@ -94,6 +134,46 @@ An **open reading frame** (ORF) is a stretch from a start codon (ATG) to the nex
 
 ::: notes
 This is the probability reasoning from Part 1 applied to sequences. Each codon is a stop with probability 3/64, independently in random sequence, so the run length until a stop is geometric with mean 64/3. The product rule gives the chance of a run of 100 non-stop codons: 61/64 to the power 100, about 0.8 percent. In a genome of several megabases there are many thousands of ORF-sized windows, so some random long ORFs still appear, and real gene finders also use codon usage, ribosome binding sites and homology. Short genes are the hard case: the lambda cro gene is only 66 codons and is easy to miss with a 100-codon cut-off, which the demo shows.
+:::
+
+## Worked example: six frames by hand
+
+Sequence: 5'-CATGAAACCCTGGTAAGC-3' (18 nt). Its reverse complement: 5'-GCTTACCAGGGTTTCATG-3'.
+
+| Frame | Codons | Protein |
+|---|---|---|
+| +1 | CAT GAA ACC CTG GTA AGC | H E T L V S |
+| +2 | ATG AAA CCC TGG **TAA** | **M K P W stop**: a 4-codon ORF |
+| +3 | **TGA** AAC CCT GGT AAG | stop N P G K |
+| −1 | GCT TAC CAG GGT TTC ATG | A Y Q G F M |
+| −2 | CTT ACC AGG GTT TCA | L T R V S |
+| −3 | TTA CCA GGG TTT CAT | L P G F H |
+
+- Frames **+1, +2, +3** start at bases 1, 2 and 3 of the given strand; **−1, −2, −3** start at bases 1, 2 and 3 of the **reverse complement**, read 5'→3'.
+- Leftover bases at the end that do not make a full codon are ignored.
+- The ORF in frame +2 is real but tiny: 4 codons without a stop happen by chance most of the time. Only **long** ORFs are evidence.
+
+::: notes
+Students need this mechanical skill for B1, so do it once slowly on the board with a codon table. The common error is to read the minus strand backwards from the given sequence instead of taking the reverse complement first. Another is to forget that frame +4 is the same as frame +1. The sequence is invented for the example. The demo does exactly this for thousands of bases, and draws the stops as ticks.
+:::
+
+## How long must an ORF be?
+
+The chance that *n* codons of random DNA contain no stop is (61/64)^*n*^:
+
+| ORF length *n* (codons) | 20 | 66 (λ *cro*) | 100 | 200 |
+|---|---:|---:|---:|---:|
+| P(no stop in *n* codons) | 0.38 | 0.042 | 0.0082 | 6.8 × 10^−5^ |
+
+**Expected number of chance ORFs** = (number of open stretches) × P(long enough). In six frames there is one stop per 64/3 codons, so random DNA as long as phage λ (48,502 bp) has about 6 × 48,502 / 64 ≈ 4,500 stops, and so about as many open stretches:
+
+- ≥ 100 codons: 4,500 × 0.0082 ≈ **37** by chance;
+- ≥ 200 codons: 4,500 × 6.8 × 10^−5^ ≈ **0.3** by chance.
+
+A 200-codon ORF is strong evidence; a 66-codon gene like *cro* needs other evidence (a ribosome-binding site, homology, RNA).
+
+::: notes
+This turns the single number on the previous slide into a method: probability per stretch times number of stretches gives the expected number of false positives. Students do the same in B2 for a whole bacterial genome. The estimate is rough: real DNA is not random, and an open stretch only counts as an ORF if it also contains an ATG near its start, so the real number of chance ORFs is a bit lower. But the order of magnitude is the point. The cut-off is a trade-off between missing short real genes and accepting random ORFs, which is exactly what students see in the demo when they lower the minimum from 100 to 60 codons.
 :::
 
 ## Try it: six-frame ORF finder {.smaller}
@@ -124,6 +204,18 @@ Interactive demo. It starts on a 3.3 kb region of phage lambda around the repres
 The contrast with bacteria is the point. In a bacterium, a long ORF is nearly always a gene; in human DNA, the coding parts are short exons separated by introns that are often thousands of bases long, so there is rarely a long ORF to find. Gene finders therefore look for combinations of signals: splice sites, start and stop codons in the right frame across exons, codon usage typical of real genes, and promoter features. Codon bias is the observation that synonymous codons are not used equally; real coding sequence has the species' typical bias, random sequence does not. Pseudogenes such as HBBP1 in the globin cluster look gene-like but carry disabling mutations. Recall the genetic code from the Mutation unit: the third codon position is where most synonymous variation sits.
 :::
 
+## Anatomy of a eukaryotic gene {.smaller}
+
+![](fig06-gene-anatomy.svg){width="78%" fig-align="center"}
+
+- **Gene** = transcribed region: exons + introns. **mRNA** = exons only. **CDS** = ATG to stop, a part of the mRNA. **UTRs** = the exon parts before the ATG and after the stop.
+- Lengths add up: primary transcript = Σ exons + Σ introns; mRNA = Σ exons; mRNA = 5' UTR + CDS + 3' UTR.
+- The first exon usually starts with UTR, so the ATG can lie well inside exon 1, and the last exon often ends with a long 3' UTR.
+
+::: notes
+This is the vocabulary students need for B3 and for reading any gene in a browser. Common confusions: the gene is not the same as the coding sequence; exons are not the same as coding sequence, since UTRs are exonic but not translated; and introns are transcribed, then removed. The GT and AG are the first two and last two bases of each intron, the splice donor and acceptor signals; a mutation in them is a classic cause of disease, for example in beta-thalassaemia, because the intron is then kept or a wrong site is used. The figure is a schematic, not to scale: in human genes, introns are usually much longer than exons. A genome browser draws genes in the same way: thick boxes for CDS, thin boxes for UTRs, lines for introns.
+:::
+
 ## Evidence: RNA, protein and conservation {.smaller}
 
 ![](fig02-gene-evidence.svg){width="74%" fig-align="center"}
@@ -142,6 +234,44 @@ Walk through the tracks from top to bottom. RNA-seq: reads from messenger RNA pi
 
 ::: notes
 BLAST, the Basic Local Alignment Search Tool, is the most used program in biology. The idea is a heuristic: instead of aligning the query to every database sequence fully, which would be too slow, it looks for short exact word matches (seeds) and extends only those. The alignment here is real: human versus mouse beta-globin, first 40 residues; over the whole 147 residues, 118 are identical. Stress the language: similarity is measured, homology is inferred. Two proteins are homologous or not; there is no such thing as 80 percent homologous. 80 percent identical is correct.
+:::
+
+## Step 1: scoring an alignment
+
+Each aligned pair gets a score from a **substitution matrix**. For proteins BLAST uses **BLOSUM62**: positive for identical or similar amino acids, negative for unlikely swaps. Residues 2–11 of human vs mouse β-globin:
+
+| Human | V | H | L | T | P | E | E | K | S | A | |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mouse | V | H | L | T | D | A | E | K | A | A | **total** |
+| BLOSUM62 | +4 | +8 | +4 | +5 | −1 | −1 | +5 | +5 | +1 | +4 | **+34** |
+
+- Identities score differently: rare residues (W +11, H +8) more than common ones (A, L, V +4).
+- A **similar** pair still scores: S/A +1, and elsewhere I/V +3, D/E +2, K/R +2.
+- Gaps cost points: a gap of *k* residues costs 11 + *k* (BLASTp defaults).
+- For DNA the scheme is simpler, e.g. +1 per match and −2 per mismatch.
+
+::: notes
+This makes the "extend while the score keeps rising" of the figure concrete. The substitution matrix was estimated from blocks of real aligned proteins: amino acid pairs that are often swapped in related proteins get positive scores, rare swaps negative ones. So BLAST rewards changes that evolution tolerates, which is why protein searches see further back in time than DNA searches. The values here are the real BLOSUM62 values, and the sequences are the real first residues of human and mouse beta-globin from the figure. The 7 identities, 1 similar pair and 2 mismatches give 34. The gap costs are the BLASTp defaults; the DNA scores are the defaults of megablast, the fast blastn mode that the mystery-read task in the last unit used.
+:::
+
+## Step 2: from score to E value
+
+BLAST converts the raw score into a **bit score** *S* (a normalised score that does not depend on the matrix). The E value is then
+
+$$E \approx m \times n \times 2^{-S}$$
+
+with *m* = query length and *n* = total length of the database. Query 147 aa, database 2 × 10^8^ residues (roughly the size of Swiss-Prot): *m* × *n* ≈ 3 × 10^10^.
+
+| Bit score *S* | 35 | 50 | 100 | 200 |
+|---|---:|---:|---:|---:|
+| E value | ≈ 1 | 3 × 10^−5^ | 2 × 10^−20^ | 2 × 10^−50^ |
+
+- Every extra bit **halves** E. Long, good alignments get astronomically small E values.
+- A database **twice as large doubles** E for the same alignment: E is a count of expected chance hits, not a property of the two sequences alone.
+- *E* ≈ 1 means "one hit this good expected by chance": not evidence of anything.
+
+::: notes
+This is the step students usually take on faith. The formula is the core of the Karlin-Altschul statistics behind BLAST; the real program adjusts m and n for edge effects, so treat these numbers as the right order of magnitude, not exact. Read the table from left to right: at 35 bits, about one random hit of that quality is expected in a database this size, so the hit means nothing; at 50 bits, about 3 in 100,000; at 100 bits, the hit is certainly not chance. Since E depends on the database size, the same alignment can look different in a small and a large database, which is why the exercise answers say that E values change between database releases while the top hits do not. Students do not need the formula for the exam; they need the two consequences in the bullets.
 :::
 
 ## Which BLAST, and how to read it {.smaller}
@@ -165,6 +295,23 @@ Proteins detect distant relatives better than DNA: the code is redundant, and si
 The E value depends on the database size, so the same alignment gets a larger E value in a bigger database; it is not a p-value, but it can be read in a similar way. The protein point is important for the exercise: human and fish beta-globin genes have diverged a lot at the DNA level, especially at third codon positions, but the proteins are still clearly similar. blastx and tblastn translate in all six frames, which is exactly what the ORF finder did by hand. In the exercise students run blastp with the human beta-globin protein and see paralogs and orthologs in the same hit list.
 :::
 
+## Step 3: what a hit means, and what it does not
+
+| You see | You may conclude | You may **not** conclude |
+|---|---|---|
+| tiny E value (10^−50^) over most of the query | the two are **homologous** | that they have the same function (paralogs often differ) |
+| high identity (70%) over 15 residues, E ≈ 2 | nothing: short matches arise by chance | homology |
+| ~25–30% identity over the whole protein, small E | probably homologous ("twilight zone": check E) | |
+| no significant hit | BLAST found no detectable similarity | that the genes are **not** homologous (myoglobin vs β-globin) |
+| query cover 40% | one **domain** is shared | that the whole proteins are related |
+| the top hit in another species | a good ortholog candidate | that it **is** the ortholog: check gene trees and synteny |
+
+**Check yourself.** A 300-aa query gives hit A: 98% identity, query cover 15%; hit B: 32% identity, query cover 95%, E = 10^−40^. Which is the better evidence that the whole protein has a homolog?
+
+::: notes
+This is the interpretation slide students need for B4 and F1. Go through the rows. The answer to the check-yourself question is hit B: it covers almost the whole query, and its E value shows the similarity is far beyond chance even though only a third of the positions are identical; hit A shares only a short stretch, perhaps one domain or a common motif, and says nothing about the rest. The twilight zone refers to the observation that below about 25 to 30 percent identity, sequence identity alone no longer separates homologs from chance well, so the E value and the alignment length matter more. The myoglobin example from the gene-family slide is the classic case of homologs that BLAST cannot see. The last row anticipates the gene-tree slide: the most similar gene in another species is usually the ortholog, but after duplications and gene losses it need not be.
+:::
+
 ## Genome browsers: tracks on a coordinate {.smaller}
 
 ![](fig04-browser.svg){width="74%" fig-align="center"}
@@ -173,6 +320,19 @@ The [UCSC Genome Browser](https://genome.ucsc.edu) and [Ensembl](https://www.ens
 
 ::: notes
 The figure is drawn from the Ensembl 116 positions of the five globin genes and the pseudogene HBBP1; the conservation and variant tracks are schematic. The important things to read in a browser are the coordinate and assembly at the top, the strand of each gene (here all on the minus strand, so the genes are read from right to left), and the exon structure. The beta-globin cluster is a classic: the genes lie in the same order as they are switched on during development, embryonic epsilon first, then the fetal gamma genes, then adult delta and beta. A locus control region further upstream (to the right here) is needed for high expression of all of them; that comes back in the eukaryotic regulation unit. Note rs334, the HbS variant, in the variant track: it is the subject of the Genomic variation unit.
+:::
+
+## Coordinates and strands {.smaller}
+
+![](fig07-strands.svg){width="74%" fig-align="center"}
+
+- Coordinates count along the **plus** strand, from the tip of the short arm. Tables give **start < end** for every gene.
+- A **plus**-strand gene starts (5' end, transcription start) at its **low** coordinate; a **minus**-strand gene at its **high** coordinate.
+- "Upstream" means towards the gene's 5' end: lower coordinates for a plus-strand gene, **higher** for a minus-strand gene.
+- In a browser, arrows or chevrons on the gene show its direction. *HBB* and the other β-like globin genes point left: minus strand.
+
+::: notes
+This is the single most common source of errors when students first read genome data, and B5 and Q8 test it. The rule is simple once it is drawn: the coordinate axis belongs to the plus strand, so for a minus-strand gene everything is mirrored. Its transcription start, its first exon and its upstream promoter all lie at higher coordinates than its end. A table that lists start and end therefore does not by itself say where a gene begins; you need the strand column. The coordinates in the figure are invented for the example. The same issue appears with variant names in the next unit: a database lists alleles on the plus strand, a clinical name on the gene's strand.
 :::
 
 ## Comparative genomics: conservation means function {.smaller}
@@ -188,12 +348,22 @@ Comparative genomics is how most human genes were first given a function: a huma
 
 ## Gene families: duplication and divergence {.smaller}
 
-![](fig05-globin-family.svg){width="68%" fig-align="center"}
+![](fig05-globin-family.svg){.nostretch width="74%" fig-align="center"}
 
 **Gene duplication** gives a spare copy, which can keep the old function, take a new one (fetal vs adult haemoglobin) or decay into a **pseudogene** (*HBBP1*). Related genes in one genome are **paralogs**; the same gene in two species are **orthologs**.
 
 ::: notes
 The globin family is the textbook example. An ancestral globin gene duplicated into the myoglobin and haemoglobin lineages, then the haemoglobin gene into alpha-like and beta-like genes, which ended up on different chromosomes (16 and 11), and then each cluster duplicated further. The identity column is from BLASTp of human beta-globin against each protein, run for this course: delta is 93 percent identical (a recent duplication), the gamma and epsilon genes about 73 to 76 percent, alpha only 43 percent. Myoglobin has exactly the same three-dimensional fold, but BLAST cannot detect the similarity from sequence: a lesson that no hit does not prove no homology. The fetal gamma chains bind oxygen more tightly than adult beta chains, which lets the fetus take oxygen from the mother's blood: a new function after duplication. In sickle-cell disease, drugs that turn fetal haemoglobin back on (hydroxyurea) help because gamma chains do not carry the HbS mutation.
+:::
+
+## Orthologs and paralogs on a gene tree {.smaller}
+
+![](fig08-gene-tree.svg){width="70%" fig-align="center"}
+
+Find the node where two genes **last** split. A **speciation** node makes them orthologs; a **duplication** node makes them paralogs, even when the two genes are in different species.
+
+::: notes
+The definitions are easy to say and easy to misapply, so draw the tree. The duplication that separated the alpha-like and beta-like globins is older than the split between the human and mouse lineages, so it sits higher in the tree. Human HBB and mouse Hbb-b1 last split at the speciation: orthologs. Human HBA1 and human HBB last split at the duplication: paralogs. The trap is the cross pair: human alpha and mouse beta are in different species, but they last split at the duplication, so they are paralogs, not orthologs. Orthologs are the best guide to function across species, which is why the mouse is a model for human HBB. The tree shows topology only and is simplified: both mammals have several alpha-like and beta-like genes from later duplications.
 :::
 
 ## The human genome in numbers {.smaller}
@@ -215,17 +385,34 @@ Gene density differs ten-fold between chromosomes. The trisomies that are compat
 These are the numbers students get in R; they should not memorise them, but the patterns are worth noticing. Chromosome 19 is famously gene-dense; chromosomes 13, 18 and the Y are gene-poor. The link to the aneuploidy unit in Part 5: the only autosomal trisomies seen in live births are of chromosomes 13, 18 and 21, which carry relatively few genes, so having an extra copy upsets fewer gene doses. The longest genes are huge mostly because of enormous introns; DMD, the Duchenne muscular dystrophy gene from the pedigree unit, is 2.2 Mb, and its size is one reason why new mutations in it are common. HBB, at 4 kb, is short.
 :::
 
+## Common mistakes
+
+| Mistake | Correct |
+|---|---|
+| "These proteins are 80% homologous." | Homology is yes or no; say **80% identical**. |
+| "No BLAST hit, so the genes are unrelated." | BLAST may simply not detect old homologs (myoglobin). |
+| "The top hit in mouse is the ortholog." | Usually, but check: duplications and gene losses can mislead. |
+| "The gene starts at its lowest coordinate." | Only on the plus strand; a minus-strand gene starts at its highest. |
+| "The longest ORF is the gene, and its first ATG is the start." | ORFs are candidates; starts are often a later ATG (*cII* in the demo). |
+| "Exons = coding sequence." | Exons also contain the UTRs. |
+| "Gene start and end in a table = the canonical transcript." | Table coordinates span **all** transcripts, including rare long ones. |
+| "The annotation is a fact." | It is a model from evidence; note the release (Ensembl 116, GRCh38). |
+
+::: notes
+A revision slide built from errors students make in this unit's exercise and R tasks. The table-coordinates row is what students discover in R6, where HBG2 appears to be 250 kb long because of read-through transcripts. Ask students to correct a couple of the statements before showing the right-hand column.
+:::
+
 ## Summary {.smaller}
 
 | Concept | Key fact |
 |---|---|
 | Assembly | overlapping reads → contigs → scaffolds; repeats longer than reads break assemblies; long reads help |
 | Annotation | structural (where), functional (what), relational (related to what); a model that changes between releases |
-| ORF | ATG to stop with no stop between; random DNA has a stop every ~21 codons; long ORFs are likely genes |
-| Eukaryotic gene finding | exons and introns (GT…AG), codon bias, promoters; combined with RNA-seq, homology and conservation |
-| BLAST | seed, extend, report; blastn/blastp/blastx/tblastn; read identity, coverage and E-value |
-| Genome browser | tracks on a chromosome coordinate; note the assembly (GRCh38) and strand |
-| Orthologs / paralogs | same gene in two species / related genes in one genome, from duplication |
+| ORF | ATG to stop with no stop between; six frames; P(no stop in *n* codons) = (61/64)^*n*^; expected chance ORFs = stretches × P |
+| Eukaryotic gene | exons (incl. UTRs) and introns (GT…AG); mRNA = exons; CDS = ATG to stop; found with RNA-seq, homology, conservation |
+| BLAST | seed, extend, score (BLOSUM62); E ≈ *m n* 2^−*S*^; read identity, coverage and E value; no hit ≠ no homology |
+| Genome browser | tracks on a plus-strand coordinate; a minus-strand gene starts at its high end; note the assembly (GRCh38) |
+| Orthologs / paralogs | last split at a speciation / at a duplication (even across species) |
 | Human genome | ~20,000 protein-coding genes, 1–2% coding, 6.5 genes per Mb on average |
 
 ::: notes

@@ -13,7 +13,7 @@ You build every unit of one part, **in order**, so the part reads as a whole: la
 
 - `lec.qmd`, `quiz.qmd`, `exercise.qmd` and `exercise-r.qmd`. The R page is required for every unit, even recaps.
 - The demo(s) listed in `plan/course-order.md`, at the anchors the sidebar already uses: `#explore`, or `#explore-<x>` for a second demo. The sidebar in `_quarto.yml` is already written. **Do not edit it.** If you think a demo should change, say so in your report.
-- **Recap units** (`*-recap`) are lighter: 8–12 slides, 6–8 quiz questions, a short exercise and a short R page. They recap 5MO103 *through the lens of genetics*: which mutations break what, and how we know.
+- **Recap units** (`*-recap`) are lighter in scope: fewer new concepts, a shorter exercise and a short R page. Like every deck, their length follows the content, with no fixed slide count. They recap 5MO103 *through the lens of genetics*: which mutations break what, and how we know.
 
 ## Tools: avoid permission prompts
 

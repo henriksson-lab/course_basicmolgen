@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -161,9 +161,9 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li>The <strong>standard symbols</strong> of a pedigree, and how to name each person (II-3).</li>
 <li>The <strong>hallmarks</strong> of five modes of inheritance: autosomal recessive, autosomal dominant, X-linked recessive, X-linked dominant and Y-linked. Mitochondrial inheritance gets a brief mention.</li>
-<li>A <strong>strategy</strong>: do not try to prove a mode; <strong>rule modes out</strong>, one family at a time.</li>
-<li><strong>Risk calculations</strong>: the 2/3 carrier probability, partners from the population, and children of relatives.</li>
-<li><strong>Complications</strong>: incomplete penetrance, new mutations and ascertainment bias.</li>
+<li>A <strong>strategy</strong>: do not try to prove a mode; <strong>rule modes out</strong>, one family at a time, with a worked example.</li>
+<li><strong>Risk calculations</strong>: the 2/3 carrier probability, partners from the population, X-linked risks, and children of relatives, each worked with numbers.</li>
+<li><strong>Complications</strong>: incomplete penetrance, new mutations and ascertainment bias, with the numbers behind the bias.</li>
 </ul>
 <p>You already know Mendel’s laws, the χ² test and the probability rules (product rule, sum rule, conditional probability). Today we use all three. Book: Hartwell, Mendel’s principles chapter (pedigrees) and the chromosome theory chapter (sex-linked traits).</p>
 <aside class="notes">
@@ -472,6 +472,60 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-rule-out-step-by-step" class="slide level2 smaller">
+<h2>Worked example: rule out, step by step</h2>
+
+<img data-src="fig03-autosomal-dominant.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><table class="caption-top">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 62%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Check the trios</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>XD</strong></td>
+<td>I-1 (affected father) → II-2 (affected <strong>son</strong>), mother I-2 unaffected; I-1 also has an unaffected <strong>daughter</strong>, II-3</td>
+<td><strong>ruled out</strong></td>
+</tr>
+<tr class="even">
+<td><strong>XR</strong></td>
+<td>II-4 is an affected <strong>woman</strong> with an unaffected <strong>son</strong>, III-4</td>
+<td><strong>ruled out</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>AR</strong></td>
+<td>possible, but each affected × unaffected mating then needs the unaffected partner to be a carrier: I-2, II-1 <strong>and</strong> II-5, all marrying in</td>
+<td>consistent, <strong>very unlikely</strong></td>
+</tr>
+<tr class="even">
+<td><strong>AD</strong></td>
+<td>every affected person has an affected parent; about ½ of each sibship affected</td>
+<td>consistent, <strong>no extra carriers</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Conclusion: <strong>consistent with autosomal dominant</strong>, and nothing else is plausible.</p>
+<aside class="notes">
+<p>Do this one live, with the class calling out each step. Order matters for speed: check the X-linked modes first, because they are easiest to break with one trio. XD falls to the father-to-son transmission, and independently to the unaffected daughter of an affected father. XR falls to II-4: an affected woman under XR is XaXa, so every son must be affected, and III-4 is not. AR is the hard one, as always: it is only ruled out by two affected parents with an unaffected child, which this family does not have. Instead, count the carriers it needs. Each affected person here has one unaffected parent who married in, and under AR every one of them must carry the same rare allele: three unrelated carriers. That is the second step of the strategy at work. AD needs nothing extra. Students should write the answer in this form: what is ruled out, by which trio, and why the remaining mode is preferred.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="consistent-is-not-the-same-as-proven" class="slide level2">
 <h2>Consistent is not the same as proven</h2>
 <p>A pedigree often fits <strong>several</strong> modes. Look at fig04 again (X-linked recessive):</p>
@@ -568,6 +622,71 @@ P(\text{child } aa) = \underbrace{\tfrac23}_{\text{she is }Aa} \times \underbrac
           display:block!important;
       }</style></aside>
 </section>
+<section id="risk-3-x-linked-recessive" class="slide level2">
+<h2>Risk 3: X-linked recessive</h2>
+<p>Lena’s <strong>maternal uncle</strong> has Duchenne muscular dystrophy (XR). Her grandparents, her mother and Lena are unaffected. Assume no new mutation. What is the risk that Lena’s first son is affected?</p>
+<p>Walk <strong>down</strong> the family, one transmission at a time:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Who</th>
+<th>Reason</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>grandmother is X<sup>A</sup>X<sup>a</sup></td>
+<td>her son is affected; his X came from her</td>
+<td><strong>1</strong> (obligate carrier)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Lena’s mother is X<sup>A</sup>X<sup>a</sup></td>
+<td>she got one of her mother’s two X chromosomes</td>
+<td>½</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Lena is X<sup>A</sup>X<sup>a</sup></td>
+<td>same again, from her mother</td>
+<td>½</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Lena’s son gets X<sup>a</sup></td>
+<td>a son gets one of his mother’s two X</td>
+<td>½</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">P(\text{son affected}) = 1 \times \tfrac12 \times \tfrac12 \times \tfrac12 = \tfrac18</span></p>
+<ul>
+<li>The <strong>father’s side never matters</strong> for a son: fathers give sons their Y.</li>
+<li>Each woman along the line passes X<sup>a</sup> with probability ½, so each extra generation <strong>halves</strong> the risk.</li>
+</ul>
+<aside class="notes">
+<p>This is the X-linked version of the risk chain, and it is the kind of problem students meet in the exercise, with a different family. The key step is the first: the grandmother is not “a possible carrier”, she is an obligate carrier, because an affected son must have got his X from his mother (if we rule out a new mutation; for DMD new mutations are in fact common, which is why genetic counselling also tests). Then every downward step through a woman is a coin toss. Two common mistakes: multiplying in a factor for the father, and forgetting that a daughter of an affected man (not this case) is an obligate carrier with probability 1. A simplification to name: we have not used the information that Lena’s mother and Lena are unaffected, because carrier women are unaffected anyway for XR, so it does not change the probabilities. If Lena already had unaffected sons, a conditional calculation like the 2/3 one would lower her carrier probability; that is beyond this course.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="consanguinity-raises-recessive-risk" class="slide level2">
 <h2>Consanguinity raises recessive risk</h2>
 <p>Relatives share alleles <strong>by descent</strong> from common ancestors. If one great-grandparent carried a rare allele, it can come down <strong>both sides</strong> of a cousin marriage and meet again in a child.</p>
@@ -578,6 +697,59 @@ P(\text{child } aa) = \underbrace{\tfrac23}_{\text{she is }Aa} \times \underbrac
 </ul>
 <aside class="notes">
 <p>Keep this qualitative. The one number is 1/16, the inbreeding coefficient of a child of first cousins: the probability that the two copies of a gene in that child are copies of the same ancestral allele. It does not mean the child has a 1/16 risk of disease: the risk depends on whether the shared ancestors carried a disease allele at all. The key idea is that relatedness makes the second carrier much more likely when the allele is rare. Do not moralise: in many parts of the world cousin marriage is common and most children are healthy; the increase in absolute risk is modest. Inbreeding returns in Part 7 with Hardy–Weinberg.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="consanguinity-counting-meioses" class="slide level2">
+<h2>Consanguinity: counting meioses</h2>
+<p>When we <strong>know</strong> an ancestor carried the allele, follow it down each path. Each <strong>meiosis</strong> on the way passes it on with probability ½.</p>
+<p><strong>Worked example.</strong> A great-grandfather is a known carrier of a rare recessive allele; his wife is not. Two of his great-grandchildren, <strong>second cousins</strong>, have a child. Nobody who married in is a carrier.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>great-grandfather → child → grandchild → second cousin 1: three meioses</td>
+<td>(½)³ = 1/8</td>
+</tr>
+<tr class="even">
+<td>the same for second cousin 2, along the other branch</td>
+<td>1/8</td>
+</tr>
+<tr class="odd">
+<td>both cousins carriers <strong>and</strong> both pass <em>a</em></td>
+<td>1/8 × 1/8 × 1/4 = <strong>1/256</strong></td>
+</tr>
+<tr class="even">
+<td>compare: cousin 1 with an unrelated partner (carrier frequency 1/50)</td>
+<td>1/8 × 1/50 × 1/4 = <strong>1/1600</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The related partner raises the risk about <strong>6-fold</strong> here, because the allele is <strong>known</strong> to be in the family.</p>
+<ul>
+<li>The closer the relatives, the fewer meioses, and the larger the effect.</li>
+<li>Without a known carrier, the absolute risk from cousin marriage is much smaller; the 1/16 inbreeding coefficient is the general measure (Part 7).</li>
+</ul>
+<aside class="notes">
+<p>This turns the qualitative slide into a method students can apply: draw the path from the known carrier to each partner, count the meioses, and raise one half to that power. Then multiply as usual with the final quarter. The comparison with the unrelated partner is the point: what makes cousin marriage risky is that the same rare allele can arrive by two routes. With first cousins there are two meioses on each path, so each cousin’s carrier probability is 1/4, and the effect is larger still; that is the exercise problem, so do not do it here. Note the assumption that nobody who married in carries the allele, which is reasonable for a rare allele. The numbers are conditional on a known carrier ancestor; in a random family the absolute risk is far lower.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -613,20 +785,106 @@ P(\text{child } aa) = \underbrace{\tfrac23}_{\text{she is }Aa} \times \underbrac
           display:block!important;
       }</style></aside>
 </section>
-<section id="ascertainment-bias-the-numbers" class="slide level2">
-<h2>Ascertainment bias: the numbers</h2>
-<p>Take many <em>Aa</em> × <em>Aa</em> families with 3 children. Each child is affected with probability <em>q</em> = 1/4.</p>
+<section id="ascertainment-bias-the-missing-families" class="slide level2">
+<h2>Ascertainment bias: the missing families</h2>
+<p>Take 64 <em>Aa</em> × <em>Aa</em> families, each with 3 children. Each child is affected with probability ¼ (binomial, from <em>Probability and the χ² test</em>):</p>
+
+<img data-src="fig11-ascertainment.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>The clinic only sees families with <strong>at least one</strong> affected child. The 27 families with none are invisible, but their 81 unaffected children are missing from the count, so the affected fraction looks too <strong>high</strong>.</p>
+<aside class="notes">
+<p>Build the bar chart from the binomial: P(0 of 3) = (3/4)^3 = 27/64, P(1) = 3 × 1/4 × 9/16 = 27/64, P(2) = 3 × 1/16 × 3/4 = 9/64, P(3) = 1/64. Out of 64 families, expect 27, 27, 9 and 1. Count affected children: 27 × 1 + 9 × 2 + 1 × 3 = 48 of 192 children, exactly a quarter. Now remove the 27 families that never come to the clinic. The 48 affected children are all still there, but the children are now only 37 × 3 = 111. 48/111 = 0.43. Nothing about transmission has changed; only the way we collected the families. Historically this was a real problem for testing Mendelian ratios in humans.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ascertainment-bias-the-formula" class="slide level2">
+<h2>Ascertainment bias: the formula</h2>
+<p>The same reasoning for any sibship size <em>n</em> and per-child probability <em>q</em>:</p>
 <ul>
-<li><strong>All families</strong>: 1/4 of the children are affected.</li>
-<li><strong>Families seen in the clinic</strong> (at least one affected child): the fraction is <strong>higher</strong>, because the families with 0 affected are missing. Expected affected per ascertained family:</li>
+<li>expected affected per family, <strong>all</strong> families: <em>nq</em>;</li>
+<li>fraction of families with <strong>at least one</strong> affected: 1 − (1 − <em>q</em>)<sup><em>n</em></sup>;</li>
+<li>all affected children are in ascertained families, so per <strong>ascertained</strong> family:</li>
 </ul>
 <p><span class="math display">
 \frac{n q}{1-(1-q)^n} = \frac{3 \times 0.25}{1 - 0.75^3} = \frac{0.75}{0.578} = 1.30,
 </span></p>
-<p>so the fraction affected is 1.30/3 ≈ <strong>0.43</strong>, not 0.25.</p>
-<p>A naive count in clinic families would wrongly reject the 1/4 of a recessive trait. We simulate this in R in the exercise.</p>
+<p>so the fraction affected is 1.30/3 ≈ <strong>0.43</strong>, not 0.25 (the same 48/111 as on the previous slide).</p>
+<ul>
+<li>The bias <strong>shrinks</strong> as families get larger: fewer families have no affected child.</li>
+<li>A naive χ² test of 1 : 3 in clinic families would <strong>wrongly reject</strong> a recessive trait.</li>
+<li>One correction, the <strong>sib method</strong>: take <strong>each</strong> affected child in turn and count how many of their siblings are affected. In the clinic’s 37 families: 24 of 96 siblings, exactly ¼.</li>
+</ul>
 <aside class="notes">
-<p>The denominator is the probability that a family has at least one affected child, one minus the probability that all three are unaffected. Dividing by it rescales the expected count to the families we actually see. With 3 children, 42% of Aa × Aa families have no affected child and are invisible, so the observed fraction is inflated to 0.43. With larger families the bias shrinks. Historically this was a real problem for testing Mendelian ratios in humans; corrections such as counting only the non-proband siblings exist. In the exercise students reproduce this with rbinom and replicate, then filter, and compare with this formula.</p>
+<p>The numerator is the expected number of affected children per family, n times q. Every affected child sits in a family that has at least one affected child, so dividing by the probability of being ascertained rescales the expectation to the families we actually see. With 3 children, 42% of Aa × Aa families have no affected child and are invisible, so the observed fraction is inflated to 0.43. With larger families the bias shrinks; with n = 1 every ascertained family is a single affected child, so the fraction is 1. The sib method numbers: the 27 families with one affected child give 27 index children with 0 affected among 54 siblings; the 9 families with two give 18 index children, each with 1 affected of 2 siblings (18 of 36); the 1 family with three gives 3 index children, each with 2 of 2 (6 of 6). Total 24 of 96 = 1/4. Removing only one proband per family would over-correct in this model, which is why the method counts every affected child as an index case. We do not go further than this. In the exercise students reproduce this with rbinom and replicate, then filter, and compare with this formula.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“This family has 1 affected of 4 children, so it is recessive (¼).”</td>
+<td>Families are too small for ratios. Look for <strong>impossible trios</strong>.</td>
+</tr>
+<tr class="even">
+<td>“Male-to-male transmission rules out XR.”</td>
+<td>It rules out <strong>XD</strong>; XR is only <strong>unlikely</strong> (needs a carrier mother).</td>
+</tr>
+<tr class="odd">
+<td>“Skipped generation, so it must be recessive.”</td>
+<td>Or a dominant allele with <strong>incomplete penetrance</strong>.</td>
+</tr>
+<tr class="even">
+<td>“The unaffected sister of a patient is a carrier with probability ½.”</td>
+<td><strong>⅔</strong>: she is known not to be <em>aa</em>.</td>
+</tr>
+<tr class="odd">
+<td>“Two carrier parents: risk ¼ × ¼ for the second child after an affected first child.”</td>
+<td>Each child is independent: <strong>¼</strong> again.</td>
+</tr>
+<tr class="even">
+<td>“The parents of an affected child (AR) are carriers with probability ⅔.”</td>
+<td>They are <strong>obligate</strong> carriers: probability <strong>1</strong>.</td>
+</tr>
+<tr class="odd">
+<td>“Under XR, the affected man’s sons are at risk.”</td>
+<td>Sons get his <strong>Y</strong>. His <strong>daughters</strong> are obligate carriers.</td>
+</tr>
+<tr class="even">
+<td>“AR is consistent, so AR is the answer.”</td>
+<td>AR is almost <strong>always</strong> consistent. Count the carriers it needs.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>These come from exam scripts. Ask students to cover the right column and explain each fix before revealing it. The independence error and the ⅔ versus ½ error are the two most frequent. The last row is the conceptual one: the logical test alone almost never excludes AR, so the plausibility step decides.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -647,8 +905,8 @@ P(\text{child } aa) = \underbrace{\tfrac23}_{\text{she is }Aa} \times \underbrac
 <li><strong>XR</strong>: mostly males, through carrier mothers, no father-to-son. <strong>XD</strong>: affected father → all daughters, no sons.</li>
 <li><strong>Y-linked</strong>: father → every son. <strong>Mitochondrial</strong>: mother → all children (Part 5).</li>
 <li><strong>Rule modes out</strong> trio by trio; among those left, prefer the one with the fewest extra carriers. Consistent ≠ proven.</li>
-<li>Risks: unaffected sibling of a patient <strong>2/3</strong> carrier; multiply independent steps; consanguinity raises recessive risk.</li>
-<li>Watch for <strong>incomplete penetrance</strong>, <strong>new mutations</strong> and <strong>ascertainment bias</strong>.</li>
+<li>Risks: unaffected sibling of a patient <strong>2/3</strong> carrier; multiply independent steps; X-linked: each woman down the line passes X<sup>a</sup> with ½; known carrier ancestor: (½) per meiosis.</li>
+<li>Watch for <strong>incomplete penetrance</strong>, <strong>new mutations</strong> and <strong>ascertainment bias</strong> (clinic families over-represent affected children: 0.43 instead of 0.25 for sibships of 3).</li>
 </ul>
 <aside class="notes">
 <p>Recap the two-step strategy once more, since it is what students will use in the exam: exclude by impossible trios, then rank what remains by plausibility. Remind them of the three numbers: one quarter for a carrier couple, two thirds for an unaffected sibling, one half for a dominant parent. Everything else is the product rule.</p>

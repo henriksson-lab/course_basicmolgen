@@ -25,9 +25,9 @@ In Part 2 a chromosome was a line with genes on it, and meiosis moved those line
 
 - **Chromatin**: how 2 m of DNA fits in a nucleus; nucleosomes and higher-order packing.
 - **Euchromatin and heterochromatin**, and what happens to a gene moved next to heterochromatin.
-- **Banding and karyotypes**: how chromosomes are recognised and named (1p36.33, 47,XY,+21).
-- **Centromeres**: the attachment point for the spindle.
-- **Telomeres**: why linear ends are a problem, and how **telomerase** solves it.
+- **Banding and karyotypes**: a real karyotype, and how chromosomes are named (1p36.33, 47,XY,+21).
+- **Centromeres**: the attachment point for the spindle, and what happens with none or two.
+- **Telomeres**: why linear ends are a problem, and how **telomerase** solves it, step by step.
 - What a chromosome **needs**: yeast artificial chromosomes.
 - The **telomere-to-telomere (T2T)** human genome, which finally sequenced centromeres and telomeres.
 
@@ -108,6 +108,50 @@ PEV is the classic genetic evidence that heterochromatin is a state that can spr
 The banding pattern is the chromosome's barcode; it is how cytogeneticists recognise each chromosome and spot a missing or extra piece. Dark G bands are AT-rich, gene-poor and replicate late; light bands are GC-rich and gene-rich. Band names are read from the centromere outward: chromosome, arm, region, band, then sub-bands after the dot. So 1p36.33 is near the tip of the short arm of chromosome 1, and 1q44 near the tip of the long arm. Students have already seen band names in NCBI Gene's Location field (for example CFTR at 7q31.2), and now they know what the name means. The right side of the figure classifies chromosomes by centromere position; the acrocentrics matter in the next unit, because two of them can fuse at their centromeres (a Robertsonian translocation) with almost no loss of genes.
 :::
 
+## A real karyotype {.smaller}
+
+:::: {.columns}
+::: {.column width="58%"}
+![](img/human-male-karyotype.jpg){width="100%"}
+
+[Image: courtesy National Human Genome Research Institute, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Human_male_karyotpe_high_resolution.jpg){.photo-credit}
+:::
+::: {.column width="42%"}
+How it is made:
+
+1. Grow dividing cells (for example blood lymphocytes) and **arrest them in metaphase**, when chromosomes are most condensed.
+2. Swell the cells, spread the chromosomes on a slide, and **G-band** them.
+3. Photograph, then sort the chromosomes into **pairs**, by size, centromere position and band pattern, numbered 1 (largest) to 22, then X and Y.
+
+Check yourself: count the chromosomes. Which pairs are acrocentric? Is this a woman or a man?
+:::
+::::
+
+::: notes
+This is a real G-banded karyotype from the NHGRI. Let the class work on the questions for a minute. 46 chromosomes; the acrocentrics are 13, 14, 15, 21 and 22, with their tiny short arms; the last pair is X and Y, so it is a man, written 46,XY. Point out that each chromosome here is two sister chromatids lying side by side, because the cell was in metaphase. The numbering by size is nearly but not quite right: chromosome 21 is actually smaller than 22, a historical accident of the first karyotypes. The band patterns of the two homologues match, which is how each chromosome is recognised. Modern labs use software to sort the chromosomes, but a cytogeneticist still reads the bands.
+:::
+
+## Reading a band name, step by step
+
+Take **17q21.31**, the band that holds the *MAPT* gene:
+
+| Part | Here | Meaning |
+|-----------|-----|--------------------------------------------|
+| chromosome | **17** | chromosome 17 |
+| arm | **q** | the long arm (**p** = short arm, from French *petit*) |
+| region | **2** | the second region of 17q, counted **from the centromere outward** |
+| band | **1** | band 1 of that region |
+| sub-band | **.3** | after the dot: finer bands seen at higher resolution |
+| sub-sub-band | **1** | finer still |
+
+- Say it as "seventeen q two one point three one", not "q twenty-one".
+- Small numbers lie **near the centromere**; large ones near the end. So 1p36 is near the tip of 1p, and 1q12 near the centromere. "pter" and "qter" mean the end of each arm.
+- A range is written from one band to another: 22q11.21–q11.23.
+
+::: notes
+The digits are separate levels, which is why "21" is read "two one". Band numbers grow outward from the centromere on both arms, so p11 and q11 are the bands next to the centromere. More sub-bands appear as the resolution of the karyotype increases: a band seen as 17q21 at 400 bands splits into 17q21.1, .2 and .3 at 850 bands. NCBI Gene gives every gene's band, so students can now read the Location field: CFTR at 7q31.2, TERT at 5p15.33, the outermost band of 5p. 17q21.31 also holds a common inversion polymorphism, which ties into the next unit.
+:::
+
 ## The karyotype and its notation {.smaller}
 
 A **karyotype** is the full set of chromosomes of a cell, arranged in pairs by size, centromere position and banding. It is written in a standard notation (ISCN):
@@ -144,6 +188,34 @@ The **centromere** is where the **kinetochore** assembles and spindle microtubul
 Yeast is the exception that made centromeres tractable: its centromere is short enough to clone, and cloning it was how artificial chromosomes became possible (later today). Human centromeres are huge arrays of a 171-base-pair monomer, arranged in higher-order repeats that are nearly identical over megabases, which is why they could not be assembled until recently. The key concept is epigenetic specification: what makes a centromere a centromere is the CENP-A chromatin on it, and CENP-A is copied to the daughter chromosomes. Dicentric and acentric chromosomes come back in the next unit: a crossover inside a paracentric inversion loop makes exactly one of each. Some organisms, such as C. elegans, have holocentric chromosomes with kinetochores along their whole length.
 :::
 
+## Exactly one centromere: what goes wrong otherwise {.smaller}
+
+:::: {.columns}
+::: {.column width="64%"}
+**No centromere** (acentric): no kinetochore, so the spindle cannot move it. It lags at anaphase, is left out of both nuclei (often in a **micronucleus**), and its genes are lost.
+
+**Two centromeres** (dicentric): if the two are pulled to opposite poles, the chromatid is stretched into an **anaphase bridge** and breaks. McClintock followed this in maize as the **breakage–fusion–bridge cycle**:
+
+1. A chromosome loses an end. After replication, the two broken sister chromatids **fuse**.
+2. The fused chromatid has **two centromeres**; at anaphase they go to opposite poles: a **bridge**.
+3. The bridge **breaks** at a random point. One daughter gets a duplication, the other a deletion, and both have a new **broken end**.
+4. At the next division the cycle starts again.
+
+![](fig06-bfb-cycle.svg){width="100%"}
+:::
+::: {.column width="36%"}
+![](img/mcclintock-1947.jpg){width="100%"}
+
+[Photo: Smithsonian Institution/Science Service, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Barbara_McClintock_(1902-1992)_shown_in_her_laboratory_in_1947.jpg){.photo-credit}
+
+Barbara McClintock in her laboratory at Cold Spring Harbor, 1947.
+:::
+::::
+
+::: notes
+Two genetic rules come out of the last two lectures: a chromosome needs exactly one centromere, and it needs protected ends. McClintock's work on maize in the late 1930s and early 1940s showed what happens without the second: broken ends kept fusing and breaking, cycle after cycle, producing variegated kernels, while natural chromosome ends never fused. She also saw that broken ends could be "healed" in some tissues, a first hint of telomere addition. The same cycle runs in many cancers: repeated bridges and breaks amplify some regions and delete others, which is one way tumours gain extra copies of oncogenes. In the next unit, a crossover inside a paracentric inversion makes exactly one dicentric and one acentric, so both fates appear again. McClintock later found transposable elements while studying these broken chromosomes, and received the Nobel Prize in 1983.
+:::
+
 ## Telomeres: protecting the ends {.smaller}
 
 A **telomere** is the end of a linear chromosome: a long array of a short repeat, plus proteins.
@@ -168,6 +240,22 @@ DNA polymerase only **extends** an existing 3' end, and needs an RNA **primer** 
 This is replication from 5MO103, followed to the very end of the molecule. Panel (a): the parental strand whose 3' end is at the chromosome end is copied discontinuously. Each Okazaki fragment starts with an RNA primer; inner primers are removed and the gap is filled by extending the fragment to the left. The last primer has nothing to its right to extend from, so after removal its gap stays open, and the new strand is shorter. In the next round, that shorter strand is a template, so one of the daughter molecules is shorter. In practice, nucleases also resect the ends to make the 3' overhang, which adds to the loss. Panel (b) is the solution and the next slide. The problem was pointed out independently by Olovnikov and by Watson in the early 1970s.
 :::
 
+## Worked example: telomeres as a division counter
+
+Illustrative numbers, in the range seen in cultured human cells:
+
+- A cell line starts with telomeres of **12 kb**.
+- Without telomerase, each end loses about **150 bp** per division.
+- The cell stops dividing (**senescence**) when a telomere reaches about **6 kb**.
+
+$$\text{divisions left} = \frac{\text{start} - \text{limit}}{\text{loss per division}} = \frac{12\,000 - 6\,000}{150} = 40$$
+
+Turn it around: a line that stops after 50 divisions while losing 80 bp per division has used up 50 × 80 = **4 kb** of telomere.
+
+::: notes
+This is the arithmetic behind the Hayflick limit on the next slides; the exercise has its own version with other numbers and a twist about which telomere counts. Make the assumptions explicit: a constant loss per division, and a fixed length at which the cell stops. Both are simplifications: the loss per division varies (end processing adds to the primer gap), and the signal for senescence is a few critically short or unprotected ends, not the average. Still, the model explains why cells without telomerase have a limited number of divisions, and why that number depends on the starting length.
+:::
+
 ## Telomerase {.smaller}
 
 **Telomerase** is a **reverse transcriptase** that carries its own RNA template.
@@ -180,6 +268,30 @@ Discovered in the ciliate *Tetrahymena* by **Carol Greider and Elizabeth Blackbu
 
 ::: notes
 Telomerase is the reverse of the central dogma in a small way: RNA to DNA, like a retroviral reverse transcriptase, and TERT is in fact related to those enzymes. Ciliates were the right organism because their macronucleus has many thousands of small chromosomes (including thousands of copies of a tiny rDNA minichromosome) and so a huge number of telomeres. The template experiment is a lovely piece of genetics: Yu, Blackburn and colleagues mutated the template in Tetrahymena and the cells' telomeres acquired the mutant repeat. The exercise has a by-hand version. Both genes are on chromosomes you can look up in the Find it part; note that TERT itself sits only about 1.3 Mb from the end of chromosome 5.
+:::
+
+## Telomerase, step by step
+
+```
+template (in TERC):            3'-CAAUCCCAAUC-5'
+
+1. Pair    5'-...TTAGGGTTAG-3'
+                      |||||
+                   3'-CAAUCCCAAUC-5'     the 3' end GTTAG pairs with CAAUC
+
+2. Copy    5'-...TTAGGGTTAGGGTTAG-3'     TERT adds GGTTAG, copying CCAAUC
+
+3. Slide   5'-...TTAGGGTTAGGGTTAG-3'
+                            |||||
+                         3'-CAAUCCCAAUC-5'  the new GTTAG pairs again
+
+4. Repeat: 6 nt per round. Then primase and DNA polymerase fill in the C-rich strand.
+```
+
+**To read any template:** write its DNA complement 5' → 3'. The part that pairs with the DNA end is not copied; the rest is the repeat that is added.
+
+::: notes
+This builds up panel (b) of the end-replication figure one move at a time. Telomerase holds on to the DNA, adds six nucleotides by reverse transcription, then lets go of the template-DNA pairing, slides along, and pairs again with the six nucleotides it has just made. That repeated slide is why the product is a repeat, and why the repeat length is set by the template. The rule at the bottom is all students need for any organism: complement the template, and the copied part gives the repeat. The exercise asks this for Tetrahymena and for a mutant template; the mutant template experiment is the one that proved the RNA is the template.
 :::
 
 ## Telomeres, ageing and cancer {.smaller}
@@ -262,6 +374,22 @@ AGGGTTAGGGTTAGGGTTAGGGTTAGGGTTAGGGTTAGGGTTAGGGTTAGGGTTAGGGTT
 Give them a minute. The reference stores one strand, the top strand, read 5' to 3' from the p end to the q end. At the q end, the top strand runs 5' to 3' towards the end, so it is the G-rich strand: TTAGGG. At the p end, the strand that runs towards the end is the bottom strand, which is G-rich, so the top strand there is its reverse complement: CCCTAA. Same telomere, read from the other side. The irregular repeats are real: telomeres contain occasional variant repeats, especially near the junction with the rest of the chromosome. These sequences were downloaded from the UCSC REST API for the hs1 assembly on 2026-11-20. In the older GRCh38 reference, the first 10 kb of chromosome 1 are all N.
 :::
 
+## Check yourself: common mistakes
+
+| Mistake | Better |
+|---|---|
+| "1p36 is band thirty-six of chromosome 1." | Read digit by digit: region **3**, band **6**, on the short arm **p**. Numbers grow from the centromere outward. |
+| "p is the top arm." | **p** is the **short** arm, **q** the long one, whichever way the picture is drawn. |
+| "Heterochromatin is junk DNA." | It is a **state** of chromatin: compact and mostly silent. Facultative heterochromatin (inactive X) holds normal genes. |
+| "More centromeres make a chromosome safer." | Exactly **one**: two give a bridge that breaks, none means the chromosome is lost. |
+| "The end-replication problem is on the leading strand." | It is the **lagging** strand's last primer that cannot be replaced. |
+| "CCCTAA at the p end is a different repeat." | It is the **same** TTAGGG telomere, read on the other strand. |
+| "Telomerase is active in all our cells." | Mainly in **germline**, stem cells and most **cancers**; most somatic cells have little or none. |
+
+::: notes
+Run this as a quick quiz: read a mistake and ask what is wrong before revealing the right column. Each row is a mistake seen in exam answers or in the exercise. The band-name and strand rows are what students need for B2 and B9 in the exercise.
+:::
+
 ## Summary {.smaller}
 
 | Concept | Key fact |
@@ -270,11 +398,12 @@ Give them a minute. The reference stores one strand, the top strand, read 5' to 
 | Packing | ≈ 2 m of DNA per diploid nucleus; ≈ 10 000-fold compaction at metaphase |
 | Heterochromatin | compact, gene-poor, late-replicating; constitutive (satellites) or facultative (inactive X) |
 | Position-effect variegation | a gene moved next to heterochromatin is silenced in some cells only |
-| G-banding, karyotype | reproducible band pattern; names like 1p36.33; notation 47,XY,+21 |
+| G-banding, karyotype | reproducible band pattern; names read digit by digit from the centromere (17q21.31); notation 47,XY,+21 |
 | Centromere | kinetochore site; yeast 125 bp; human Mb arrays of 171-bp α-satellite; marked by CENP-A |
+| One centromere only | acentric → lost; dicentric → bridge and break; breakage–fusion–bridge cycles |
 | Telomere | TTAGGG repeats with a 3' overhang and shelterin; hides the end from DNA repair |
-| End-replication problem | the last lagging-strand primer cannot be replaced: ends shorten each division |
-| Telomerase | TERT + TERC RNA template; active in germline and most cancers |
+| End-replication problem | the last lagging-strand primer cannot be replaced: ends shorten each division (divisions left = length to spare / loss per division) |
+| Telomerase | TERT + TERC RNA template: pair, copy, slide, repeat; active in germline and most cancers |
 | Minimal chromosome | origin (ARS) + centromere (CEN) + two telomeres (TEL): the YAC |
 | T2T-CHM13 | first gapless human genome, 3.055 Gb, 2022 |
 

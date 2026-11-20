@@ -105,3 +105,15 @@ What did each experiment measure?
 ::: {.callout-note collapse="true" title="Answer"}
 Crick and Brenner used only **mutants, crosses and phenotypes** (phage that grow or not on a host strain) to infer that the code is read in groups of three from a fixed start; they never saw a protein sequence. Nirenberg and Matthaei used **cell-free translation**: they added synthetic poly-U RNA to a cell extract and measured which amino acid was built into protein (phenylalanine). Genetics gave the rules of the code; biochemistry gave the dictionary.
 :::
+
+---
+
+**Q9.** In *HBB* (NM_000518.5), exon 2 ends at c.315 and exon 3 starts at c.316. Where exactly are the positions c.315+1 and c.316-2, and which splice signal would a change at each position hit?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Intron bases are counted from the nearest exon base: +*n* after the end of an exon, −*n* before the start of the next one. Which two bases begin and end almost every intron?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**c.315+1** is the first base of intron 2, right after exon 2: the **G of the GT** (GU in RNA) of the **donor** (5′ splice site). **c.316-2** is the second-last base of intron 2, two bases before exon 3: the **A of the AG** of the **acceptor** (3′ splice site). A change at either position usually destroys that splice site, so no normal mRNA is made from the allele.
+:::

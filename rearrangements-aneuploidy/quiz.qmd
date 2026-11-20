@@ -141,3 +141,27 @@ How many partners does each chromosome have in meiosis?
 ::: {.callout-note collapse="true" title="Answer"}
 Wheat is an **allopolyploid**: each chromosome pairs only with its exact partner from the same ancestral genome (A with A, B with B, D with D), so meiosis forms 21 **bivalents** and every gamete gets one complete ABD set. In a **triploid**, each chromosome has three homologues; each trivalent sends 2 to one pole and 1 to the other at random, so a gamete is balanced only if all 11 chromosome types happen to go the same way: probability 2 × (½)^11^ ≈ 0.001.
 :::
+
+---
+
+**Q12.** A reciprocal translocation carrier has N1 = 1a·1b, N2 = 2a·2b, T1 = 1a·2b and T2 = 2a·1b (a = the segment with the centromere, b = the tip). Count the segments in the adjacent-2 gamete N1 + T1. Why are adjacent-2 gametes almost never seen in liveborn children, while adjacent-1 gametes sometimes are?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Add up 1a, 1b, 2a and 2b. Which segments are duplicated or missing, and how big are they?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+N1 + T1 = 1a·1b + 1a·2b: **1a twice, 1b once, 2a none, 2b once**. The gamete has two copies of the centromere segment of chromosome 1 and none of chromosome 2's. Centromeric segments are usually large, so the zygote has a large duplication plus a large deletion and dies early. Adjacent-1 gametes (for example N1 + T2: 1b twice, 2b missing) are unbalanced only for the translocated **tips**, which can be small enough for a pregnancy to continue.
+:::
+
+---
+
+**Q13.** At a marker near the centromere of chromosome 21, a mother is 4, 7 and a father 4, 9. Their child with trisomy 21 is 4, 7, 9. Can you tell which parent's meiosis went wrong?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Assign each of the child's alleles to a parent. Is there more than one way?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**No.** 7 must come from the mother and 9 from the father, but 4 could come from either. If the mother gave 4 and 7, it was a maternal meiosis I error; if the father gave 4 and 9, a paternal meiosis I error. The marker is **not informative** because the parents share allele 4. Type more markers along chromosome 21 until one separates the possibilities.
+:::

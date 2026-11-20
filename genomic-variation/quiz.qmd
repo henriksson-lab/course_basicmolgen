@@ -129,3 +129,27 @@ For a dominant disease, how common could a fully penetrant causal allele be at m
 ::: {.callout-note collapse="true" title="Answer"}
 Very unlikely. If the variant caused a fully penetrant dominant disease, about 2 × 0.005 = **1%** of people in that group would be heterozygous and affected, a thousand times more than the prevalence of 1 in 100,000. A variant that common in healthy people is almost certainly benign (or at most has a very low penetrance). This is why population frequency is one of the first filters in clinical variant interpretation.
 :::
+
+---
+
+**Q11.** Two SNPs are about 500 kb apart, so they recombine with *r* ≈ 0.005 per generation. A new allele at one of them arose in complete LD with its neighbour. What fraction of the original *D* is left after 200 generations? And if the two SNPs were on different chromosomes?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*D*~*t*~ = *D*~0~ (1 − *r*)^*t*^. Unlinked loci have *r* = 0.5.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+0.995^200^ ≈ **0.37**: about a third of the association is left after some 5,000 years. For unlinked loci, *D* halves every generation: 0.5^200^ is essentially **zero**, and already after 10 generations less than 0.1% is left. LD between distant sites is short-lived; LD between close sites can last for thousands of generations.
+:::
+
+---
+
+**Q12.** In a study of 50 people from one population, an allele was not seen at all. What is its allele number, and what is the most you can say about its frequency in that population?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Count chromosomes, not people. If an event is seen zero times in *n* tries, its probability is very likely below about 3/*n*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Allele number = 2 × 50 = **100** chromosomes, allele count 0. The frequency could still be up to about 3/100 = **3%** (an approximate 95% upper bound, the "rule of three"). "Not seen" in a small sample means "rare", not "absent".
+:::

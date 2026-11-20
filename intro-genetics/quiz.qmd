@@ -134,3 +134,15 @@ Is the white gene needed to make white eyes or red eyes?
 ::: {.callout-note collapse="true" title="Answer"}
 The "+" marks the **wild-type** allele, the standard allele in laboratory stocks. The gene is named after its **mutant phenotype**: it was found because flies lacking a working copy had white eyes. The working gene is in fact needed to make red eyes.
 :::
+
+---
+
+**Q11.** NCBI Gene gives the location of human *CFTR* as **7q31.2**. What does each part of this address mean? Is *CFTR* closer to the centromere or to the tip of its chromosome arm than a gene at 7q11.2?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Chromosome, arm, region, band, sub-band. Which way are regions and bands numbered?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+**7**: chromosome 7. **q**: the long arm (p is the short arm). **3**: region 3, **1**: band 1, **.2**: sub-band 2. Regions and bands are numbered outwards from the centromere, so region 3 lies further out than region 1: *CFTR* (7q31.2) is **further from the centromere** than a gene at 7q11.2.
+:::

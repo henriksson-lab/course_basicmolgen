@@ -157,6 +157,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Glossary</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../credits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Image credits</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1751,6 +1757,74 @@ Answer
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>2 × 10<sup>6</sup> × 150 / 5 × 10<sup>6</sup> = <strong>60×</strong>. On average each base is read 60 times, but reads land at random positions, so coverage varies: some bases have far more reads and some fewer. At 60× it is very unlikely that any base has none, but at low coverage (say 2×) a noticeable fraction of the genome would be missed.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Q12.</strong> The top strand of the region you want to amplify ends with 5’-…GATCCAGTTGACCTAGCGTA-3’. Write the reverse primer (20 nt, 5’→3’).</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The reverse primer pairs with the top strand. Complement the sequence, then reverse it so it reads 5’→3’.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Reverse complement of GATCCAGTTGACCTAGCGTA: <strong>5’-TACGCTAGGTCAACTGGATC-3’</strong>. Check by reverse-complementing it again: you get the top strand back. Writing the top-strand sequence itself would give a primer that binds the same strand as the forward primer, and no exponential product.</p>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Q13.</strong> A PCR starts from one double-stranded template molecule. After 4 cycles at 100% efficiency there are 16 duplexes. How many of them have exactly the length from primer to primer, and why are not all of them that length?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Follow the original strands: what does the polymerase make when it copies a strand that runs past the other primer site? See the slide on the first three cycles.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>2<sup>4</sup> − 2 × 4 = <strong>8</strong> of the 16. The two original strands are always present, and each cycle copies them into “long” products that start at a primer but run on past the other primer site. Only copies of copies end exactly at a primer. These long products grow by only 2 per cycle, while the primer-to-primer products grow exponentially, so after 30 cycles essentially all of the product has the defined length.</p>
 </div>
 </div>
 </div>

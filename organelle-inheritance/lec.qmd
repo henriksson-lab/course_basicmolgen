@@ -25,8 +25,9 @@ Everything so far in the course has been about genes in the **nucleus**, which f
 
 - The **mitochondrial** and **chloroplast genomes**: small, circular, many copies per cell.
 - Where they came from: **endosymbiosis**, and the gene transfer to the nucleus that followed.
-- **Maternal (uniparental) inheritance**: reciprocal crosses give different results.
-- **Heteroplasmy**, the **bottleneck** and the **threshold effect**: why the children of one mother can be so different.
+- **Maternal (uniparental) inheritance**: reciprocal crosses give different results; a nuclear marker as a control.
+- **Heteroplasmy**, the **bottleneck** and the **threshold effect**: why the children of one mother can be so different, worked out by hand with the binomial.
+- Telling a **mtDNA** disease from a **nuclear** one in a family.
 - Two human diseases: **MELAS** (m.3243A>G) and **LHON** (m.11778G>A).
 - **Mitochondrial donation**, and why it raises ethical questions.
 
@@ -86,6 +87,8 @@ This slide prevents a common error: "mitochondrial disease" does not mean "mater
 
 Mitochondria descend from an **alphaproteobacterium**, and chloroplasts from a **cyanobacterium**, each taken up by a host cell more than a billion years ago.
 
+:::: {.columns}
+::: {.column width="66%"}
 | Evidence | Bacteria | Mitochondria and chloroplasts |
 |---|---|---|
 | Genome | one circular chromosome | small circular DNA |
@@ -93,6 +96,15 @@ Mitochondria descend from an **alphaproteobacterium**, and chloroplasts from a *
 | Division | binary fission | divide by fission, not made from scratch |
 | Membranes | inner + outer (Gram-negative) | double membrane |
 | DNA sequence | — | rRNA and protein genes group with alphaproteobacteria / cyanobacteria in phylogenetic trees |
+:::
+::: {.column width="34%"}
+![](img/mitochondria-tem.jpg){width="100%"}
+
+[Photo: Louisa Howard, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mitochondria,_mammalian_lung_-_TEM.jpg){.photo-credit}
+
+Two mitochondria (electron micrograph, mammalian lung): the outer membrane and the folded inner membrane.
+:::
+::::
 
 Over time, most of the symbiont's genes **moved to the nucleus** or were lost. Pieces of mtDNA still land in our chromosomes (**NUMTs**, nuclear mitochondrial DNA segments).
 
@@ -140,6 +152,23 @@ Two separate reasons make inheritance maternal: the huge numerical difference (t
 
 ::: notes
 Compare with the one-line version from the pedigree unit (fig06 there). The new element is the percentage under each person: the fraction of their mtDNA that carries the variant. In the left family the mother has 40 percent and is healthy; her four children have 85, 55, 10 and 30 percent. Only the 85 percent son is affected. The 55 percent daughter is healthy, but one of her children reaches 70 percent and is affected. On the right, an affected father passes nothing, and that holds in every generation. So the rule "mother to all children" is true for the variant but not for the disease: severity is a matter of degree. The rest of the lecture explains where the spread of percentages comes from.
+:::
+
+## Following a nuclear and an organelle gene in one cross
+
+The bread mould *Neurospora crassa* has a slow-growing mutant, ***poky***, with defective mitochondria (Mitchell and Mitchell, 1952). In a cross, the "female" parent supplies the cytoplasm; the "male" adds little more than a nucleus. The progeny are **haploid**.
+
+Cross: ***poky*** female, *ad*^+^ × wild-type male, *ad*^−^ (*ad* is a nuclear gene for adenine synthesis)
+
+| Gene | Where | Progeny |
+|---|---|---|
+| *ad* | nucleus | ½ *ad*^+^ : ½ *ad*^−^ (Mendel's first law, in a haploid) |
+| *poky* | mitochondria | **all** *poky*: they follow the **female** |
+
+**The method:** put a nuclear marker in the same cross as a control. If the nuclear marker segregates 1 : 1 but the other trait follows one parent in **every** offspring, and the reciprocal cross gives the opposite, the trait is in the cytoplasm.
+
+::: notes
+This is the fungal version of Correns' plant crosses and of the human pedigrees, and it is the cleanest way to show the two kinds of inheritance side by side. Neurospora was the organism of Beadle and Tatum; poky was one of the first mitochondrial mutants found, and it was later traced to a small deletion in a mitochondrial ribosomal RNA gene. Ask the room to predict the reciprocal cross, wild-type female times poky male, before you move on; the exercise asks for both. The nuclear gene is a built-in control: it shows that meiosis worked and that both parents contributed a nucleus. Without it, "all offspring look like the mother" could also mean something odd, such as no fertilisation at all.
 :::
 
 ## Uniparental inheritance in other organisms {.smaller}
@@ -192,12 +221,12 @@ This is the conceptual shift students must make. For a nuclear gene you have two
 
 ## The mitochondrial bottleneck {.smaller}
 
-![](fig03-bottleneck.svg){width="74%" fig-align="center"}
+![](fig03-bottleneck.svg){width="70%" fig-align="center"}
 
 During oocyte development, only a **small number** of mtDNA copies (or segregating units) found the mtDNA of each future egg. They are then copied up to the large number in a mature oocyte.
 
 - Each oocyte draws its founders **at random**: $k \sim \text{Binomial}(N, h)$ mutant copies out of $N$, so its level is $k/N$.
-- **Mean** level = the mother's level $h$; **variance** $= \dfrac{h(1-h)}{N}$. A small $N$ gives a wide spread.
+- **Mean** level = the mother's level $h$; **variance** $= h(1-h)/N$. A small $N$ gives a wide spread.
 
 ::: notes
 This explains the pedigree on the earlier slide. The mother has 30 percent mutant mtDNA. If each egg simply got a random sample of a hundred thousand copies, every egg would have very close to 30 percent. Instead, there is a narrow point in the germline where only a few copies are passed on, and the egg's level is fixed by which copies happen to pass. Measured bottleneck sizes vary between studies and species, from about ten to a few hundred units; the exact mechanism is still studied. The binomial model is a simplification, but it captures the main point, and it is exactly the model we use in the demo and in R. Check the variance formula with numbers: h = 0.3 and N = 20 give 0.3 times 0.7 over 20, about 0.0105, a standard deviation of about 10 percentage points.
@@ -212,7 +241,42 @@ This explains the pedigree on the earlier slide. The mother has 30 percent mutan
 - Combined with heteroplasmy, this explains why relatives with the same variant can be healthy, mildly affected or severely affected.
 
 ::: notes
-The threshold is why heteroplasmy matters clinically. Below it, the normal copies make enough working protein (or, for a tRNA variant, enough working tRNA) to keep the respiratory chain going. Above it, ATP production collapses. The figure is schematic: the curves are not data. Thresholds of roughly 60 to 90 percent are often quoted, and the exact value depends on how severe the variant is and on the tissue. The threshold is also the reason why the bottleneck is dangerous: a mother below the threshold can have an egg above it, as the demo shows. Note also the parallel to incomplete penetrance and variable expressivity from the Extensions to Mendel unit: here we know the mechanism.
+The threshold is why heteroplasmy matters clinically. Below it, the normal copies make enough working protein (or, for a tRNA variant, enough working tRNA) to keep the respiratory chain going. Above it, ATP production collapses. The figure is schematic: the curves are not data. Thresholds of roughly 60 to 90 percent are often quoted, and the exact value depends on how severe the variant is and on the tissue. The threshold is also the reason why the bottleneck is dangerous: a mother below the threshold can have an egg above it, as the next two slides compute and the demo shows. Note also the parallel to incomplete penetrance and variable expressivity from the Extensions to Mendel unit: here we know the mechanism.
+:::
+
+## The bottleneck by hand: N = 3
+
+A mother with *h* = 0.3 (30% mutant). Suppose each egg is founded by **N = 3** copies, drawn at random. Each copy is mutant with probability 0.3.
+
+| Mutant founders *k* | Level *k*/*N* | Probability $\binom{3}{k}\,0.3^k\,0.7^{3-k}$ |
+|:-:|:-:|---|
+| 0 | 0% | 1 × 0.7^3^ = **0.343** |
+| 1 | 33% | 3 × 0.3 × 0.7^2^ = **0.441** |
+| 2 | 67% | 3 × 0.3^2^ × 0.7 = **0.189** |
+| 3 | 100% | 1 × 0.3^3^ = **0.027** |
+
+- Mean level: (0 × 0.343 + 1 × 0.441 + 2 × 0.189 + 3 × 0.027)/3 = 0.9/3 = **0.30**, the mother's level.
+- SD: $\sqrt{0.3 \times 0.7 / 3}$ = **0.26**: 26 percentage points.
+- With a threshold of 60%: P(level ≥ 60%) = 0.189 + 0.027 = **0.216**. A healthy 30% mother has about a **1 in 5** chance of an egg above the threshold, and a **1 in 3** chance of an egg with no mutant copies at all.
+
+::: notes
+This is the binomial distribution from the probability unit, with numbers small enough to write out. Build the table row by row on the board: the binomial coefficient counts which of the three copies are mutant, the powers give the probability of one such arrangement. Point out that the four probabilities add to one. The mean comes out exactly at the mother's level: the bottleneck does not push the level up or down on average, it only spreads it. With N = 3 the only possible levels are 0, 33, 67 and 100 percent, which is why the demo histogram for small N has a few widely spaced bars. The exercise does the same with N = 2 and N = 4 and a 50 percent mother.
+:::
+
+## From the mother's level to the risk for a child
+
+Same mother (*h* = 0.3), threshold 60%. The exact binomial probability that an egg is **at or above 60%**:
+
+| Bottleneck size *N* | 3 | 5 | 10 | 20 | 50 | 200 |
+|---|---:|---:|---:|---:|---:|---:|
+| SD of the egg level (points) | 26 | 21 | 15 | 10 | 6.5 | 3.2 |
+| P(egg ≥ 60%) | 0.22 | 0.16 | 0.047 | 0.005 | 1 × 10^−5^ | ≈ 0 |
+
+- The **smaller** the bottleneck, the **wider** the spread and the larger the risk. The SD falls as $1/\sqrt{N}$.
+- The risk depends on three numbers: the mother's level *h*, the bottleneck *N*, and the threshold. None is known exactly for a given woman, which is why counselling uses **empirical** risks from many families.
+
+::: notes
+These probabilities were computed with pbinom in R; the N = 20 value, 0.5 percent, is the one the demo shows for its default settings. Read the table from left to right: from one in five to essentially zero. The step from N = 3 to N = 5 is not a smooth decline because with small N only a few levels are possible, and whether one of them falls just above the threshold matters; the overall trend is still clear. Estimates of the real human bottleneck vary between studies, from around ten to a few hundred segregating units, so the risk for a given mother is uncertain by more than an order of magnitude. This is why measuring the level in her oocytes or embryos, by preimplantation testing, is more informative than any formula. The R exercise draws these curves with pbinom.
 :::
 
 ## Try it: the bottleneck {.smaller}
@@ -229,15 +293,26 @@ Interactive demo. It starts with a mother at 30 percent, a bottleneck of N = 20 
 
 ## MELAS: m.3243A>G in *MT-TL1* {.smaller}
 
+:::: {.columns}
+::: {.column width="62%"}
 - **MELAS**: mitochondrial encephalomyopathy, lactic acidosis and stroke-like episodes.
 - Most cases carry **m.3243A>G**, a change in the gene for **tRNA-Leu(UUR)**, *MT-TL1*. A faulty tRNA affects the translation of **all 13** mtDNA-encoded proteins.
 - Almost always **heteroplasmic**. The same variant gives a **spectrum**: from no symptoms, through diabetes and deafness (**MIDD**, maternally inherited diabetes and deafness), to full MELAS, roughly in order of rising level in affected tissues.
 - ClinVar: classified **Pathogenic**, reviewed by an expert panel.
 
 Genetic counselling for a woman who carries m.3243A>G is hard: her own level says little about the level of each child.
+:::
+::: {.column width="38%"}
+![](img/ragged-red-fibres.jpg){width="100%"}
+
+[Photo: Nephron, CC BY-SA 3.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ragged_red_fibres_-_gtc_-_very_high_mag.jpg){.photo-credit}
+
+**Ragged red fibres** in a muscle biopsy from a mitochondrial myopathy (Gomori trichrome stain): fibres packed with abnormal mitochondria stain red at their edges.
+:::
+::::
 
 ::: notes
-MELAS shows every concept of the lecture in one disease. The variant is in a tRNA gene, so it does not change one protein; it impairs mitochondrial translation as a whole, which is why many tissues are involved. Heteroplasmy explains the range from symptom-free carriers to severe disease, and tissue differences explain the mix of brain, muscle, pancreas and inner-ear symptoms. The bottleneck explains why a mildly affected mother can have a severely affected child. In the exercise, students look the variant up in ClinVar and see the long list of conditions submitters have reported for it, which is the clinical spectrum in database form.
+The micrograph is a muscle biopsy from a patient with a mitochondrial myopathy (the image does not say which variant): ragged red fibres are muscle fibres in which defective mitochondria have proliferated under the membrane, a classic finding in MELAS and in MERRF. Because the patient is heteroplasmic, affected and normal-looking fibres lie side by side, a mosaic in one tissue. MELAS shows every concept of the lecture in one disease. The variant is in a tRNA gene, so it does not change one protein; it impairs mitochondrial translation as a whole, which is why many tissues are involved. Heteroplasmy explains the range from symptom-free carriers to severe disease, and tissue differences explain the mix of brain, muscle, pancreas and inner-ear symptoms. The bottleneck explains why a mildly affected mother can have a severely affected child. In the exercise, students look the variant up in ClinVar and see the long list of conditions submitters have reported for it, which is the clinical spectrum in database form.
 :::
 
 ## LHON: m.11778G>A in *MT-ND4* {.smaller}
@@ -267,6 +342,38 @@ The ethical questions (a germline modification, "three genetic parents", consent
 Options for a woman who carries a pathogenic mtDNA variant include egg donation, preimplantation genetic testing (choosing embryos with a low level, which works for heteroplasmic variants), and mitochondrial donation. Spindle transfer moves the metaphase II spindle of an unfertilised egg; pronuclear transfer moves the two pronuclei from a fertilised egg. The 2025 reports appeared in the New England Journal of Medicine (McFarland et al. and Hyslop et al.). The "three-parent baby" headline is misleading in one sense: the donor contributes 37 genes out of about 20 000, none of which shape appearance or personality. But the change is passed on by daughters to all their descendants, which is why it is regulated as a germline modification. Keep the ethics discussion for the ethics module.
 :::
 
+## Mitochondrial or nuclear? Reading a family {.smaller}
+
+Three questions, in this order:
+
+1. **Does a man pass it on?** An affected father with an affected child rules out mtDNA: fathers do not transmit it.
+2. **Do all children of an affected or carrier mother carry it?** For a mtDNA variant: yes, every child carries it, though at **different levels**, so severity varies.
+3. **Does it look Mendelian?** Two affected sibs of healthy parents, about ¼ of the sibship, nobody else affected: think of a **nuclear, autosomal recessive** gene for a mitochondrial protein.
+
+| Family | Q1 | Q2 | Q3 | Most likely |
+|----------------------------------|----|----|----|--------------|
+| A man lost his central vision at 24. Two sons of his sister are affected too; none of his own five children is | no | fits | no | **mtDNA** (think LHON) |
+| A girl and one of her two brothers have a respiratory chain disease; parents, grandparents, aunts and uncles are healthy | – | – | **yes** | **nuclear, AR**: ¼ recurrence |
+
+::: notes
+This is the practical skill students need for B7 in the exercise, which has three families of its own. The first question is the most powerful, because it can exclude mtDNA in one step. The second is the positive signature, but it needs care: with heteroplasmy or incomplete penetrance, some carrier children look unaffected, so you may need to test rather than look. In the first family the man's sister passed the trait to her sons, he passed it to none of five children: that fits maternal transmission, and the age and symptom fit LHON, which mostly affects young men. The third question protects against the most common error, calling every mitochondrial disease maternal. The second family has the classic autosomal recessive pattern; a mtDNA variant would usually show up in the mother's relatives too, though a new mtDNA mutation can occasionally mimic this. Real families are often small, so in practice the decision is backed by sequencing both mtDNA and the nuclear genes.
+:::
+
+## Check yourself: common mistakes
+
+| Mistake | Better |
+|---|---|
+| "Mitochondrial disease is always maternally inherited." | Only when the variant is in **mtDNA**. Most mitochondrial proteins are **nuclear**, and their diseases follow Mendel. |
+| "A man cannot carry a mtDNA variant." | He can carry it, and be affected. He just does not **pass it on**. |
+| "All children of a carrier mother are equally affected." | They all inherit the variant, but at **different levels** (bottleneck), so severity varies. |
+| "The bottleneck raises the mutant level." | On average the level stays at the mother's *h*; the bottleneck only **spreads** it. |
+| "A low level in blood means low risk for the child." | Levels differ between **tissues**, and the bottleneck acts on the **oocytes**. |
+| "Homoplasmic means healthy." | Homoplasmic for a pathogenic variant (LHON) means **all** copies are mutant; penetrance decides. |
+
+::: notes
+Run it as a quick quiz. The first row is the one that matters most in the clinic and in the exam. The bottleneck row is the subtle one: students often think the bottleneck selects for or against the mutant, but in the binomial model it only adds variance. Selection on mtDNA does happen, as the mitochondrial donation slide hints, but it is a separate process.
+:::
+
 ## Organelle vs nuclear inheritance {.smaller}
 
 | | Nuclear genes | Organelle genes |
@@ -293,8 +400,9 @@ Use this table as a revision summary before the summary slide. The middle rows a
 | Maternal inheritance | the egg supplies the mtDNA; reciprocal crosses differ; fathers do not transmit |
 | Uniparental, not always maternal | conifers (paternal cpDNA), *Chlamydomonas* (mt^+^ cpDNA) |
 | Heteroplasmy | a mixture of normal and mutant copies; the level differs by tissue and over time |
-| Bottleneck | few copies found each oocyte: level $\sim$ Binomial$(N, h)/N$, variance $h(1-h)/N$ |
+| Bottleneck | few copies found each oocyte: level $\sim$ Binomial$(N, h)/N$, mean $h$, variance $h(1-h)/N$ |
 | Threshold | symptoms only above a tissue-specific level, often 60–90 % |
+| Risk for a child | P(egg level ≥ threshold): large for small *N*, falls steeply as *N* grows |
 | MELAS / LHON | m.3243A>G in *MT-TL1* (heteroplasmic) / m.11778G>A in *MT-ND4* (homoplasmic, incomplete penetrance) |
 | Nuclear-encoded mito disease | Mendelian inheritance (e.g. *POLG*) |
 

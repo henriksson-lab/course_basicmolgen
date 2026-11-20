@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -143,13 +143,13 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p>Every allele you met in Parts 1 and 2 (wrinkled, white, HbS, the cystic fibrosis allele) began as a <strong>mutation</strong>: a heritable change in the DNA sequence. Mutations are the raw material of evolution, the cause of genetic disease, and the geneticist’s main <strong>tool</strong>: we learn what a gene does by breaking it.</p>
 <ul>
-<li><strong>Kinds of mutation</strong>: transitions and transversions; silent, missense, nonsense and frameshift.</li>
+<li><strong>Kinds of mutation</strong>: transitions and transversions; silent, missense, nonsense and frameshift, and how to classify a change by hand.</li>
 <li><strong>Where mutations come from</strong>: spontaneous errors and damage, and induced mutation by mutagens. The <strong>Ames test</strong>.</li>
-<li><strong>Mutations are random</strong>: the Luria–Delbrück fluctuation test.</li>
+<li><strong>Mutations are random</strong>: the Luria–Delbrück fluctuation test, worked through with numbers, and replica plating.</li>
 <li><strong>DNA repair</strong>, in brief.</li>
 <li><strong>Loss- and gain-of-function</strong> alleles, and what they mean for dominance.</li>
-<li><strong>The complementation test</strong>: are two mutations in the same gene?</li>
-<li><strong>One gene, one enzyme</strong>: Beadle and Tatum.</li>
+<li><strong>The complementation test</strong>: are two mutations in the same gene? The cis–trans test, and common mistakes.</li>
+<li><strong>One gene, one enzyme</strong>: Beadle and Tatum’s screen.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, Anatomy and function of a gene: dissection through mutation chapter.</p>
 <aside class="notes">
@@ -243,6 +243,71 @@ Basic and molecular genetics (5MO104)
 <img data-src="fig02-coding-effects.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"><p><strong>Silent</strong> (synonymous): same amino acid, usually at the third codon position. <strong>Missense</strong>: another amino acid (HbS, HbC). <strong>Nonsense</strong>: a stop codon, so a short protein (<em>CFTR</em> p.Gly542Ter, <em>HBB</em> p.Gln40Ter). <strong>Frameshift</strong>: an indel that is not a multiple of 3 changes every codon downstream, usually until a stop codon appears.</p>
 <aside class="notes">
 <p>Walk down the rows. The wild type row is HBB codons 5 to 10 in database numbering (counting the start methionine), the same sequence students translated in the first unit. Silent: GAG to GAA is still glutamate, because the code is degenerate. Missense: GAG to GTG is HbS. Nonsense: GAG to TAG would stop the protein after six amino acids; that particular change is an example, but real nonsense alleles of HBB exist, such as codon 39 CAG to TAG (p.Gln40Ter), a common cause of beta-zero thalassaemia in the Mediterranean. In CFTR, G542X is one of the most common nonsense alleles in cystic fibrosis. Frameshift: losing one A changes the reading frame, so every codon after it is different. Silent is not always harmless (it can affect splicing; next unit), and missense can be anything from harmless to devastating, depending on which amino acid changes and where.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-classifying-a-point-mutation-by-hand" class="slide level2 smaller">
+<h2>Worked example: classifying a point mutation by hand</h2>
+<p><strong>The method</strong>, for a change c.<em>x</em>N&gt;M in a coding sequence:</p>
+<ol type="1">
+<li><strong>Which codon?</strong> <em>n</em> = <em>x</em> / 3, rounded <strong>up</strong>. Codon <em>n</em> covers c.(3<em>n</em>−2) to c.3<em>n</em>.</li>
+<li><strong>Which position in the codon?</strong> <em>x</em> − 3(<em>n</em> − 1): 1, 2 or 3.</li>
+<li><strong>Read the codon, change the base, look up both</strong> in the genetic code.</li>
+<li><strong>Transition or transversion?</strong> Does the base stay in its class (purine A, G; pyrimidine C, T)?</li>
+<li><strong>Write the protein change</strong>: p.(old)(<em>n</em>)(new), with Ter for stop and = for no change.</li>
+</ol>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>c.118C&gt;T (<em>HBB</em>)</th>
+<th>c.26A&gt;T (<em>HBB</em>, made-up example)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>codon</td>
+<td>118 / 3 = 39.3 → <strong>codon 40</strong> (c.118–120)</td>
+<td>26 / 3 = 8.7 → <strong>codon 9</strong> (c.25–27)</td>
+</tr>
+<tr class="even">
+<td>position in codon</td>
+<td>118 − 117 = <strong>1st</strong></td>
+<td>26 − 24 = <strong>2nd</strong></td>
+</tr>
+<tr class="odd">
+<td>codon change</td>
+<td><strong>C</strong>AG → <strong>T</strong>AG: Gln → Stop</td>
+<td>A<strong>A</strong>G → A<strong>T</strong>G: Lys → Met</td>
+</tr>
+<tr class="even">
+<td>Ts / Tv</td>
+<td>C → T: pyrimidine → pyrimidine, <strong>transition</strong></td>
+<td>A → T: purine → pyrimidine, <strong>transversion</strong></td>
+</tr>
+<tr class="odd">
+<td>effect, HGVS</td>
+<td><strong>nonsense</strong>, p.Gln40Ter</td>
+<td><strong>missense</strong>, p.Lys9Met</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This is the method behind exercise B1 and the R function classify(), so do it slowly on the board. The commonest slip is the codon number: students divide and round down, or forget that c.1 is the A of the start codon, so codon 1 is c.1 to c.3. A check that always works: the last base of codon n is c.3n. The first example is the real beta-zero thalassaemia allele from the database slide later on (“codon 39” in the old numbering, which does not count the start methionine). The second is invented for practice: it is not a known disease allele. The codons come from the HBB coding sequence NM_000518.5 (codon 40 CAG, codon 9 AAG), as translated in the R exercise.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -421,9 +486,94 @@ Basic and molecular genetics (5MO104)
 <h2>The fluctuation test: the result</h2>
 
 <img data-src="fig03-fluctuation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>Luria and Delbrück saw <strong>jackpots</strong>: most cultures had few or no resistant cells, and a few had very many. Samples from <strong>one</strong> large culture, by contrast, varied little. <strong>Resistance mutations arise at random, before selection</strong>: the phage only <strong>selects</strong> them.</p>
-<p>Replica plating (Lederberg and Lederberg, 1952) showed the same thing directly: resistant colonies could be found on a master plate that had <strong>never</strong> seen phage.</p>
 <aside class="notes">
-<p>The bar charts are illustrative, not the real data, but the shape matches what Luria and Delbrueck found: many zeros and a long tail. The control, many samples from one culture, gave counts close to Poisson, ruling out that the fluctuation came from the plating itself. The conclusion is one of the foundations of modern biology: mutation is random with respect to its usefulness; selection acts afterwards. It is the basis of how we think about antibiotic resistance and about resistance of tumours to therapy. Replica plating used a velvet pad to copy a plate of colonies onto a phage plate: the resistant colonies on the phage plate corresponded to colonies at the same positions on the original plate, which could then be picked and shown to be resistant without ever being exposed. Luria and Delbrueck shared the 1969 Nobel prize.</p>
+<p>The bar charts are illustrative, not the real data, but the shape matches what Luria and Delbrueck found: many zeros and a long tail. The control, many samples from one culture, gave counts close to Poisson, ruling out that the fluctuation came from the plating itself. The conclusion is one of the foundations of modern biology: mutation is random with respect to its usefulness; selection acts afterwards. It is the basis of how we think about antibiotic resistance and about resistance of tumours to therapy. Luria and Delbrueck shared the 1969 Nobel prize. The next slide puts numbers on “fluctuate”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-mean-and-variance" class="slide level2 smaller">
+<h2>Worked example: mean and variance</h2>
+<p>The two sets of 10 counts in the figure (illustrative numbers). Variance = sum of squared deviations from the mean ÷ (<em>n</em> − 1).</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>counts</th>
+<th>mean</th>
+<th>sum of squared deviations</th>
+<th>variance</th>
+<th>variance ÷ mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>induced</td>
+<td>1 0 2 1 1 0 2 1 0 1</td>
+<td>9 / 10 = <strong>0.9</strong></td>
+<td>4.9</td>
+<td>4.9 / 9 = <strong>0.54</strong></td>
+<td>0.6</td>
+</tr>
+<tr class="even">
+<td>random, before</td>
+<td>0 0 4 0 1 0 0 22 0 1</td>
+<td>28 / 10 = <strong>2.8</strong></td>
+<td>423.6</td>
+<td>423.6 / 9 = <strong>47.1</strong></td>
+<td><strong>17</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For the second set: 6 zeros give 6 × (0 − 2.8)<sup>2</sup> = 47.04; the two 1s give 6.48; the 4 gives 1.44; the 22 alone gives (22 − 2.8)<sup>2</sup> = <strong>368.64</strong>. One jackpot makes most of the variance.</p>
+<p><strong>Why jackpots?</strong> A resistant cell that arises <em>k</em> divisions before plating leaves about 2<sup><em>k</em></sup> resistant descendants: 1 if it arose in the last division, 2<sup>10</sup> = 1024 if it arose ten divisions earlier. Timing, not rate, makes the counts so uneven.</p>
+<aside class="notes">
+<p>This is the calculation students do in exercise B4, with different numbers, so show every step. For a Poisson distribution the variance equals the mean, so the ratio variance over mean is about 1; well below or near 1 is what you expect from sampling one population. A ratio of 17 is far above that. The point to land is that both hypotheses can give similar means; only the spread tells them apart. The 2 to the k argument is the intuition Delbrueck turned into a full distribution: early mutations are rare (there are few cells early on) but each leaves a huge clone; late mutations are common but each leaves only a cell or two. The numbers are the illustrative ones from the figure, not Luria and Delbrueck’s data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="replica-plating-seeing-the-mutants-before-selection" class="slide level2 smaller">
+<h2>Replica plating: seeing the mutants before selection</h2>
+<div class="columns">
+<div class="column" style="width:34%;">
+<p><img data-src="img/replica-plating-velvet.jpg" class="quarto-figure quarto-figure-center" style="width:88.0%"> <a href="https://commons.wikimedia.org/wiki/File:Sterile_velvet_on_a_block.jpg" class="photo-credit">Photo: Pilarbini, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:66%;">
+<p><strong>Lederberg and Lederberg (1952)</strong> made the same point without any statistics:</p>
+<ol type="1">
+<li>Grow colonies on a <strong>master plate</strong> with no phage.</li>
+<li>Press a <strong>sterile velvet</strong> on it: each colony leaves a few cells on the fibres, in the same pattern.</li>
+<li>Press the velvet on a <strong>phage plate</strong>. Only resistant cells grow; note the positions.</li>
+<li>Go back to the <strong>master plate</strong>, which has <strong>never seen phage</strong>. Pick the colonies at those positions and test them: they are already resistant.</li>
+</ol>
+<p>The mutants existed before the selective agent did. Selection <strong>finds</strong> mutants; it does not <strong>make</strong> them.</p>
+</div></div>
+<aside class="notes">
+<p>Replica plating is the method behind many screens, not only this one: the same velvet can copy a plate onto several different media at once, for example to find auxotrophs (no growth on minimal medium) without killing them, which is how bacterial geneticists did what Beadle and Tatum did in Neurospora (later in this lecture). The photo is a modern velvet stretched over a block, the way it is still done in teaching labs. The Lederbergs used it with phage T1 and with streptomycin. The steps on the slide are simplified: in the real experiment the matching area of the master plate held a mixture of cells, so they enriched it over a few rounds of replica plating (indirect selection) until they had a pure resistant culture that had never met the selective agent. The logic is the cleanest possible answer to “does the phage cause resistance?”: the cells you pick were never exposed.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -546,7 +696,36 @@ Basic and molecular genetics (5MO104)
 </table>
 <p>Most mutations in most genes are <strong>recessive loss-of-function</strong> alleles: the cell’s pathways have spare capacity. That is why the <strong>complementation test</strong> works.</p>
 <aside class="notes">
-<p>This links back to the dominance discussion in the Extensions to Mendel unit, where dominance was described at the level of phenotype. Now we can say why. One working copy of most genes makes enough product, so a null allele is recessive. When half is not enough, the gene is haploinsufficient and the loss-of-function allele is dominant. Dominant negatives poison a multi-subunit complex: a collagen triple helix with one faulty chain is defective. Gain-of-function alleles are dominant because the new activity is there even with a normal allele next to it; the achondroplasia allele makes a growth-factor receptor that signals too much. HbS is a nice puzzle for the room: it gives the protein a new property (polymerisation) but is recessive for disease, because one HbA allele keeps polymerisation below the harmful level.</p>
+<p>This links back to the dominance discussion in the Extensions to Mendel unit, where dominance was described at the level of phenotype. Now we can say why. One working copy of most genes makes enough product, so a null allele is recessive. When half is not enough, the gene is haploinsufficient and the loss-of-function allele is dominant. Dominant negatives poison a multi-subunit complex: a collagen triple helix with one faulty chain is defective. Gain-of-function alleles are dominant because the new activity is there even with a normal allele next to it; the achondroplasia allele makes a growth-factor receptor that signals too much. The next slide uses HbS as a puzzle for the room.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-is-hbs-loss-or-gain-of-function" class="slide level2 smaller">
+<h2>Check yourself: is HbS loss or gain of function?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/sickle-cell-smear.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg" class="photo-credit">Photo: Paulo Henrique Orlandi Mourao, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+<p>Blood smear from a person with sickle-cell disease (<em>HBB</em> c.20A&gt;T on both copies): sickled red cells (arrow) among round ones.</p>
+</div><div class="column" style="width:55%;">
+<p>HbS (p.Glu7Val) gives haemoglobin a <strong>new</strong> property: when it releases oxygen, it <strong>polymerises</strong> into fibres that bend the cell into a sickle.</p>
+<ul>
+<li>At the level of the <strong>protein</strong>: a gain of a new function (a neomorph).</li>
+<li>For the <strong>disease</strong>: <strong>recessive</strong>. In a carrier (HbA/HbS), the normal haemoglobin dilutes HbS and keeps polymerisation low in the body.</li>
+<li>At the level of the <strong>cell</strong>: carrier cells sickle when oxygen is removed in the lab (the sickling test), so the cell phenotype is <strong>codominant</strong>.</li>
+</ul>
+<p><strong>Lesson:</strong> “dominant” and “recessive” describe a <strong>phenotype</strong>, not an allele. Ask: which phenotype, measured how?</p>
+</div></div>
+<aside class="notes">
+<p>Ask the room first: loss or gain? Most say loss, because it is a disease allele. The valine on the surface of the beta chain makes a sticky patch that lets deoxygenated haemoglobin molecules stack into long fibres; normal haemoglobin has glutamate there and does not polymerise. So molecularly it is a new function, yet the disease is recessive. That is the misconception to address: the same allele can be recessive for one phenotype (sickle-cell disease), codominant for another (the sickling test, or the protein bands on a gel, where carriers show both HbA and HbS), and even give a heterozygote advantage (protection against severe malaria, in the drift and selection unit of Part 7). The photo is a stained blood smear seen in a light microscope; the arrow is in the original image.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -683,6 +862,105 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="complementation-is-a-trans-test" class="slide level2 smaller">
+<h2>Complementation is a <em>trans</em> test</h2>
+<p>The F<sub>1</sub> in a complementation test carries one mutation on <strong>each</strong> homologue: the <strong><em>trans</em></strong> arrangement. The <strong><em>cis</em></strong> arrangement, with both mutations on one homologue, is the control.</p>
+
+<img data-src="fig07-cis-trans.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><p><strong>Seymour Benzer</strong> (1950s) used this cis–trans test on thousands of <em>rII</em> mutations of phage T4 and called the unit it defines a <strong>cistron</strong>: today, a gene.</p>
+<aside class="notes">
+<p>Why the control matters: the cis heterozygote has one completely intact copy of the gene, so if it is wild type, both mutations are recessive and the trans test can be trusted. If m1 and m2 are in the same gene, the trans cell has no intact copy and is mutant, while the cis cell is wild type: the position of the mutations, not just their presence, decides the phenotype. If they are in different genes, both arrangements are wild type. In phage, Benzer made the trans heterozygote by infecting one bacterium with two mutant phages at once, and the cis one by first recombining both mutations into one phage. The same cis–trans logic returns in the lac operon unit (Part 6), where it separates cis-acting DNA sites (the operator) from trans-acting proteins (the repressor), and in the human cell-fusion tests that sorted xeroderma pigmentosum patients into complementation groups.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="complementation-common-mistakes" class="slide level2 smaller">
+<h2>Complementation: common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“They complement, so they are in the <strong>same</strong> gene.”</td>
+<td>Complement (wild-type F<sub>1</sub>) = <strong>different</strong> genes. Fail to complement = same gene.</td>
+</tr>
+<tr class="even">
+<td>Testing a <strong>dominant</strong> mutation.</td>
+<td>The F<sub>1</sub> is mutant whatever the partner, so the test says nothing. Use recessive mutations only (check with the cis control or a cross to wild type).</td>
+</tr>
+<tr class="odd">
+<td>Confusing complementation with <strong>recombination</strong>.</td>
+<td>Complementation reads the <strong>F<sub>1</sub> phenotype</strong> of one cell or individual, at once. Recombination needs a further generation, and gives rare wild-type <strong>offspring</strong> even between two mutations in the same gene.</td>
+</tr>
+<tr class="even">
+<td>“We found 4 groups, so the pathway has 4 genes.”</td>
+<td>4 is a <strong>minimum</strong>: genes with no mutant in the screen, or whose mutants die, are missed.</td>
+</tr>
+<tr class="odd">
+<td>Ignoring a result that breaks <strong>transitivity</strong>.</td>
+<td>If <em>x</em> fails with <em>y</em> and <em>y</em> fails with <em>z</em>, then <em>x</em> must fail with <em>z</em>. A mutant that breaks this is not a simple recessive point mutation in one gene: find out what it is before grouping it.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>These are the five errors that come up every year in the exam. The first is pure vocabulary: “complement” sounds like “match”, so students think it means the same gene; drill the phrase “complementation means each supplies what the other lacks”. The recombination row matters for the lac operon and for Benzer: two mutations in the same gene can recombine in a later cross to give a rare wild-type chromosome, but the F1 itself, with one mutation on each homologue, is mutant. The transitivity rule from the groups slide is a good consistency check; quiz Q9 asks students to explain a mutant that breaks it, so do not give the answer here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="beadle-and-tatums-screen" class="slide level2 smaller">
+<h2>Beadle and Tatum’s screen</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/neurospora-hyphae.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Neurospora_crassahyphae.jpg" class="photo-credit">Photo: Roland Gromes, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p>Hyphae of <em>Neurospora crassa</em> in a light microscope, with a cross-wall (septum).</p>
+</div><div class="column" style="width:60%;">
+<p>Why <em>Neurospora</em>? It grows on a simple <strong>minimal medium</strong> (sugar, salts, one vitamin) and makes everything else itself; and it is <strong>haploid</strong>, so every mutation shows at once.</p>
+<ol type="1">
+<li><strong>Irradiate</strong> spores to make mutations.</li>
+<li><strong>Cross</strong> to wild type and grow single spores on <strong>complete medium</strong> (with amino acids and vitamins), so that mutants survive.</li>
+<li><strong>Test</strong> each culture on <strong>minimal medium</strong>. No growth: an <strong>auxotroph</strong>.</li>
+<li><strong>Supplement</strong> minimal medium with one compound at a time to find what it needs.</li>
+</ol>
+<p>The cross also showed that each auxotrophy segregates as a <strong>single gene</strong> (1 : 1 among the haploid spores).</p>
+</div></div>
+<aside class="notes">
+<p>The key design choice is step 2: a mutant that cannot make an essential compound would die on minimal medium, so you rescue it on complete medium first and only then test it. That is the same trick as using a temperature-sensitive mutant for an essential gene (DNA recap). Haploidy matters because a recessive mutation has no wild-type partner to hide behind. The first mutants Beadle and Tatum reported in 1941 needed vitamins (pyridoxine, thiamine and para-aminobenzoic acid); amino-acid auxotrophs such as the arginine mutants on the next slide came soon after. Their minimal medium contained sugar, salts and the vitamin biotin. The photo shows the filaments (hyphae) that the fungus grows as; the orange colour of Neurospora cultures comes from carotenoids in the spores.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="one-gene-one-enzyme" class="slide level2 smaller">
 <h2>One gene, one enzyme</h2>
 <p><strong>Beadle and Tatum (1941)</strong> irradiated the mould <em>Neurospora crassa</em> and kept mutants that could no longer grow on <strong>minimal medium</strong> (<strong>auxotrophs</strong>). Feeding them single compounds showed where each was blocked. Srb and Horowitz (1944) used the method on mutants that need <strong>arginine</strong>:</p>
@@ -782,7 +1060,7 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Effect on protein</td>
-<td>silent, missense, nonsense, frameshift</td>
+<td>silent, missense, nonsense, frameshift; codon <em>n</em> = c.<em>x</em>/3 rounded up</td>
 </tr>
 <tr class="odd">
 <td>Spontaneous mutation</td>
@@ -798,7 +1076,7 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Fluctuation test</td>
-<td>jackpots, variance ≫ mean: mutations arise at random, <strong>before</strong> selection</td>
+<td>jackpots, variance ≫ mean: mutations arise at random, <strong>before</strong> selection; replica plating shows it directly</td>
 </tr>
 <tr class="odd">
 <td>Repair</td>
@@ -806,15 +1084,15 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Loss vs gain of function</td>
-<td>null alleles usually recessive; haploinsufficiency, dominant negatives, gain of function dominant</td>
+<td>null alleles usually recessive; haploinsufficiency, dominant negatives, gain of function dominant; dominance depends on the phenotype (HbS)</td>
 </tr>
 <tr class="odd">
 <td>Complementation</td>
-<td>recessive mutants: F<sub>1</sub> wild type = different genes; mutant = same gene</td>
+<td>recessive mutants in <em>trans</em>: F<sub>1</sub> wild type = different genes; mutant = same gene. Groups = minimum number of genes</td>
 </tr>
 <tr class="even">
 <td>One gene–one enzyme</td>
-<td>auxotroph classes ordered by which compounds rescue them</td>
+<td>auxotrophs rescued on complete medium; classes ordered by which compounds rescue them</td>
 </tr>
 </tbody>
 </table>
@@ -838,6 +1116,7 @@ Basic and molecular genetics (5MO104)
 <li><strong>Next: Gene expression (recap).</strong> How a mutation’s effect depends on where it falls: in a promoter, a splice site, a UTR or a codon; and how frameshift mutants proved the code is read in triplets.</li>
 <li><strong>Exercise in R:</strong> a genetic-code table as a named vector; translate <em>HBB</em> and classify every possible point mutation.</li>
 <li><strong>Part 4: Genomic variation.</strong> Point mutations that became common in a population are SNPs.</li>
+<li><strong>Part 6: Prokaryotic regulation.</strong> The cis–trans test again, with partial diploids of the lac operon.</li>
 <li><strong>Part 7: Cancer genetics.</strong> Somatic mutations, mutagens and failed repair; Knudson’s two hits.</li>
 </ul>
 <aside class="notes">

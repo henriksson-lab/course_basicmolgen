@@ -32,9 +32,9 @@ Every key function, database or concept named in a hint links to its documentati
 
 Write a good number of core exercises rather than long optional tails. A short "Where this leads" note pointing to a later unit is fine.
 
-## 8. Small decks
+## 8. Decks: quality over slide count
 
-Each lecture deck is one topic, with roughly 12–18 content slides. If a deck grows too big, split it into a new unit; do not cut good material. Every slide has speaker notes.
+Each lecture deck is one topic. **There is no fixed slide limit.** A deck can have up to about 40 slides if the topic needs them. Let the content decide the length: give a hard idea several slides, worked examples and a figure, rather than squeezing it to fit a count. Do not pad either: every slide must earn its place. If a deck covers two distinct topics, split it into two units. Every slide has speaker notes.
 
 ## 9. Honest about recaps and simplifications
 

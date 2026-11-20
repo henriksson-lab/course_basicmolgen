@@ -23,10 +23,10 @@ format:
 
 The reference genome from the last unit is one genome. No living person has exactly that sequence. This lecture is about the **differences**: what kinds there are, how we find them in thousands of people, and why some alleles are common in one part of the world and rare in another.
 
-- **Kinds of variant**: SNPs, indels, microsatellites (STRs) and copy-number variants (CNVs).
-- **Naming** a variant: rs numbers, HGVS names, and the strand problem.
-- **Haplotypes** and **linkage disequilibrium** (LD).
-- **Genotyping** by arrays vs sequencing; the big databases: dbSNP, 1000 Genomes, gnomAD.
+- **Kinds of variant**: SNPs, indels, microsatellites (STRs) and copy-number variants (CNVs), and what each does depending on where it lies.
+- **Naming** a variant: rs numbers, HGVS names, and the strand problem, step by step.
+- **Haplotypes** and **linkage disequilibrium** (LD): how to measure it, how fast it decays, and how it differs from linkage (Part 2).
+- **Genotyping** by arrays vs sequencing; the big databases: dbSNP, 1000 Genomes, gnomAD; reading a frequency and using it as evidence.
 - **Population differences**, with two case stories: **lactase persistence** and the **sickle-cell allele and malaria**.
 - **Personal genomics**: what a consumer genome test can and cannot tell you.
 
@@ -53,7 +53,7 @@ The numbers give a sense of scale. The 4.1 to 5.0 million figure comes from the 
 
 ## Kinds of variant {.smaller}
 
-![](fig01-variant-types.svg){width="68%" fig-align="center"}
+![](fig01-variant-types.svg){.nostretch width="66%" fig-align="center"}
 
 | Type | Size | Mutation rate | Example |
 |---|---|---|---|
@@ -64,6 +64,25 @@ The numbers give a sense of scale. The 4.1 to 5.0 million figure comes from the 
 
 ::: notes
 SNP strictly means a single-nucleotide variant common enough to be a polymorphism (often defined as at least 1 percent); SNV is the general term including rare ones. Indels inside a coding sequence cause frameshifts unless their length is a multiple of three, as in F508del, which removes one phenylalanine. Microsatellites mutate by polymerase slippage during replication, a thousand to ten thousand times faster than SNPs, so they have many alleles per locus. That made them the markers of choice for linkage mapping in the 1990s (the LOD-score unit in Part 2) and for forensic DNA profiles today. Expansions of some trinucleotide repeats cause disease: Huntington disease, met in the Mendel unit, appears with 40 or more CAG repeats in HTT. CNVs cover more base pairs in total than SNPs. A well-studied example is AMY1: populations with traditionally starch-rich diets have, on average, more copies of the salivary amylase gene.
+:::
+
+## What does a variant do? It depends on where it is {.smaller}
+
+Recap from the Mutation unit, now as a checklist for any variant you meet in a database:
+
+| Where, and what changes | Consequence | Example |
+|---|---|---|
+| coding, same amino acid | **synonymous** (usually no effect) | most third-position changes |
+| coding, another amino acid | **missense** | HbS: *HBB* c.20A>T, Glu7Val |
+| coding, a new stop codon | **nonsense**: truncated protein, often mRNA decay | *HBB* codon 39 CAG → TAG: β^0^-thalassaemia |
+| indel, length **not** a multiple of 3 | **frameshift**: wrong amino acids until a stop | many loss-of-function alleles |
+| indel, multiple of 3 | **in-frame**: amino acids lost or gained | *CFTR* F508del |
+| GT or AG at an intron end | **splice-site**: exon skipped or intron kept | *HBB* intron 1, first base G>A: β^0^-thalassaemia |
+| promoter or enhancer | **regulatory**: changes how much, when, where | lactase persistence, −13910 |
+| intron or between genes | usually **none** | most of the 4–5 million |
+
+::: notes
+This is the reasoning students need for B1: classify the variant first, then predict the effect from its position. Databases do the same: Ensembl and dbSNP give every variant a "consequence" term, and the exercise asks students to read it. Codon 39 is the traditional numbering (without the start methionine), as for HbS; this nonsense allele is a common cause of beta-zero-thalassaemia around the Mediterranean. The splice example is the allele usually written IVS-I-1 G>A: the first base of intron 1 is changed, so the splice donor GT is lost. Most variants in a genome fall in the last row, which is why "a variant" is not the same as "a mutation that causes disease". The effects in the table are typical, not certain: a missense change can be harmless, and a synonymous change can occasionally affect splicing.
 :::
 
 ## Naming a variant {.smaller}
@@ -83,6 +102,18 @@ The sickle-cell variant has several names, and you need to recognise them all:
 This slide prevents a lot of confusion in the exercise. dbSNP gives each variant position an rs number; rs334 covers several possible alleles at that base (T to A is HbS; T to C and T to G are other, rare variants). HGVS names say exactly which sequence they are relative to. The c. numbering starts at the A of the ATG start codon; p. numbering counts the start methionine, which is why HbS is p.Glu7Val in HGVS but Glu6Val in the older haemoglobin literature, as noted in Genetics as information. The same strand issue applies to the lactase SNP: the literature calls it LCT minus 13910 C to T, on the gene's strand, while Ensembl and gnomAD list rs4988235 as G to A on the plus strand.
 :::
 
+## One change, two strands: step by step {.smaller}
+
+![](fig05-strand-names.svg){width="76%" fig-align="center"}
+
+1. **Find the gene's strand** (Ensembl or a browser). *HBB*: minus.
+2. **Plus-strand gene**: database alleles = gene alleles. **Minus-strand gene**: take the **complement** of each allele (for longer alleles, the reverse complement).
+3. **Count c. positions on the gene's strand** from the A of ATG (c.1); *HBB* codon 7 is c.19–21.
+
+::: notes
+Walk through the figure from top to bottom. The chromosome coordinate runs left to right along the plus strand, which reads CTCCTCAGG here. HBB is on the minus strand, which reads right to left; read that way, it gives CCT GAG GAG, codons 6, 7 and 8. The highlighted column is position 5,227,002: T on the plus strand, A on the minus strand. HbS changes this base pair from T-A to A-T, so the plus-strand name is T>A and the gene-strand name is A>T. Same change, two descriptions. For a single base, complementing is enough; for an indel or a multi-base allele you must also reverse the order. The bases are checked against the reference sequence of the HBB PCR product from Digital analysis of DNA. Students do the same for the lactase SNP and ALDH2 in B2.
+:::
+
 ## Haplotypes and linkage disequilibrium {.smaller}
 
 ![](fig02-haplotypes-ld.svg){width="70%" fig-align="center"}
@@ -92,6 +123,77 @@ This slide prevents a lot of confusion in the exercise. dbSNP gives each variant
 
 ::: notes
 LD is linkage (Part 2) seen at population level. In a family, linkage means that alleles close together on a chromosome go into the same gamete unless there is a crossover between them. In a population, over many generations, crossovers gradually break up the associations, but between very close sites they rarely happen, so the associations survive. Walk through the figure: the new mutation appears on one chromosome, so at first it is always found with that chromosome's alleles. Each generation, crossovers swap in other chromosome stretches at the ends. After many generations only a short stretch around the mutation is still shared by all carriers. A young allele that rose fast because of selection, such as lactase persistence, sits on an unusually long shared haplotype, which is one of the ways selection is detected.
+:::
+
+## Linkage versus linkage disequilibrium {.smaller}
+
+Both come from the same crossovers, but they are measured in different samples and answer different questions.
+
+| | **Linkage** (Part 2) | **Linkage disequilibrium** (LD) |
+|---|---|---|
+| Sample | a family or a cross: parents and offspring | unrelated people from a population |
+| What you count | recombinant offspring | haplotypes |
+| Measure | recombination fraction *r*, LOD score | *D* (and *r*^2^, *D*' in browsers) |
+| Crossovers seen | only those in the meioses you observe: a few per chromosome | all crossovers since the haplotype arose: thousands of generations |
+| Resolution | Mb | kb |
+| Depends on population history? | no | **yes**: age of the allele, drift, selection, migration |
+
+**Linkage** is a property of two **loci** (how far apart they are). **LD** is a property of **alleles in a population** (whether they travel together there).
+
+::: notes
+This slide connects Part 2 to today. In Part 2, two loci were linked if they were close enough on a chromosome that recombinant offspring were fewer than half; you measured that directly by counting recombinants in families or crosses. LD asks a different question: in a population of unrelated people, does knowing the allele at one site tell me the allele at the other? It does when the alleles were inherited together from a common ancestral chromosome and crossovers have not yet separated them. So LD needs linkage to last, but linkage does not guarantee LD: two tightly linked SNPs whose alleles have been shuffled for a long time can be in linkage equilibrium. The resolution row is the practical consequence. In the LOD-score unit, a few families with a few dozen meioses could place a gene within several Mb. A population sample carries the crossovers of all ancestors back to the origin of the haplotype, so LD extends only over kb.
+:::
+
+## Measuring LD: a worked example
+
+100 chromosomes typed at two nearby SNPs, *A*/*a* and *B*/*b*:
+
+| Haplotype | *AB* | *Ab* | *aB* | *ab* |
+|---|---:|---:|---:|---:|
+| Count | 40 | 10 | 10 | 40 |
+
+1. **Allele frequencies**: *p*~A~ = (40 + 10)/100 = 0.5; *p*~B~ = (40 + 10)/100 = 0.5.
+2. **Expected without LD**: *p*~AB~ = *p*~A~ × *p*~B~ = 0.25, so 25 *AB* chromosomes (product rule).
+3. **Observed**: 40/100 = 0.40.
+4. **D** = *p*~AB~ − *p*~A~ *p*~B~ = 0.40 − 0.25 = **0.15**. *D* ≠ 0: the SNPs are in LD; *A* travels with *B*.
+
+Browsers report two scaled versions: *r*^2^ = *D*^2^ / (*p*~A~ *p*~a~ *p*~B~ *p*~b~) = 0.0225 / 0.0625 = **0.36**, and *D*' = *D* / *D*~max~ = 0.15 / 0.25 = **0.6**. Both run from 0 (no LD) to 1.
+
+::: notes
+This is the method of B3 with different numbers. The key step is step 2: if the alleles at the two sites were independent, the frequency of a haplotype would be the product of its allele frequencies, by the product rule from the probability unit. D measures the excess. D can be negative, which just means that A travels with b instead. Its maximum depends on the allele frequencies, which is why browsers use scaled measures. r squared is the one used for tagging: it says how well one SNP predicts the other, and an r squared near 1 means you only need to genotype one of them. Here r squared is 0.36, so SNP 1 predicts SNP 2 only partly. D prime for positive D is D divided by the smaller of p_A times p_b and p_a times p_B, which here are both 0.25. Students do not need to memorise r squared and D prime, only to recognise them in Ensembl's LD view.
+:::
+
+## How fast does LD decay?
+
+Each generation, a fraction *r* of chromosomes recombine between the two sites, so *D* shrinks by a factor (1 − *r*):
+
+$$D_t = D_0 \, (1 - r)^t$$
+
+| Distance (1 cM ≈ 1 Mb in humans) | *r* | *D* left after 100 generations (~2,500 years) | after 1,000 generations (~25,000 years) |
+|---|---:|---:|---:|
+| 10 kb | 0.0001 | 99% | 90% |
+| 100 kb | 0.001 | 90% | 37% |
+| 1 Mb | 0.01 | 37% | 0.004% |
+| different chromosomes | 0.5 | 0 (halves every generation) | 0 |
+
+LD between sites a few kb apart can survive since the origin of modern humans; between unlinked loci it is gone within a few generations.
+
+::: notes
+This is why LD blocks are kb long. Work through one row: at 100 kb, r is about one in a thousand, so after a thousand generations D is 0.999 to the power 1,000, about 0.37 of its starting value. At 1 Mb it would be essentially zero after the same time. The generation time of 25 years and the rule of 1 cM per Mb are averages; recombination rates vary a lot along the chromosome, with hotspots, which is one reason LD blocks have sharp edges. Compare with the LOD-score unit: there the recombination fraction was something you measured; here it sets how fast associations decay. Selection can create long LD quickly: an allele that rose from one copy to high frequency within a few hundred generations still sits on a long ancestral haplotype, as lactase persistence does.
+:::
+
+## Check yourself: LD is not linkage
+
+| Statement | True? |
+|---|---|
+| "Two SNPs in strong LD must be close together." | **Usually, not always.** Recent admixture, drift in a small population or selection can create LD between distant or even unlinked loci; it then decays within a few generations. |
+| "Two linked SNPs are always in LD." | **No.** Close loci can be in linkage equilibrium if their alleles have had time to mix, or if one allele arose many times. |
+| "A GWAS SNP associated with a disease causes it." | **Not necessarily.** It may only be in LD with the causal variant nearby. |
+| "LD is the same in every population." | **No.** It depends on each population's history; African populations have the shortest LD blocks. |
+| "Linkage tells you about families; LD about populations." | **Yes.** Same crossovers, different samples and time scales. |
+
+::: notes
+Ask the room to vote on each statement before revealing. The first is the one that surprises students most. Admixture is the clearest case: if two populations with different allele frequencies at two unlinked loci mix, the first generations of offspring show an association between the loci simply because people with ancestry from one population tend to carry that population's alleles at both. Independent assortment at meiosis removes this in a few generations. The GWAS point is developed in Complex traits in Part 7.
 :::
 
 ## Why LD matters {.smaller}
@@ -137,6 +239,26 @@ A variant's population frequency is key evidence in diagnostics: an allele that 
 These are the databases of the Find it tasks. 1000 Genomes is small but carefully sampled by population, which is why we use it in R: each sample comes from a defined population such as the Yoruba in Ibadan (YRI) or the Finnish (FIN). gnomAD is much larger but groups people by genetic ancestry; it is the standard reference for how rare a variant is. The last sentence is the most important clinical use of population data: if a variant is found in one percent of healthy people in gnomAD, it cannot be the cause of a disease that affects one in a million, unless penetrance is very low. Ethics: these databases hold data from real people, which raises questions about consent and re-identification that the ethics module returns to.
 :::
 
+## Reading a frequency from a database
+
+Databases report counts of **chromosomes**, not people. For rs4988235 in the CEU sample of 1000 Genomes (99 people, from Ensembl):
+
+| Allele | Allele count (AC) |
+|---|---:|
+| A (persistence) | 146 |
+| G | 52 |
+| **Allele number (AN)** | 198 = 2 × 99 |
+
+**Allele frequency** = AC / AN = 146 / 198 = **0.737**.
+
+- gnomAD gives the same three columns per ancestry group, plus the number of **homozygotes**.
+- **Not seen ≠ absent.** An allele with AC = 0 among 198 chromosomes can still have a frequency of up to about 3/198 ≈ 1.5% in the population (95% upper bound, the "rule of three").
+- Small samples give rough frequencies; large ones (gnomAD) can measure alleles as rare as 1 in 100,000.
+
+::: notes
+These are the numbers behind the lactase table later in the lecture, and they come from the Ensembl export used in the R exercise. Allele number is twice the number of people typed, because each person has two copies of an autosome; for the X chromosome it differs between the sexes. The rule of three: if an event has probability p and you see it zero times in n trials, values of p above about 3 over n would make that result unlikely, below 5 percent. So "frequency 0 in YRI" in a 1000 Genomes table means "rare or absent in that population", not "impossible". The R exercise meets the same issue from the other side: Ensembl leaves out alleles that were not observed, and students have to put the zeros back.
+:::
+
 ## Allele frequencies differ between populations {.smaller}
 
 ![](fig03-frequencies.svg){width="76%" fig-align="center"}
@@ -178,6 +300,9 @@ This is the classic example of balancing selection. HbS/HbS is sickle-cell disea
 
 ## Variants and families: back to pedigrees {.smaller}
 
+:::: {.columns}
+::: {.column width="62%"}
+
 Population frequencies feed directly into the risk calculations of Part 1:
 
 - **Carrier probability of a partner.** For a recessive disease with allele frequency *q*, a random partner is a carrier with probability about 2*q*: for HbS in YRI (*q* = 0.14), 2 × 0.14 × 0.86 ≈ **0.24**.
@@ -186,8 +311,38 @@ Population frequencies feed directly into the risk calculations of Part 1:
 
 The same variant can be common and protective in one setting and a cause of disease in another: genotype and environment together make the phenotype.
 
+:::
+::: {.column width="38%"}
+
+![](img/sickle-smear.jpg){width="100%"}
+
+[Photo: Paulo Henrique Orlandi Mourao, CC BY-SA 4.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg){.photo-credit}
+
+Blood smear in sickle-cell disease (HbS/HbS): sickled red cells (arrow) among normal discs.
+
+:::
+::::
+
 ::: notes
+The micrograph shows what the HbS/HbS genotype means for a child at the level of the cell: deoxygenated haemoglobin S polymerises into long fibres that bend red cells into the sickle shape. Sickled cells are stiff, block small vessels and are destroyed early, which causes the pain crises and anaemia of the disease. The large cell with a lobed nucleus is a white blood cell.
 This links the population view back to the pedigree unit, where the probability that an unrelated partner was a carrier was often just given. Now students can look it up. Use the 2pq approximation (Part 7 gives the justification); for rare alleles it is about 2q. The second bullet multiplies the probability that the partner is a carrier by the one-quarter risk of a carrier-by-carrier cross. The third bullet is how clinical geneticists classify variants of uncertain significance: rarity in population databases, segregation in the family, predicted effect on the protein. It sets up the ethics module's discussion of what to tell patients about uncertain findings.
+:::
+
+## Worked example: can this variant cause the disease?
+
+A fully penetrant disease allele cannot be **more common than the disease allows**.
+
+| | Recessive disease | Dominant disease |
+|---|---|---|
+| Affected people need | two copies: prevalence ≈ *q*^2^ | one copy: prevalence ≈ 2*q* |
+| Largest possible allele frequency | *q* ≤ √prevalence | *q* ≤ prevalence / 2 |
+| Example: prevalence | 1 in 10,000 | 1 in 20,000 |
+| Largest possible *q* | √(1/10,000) = **0.01** | 1/40,000 = **2.5 × 10^−5^** |
+
+A candidate recessive variant has frequency **3%** in gnomAD for the patient's ancestry group. Then 0.03^2^ ≈ 1 in 1,100 people would be homozygous: **nine times** more than the disease prevalence. It cannot be the cause on its own; look elsewhere.
+
+::: notes
+This is the reasoning for B7 and Q10, with different numbers. It is the first filter a clinical lab applies after sequencing a patient: thousands of rare variants per person are reduced to a handful by removing everything that is too common in healthy people. The bounds are upper limits: if several different alleles cause the disease, each one must be rarer still, and incomplete penetrance or a late onset can relax them a little, which is why labs use generous thresholds. The approximations q squared and 2q come from Hardy-Weinberg proportions (Part 7) and assume that affected people are mostly homozygous for one allele or heterozygous respectively. 1 in 1,100 versus 1 in 10,000 is about a nine-fold excess.
 :::
 
 ## Personal genomics {.smaller}
@@ -205,14 +360,35 @@ Your genome is also partly your relatives' genome, and it is hard to make anonym
 Bring it to the students' own lives. The SNPs from the R exercise are typical consumer-test SNPs: lactase persistence, alcohol flush (ALDH2 rs671, common in East Asia, where the A allele reduces the activity of the enzyme that breaks down acetaldehyde), eye colour (HERC2 rs12913832, which affects OCA2 expression). The limits are the array limits from two slides back, plus interpretation: most traits are complex (Part 7) and each SNP explains little. A negative carrier result on an array only covers the alleles on the array. Privacy: because relatives share half their genome, a person who uploads their data also reveals information about relatives who did not consent; consumer databases have been used to identify suspects via distant relatives. The ethics module takes this up.
 :::
 
+## Common mistakes
+
+| Mistake | Correct |
+|---|---|
+| Comparing a database allele with a gene's allele without checking the strand. | Databases use the plus strand; complement for a minus-strand gene. |
+| "The reference allele is the normal or ancestral one." | The reference is one assembled genome; it can carry a derived or rare allele. |
+| "Frequency 0 in a 1000 Genomes sample: the allele does not exist there." | Not seen in ~200 chromosomes; it may still be at ~1%. |
+| "Rare in gnomAD, so it is pathogenic." | Rarity is necessary, not sufficient: most rare variants are harmless. |
+| "LD means the loci are linked" (or the reverse). | LD is population association; linkage is distance. Each can occur without the other. |
+| "The GWAS SNP is the causal variant." | It may just tag the causal variant through LD. |
+| "Large frequency differences show selection." | First consider drift and migration; selection explains outliers. |
+| "An array result says I am not a carrier." | Only for the variants on the array. |
+
+::: notes
+A revision slide built from the errors students make most often in this unit's exercise. The reference-allele row is B2c in the exercise: the human reference carries the derived SLC24A5 allele because most of it comes from people of European ancestry. Ask students to correct one or two statements before revealing the right-hand column.
+:::
+
 ## Summary {.smaller}
 
 | Concept | Key fact |
 |---|---|
 | Kinds of variant | SNP (1 bp), indel (1–50 bp), STR (repeat count, fast-mutating), CNV (kb–Mb copy number) |
+| Consequence | synonymous, missense, nonsense, frameshift, in-frame, splice, regulatory, none: decided by location |
 | One genome vs the reference | 4.1–5.0 million sites differ (1000 Genomes) |
 | Naming | rs number (dbSNP); HGVS g./c./p.; watch the strand: rs334 is T>A on plus, c.20A>T on *HBB* |
-| Haplotype, LD | alleles on one chromosome; nearby alleles stay associated; LD decays with distance and time |
+| Frequency | AF = allele count / allele number (chromosomes); not seen ≠ absent |
+| Haplotype, LD | alleles on one chromosome; *D* = *p*~AB~ − *p*~A~*p*~B~; *D* shrinks by (1 − *r*) per generation |
+| Linkage vs LD | linkage: distance, measured in families; LD: association of alleles in a population, kb scale |
+| Frequency as evidence | recessive *q* ≤ √prevalence; dominant *q* ≤ prevalence/2 |
 | Arrays vs sequencing | arrays read known common SNPs cheaply; sequencing finds rare and new variants |
 | Databases | dbSNP, 1000 Genomes (26 populations), gnomAD (frequencies), ClinVar (clinical meaning) |
 | Population differences | most variation is within populations; large differences at single loci suggest selection |

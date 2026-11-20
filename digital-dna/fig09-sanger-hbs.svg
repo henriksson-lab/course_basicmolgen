@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 30 900 296" font-family="Helvetica, Arial, sans-serif" width="900" height="296">
+  <!-- Schematic Sanger traces over HBB c.16-24 (codons 6-8, CCT GAG GAG on the coding strand, read with a forward primer),
+       for the three genotypes at the sickle-cell site c.20A>T (highlighted). Peak heights are drawn by hand, not real data.
+       Dye colours as in fig04: A green, C blue, G black, T red. Generated with scratch/gen_sanger.py, then edited. -->
+  <!-- panel 1: HbA/HbA -->
+  <g transform="translate(20,0)">
+    <text x="137" y="54" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">HbA/HbA</text>
+    <rect x="123" y="68" width="28" height="172" fill="#f4e3c1"/>
+    <line x1="5" y1="236" x2="269" y2="236" stroke="#1b2a3a" stroke-width="1.2"/>
+    <path d="M11,236 C19,236 20,120 25,120 C30,120 31,236 39,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="25" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M39,236 C47,236 48,134 53,134 C58,134 59,236 67,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="53" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M67,236 C75,236 76,116 81,116 C86,116 87,236 95,236" fill="none" stroke="#bc4749" stroke-width="2.6"/>
+    <text x="81" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#bc4749" text-anchor="middle">T</text>
+    <path d="M95,236 C103,236 104,126 109,126 C114,126 115,236 123,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="109" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M123,236 C131,236 132,118 137,118 C142,118 143,236 151,236" fill="none" stroke="#6a994e" stroke-width="2.6"/>
+    <text x="137" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#6a994e" text-anchor="middle">A</text>
+    <path d="M151,236 C159,236 160,130 165,130 C170,130 171,236 179,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="165" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M179,236 C187,236 188,122 193,122 C198,122 199,236 207,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="193" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M207,236 C215,236 216,128 221,128 C226,128 227,236 235,236" fill="none" stroke="#6a994e" stroke-width="2.6"/>
+    <text x="221" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#6a994e" text-anchor="middle">A</text>
+    <path d="M235,236 C243,236 244,117 249,117 C254,117 255,236 263,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="249" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <line x1="17" y1="246" x2="89" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="53" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Pro6</text>
+    <line x1="101" y1="246" x2="173" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="137" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu7</text>
+    <line x1="185" y1="246" x2="257" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="221" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu8</text>
+  </g>
+  <!-- panel 2: HbA/HbS (carrier): A and T peaks of about half height at c.20 -->
+  <g transform="translate(315,0)">
+    <text x="137" y="54" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">HbA/HbS (carrier)</text>
+    <rect x="123" y="68" width="28" height="172" fill="#f4e3c1"/>
+    <line x1="5" y1="236" x2="269" y2="236" stroke="#1b2a3a" stroke-width="1.2"/>
+    <path d="M11,236 C19,236 20,120 25,120 C30,120 31,236 39,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="25" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M39,236 C47,236 48,134 53,134 C58,134 59,236 67,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="53" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M67,236 C75,236 76,116 81,116 C86,116 87,236 95,236" fill="none" stroke="#bc4749" stroke-width="2.6"/>
+    <text x="81" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#bc4749" text-anchor="middle">T</text>
+    <path d="M95,236 C103,236 104,126 109,126 C114,126 115,236 123,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="109" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M123,236 C131,236 132,177 137,177 C142,177 143,236 151,236" fill="none" stroke="#6a994e" stroke-width="2.6"/>
+    <path d="M123,236 C131,236 132,183 137,183 C142,183 143,236 151,236" fill="none" stroke="#bc4749" stroke-width="2.6"/>
+    <text x="137" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">N</text>
+    <text x="137" y="116" font-size="12" font-weight="bold" text-anchor="middle"><tspan fill="#6a994e">A</tspan><tspan fill="#1b2a3a">+</tspan><tspan fill="#bc4749">T</tspan></text>
+    <path d="M151,236 C159,236 160,130 165,130 C170,130 171,236 179,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="165" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M179,236 C187,236 188,122 193,122 C198,122 199,236 207,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="193" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M207,236 C215,236 216,128 221,128 C226,128 227,236 235,236" fill="none" stroke="#6a994e" stroke-width="2.6"/>
+    <text x="221" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#6a994e" text-anchor="middle">A</text>
+    <path d="M235,236 C243,236 244,117 249,117 C254,117 255,236 263,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="249" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <line x1="17" y1="246" x2="89" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="53" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Pro6</text>
+    <line x1="101" y1="246" x2="173" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="137" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu/Val7</text>
+    <line x1="185" y1="246" x2="257" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="221" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu8</text>
+  </g>
+  <!-- panel 3: HbS/HbS -->
+  <g transform="translate(610,0)">
+    <text x="137" y="54" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">HbS/HbS</text>
+    <rect x="123" y="68" width="28" height="172" fill="#f4e3c1"/>
+    <line x1="5" y1="236" x2="269" y2="236" stroke="#1b2a3a" stroke-width="1.2"/>
+    <path d="M11,236 C19,236 20,120 25,120 C30,120 31,236 39,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="25" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M39,236 C47,236 48,134 53,134 C58,134 59,236 67,236" fill="none" stroke="#2a6f97" stroke-width="2.6"/>
+    <text x="53" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#2a6f97" text-anchor="middle">C</text>
+    <path d="M67,236 C75,236 76,116 81,116 C86,116 87,236 95,236" fill="none" stroke="#bc4749" stroke-width="2.6"/>
+    <text x="81" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#bc4749" text-anchor="middle">T</text>
+    <path d="M95,236 C103,236 104,126 109,126 C114,126 115,236 123,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="109" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M123,236 C131,236 132,118 137,118 C142,118 143,236 151,236" fill="none" stroke="#bc4749" stroke-width="2.6"/>
+    <text x="137" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#bc4749" text-anchor="middle">T</text>
+    <path d="M151,236 C159,236 160,130 165,130 C170,130 171,236 179,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="165" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M179,236 C187,236 188,122 193,122 C198,122 199,236 207,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="193" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <path d="M207,236 C215,236 216,128 221,128 C226,128 227,236 235,236" fill="none" stroke="#6a994e" stroke-width="2.6"/>
+    <text x="221" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#6a994e" text-anchor="middle">A</text>
+    <path d="M235,236 C243,236 244,117 249,117 C254,117 255,236 263,236" fill="none" stroke="#1b2a3a" stroke-width="2.6"/>
+    <text x="249" y="92" font-size="18" font-weight="bold" font-family="Courier New, monospace" fill="#1b2a3a" text-anchor="middle">G</text>
+    <line x1="17" y1="246" x2="89" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="53" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Pro6</text>
+    <line x1="101" y1="246" x2="173" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="137" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Val7</text>
+    <line x1="185" y1="246" x2="257" y2="246" stroke="#8a97a4" stroke-width="1.5"/>
+    <text x="221" y="264" font-size="13" fill="#1b2a3a" text-anchor="middle">Glu8</text>
+  </g>
+  <text x="25" y="296" font-size="13" fill="#1b2a3a">HBB coding strand, c.16–24 (codons 6–8), read with a forward primer. Highlighted: c.20, the sickle-cell site.</text>
+  <text x="25" y="316" font-size="13" fill="#5a6b7a">Schematic traces. A base caller writes N (or a mixed-base code: W = A or T) where two peaks overlap.</text>
+</svg>

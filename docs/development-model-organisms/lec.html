@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -139,20 +139,21 @@ Basic and molecular genetics (5MO104)
 </div>
 
 </section>
-<section id="about-this-lecture" class="slide level2">
+<section id="about-this-lecture" class="slide level2 smaller">
 <h2>About this lecture</h2>
 <p>How does one fertilised egg build a body with a head at one end and a tail at the other? Most of what we know came from <strong>mutant screens</strong> in a few <strong>model organisms</strong>, and from the surprise that the genes found in flies and worms have counterparts in humans.</p>
 <ul>
 <li><strong>Forward vs reverse genetics</strong>; the main model organisms and their databases.</li>
-<li>The <strong>Nüsslein-Volhard–Wieschaus screen</strong> and <strong>maternal-effect</strong> genes.</li>
-<li>The <strong><em>Drosophila</em> segmentation hierarchy</strong>: maternal → gap → pair-rule → segment polarity → Hox.</li>
-<li><strong>Hox genes</strong> and <strong>colinearity</strong>; <em>PAX6</em>/<em>eyeless</em> and deep conservation.</li>
-<li>The <strong><em>C. elegans</em> cell lineage</strong>.</li>
-<li><strong>Genetic tools</strong>: transgenics, GAL4/UAS, CRISPR–Cas9 knockouts.</li>
+<li><strong>How a screen works</strong>: balancers, the generations of a recessive screen, <strong>maternal-effect</strong> genes and reciprocal crosses.</li>
+<li>The <strong><em>Drosophila</em> segmentation hierarchy</strong>: reading mutant cuticles; the <em>eve</em> stripe 2 enhancer as a logic gate.</li>
+<li><strong>Hox genes</strong>: which way a segment is transformed, dominance, <strong>colinearity</strong>.</li>
+<li><strong>Ordering genes by epistasis</strong>; the <em>C. elegans</em> cell lineage and cell death.</li>
+<li><strong>Gene dose</strong>: haploinsufficiency plus recessive lethality (<em>Brachyury</em>, <em>PAX6</em>).</li>
+<li><strong>Genetic tools</strong>: GAL4/UAS, CRISPR–Cas9, from a mosaic founder to a homozygous mutant.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the chapter on the genetic analysis of development.</p>
 <aside class="notes">
-<p>This unit pulls Part 6 together. The segmentation genes are transcription factors acting on enhancers (Eukaryotic regulation), the heterochronic genes are microRNAs and their targets (RNA-mediated regulation), and the logic of the screens is Mendelian: recessive lethals, complementation groups (Mutation unit, Part 3), maternal effects, epistasis. The R exercise looks at the conservation of developmental genes across the model organisms.</p>
+<p>This unit pulls Part 6 together. The segmentation genes are transcription factors acting on enhancers (Eukaryotic regulation), the heterochronic genes are microRNAs and their targets (RNA-mediated regulation), and the logic of the screens is Mendelian: recessive lethals, complementation groups (Mutation unit, Part 3), maternal effects, epistasis, lethal alleles. The deck spends most of its time on the reasoning students need for the by-hand exercises: how a balancer stock works, how many generations a screen takes, what a maternal effect looks like over generations, how to classify a cuticle, how an enhancer reads its inputs, which way a homeotic transformation goes, how to order genes by epistasis, and how dose gives a dominant phenotype with a recessive lethal. The R exercise looks at the conservation of developmental genes across the model organisms.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -252,7 +253,7 @@ Basic and molecular genetics (5MO104)
 <li><strong>Reverse</strong>: start from a gene (often an ortholog of a gene known elsewhere), knock it out, and look. Targeted, but genes can be <strong>redundant</strong> and show no phenotype.</li>
 </ul>
 <aside class="notes">
-<p>Forward genetics was the only option until the 1980s and it is how all the genes in today’s lecture were found. Reverse genetics needs the gene sequence, and was transformed first by RNAi (last unit) and then by CRISPR. The two are complementary: a forward screen is like asking the organism what matters; reverse genetics is asking a specific question. A common surprise with reverse genetics: a knockout with no phenotype, often because a paralog covers for it, the same redundancy as the 15:1 duplicate-gene ratio in Extensions to Mendel.</p>
+<p>Forward genetics was the only option until the 1980s and it is how all the genes in today’s lecture were found. Reverse genetics needs the gene sequence, and was transformed first by RNAi (last unit) and then by CRISPR. The two are complementary: a forward screen is like asking the organism what matters; reverse genetics is asking a specific question. A common surprise with reverse genetics: a knockout with no phenotype, often because a paralog covers for it, the same redundancy as the 15:1 duplicate-gene ratio in Extensions to Mendel. Another limit of forward screens: a gene needed early for survival hides any later role, because the animal dies before you can look.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -267,15 +268,59 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="the-heidelberg-screen" class="slide level2 smaller">
 <h2>The Heidelberg screen</h2>
+<div class="columns">
+<div class="column" style="width:72%;">
 <p>Christiane <strong>Nüsslein-Volhard</strong> and Eric <strong>Wieschaus</strong> (1980) looked for every gene needed to make the pattern of the <em>Drosophila</em> larva.</p>
 <ul>
-<li>Mutagenise males with <strong>EMS</strong>; set up thousands of lines, each carrying one mutagenised chromosome over a <strong>balancer</strong> (a chromosome with inversions that cannot recombine, and a dominant marker).</li>
-<li>Inter-cross heterozygous siblings: ¼ of the embryos are <strong>homozygous</strong> for the new mutation. Look for embryos that die with an abnormal <strong>larval cuticle</strong> pattern.</li>
-<li>Sort the mutations into <strong>complementation groups</strong> (genes). Many genes had several alleles: the screen was close to <strong>saturation</strong>.</li>
-<li>They found about 15 genes for segment number and polarity, in <strong>three classes</strong>: gap, pair-rule and segment polarity. (Nobel Prize 1995, with Ed Lewis.)</li>
+<li><strong>Mutagen</strong>: EMS on males; each sperm carries different random point mutations.</li>
+<li><strong>Readout</strong>: embryos that die with an abnormal <strong>larval cuticle</strong>. The cuticle has one belt of small hooks (<strong>denticles</strong>) per segment, so pattern defects are easy to see.</li>
+<li><strong>Sorting</strong>: mutations with similar phenotypes are tested against each other and sorted into <strong>complementation groups</strong> (genes), as in the Mutation unit.</li>
+<li><strong>Saturation</strong>: most genes were hit several times, so few genes of this kind were left to find.</li>
+<li><strong>Result</strong>: about 15 genes for segment number and polarity, in <strong>three classes</strong>: gap, pair-rule and segment polarity. (Nobel Prize 1995, with Ed Lewis.)</li>
 </ul>
+<p>The next two slides show the genetic trick that made it possible: the <strong>balancer</strong>.</p>
+</div><div class="column" style="width:28%;">
+<p><img data-src="img/nusslein-volhard.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Christiane_N%C3%BCsslein-Volhard_mg_4389_(cropped).jpg" class="photo-credit">Photo: Rama, CC BY-SA 2.0 fr, via Wikimedia Commons</a></p>
+</div></div>
 <aside class="notes">
-<p>This is the clearest example of a forward screen. The genetic tricks matter: balancers let you keep a recessive lethal mutation as a heterozygous stock without selecting for it every generation, because the balancer prevents recombination and its own recessive lethal kills balancer homozygotes. The cuticle of a dead embryo shows a pattern of denticle belts, one per segment, which makes pattern defects easy to see under a microscope. Saturation is a useful idea: if you find most genes several times, there are probably few left to find. The complementation test is exactly the one from the Mutation unit.</p>
+<p>This is the clearest example of a forward screen. The photo is Christiane Nüsslein-Volhard, who later moved to zebrafish and ran the first large vertebrate screens in the same style. The dead embryo secretes its cuticle before it dies, so even a lethal mutant leaves a record of its segment pattern; that is what makes embryonic lethals usable. Saturation is a useful idea: if you find most genes several times, there are probably few left to find. A gene found only once might still have relatives that were missed. The complementation test is exactly the one from the Mutation unit: two recessive mutations that fail to complement are in the same gene. The screen was done chromosome by chromosome, using balancers for each major autosome and for the X.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="balancers-keeping-a-lethal-mutation-without-selection" class="slide level2 smaller">
+<h2>Balancers: keeping a lethal mutation without selection</h2>
+
+<img data-src="fig06-balancer.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>A balancer has <strong>three properties</strong>: several <strong>inversions</strong> (so recombinants are not recovered), a <strong>dominant marker</strong> (so you can see who carries it), and a <strong>recessive lethal</strong> (so balancer homozygotes die).</p>
+<aside class="notes">
+<p>Walk through the figure with the class. The problem a balancer solves: a recessive lethal mutation can only be kept in heterozygotes, and in an ordinary stock you would have to test every generation which flies still carry it, because the wild-type allele would take over. Over a balancer, both homozygous classes die, so every surviving fly is heterozygous, and you can see that from the dominant marker. Here TM3 on chromosome 3 with the marker Stubble, short thick bristles; on chromosome 2 the common balancer is CyO with Curly wings, which students meet in the exercise. Why the inversions: a single crossover inside an inverted segment gives chromatids with duplications and deletions (the inversion loop from the Rearrangements unit in Part 5), so recombinant chromosomes are not recovered in the progeny. Without them, crossing over would slowly separate the mutation from the chromosome it was found on, and the marker from the lethal. A balancer is thus a stretch of chromosome that is inherited as one block.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-recessive-screen-generation-by-generation" class="slide level2 smaller">
+<h2>A recessive screen, generation by generation</h2>
+
+<img data-src="fig07-screen-scheme.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:62.0%"><p>Rule of thumb: you see a <strong>recessive zygotic</strong> phenotype two generations after the mutagenised male (F3); a <strong>maternal-effect</strong> phenotype one generation later, in the embryos <strong>of</strong> homozygous mothers.</p>
+<aside class="notes">
+<p>Go row by row and ask at each step: which flies carry the new mutation, and is anyone homozygous yet? P: the mutagenised male makes sperm with many different mutagenised chromosomes. F1: each F1 son carries one particular mutagenised chromosome, so each must be kept separately as its own line: thousands of single-male crosses. F2: within a line, all flies that carry the balancer marker and the mutagenised chromosome carry the same m-star; cross brothers to sisters. F3: one quarter of the embryos are homozygous; if they die with a defective cuticle, the line is kept, from its F2 heterozygous siblings, and that is the stock. In the exercise, students lay out the same scheme for chromosome 2 with CyO. The maternal-effect point links to the next slide: a homozygous maternal-effect mutant looks normal, so you must let it grow up and look at its eggs. Real screens add a second marker so that the right F2 class can be picked, which the figure footnote mentions.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -291,9 +336,132 @@ Basic and molecular genetics (5MO104)
 <section id="maternal-effect-genes" class="slide level2 smaller">
 <h2>Maternal-effect genes</h2>
 
-<img data-src="fig04-maternal-effect.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>The anterior–posterior axis is set up <strong>before</strong> the embryo’s own genes are switched on, by mRNAs the <strong>mother</strong> puts into the egg. <em>bicoid</em> mRNA sits at the anterior pole; its protein forms a <strong>gradient</strong> that tells nuclei how far they are from the head. A screen for maternal-effect genes therefore needs <strong>homozygous mothers</strong>, one generation later than a zygotic screen.</p>
+<img data-src="fig04-maternal-effect.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>The anterior–posterior axis is set up <strong>before</strong> the embryo’s own genes are switched on, by mRNAs the <strong>mother</strong> puts into the egg. <em>bicoid</em> mRNA sits at the anterior pole; its protein forms a <strong>gradient</strong> that tells nuclei how far they are from the head.</p>
+<p><strong>Rule:</strong> the embryo’s phenotype = the <strong>mother’s genotype</strong>. The embryo’s own genotype does not matter.</p>
 <aside class="notes">
-<p>Maternal effect is another way for reciprocal crosses to differ, next to sex linkage (Part 2), cytoplasmic inheritance (Part 5) and imprinting (last but one unit). The embryo’s genotype is irrelevant; the mother’s genotype decides. A classic exam trap: a bcd/bcd female is perfectly normal, because she developed from an egg that her bcd/+ mother provided with bicoid mRNA. Bicoid is a morphogen: a transcription factor whose concentration gradient switches on different target genes at different thresholds, for example hunchback at high levels. Nanos does the same job from the posterior end, by repressing translation of maternal hunchback mRNA.</p>
+<p>Maternal effect is another way for reciprocal crosses to differ, next to sex linkage (Part 2), organelle inheritance (Part 5) and imprinting (Eukaryotic regulation). The embryo’s genotype is irrelevant; the mother’s genotype decides. A classic exam trap: a bcd/bcd female is perfectly normal, because she developed from an egg that her bcd/+ mother provided with bicoid mRNA. Bicoid is a morphogen: a transcription factor whose concentration gradient switches on different target genes at different thresholds, for example hunchback at high levels. Nanos does the same job from the posterior end, by repressing translation of maternal hunchback mRNA. The next slide works through the generations with the classic example, so that students can do the bicoid crosses in the exercise on their own.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="maternal-effect-over-three-generations-snail-coiling" class="slide level2">
+<h2>Maternal effect over three generations: snail coiling</h2>
+<p>In the pond snail <em>Lymnaea</em>, the direction of shell coiling is set by one gene: <strong>dextral</strong> (<em>D</em>, right-handed) is dominant over <strong>sinistral</strong> (<em>d</em>). It acts as a <strong>maternal effect</strong> (Boycott &amp; Diver; Sturtevant, 1923). The snails are hermaphrodites and can self-fertilise.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Generation</th>
+<th>Genotypes</th>
+<th>Coiling</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P</td>
+<td><em>dd</em> ♀ × <em>DD</em> ♂</td>
+<td>(sinistral × dextral)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F1</td>
+<td>all <em>Dd</em></td>
+<td><strong>all sinistral</strong></td>
+<td>their mother was <em>dd</em></td>
+</tr>
+<tr class="odd">
+<td>F2 (F1 selfed)</td>
+<td>1 <em>DD</em> : 2 <em>Dd</em> : 1 <em>dd</em></td>
+<td><strong>all dextral</strong></td>
+<td>their mother (F1) was <em>Dd</em></td>
+</tr>
+<tr class="even">
+<td>F3 (each F2 selfed)</td>
+<td>broods from each F2 parent</td>
+<td>¾ of broods dextral, ¼ sinistral</td>
+<td>each brood follows its own mother: <em>DD</em>, <em>Dd</em> → dextral; <em>dd</em> → sinistral</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The <strong>genotype ratio</strong> is Mendelian (1 : 2 : 1 in F2); the <strong>phenotype ratio</strong> appears <strong>one generation late</strong>, counted as whole broods.</li>
+<li>Reciprocal P cross, <em>DD</em> ♀ × <em>dd</em> ♂: F1 all <em>Dd</em> and <strong>dextral</strong>. Same F1 genotype, opposite phenotype.</li>
+</ul>
+<aside class="notes">
+<p>Do this on the board one generation at a time, asking the room each time: what is the mother’s genotype? That is the only question. The F2 has a dd quarter, but every F2 snail is dextral, because all F2 snails had a Dd mother. The 3 to 1 ratio only shows up in F3, and it is a ratio of families, not of individuals: three quarters of the F2 snails produce all-dextral broods, one quarter produce all-sinistral broods. The same structure applies to bicoid in the exercise, except that bicoid embryos without a mother’s mRNA die. The coiling gene was identified in 2016 as a formin, a cytoskeleton gene that acts in the very early cleavage divisions. A quick check: a sinistral snail tells you its mother was dd, so it carries at least one d; its own genotype could be Dd or dd.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="four-ways-reciprocal-crosses-can-differ" class="slide level2">
+<h2>Four ways reciprocal crosses can differ</h2>
+<p>Mendel’s reciprocal crosses gave the same result: for his genes, it did not matter which parent gave which allele. When reciprocal crosses <strong>differ</strong>, ask <strong>what decides the offspring’s phenotype</strong>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mechanism</th>
+<th>Unit</th>
+<th>What decides</th>
+<th>Diagnostic pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>X linkage</strong></td>
+<td>Part 2</td>
+<td>the offspring’s own genotype, and its sex</td>
+<td>ratios differ between sons and daughters; sons get their X from the mother</td>
+</tr>
+<tr class="even">
+<td><strong>Organelle inheritance</strong></td>
+<td>Part 5</td>
+<td>the mother’s <strong>cytoplasm</strong> (mtDNA, chloroplasts)</td>
+<td>all offspring of an affected mother, every generation; never through fathers</td>
+</tr>
+<tr class="odd">
+<td><strong>Imprinting</strong></td>
+<td>Eukaryotic regulation</td>
+<td>which <strong>parent</strong> gave the active allele</td>
+<td>autosomal 1 : 1 segregation, but expressed only when inherited from one parent</td>
+</tr>
+<tr class="even">
+<td><strong>Maternal effect</strong></td>
+<td>this unit</td>
+<td>the mother’s <strong>nuclear genotype</strong></td>
+<td>offspring look like the mother’s genotype; Mendelian ratios appear one generation late</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This slide is a comparison students can use in any exam question with a reciprocal-cross twist. Organelle inheritance and maternal effect are often confused, because both go through the mother. The difference: in organelle inheritance the gene is in the cytoplasm and is passed on from mother to all offspring for ever; in a maternal effect the gene is in the nucleus, segregates normally, and a dd snail’s sons and daughters can carry D and have dextral offspring of their own. Imprinting and maternal effect are also confused: with imprinting the child’s own genotype matters, but only the allele from one parent is used; with maternal effect the child’s genotype does not matter at all.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -311,7 +479,7 @@ Basic and molecular genetics (5MO104)
 
 <img data-src="fig02-segmentation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><p>Each tier is a set of <strong>transcription factors</strong> (or signals) that regulate the next. The pattern gets finer at every step: one gradient → a few broad domains → 7 stripes → 14 stripes → 14 segments, each with its own identity.</p>
 <aside class="notes">
-<p>Go down the figure. Maternal genes set up the gradients. Gap genes are expressed in broad domains, and a gap mutant lacks a block of adjacent segments: Krüppel, German for cripple, lacks the thorax and anterior abdomen. Pair-rule genes are expressed in seven stripes, and mutants lack every other segment, which is where the name comes from (fushi tarazu is Japanese for “not enough segments”). Segment-polarity genes, in fourteen stripes, define the front and back of each segment; in mutants, part of each segment is replaced by a mirror image of the other part. Many are parts of signalling pathways: wingless (Wnt) and hedgehog. Hox genes then give each segment an identity.</p>
+<p>Go down the figure. Maternal genes set up the gradients. Gap genes are expressed in broad domains, and a gap mutant lacks a block of adjacent segments: Krüppel, German for cripple, lacks the thorax and anterior abdomen. Pair-rule genes are expressed in seven stripes, and mutants lack every other segment, which is where the name comes from (fushi tarazu is Japanese for “not enough segments”). Segment-polarity genes, in fourteen stripes, define the front and back of each segment; in mutants, part of each segment is replaced by a mirror image of the other part. Many are parts of signalling pathways: wingless (Wnt) and hedgehog. Hox genes then give each segment an identity. The hierarchy is also an epistasis argument: in a gap mutant the pair-rule stripes are disturbed, but in a pair-rule mutant the gap domains are normal, so the gap genes act upstream.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -324,17 +492,12 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="reading-a-stripe-enhancers-again" class="slide level2 smaller">
-<h2>Reading a stripe: enhancers again</h2>
-<p>How does a gene get expressed in exactly <strong>seven stripes</strong>? Each stripe is driven by its own <strong>enhancer</strong>.</p>
-<ul>
-<li>The <strong><em>even-skipped</em> stripe 2 enhancer</strong> (about 500 bp) contains binding sites for activators (<strong>Bicoid</strong>, <strong>Hunchback</strong>) and repressors (<strong>Giant</strong>, <strong>Krüppel</strong>).</li>
-<li>Stripe 2 forms where Bicoid and Hunchback are high <strong>and</strong> Giant and Krüppel are low: a narrow band of a few nuclei.</li>
-<li>Delete the stripe 2 enhancer: stripe 2 disappears, the other six stay. Attach it to a reporter gene: the reporter is expressed in stripe 2 only.</li>
-</ul>
-<p>This is the cis-regulatory logic of the Eukaryotic regulation unit, at work in an embryo: <strong>modular enhancers</strong> make one gene readable in many places.</p>
+<section id="reading-a-mutant-cuticle" class="slide level2 smaller">
+<h2>Reading a mutant cuticle</h2>
+
+<img data-src="fig08-cuticle-classes.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><p>Ask two questions: <strong>how many</strong> belts are left, and <strong>which</strong> are missing (a block, every other one, or part of each)? The answer names the class, and the class tells you the <strong>scale</strong> at which the gene acts.</p>
 <aside class="notes">
-<p>The eve stripe 2 enhancer is the textbook example of an enhancer acting as a logic gate: AND for the activators, NOT for the repressors. Each of the seven eve stripes is controlled by a separate enhancer (some enhancers drive two stripes), so the gene is used seven times with different inputs. The reporter-gene experiment is the standard way to define an enhancer: fuse the DNA fragment to a minimal promoter and lacZ (the same lacZ as in the lac operon!), make transgenic flies, and stain for beta-galactosidase. A mutation in a binding site within the stripe 2 enhancer changes only stripe 2: cis-acting and stripe-specific.</p>
+<p>This is how the Heidelberg screen sorted its mutants, before any gene was cloned. A gap gene works on a scale of several segments, so its loss removes a block. A pair-rule gene works on a two-segment repeat, so its loss removes every other one. A segment-polarity gene works within each segment, so all segments are there, but the naked back half of each is replaced by a mirror image of the denticle belt, giving a short larva covered in a lawn of denticles; hedgehog is named after that look. The figure is schematic. In real pair-rule mutants the missing pieces are parasegments, units offset by half a segment from the visible segments, so the remaining belts are fused pieces. The exercise asks students to classify three cuticles in words.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -347,16 +510,134 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="hox-genes-identity-of-each-segment" class="slide level2 smaller">
-<h2>Hox genes: identity of each segment</h2>
+<section id="eve-stripe-2-an-enhancer-as-a-logic-gate" class="slide level2 smaller">
+<h2><em>eve</em> stripe 2: an enhancer as a logic gate</h2>
+
+<img data-src="fig09-eve-stripe2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>The <strong><em>even-skipped</em> stripe 2 enhancer</strong> (about 500 bp) has binding sites for the activators <strong>Bicoid</strong> and <strong>Hunchback</strong> and the repressors <strong>Giant</strong> and <strong>Krüppel</strong>. Each of the seven <em>eve</em> stripes is driven by its own enhancer (some drive two).</p>
+<aside class="notes">
+<p>The eve stripe 2 enhancer is the textbook example of an enhancer acting as a logic gate: AND for the activators, NOT for the repressors. Bicoid and Hunchback are present in the whole anterior half, so on their own they would switch eve on everywhere there. Giant, on the anterior side, and Krüppel, on the posterior side, carve the stripe out: the anterior border is where Giant falls off, the posterior border is where Krüppel rises. The repressors act over short distances, so they only silence the enhancer they are bound to, not the other stripe enhancers nearby, which is why one gene can be read in seven places. The profiles in the figure are schematic, drawn to show the logic, not measured curves.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="experiments-that-define-an-enhancer" class="slide level2">
+<h2>Experiments that define an enhancer</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<ul>
+<li><strong>Delete</strong> the stripe 2 enhancer: stripe 2 disappears; the other six stay.</li>
+<li><strong>Reporter</strong>: put the enhancer in front of a minimal promoter and <em>lacZ</em>: β-galactosidase is made in stripe 2 only.</li>
+<li><strong>Remove a repressor</strong>: in a <em>giant</em> mutant embryo, stripe 2 spreads <strong>anteriorly</strong>, into the region where Giant would be. Mutating a repressor’s binding sites in the reporter has the same kind of effect.</li>
+<li><strong>Rule</strong>: removing a repressor lets the stripe grow <strong>towards where that repressor was</strong>.</li>
+<li><strong>Cis/trans</strong>: the enhancer is a DNA site, so a deletion affects only the <em>eve</em> copy on its own chromosome. The four factors are proteins and act on both copies.</li>
+</ul>
+</div><div class="column" style="width:44%;">
+<p><img data-src="img/eve-stripes.png" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Drosophila_pair_rule_pattern.png" class="photo-credit">Image: Thomas Gregor (left), Erik Clark (right), CC BY 4.0, via Wikimedia Commons</a></p>
+<p>Left: Eve protein (red) in seven stripes; a reporter driven by one enhancer (green) marks only some of them. Right: detail of the <em>eve</em> stripes.</p>
+</div></div>
+<aside class="notes">
+<p>These are the standard experiments, and they use the cis/trans logic from the lac operon and the Eukaryotic regulation unit. The reporter is the same lacZ as in the lac operon: fuse the DNA fragment to lacZ, make transgenic flies, stain for beta-galactosidase. In the photo the green reporter shows that one enhancer reproduces only part of the pattern, which is the experimental definition of a stripe-specific enhancer. The Giant result comes from Small, Blair and Levine (1992): in giant mutant embryos stripe 2 expands to the anterior. Mutating repressor sites inside the stripe 2 reporter widens the reporter stripe in the same way, which shows that the repressors act directly on the enhancer. Students predict the Krüppel case in the exercise by the same rule. The cis/trans point matters for heterozygotes: one intact enhancer still drives its own copy of eve in stripe 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hox-genes-homeotic-mutants" class="slide level2">
+<h2>Hox genes: homeotic mutants</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
 <p><strong>Homeotic</strong> mutations turn one body part into another:</p>
 <ul>
-<li><strong><em>Antennapedia</em></strong> (dominant gain-of-function): the <em>Antp</em> gene is switched on in the head, and <strong>legs grow where the antennae should be</strong>.</li>
+<li><strong><em>Antennapedia</em></strong> (dominant gain of function): <em>Antp</em> is switched on in the head, and <strong>legs grow where the antennae should be</strong>.</li>
 <li><strong><em>Ultrabithorax</em></strong> (loss of function, combined alleles in the <em>bithorax</em> complex): the third thoracic segment develops like the second: a fly with <strong>four wings</strong>.</li>
 </ul>
 <p>Ed <strong>Lewis</strong> showed that the genes of the <em>bithorax</em> complex lie in the <strong>same order</strong> on the chromosome as the segments they control. All Hox genes share a 180-bp <strong>homeobox</strong>, encoding a DNA-binding homeodomain: they are transcription factors.</p>
+</div><div class="column" style="width:38%;">
+<p><img data-src="img/antennapedia.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Antennapedia2.jpg" class="photo-credit">Photo: toony, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p>An <em>Antennapedia</em> fly: a pair of legs in place of the antennae.</p>
+</div></div>
 <aside class="notes">
-<p>Homeotic transformations are the most dramatic phenotypes in genetics, and they made sense only once it was clear that each segment has a default identity that Hox genes modify. Antennapedia gain-of-function alleles are dominant, because they express a normal protein in the wrong place, the same logic as the enhancer variants in the regulation unit: a cis-regulatory change, dominant. The four-winged fly needs a combination of mutations in regulatory regions of Ubx (bx, pbx and abx alleles), because a complete loss of Ubx is lethal. The homeobox was discovered in 1984 by comparing Antp and Ubx sequences, and was then found in every animal tested.</p>
+<p>Homeotic transformations are the most dramatic phenotypes in genetics, and they made sense only once it was clear that each segment has a default identity that Hox genes modify. In the photo, the two jointed appendages on top of the head are legs, with their segments and claws, where antennae should be. The four-winged fly needs a combination of mutations in regulatory regions of Ubx (bx, pbx and abx alleles), because a complete loss of Ubx is lethal. The homeobox was discovered in 1984 by comparing Antp and Ubx sequences, and was then found in every animal tested. The next slide gives the rule for which way a transformation goes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="which-way-does-a-segment-turn" class="slide level2">
+<h2>Which way does a segment turn?</h2>
+<p>Each segment’s identity is set by the <strong>most posterior</strong> Hox gene active in it. That gives one rule for both kinds of mutation:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Allele</th>
+<th>What goes wrong</th>
+<th>Transformation</th>
+<th>Dominance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Ubx</em> loss (<em>bx</em>, <em>pbx</em>)</td>
+<td>no Ubx in T3</td>
+<td>T3 → T2: haltere → <strong>wing</strong> (more <strong>anterior</strong>)</td>
+<td>recessive</td>
+</tr>
+<tr class="even">
+<td><em>Contrabithorax</em> (<em>Ubx</em> gain)</td>
+<td>Ubx made in T2 too</td>
+<td>T2 → T3: wing → <strong>haltere</strong> (more <strong>posterior</strong>)</td>
+<td>dominant</td>
+</tr>
+<tr class="odd">
+<td><em>Antp</em> gain</td>
+<td>Antp made in the head</td>
+<td>antenna → <strong>leg</strong> (more <strong>posterior</strong>)</td>
+<td>dominant</td>
+</tr>
+<tr class="even">
+<td><em>Antp</em> loss (in clones)</td>
+<td>no Antp in thoracic cells</td>
+<td>leg → <strong>antenna</strong> (more <strong>anterior</strong>)</td>
+<td>recessive</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Loss</strong> of a Hox gene → the segment takes a <strong>more anterior</strong> identity. <strong>Ectopic gain</strong> → <strong>more posterior</strong>.</li>
+<li><strong>Gain</strong> alleles are usually <strong>dominant</strong>: one allele that makes a normal protein in the <strong>wrong place</strong> is enough. <strong>Loss</strong> alleles are usually <strong>recessive</strong>: one working copy is enough where the gene should be on.</li>
+</ul>
+<aside class="notes">
+<p>This table turns a list of strange flies into one rule. Ubx is needed in T3; without it T3 falls back to the identity of T2, the default set by Antp, so the haltere becomes a wing. Contrabithorax alleles are regulatory gain-of-function mutations of Ubx that switch it on in T2 as well, so the wing becomes more haltere-like: the opposite direction, and dominant. Antp loss of function is lethal in whole animals, so it was studied in clones of mutant cells in the leg disc, which form antennal structures. The dominance argument is the same as for enhancer variants in the Eukaryotic regulation unit: a gain in the wrong place acts in cis and needs only one allele; a loss leaves the other allele to do the job. The exercise asks students to apply exactly this reasoning.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -372,9 +653,9 @@ Basic and molecular genetics (5MO104)
 <section id="colinearity-from-flies-to-mice" class="slide level2 smaller">
 <h2>Colinearity, from flies to mice</h2>
 
-<img data-src="fig03-hox-colinearity.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><p>The order of Hox genes on the chromosome matches the order of the body regions where they act (<strong>colinearity</strong>). Mammals have <strong>four Hox clusters</strong> (<em>Hoxa</em>–<em>d</em>, 39 genes) made by duplication of one ancestral cluster. Knocking out mouse Hox genes gives homeotic changes in <strong>vertebrae</strong>, e.g.&nbsp;a cervical vertebra that looks like a thoracic one (with ribs).</p>
+<img data-src="fig03-hox-colinearity.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><p>The order of Hox genes on the chromosome matches the order of the body regions where they act (<strong>colinearity</strong>): <em>lab</em> at one end is most <strong>anterior</strong>, <em>Abd-B</em> at the other end most <strong>posterior</strong>. Mammals have <strong>four Hox clusters</strong> (<em>Hoxa</em>–<em>d</em>, 39 genes) made by duplication of one ancestral cluster. Knocking out mouse Hox genes gives homeotic changes in <strong>vertebrae</strong>, e.g.&nbsp;a cervical vertebra that looks like a thoracic one (with ribs).</p>
 <aside class="notes">
-<p>The conservation is astonishing: the same genes, in the same order, doing the same kind of job in flies and mammals, which last shared an ancestor more than 500 million years ago. In vertebrates there is also temporal colinearity: the 3’ genes are switched on first, then the 5’ ones. Because there are four clusters, mammals have paralogs that partly cover for each other, so single knockouts often give mild phenotypes, and double or triple knockouts of a paralog group are needed for full transformations: redundancy again. Polycomb proteins keep Hox genes off in segments where they should be off, which links to chromatin memory from the regulation unit: Polycomb mutants in flies show homeotic transformations.</p>
+<p>The conservation is astonishing: the same genes, in the same order, doing the same kind of job in flies and mammals, which last shared an ancestor more than 500 million years ago. In vertebrates there is also temporal colinearity: the 3’ genes are switched on first, then the 5’ ones. Because there are four clusters, mammals have paralogs (for example Hoxa1, Hoxb1 and Hoxd1, the same paralog group as fly lab) that partly cover for each other, so single knockouts often give mild phenotypes, and double or triple knockouts of a paralog group are needed for full transformations: redundancy again, the reverse-genetics problem from the start of the lecture. Polycomb proteins keep Hox genes off in segments where they should be off, which links to chromatin memory from the regulation unit: Polycomb mutants in flies show homeotic transformations.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -387,16 +668,182 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="eyeless-and-pax6-one-master-gene-for-eyes" class="slide level2 smaller">
+<section id="ordering-genes-in-a-pathway-by-epistasis" class="slide level2">
+<h2>Ordering genes in a pathway by epistasis</h2>
+<p><strong>Method</strong> (as in Extensions to Mendel): find two mutants with <strong>opposite</strong> phenotypes, make the double mutant, and see which phenotype it shows. The double mutant looks like the <strong>downstream</strong> gene.</p>
+<p><strong>Worked example:</strong> vulva induction in <em>C. elegans</em>. A signal from one cell tells three skin cells to form the vulva.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>Phenotype</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>wild type</td>
+<td>one vulva</td>
+</tr>
+<tr class="even">
+<td><em>let-23</em> loss of function (receptor, EGFR-like)</td>
+<td><strong>vulvaless</strong></td>
+</tr>
+<tr class="odd">
+<td><em>let-60</em> gain of function (Ras, stuck “on”)</td>
+<td><strong>multivulva</strong> (extra vulvae)</td>
+</tr>
+<tr class="even">
+<td><em>let-23</em>(lf); <em>let-60</em>(gf)</td>
+<td><strong>multivulva</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The double looks like <em>let-60</em>: Ras acts <strong>downstream</strong> of the receptor. An active Ras does not need the receptor.</p>
+<aside class="notes">
+<p>Go through the logic slowly. If the receptor were downstream of Ras, a dead receptor would block the signal whatever Ras does, and the double would be vulvaless. It is multivulva, so Ras must act after the receptor: a permanently active Ras bypasses the missing receptor. The order fits the biochemistry found later: receptor tyrosine kinase, then Ras, then the MAP kinase cascade, the same pathway that is mutated in many cancers (Part 7). The rule only works cleanly when the single mutants have opposite phenotypes; if both mutants look the same, the double mutant tells you nothing about order. The same reasoning ordered lin-4 and lin-14 in the last unit, and students use it for the ced genes in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="c.-elegans-a-body-built-cell-by-cell" class="slide level2">
+<h2><em>C. elegans</em>: a body built cell by cell</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<ul>
+<li>The adult hermaphrodite has <strong>959 somatic nuclei</strong>. John <strong>Sulston</strong> traced every division from the zygote: the <strong>cell lineage</strong> is <strong>invariant</strong>, the same in every worm.</li>
+<li>So a mutant phenotype can be read <strong>cell by cell</strong>: which cell divided wrongly, or took the wrong fate?</li>
+<li><strong>Heterochronic</strong> genes (<em>lin-4</em>, <em>lin-14</em>, <em>let-7</em>) decide <em>when</em> in the lineage each fate happens (last unit).</li>
+<li><strong>Laser ablation</strong> of single cells shows which cells signal to their neighbours.</li>
+</ul>
+</div><div class="column" style="width:42%;">
+<p><img data-src="img/c-elegans-adult.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Adult_Caenorhabditis_elegans.jpg" class="photo-credit">Photo: Zeynep F. Altun (WormAtlas), CC BY-SA 2.5, via Wikimedia Commons</a></p>
+<p>An adult hermaphrodite, about 1 mm long, in DIC microscopy: transparent, so every nucleus can be followed.</p>
+</div></div>
+<aside class="notes">
+<p>The worm is the opposite extreme to the fly: few cells, every one named and known. Because the animal is transparent, the divisions can be followed live under the microscope, which is how Sulston built the lineage. Laser ablation was used, for example, to find the anchor cell that induces the vulva in the previous slide: kill it, and no vulva forms. The next slide is the cell-death story, which students order by epistasis in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="programmed-cell-death-the-ced-genes" class="slide level2">
+<h2>Programmed cell death: the <em>ced</em> genes</h2>
+<p>During development, <strong>131</strong> of the cells made in the hermaphrodite die by <strong>programmed cell death</strong>. Mutant screens found the genes:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Mutant</th>
+<th>Phenotype</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>ced-3</em> loss of function</td>
+<td>the 131 cells <strong>survive</strong></td>
+</tr>
+<tr class="even">
+<td><em>ced-4</em> loss of function</td>
+<td>the 131 cells <strong>survive</strong></td>
+</tr>
+<tr class="odd">
+<td><em>ced-9</em> loss of function</td>
+<td><strong>extra</strong> cells die, embryo dies</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>ced-3</em> and <em>ced-4</em> are needed <strong>for</strong> death; <em>ced-9</em> <strong>protects</strong> cells: opposite phenotypes, so double mutants can order them (exercise).</li>
+<li>Human counterparts: <strong>caspases</strong> (<em>ced-3</em>), <strong><em>APAF1</em></strong> (<em>ced-4</em>), <strong><em>BCL2</em></strong> (<em>ced-9</em>). Human BCL2 can replace <em>ced-9</em> in transgenic worms. (Nobel Prize 2002: Brenner, Horvitz, Sulston.)</li>
+</ul>
+<aside class="notes">
+<p>The cell-death genes are a clean epistasis problem, and the exercise asks students to order all three from double-mutant data, using the method from two slides back. Do not give the order here; ask the room only what kind of double mutant they would need: one that combines a ced-9 loss with a loss of one of the death genes. The deep conservation is the other point: the worm genes have human counterparts that control apoptosis, and a worm missing ced-9 can be rescued by the human gene. BCL2 over-expression in follicular lymphoma, caused by a translocation, blocks apoptosis: an oncogene, which returns in Part 7.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dose-dominant-phenotype-recessive-lethal" class="slide level2">
+<h2>Dose: dominant phenotype, recessive lethal</h2>
+<p>Some developmental genes are <strong>haploinsufficient</strong>: one working copy is not enough. Their loss-of-function alleles then have <strong>two</strong> phenotypes, one in heterozygotes and one in homozygotes.</p>
+<p><strong>Worked example: mouse <em>Brachyury</em> (<em>T</em>)</strong>, a transcription factor needed for posterior mesoderm.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>Phenotype</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+/+</td>
+<td>normal tail</td>
+</tr>
+<tr class="even">
+<td><em>T</em>/+</td>
+<td><strong>short tail</strong> (dominant, visible)</td>
+</tr>
+<tr class="odd">
+<td><em>T</em>/<em>T</em></td>
+<td><strong>dies in mid-gestation</strong>: no notochord, no posterior body (recessive lethal)</td>
+</tr>
+</tbody>
+</table>
+<p><em>T</em>/+ × <em>T</em>/+ → ¼ +/+ : ½ <em>T</em>/+ : ¼ <em>T</em>/<em>T</em>. Among the <strong>live-born</strong> pups: <strong>1 normal : 2 short-tailed</strong>. The missing quarter is the 2 : 1 signature of a recessive lethal, as for the yellow mouse in Extensions to Mendel.</p>
+<aside class="notes">
+<p>The key is to keep the two phenotypes apart: the short tail is a dominant phenotype, because half the dose of Brachyury is not enough for a full tail; the lethality is recessive, because only animals with no working copy die. One allele, two dominance relations, depending on which trait you look at. To get the ratio among survivors, cross out the dead quarter and renormalise over the three quarters left, as for the yellow mouse. The same logic applies to PAX6 on the next slide, which students work through in the exercise. The Brachyury mutant was described in 1927 by Dobrovolskaia-Zavadskaia, among the first developmental mutants in the mouse.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="eyeless-and-pax6-one-master-gene-for-eyes" class="slide level2">
 <h2><em>eyeless</em> and <em>PAX6</em>: one master gene for eyes?</h2>
 <ul>
-<li><strong><em>eyeless</em></strong> (<em>Drosophila</em>): flies lacking it have small or no eyes. <strong><em>Small eye</em></strong> (mouse, <em>Pax6</em>) and <strong>aniridia</strong> (human, <em>PAX6</em>) are caused by mutations in orthologous genes: in mice and humans <strong>one</strong> mutant copy is enough to give a phenotype (<strong>haploinsufficiency</strong>).</li>
+<li><strong><em>eyeless</em></strong> (<em>Drosophila</em>): flies lacking it have small or no eyes. <strong><em>Small eye</em></strong> (mouse, <em>Pax6</em>) and <strong>aniridia</strong> (human, <em>PAX6</em>) are caused by mutations in orthologous genes: in mice and humans <strong>one</strong> mutant copy is enough to give a phenotype (<strong>haploinsufficiency</strong>), and loss of both copies is far more severe.</li>
 <li>Expressing <em>eyeless</em> in other imaginal discs gives <strong>ectopic eyes</strong> on legs, wings and antennae (Gehring lab, 1995). <strong>Mouse <em>Pax6</em></strong> does the same in flies.</li>
 <li>Flies, mice and humans built their eyes very differently, yet use a related transcription factor at the top of the eye programme: <strong>deep homology</strong>.</li>
 </ul>
 <p>Flies actually have <strong>two</strong> <em>PAX6</em> genes, <em>eyeless</em> and <em>twin of eyeless</em>; which one counts as “the” ortholog depends on the method. You will see this in Find it and in R.</p>
 <aside class="notes">
-<p>The ectopic-eye experiment used GAL4/UAS (two slides on) to switch on eyeless in leg and wing discs; the extra eyes are compound fly eyes, not mouse eyes, because eyeless switches on the fly’s own eye programme. Aniridia: absence of the iris, inherited as an autosomal dominant, because half the PAX6 dose is not enough; homozygous Small eye mice and the rare human PAX6 compound heterozygotes have no eyes and severe brain defects. The two-paralog situation in flies is a nice honest complication for the database part: orthology is inferred, and methods can disagree.</p>
+<p>The ectopic-eye experiment used GAL4/UAS (next slide) to switch on eyeless in leg and wing discs; the extra eyes are compound fly eyes, not mouse eyes, because eyeless switches on the fly’s own eye programme. Aniridia, absence of the iris, is inherited as an autosomal dominant, because half the PAX6 dose is not enough; homozygous Small eye mice and the rare human PAX6 compound heterozygotes have no eyes and severe brain defects. That is the Brachyury pattern again: a dominant visible phenotype plus a recessive lethal. The two-paralog situation in flies is a nice honest complication for the database part: orthology is inferred, and methods can disagree.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -409,39 +856,16 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="c.-elegans-a-body-built-cell-by-cell" class="slide level2 smaller">
-<h2><em>C. elegans</em>: a body built cell by cell</h2>
-<ul>
-<li>The adult hermaphrodite has <strong>959 somatic nuclei</strong>. John <strong>Sulston</strong> traced every division from the zygote: the <strong>cell lineage</strong> is <strong>invariant</strong>, the same in every worm.</li>
-<li>So a mutant phenotype can be read <strong>cell by cell</strong>: which cell divided wrongly, or took the wrong fate?</li>
-<li><strong>131</strong> cells die by <strong>programmed cell death</strong> during development. Mutants in <em>ced-3</em> and <em>ced-4</em> keep them alive; <em>ced-9</em> protects cells. The human counterparts (caspases, <em>APAF1</em>, <em>BCL2</em>) control apoptosis and cancer. (Nobel Prize 2002: Brenner, Horvitz, Sulston.)</li>
-<li><strong>Heterochronic</strong> genes (<em>lin-4</em>, <em>lin-14</em>, <em>let-7</em>) decide <em>when</em> in the lineage each fate happens (last unit).</li>
-<li><strong>Laser ablation</strong> of single cells shows which cells signal to their neighbours.</li>
-</ul>
-<aside class="notes">
-<p>The worm is the opposite extreme to the fly: few cells, every one named and known. The cell-death genes are a nice epistasis story: ced-9 loss kills cells that should live, but ced-9; ced-3 double mutants survive, so ced-3 is downstream: ced-9 inhibits ced-4, which activates the caspase ced-3. Mammalian BCL2 can replace worm ced-9 in transgenic worms, another case of deep conservation, and BCL2 over-expression in follicular lymphoma (a translocation) is an oncogene that blocks apoptosis: Part 7.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="genetic-tools" class="slide level2 smaller">
-<h2>Genetic tools</h2>
+<section id="genetic-tools-gal4uas-and-crispr" class="slide level2 smaller">
+<h2>Genetic tools: GAL4/UAS and CRISPR</h2>
 
-<img data-src="fig05-tools.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
+<img data-src="fig05-tools.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><ul>
 <li><strong>Transgenics</strong>: put new DNA into the germ line (P elements in flies, injection in worms and mice).</li>
-<li><strong>GAL4/UAS</strong>: switch on any transgene (or an RNAi hairpin) in any tissue, by crossing a driver line to a responder line.</li>
-<li><strong>CRISPR–Cas9</strong>: cut a chosen site; error-prone repair gives a <strong>knockout</strong>; repair with a template gives a precise <strong>edit</strong>. Mosaic founders are crossed to get a heritable allele.</li>
+<li><strong>GAL4/UAS</strong>: switch on any transgene (or an RNAi hairpin) in any tissue, by <strong>crossing</strong> a driver line to a responder line. The ectopic eyes were made this way.</li>
+<li><strong>CRISPR–Cas9</strong>: cut a chosen site; error-prone repair gives a <strong>knockout</strong>; repair with a template gives a precise <strong>edit</strong>.</li>
 </ul>
 <aside class="notes">
-<p>GAL4/UAS is a binary system, which is why it is so powerful: the driver decides where and when, the responder decides what. The same principle (a yeast transcription factor and its binding site, foreign to the fly) shows the modularity of enhancers. In mice the equivalent tissue-specific tool is Cre/lox: Cre recombinase expressed in one tissue deletes a gene flanked by loxP sites, a conditional knockout, so you can study a gene whose full knockout is lethal. CRISPR: the guide RNA finds the site by base pairing, like a microRNA; the PAM (NGG for the common Cas9) must sit next to it. The founders (F0) are usually mosaics of different edits, so you cross them and select germ-line transmission, then make homozygotes: Mendel again.</p>
+<p>GAL4/UAS is a binary system, which is why it is so powerful: the driver decides where and when, the responder decides what. Neither line has a phenotype on its own; only their progeny do. The same principle (a yeast transcription factor and its binding site, foreign to the fly) shows the modularity of enhancers. In mice the equivalent tissue-specific tool is Cre/lox: Cre recombinase expressed in one tissue deletes a gene flanked by loxP sites, a conditional knockout, so you can study a gene whose full knockout is lethal. CRISPR: the guide RNA finds the site by base pairing, like a microRNA; the PAM (NGG for the common Cas9) must sit next to it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -454,7 +878,30 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="orthologs-across-model-organisms" class="slide level2 smaller">
+<section id="from-a-crispr-founder-to-a-homozygous-mutant" class="slide level2">
+<h2>From a CRISPR founder to a homozygous mutant</h2>
+<p>The injected animal (<strong>F0</strong>, the founder) is usually a <strong>mosaic</strong>: Cas9 cuts after the embryo has started dividing, so different cells carry different edits, or none.</p>
+<ol type="1">
+<li><strong>F0 × wild type.</strong> Each F1 offspring gets <strong>one</strong> chromosome from the founder’s germ line: it is a <strong>heterozygote</strong> for one defined allele (or wild type).</li>
+<li><strong>Genotype the F1</strong> by sequencing the target site. Keep carriers of a useful allele, e.g.&nbsp;a frameshift, and discard in-frame changes.</li>
+<li><strong>F1 × F1</strong> carriers of the <strong>same</strong> allele → F2: Mendel’s monohybrid cross, 1 : 2 : 1.</li>
+</ol>
+<p>The phenotype of a knockout is studied in <strong>homozygotes of one defined allele</strong>, never in the mosaic founder.</p>
+<aside class="notes">
+<p>This is the reverse-genetics counterpart of the screen scheme earlier: in both, you first need to fix one mutant chromosome in a line, then make homozygotes by crossing heterozygous siblings. Why not look at the founder? Because its cells are a mixture: some carry frameshifts, some in-frame deletions that may keep the protein working, some no edit; its phenotype is uninterpretable and its germ line can pass on several different alleles. Why sequence? Because the edit is a random repair product; you choose an allele that destroys the reading frame. If the homozygote is lethal, keep the line as heterozygotes, over a balancer in flies, or use a conditional allele in mice.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="orthologs-across-model-organisms" class="slide level2">
 <h2>Orthologs across model organisms</h2>
 <p><strong>Orthologs</strong> are genes in different species that descend from one gene in their last common ancestor; <strong>paralogs</strong> arise by duplication within a lineage.</p>
 <table class="caption-top">
@@ -506,6 +953,52 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>“A <em>bcd</em>/<em>bcd</em> fly must look abnormal.”</strong> No: her own mother was <em>bcd</em>/+ and gave her egg <em>bicoid</em> mRNA. Only her <strong>embryos</strong> are abnormal.</li>
+<li><strong>“Maternal effect is the same as mitochondrial inheritance.”</strong> No: a maternal-effect gene is <strong>nuclear</strong> and segregates normally; its effect is just delayed by one generation.</li>
+<li><strong>“The epistatic gene acts first.”</strong> No: with opposite single-mutant phenotypes, the double mutant shows the <strong>downstream</strong> gene.</li>
+<li><strong>“Dominant means gain of function.”</strong> No: haploinsufficient losses (<em>PAX6</em>, <em>Brachyury</em>) are dominant too. And <strong>trans-acting</strong> does not mean dominant.</li>
+<li><strong>“A Hox loss of function makes extra structures.”</strong> Usually it makes a segment more <strong>anterior</strong>; extra structures (four wings) come from one segment copying another.</li>
+<li><strong>“Score the CRISPR founder.”</strong> No: it is a mosaic; score homozygotes of one allele, two generations later.</li>
+</ul>
+<aside class="notes">
+<p>Each of these comes up every year in exams. Ask students to explain each “No” in their own words before you reveal the explanation. The four-wing point is subtle: the fly has extra wings, but nothing new was made; T3 simply built what T2 builds, because Ubx was missing. The trans-acting point links back to the lac operon and Eukaryotic regulation: a transcription-factor mutation acts on both target copies, but it is still recessive if one working copy of the factor is enough.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself" class="slide level2">
+<h2>Check yourself</h2>
+<ol type="1">
+<li>A sinistral <em>Lymnaea</em> snail is found in a pond. What can you say for certain about its <strong>mother’s</strong> genotype? About its <strong>own</strong>?</li>
+<li>A fly stock is <em>m</em>/TM3. You stop checking it for 20 generations. Is <em>m</em> still there? How do you know without testing?</li>
+<li>You want to order two genes in a pathway. Mutant <em>a</em> and mutant <em>b</em> both lack a structure. Can the double mutant tell you which gene acts first? What would you look for instead?</li>
+<li>In a heterozygote for a deletion of an enhancer of gene <em>G</em>, is <em>G</em> still expressed in that enhancer’s tissue? And in a heterozygote for a loss-of-function allele of the transcription factor that binds the enhancer?</li>
+</ol>
+<aside class="notes">
+<p>Answers. 1: its mother was dd, since coiling follows the mother’s genotype; the snail itself carries at least one d (from its mother), so it is Dd or dd, and you would find out from its own offspring. 2: yes; both homozygous classes die, so every surviving fly is m over TM3, recognisable by Stubble, and the inversions stop recombination from separating m from its chromosome. 3: no; if both single mutants lack the structure, the double mutant also lacks it, whatever the order. Look for a mutant with the opposite phenotype (too much of the structure), often a gain-of-function allele as with let-60, and combine it with the loss. 4: yes, from the intact copy only (the enhancer acts in cis); in the factor heterozygote both copies of G are still expressed, at the level one working factor allele allows (trans), and often normally, if the factor is haplosufficient.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2 smaller">
 <h2>Summary</h2>
 <table class="caption-top">
@@ -525,36 +1018,44 @@ Basic and molecular genetics (5MO104)
 <td>phenotype → gene (screens) / gene → phenotype (RNAi, CRISPR)</td>
 </tr>
 <tr class="even">
-<td>Heidelberg screen</td>
-<td>EMS, balancers, embryonic lethals, complementation groups; gap, pair-rule, segment polarity</td>
+<td>Balancer</td>
+<td>inversions + dominant marker + recessive lethal: the stock breeds true</td>
 </tr>
 <tr class="odd">
+<td>Recessive screen</td>
+<td>one line per F1 male; sibling cross; homozygous embryos in F3 (maternal effect: F4)</td>
+</tr>
+<tr class="even">
 <td>Maternal effect</td>
-<td>embryo phenotype set by the mother’s genotype; <em>bicoid</em> mRNA gradient</td>
+<td>embryo phenotype = mother’s genotype; ratios appear one generation late</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Segmentation hierarchy</td>
-<td>maternal → gap → pair-rule (7 stripes) → segment polarity (14) → Hox</td>
+<td>maternal → gap (blocks) → pair-rule (every other) → segment polarity (mirror) → Hox</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Stripe enhancers</td>
-<td><em>eve</em> stripe 2: activated by Bcd, Hb; repressed by Gt, Kr</td>
-</tr>
-<tr class="even">
-<td>Hox genes</td>
-<td>homeotic transformations; homeobox; colinearity; four clusters in mammals</td>
+<td><em>eve</em> stripe 2 = Bcd AND Hb AND NOT Gt AND NOT Kr; cis-acting</td>
 </tr>
 <tr class="odd">
-<td><em>PAX6</em> / <em>eyeless</em></td>
-<td>eye development from flies to humans; ectopic eyes; haploinsufficient in humans</td>
+<td>Hox genes</td>
+<td>loss → more anterior, ectopic gain → more posterior; gain dominant; colinearity</td>
 </tr>
 <tr class="even">
-<td><em>C. elegans</em> lineage</td>
-<td>959 somatic nuclei, invariant; 131 programmed deaths (<em>ced</em> genes)</td>
+<td>Epistasis</td>
+<td>opposite single mutants: the double shows the downstream gene</td>
+</tr>
+<tr class="odd">
+<td><em>C. elegans</em></td>
+<td>959 somatic nuclei, invariant lineage; 131 programmed deaths (<em>ced</em> genes)</td>
+</tr>
+<tr class="even">
+<td>Dose</td>
+<td>haploinsufficient + recessive lethal: 1 : 2 among survivors (<em>T</em>, <em>PAX6</em>)</td>
 </tr>
 <tr class="odd">
 <td>Tools</td>
-<td>transgenics, GAL4/UAS, CRISPR knockouts and edits, conditional knockouts</td>
+<td>GAL4/UAS, CRISPR; mosaic F0 → F1 heterozygotes → F2 homozygotes</td>
 </tr>
 <tr class="even">
 <td>Orthologs</td>
@@ -563,7 +1064,7 @@ Basic and molecular genetics (5MO104)
 </tbody>
 </table>
 <aside class="notes">
-<p>Revision sheet. The single idea that ties Part 6 together: development is gene regulation in time and space, built from the same parts (cis-acting sites, trans-acting factors, RNA regulators, chromatin memory) that we met in the first three units.</p>
+<p>Revision sheet. The single idea that ties Part 6 together: development is gene regulation in time and space, built from the same parts (cis-acting sites, trans-acting factors, RNA regulators, chromatin memory) that we met in the first three units, and analysed with the same Mendelian tools as in Part 1: crosses, ratios, complementation, dominance and epistasis.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -579,12 +1080,12 @@ Basic and molecular genetics (5MO104)
 <section id="where-this-leads" class="slide level2">
 <h2>Where this leads</h2>
 <ul>
-<li><strong>Part 7: Cancer genetics.</strong> Many developmental genes (<em>SHH</em>, <em>WNT</em>, <em>NOTCH</em>, <em>HMGA2</em>, <em>BCL2</em>) return as oncogenes and tumour suppressors when they are switched on in the wrong place or time.</li>
+<li><strong>Part 7: Cancer genetics.</strong> Many developmental genes (<em>SHH</em>, <em>WNT</em>, <em>NOTCH</em>, <em>HMGA2</em>, <em>BCL2</em>) and the receptor–Ras pathway return as oncogenes and tumour suppressors when they are switched on in the wrong place or time.</li>
 <li><strong>Part 7: Complex traits.</strong> Most human variation in shape and size comes from regulatory variants in developmental genes.</li>
 <li><strong>Ethics.</strong> CRISPR in embryos and the germ line.</li>
 </ul>
 <aside class="notes">
-<p>Point forward. In the exercise students design and interpret screens and crosses by hand (maternal effect, balancers, epistasis in the hierarchy), look up PAX6/eyeless and a Hox gene across the model-organism databases, and in R they build a presence/absence heat map of orthologs with left_join.</p>
+<p>Point forward. In the exercise students design and interpret screens and crosses by hand (balancers, screen generations, maternal effect, cuticle classes, the stripe 2 enhancer, Hox alleles, epistasis in the ced pathway, PAX6 dose, CRISPR founders), look up PAX6/eyeless and a Hox gene across the model-organism databases, and in R they build a presence/absence heat map of orthologs with left_join.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

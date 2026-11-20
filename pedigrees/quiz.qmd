@@ -171,3 +171,17 @@ $$\frac{nq}{1 - (1-q)^n} = \frac{3 \times 1/4}{1 - (3/4)^3} \approx 1.30,$$
 
 that is 1.30/3 ≈ 0.43 per child. This is **ascertainment bias**: how families are found changes the ratio we observe.
 :::
+
+---
+
+**Q12.** A woman's **maternal grandfather** had haemophilia A (X-linked recessive). Her mother and she are unaffected, and her father is unaffected. What is the probability that her first son has haemophilia A?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Which X did the grandfather give to his daughter? Then walk down the family one transmission at a time.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+An affected man gives his X<sup>a</sup> to **every** daughter, so her mother is an **obligate carrier** (probability 1). She got one of her mother's two X chromosomes: carrier with probability ½. Her son gets one of her two X chromosomes: ½. Her father does not matter, because a son gets his father's Y.
+
+$$P = 1 \times \tfrac12 \times \tfrac12 = \tfrac14.$$
+:::

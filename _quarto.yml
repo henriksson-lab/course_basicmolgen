@@ -41,6 +41,8 @@ website:
             href: intro/install.qmd
           - text: Glossary
             href: dictionary.qmd
+          - text: Image credits
+            href: credits.qmd
       # ----------------------------------------------------------------------
       # Order is defined HERE, not in filenames. To reorder a unit, move its
       # block; never rename its folder. The agreed order is in

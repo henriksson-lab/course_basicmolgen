@@ -108,3 +108,27 @@ Where does the ribosome stop on the leader, and which hairpin can then form?
 ::: {.callout-note collapse="true" title="Answer"}
 Transcription **continues**. With little tryptophan, few charged tRNA^Trp^ are available, so the ribosome **stalls** at the two Trp codons in leader region 1. Region 2 is then free to pair with region 3 (the antiterminator), so the 3:4 terminator hairpin cannot form and RNA polymerase goes on into the structural genes. With plenty of tryptophan the ribosome covers region 2, 3:4 forms, and transcription stops.
 :::
+
+---
+
+**Q9.** Predict β-galactosidase and permease for F′ *I*^+^ *O*^c^ *Z*^+^ *Y*^−^ / *I*^+^ *O*^+^ *Z*^−^ *Y*^+^. Use the three steps from the lecture.
+
+::: {.callout-tip collapse="true" title="Hint"}
+Step 1: which repressor is in the cell? Step 2: which operators are free, without and with inducer? Step 3: what does each transcribed copy make?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Step 1: normal repressor. Step 2: the F′ operator is *O*^c^, always free; the chromosome operator is *O*^+^, free only with inducer. Step 3: the F′ copy makes active β-gal all the time but no permease; the chromosome copy makes permease (and inactive β-gal) only with inducer. So β-gal is **constitutive** and permease **inducible**: the two enzymes of one cell behave differently, which only a cis-acting site can cause.
+:::
+
+---
+
+**Q10.** "*lacI*^−^ acts in trans, so it must be dominant." What is wrong with this statement?
+
+::: {.callout-tip collapse="true" title="Hint"}
+What does the cis–trans test ask, and what does a dominance test ask?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Cis/trans and dominance are separate questions. Trans means that the gene acts through a diffusible product that reaches both copies. *I*^−^ acts in trans, but it is **recessive**: in F′ *I*^+^ / *I*^−^ the normal repressor from the other copy controls both operators. *I*^s^ also acts in trans and is **dominant**. Likewise, *O*^c^ acts only in cis, yet it is dominant for the genes on its own copy.
+:::

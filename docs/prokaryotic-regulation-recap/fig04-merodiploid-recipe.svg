@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig04: the three-step recipe for predicting any lac merodiploid (or haploid).
+       Step 1 is about the cell (trans: one repressor pool for both copies).
+       Step 2 is about each copy separately (cis: an operator only controls its own genes).
+       Step 3 reads off the products of each transcribed copy, then compares no inducer with inducer. -->
+  <defs>
+    <marker id="arr" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#5c6b7a"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Step 1 ===== -->
+  <rect x="12" y="12" width="300" height="300" rx="10" fill="#eef4f8" stroke="#2a6f97" stroke-width="2"/>
+  <circle cx="44" cy="46" r="18" fill="#2a6f97"/>
+  <text x="44" y="53" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="72" y="44" font-size="18" font-weight="bold" fill="#1b2a3a">Which repressor</text>
+  <text x="72" y="66" font-size="18" font-weight="bold" fill="#1b2a3a">is in the cell?</text>
+  <text x="30" y="98" font-size="14" fill="#2a6f97">the whole cell: acts in trans</text>
+  <text x="30" y="134" font-size="15" fill="#1b2a3a">any <tspan font-style="italic">I</tspan><tspan dy="-6" font-size="11">s</tspan><tspan dy="6"> copy?</tspan></text>
+  <text x="46" y="156" font-size="15" fill="#1b2a3a">→ super-repressor: blocks</text>
+  <text x="46" y="176" font-size="15" fill="#1b2a3a">every <tspan font-style="italic">O</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6">, inducer or not</tspan></text>
+  <text x="30" y="210" font-size="15" fill="#1b2a3a">else any <tspan font-style="italic">I</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6"> copy?</tspan></text>
+  <text x="46" y="232" font-size="15" fill="#1b2a3a">→ normal repressor: blocks</text>
+  <text x="46" y="252" font-size="15" fill="#1b2a3a">every <tspan font-style="italic">O</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6"> without inducer</tspan></text>
+  <text x="30" y="286" font-size="15" fill="#1b2a3a">only <tspan font-style="italic">I</tspan><tspan dy="-6" font-size="11">−</tspan><tspan dy="6">? → no repressor at all</tspan></text>
+
+  <path d="M314,162 L340,162" stroke="#5c6b7a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Step 2 ===== -->
+  <rect x="346" y="12" width="300" height="300" rx="10" fill="#fbeeee" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="378" cy="46" r="18" fill="#c0392b"/>
+  <text x="378" y="53" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="406" y="44" font-size="18" font-weight="bold" fill="#1b2a3a">Is each copy's</text>
+  <text x="406" y="66" font-size="18" font-weight="bold" fill="#1b2a3a">operator free?</text>
+  <text x="364" y="98" font-size="14" fill="#c0392b">copy by copy: acts in cis</text>
+  <text x="364" y="134" font-size="15" fill="#1b2a3a"><tspan font-style="italic">O</tspan><tspan dy="-6" font-size="11">c</tspan><tspan dy="6"> → always free</tspan></text>
+  <text x="380" y="156" font-size="15" fill="#1b2a3a">(no repressor can bind it)</text>
+  <text x="364" y="192" font-size="15" fill="#1b2a3a"><tspan font-style="italic">O</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6"> → free only if step 1</tspan></text>
+  <text x="380" y="214" font-size="15" fill="#1b2a3a">leaves it unblocked</text>
+  <text x="364" y="252" font-size="15" fill="#1b2a3a">a free operator: that copy</text>
+  <text x="364" y="274" font-size="15" fill="#1b2a3a">is <tspan font-weight="bold">transcribed</tspan></text>
+
+  <path d="M648,162 L674,162" stroke="#5c6b7a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Step 3 ===== -->
+  <rect x="680" y="12" width="306" height="300" rx="10" fill="#eef5ea" stroke="#3f7f2d" stroke-width="2"/>
+  <circle cx="712" cy="46" r="18" fill="#3f7f2d"/>
+  <text x="712" y="53" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="740" y="44" font-size="18" font-weight="bold" fill="#1b2a3a">What does each</text>
+  <text x="740" y="66" font-size="18" font-weight="bold" fill="#1b2a3a">transcribed copy make?</text>
+  <text x="698" y="98" font-size="14" fill="#3f7f2d">read the genes on that copy</text>
+  <text x="698" y="134" font-size="15" fill="#1b2a3a"><tspan font-style="italic">Z</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6"> → active β-galactosidase</tspan></text>
+  <text x="698" y="158" font-size="15" fill="#1b2a3a"><tspan font-style="italic">Y</tspan><tspan dy="-6" font-size="11">+</tspan><tspan dy="6"> → permease</tspan></text>
+  <text x="698" y="182" font-size="15" fill="#1b2a3a"><tspan font-style="italic">Z</tspan><tspan dy="-6" font-size="11">−</tspan><tspan dy="6">, </tspan><tspan font-style="italic">Y</tspan><tspan dy="-6" font-size="11">−</tspan><tspan dy="6"> → nothing that works</tspan></text>
+  <text x="698" y="222" font-size="15" fill="#1b2a3a">Do steps 1–3 <tspan font-weight="bold">without</tspan> and</text>
+  <text x="698" y="244" font-size="15" fill="#1b2a3a"><tspan font-weight="bold">with</tspan> inducer, then name it:</text>
+  <text x="698" y="272" font-size="15" fill="#1b2a3a">both → <tspan font-weight="bold">constitutive</tspan></text>
+  <text x="698" y="294" font-size="15" fill="#1b2a3a">with only → <tspan font-weight="bold">inducible</tspan>; never → <tspan font-weight="bold">none</tspan></text>
+
+  <!-- footer -->
+  <text x="12" y="346" font-size="15" fill="#5c6b7a">Genes not written in the genotype are wild type. Assumes a gratuitous inducer (IPTG): it reaches the repressor</text>
+  <text x="12" y="368" font-size="15" fill="#5c6b7a">whatever the <tspan font-style="italic">lacZ</tspan> and <tspan font-style="italic">lacY</tspan> genotypes. No CAP, no leaky basal expression.</text>
+</svg>

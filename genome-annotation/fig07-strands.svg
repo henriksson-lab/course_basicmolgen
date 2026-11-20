@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 36 900 262" font-family="Helvetica, Arial, sans-serif" width="900" height="262">
+  <!-- Genes on the two strands of a chromosome, with illustrative coordinates. Scale x = 150 + bp * 0.071.
+       Gene A: plus strand, 2,000-4,500. Gene B: minus strand, 6,000-8,500. -->
+  <!-- gene A, plus strand: arrow points right -->
+  <path d="M292,50 L455,50 L469.5,62 L455,74 L292,74 Z" fill="#2a6f97"/>
+  <text x="375" y="67" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">gene A</text>
+  <g font-size="12" fill="#2a6f97">
+    <text x="292" y="92">5' end (start): 2,000</text>
+    <text x="479" y="67">3' end: 4,500</text>
+  </g>
+
+  <!-- the two strands -->
+  <line x1="150" y1="110" x2="860" y2="110" stroke="#1b2a3a" stroke-width="3"/>
+  <line x1="150" y1="128" x2="860" y2="128" stroke="#8a97a4" stroke-width="3"/>
+  <g font-size="13" fill="#1b2a3a">
+    <text x="20" y="115">plus strand</text>
+    <text x="20" y="133" fill="#5a6b7a">minus strand</text>
+    <text x="140" y="115" text-anchor="end">5'</text><text x="868" y="115">3'</text>
+    <text x="140" y="133" text-anchor="end" fill="#5a6b7a">3'</text><text x="868" y="133" fill="#5a6b7a">5'</text>
+  </g>
+
+  <!-- gene B, minus strand: arrow points left -->
+  <path d="M753.5,150 L590.5,150 L576,162 L590.5,174 L753.5,174 Z" fill="#bc4749"/>
+  <text x="670" y="167" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">gene B</text>
+  <g font-size="12" fill="#bc4749">
+    <text x="566" y="167" text-anchor="end">3' end: 6,000</text>
+    <text x="753.5" y="192" text-anchor="end">5' end (start): 8,500</text>
+  </g>
+
+  <!-- coordinate axis -->
+  <line x1="150" y1="214" x2="860" y2="214" stroke="#1b2a3a" stroke-width="1.2"/>
+  <g stroke="#1b2a3a" stroke-width="1.2">
+    <line x1="150" y1="214" x2="150" y2="219"/><line x1="292" y1="214" x2="292" y2="219"/>
+    <line x1="434" y1="214" x2="434" y2="219"/><line x1="576" y1="214" x2="576" y2="219"/>
+    <line x1="718" y1="214" x2="718" y2="219"/><line x1="860" y1="214" x2="860" y2="219"/>
+  </g>
+  <g font-size="12" fill="#4a5866" text-anchor="middle">
+    <text x="150" y="234">0</text><text x="292" y="234">2,000</text><text x="434" y="234">4,000</text>
+    <text x="576" y="234">6,000</text><text x="718" y="234">8,000</text><text x="860" y="234">10,000</text>
+  </g>
+  <text x="505" y="254" font-size="13" fill="#1b2a3a" text-anchor="middle">coordinate (bp), always counted along the plus strand →</text>
+  <text x="20" y="286" font-size="13" fill="#5a6b7a">A table lists both genes with start &lt; end (A: 2,000–4,500, B: 6,000–8,500). Only the strand column says where B begins.</text>
+</svg>

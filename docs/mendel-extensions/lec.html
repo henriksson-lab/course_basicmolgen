@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -158,14 +158,21 @@ Basic and molecular genetics (5MO104)
 <section id="about-this-lecture" class="slide level2 smaller">
 <h2>About this lecture</h2>
 <p>Mendel picked traits that behave simply: <strong>one gene, two alleles, one fully dominant, no interactions, no environment</strong>. Most traits are not that tidy. Today we keep Mendel’s two laws (segregation and independent assortment) and change the <strong>assumptions about how genotype becomes phenotype</strong>.</p>
+<p><strong>Part A, one gene:</strong></p>
 <ul>
-<li><strong>One gene:</strong> incomplete dominance and codominance, why some alleles are dominant at the molecular level, multiple alleles, lethal alleles, pleiotropy, penetrance and expressivity, and the environment.</li>
-<li><strong>Two genes:</strong> genes acting in the same pathway change the 9 : 3 : 3 : 1 into <strong>9 : 3 : 4, 9 : 7, 12 : 3 : 1, 13 : 3 or 15 : 1</strong>. These are still 16ths, merged.</li>
-<li><strong>Strategy:</strong> given an F₂, turn the counts into 16ths, guess which classes merged, then test the guess with χ² (from <em>Probability and the χ² test</em>).</li>
+<li>incomplete dominance and codominance; why an allele is dominant at the molecular level;</li>
+<li>multiple alleles and allelic series; lethal alleles and pleiotropy;</li>
+<li>penetrance, expressivity and the environment, with a risk calculation.</li>
+</ul>
+<p><strong>Part B, two genes:</strong></p>
+<ul>
+<li>genes in one pathway turn 9 : 3 : 3 : 1 into <strong>9 : 3 : 4, 9 : 7, 12 : 3 : 1, 13 : 3 or 15 : 1</strong>: the same 16ths, merged;</li>
+<li>the complementation logic behind 9 : 7;</li>
+<li>a strategy: counts → 16ths → candidate ratios → χ² (from <em>Probability and the χ² test</em>) → pathway.</li>
 </ul>
 <p>Book: Hartwell, the chapter on extensions to Mendel’s laws.</p>
 <aside class="notes">
-<p>The key message: the laws of transmission do not change. Alleles still segregate 1:1 and unlinked genes still assort independently. What changes is the mapping from genotype to phenotype. Every odd ratio in this lecture can be derived from an ordinary Punnett square, then relabelled. Students who remember that will never need to memorise the ratios. The χ² test from the previous unit comes back at the end, as the tool for choosing between candidate ratios. Linkage, which breaks independent assortment, is a different story and comes in Part 2.</p>
+<p>The key message: the laws of transmission do not change. Alleles still segregate 1:1 and unlinked genes still assort independently. What changes is the mapping from genotype to phenotype. Every odd ratio in this lecture can be derived from an ordinary Punnett square, then relabelled. Students who remember that will never need to memorise the ratios. The lecture has two halves with a clear break: first everything that can happen with a single gene, then what happens when two genes act on the same trait. The χ² test from the previous unit comes back at the end, as the tool for choosing between candidate ratios. Linkage, which breaks independent assortment, is a different story and comes in Part 2.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -183,12 +190,114 @@ Basic and molecular genetics (5MO104)
 
 <img data-src="fig01-dominance.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:88.0%"><ul>
 <li><strong>Complete dominance:</strong> the heterozygote looks like one homozygote (<em>Pp</em> is purple). F₂ phenotypes 3 : 1.</li>
-<li><strong>Incomplete dominance:</strong> the heterozygote is <strong>in between</strong>. Red × white snapdragons give pink F₁, and the F₂ is <strong>1 red : 2 pink : 1 white</strong>: phenotype ratio = genotype ratio.</li>
-<li><strong>Codominance:</strong> the heterozygote shows <strong>both</strong> phenotypes in full. <em>I<sup>A</sup>I<sup>B</sup></em> red cells carry both A and B antigens: blood type AB.</li>
+<li><strong>Incomplete dominance:</strong> the heterozygote is <strong>in between</strong>.</li>
+<li><strong>Codominance:</strong> the heterozygote shows <strong>both</strong> phenotypes in full.</li>
 </ul>
-<p>“Dominant” describes a pair of alleles, not one allele, and <strong>not how common it is</strong>.</p>
+<p>“Dominant” describes a pair of alleles for one phenotype, not one allele on its own, and <strong>not how common it is</strong>.</p>
 <aside class="notes">
-<p>Start from the snapdragon: it is the cleanest way to show that segregation still works perfectly. The F1 is pink, which looks like blending, but the F2 brings back red and white unchanged, in 1:2:1. Blending inheritance would never give back the parental types. In the incomplete-dominance case you can read the genotype straight off the phenotype, so the phenotype ratio is the genotype ratio. Codominance differs from incomplete dominance: the heterozygote is not an average, it shows both products side by side, as A and B antigens on the same red cell. Stress that dominance is a relation: the I-A allele is codominant with I-B but dominant over i. Also the misconception: a dominant allele is not necessarily common; polydactyly alleles are dominant and rare.</p>
+<p>This is the overview; the next two slides take incomplete dominance and codominance one at a time. The three cases differ only in what the heterozygote looks like. Repeat the misconception from the first lecture: a dominant allele is not necessarily common; polydactyly alleles are dominant and rare, and in peas the green-pod allele is dominant while green seed colour is recessive. Dominance is also defined for one phenotype at a time, as the sickle-cell example in Genetics as information showed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="incomplete-dominance-step-by-step" class="slide level2 smaller">
+<h2>Incomplete dominance, step by step</h2>
+<p><img data-src="img/snapdragon-incomplete-dominance.png" class="quarto-figure quarto-figure-center" style="width:70.0%"> <a href="https://commons.wikimedia.org/wiki/File:Incomplete_dominance_-_Antirrhinum_majus.png" class="photo-credit">Image: Jacek Halicki, I am Jim, Crochet.david and Sciencia58, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Generation</th>
+<th>Cross</th>
+<th>Genotypes</th>
+<th>Phenotypes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P</td>
+<td>red <em>C<sup>R</sup>C<sup>R</sup></em> × white <em>C<sup>W</sup>C<sup>W</sup></em></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>F₁</td>
+<td></td>
+<td>all <em>C<sup>R</sup>C<sup>W</sup></em></td>
+<td>all <strong>pink</strong></td>
+</tr>
+<tr class="odd">
+<td>F₂</td>
+<td><em>C<sup>R</sup>C<sup>W</sup></em> × <em>C<sup>R</sup>C<sup>W</sup></em></td>
+<td>1 <em>C<sup>R</sup>C<sup>R</sup></em> : 2 <em>C<sup>R</sup>C<sup>W</sup></em> : 1 <em>C<sup>W</sup>C<sup>W</sup></em></td>
+<td><strong>1 red : 2 pink : 1 white</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Each genotype has its own phenotype, so the <strong>phenotype ratio is the genotype ratio</strong>.</p>
+<aside class="notes">
+<p>Walk through the snapdragon (Antirrhinum majus) generation by generation. The pink F1 looks like blending, like mixing red and white paint. The F2 is the test: blending would predict that all F2 are pink and that red and white are gone for good. Instead red and white come back unchanged, in a quarter each. So the alleles stayed separate in the pink F1; only the phenotype of the heterozygote was intermediate. A molecular reading: one dose of the pigment allele makes about half the pigment, and half is visibly less than full. Practical consequence for a gardener: pink plants never breed true, because selfing them always gives 1:2:1 again. Notation: when neither allele is dominant we use superscripts on one letter (C^R and C^W) rather than upper and lower case.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="codominance-both-products-show" class="slide level2">
+<h2>Codominance: both products show</h2>
+<p>The heterozygote makes <strong>both</strong> allele products, and we can see both.</p>
+<ul>
+<li><strong>ABO blood groups:</strong> <em>I<sup>A</sup>I<sup>B</sup></em> red cells carry <strong>both</strong> the A and the B antigen. Blood type AB is not “halfway between” A and B; it is A <strong>and</strong> B.</li>
+<li><strong>Haemoglobin on a gel</strong> (recap from <em>Genetics as information</em>): an HbA/HbS carrier has <strong>two bands</strong>, HbA and HbS.</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>incomplete dominance</th>
+<th>codominance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>heterozygote</td>
+<td><strong>intermediate</strong> (pink)</td>
+<td>shows <strong>both</strong> (AB)</td>
+</tr>
+<tr class="even">
+<td>F₂ phenotype ratio</td>
+<td>1 : 2 : 1</td>
+<td>1 : 2 : 1</td>
+</tr>
+<tr class="odd">
+<td>how we see it</td>
+<td>amount of one product</td>
+<td>two distinct products</td>
+</tr>
+</tbody>
+</table>
+<p>Whether we call alleles codominant often depends on <strong>how closely we look</strong>: at the protein level, most pairs of alleles are codominant.</p>
+<aside class="notes">
+<p>Students often mix up incomplete dominance and codominance, because both give 1:2:1 in an F2. The difference is in what the heterozygote is. Incomplete dominance: one product in a smaller amount, so the phenotype is an average. Codominance: two different products side by side, so we can detect both. The last line connects to the sickle-cell example: for the disease, HbS is recessive; on a gel, it is codominant. It is the same pair of alleles looked at with a different method. Molecular tests often turn a “recessive” allele into a codominant one, which is why carriers can be detected by DNA testing.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -211,7 +320,7 @@ Basic and molecular genetics (5MO104)
 <li><strong>Gain of function:</strong> the mutant protein does something new or too much (e.g.&nbsp;an over-active <em>FGFR3</em> receptor in achondroplasia).</li>
 </ul>
 <aside class="notes">
-<p>This links the Mendelian words to the molecular biology students know from 5MO103. Ask first: if a mutation destroys an enzyme, why is the heterozygote usually normal? Because one working copy gives about half the enzyme, and pathways usually have spare capacity. So recessive is the default for loss-of-function alleles. Then the three ways around this. Haploinsufficiency: a dosage-sensitive gene, where 50% is below the threshold. Dominant negative: in a dimer, random pairing in a heterozygote leaves only 1/4 of dimers fully normal, which is worse than the 1/2 from a plain null allele; for tetramers it is only 1/16. Gain of function: the mutant protein is active when it should not be. Achondroplasia comes back in Find it: FGFR3 variants make the receptor overly active.</p>
+<p>This links the Mendelian words to the molecular biology students know from 5MO103. Ask first: if a mutation destroys an enzyme, why is the heterozygote usually normal? Because one working copy gives about half the enzyme, and pathways usually have spare capacity. So recessive is the default for loss-of-function alleles. Then the three ways around this. Haploinsufficiency: a dosage-sensitive gene, where 50% is below the threshold. Dominant negative: the next slide does the numbers. Gain of function: the mutant protein is active when it should not be. Achondroplasia comes back in Find it: FGFR3 variants make the receptor overly active.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -224,8 +333,66 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="multiple-alleles" class="slide level2">
-<h2>Multiple alleles</h2>
+<section id="dominant-negative-the-numbers" class="slide level2">
+<h2>Dominant negative: the numbers</h2>
+<p>A heterozygote makes normal (N) and mutant (M) subunits in equal amounts, and they assemble <strong>at random</strong>. A complex works only if <strong>every</strong> subunit is normal.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Protein made of</th>
+<th>P(all subunits normal)</th>
+<th>Working protein, dominant negative</th>
+<th>Working protein, plain null allele</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 subunit (monomer)</td>
+<td>½</td>
+<td>½</td>
+<td>½</td>
+</tr>
+<tr class="even">
+<td>2 subunits (dimer)</td>
+<td>½ × ½</td>
+<td><strong>¼</strong></td>
+<td>½</td>
+</tr>
+<tr class="odd">
+<td>4 subunits (tetramer)</td>
+<td>(½)⁴</td>
+<td><strong>1/16</strong></td>
+<td>½</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A <strong>null</strong> allele makes no protein: the cell has half the normal amount, all of it working.</li>
+<li>A <strong>dominant-negative</strong> allele makes protein that <strong>poisons</strong> the complexes it joins. The more subunits per complex, the worse it gets.</li>
+<li>So a mutation that <strong>destroys</strong> a protein can be <em>less</em> harmful in a heterozygote than one that makes a <strong>faulty</strong> protein.</li>
+</ul>
+<aside class="notes">
+<p>This was in the notes before; it deserves its own slide because it is a neat use of the product rule from the probability unit. Each subunit is normal with probability one half, independently, so a complex of n subunits is fully normal with probability one half to the n.&nbsp;Compare with a null allele: a heterozygote for a null makes half as many subunits, but all of them normal, so it still has half the normal amount of working complex, whatever n is. The counter-intuitive conclusion in the last bullet surprises students: a nonsense mutation that leads to no protein can be milder in a heterozygote than a missense mutation in the same gene. This is seen in collagen: in osteogenesis imperfecta, null alleles of COL1A1 tend to give a milder form than some missense alleles that build faulty chains into the triple helix.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="multiple-alleles-abo" class="slide level2">
+<h2>Multiple alleles: ABO</h2>
 <p>A population can carry <strong>many alleles</strong> of one gene, even though each diploid person carries at most two.</p>
 <p><strong>ABO blood groups</strong> (gene <em>ABO</em>, which encodes a glycosyltransferase):</p>
 <table class="caption-top">
@@ -255,11 +422,32 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
-<p><em>I<sup>A</sup></em> and <em>I<sup>B</sup></em> are codominant with each other; both are dominant over <em>i</em> (no working enzyme). Three alleles give <strong>6 genotypes but 4 phenotypes</strong>.</p>
-<p><strong>An allelic series:</strong> rabbit coat colour, <em>C</em> (full colour) &gt; <em>c<sup>ch</sup></em> (chinchilla) &gt; <em>c<sup>h</sup></em> (Himalayan) &gt; <em>c</em> (albino). Each allele is dominant over those to its right.</p>
-<p>With <em>n</em> alleles there are <em>n</em>(<em>n</em> + 1)/2 genotypes: 3 alleles → 6, 4 alleles → 10.</p>
+<p><em>I<sup>A</sup></em> and <em>I<sup>B</sup></em> are codominant with each other; both are dominant over <em>i</em> (no working enzyme). Three alleles give <strong>6 genotypes but 4 phenotypes</strong>. With <em>n</em> alleles there are <em>n</em>(<em>n</em> + 1)/2 genotypes.</p>
+<p><strong>Worked example.</strong> <em>I<sup>A</sup>I<sup>B</sup></em> (type AB) × <em>I<sup>A</sup>i</em> (type A):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>½ <em>I<sup>A</sup></em></th>
+<th>½ <em>i</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>½ <em>I<sup>A</sup></em></strong></td>
+<td><em>I<sup>A</sup>I<sup>A</sup></em> (A)</td>
+<td><em>I<sup>A</sup>i</em> (A)</td>
+</tr>
+<tr class="even">
+<td><strong>½ <em>I<sup>B</sup></em></strong></td>
+<td><em>I<sup>A</sup>I<sup>B</sup></em> (AB)</td>
+<td><em>I<sup>B</sup>i</em> (B)</td>
+</tr>
+</tbody>
+</table>
+<p>Children: <strong>½ A : ¼ AB : ¼ B</strong>, and <strong>no O</strong>: every child gets <em>I<sup>A</sup></em> or <em>I<sup>B</sup></em> from the AB parent.</p>
 <aside class="notes">
-<p>ABO combines two ideas: multiple alleles, and different dominance relations between different pairs. The A allele adds N-acetylgalactosamine and the B allele adds galactose to the same precursor (the H antigen); the O allele makes no active enzyme. So A and B are codominant, both products are present, and O is recessive because it makes nothing. The rabbit series is the textbook allelic series and sets up the Himalayan allele, which comes back on the environment slide. The formula n(n+1)/2 is n homozygotes plus n(n-1)/2 heterozygotes; a quick check of their combinatorics from the probability unit.</p>
+<p>ABO combines two ideas: multiple alleles, and different dominance relations between different pairs. The A allele adds N-acetylgalactosamine and the B allele adds galactose to the same precursor (the H antigen); the O allele makes no active enzyme. So A and B are codominant, both products are present, and O is recessive because it makes nothing. The worked example is the method for the blood-group questions in the exercise: write each parent’s gametes, fill the square, then translate genotypes into blood types, merging I^A I^A and I^A i into one type. Point out the useful rule that falls out: an AB parent can never have an O child. The formula n(n+1)/2 is n homozygotes plus n(n-1)/2 heterozygotes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -272,17 +460,108 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="lethal-alleles-and-pleiotropy-the-yellow-mouse" class="slide level2 smaller">
-<h2>Lethal alleles and pleiotropy: the yellow mouse</h2>
+<section id="an-allelic-series" class="slide level2">
+<h2>An allelic series</h2>
+<p>Rabbit coat colour, one gene with four alleles in a <strong>dominance hierarchy</strong>:</p>
+<p><span class="math display">C \;(\text{full colour}) \;&gt;\; c^{ch} \;(\text{chinchilla}) \;&gt;\; c^{h} \;(\text{Himalayan}) \;&gt;\; c \;(\text{albino})</span></p>
+<p>Each allele is dominant over those to its right. Four alleles: 4 × 5/2 = <strong>10 genotypes</strong>, but only 4 phenotypes.</p>
+<p><strong>Worked example.</strong> <em>Cc<sup>h</sup></em> (full colour) × <em>c<sup>ch</sup>c</em> (chinchilla):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>½ <em>c<sup>ch</sup></em></th>
+<th>½ <em>c</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>½ <em>C</em></strong></td>
+<td><em>Cc<sup>ch</sup></em>: full colour</td>
+<td><em>Cc</em>: full colour</td>
+</tr>
+<tr class="even">
+<td><strong>½ <em>c<sup>h</sup></em></strong></td>
+<td><em>c<sup>ch</sup>c<sup>h</sup></em>: chinchilla</td>
+<td><em>c<sup>h</sup>c</em>: Himalayan</td>
+</tr>
+</tbody>
+</table>
+<p>Offspring: <strong>½ full colour : ¼ chinchilla : ¼ Himalayan</strong>. Read each cell by asking: which of the two alleles is further <strong>left</strong> in the series?</p>
+<p><strong>Working backwards:</strong> an offspring class tells you which alleles the parents must carry. Here, a Himalayan offspring proves that the chinchilla parent carries an allele below <em>c<sup>h</sup></em>.</p>
+<aside class="notes">
+<p>The allelic series is a good drill in the same method. The trick in each cell is to find the highest-ranking allele. The last line is the reasoning students need for exercise problems that run backwards from offspring to parents: the rarest, most recessive class is the most informative, because it pins down hidden alleles in both parents. Here the Himalayan offspring c^h c needs a c from the chinchilla parent. The c^h allele returns on the environment slide: it encodes a temperature-sensitive form of tyrosinase.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lethal-alleles-the-yellow-mouse" class="slide level2 smaller">
+<h2>Lethal alleles: the yellow mouse</h2>
 
-<img data-src="fig03-yellow-lethal.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
-<li>Cuénot (1905): yellow × yellow mice always gave yellow and agouti offspring, in a ratio near <strong>2 : 1</strong>, never 3 : 1. Yellow mice never bred true.</li>
-<li>The <em>A<sup>Y</sup>A<sup>Y</sup></em> embryos die. <em>A<sup>Y</sup></em> is <strong>dominant for coat colour</strong> but <strong>recessive for lethality</strong>.</li>
-<li>One allele affecting several traits is <strong>pleiotropy</strong>. Another example: the sickle-cell allele of <em>HBB</em> affects red cell shape, anaemia, organ damage and resistance to malaria.</li>
+<img data-src="fig03-yellow-lethal.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><ul>
+<li>Cuénot (1905): yellow × yellow mice gave yellow and agouti offspring near <strong>2 : 1</strong>, never 3 : 1. Yellow mice never bred true.</li>
+<li>Step by step: <em>A<sup>Y</sup>a</em> × <em>A<sup>Y</sup>a</em> → 1 <em>A<sup>Y</sup>A<sup>Y</sup></em> : 2 <em>A<sup>Y</sup>a</em> : 1 <em>aa</em>. The <em>A<sup>Y</sup>A<sup>Y</sup></em> quarter <strong>dies</strong> as embryos. Among survivors: 2 yellow : 1 agouti, so <strong>⅔ yellow</strong>.</li>
 <li>A 2 : 1 ratio among the survivors of a monohybrid cross is the signature of a <strong>recessive lethal</strong>.</li>
 </ul>
 <aside class="notes">
-<p>This is the classic case where a ratio looked wrong and the explanation was a missing class. Ask students to predict yellow x yellow first: they will say 3:1. Then show 2:1 and ask what has happened. The test for the hypothesis: yellow mice are always heterozygous, so yellow x agouti should give 1:1, and pregnant yellow x yellow females should show about a quarter of embryos dying early. Pleiotropy: the same allele has one effect we see (coat colour, dominant) and one we infer (lethality, recessive). That shows again that “dominant” belongs to a trait, not to an allele. In the exercise, students test 2:1 against 3:1 with χ².</p>
+<p>This is the classic case where a ratio looked wrong and the explanation was a missing class. Ask students to predict yellow x yellow first: they will say 3:1. Then show 2:1 and ask what has happened. Do the arithmetic on the board: start from the 1:2:1, cross out the dead quarter, and renormalise over the three quarters that are left. That is the same conditional-probability step as the 2/3 carrier probability, just in mice. In the exercise, students test 2:1 against 3:1 with χ².</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="testing-the-lethal-hypothesis-pleiotropy" class="slide level2">
+<h2>Testing the lethal hypothesis; pleiotropy</h2>
+<p>A good hypothesis makes <strong>new predictions</strong>. If <em>A<sup>Y</sup>A<sup>Y</sup></em> is lethal:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prediction</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Every</strong> yellow mouse is <em>A<sup>Y</sup>a</em></td>
+<td>the homozygote never survives</td>
+</tr>
+<tr class="even">
+<td>Yellow × agouti gives <strong>1 yellow : 1 agouti</strong>, no deaths</td>
+<td><em>A<sup>Y</sup>a</em> × <em>aa</em> cannot make <em>A<sup>Y</sup>A<sup>Y</sup></em></td>
+</tr>
+<tr class="odd">
+<td>Yellow × yellow litters are about <strong>¼ smaller</strong></td>
+<td>a quarter of the embryos die early</td>
+</tr>
+<tr class="even">
+<td>Dissected yellow × yellow pregnancies show <strong>dead embryos</strong></td>
+<td>the missing class can be found</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pleiotropy:</strong> one allele affects several traits. <em>A<sup>Y</sup></em> is <strong>dominant for coat colour</strong> but <strong>recessive for lethality</strong>. Another example: the sickle-cell allele of <em>HBB</em> affects red-cell shape, anaemia, organ damage and resistance to malaria.</p>
+<p>So “dominant” and “recessive” belong to a <strong>trait</strong>, not to an allele.</p>
+<aside class="notes">
+<p>This is the scientific method in miniature: the lethal hypothesis was not accepted because it explained 2:1, but because its other predictions came true. Yellow x agouti gives 1:1 with normal litter sizes, and dead embryos were later found in yellow x yellow females. Litter size is a nice quantitative check: if the same number of zygotes form, the surviving litter is three quarters of a yellow x agouti litter. Pleiotropy: the same allele has one effect we see (coat colour, dominant) and one we infer (lethality, recessive). That shows again that “dominant” belongs to a trait, not to an allele.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -298,14 +577,60 @@ Basic and molecular genetics (5MO104)
 <section id="penetrance-and-expressivity" class="slide level2 smaller">
 <h2>Penetrance and expressivity</h2>
 
-<img data-src="fig04-penetrance-expressivity.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
-<li><strong>Penetrance:</strong> the fraction of individuals with a genotype who show the trait at all. Incomplete penetrance can make a dominant trait <strong>skip a generation</strong> in a pedigree.</li>
+<img data-src="fig04-penetrance-expressivity.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><ul>
+<li><strong>Penetrance:</strong> the fraction of individuals with a genotype who show the trait at all: P(phenotype | genotype). Incomplete penetrance can make a dominant trait <strong>skip a generation</strong>.</li>
 <li><strong>Expressivity:</strong> how strongly the trait shows in those who have it. Polydactyly can be one small extra digit, or extra digits on all four limbs.</li>
 <li><em>BRCA1</em>: carriers of a pathogenic variant have a much higher lifetime risk of breast and ovarian cancer, <strong>but not all of them get cancer</strong>. They inherit a raised risk, not the disease.</li>
 <li>Causes: other genes (<strong>modifiers</strong>), the environment, and chance.</li>
 </ul>
 <aside class="notes">
-<p>Keep the two words apart: penetrance is yes/no at the level of individuals, expressivity is the degree among affected individuals. Penetrance is a fraction of genotypes, so it can only be measured when we know the genotype, which is why molecular testing changed our estimates of penetrance for BRCA1. Do not quote penetrance numbers for BRCA1 here: they differ between studies and populations, and they change. The important qualitative fact is: autosomal dominant, incomplete penetrance. In the pedigrees unit, incomplete penetrance is the classic trap: an unaffected parent between two affected generations does not rule out dominant inheritance. In Find it students look up the mode of inheritance in MedGen/OMIM.</p>
+<p>Keep the two words apart: penetrance is yes/no at the level of individuals, expressivity is the degree among affected individuals. Penetrance is a fraction of genotypes, so it can only be measured when we know the genotype, which is why molecular testing changed our estimates of penetrance for BRCA1. Do not quote penetrance numbers for BRCA1 here: they differ between studies and populations, and they change. The important qualitative fact is: autosomal dominant, incomplete penetrance. In the pedigrees unit, incomplete penetrance is the classic trap: an unaffected parent between two affected generations does not rule out dominant inheritance. Writing penetrance as a conditional probability sets up the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-risk-with-incomplete-penetrance" class="slide level2">
+<h2>Worked example: risk with incomplete penetrance</h2>
+<p>An autosomal dominant condition has <strong>60% penetrance</strong>. Tom is <strong>unaffected</strong>. His father is affected (<em>Aa</em>); his mother does not carry the allele (<em>aa</em>). What is the chance that Tom carries the allele?</p>
+<p><strong>Step 1. Before we know his phenotype:</strong> P(<em>Aa</em>) = ½, P(<em>aa</em>) = ½.</p>
+<p><strong>Step 2. How likely is “unaffected” under each?</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tom’s genotype</th>
+<th>prior</th>
+<th>P(unaffected | genotype)</th>
+<th>product</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Aa</em></td>
+<td>½</td>
+<td>1 − 0.6 = 0.4</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td><em>aa</em></td>
+<td>½</td>
+<td>1</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 3. Keep only what is still possible, and renormalise:</strong></p>
+<p><span class="math display">P(Aa \mid \text{unaffected}) = \frac{0.20}{0.20 + 0.50} = \frac{2}{7} \approx 0.29</span></p>
+<p><strong>Step 4. Risk for Tom’s child</strong> (partner <em>aa</em>): 0.29 × ½ (passes <em>A</em>) × 0.6 (penetrant) ≈ <strong>0.086</strong>.</p>
+<aside class="notes">
+<p>This is the same “shrink the table” reasoning as the 2/3 carrier probability, with one twist: a carrier can now also be unaffected, so the carrier row does not disappear, it only shrinks. Being unaffected is evidence against carrying the allele, which lowers his carrier probability from 1/2 to 2/7. Common mistakes: forgetting to condition, and answering 1/2; or forgetting the penetrance again in step 4, when the child also has to show the trait. With full penetrance the same calculation gives 0/(0 + 0.5) = 0: an unaffected son of an affected parent cannot carry a fully penetrant dominant allele. The exercise has a problem of this type with different numbers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -320,16 +645,21 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="the-environment-changes-the-phenotype" class="slide level2">
 <h2>The environment changes the phenotype</h2>
-<p>The same genotype can give different phenotypes in different environments.</p>
+<div class="columns">
+<div class="column" style="width:44%;">
+<p><img data-src="img/himalayan-rabbit-kits.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Chilled_and_Warm_Himalayan_rabbit_kits.JPG" class="photo-credit">Photo: SableSteel, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p>Two Himalayan kits from one nest. Left: fell out of the nest, about 21 °C. Right: in the nest, about 35 °C.</p>
+</div><div class="column" style="width:56%;">
 <ul>
 <li><strong>Himalayan rabbits</strong> (<em>c<sup>h</sup>c<sup>h</sup></em>) and <strong>Siamese cats</strong> carry a <strong>temperature-sensitive</strong> allele of the gene for tyrosinase, the first enzyme in melanin synthesis.</li>
 <li>The enzyme works at lower temperature and fails at body-core temperature, so only the <strong>cool extremities</strong> (ears, nose, paws, tail) are dark.</li>
-<li>Shave a patch on a Himalayan rabbit’s back and keep it cold while the fur regrows: the new fur grows in <strong>dark</strong>.</li>
+<li>Chill the skin and dark fur grows there: the kit that fell out of the nest is pigmented <strong>all over</strong>.</li>
 <li>In humans, <strong>phenylketonuria</strong> (PKU): the same genotype gives severe intellectual disability on a normal diet and near-normal development on a low-phenylalanine diet.</li>
 </ul>
 <p>Genotype sets a <strong>range of possible phenotypes</strong>. The environment picks a point in that range.</p>
+</div></div>
 <aside class="notes">
-<p>The rabbit experiment is the cleanest demonstration that the genotype of every skin cell is the same; only the temperature differs. The allele makes a protein that folds correctly at lower temperature. PKU is the human example where knowing the environment lets us change the phenotype: newborn screening plus diet. This leads to the idea of the norm of reaction, which returns with quantitative traits in Complex traits. It also explains part of incomplete penetrance and variable expressivity from the previous slide.</p>
+<p>The photo is a natural experiment: two siblings, presumably the same genotype at the c locus since both are Himalayan kits, but one spent time at a much lower temperature and its fur is pigmented where the warm sibling’s is not. The classic lab version shaves a patch on an adult Himalayan rabbit’s back and keeps it cold while the fur regrows: the new fur grows in dark. The genotype of every skin cell is the same; only the temperature differs. The c^h allele makes a protein that folds and works at lower temperature. PKU is the human example where knowing the environment lets us change the phenotype: newborn screening plus diet. This leads to the idea of the norm of reaction, which returns with quantitative traits in Complex traits. It also explains part of incomplete penetrance and variable expressivity.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -342,13 +672,146 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="two-genes-one-pathway-epistasis" class="slide level2 smaller">
-<h2>Two genes, one pathway: epistasis</h2>
-<p><strong>Epistasis:</strong> the genotype at one gene <strong>hides</strong> the effect of another gene. Mendel’s 9 : 3 : 3 : 1 is still there underneath; some classes <strong>look the same</strong>.</p>
-
-<img data-src="fig05-labrador-pathway.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><p><strong>Recessive epistasis, 9 : 3 : 4.</strong> Labrador retrievers, <em>BbEe</em> × <em>BbEe</em>: <em>ee</em> dogs make no dark pigment in the hair, so they are yellow <strong>whatever</strong> their <em>B</em> genotype. <em>ee</em> is <strong>epistatic</strong> to <em>B</em>; <em>B</em> is <strong>hypostatic</strong>.</p>
+<section id="check-yourself-one-gene" class="slide level2">
+<h2>Check yourself: one gene</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statement</th>
+<th>True?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“The pink F₁ shows that red and white blended.”</td>
+<td><strong>No.</strong> The F₂ gives back red and white unchanged.</td>
+</tr>
+<tr class="even">
+<td>“Incomplete dominance and codominance are the same, since both give 1 : 2 : 1.”</td>
+<td><strong>No.</strong> Intermediate product vs two products side by side.</td>
+</tr>
+<tr class="odd">
+<td>“<em>A<sup>Y</sup></em> is a dominant allele.”</td>
+<td><strong>Only for coat colour.</strong> For survival it is recessive.</td>
+</tr>
+<tr class="even">
+<td>“2 : 1 is just a 3 : 1 with sampling noise.”</td>
+<td><strong>Test it.</strong> With enough mice χ² rejects 3 : 1; a missing class is the explanation.</td>
+</tr>
+<tr class="odd">
+<td>“Penetrance and expressivity mean the same thing.”</td>
+<td><strong>No.</strong> Whether it shows vs how strongly.</td>
+</tr>
+<tr class="even">
+<td>“An unaffected child of an affected parent cannot carry a dominant allele.”</td>
+<td><strong>Only with full penetrance.</strong></td>
+</tr>
+<tr class="odd">
+<td>“A null allele is always the most harmful allele.”</td>
+<td><strong>No.</strong> A dominant negative can be worse in a heterozygote.</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
-<p>Epistasis is about genes, not alleles: one gene masks another. Contrast with dominance, which is about two alleles of the same gene. The pathway picture: a later step only matters if the earlier step happens. Here E is needed for dark pigment in the hair at all, and B decides whether that dark pigment is black or brown. The pathway is simplified: in reality E (MC1R) acts as a switch between dark and yellow pigment, but the logic is the same. Yellow Labradors with bb still show it: their nose and lips are brown rather than black. That is a hint that the B genotype is still there, just hidden in the coat. Point out how 9:3:4 comes from 9:3:3:1 with the last two classes merged: B_ee (3) and bbee (1).</p>
+<p>Use this as a pause before the second half. Read each statement aloud and let students vote before you reveal the answer. These are the misunderstandings that show up most often in the exam. The 2:1 row connects to the χ² test: a 2:1 in a few mice can be noise, but with 180 pups the test separates the two ratios clearly, as in the R exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="part-b.-two-genes-one-trait" class="slide level2">
+<h2>Part B. Two genes, one trait</h2>
+<p>Start from Mendel’s dihybrid F₂, <em>AaBb</em> × <em>AaBb</em>, with unlinked genes. Independent assortment still gives the <strong>same 16 squares</strong>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Class</th>
+<th><em>A_B_</em></th>
+<th><em>A_bb</em></th>
+<th><em>aaB_</em></th>
+<th><em>aabb</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>16ths</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>What changes is only how these classes <strong>look</strong>. When the two genes act on <strong>one</strong> trait, some classes give the same phenotype, and their 16ths <strong>add up</strong>.</p>
+<p><strong>Dominance vs epistasis</strong></p>
+<ul>
+<li><strong>Dominance:</strong> two <strong>alleles of one gene</strong>: which one shows in <em>Aa</em>.</li>
+<li><strong>Epistasis:</strong> two <strong>different genes</strong>: the genotype at one gene <strong>hides</strong> the effect of the other. The gene that hides is <strong>epistatic</strong>; the hidden one is <strong>hypostatic</strong>.</li>
+</ul>
+<p>The tool to think with: a <strong>biochemical pathway</strong>. A later step only matters if the earlier steps happen.</p>
+<aside class="notes">
+<p>This is the switch from one gene to two. Make students write the four classes and their 16ths on paper now; every ratio in the rest of the lecture is built from them. Say clearly that nothing about meiosis has changed: the gametes are still AB, Ab, aB, ab in a quarter each, and the 16 squares are still equally likely. Then the distinction that is most often muddled in exams: dominance is within one gene, epistasis is between genes. The pathway is the mental model; from biochemistry students know that a product cannot be made if an earlier enzyme in the pathway is missing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="recessive-epistasis-labrador-coat-colour" class="slide level2">
+<h2>Recessive epistasis: Labrador coat colour</h2>
+<div class="columns">
+<div class="column" style="width:34%;">
+<p><img data-src="img/labrador-colours.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:3labradorcols.jpg" class="photo-credit">Photo: Erikeltic, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:66%;">
+<p>Labrador retrievers come in three colours: <strong>black</strong>, <strong>chocolate</strong> (brown) and <strong>yellow</strong>. Two genes are involved:</p>
+<ul>
+<li><strong><em>B</em>/<em>b</em></strong> decides the <strong>kind</strong> of dark pigment: <em>B_</em> black, <em>bb</em> brown.</li>
+<li><strong><em>E</em>/<em>e</em></strong> decides <strong>whether</strong> dark pigment goes into the hair at all: <em>E_</em> yes, <em>ee</em> no, so the coat is <strong>yellow</strong>.</li>
+</ul>
+<p>An <em>ee</em> dog is yellow <strong>whatever</strong> its <em>B</em> genotype. So <em>ee</em> is <strong>epistatic</strong> to <em>B</em>, and <em>B</em> is <strong>hypostatic</strong>.</p>
+<p>Clue that <em>B</em> is still there: yellow <em>bb</em> dogs have a <strong>brown</strong> nose and lips; yellow <em>B_</em> dogs have black ones. The <em>B</em> genotype is hidden in the coat, not gone.</p>
+</div></div>
+<aside class="notes">
+<p>The three dogs in the photo are the three classes. Ask: two black dogs can have yellow and chocolate puppies; how? Both parents must be BbEe. The nose clue is worth showing: it proves that the B gene is not changed by being epistatically hidden; its effect is just invisible in the coat. The pathway is simplified: in reality E is MC1R, a receptor that acts as a switch between dark pigment (eumelanin) and yellow-red pigment (phaeomelanin) in the hair. The logic is the same as a two-step pathway, which the next slide draws.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="recessive-epistasis-9-3-4" class="slide level2 smaller">
+<h2>Recessive epistasis: 9 : 3 : 4</h2>
+
+<img data-src="fig05-labrador-pathway.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
+<li><em>B_E_</em> black <strong>9</strong>; <em>bbE_</em> chocolate <strong>3</strong>; <em>B_ee</em> and <em>bbee</em> both yellow: 3 + 1 = <strong>4</strong>.</li>
+<li>Merged classes: <em>A_bb</em>-type and <em>aabb</em>-type, the <strong>last two</strong>: here <em>B_ee</em> + <em>bbee</em>.</li>
+<li><strong>Test cross</strong> <em>BbEe</em> × <em>bbee</em>: the four classes come in 1 : 1 : 1 : 1, and the two <em>ee</em> classes merge: <strong>1 black : 1 chocolate : 2 yellow</strong>.</li>
+</ul>
+<aside class="notes">
+<p>Point to the class bar: 9, 3, then the yellow 3 and 1 joined under one brace. The name “recessive epistasis” comes from the epistatic genotype being homozygous recessive (ee). Students should be able to produce the test-cross ratio by the same merging, applied to 1:1:1:1 instead of 9:3:3:1. That test cross is exactly the situation in the exercise problem with a litter of black, chocolate and yellow pups. Mice show the same 9:3:4 with albino: cc mice are white whatever their agouti genotype; we use that in a worked example at the end.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -366,14 +829,37 @@ Basic and molecular genetics (5MO104)
 <p><strong>Both</strong> steps of the pathway are needed; losing <strong>either</strong> one gives the same mutant phenotype.</p>
 <p><span class="math display">\text{colourless} \xrightarrow{\ \text{enzyme A}\ } \text{colourless} \xrightarrow{\ \text{enzyme B}\ } \text{purple}</span></p>
 <ul>
-<li>Bateson and Punnett (sweet pea): two <strong>white</strong> varieties crossed gave an all-<strong>purple</strong> F₁. The F₁ selfed gave <strong>9 purple : 7 white</strong>.</li>
+<li>Bateson and Punnett (sweet pea): two <strong>white</strong> varieties crossed gave an all-<strong>purple</strong> F₁. The F₁ selfed gave about <strong>9 purple : 7 white</strong>.</li>
 <li>The parents were <em>AAbb</em> and <em>aaBB</em>. Each could make what the other could not, so the F₁ <em>AaBb</em> has both enzymes.</li>
 <li>Only <em>A_B_</em> is purple (9). <em>A_bb</em>, <em>aaB_</em> and <em>aabb</em> are all white (3 + 3 + 1 = 7).</li>
 <li>Also called <strong>duplicate recessive epistasis</strong>: <em>aa</em> hides <em>B</em>, and <em>bb</em> hides <em>A</em>.</li>
+<li>Test cross <em>AaBb</em> × <em>aabb</em>: only <em>AaBb</em> is purple: <strong>1 purple : 3 white</strong>.</li>
 </ul>
-<p>Two white parents with a coloured F₁ is the same logic as a <strong>complementation test</strong>: the mutations are in <strong>different genes</strong>.</p>
 <aside class="notes">
-<p>This is the slide that sets up the complementation test in the Mutation unit. When two recessive mutants with the same phenotype are crossed and the offspring are wild type, the mutations are in different genes; they complement. If they were in the same gene, the F1 would still be mutant. Point out the merged classes: 3 + 3 + 1 = 7. The pathway explains why: you get purple only if both steps work. Ask students what an F1 test cross AaBb x aabb would give: 1 purple : 3 white.</p>
+<p>Point out the merged classes: 3 + 3 + 1 = 7. The pathway explains why: you get purple only if both steps work. Ask students to derive the test cross before you show it. A good exam question: of the white F2 plants, how many genotypes are there, and do any of them give purple offspring when selfed? (Five genotypes, and none does, because every white plant is homozygous recessive at one gene or the other.) The next slide turns the F1 into a general test.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="complementation-same-gene-or-different-genes" class="slide level2 smaller">
+<h2>Complementation: same gene or different genes?</h2>
+
+<img data-src="fig07-complementation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>Two <strong>recessive</strong> mutants with the <strong>same</strong> phenotype are crossed:</p>
+<ul>
+<li><strong>Wild-type hybrid</strong> → the mutations are in <strong>different genes</strong>. Each parent supplies the working copy the other lacks: they <strong>complement</strong>.</li>
+<li><strong>Mutant hybrid</strong> → the mutations are in the <strong>same gene</strong>. Neither parent has a working copy of it.</li>
+</ul>
+<p>This is the <strong>complementation test</strong>, the standard way to sort a pile of mutants into genes.</p>
+<aside class="notes">
+<p>The 9:7 F1 is the complementation test in disguise. The test only works for recessive mutations: a dominant mutation would show in the hybrid regardless. The right-hand panel shows a third white line, W3, whose mutation is another broken allele of the B gene (written b* here). The hybrid bb* has no working B, so it is white: no complementation. Geneticists use this to decide how many genes a collection of mutants hits: cross them pairwise, and group mutants that fail to complement. Each group is one gene, called a complementation group. The Mutation unit develops this with real screens.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -388,8 +874,8 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="dominant-epistasis-12-3-1" class="slide level2">
 <h2>Dominant epistasis: 12 : 3 : 1</h2>
-<p>A <strong>dominant</strong> allele at one gene blocks the pathway, so it hides the other gene.</p>
-<p><span class="math display">\text{white} \xrightarrow{\ \text{step 1}\ } \text{green} \xrightarrow{\ \text{enzyme B}\ } \text{yellow} \qquad \text{(}A\text{\_ blocks step 1)}</span></p>
+<p>A <strong>dominant</strong> allele at one gene blocks the pathway early, so it hides the other gene.</p>
+<p><span class="math display">\text{white} \xrightarrow{\ \text{step 1}\ } \text{green} \xrightarrow{\ \text{enzyme from } Y\ } \text{yellow} \qquad (W\text{\_ blocks step 1})</span></p>
 <p>Summer squash fruit colour, <em>WwYy</em> × <em>WwYy</em>:</p>
 <table class="caption-top">
 <thead>
@@ -418,10 +904,13 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
-<p>White = 9 + 3 = <strong>12</strong>, yellow <strong>3</strong>, green <strong>1</strong>: <strong>12 : 3 : 1</strong>.</p>
-<p>The <em>W</em> allele (dominant) is epistatic to <em>Y</em>/<em>y</em>. Only <em>ww</em> plants show what the <em>Y</em> gene does.</p>
+<p>White = 9 + 3 = <strong>12</strong>, yellow <strong>3</strong>, green <strong>1</strong>: <strong>12 : 3 : 1</strong>. Merged classes: the <strong>first two</strong>.</p>
+<ul>
+<li>The <em>W</em> allele (dominant) is epistatic to <em>Y</em>/<em>y</em>. Only <em>ww</em> plants show what the <em>Y</em> gene does.</li>
+<li>Test cross <em>WwYy</em> × <em>wwyy</em>: <strong>2 white : 1 yellow : 1 green</strong>.</li>
+</ul>
 <aside class="notes">
-<p>Now the first two classes merge instead of the last two. The dominant W allele stops pigment production early, so W_ fruit is white whatever Y is. In ww plants the pathway runs: green pigment is made, and Y_ converts it to yellow; yy plants stay green. Compare with recessive epistasis: there the epistatic genotype was the homozygous recessive (ee), here it is any genotype with one dominant allele (W_). That is why the merged class is 12 instead of 4. Test cross: WwYy x wwyy gives 2 white : 1 yellow : 1 green.</p>
+<p>Now the first two classes merge instead of the last two. The dominant W allele stops pigment production early, so W_ fruit is white whatever Y is. In ww plants the pathway runs: green pigment is made, and Y_ converts it to yellow; yy plants stay green. Compare with recessive epistasis: there the epistatic genotype was the homozygous recessive (ee), here it is any genotype with one dominant allele (W_). That is why the merged class is 12 instead of 4.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -434,28 +923,95 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="dominant-suppression-13-3-and-duplicate-genes-15-1" class="slide level2">
-<h2>Dominant suppression 13 : 3 and duplicate genes 15 : 1</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Dominant suppression, 13 : 3</strong></p>
-<p><span class="math display">\text{colourless} \xrightarrow{\ \text{enzyme B}\ } \text{pigment}</span> <span class="math inline">A</span>_ makes an <strong>inhibitor</strong> of enzyme B.</p>
+<section id="dominant-suppression-13-3" class="slide level2">
+<h2>Dominant suppression: 13 : 3</h2>
+<p>A dominant allele of one gene makes an <strong>inhibitor</strong> of the other gene’s product. The pathway has only <strong>one</strong> step.</p>
+<p><span class="math display">\text{colourless} \xrightarrow{\ \text{enzyme from } C\ } \text{pigment} \qquad (I\text{\_ inhibits it})</span></p>
+<p>Chickens: White Leghorn (<em>CCII</em>) × White Wyandotte (<em>ccii</em>) → F₁ <em>CcIi</em>, <strong>white</strong>. F₂:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th><em>C_I_</em></th>
+<th><em>C_ii</em></th>
+<th><em>ccI_</em></th>
+<th><em>ccii</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Feathers</td>
+<td>white (inhibited)</td>
+<td><strong>coloured</strong></td>
+<td>white (no enzyme)</td>
+<td>white (no enzyme)</td>
+</tr>
+<tr class="even">
+<td>16ths</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>White = 9 + 3 + 1 = <strong>13</strong>, coloured <strong>3</strong>: <strong>13 : 3</strong>.</p>
 <ul>
-<li>Coloured only if <em>aaB_</em>: <strong>3</strong>.</li>
-<li><em>A_B_</em>, <em>A_bb</em>, <em>aabb</em> are colourless: 9 + 3 + 1 = <strong>13</strong>.</li>
-<li>Chickens: White Leghorn (<em>CCII</em>) × White Wyandotte (<em>ccii</em>) → F₂ 13 white : 3 coloured. <em>I</em> suppresses <em>C</em>.</li>
+<li>Why is <em>ccii</em> white? It has no inhibitor, <strong>but also no enzyme</strong>. That is the difference from 12 : 3 : 1, where <em>wwyy</em> had its own colour.</li>
+<li>Test cross <em>CcIi</em> × <em>ccii</em>: only <em>Ccii</em> is coloured: <strong>3 white : 1 coloured</strong>.</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Duplicate genes, 15 : 1</strong></p>
+<aside class="notes">
+<p>Two white breeds give white offspring, and yet colour appears in the F2. Make students explain why ccii is white: no inhibitor, but also no enzyme, so it joins the big class: 13. Compare with dominant epistasis: in both cases a dominant allele switches something off, but in 12:3:1 the double recessive still makes a coloured intermediate (green), so it is a class of its own. The demo shows the two side by side. In the chicken, I is the dominant white allele and C is needed for any colour; the exercise uses exactly these breeds.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="duplicate-genes-15-1" class="slide level2">
+<h2>Duplicate genes: 15 : 1</h2>
+<p>Two <strong>redundant</strong> genes do the same job; one working copy of <strong>either</strong> is enough.</p>
 <p><span class="math display">\text{precursor} \xrightarrow{\ \text{enzyme A}\ \text{or}\ \text{enzyme B}\ } \text{product}</span></p>
 <ul>
-<li>Two <strong>redundant</strong> genes do the same job; one working copy of <strong>either</strong> is enough.</li>
-<li>Only <em>aabb</em> lacks the product: <strong>1</strong>. All others: <strong>15</strong>.</li>
-<li>Shepherd’s purse: triangular seed capsules unless <em>aabb</em> (ovoid).</li>
+<li>Only <em>aabb</em> lacks the product: <strong>1</strong>. All other classes: 9 + 3 + 3 = <strong>15</strong>.</li>
+<li>Shepherd’s purse (<em>Capsella bursa-pastoris</em>): <strong>triangular</strong> seed capsules unless <em>aabb</em> (<strong>ovoid</strong>).</li>
+<li>Test cross <em>AaBb</em> × <em>aabb</em>: only <em>aabb</em> is ovoid: <strong>3 : 1</strong>.</li>
 </ul>
-</div></div>
+<p><strong>Redundancy hides genes.</strong> Knock out gene A alone and nothing happens, because gene B still does the job. Many single knockouts in model organisms have no visible phenotype for this reason.</p>
+<p>A relative: if each working gene <strong>adds</strong> to the effect, <em>A_B_</em>, <em>A_bb</em> + <em>aaB_</em> and <em>aabb</em> give three classes, <strong>9 : 6 : 1</strong> (fruit shape in summer squash: disc, sphere, long).</p>
 <aside class="notes">
-<p>Two more ways to merge classes. In dominant suppression, a dominant allele of one gene makes a suppressor that stops the other gene’s product from acting. Unlike 12:3:1, the double recessive aabb is colourless too, because it lacks enzyme B, so it joins the big class: 13. Make students explain why aabb is white: no inhibitor, but also no enzyme. Duplicate genes are common in plants with genome duplications, such as shepherd’s purse, which is tetraploid. Redundancy is also why many single knockouts in model organisms have no visible phenotype; you need to knock out both copies. Test crosses: 13:3 gives 3 colourless : 1 coloured; 15:1 gives 3 : 1.</p>
+<p>Duplicate genes are common in plants with genome duplications, such as shepherd’s purse, which is tetraploid. Redundancy is also why many single knockouts in model organisms have no visible phenotype; you need to knock out both copies. Note that 13:3 and 15:1 give the same 3:1 test cross; only the F2 tells them apart. The 9:6:1 case is included because it turns up in the strategy slide: when one gene gives a partial effect and two give the full effect, the single-dominant classes merge into the middle class. Mention it but do not dwell on it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="one-picture-the-same-16-squares-recoloured" class="slide level2 smaller">
+<h2>One picture: the same 16 squares, recoloured</h2>
+
+<img data-src="fig06-collapse-16ths.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>Read each row: the 16 squares are <strong>always</strong> 9 <em>A_B_</em>, 3 <em>A_bb</em>, 3 <em>aaB_</em>, 1 <em>aabb</em>. Each ratio only <strong>colours some of them the same</strong>.</p>
+<aside class="notes">
+<p>This is the revision picture. Go through it row by row and ask students to name, for each, which classes merged: last two (9:3:4); last three (9:7); first two (12:3:1); first two plus the last (13:3); first three (15:1). Nothing about meiosis changed in any row. If a student can draw this figure from memory together with the pathways, they can derive any ratio in the lecture.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -470,8 +1026,7 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="one-table-ratio-pathway" class="slide level2 smaller">
 <h2>One table: ratio → pathway</h2>
-
-<img data-src="fig06-collapse-16ths.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:52.0%"><table class="caption-top">
+<table class="caption-top">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -514,13 +1069,13 @@ Basic and molecular genetics (5MO104)
 <td>12 : 3 : 1</td>
 <td>dominant epistasis</td>
 <td><em>A</em>_ blocks an early step</td>
-<td>summer squash</td>
+<td>summer squash colour</td>
 <td>2 : 1 : 1</td>
 </tr>
 <tr class="odd">
 <td>13 : 3</td>
 <td>dominant suppression</td>
-<td><em>A</em>_ inhibits enzyme B</td>
+<td><em>A</em>_ inhibits the other gene’s product</td>
 <td>chicken feathers</td>
 <td>3 : 1</td>
 </tr>
@@ -531,10 +1086,18 @@ Basic and molecular genetics (5MO104)
 <td>shepherd’s purse</td>
 <td>3 : 1</td>
 </tr>
+<tr class="odd">
+<td>9 : 6 : 1</td>
+<td>duplicate, additive</td>
+<td>each gene adds to the effect</td>
+<td>summer squash shape</td>
+<td>1 : 2 : 1</td>
+</tr>
 </tbody>
 </table>
+<p>A test cross has the four classes in 1 : 1 : 1 : 1, so <strong>merging the same classes</strong> gives the test-cross ratio.</p>
 <aside class="notes">
-<p>This is the revision table. Read the figure row by row: the 16 squares are always the same four classes, 9 A_B_, 3 A_bb, 3 aaB_ and 1 aabb, and each ratio just colours some of them the same. Nothing about meiosis has changed. The test-cross column is worth a minute: a test cross has the four classes in 1:1:1:1, so merging the same classes gives the test-cross ratio. 9:3:4 merges aaBb and aabb, giving 1:1:2. A test cross is a good second check when two ratios fit an F2 about equally well. Note that 13:3 and 15:1 give the same 3:1 test cross; only the F2 tells them apart.</p>
+<p>The test-cross column is worth a minute: a test cross has the four classes in 1:1:1:1, so merging the same classes gives the test-cross ratio. 9:3:4 merges aaBb and aabb, giving 1:1:2. A test cross is a good second check when two ratios fit an F2 about equally well. Note that 13:3 and 15:1 give the same 3:1 test cross; only the F2 tells them apart.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -553,7 +1116,7 @@ Basic and molecular genetics (5MO104)
 <div data-demo="epistasis" data-preset="recessive"></div>
 <script src="../demos/dist/epistasis.js"></script>
 <aside class="notes">
-<p>Interactive demo. It opens on recessive epistasis 9:3:4. Click the aaBB square: enzyme A is missing, so the pathway stops at yellow, even though enzyme B is there. Then click Aabb: enzyme A works, B does not, and the dog is brown. Then switch presets: complementary (9:7) and click aaBB and AAbb, the two white parents of the sweet pea cross; then AaBb, the purple F1. Dominant epistasis: click aabb (green) and AaBb (white, inhibitor on). Dominant suppression: only aaB_ squares are coloured. Duplicate: only aabb lacks the product. End on “no interaction” to show that the same 16 squares give 9:3:3:1 when the two pathways are separate. The static fallback for print is the figure on the previous slide.</p>
+<p>Interactive demo. It opens on recessive epistasis 9:3:4. Click the aaBB square: enzyme A is missing, so the pathway stops at yellow, even though enzyme B is there. Then click Aabb: enzyme A works, B does not, and the dog is brown. Then switch presets: complementary (9:7) and click aaBB and AAbb, the two white parents of the sweet pea cross; then AaBb, the purple F1. Dominant epistasis: click aabb (green) and AaBb (white, inhibitor on). Dominant suppression: only aaB_ squares are coloured. Duplicate: only aabb lacks the product. End on “no interaction” to show that the same 16 squares give 9:3:3:1 when the two pathways are separate. The static fallback for print is the figure two slides back.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -569,20 +1132,177 @@ Basic and molecular genetics (5MO104)
 <section id="strategy-collapse-the-f₂-into-16ths" class="slide level2">
 <h2>Strategy: collapse the F₂ into 16ths</h2>
 <ol type="1">
-<li><strong>How many phenotype classes?</strong> Two classes from a dihybrid cross points to 9 : 7, 13 : 3 or 15 : 1; three classes to 9 : 3 : 4, 12 : 3 : 1 (or 9 : 6 : 1); four to 9 : 3 : 3 : 1.</li>
+<li><strong>How many phenotype classes?</strong> Two classes from a dihybrid cross points to 9 : 7, 13 : 3 or 15 : 1; three classes to 9 : 3 : 4, 12 : 3 : 1 or 9 : 6 : 1; four to 9 : 3 : 3 : 1.</li>
 <li><strong>Convert to 16ths:</strong> count ÷ total × 16.</li>
-<li><strong>Match to sums of 9, 3, 3, 1.</strong> For example 4 = 3 + 1, 7 = 3 + 3 + 1, 12 = 9 + 3, 13 = 9 + 3 + 1, 15 = 9 + 3 + 3.</li>
+<li><strong>Match to sums of 9, 3, 3, 1.</strong> For example 4 = 3 + 1, 6 = 3 + 3, 7 = 3 + 3 + 1, 12 = 9 + 3, 13 = 9 + 3 + 1, 15 = 9 + 3 + 3.</li>
 <li><strong>Test the candidates with χ²</strong>, with df = number of classes − 1.</li>
 <li><strong>Explain it with a pathway</strong>, and check with a test cross if you can.</li>
 </ol>
-<p><strong>Worked example.</strong> Sweet pea F₂: 382 purple, 290 white (672 plants).</p>
+<aside class="notes">
+<p>The point of step 2 is that it turns counts into something you can compare with ratio tables at a glance. Students should be able to do steps 1 to 3 in their head. The χ² step is from the previous unit; the only new thing is that we now have several candidate ratios to compare. Step 1 matters more than it looks: the number of classes you can tell apart is part of the data, as the second worked example shows.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-1-two-classes" class="slide level2">
+<h2>Worked example 1: two classes</h2>
+<p>Sweet pea F₂ from two white lines: <strong>382 purple, 290 white</strong> (672 plants; illustrative counts).</p>
+<p><strong>16ths.</strong> 382/672 × 16 = <strong>9.1</strong> and 290/672 × 16 = <strong>6.9</strong> → try <strong>9 : 7</strong>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>O</th>
+<th>E under 9 : 7</th>
+<th>(O − E)²/E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>purple</td>
+<td>382</td>
+<td>672 × 9/16 = 378</td>
+<td>16/378 = 0.042</td>
+</tr>
+<tr class="even">
+<td>white</td>
+<td>290</td>
+<td>672 × 7/16 = 294</td>
+<td>16/294 = 0.054</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><strong>χ² = 0.097</strong></td>
+</tr>
+</tbody>
+</table>
+<p>df = 1, critical value 3.84: <strong>fail to reject</strong> 9 : 7 (<em>p</em> = 0.76).</p>
+<p>Under 3 : 1 instead: E = 504 and 168, χ² = 118, <em>p</em> ≈ 10⁻²⁷: <strong>rejected</strong>.</p>
+<p><strong>Pathway:</strong> two enzymes in a row, both needed; the white parents were <em>AAbb</em> and <em>aaBB</em>.</p>
+<aside class="notes">
+<p>Work this through as the template for the exercise. The 16ths make the guess almost automatic; χ² then confirms it and rules out the naive 3:1 that a student who only sees “two classes” might try. Worked numbers: (382-378)^2/378 + (290-294)^2/294 = 0.042 + 0.054 = 0.097. Finish with the biology, not with the p-value: the conclusion is a pathway with two necessary steps.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-2-when-two-ratios-fit" class="slide level2">
+<h2>Worked example 2: when two ratios fit</h2>
+<p>Mouse F₂ from <em>AaCc</em> × <em>AaCc</em>: <strong>92 agouti, 29 black, 39 albino</strong> (160 mice; illustrative counts). <em>cc</em> mice make no pigment at all.</p>
+<p><strong>16ths:</strong> 9.2 : 2.9 : 3.9 → try <strong>9 : 3 : 4</strong>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Hypothesis</th>
+<th>Classes compared</th>
+<th>χ²</th>
+<th>df</th>
+<th><em>p</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9 : 3 : 4</td>
+<td>agouti, black, albino</td>
+<td>0.10</td>
+<td>2</td>
+<td>0.95</td>
+</tr>
+<tr class="even">
+<td>9 : 7</td>
+<td>agouti vs (black + albino)</td>
+<td>0.10</td>
+<td>1</td>
+<td>0.75</td>
+</tr>
+<tr class="odd">
+<td>12 : 3 : 1</td>
+<td>agouti, black, albino as 12, 3, 1</td>
+<td>90.7</td>
+<td>2</td>
+<td>≈ 10⁻²⁰</td>
+</tr>
+</tbody>
+</table>
+<p>Both 9 : 3 : 4 and 9 : 7 “fit”. Which is right?</p>
 <ul>
-<li>382/672 × 16 = <strong>9.1</strong> and 290/672 × 16 = <strong>6.9</strong> → try 9 : 7.</li>
-<li>Expected 378 and 294: χ² = 4²/378 + 4²/294 = <strong>0.097</strong>, df = 1, <em>p</em> = 0.76. Fits.</li>
-<li>Under 3 : 1 instead: χ² = 118, <em>p</em> ≈ 10⁻²⁷. Rejected.</li>
+<li>9 : 7 is 9 : 3 : 4 with black and albino <strong>merged</strong>. Merging throws information away, so a coarser ratio fits whenever the finer one does.</li>
+<li>But we <strong>can see three</strong> phenotypes, and 9 : 7 predicts two. A model must explain <strong>every class you can tell apart</strong>.</li>
+<li>So: <strong>9 : 3 : 4</strong>, recessive epistasis: <em>cc</em> is epistatic to the agouti gene. Do <strong>not</strong> pick the model with the highest <em>p</em>.</li>
 </ul>
 <aside class="notes">
-<p>The point of step 2 is that it turns counts into something you can compare with ratio tables at a glance. Students should be able to do steps 1 to 3 in their head. The χ² step is from the previous unit; the only new thing is that we now have several candidate ratios to compare. Note a warning: any ratio that merges classes of a ratio that fits will also fit, because merging throws away information. For example, if 9:3:4 fits, then 9:7 (merge brown with yellow) will usually fit too. Choose the ratio that has the same number of classes as the phenotypes you can actually tell apart. The exercise works through exactly that with R. Worked numbers: (382-378)^2/378 + (290-294)^2/294 = 0.042 + 0.054 = 0.097.</p>
+<p>This is the trap from the quiz and the R exercise. Do the 16ths first, then show the table. The 12:3:1 row matches the three classes in the order given (expected 120 agouti, 30 black, 10 albino); it fails badly, mostly because 39 albino mice are far more than the 10 expected. The wrong pathway gives a terrible fit. The important lesson is in the 9:7 row: it fits, but it ignores an observation. Choosing between models is not only a matter of p-values; it uses the biology, here the number of phenotypes you can distinguish. Also warn against comparing p-values between tests with different df and different groupings. Albino in mice: the c allele of the tyrosinase gene, the same gene as the Himalayan rabbit’s c^h.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-two-genes" class="slide level2">
+<h2>Check yourself: two genes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statement</th>
+<th>True?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“9 : 7 means independent assortment failed.”</td>
+<td><strong>No.</strong> The 16 squares are still there; only the phenotypes merged.</td>
+</tr>
+<tr class="even">
+<td>“Epistasis and dominance are the same idea.”</td>
+<td><strong>No.</strong> Epistasis is between genes; dominance is between alleles of one gene.</td>
+</tr>
+<tr class="odd">
+<td>“A dihybrid F₂ that is not 9 : 3 : 3 : 1 must be epistasis.”</td>
+<td><strong>Not necessarily.</strong> Linked genes (Part 2) also change it, by changing the <strong>frequencies</strong> of the classes.</td>
+</tr>
+<tr class="even">
+<td>“In 13 : 3 the double recessive is coloured.”</td>
+<td><strong>No.</strong> No inhibitor, but no enzyme either.</td>
+</tr>
+<tr class="odd">
+<td>“If two ratios fit, take the one with the larger <em>p</em>.”</td>
+<td><strong>No.</strong> Take the one that explains every class you can see.</td>
+</tr>
+<tr class="even">
+<td>“A test cross always separates the candidate ratios.”</td>
+<td><strong>No.</strong> 13 : 3 and 15 : 1 both give 3 : 1.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Linkage versus epistasis is the conceptual line to draw clearly: linkage changes how often the genotype classes occur, so it changes the 16ths themselves; epistasis leaves the 16ths alone and changes how genotype classes map to phenotypes. A quick diagnostic: under epistasis the F2 still adds up to sums of 9, 3, 3 and 1; under linkage it usually does not.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -615,43 +1335,43 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Codominance</td>
-<td>heterozygote shows both; <em>I<sup>A</sup>I<sup>B</sup></em> = type AB</td>
+<td>heterozygote shows both products; <em>I<sup>A</sup>I<sup>B</sup></em> = type AB</td>
 </tr>
 <tr class="odd">
 <td>Molecular dominance</td>
-<td>haploinsufficiency, dominant negative, gain of function</td>
+<td>haploinsufficiency, dominant negative (½ⁿ working complexes), gain of function</td>
 </tr>
 <tr class="even">
 <td>Multiple alleles</td>
-<td>many alleles in a population; ABO; allelic series</td>
+<td>many alleles in a population; ABO; allelic series <em>C</em> &gt; <em>c<sup>ch</sup></em> &gt; <em>c<sup>h</sup></em> &gt; <em>c</em></td>
 </tr>
 <tr class="odd">
 <td>Recessive lethal</td>
-<td>2 : 1 among survivors; yellow mouse <em>A<sup>Y</sup></em></td>
+<td>2 : 1 among survivors; yellow mouse <em>A<sup>Y</sup></em>; pleiotropy</td>
 </tr>
 <tr class="even">
-<td>Pleiotropy</td>
-<td>one gene, several traits</td>
-</tr>
-<tr class="odd">
 <td>Penetrance / expressivity</td>
-<td><em>whether</em> a genotype shows / <em>how strongly</em></td>
-</tr>
-<tr class="even">
-<td>Environment</td>
-<td>temperature-sensitive tyrosinase in Himalayan rabbits</td>
+<td><em>whether</em> a genotype shows / <em>how strongly</em>; P(carrier | unaffected) shrinks but is not 0</td>
 </tr>
 <tr class="odd">
+<td>Environment</td>
+<td>temperature-sensitive tyrosinase in Himalayan rabbits; PKU and diet</td>
+</tr>
+<tr class="even">
 <td>Epistasis</td>
 <td>one gene hides another; F₂ ratios are merged 16ths</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Ratios</td>
-<td>9 : 3 : 4, 9 : 7, 12 : 3 : 1, 13 : 3, 15 : 1</td>
+<td>9 : 3 : 4, 9 : 7, 12 : 3 : 1, 13 : 3, 15 : 1 (and 9 : 6 : 1)</td>
+</tr>
+<tr class="even">
+<td>Complementation</td>
+<td>recessive mutants with a wild-type hybrid are in different genes</td>
 </tr>
 <tr class="odd">
 <td>Strategy</td>
-<td>counts → 16ths → candidate ratios → χ² → pathway</td>
+<td>counts → 16ths → candidate ratios → χ² → pathway; explain every class</td>
 </tr>
 </tbody>
 </table>
@@ -673,7 +1393,7 @@ Basic and molecular genetics (5MO104)
 <h2>Where this leads</h2>
 <ul>
 <li><strong>Pedigree analysis (next unit):</strong> incomplete penetrance, variable expressivity and new mutations make human pedigrees harder to read.</li>
-<li><strong>Mutation and complementation:</strong> the 9 : 7 cross is a complementation test. Two recessive mutants that give a wild-type F₁ have mutations in <strong>different genes</strong>.</li>
+<li><strong>Mutation and complementation:</strong> the 9 : 7 cross is a complementation test. Two recessive mutants that give a wild-type hybrid have mutations in <strong>different genes</strong>.</li>
 <li><strong>Linkage:</strong> when two genes are close on a chromosome, the dihybrid classes are no longer 9 : 3 : 3 : 1, for a quite different reason.</li>
 <li><strong>Complex traits:</strong> many genes and the environment together give continuous variation.</li>
 </ul>

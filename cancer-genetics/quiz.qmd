@@ -152,3 +152,15 @@ Which kind of mutation turns a protein on, and which destroys it?
 ::: {.callout-note collapse="true" title="Answer"}
 **Gene X is likely an oncogene**: a gain of function needs a specific change that activates the protein, so selection favours the same few codons (a hotspot). **Gene Y is likely a tumour suppressor**: any mutation that destroys the protein will do, so truncating mutations (nonsense, frameshift) appear all along the gene. (*TP53* has both: truncating mutations and missense hotspots.)
 :::
+
+---
+
+**Q12.** In a simple two-hit model, a child who inherited one mutant *RB1* allele is expected to develop 3 tumours in total (both eyes together). What is the probability that this child develops no tumour at all? What does that say about penetrance?
+
+::: {.callout-tip collapse="true" title="Hint"}
+For rare events in very many cells, P(none) ≈ e<sup>−(expected number)</sup>.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+P(no tumour) ≈ e<sup>−3</sup> = **0.05**. So about 5% of carriers stay unaffected by chance alone: penetrance ≈ **0.95**. Incomplete penetrance needs no special explanation here; it follows from the randomness of the second hit. Such unaffected carriers can still pass the allele on, so the trait can skip a generation in the pedigree.
+:::

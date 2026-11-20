@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 920 330" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig11: ascertainment bias. 64 Aa x Aa families with 3 children each, expected numbers by
+       number of affected children: binomial(3, 1/4) x 64 = 27, 27, 9, 1.
+       The 27 families with no affected child never reach the clinic (dashed bar).
+       All families: 48 affected of 192 children = 0.25. Clinic families: 48 of 111 = 0.43.
+       y scale: 200 px for 27 families (7.407 px per family), baseline y = 260. -->
+
+  <!-- y axis -->
+  <line x1="90" y1="260" x2="90" y2="52" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="84" y1="260" x2="90" y2="260" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="84" y1="193.3" x2="90" y2="193.3" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="84" y1="126.7" x2="90" y2="126.7" stroke="#1b2a3a" stroke-width="1.5"/>
+  <line x1="84" y1="60" x2="90" y2="60" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="78" y="265" font-size="14" fill="#5c6b7a" text-anchor="end">0</text>
+  <text x="78" y="198" font-size="14" fill="#5c6b7a" text-anchor="end">9</text>
+  <text x="78" y="131" font-size="14" fill="#5c6b7a" text-anchor="end">18</text>
+  <text x="78" y="65" font-size="14" fill="#5c6b7a" text-anchor="end">27</text>
+  <text x="34" y="156" font-size="15" fill="#1b2a3a" text-anchor="middle" transform="rotate(-90 34 156)">families (out of 64)</text>
+
+  <!-- x axis -->
+  <line x1="90" y1="260" x2="680" y2="260" stroke="#1b2a3a" stroke-width="1.5"/>
+
+  <!-- bars -->
+  <rect x="110" y="60" width="120" height="200" fill="#e9edf1" stroke="#8a97a5" stroke-width="2" stroke-dasharray="7 5"/>
+  <rect x="250" y="60" width="120" height="200" fill="#2a6f97"/>
+  <rect x="390" y="193.3" width="120" height="66.7" fill="#2a6f97"/>
+  <rect x="530" y="252.6" width="120" height="7.4" fill="#2a6f97"/>
+
+  <!-- counts above bars -->
+  <text x="170" y="48" font-size="16" fill="#5c6b7a" text-anchor="middle">27</text>
+  <text x="310" y="48" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">27</text>
+  <text x="450" y="183" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">9</text>
+  <text x="590" y="242" font-size="16" font-weight="bold" fill="#1b2a3a" text-anchor="middle">1</text>
+
+  <!-- label inside dashed bar -->
+  <text x="170" y="150" font-size="15" fill="#5c6b7a" text-anchor="middle">never reach</text>
+  <text x="170" y="170" font-size="15" fill="#5c6b7a" text-anchor="middle">the clinic</text>
+
+  <!-- x tick labels and title -->
+  <text x="170" y="282" font-size="15" fill="#1b2a3a" text-anchor="middle">0</text>
+  <text x="310" y="282" font-size="15" fill="#1b2a3a" text-anchor="middle">1</text>
+  <text x="450" y="282" font-size="15" fill="#1b2a3a" text-anchor="middle">2</text>
+  <text x="590" y="282" font-size="15" fill="#1b2a3a" text-anchor="middle">3</text>
+  <text x="380" y="310" font-size="15" fill="#1b2a3a" text-anchor="middle">affected children in the family (out of 3)</text>
+
+  <!-- summary panel -->
+  <rect x="700" y="60" width="205" height="200" rx="10" fill="#f4f6f8" stroke="#d5dbe1"/>
+  <text x="716" y="90" font-size="16" font-weight="bold" fill="#1b2a3a">All 64 families</text>
+  <text x="716" y="113" font-size="15" fill="#1b2a3a">48 affected of 192</text>
+  <text x="716" y="134" font-size="15" fill="#1b2a3a">children = <tspan font-weight="bold">0.25</tspan></text>
+  <text x="716" y="180" font-size="16" font-weight="bold" fill="#2a6f97">The clinic's 37</text>
+  <text x="716" y="203" font-size="15" fill="#1b2a3a">48 affected of 111</text>
+  <text x="716" y="224" font-size="15" fill="#1b2a3a">children = <tspan font-weight="bold">0.43</tspan></text>
+</svg>

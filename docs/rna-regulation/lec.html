@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -143,16 +143,16 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p>Transcription is not the last word. Small RNAs, about 22 nucleotides long, pair with mRNAs and turn them down. They were found twice: once by <strong>geneticists</strong> studying worm larvae that developed at the wrong pace, and once by researchers trying to switch genes off with antisense RNA.</p>
 <ul>
-<li><strong>lin-4 and let-7</strong>: how a genetic screen found the first microRNAs.</li>
+<li><strong>lin-4 and let-7</strong>: how a genetic screen found the first microRNAs, and how to read its genetics.</li>
 <li><strong>RNA interference</strong> (RNAi): double-stranded RNA silences genes.</li>
 <li><strong>miRNA biogenesis</strong>: Drosha, Dicer, RISC.</li>
-<li><strong>Seed matching</strong>: why nucleotides 2–8 matter, and how to find target sites.</li>
-<li><strong>siRNA vs miRNA</strong>; <strong>long non-coding RNAs</strong> such as <em>XIST</em>.</li>
-<li><strong>RNAi as a lab tool</strong> for reverse genetics.</li>
+<li><strong>Seed matching</strong>: from a miRNA to its target site, step by step; site types; how often sites occur by chance.</li>
+<li><strong>siRNA vs miRNA</strong>; designing an siRNA; <strong>long non-coding RNAs</strong> such as <em>XIST</em>.</li>
+<li><strong>RNAi as a lab tool</strong> for reverse genetics, and how to interpret it.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the chapter on RNA-based regulation (non-coding RNAs).</p>
 <aside class="notes">
-<p>The unit has a genetics story at its centre: the lin-4 and lin-14 mutants of C. elegans, analysed with the same tools as the lac mutants (dominance, gain and loss of function, epistasis). The mechanism then comes from biochemistry, and the practical payoff is RNAi as a tool, which leads into reverse genetics in the next unit. The R exercise finds let-7 seed matches in the HMGA2 3’UTR, a real oncology example.</p>
+<p>The unit has a genetics story at its centre: the lin-4 and lin-14 mutants of C. elegans, analysed with the same tools as the lac mutants (dominance, gain and loss of function, epistasis). The mechanism then comes from biochemistry, and the practical payoff is RNAi as a tool, which leads into reverse genetics in the next unit. In the middle we do the sequence work by hand, seed to site, because the exercise and the R page depend on it. The R exercise finds let-7 seed matches in the HMGA2 3’UTR, a real oncology example.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -230,18 +230,110 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-genetic-screen-finds-lin-4" class="slide level2 smaller">
-<h2>A genetic screen finds <em>lin-4</em></h2>
-<p>In <em>C. elegans</em>, each cell division in the larva happens at a fixed <strong>stage</strong> (L1–L4). <strong>Heterochronic</strong> mutants do the right things at the wrong time.</p>
+<section id="a-genetic-screen-in-a-worm" class="slide level2 smaller">
+<h2>A genetic screen in a worm</h2>
+
+<img data-src="img/c-elegans-adult.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:62.0%"><p><a href="https://commons.wikimedia.org/wiki/File:Adult_Caenorhabditis_elegans.jpg" class="photo-credit">Photo: Zeynep F. Altun (WormAtlas), CC BY-SA 2.5, via Wikimedia Commons</a></p>
+<p><em>C. elegans</em> is about 1 mm long and transparent, so every cell can be followed under the microscope. Each cell division in the larva happens at a fixed <strong>stage</strong> (L1 to L4, then adult). <strong>Heterochronic</strong> mutants do the right things at the <strong>wrong time</strong>:</p>
 <ul>
-<li><strong><em>lin-4</em>(lf)</strong>: cells <strong>repeat</strong> L1-type divisions in later stages (retarded). Recessive.</li>
-<li><strong><em>lin-14</em>(lf)</strong>: cells <strong>skip</strong> L1 fates and jump ahead (precocious): the <strong>opposite</strong> phenotype.</li>
+<li><strong><em>lin-4</em>(lf)</strong>: cells <strong>repeat</strong> L1-type divisions in later stages (<strong>retarded</strong>). Recessive.</li>
+<li><strong><em>lin-14</em>(lf)</strong>: cells <strong>skip</strong> L1 fates and jump ahead (<strong>precocious</strong>): the <strong>opposite</strong> phenotype.</li>
 <li><strong><em>lin-14</em>(gf)</strong>: dominant alleles that look like <em>lin-4</em>(lf). They <strong>delete part of the <em>lin-14</em> 3′UTR</strong>; the protein is normal.</li>
-<li>Double mutant <em>lin-4</em>(lf); <em>lin-14</em>(lf) is <strong>precocious</strong>: <em>lin-14</em> is <strong>epistatic</strong>, so <em>lin-4</em> acts upstream as a <strong>negative regulator</strong> of <em>lin-14</em>.</li>
 </ul>
-<p>In 1993 the Ambros and Ruvkun labs found that <strong><em>lin-4</em> makes no protein</strong>: only a ~22-nt RNA, complementary to repeated sites in the <em>lin-14</em> 3′UTR. (Nobel Prize 2024.)</p>
 <aside class="notes">
-<p>This is the same reasoning as in the Extensions to Mendel and lac units. Opposite phenotypes suggest opposite roles. The double mutant shows the phenotype of lin-14 loss, so lin-14 is downstream, and lin-4 must negatively regulate it. The gain-of-function lin-14 alleles are the clincher: they are dominant (cis-acting, like Oc!), and map to the 3’UTR, not the coding sequence. So the 3’UTR contains a site through which lin-4 acts. When Victor Ambros’ lab cloned lin-4, they found no open reading frame, only a 22-nt and a 61-nt RNA. Gary Ruvkun’s lab showed that the lin-14 3’UTR has seven sites complementary to lin-4. For seven years this looked like a worm curiosity.</p>
+<p>The photo is an adult hermaphrodite seen with differential interference contrast: you can see the pharynx at the left, the gut and the eggs. Because the cell lineage is known (next unit), a heterochronic phenotype can be scored cell by cell: does this seam cell divide like an L1 cell or like an L2 cell? Opposite phenotypes suggest opposite roles. Keep the dominance pattern in mind: two recessive losses of function and one dominant allele that maps to a non-coding part of the gene. Ask the class which lac allele the lin-14 gf alleles remind them of. Answer: Oc.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-the-heterochronic-genetics" class="slide level2">
+<h2>Reading the heterochronic genetics</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>LIN-14 protein after L1</th>
+<th>Phenotype</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>wild type</td>
+<td><strong>low</strong> (turned down when <em>lin-4</em> RNA appears)</td>
+<td>normal timing</td>
+</tr>
+<tr class="even">
+<td><em>lin-4</em>(lf)</td>
+<td>stays <strong>high</strong></td>
+<td>retarded: repeats L1 fates</td>
+</tr>
+<tr class="odd">
+<td><em>lin-14</em>(lf)</td>
+<td><strong>none</strong>, even in L1</td>
+<td>precocious: skips L1 fates</td>
+</tr>
+<tr class="even">
+<td><em>lin-14</em>(gf), 3′UTR deleted</td>
+<td>stays <strong>high</strong></td>
+<td>retarded</td>
+</tr>
+<tr class="odd">
+<td><em>lin-4</em>(lf); <em>lin-14</em>(lf)</td>
+<td><strong>none</strong></td>
+<td>precocious, like <em>lin-14</em>(lf)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Epistasis:</strong> opposite single-mutant phenotypes, and the double looks like <em>lin-14</em>. So <em>lin-14</em> acts <strong>downstream</strong>, and <em>lin-4</em> is a <strong>negative regulator</strong> of <em>lin-14</em>: <em>lin-4</em> ⊣ <em>lin-14</em> → L1 fates.</li>
+<li><strong>Dominance:</strong> <em>lin-14</em>(gf) escapes regulation on <strong>its own</strong> mRNA, whatever the other allele does: dominant and <strong>cis-acting</strong>, like <em>O</em><sup>c</sup>. One copy of <em>lin-4</em> makes enough RNA to act on both <em>lin-14</em> alleles <strong>in trans</strong>.</li>
+</ul>
+<aside class="notes">
+<p>This is the same reasoning as in the Extensions to Mendel and lac units. The table makes the logic explicit: the phenotype follows the level of LIN-14 protein after L1. High LIN-14 means “still L1”: retarded. No LIN-14 means “L1 is already over”: precocious. The double mutant cannot have high LIN-14, because it has no working lin-14 gene; so it is precocious. That puts lin-14 downstream. The rule from Extensions to Mendel: when single mutants have opposite phenotypes, the double mutant shows the phenotype of the downstream gene. The exercise asks you to apply this to heterozygotes as well.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lin-4-is-a-small-rna" class="slide level2">
+<h2><em>lin-4</em> is a small RNA</h2>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p>In 1993 the <strong>Ambros</strong> and <strong>Ruvkun</strong> labs cloned <em>lin-4</em> and found that it <strong>makes no protein</strong>: only a ~22-nt RNA.</p>
+<ul>
+<li>The <em>lin-4</em> RNA is <strong>partly complementary</strong> to repeated sites in the <em>lin-14</em> <strong>3′UTR</strong>: exactly the region deleted in the dominant <em>lin-14</em>(gf) alleles.</li>
+<li>LIN-14 <strong>protein</strong> falls in late L1, while <em>lin-14</em> <strong>mRNA</strong> stays much the same: regulation <strong>after transcription</strong>.</li>
+<li>For seven years this looked like a worm curiosity. Nobel Prize 2024.</li>
+</ul>
+</div><div class="column" style="width:16%;">
+<p><img data-src="img/ambros.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Victor_Ambros,_2024_Nobel_Prize_Laureate_in_Medicine_(cropped).jpg" class="photo-credit">Photo: Arthur Petron, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:16%;">
+<p><img data-src="img/ruvkun.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Gary_Ruvkun,_2024_Nobel_Prize_Laureate_in_Medicine_4_(cropped_3x4).jpg" class="photo-credit">Photo: John Sears, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+</div></div>
+<aside class="notes">
+<p>Victor Ambros (left photo) and Gary Ruvkun (right photo), at the Nobel week in Stockholm in 2024. When Victor Ambros’ lab cloned lin-4, they found no open reading frame, only a 22-nt and a 61-nt RNA (the mature miRNA and its hairpin precursor). Gary Ruvkun’s lab showed that the lin-14 3’UTR has sites complementary to lin-4, and that the 3’UTR is enough to put a reporter gene under lin-4 control. The genetics had already predicted that the 3’UTR contains a cis-acting site through which lin-4 acts; the molecular result confirmed it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -272,7 +364,7 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="let-7-the-first-conserved-microrna" class="slide level2 smaller">
+<section id="let-7-the-first-conserved-microrna" class="slide level2">
 <h2><em>let-7</em>: the first conserved microRNA</h2>
 <p>In 2000, <em>let-7</em> was found by the same kind of screen: another heterochronic gene, again a ~22-nt RNA, acting on the 3′UTRs of later-stage regulators (<em>lin-41</em>, <em>hbl-1</em>).</p>
 <ul>
@@ -294,9 +386,9 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="rna-interference" class="slide level2 smaller">
+<section id="rna-interference" class="slide level2">
 <h2>RNA interference</h2>
-<p>Fire, Mello and colleagues (1998) injected RNA into worms to silence the <em>unc-22</em> gene:</p>
+<p>Fire, Mello and colleagues (1998) injected RNA into worms to silence the <em>unc-22</em> gene (loss of <em>unc-22</em> makes worms <strong>twitch</strong>):</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -325,7 +417,7 @@ Basic and molecular genetics (5MO104)
 </table>
 <p>Double-stranded RNA is cut by <strong>Dicer</strong> into ~21-nt <strong>siRNAs</strong>; one strand guides <strong>Argonaute</strong> (in RISC) to cut any mRNA that matches <strong>perfectly</strong>. Natural roles: defence against viruses and transposons. (Nobel Prize 2006.)</p>
 <aside class="notes">
-<p>The surprise in the 1998 paper was that the earlier antisense experiments worked because the antisense preparations were contaminated with some double-stranded RNA. Only a few molecules of dsRNA per cell were enough: catalytic, not stoichiometric. In worms the silencing signal is amplified by RNA-dependent RNA polymerases and spreads between cells and even to the next generation. Plants had shown the effect earlier as “co-suppression”: adding extra copies of a petunia pigment gene made some flowers white instead of darker purple. The shared machinery between RNAi and miRNAs is Dicer and Argonaute.</p>
+<p>The surprise in the 1998 paper was that the earlier antisense experiments worked because the antisense preparations were contaminated with some double-stranded RNA. Only a few molecules of dsRNA per cell were enough: catalytic, not stoichiometric. The twitching phenotype made the readout easy: you could score silencing by watching the worms move. In worms the silencing signal is amplified by RNA-dependent RNA polymerases and spreads between cells and even to the next generation. Plants had shown the effect earlier as “co-suppression”: adding extra copies of a petunia pigment gene made some flowers white instead of darker purple. The shared machinery between RNAi and miRNAs is Dicer and Argonaute.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -361,7 +453,7 @@ Basic and molecular genetics (5MO104)
 
 <img data-src="fig02-seed-pairing.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><p>Animal miRNAs find targets mainly through the <strong>seed</strong>, nucleotides <strong>2–8</strong> from the 5′ end. A target site in the mRNA (usually the 3′UTR) is the <strong>reverse complement</strong> of the seed, sometimes with an A opposite nucleotide 1.</p>
 <aside class="notes">
-<p>Read the figure: let-7a is drawn 3’ to 5’ so it lines up antiparallel with the mRNA. The seed GAGGUAG (nt 2 to 8) pairs with CUACCUC in the mRNA, followed by an A opposite nt 1: an 8mer, the strongest site type. This is the real site at UTR positions 21 to 28 of HMGA2, the first of the seven let-7 sites. The rest of the miRNA pairs only partly, which is why one miRNA can regulate hundreds of mRNAs. TargetScan, which students use in the Find it task, ranks targets by site type, number of sites, and whether the sites are conserved across species. A 7-nt site occurs by chance about once every 16 kb (4 to the 7th), so a single site means little; conserved and multiple sites mean more.</p>
+<p>Read the figure: let-7a is drawn 3’ to 5’ so it lines up antiparallel with the mRNA. The seed GAGGUAG (nt 2 to 8) pairs with CUACCUC in the mRNA, followed by an A opposite nt 1: an 8mer, the strongest site type. This is the real site at UTR positions 21 to 28 of HMGA2, the first of the seven let-7 sites. The rest of the miRNA pairs only partly, which is why one miRNA can regulate hundreds of mRNAs. TargetScan, which students use in the Find it task, ranks targets by site type, number of sites, and whether the sites are conserved across species.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -374,7 +466,175 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="sirna-vs-mirna" class="slide level2 smaller">
+<section id="from-seed-to-site-step-by-step" class="slide level2">
+<h2>From seed to site, step by step</h2>
+<p>Worked example: human <strong>let-7a-5p</strong>, written 5′→3′.</p>
+<pre><code>miRNA      5'-U GAGGUAG UAGGUUGUAUAGUUU-3'
+position      1 2345678
+seed          GAGGUAG            (nt 2-8)
+complement    CUCCAUC            (A&lt;-&gt;U, G&lt;-&gt;C, same order)
+reverse       CUACCUC            (read backwards: now 5'-&gt;3')
+site in mRNA  5'-...CUACCUC...-3'   7mer-m8
+              5'-...CUACCUCA...-3'  8mer (plus an A opposite nt 1)</code></pre>
+<ol type="1">
+<li>Count from <strong>1</strong> at the 5′ end; the seed starts at <strong>2</strong>.</li>
+<li><strong>Complement</strong> each base (in RNA: A↔︎U, G↔︎C).</li>
+<li><strong>Reverse</strong> it, so that the site is written 5′→3′ like the mRNA.</li>
+</ol>
+<aside class="notes">
+<p>Do this on the board and have the class do it with you. The reverse step is where most errors come from: the complement alone, CUCCAUC, is written 3’ to 5’, and you will not find it in an mRNA sequence written the normal way. Check the result by lining the two up antiparallel, as in the figure on the previous slide. In the exercise students do this for miR-21, miR-1 and lin-4; in R they write a revcomp function that does steps 2 and 3. If the UTR sequence comes as DNA, as in a FASTA file from Ensembl, write T instead of U.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="four-kinds-of-site" class="slide level2">
+<h2>Four kinds of site</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>mRNA pairs with</th>
+<th>Example for <em>let-7</em> (seed GAGGUAG)</th>
+<th>Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>8mer</strong></td>
+<td>nt 2–8, plus an A opposite nt 1</td>
+<td>CUACCUC<strong>A</strong></td>
+<td>strongest</td>
+</tr>
+<tr class="even">
+<td><strong>7mer-m8</strong></td>
+<td>nt 2–8</td>
+<td>CUACCUC</td>
+<td>strong</td>
+</tr>
+<tr class="odd">
+<td><strong>7mer-A1</strong></td>
+<td>nt 2–7, plus an A opposite nt 1</td>
+<td>UACCUC<strong>A</strong></td>
+<td>weaker</td>
+</tr>
+<tr class="even">
+<td><strong>6mer</strong></td>
+<td>nt 2–7 only</td>
+<td>UACCUC</td>
+<td>marginal</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>All four share the <strong>6-nt core</strong> that pairs with nt 2–7 (here UACCUC).</li>
+<li>To classify a match, look at the base <strong>before</strong> the core (a <strong>C</strong> pairs with nt 8) and the base <strong>after</strong> it (an <strong>A</strong> sits opposite nt 1).</li>
+<li>The A opposite nt 1 does not base-pair; Argonaute has a pocket that prefers an A there.</li>
+</ul>
+<aside class="notes">
+<p>This is the classification that TargetScan uses, and the R exercise implements it with case_when: find the 6-nt core, then look one base to the left (5’) and one to the right (3’). The base before the core in the mRNA pairs with nucleotide 8 of the miRNA, because the strands are antiparallel. Strength here means the average size of the repression effect measured on many targets; the ranking 8mer &gt; 7mer-m8 &gt; 7mer-A1 &gt; 6mer is robust, but the effect of one site on one gene is usually modest, often less than twofold.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-often-does-a-site-turn-up-by-chance" class="slide level2">
+<h2>How often does a site turn up by chance?</h2>
+<p>A site is a fixed word of <em>k</em> nucleotides. In random sequence with equal base frequencies, a given word occurs about once every <strong>4<sup><em>k</em></sup></strong> nucleotides.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Site length</th>
+<th>Chance of a match at one position</th>
+<th>Expected per 1000 nt of 3′UTR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>6 nt</td>
+<td>1/4<sup>6</sup> = 1/4096</td>
+<td>≈ 0.24</td>
+</tr>
+<tr class="even">
+<td>7 nt</td>
+<td>1/4<sup>7</sup> = 1/16 384</td>
+<td>≈ 0.06</td>
+</tr>
+<tr class="odd">
+<td>8 nt</td>
+<td>1/4<sup>8</sup> = 1/65 536</td>
+<td>≈ 0.015</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>An mRNA is <strong>single-stranded</strong>: count <strong>one</strong> strand only (for a transcription-factor motif in DNA you count both).</li>
+<li>Over thousands of genes, chance alone gives <strong>many</strong> matches per miRNA. A single 7-nt match means little.</li>
+<li>More convincing: a <strong>conserved</strong> site, <strong>several</strong> sites in one UTR, a stronger site type, and miRNA and mRNA made in the <strong>same cells</strong>.</li>
+</ul>
+<aside class="notes">
+<p>Work the middle row out loud: 4 to the power 7 is 16384, so in 1000 nucleotides you expect 1000 divided by 16384, about 0.06 matches. Scale it up yourself for a whole UTR or a whole transcriptome; the exercise asks you to. The strand point is a nice contrast with the motif counting in the Eukaryotic regulation unit: a transcription factor reads double-stranded DNA, so a motif can be on either strand, while a miRNA reads the mRNA, which has only one sequence. HMGA2 has seven conserved let-7 sites in about 3 kb, far more than chance predicts: that is why it is a believable target.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-seeds-and-sites" class="slide level2">
+<h2>Check yourself: seeds and sites</h2>
+<p>Answers in the notes.</p>
+<ol type="1">
+<li>A miRNA starts 5′-UAAGGCACGCGG…-3′. What is its seed, and what is its 7mer-m8 site?</li>
+<li>A student writes the <em>let-7</em> site as <strong>CUCCAUC</strong>. What went wrong?</li>
+<li>In a 3′UTR you find 5′-…G<strong>UACCUC</strong>A…-3′. Which kind of <em>let-7</em> site is this?</li>
+<li>Why is one 7-nt match in a long 3′UTR weak evidence that the gene is a target?</li>
+</ol>
+<aside class="notes">
+<p>Answers. 1: This is the start of miR-124 (UAAGGCACGCGGUGAAUGCC). Seed nt 2-8: AAGGCAC. Complement: UUCCGUG. Reverse: GUGCCUU. The 7mer-m8 site is GUGCCUU. 2: The student complemented but did not reverse; CUCCAUC is the site written 3’ to 5’. The correct site, 5’ to 3’, is CUACCUC. 3: The core UACCUC is preceded by G, not C, so nt 8 is not paired; it is followed by A, opposite nt 1: a 7mer-A1. 4: A 7-nt word turns up about once every 16 kb by chance, so across many genes there are many chance matches; you want conservation, several sites, a strong site type, or expression in the same cells.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sirna-vs-mirna" class="slide level2">
 <h2>siRNA vs miRNA</h2>
 <table class="caption-top">
 <colgroup>
@@ -441,7 +701,33 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="regulatory-rna-in-genetics-and-disease" class="slide level2 smaller">
+<section id="designing-an-sirna" class="slide level2">
+<h2>Designing an siRNA</h2>
+<p>The <strong>guide</strong> (antisense) strand must pair perfectly with the target mRNA, so it is the target’s <strong>reverse complement</strong>. Worked example with a made-up 19-nt target stretch:</p>
+<pre><code>target mRNA   5'-GAUCCAGUUCGAAGCAUCU-3'
+complement       CUAGGUCAAGCUUCGUAGA      (3'-&gt;5')
+guide strand  5'-AGAUGCUUCGAACUGGAUC-3'   (reversed)
+guide seed        GAUGCUU                 (nt 2-8)
+off-target site   AAGCAUC                 (any mRNA with this 7-mer)</code></pre>
+<ul>
+<li>The guide <strong>cuts</strong> the intended mRNA, which matches all 19 nt.</li>
+<li>Its <strong>seed</strong> can also pair, miRNA-style, with any 3′UTR that has the seed’s site: <strong>off-target</strong> knockdown of many genes, each a little.</li>
+</ul>
+<aside class="notes">
+<p>Go through the lines. The guide is the reverse complement of the target, just like a miRNA site is the reverse complement of the seed, but here over the whole length. Then treat the guide as if it were a miRNA: its nucleotides 2 to 8 are a seed, and the reverse complement of that seed is a 7-nt site that will occur by chance in many 3’UTRs. Check: the off-target site AAGCAUC also occurs in the target itself, of course, near its 3’ end. The sequence is made up for teaching; real design tools also avoid seeds that match many UTRs and check the whole guide against the transcriptome. The exercise has a design problem of the same kind with a different sequence.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="regulatory-rna-in-genetics-and-disease" class="slide level2">
 <h2>Regulatory RNA in genetics and disease</h2>
 <ul>
 <li><strong>Target-site mutations act in cis.</strong> Chromosomal rearrangements in benign tumours (e.g.&nbsp;lipomas) cut <em>HMGA2</em> off from its 3′UTR. The truncated mRNA loses its seven <em>let-7</em> sites, escapes repression, and makes too much protein: a <strong>dominant gain of function</strong>, like <em>lin-14</em>(gf).</li>
@@ -462,7 +748,30 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="long-non-coding-rnas" class="slide level2 smaller">
+<section id="mirna-genes-dominance-and-redundancy" class="slide level2">
+<h2>miRNA genes: dominance and redundancy</h2>
+<ul>
+<li><strong>Loss of one copy</strong> of a miRNA gene is usually <strong>recessive</strong>: the other copy makes enough RNA to act on all targets in trans.</li>
+<li>A <strong>seed mutation</strong> can be <strong>dominant</strong>: the mutant miRNA from one allele stops repressing its old targets <strong>and</strong> represses new ones (<em>MIR96</em>).</li>
+<li>Many miRNAs come in <strong>families</strong> that share a seed (the <em>let-7</em> family: let-7a to let-7i and miR-98 in humans). Members target the <strong>same</strong> sites, so they can <strong>cover for each other</strong>.</li>
+<li>So deleting one miRNA gene often gives <strong>no visible phenotype</strong>: in <em>C. elegans</em>, most miRNA genes deleted one at a time showed no obvious defect (Miska et al., 2007). Removing the whole family does.</li>
+</ul>
+<p>This is <strong>genetic redundancy</strong>, as with the duplicate genes behind a 15 : 1 ratio (Extensions to Mendel).</p>
+<aside class="notes">
+<p>The dominance pattern of miRNA genes follows the same logic as transcription-factor genes: loss of function is usually recessive, but a change in what the product recognises can be dominant, because it creates a new wrong function. The family point explains a surprise from the early knockout work: Miska and colleagues deleted most known worm miRNAs one by one and found that most individual deletions had no obvious developmental or viability defect. Many of those miRNAs turned out to be needed when combined with other mutations or under stress, or when the whole family was removed. lin-4 and let-7 are the exceptions that let the screens find them. Link forward to the next unit: redundancy is the main reason a reverse-genetics knockout can show no phenotype.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="long-non-coding-rnas" class="slide level2">
 <h2>Long non-coding RNAs</h2>
 <p><strong>lncRNAs</strong> are transcripts longer than 200 nt that do not encode a protein. Some work <strong>in cis</strong>, on the chromosome they are made from; others <strong>in trans</strong>.</p>
 <ul>
@@ -484,7 +793,7 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="rnai-as-a-tool-for-reverse-genetics" class="slide level2 smaller">
+<section id="rnai-as-a-tool-for-reverse-genetics" class="slide level2">
 <h2>RNAi as a tool for reverse genetics</h2>
 <p><strong>Forward genetics</strong> goes from a phenotype to the gene. <strong>Reverse genetics</strong> starts from a gene and asks: what happens if I remove it? RNAi made this easy.</p>
 <ul>
@@ -492,9 +801,92 @@ Basic and molecular genetics (5MO104)
 <li><strong>Flies</strong>: transgenic hairpin RNAs (often combined with tissue-specific GAL4 drivers, next unit).</li>
 <li><strong>Mammalian cells</strong>: transfect siRNAs or express shRNAs.</li>
 </ul>
-<p>Limits: RNAi gives a <strong>knockdown</strong> (a hypomorph), not a null; efficiency varies; off-target effects via the seed. Today <strong>CRISPR–Cas9 knockouts</strong> are often preferred, but RNAi remains useful for genes whose knockout is lethal, and for tuning dosage.</p>
+<p>Today <strong>CRISPR–Cas9 knockouts</strong> are often preferred, but RNAi remains useful for genes whose knockout is lethal, and for tuning dosage.</p>
 <aside class="notes">
-<p>This bridges to Development and model organisms. The worm feeding library (Kamath and colleagues, Ahringer lab, 2003) was one of the first genome-wide reverse-genetic screens in an animal. Genetically, an RNAi phenotype is like a hypomorphic allele: partial loss of function. That has advantages (you can see phenotypes for genes whose null alleles die early) and disadvantages (a weak knockdown can miss a phenotype; you cannot do clean complementation tests). Controls: several independent siRNAs, and rescue with a version of the gene that the siRNA cannot target (silent changes in the target site).</p>
+<p>This bridges to Development and model organisms. The worm feeding library (Kamath and colleagues, Ahringer lab, 2003) was one of the first genome-wide reverse-genetic screens in an animal. Feeding works because worms take up dsRNA from the gut and spread it through the body, the same spreading seen in the 1998 injection experiments. In mammalian cells long dsRNA triggers an interferon response, so 21-nt siRNAs are delivered directly instead.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="interpreting-an-rnai-phenotype" class="slide level2">
+<h2>Interpreting an RNAi phenotype</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>RNAi knockdown</th>
+<th>Mutant allele (e.g.&nbsp;CRISPR null)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What it changes</td>
+<td>the <strong>mRNA</strong>, in trans, all copies at once</td>
+<td>the <strong>gene</strong>, one allele at a time</td>
+</tr>
+<tr class="even">
+<td>Strength</td>
+<td>partial: a <strong>hypomorph</strong>; varies between cells and experiments</td>
+<td>can be a clean <strong>null</strong></td>
+</tr>
+<tr class="odd">
+<td>Lethal genes</td>
+<td>can still study later roles</td>
+<td>null may die early</td>
+</tr>
+<tr class="even">
+<td>Complementation test</td>
+<td><strong>not possible</strong>: there is no allele to put in trans</td>
+<td>possible</td>
+</tr>
+<tr class="odd">
+<td>Main pitfall</td>
+<td><strong>off-target</strong> effects through the seed</td>
+<td>linked background mutations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Controls</strong> for an RNAi result: two or more <strong>independent</strong> siRNAs against the same gene; show that the target mRNA or protein went down; <strong>rescue</strong> with a version of the gene that the siRNA cannot match (silent changes in the target site).</p>
+<aside class="notes">
+<p>Genetically, an RNAi phenotype is like a hypomorphic allele: partial loss of function. That has advantages (you can see phenotypes for genes whose null alleles die early) and disadvantages (a weak knockdown can miss a phenotype). The complementation point is subtle and is asked in the exercise: complementation needs two mutations in the same organism, one on each homologue, to see whether they restore function together. A knockdown acts on all copies of the mRNA, so there is nothing to test it against. The rescue control is the strongest: if a version of the gene that the siRNA cannot touch restores the phenotype, the phenotype was due to that gene.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Counting the seed from 0, or from nt 1.</strong> The seed is nt <strong>2–8</strong>; nt 1 is not part of it.</li>
+<li><strong>Complementing without reversing.</strong> A site written 5′→3′ is the <strong>reverse</strong> complement of the seed.</li>
+<li><strong>Mixing DNA and RNA letters.</strong> A UTR from a FASTA file has <strong>T</strong>; a miRNA in miRBase has <strong>U</strong>.</li>
+<li><strong>Counting both strands for a miRNA site.</strong> The mRNA is single-stranded.</li>
+<li><strong>“An siRNA hits only its target.”</strong> Its seed can act on hundreds of mRNAs.</li>
+<li><strong>“A miRNA mutation must be recessive.”</strong> Seed mutations can be dominant (<em>MIR96</em>); site deletions in the target are dominant and cis (<em>lin-14</em>(gf), <em>HMGA2</em>).</li>
+<li><strong>“No knockout phenotype means no function.”</strong> Family members with the same seed may cover for it.</li>
+</ul>
+<aside class="notes">
+<p>These are the errors that appear most often in the exercise and on exams. Ask the class to give an example of each from the lecture. The cis/trans point ties the whole of Part 6 together: sites act in cis and are often dominant when lost; regulators act in trans, and their loss of function is usually recessive.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -523,7 +915,7 @@ Basic and molecular genetics (5MO104)
 <tbody>
 <tr class="odd">
 <td><em>lin-4</em> / <em>lin-14</em></td>
-<td>first miRNA (1993); <em>lin-14</em>(gf) = 3′UTR deletions, dominant, cis; <em>lin-4</em> acts in trans</td>
+<td>first miRNA (1993); <em>lin-14</em>(gf) = 3′UTR deletions, dominant, cis; <em>lin-4</em> acts in trans; <em>lin-14</em> epistatic</td>
 </tr>
 <tr class="even">
 <td><em>let-7</em></td>
@@ -538,24 +930,36 @@ Basic and molecular genetics (5MO104)
 <td>pri-miRNA → Drosha → pre-miRNA → Exportin-5 → Dicer → RISC (Argonaute)</td>
 </tr>
 <tr class="odd">
-<td>Seed</td>
+<td>Seed and site</td>
 <td>nt 2–8; site = reverse complement; 8mer &gt; 7mer-m8 &gt; 7mer-A1 &gt; 6mer</td>
 </tr>
 <tr class="even">
+<td>Chance</td>
+<td>a <em>k</em>-nt site every 4<sup><em>k</em></sup> nt, one strand; 7mer ≈ every 16 kb</td>
+</tr>
+<tr class="odd">
 <td>siRNA vs miRNA</td>
 <td>perfect pairing, one target, cleavage vs seed pairing, many targets, repression</td>
+</tr>
+<tr class="even">
+<td>siRNA design</td>
+<td>guide = reverse complement of the target; its seed gives off-targets</td>
 </tr>
 <tr class="odd">
 <td>Disease</td>
 <td><em>HMGA2</em> 3′UTR loss (cis, oncogenic); <em>MIR96</em> seed mutation (trans, deafness)</td>
 </tr>
 <tr class="even">
+<td>Redundancy</td>
+<td>miRNA families share seeds; single knockouts often have no phenotype</td>
+</tr>
+<tr class="odd">
 <td>lncRNA</td>
 <td>&gt; 200 nt, no protein; <em>XIST</em> acts in cis</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>RNAi as a tool</td>
-<td>knockdown, reverse genetics, genome-wide screens; watch for off-targets</td>
+<td>knockdown = hypomorph; no complementation; controls: several siRNAs, rescue</td>
 </tr>
 </tbody>
 </table>
@@ -576,7 +980,7 @@ Basic and molecular genetics (5MO104)
 <section id="where-this-leads" class="slide level2">
 <h2>Where this leads</h2>
 <ul>
-<li><strong>Next: Development &amp; model organisms.</strong> Forward screens like the heterochronic screen, reverse genetics with RNAi and CRISPR, and the transcription-factor cascades that build the fly embryo.</li>
+<li><strong>Next: Development &amp; model organisms.</strong> Forward screens like the heterochronic screen, reverse genetics with RNAi and CRISPR, and the transcription-factor cascades that build the fly embryo. Redundancy returns with the four mammalian Hox clusters.</li>
 <li><strong>Part 7: Cancer genetics.</strong> <em>let-7</em> and <em>HMGA2</em> are one example of how loss of regulation makes an oncogene.</li>
 </ul>
 <aside class="notes">

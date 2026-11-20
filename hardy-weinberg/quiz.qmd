@@ -130,3 +130,15 @@ Compute 2*pq* in each population and average. Then compute the pooled *p*.
 ::: {.callout-note collapse="true" title="Answer"}
 Each population has 2 × 0.9 × 0.1 = 0.18 heterozygotes, so the pooled sample has **0.18**. Pooled *p* = 0.5, so HWE predicts **0.50**. Apparent *F* = 1 − 0.18/0.50 = **0.64**, a large heterozygote deficit without any inbreeding: the **Wahlund effect**.
 :::
+
+---
+
+**Q11.** A trait is recessive with complete dominance, and 4% of a population show it. Assuming HWE, what is *q*? What fraction of the people with the dominant phenotype are carriers (*Aa*)? Why can you not test HWE with these data?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Only *aa* can be told apart, and f(*aa*) = *q*² under HWE.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*q* = √0.04 = **0.2**, *p* = 0.8. *AA* = 0.64, *Aa* = 2 × 0.8 × 0.2 = 0.32, so among the 96% with the dominant phenotype, 0.32/0.96 = **one third** are carriers. HWE cannot be tested: there are only two visible classes, and estimating *q* uses up the only degree of freedom (df = 2 − 1 − 1 = 0). HWE is an assumption here, not a result.
+:::

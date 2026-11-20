@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="370" viewBox="0 0 900 370" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig07: the imprint is erased and reset in every germ line.
+       Gene expressed only from the paternal copy (like mouse Igf2). We follow ONE copy (orange outline)
+       through three generations. In the grandmother it sits on her paternal chromosome: active.
+       In her eggs the old mark is erased and a maternal (silencing) mark is set, so in her son it is silent.
+       In his sperm it is erased again and a paternal mark is set, so in his child it is active again.
+       The DNA sequence never changes; only the mark does. -->
+  <defs>
+    <marker id="arrK" markerWidth="14" markerHeight="14" refX="11" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,5 L0,10 Z" fill="#e07b00"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">The imprint is reset in each germ line: follow one copy of a paternally expressed gene</text>
+
+  <!-- ===== column 1: grandmother ===== -->
+  <text x="30" y="70" font-size="16" font-weight="bold" fill="#1b2a3a">I. Grandmother</text>
+  <text x="30" y="114" font-size="14" fill="#2a6f97">pat</text>
+  <line x1="66" y1="110" x2="240" y2="110" stroke="#2a6f97" stroke-width="6" stroke-linecap="round"/>
+  <rect x="110" y="94" width="90" height="32" rx="4" fill="#5f9e4a" stroke="#e07b00" stroke-width="4"/>
+  <text x="155" y="115" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">active</text>
+  <text x="30" y="174" font-size="14" fill="#c0392b">mat</text>
+  <line x1="66" y1="170" x2="240" y2="170" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+  <rect x="110" y="154" width="90" height="32" rx="4" fill="#e3e6ea" stroke="#9aa5b1" stroke-width="1.2"/>
+  <text x="155" y="175" font-size="14" fill="#8a929b" text-anchor="middle">silent</text>
+
+  <!-- ===== column 2: her son ===== -->
+  <text x="340" y="70" font-size="16" font-weight="bold" fill="#1b2a3a">II. Her son</text>
+  <line x1="376" y1="110" x2="550" y2="110" stroke="#2a6f97" stroke-width="6" stroke-linecap="round"/>
+  <rect x="420" y="94" width="90" height="32" rx="4" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="465" y="115" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">active</text>
+  <line x1="376" y1="170" x2="550" y2="170" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+  <rect x="420" y="154" width="90" height="32" rx="4" fill="#e3e6ea" stroke="#e07b00" stroke-width="4"/>
+  <text x="465" y="175" font-size="14" fill="#8a929b" text-anchor="middle">silent</text>
+
+  <!-- ===== column 3: his child ===== -->
+  <text x="650" y="70" font-size="16" font-weight="bold" fill="#1b2a3a">III. His child</text>
+  <line x1="686" y1="110" x2="860" y2="110" stroke="#2a6f97" stroke-width="6" stroke-linecap="round"/>
+  <rect x="730" y="94" width="90" height="32" rx="4" fill="#5f9e4a" stroke="#e07b00" stroke-width="4"/>
+  <text x="775" y="115" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">active</text>
+  <line x1="686" y1="170" x2="860" y2="170" stroke="#c0392b" stroke-width="6" stroke-linecap="round"/>
+  <rect x="730" y="154" width="90" height="32" rx="4" fill="#e3e6ea" stroke="#9aa5b1" stroke-width="1.2"/>
+  <text x="775" y="175" font-size="14" fill="#8a929b" text-anchor="middle">silent</text>
+
+  <!-- germ-line arrows from the tracked copy to its new position -->
+  <path d="M203,110 C270,110 340,170 414,170" fill="none" stroke="#e07b00" stroke-width="2.5" marker-end="url(#arrK)"/>
+  <path d="M513,170 C590,170 650,110 724,110" fill="none" stroke="#e07b00" stroke-width="2.5" marker-end="url(#arrK)"/>
+
+  <!-- germ-line explanations -->
+  <rect x="150" y="214" width="290" height="70" rx="8" fill="#fbeeee" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="164" y="238" font-size="14" font-weight="bold" fill="#1b2a3a">In her eggs</text>
+  <text x="164" y="258" font-size="14" fill="#1b2a3a">old mark erased; maternal mark set</text>
+  <text x="164" y="276" font-size="14" fill="#1b2a3a">→ the copy is silent in her son</text>
+  <rect x="460" y="214" width="290" height="70" rx="8" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+  <text x="474" y="238" font-size="14" font-weight="bold" fill="#1b2a3a">In his sperm</text>
+  <text x="474" y="258" font-size="14" fill="#1b2a3a">old mark erased; paternal mark set</text>
+  <text x="474" y="276" font-size="14" fill="#1b2a3a">→ the copy is active in his child</text>
+
+  <!-- legend -->
+  <line x1="20" y1="304" x2="880" y2="304" stroke="#d5dae0" stroke-width="1.5"/>
+  <rect x="30" y="318" width="34" height="22" rx="3" fill="#ffffff" stroke="#e07b00" stroke-width="4"/>
+  <text x="74" y="334" font-size="14" fill="#1b2a3a">the copy we follow: same DNA sequence in all three people</text>
+  <text x="30" y="360" font-size="13" fill="#5c6b7a">Transmission is Mendelian (½ to each child); only the expression state depends on the parent it came from.</text>
+</svg>

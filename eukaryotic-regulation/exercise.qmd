@@ -54,7 +54,10 @@ a) Why is neither II-1 nor II-2 affected?
 b) What is the risk that a child of II-1 is affected? A child of II-2?
 c) What is the risk that a grandchild of II-1, through one of II-1's daughters, is affected?
 
-**B5. (calico cats)** Orange (*X*^O^) and black (*X*^o^) are alleles of an X-linked gene in cats.
+**B5. (calico cats)** Orange (*X*^O^) and black (*X*^o^) are alleles of an X-linked gene in cats. (The white areas of a calico come from a separate, autosomal spotting gene; ignore them here.)
+
+![A calico cat: each orange or black patch is a clone of cells that kept the same X active.](img/calico-cat.jpg){width="45%"}
+[Photo: Jimis919, CC0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:My_calico_cat.jpg){.photo-credit}
 
 a) An orange male is crossed to a black female. Give the coat colours of their sons and daughters.
 b) A calico female (*X*^O^*X*^o^) is crossed to a black male. Give the expected offspring by sex and colour.

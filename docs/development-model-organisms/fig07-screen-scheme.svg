@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig07: generations of a balancer-based F3 recessive screen (chromosome 3, balancer TM3).
+       P: EMS-treated males x balancer-stock females; each sperm carries a different mutagenised
+       chromosome m*. F1: single m*/TM3 males, each founds a line. F2: m*/TM3 brothers and sisters
+       picked by the markers. F3: 1/4 of the embryos in a line are m*/m* and are scored (zygotic screen).
+       A maternal-effect screen must wait one more generation: the F3 m*/m* daughters grow up and
+       their embryos (F4) are scored. -->
+  <defs>
+    <marker id="arr7" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">A recessive screen, generation by generation (chromosome 3)</text>
+
+  <!-- P -->
+  <text x="20" y="76" font-size="18" font-weight="bold" fill="#5c6b7a">P</text>
+  <rect x="70" y="52" width="440" height="38" rx="6" fill="#f3f5f7" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="84" y="77" font-size="15" fill="#1b2a3a">EMS-treated males  ×  balancer-stock females</text>
+  <text x="530" y="68" font-size="14" fill="#1b2a3a">each sperm carries a different</text>
+  <text x="530" y="86" font-size="14" fill="#1b2a3a">mutagenised chromosome, <tspan font-style="italic">m</tspan>*</text>
+  <line x1="290" y1="92" x2="290" y2="112" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr7)"/>
+
+  <!-- F1 -->
+  <text x="20" y="140" font-size="18" font-weight="bold" fill="#5c6b7a">F1</text>
+  <rect x="70" y="116" width="440" height="38" rx="6" fill="#f3f5f7" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="84" y="141" font-size="15" fill="#1b2a3a">one <tspan font-style="italic">m</tspan>*/TM3 male  ×  balancer-stock females</text>
+  <text x="530" y="132" font-size="14" fill="#1b2a3a">one male = one line;</text>
+  <text x="530" y="150" font-size="14" fill="#1b2a3a">thousands of lines in parallel</text>
+  <line x1="290" y1="156" x2="290" y2="176" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr7)"/>
+
+  <!-- F2 -->
+  <text x="20" y="204" font-size="18" font-weight="bold" fill="#5c6b7a">F2</text>
+  <rect x="70" y="180" width="440" height="38" rx="6" fill="#f3f5f7" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="84" y="205" font-size="15" fill="#1b2a3a"><tspan font-style="italic">m</tspan>*/TM3 brothers  ×  <tspan font-style="italic">m</tspan>*/TM3 sisters</text>
+  <text x="530" y="196" font-size="14" fill="#1b2a3a">picked by the markers; all carry</text>
+  <text x="530" y="214" font-size="14" fill="#1b2a3a">the same <tspan font-style="italic">m</tspan>*: this is the line's stock</text>
+  <line x1="290" y1="220" x2="290" y2="240" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr7)"/>
+
+  <!-- F3 -->
+  <text x="20" y="268" font-size="18" font-weight="bold" fill="#5c6b7a">F3</text>
+  <rect x="70" y="244" width="440" height="38" rx="6" fill="#eef4f8" stroke="#2a6f97" stroke-width="2"/>
+  <text x="84" y="269" font-size="15" fill="#1b2a3a">embryos: ¼ <tspan font-style="italic">m</tspan>*/<tspan font-style="italic">m</tspan>*, ½ <tspan font-style="italic">m</tspan>*/TM3, ¼ TM3/TM3</text>
+  <text x="530" y="260" font-size="14" font-weight="bold" fill="#2a6f97">zygotic screen: score here</text>
+  <text x="530" y="278" font-size="14" fill="#1b2a3a">dead embryos with an abnormal cuticle</text>
+
+  <!-- F4, maternal effect -->
+  <line x1="290" y1="284" x2="290" y2="304" stroke="#1b2a3a" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr7)"/>
+  <text x="20" y="332" font-size="18" font-weight="bold" fill="#5c6b7a">F4</text>
+  <rect x="70" y="308" width="440" height="38" rx="6" fill="#fbeeee" stroke="#c0392b" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="84" y="333" font-size="15" fill="#1b2a3a">embryos laid by F3 <tspan font-style="italic">m</tspan>*/<tspan font-style="italic">m</tspan>* females</text>
+  <text x="530" y="324" font-size="14" font-weight="bold" fill="#c0392b">maternal-effect screen: score here</text>
+  <text x="530" y="342" font-size="14" fill="#1b2a3a">the homozygous mother must survive</text>
+
+  <line x1="20" y1="372" x2="880" y2="372" stroke="#d5dae0" stroke-width="1.5"/>
+  <text x="20" y="398" font-size="14" fill="#1b2a3a">Why so many steps? A new recessive mutation is first seen only in a homozygote, and both copies must be</text>
+  <text x="20" y="418" font-size="14" fill="#1b2a3a">the <tspan font-style="italic">same</tspan> mutagenised chromosome: hence one line per F1 male and a sibling cross within the line.</text>
+  <text x="20" y="444" font-size="13" fill="#5c6b7a">Simplified: the balancer stock carries a second, differently marked chromosome, so that <tspan font-style="italic">m</tspan>*/TM3 flies can be recognised.</text>
+</svg>

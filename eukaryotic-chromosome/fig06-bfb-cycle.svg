@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 262" width="760" height="262" font-family="Helvetica, Arial, sans-serif">
+  <!-- Breakage-fusion-bridge cycle (McClintock), drawn as rows of gene letters.
+       Dot = centromere; red jagged mark = broken, unprotected end.
+       1: a chromosome without its right end has been replicated: two sister chromatids.
+       2: the sisters fuse at their broken ends: a dicentric A B C D D C B A.
+       3: anaphase pulls the two centromeres to opposite poles: a bridge.
+       4: the bridge breaks between C and B (a random point): one daughter has D C twice
+          (an inverted duplication), the other lacks C and D; both have a new broken end. -->
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+  <g font-size="13.5" fill="#5b6b7a">
+    <text x="16" y="42">1. Broken end,</text>
+    <text x="16" y="59">replicated</text>
+    <text x="16" y="111">2. Sisters fuse</text>
+    <text x="16" y="169">3. Anaphase: a bridge</text>
+    <text x="16" y="227">4. The bridge breaks</text>
+  </g>
+
+  <!-- row 1: two sister chromatids, broken at the right -->
+  <line x1="230" y1="38" x2="372" y2="38" stroke="#2a6f97" stroke-width="5"/>
+  <line x1="230" y1="60" x2="372" y2="60" stroke="#2a6f97" stroke-width="5"/>
+  <circle cx="240" cy="49" r="9" fill="#1d4f6c"/>
+  <path d="M372,31 l6,4 l-6,4 l6,4" fill="none" stroke="#bc4749" stroke-width="2.5"/>
+  <path d="M372,53 l6,4 l-6,4 l6,4" fill="none" stroke="#bc4749" stroke-width="2.5"/>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="268" y="29">A</text><text x="296" y="29">B</text><text x="324" y="29">C</text><text x="352" y="29">D</text>
+  </g>
+  <text x="394" y="54" font-size="13" fill="#bc4749">broken end: no telomere</text>
+
+  <!-- row 2: fused dicentric -->
+  <line x1="230" y1="106" x2="500" y2="106" stroke="#2a6f97" stroke-width="5"/>
+  <circle cx="240" cy="106" r="9" fill="#1d4f6c"/>
+  <circle cx="490" cy="106" r="9" fill="#1d4f6c"/>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="268" y="96">A</text><text x="296" y="96">B</text><text x="324" y="96">C</text><text x="352" y="96">D</text>
+    <text x="380" y="96">D</text><text x="408" y="96">C</text><text x="436" y="96">B</text><text x="464" y="96">A</text>
+  </g>
+  <text x="520" y="111" font-size="13" fill="#1b2a3a">a dicentric chromatid</text>
+
+  <!-- row 3: anaphase bridge -->
+  <path d="M228,164 L200,164" stroke="#1b2a3a" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M502,164 L530,164" stroke="#1b2a3a" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="240" y1="164" x2="490" y2="164" stroke="#2a6f97" stroke-width="2.5"/>
+  <circle cx="240" cy="164" r="9" fill="#1d4f6c"/>
+  <circle cx="490" cy="164" r="9" fill="#1d4f6c"/>
+  <text x="365" y="154" font-size="13" fill="#1b2a3a" text-anchor="middle">stretched between the poles</text>
+  <text x="540" y="169" font-size="13" fill="#5b6b7a">each centromere to a pole</text>
+
+  <!-- row 4: broken products (break between C and B) -->
+  <line x1="230" y1="222" x2="420" y2="222" stroke="#2a6f97" stroke-width="5"/>
+  <circle cx="240" cy="222" r="9" fill="#1d4f6c"/>
+  <path d="M420,215 l6,4 l-6,4 l6,4" fill="none" stroke="#bc4749" stroke-width="2.5"/>
+  <g font-size="13" font-weight="bold" text-anchor="middle">
+    <text x="268" y="212" fill="#1b2a3a">A</text><text x="296" y="212" fill="#1b2a3a">B</text>
+    <text x="324" y="212" fill="#1b2a3a">C</text><text x="352" y="212" fill="#1b2a3a">D</text>
+    <text x="380" y="212" fill="#bc4749">D</text><text x="408" y="212" fill="#bc4749">C</text>
+  </g>
+  <line x1="484" y1="222" x2="560" y2="222" stroke="#2a6f97" stroke-width="5"/>
+  <circle cx="550" cy="222" r="9" fill="#1d4f6c"/>
+  <path d="M484,215 l-6,4 l6,4 l-6,4" fill="none" stroke="#bc4749" stroke-width="2.5"/>
+  <g font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">
+    <text x="500" y="212">B</text><text x="526" y="212">A</text>
+  </g>
+  <text x="230" y="250" font-size="13" fill="#5b6b7a">D C twice: duplication, new broken end</text>
+  <text x="484" y="250" font-size="13" fill="#5b6b7a">no C, D: deletion, new broken end</text>
+</svg>

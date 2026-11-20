@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 270" width="600" height="270" font-family="Helvetica, Arial, sans-serif">
+  <!-- Step 1 of the translocation build: the four chromosomes of a reciprocal translocation
+       carrier, and how they pair at meiosis I. Same drawing and colours as panels 1 and 2 of
+       fig04-translocation-segregation.svg. Chromosome 1 (blue) has a centromere segment 1a
+       and a tip 1b; chromosome 2 (green) has 2a and 2b. T1 = 1a + 2b, T2 = 2a + 1b. -->
+  <text x="20" y="28" font-size="14" fill="#5b6b7a">1. The four chromosomes</text>
+  <!-- N1 -->
+  <rect x="30" y="56" width="70" height="12" fill="#2a6f97" rx="5"/>
+  <rect x="100" y="56" width="30" height="12" fill="#2a6f97" rx="5"/>
+  <circle cx="52" cy="62" r="7" fill="#1d4f6c" stroke="#fff" stroke-width="1.5"/>
+  <text x="140" y="67" font-size="13" fill="#1b2a3a">N1 = 1a + 1b</text>
+  <!-- T1 -->
+  <rect x="30" y="90" width="70" height="12" fill="#2a6f97" rx="5"/>
+  <rect x="100" y="90" width="20" height="12" fill="#6a994e" rx="5"/>
+  <circle cx="52" cy="96" r="7" fill="#1d4f6c" stroke="#fff" stroke-width="1.5"/>
+  <text x="140" y="101" font-size="13" fill="#1b2a3a">T1 = 1a + 2b</text>
+  <!-- N2 -->
+  <rect x="30" y="124" width="60" height="12" fill="#6a994e" rx="5"/>
+  <rect x="90" y="124" width="20" height="12" fill="#6a994e" rx="5"/>
+  <circle cx="48" cy="130" r="7" fill="#3f6b2a" stroke="#fff" stroke-width="1.5"/>
+  <text x="140" y="135" font-size="13" fill="#1b2a3a">N2 = 2a + 2b</text>
+  <!-- T2 -->
+  <rect x="30" y="158" width="60" height="12" fill="#6a994e" rx="5"/>
+  <rect x="90" y="158" width="30" height="12" fill="#2a6f97" rx="5"/>
+  <circle cx="48" cy="164" r="7" fill="#3f6b2a" stroke="#fff" stroke-width="1.5"/>
+  <text x="140" y="169" font-size="13" fill="#1b2a3a">T2 = 2a + 1b</text>
+  <text x="20" y="206" font-size="13" fill="#5b6b7a">a = centromere segment, b = tip.</text>
+  <text x="20" y="226" font-size="13" fill="#5b6b7a">Blue and green: two different</text>
+  <text x="20" y="246" font-size="13" fill="#5b6b7a">(non-homologous) chromosomes.</text>
+
+  <line x1="262" y1="20" x2="262" y2="256" stroke="#e3e7eb" stroke-width="1.5"/>
+
+  <!-- pairing cross, shifted 100 px right of the original panel 2 -->
+  <text x="290" y="28" font-size="14" fill="#5b6b7a">2. Pairing in meiosis I: a cross</text>
+  <g transform="translate(110,-6)">
+    <line x1="205" y1="144" x2="292" y2="144" stroke="#2a6f97" stroke-width="7" stroke-linecap="round"/>
+    <line x1="205" y1="156" x2="292" y2="156" stroke="#2a6f97" stroke-width="7" stroke-linecap="round"/>
+    <line x1="294" y1="80" x2="294" y2="142" stroke="#2a6f97" stroke-width="7" stroke-linecap="round"/>
+    <line x1="306" y1="80" x2="306" y2="142" stroke="#2a6f97" stroke-width="7" stroke-linecap="round"/>
+    <line x1="308" y1="144" x2="385" y2="144" stroke="#6a994e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="308" y1="156" x2="385" y2="156" stroke="#6a994e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="294" y1="158" x2="294" y2="205" stroke="#6a994e" stroke-width="7" stroke-linecap="round"/>
+    <line x1="306" y1="158" x2="306" y2="205" stroke="#6a994e" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="230" cy="144" r="6" fill="#1d4f6c" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="362" cy="144" r="6" fill="#3f6b2a" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="230" cy="156" r="6" fill="#1d4f6c" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="362" cy="156" r="6" fill="#3f6b2a" stroke="#fff" stroke-width="1.5"/>
+    <text x="202" y="134" font-size="12.5" fill="#5b6b7a">N1</text>
+    <text x="202" y="178" font-size="12.5" fill="#5b6b7a">T1</text>
+    <text x="370" y="134" font-size="12.5" fill="#5b6b7a">T2</text>
+    <text x="370" y="178" font-size="12.5" fill="#5b6b7a">N2</text>
+    <text x="314" y="94" font-size="12.5" fill="#5b6b7a">1b: N1 / T2</text>
+    <text x="314" y="202" font-size="12.5" fill="#5b6b7a">2b: N2 / T1</text>
+  </g>
+  <text x="290" y="236" font-size="13" fill="#1b2a3a">Each segment pairs with its homologous segment,</text>
+  <text x="290" y="254" font-size="13" fill="#1b2a3a">so the four form one cross (a quadrivalent).</text>
+</svg>

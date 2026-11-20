@@ -145,3 +145,15 @@ What two things determine the size of a test statistic?
 ::: {.callout-note collapse="true" title="Answer"}
 No. A p-value depends on the effect size **and** the sample size (and the allele frequency). The odds ratio per T allele is modest, about 1.3–1.4 in many studies in the GWAS Catalog; the tiny p-value comes from samples of hundreds of thousands to millions of people. Most carriers of the risk allele never develop type 2 diabetes.
 :::
+
+---
+
+**Q12.** In a pig population, back-fat thickness has *V*<sub>A</sub> = 12, *V*<sub>D</sub> = 3 and *V*<sub>E</sub> = 25 (mm²; invented numbers). A breeder selects parents whose back fat is on average 5 mm below the population mean. What change do you expect in the offspring mean? Why would using *H*² give the wrong answer?
+
+::: {.callout-tip collapse="true" title="Hint"}
+*V*<sub>P</sub> is the sum of the components; the breeder's equation is *R* = *h*² *S*.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*V*<sub>P</sub> = 12 + 3 + 25 = 40, so *h*² = 12/40 = **0.30** (and *H*² = 15/40 = 0.375). *S* = −5 mm, so *R* = 0.30 × (−5) = **−1.5 mm**: the offspring mean falls by 1.5 mm. *H*² would include the dominance variance, which comes from combinations of alleles at a locus; a parent passes on one allele, not the combination, so dominance effects are not transmitted and do not contribute to the response.
+:::

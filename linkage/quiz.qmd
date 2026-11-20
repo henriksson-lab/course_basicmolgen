@@ -154,3 +154,15 @@ What is unusual about meiosis in male flies?
 ::: {.callout-note collapse="true" title="Answer"}
 *Drosophila* **males have no meiotic crossing over**. A heterozygous male in coupling gives only the two parental gamete types, so his testcross shows **complete linkage** (RF = 0) for any two genes on the same chromosome, whatever their distance. Females cross over normally, so their testcross measures RF.
 :::
+
+---
+
+**Q13.** Two genes are 50 cM apart (*d* = 0.5 M), and crossovers are independent (Haldane). The probabilities that one chromatid has 0, 1, 2 or 3 crossovers between the genes are 0.607, 0.303, 0.076 and 0.013. Which of these chromatids are recombinant? What RF do you expect, and why is it not 0.5?
+
+::: {.callout-tip collapse="true" title="Hint"}
+A chromatid is recombinant if it has an odd number of crossovers between the two genes.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Chromatids with **1 or 3** crossovers are recombinant; those with 0 or 2 are parental (two crossovers swap the alleles and swap them back). RF ≈ 0.303 + 0.013 = **0.316** (Haldane: ½(1 − e^−1^) = 0.316). It is less than 0.5 because most chromatids (61%) have no crossover at all, and the ones with 2 crossovers look parental. The map distance, 0.5 M, counts every crossover, including the hidden even ones.
+:::

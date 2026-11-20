@@ -78,7 +78,12 @@ Do the pen-and-paper part first. The demo and R come after.
 (b) What is her lifetime breast-cancer risk, before testing?
 (c) She tests negative for her mother's allele. What is her risk now?
 
-**B7. (Philadelphia chromosome)** (a) Explain the notation t(9;22)(q34;q11). (b) The translocation is balanced: no DNA is lost. Why can it still cause leukaemia? (c) Imatinib inhibits the BCR–ABL1 kinase. Why does it harm leukaemia cells much more than normal cells? (d) Some patients relapse after a few years with a point mutation in the ABL1 kinase domain. Explain this in terms of clonal evolution.
+**B7. (Philadelphia chromosome)** The photo shows a partial karyotype (G-banded chromosomes 9 and 22) from the bone marrow of a patient with chronic myeloid leukaemia.
+
+![](img/philadelphia-karyotype.jpg){width="45%" fig-align="center"}
+[Photo: Armed Forces Institute of Pathology, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Philadelphia_chromosome,_t(9;22)_translocation.jpg){.photo-credit}
+
+(a) Explain the notation t(9;22)(q34;q11). Which chromosome in the photo is the Philadelphia chromosome? (b) The translocation is balanced: no DNA is lost. Why can it still cause leukaemia? (c) Imatinib inhibits the BCR–ABL1 kinase. Why does it harm leukaemia cells much more than normal cells? (d) Some patients relapse after a few years with a point mutation in the ABL1 kinase domain. Explain this in terms of clonal evolution.
 
 **B8. (drivers and passengers)** 500 tumours of one cancer type are sequenced. Classify each gene as a likely oncogene, a likely tumour suppressor, or probably neither, and explain.
 (a) Gene P: mutated in 160 tumours; 140 of the mutations are missense at codon 12 or 13.
@@ -183,7 +188,7 @@ A missense hotspot is unusual for a tumour suppressor. The R175H protein is not 
 
 **B6.** (a) **½**. (b) ½ × 0.60 + ½ × 0.12 = 0.30 + 0.06 = **0.36**. (c) If she does not carry her mother's allele, her risk is that of a non-carrier: **0.12**. A negative test for the **family's** variant is informative; a negative test in a family with no known variant is much less so.
 
-**B7.** (a) A reciprocal **t**ranslocation between chromosomes **9** and **22**, with breakpoints in band **q34** of chromosome 9 and **q11** of chromosome 22. (b) The breakpoints fall inside *ABL1* and *BCR* and join them, creating a new **fusion gene**. Nothing is lost, but a new protein is made: the BCR–ABL1 kinase that is always active. (A germline carrier of an unrelated balanced translocation is usually healthy because no gene is broken or fused.) (c) Only leukaemia cells contain BCR–ABL1, and they depend on it to keep dividing. Normal cells have normal ABL1, which is regulated and less critical for them. (d) In a large population of leukaemia cells, a few cells may already carry, or later acquire, a mutation that stops imatinib from binding. The drug kills the others, so this resistant **subclone** is selected and grows: clonal evolution under treatment.
+**B7.** (a) A reciprocal **t**ranslocation between chromosomes **9** and **22**, with breakpoints in band **q34** of chromosome 9 and **q11** of chromosome 22. In the photo, the right-hand chromosome of each pair (marked by an arrowhead) is the rearranged one; the right-hand, shortened **chromosome 22** is the Philadelphia chromosome, der(22). (b) The breakpoints fall inside *ABL1* and *BCR* and join them, creating a new **fusion gene**. Nothing is lost, but a new protein is made: the BCR–ABL1 kinase that is always active. (A germline carrier of an unrelated balanced translocation is usually healthy because no gene is broken or fused.) (c) Only leukaemia cells contain BCR–ABL1, and they depend on it to keep dividing. Normal cells have normal ABL1, which is regulated and less critical for them. (d) In a large population of leukaemia cells, a few cells may already carry, or later acquire, a mutation that stops imatinib from binding. The drug kills the others, so this resistant **subclone** is selected and grows: clonal evolution under treatment.
 
 **B8.** (a) Gene P: likely an **oncogene**: frequent, and concentrated at codons 12 and 13 (this is the *KRAS* pattern). Selection favours specific activating changes. (b) Gene Q: likely a **tumour suppressor**: frequent truncating mutations anywhere in the gene, all of which destroy the protein. (c) Gene R: probably **neither**: a few scattered, different missense mutations in a long gene are what passengers look like. A long gene collects passengers just by being a big target.
 :::

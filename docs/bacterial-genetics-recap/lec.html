@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -161,10 +161,11 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li>Bacterial <strong>mutants</strong>: auxotrophs, resistance markers, replica plating; selection vs screening.</li>
 <li><strong>Conjugation</strong>: F<sup>+</sup>, Hfr and F′ strains.</li>
-<li><strong>Interrupted mating</strong>: a map in <strong>minutes</strong>, and why it is circular.</li>
+<li><strong>Interrupted mating</strong>: a map in <strong>minutes</strong>, worked through from raw counts to a circular map.</li>
 <li><strong>Minutes vs base pairs</strong>: the <em>E. coli</em> map against the genome sequence.</li>
-<li><strong>Transduction</strong> and <strong>cotransduction</strong>: fine mapping.</li>
-<li><strong>Transformation</strong>, and what each method is still used for.</li>
+<li><strong>F′ partial diploids</strong>: a dominance test in a haploid organism.</li>
+<li><strong>Transduction</strong> and <strong>cotransduction</strong>: fine mapping, and gene order from three factors.</li>
+<li><strong>Transformation</strong>: testing linkage with the product rule.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the bacterial genetics chapter.</p>
 <aside class="notes">
@@ -183,6 +184,8 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="why-bacteria-are-good-for-genetics" class="slide level2 smaller">
 <h2>Why bacteria are good for genetics</h2>
+<div class="columns">
+<div class="column" style="width:64%;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 50%">
@@ -213,6 +216,11 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
+</div><div class="column" style="width:36%;">
+<p><img data-src="img/ecoli-sem.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:E_coli_at_10000x,_original.jpg" class="photo-credit">Photo: Eric Erbe and Christopher Pooley, USDA ARS, public domain, via Wikimedia Commons</a></p>
+<p><em>E. coli</em>, electron micrograph (×10 000, false colour). Each rod is about 1–2 µm long.</p>
+</div></div>
 <p><strong>Notation.</strong> Genes are three lower-case italic letters plus a capital: <em>lacZ</em>, <em>trpA</em>. A phenotype or marker is written with a superscript: <em>lac</em><sup>+</sup> (can use lactose), <em>lac</em><sup>−</sup> (cannot), <em>str</em><sup>r</sup> (streptomycin resistant), <em>str</em><sup>s</sup> (sensitive). A strain that needs a nutrient, such as Trp<sup>−</sup>, is an <strong>auxotroph</strong>; the wild type, which grows on minimal medium, is a <strong>prototroph</strong>.</p>
 <aside class="notes">
 <p>Haploidy is the key difference from everything in Parts 1 and 2: a recessive mutation is not hidden by a second copy. The numbers are the second key: with a billion cells on a plate, a recombinant that occurs once in ten million cells is still found, but only if the plate kills or starves everyone else. That is why bacterial genetics is the genetics of selection. Spend a moment on notation, because the exercise uses it: lacZ is the gene, lac+ and lac− are phenotypes or alleles, and r and s mean resistant and sensitive.</p>
@@ -230,12 +238,23 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="mutants-selection-screening-and-replica-plating" class="slide level2 smaller">
 <h2>Mutants: selection, screening and replica plating</h2>
+<div class="columns">
+<div class="column" style="width:68%;">
 <ul>
 <li><strong>Selection</strong>: only the wanted cells grow. Minimal medium <strong>without</strong> threonine selects Thr<sup>+</sup> cells; streptomycin selects <em>str</em><sup>r</sup> cells.</li>
 <li><strong>Screening</strong>: everyone grows, but you can see the wanted ones. On X-gal plates, <em>lac</em><sup>+</sup> colonies are blue and <em>lac</em><sup>−</sup> colonies white.</li>
 <li><strong>Replica plating</strong> (Lederbergs, 1952): press a velvet onto a master plate of colonies, then onto several test plates. A colony that grows on complete medium but not on minimal medium is an <strong>auxotroph</strong>.</li>
 </ul>
 <p>Replica plating also showed that resistance mutations (to phage T1, for example) <strong>exist before</strong> the selection: the same colony positions were resistant on every replica. Selection finds mutants; it does not cause them (Luria and Delbrück had shown the same with the fluctuation test, 1943).</p>
+</div><div class="column" style="width:32%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/replica-velvet.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+<p><a href="https://commons.wikimedia.org/wiki/File:Sterile_velvet_on_a_block.jpg" class="photo-credit">Photo: Pilarbini, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+<p>A sterile velvet on a block, ready for replica plating.</p>
+</div></div>
 <aside class="notes">
 <p>These are the tools that make every mapping experiment possible. A bacterial cross always ends on a selective plate: we kill the donor and select recipients that gained a donor marker. Replica plating lets us then score unselected markers on many colonies at once. The historical point is worth one sentence, because students often hold the Lamarckian intuition that antibiotics “cause” resistance: Luria and Delbrück, and then the Lederbergs, showed that the resistant mutants were already there. This links back to the Mutation unit in Part 3.</p>
 <style type="text/css">
@@ -355,12 +374,101 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-reading-a-time-of-entry" class="slide level2">
+<h2>Worked example: reading a time of entry</h2>
+<p>Teaching data: <em>lac</em><sup>+</sup> recombinants (per 100 Hfr donors), on plates with streptomycin and lactose as the only sugar.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Minutes of mating</th>
+<th style="text-align: right;">10</th>
+<th style="text-align: right;">15</th>
+<th style="text-align: right;">20</th>
+<th style="text-align: right;">25</th>
+<th style="text-align: right;">30</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>lac</em><sup>+</sup> recombinants</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">28</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li>Find the <strong>straight rise</strong>: from 20 to 30 min it climbs by 10 every 5 min, a <strong>slope of 2 per min</strong>.</li>
+<li><strong>Extrapolate back to zero</strong>: 8 recombinants at 20 min, so zero at 20 − 8/2 = <strong>16 min</strong>. That is the time of entry.</li>
+<li>Do the same for every marker, then <strong>order</strong> them by entry time. The <strong>difference</strong> between two entry times is their distance in minutes.</li>
+</ol>
+<p>Why not just read the first non-zero time point? Samples are taken every few minutes, so the first non-zero point (20 min) overestimates the entry time. The extrapolated line uses all the points.</p>
+<aside class="notes">
+<p>These numbers are invented to show the method; the rise in the plot on the previous slide is read the same way. Ask students to draw the five points on the board and draw the line. The slope itself is not the point: it depends on how many pairs mated and how efficiently recombinants form. What matters is where the line hits zero. In the exercise, B1 gives entry times directly and asks for the map; the R exercise fits a line to entry times against genome positions with lm, the same idea one level up.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="hfr-maps-are-circular" class="slide level2 smaller">
 <h2>Hfr maps are circular</h2>
 
 <img data-src="fig04-circular-map.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><p>Each Hfr strain has F inserted at its own place and in its own orientation. Every Hfr gives a <strong>linear</strong> order, but the orders from different Hfrs overlap and only fit together as a <strong>circle</strong>: the first genetic evidence that the <em>E. coli</em> chromosome is circular.</p>
 <aside class="notes">
 <p>Hfr A and B are teaching examples; the gene positions are the real ones from the genome sequence, converted to minutes. Ask the students: Hfr A transfers pyr, thr, lac, gal, trp; Hfr B transfers his, trp, gal, lac, thr. Can both be right on a straight chromosome? Only if the line is read in opposite directions. Add a third Hfr that starts in the str region and the orders wrap around: the only consistent arrangement is a circle. This was shown genetically in the late 1950s, years before Cairns saw the circular replicating chromosome by autoradiography (1963). The map unit, the minute, is still used in EcoCyc and in older papers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-three-hfr-strains-one-circle" class="slide level2">
+<h2>Worked example: three Hfr strains, one circle</h2>
+<p>Teaching data with made-up genes <em>p</em> to <em>w</em> (entry times in min):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Hfr</th>
+<th>Order of entry, with time of entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><em>p</em> 3, <em>q</em> 10, <em>r</em> 18, <em>s</em> 30</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><em>u</em> 2, <em>t</em> 14, <em>s</em> 25, <em>r</em> 37</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><em>v</em> 6, <em>w</em> 24, <em>p</em> 44, <em>q</em> 51</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1. Distances within each Hfr</strong> (differences of entry times): <em>p</em>–<em>q</em> 7, <em>q</em>–<em>r</em> 8, <em>r</em>–<em>s</em> 12 (Hfr 1); <em>u</em>–<em>t</em> 12, <em>t</em>–<em>s</em> 11, <em>s</em>–<em>r</em> 12 (Hfr 2); <em>v</em>–<em>w</em> 18, <em>w</em>–<em>p</em> 20, <em>p</em>–<em>q</em> 7 (Hfr 3).</p>
+<p><strong>Step 2. Line them up on shared genes.</strong> Hfr 2 ends with <em>s r</em>, which Hfr 1 has as <em>r s</em>: it transfers in the <strong>opposite direction</strong>. Read backwards it gives <em>r s t u</em>. Hfr 3 ends with <em>p q</em>, where Hfr 1 starts.</p>
+<p><strong>Step 3. Join:</strong> <em>v w</em> <strong>p q r s</strong> <em>t u</em> … and after <em>u</em> comes <em>v</em> again: the only arrangement that fits all three is a <strong>circle</strong>:</p>
+<p><em>p</em> – 7 – <em>q</em> – 8 – <em>r</em> – 12 – <em>s</em> – 11 – <em>t</em> – 12 – <em>u</em> – ? – <em>v</em> – 18 – <em>w</em> – 20 – back to <em>p</em></p>
+<p><strong>Step 4. Close the circle.</strong> The whole chromosome is 100 min, so <em>u</em>–<em>v</em> = 100 − 88 = <strong>12 min</strong>. <strong>Check:</strong> <em>r</em>–<em>s</em> is 12 min in both Hfr 1 and Hfr 2, and <em>p</em>–<em>q</em> is 7 in both Hfr 1 and Hfr 3.</p>
+<aside class="notes">
+<p>The genes and times are invented so that students practise the method without seeing the exercise answer; B1 in the exercise is the same problem with real E. coli markers and four strains. Walk the steps on the board. The direction of transfer comes out for free: Hfr 1 and 3 run one way round the circle, Hfr 2 the other, because their F factors are inserted in opposite orientations. The consistency check is important: the same interval measured with two strains must give the same number of minutes, otherwise something is wrong with the data or the order. Real maps were assembled exactly like this from dozens of Hfr strains in the 1950s and 60s.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -446,6 +554,46 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="f-partial-diploids-a-dominance-test-in-bacteria" class="slide level2">
+<h2>F′ partial diploids: a dominance test in bacteria</h2>
+<p>A haploid cell cannot tell you which allele is dominant. An <strong>F′</strong> can: it carries a piece of chromosome, so a recipient becomes <strong>diploid for that piece</strong> (a <strong>merodiploid</strong>), written F′ <em>x</em> / <em>x</em>.</p>
+<p>Example: an F′ carrying <em>gal</em><sup>+</sup> (galactose use) is transferred into a <em>gal</em><sup>−</sup> recipient.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Cell</th>
+<th>Genotype</th>
+<th style="text-align: center;">Grows on galactose?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>recipient</td>
+<td><em>gal</em><sup>−</sup></td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr class="even">
+<td>merodiploid</td>
+<td>F′ <em>gal</em><sup>+</sup> / <em>gal</em><sup>−</sup></td>
+<td style="text-align: center;"><strong>yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>One working copy is enough, so <em>gal</em><sup>+</sup> is <strong>dominant</strong> and the loss-of-function allele recessive, as for most enzymes. Not every pair works this way: the exercise has a case where the <strong>mutant</strong> phenotype is recessive for an unexpected reason.</p>
+<aside class="notes">
+<p>F-prime factors arise when an integrated F loops out imprecisely and takes neighbouring chromosomal genes with it. Transferred to a new cell, the F-prime replicates as a plasmid, so the cell keeps two copies of those genes, one on the F-prime and one on its chromosome. That gives bacteria what diploid organisms have naturally: a heterozygote. The logic is the same as a dominance test in peas: compare the phenotype of the heterozygote with the two homozygotes. Jacob and Monod used F-prime lac merodiploids to separate the lac repressor from the operator in cis/trans tests, which is the prokaryotic regulation unit in Part 6. The exercise asks about lac and str merodiploids; the str case is the surprise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="generalized-transduction" class="slide level2 smaller">
 <h2>Generalized transduction</h2>
 
@@ -515,6 +663,62 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="gene-order-from-three-factors-step-by-step" class="slide level2 smaller">
+<h2>Gene order from three factors, step by step</h2>
+<p>Teaching data: P1 grown on an <em>a</em><sup>+</sup> <em>b</em><sup>+</sup> <em>c</em><sup>+</sup> donor; 200 <em>a</em><sup>+</sup> transductants selected and scored for <em>b</em> and <em>c</em>.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>b</em></th>
+<th style="text-align: center;"><em>c</em></th>
+<th style="text-align: right;">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">−</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">−</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: right;"><strong>1</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">−</td>
+<td style="text-align: center;">−</td>
+<td style="text-align: right;">119</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:70%;">
+<p><strong>Step 1. Cotransduction</strong> with the selected <em>a</em>: <em>a</em>–<em>b</em> = (30 + 50)/200 = <strong>40%</strong>; <em>a</em>–<em>c</em> = (30 + 1)/200 = <strong>15.5%</strong>. So <em>b</em> is closer to <em>a</em> than <em>c</em> is.</p>
+<p><strong>Step 2. Rarest class</strong>: <em>b</em><sup>−</sup> <em>c</em><sup>+</sup>, 1 of 200.</p>
+<p><strong>Step 3. Which order</strong> makes that class need <strong>four</strong> crossovers? Only <em>a</em> – <em>b</em> – <em>c</em>: <em>b</em> lies between <em>a</em> and <em>c</em>.</p>
+</div></div>
+
+<img data-src="fig05-three-factor-order.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><aside class="notes">
+<p>The numbers are invented for teaching; B4 in the exercise uses real markers with the same logic. Step 1 gives distances from the selected marker: higher cotransduction means closer. It cannot by itself say whether b and c are on the same side of a. Step 2 picks out the rarest class, here a+ b− c+, only one of 200. Step 3 draws the possible orders, as in the figure: with a–b–c the donor fragment must swap in a+, then switch back to recipient DNA for b, then back again for c: four crossovers. With b–a–c the same class needs only a fragment that begins between b and a, two crossovers, and should be about as common as a+ c+ with b+, which it is not. The reasoning is exactly the three-point cross from Part 2: the rarest class is the double crossover, and the gene that “switches” in it is the middle one.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="transformation" class="slide level2 smaller">
 <h2>Transformation</h2>
 <ul>
@@ -525,6 +729,58 @@ Basic and molecular genetics (5MO104)
 <p>Transformation and transduction are <strong>gene transfer, not sex</strong>: only a fragment moves, and the recipient stays haploid apart from that fragment.</p>
 <aside class="notes">
 <p>Transformation was the first of the three to be discovered and it carried the historical weight of proving that genes are DNA, which students met in the DNA recap unit in Part 3. For mapping, it works like transduction with a smaller and more variable fragment size. The test for linkage in transformation is a comparison with the product of the single frequencies: if a+ alone is transformed in 1 in 1000 cells and b+ alone in 1 in 1000, two independent events together happen in about 1 in a million. If a+ b+ double transformants are much more common than that, the genes are on the same fragment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-linked-or-not" class="slide level2">
+<h2>Worked example: linked or not?</h2>
+<p>Teaching data: <em>B. subtilis</em> <em>d</em><sup>−</sup> <em>e</em><sup>−</sup> <em>f</em><sup>−</sup> cells transformed with DNA from a <em>d</em><sup>+</sup> <em>e</em><sup>+</sup> <em>f</em><sup>+</sup> strain. Fractions of cells transformed:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transformed for</th>
+<th style="text-align: right;"><em>d</em><sup>+</sup></th>
+<th style="text-align: right;"><em>e</em><sup>+</sup></th>
+<th style="text-align: right;"><em>f</em><sup>+</sup></th>
+<th style="text-align: right;"><em>d</em><sup>+</sup> <em>e</em><sup>+</sup></th>
+<th style="text-align: right;"><em>d</em><sup>+</sup> <em>f</em><sup>+</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>observed</td>
+<td style="text-align: right;">1 × 10<sup>−3</sup></td>
+<td style="text-align: right;">2 × 10<sup>−3</sup></td>
+<td style="text-align: right;">1 × 10<sup>−3</sup></td>
+<td style="text-align: right;">6 × 10<sup>−4</sup></td>
+<td style="text-align: right;">1 × 10<sup>−6</sup></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The test.</strong> If two genes enter on <strong>separate</strong> fragments, a double transformant needs two independent events: expected = product of the single frequencies.</p>
+<ul>
+<li><em>d</em> and <em>e</em>: expected 1 × 10<sup>−3</sup> × 2 × 10<sup>−3</sup> = 2 × 10<sup>−6</sup>. Observed 6 × 10<sup>−4</sup>, <strong>300 times more</strong>: one fragment carries both: <strong>linked</strong>.</li>
+<li><em>d</em> and <em>f</em>: expected 1 × 10<sup>−3</sup> × 1 × 10<sup>−3</sup> = 1 × 10<sup>−6</sup>. Observed 1 × 10<sup>−6</sup>: just chance: <strong>not linked</strong> (by transformation; they may still be on the same chromosome, far apart).</li>
+</ul>
+<aside class="notes">
+<p>Invented numbers, chosen to give one clear case of each. The product rule from Part 1 does the work: independent events multiply. Linked markers travel together on one piece of DNA, so their double transformants are nearly as common as the rarer single. Note what “not linked” means here: further apart than one transforming fragment, a few tens of kb at most, which on a 4 Mb chromosome is almost everything. A second test, if in doubt, is to dilute the DNA: double transformants from one fragment drop in proportion to the DNA concentration, those from two fragments drop with its square. B6 in the exercise is the same test with other numbers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -615,6 +871,60 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="check-yourself-common-mistakes" class="slide level2">
+<h2>Check yourself: common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Better</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“High cotransduction means far apart, like recombination frequency.”</td>
+<td>The scale is <strong>reversed</strong>: high cotransduction = <strong>close</strong>.</td>
+</tr>
+<tr class="even">
+<td>“After Hfr × F<sup>−</sup> the recipient becomes Hfr.”</td>
+<td>The end of F almost never arrives: the recipient <strong>stays F<sup>−</sup></strong>.</td>
+</tr>
+<tr class="odd">
+<td>“The marker that enters first is at 0 min on the map.”</td>
+<td>Entry times are measured from <strong>that Hfr’s origin</strong>. The map’s 0 is <em>thr</em>, by convention.</td>
+</tr>
+<tr class="even">
+<td>“Streptomycin selects the recombinants.”</td>
+<td>It kills the <strong>donors</strong> (counterselection). The missing nutrient selects the recombinants.</td>
+</tr>
+<tr class="odd">
+<td>“Antibiotics cause resistance mutations.”</td>
+<td>Resistant mutants <strong>exist before</strong> the drug (Luria–Delbrück, replica plating); the drug selects them.</td>
+</tr>
+<tr class="even">
+<td>“Two markers that are never cotransduced are unlinked.”</td>
+<td>They are just more than one phage head (~2 min) apart.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Run it as a quiz. The first row is the one that costs most exam points. The third row matters for B1 in the exercise: each Hfr has its own origin, and you convert to the map’s coordinates only at the end. The fourth row checks that students understand what each ingredient of the plate does, which is B2 in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2 smaller">
 <h2>Summary</h2>
 <table class="caption-top">
@@ -651,19 +961,19 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Interrupted mating</td>
-<td><strong>time of entry</strong> gives order and distance in <strong>minutes</strong></td>
+<td><strong>time of entry</strong> (extrapolate the rise to zero) gives order and distance in <strong>minutes</strong></td>
 </tr>
 <tr class="odd">
 <td>Circular map</td>
-<td>overlapping Hfr orders; 100 min ≈ 4.64 Mb, 1 min ≈ 46 kb</td>
+<td>overlapping Hfr orders, some read backwards; 100 min ≈ 4.64 Mb, 1 min ≈ 46 kb</td>
 </tr>
 <tr class="even">
 <td>Transduction</td>
-<td>phage carries ~2 min; <strong>cotransduction</strong>: higher = closer</td>
+<td>phage carries ~2 min; <strong>cotransduction</strong>: higher = closer; rarest class (4 crossovers) gives the order</td>
 </tr>
 <tr class="odd">
 <td>Transformation</td>
-<td>naked DNA; cotransformation of close genes</td>
+<td>naked DNA; linked if doubles ≫ product of the singles</td>
 </tr>
 <tr class="even">
 <td>All three</td>

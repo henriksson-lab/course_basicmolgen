@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -155,18 +155,25 @@ Basic and molecular genetics (5MO104)
 </div>
 
 </section>
-<section id="about-this-lecture" class="slide level2">
+<section id="about-this-lecture" class="slide level2 smaller">
 <h2>About this lecture</h2>
-<p>In the 1850s and 1860s, Gregor Mendel crossed garden peas and <strong>counted</strong> the offspring. From the numbers alone he deduced that inheritance works through discrete <strong>factors</strong> (we now say <em>genes</em>), present in pairs, that separate cleanly when gametes form.</p>
+<div class="columns">
+<div class="column" style="width:74%;">
+<p>In the 1850s and 1860s, Gregor Mendel crossed garden peas in the garden of his monastery in Brno and <strong>counted</strong> the offspring. From the numbers alone he deduced that inheritance works through discrete <strong>factors</strong> (we now say <em>genes</em>), present in pairs, that separate cleanly when gametes form.</p>
 <ul>
 <li>Mendel’s <strong>experimental design</strong>: true-breeding lines, controlled crosses, reciprocal crosses, seven clear-cut traits.</li>
 <li>The <strong>monohybrid cross</strong>: P → F<sub>1</sub> → F<sub>2</sub>, the <strong>3 : 1</strong> phenotype ratio and the <strong>1 : 2 : 1</strong> genotype ratio.</li>
 <li>The <strong>law of segregation</strong>, and why <strong>meiosis</strong> makes it true.</li>
 <li>The <strong>testcross</strong>, to read an unknown genotype.</li>
 <li>The <strong>dihybrid cross</strong> (9 : 3 : 3 : 1), the <strong>law of independent assortment</strong>, and its basis in meiosis.</li>
-<li>Shortcuts for many genes: the <strong>branch-line method</strong>, the <strong>product rule</strong>, and counting <span class="math inline">3^n</span> genotypes and <span class="math inline">2^n</span> gametes.</li>
+<li>Shortcuts for many genes: writing <strong>gametes</strong>, the <strong>branch-line method</strong>, the <strong>product rule</strong>, and counting <span class="math inline">3^n</span> genotypes and <span class="math inline">2^n</span> gametes.</li>
+<li>Worked examples forwards (parents → offspring) and <strong>backwards</strong> (offspring → parents), and the common mistakes.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, Mendel’s principles of heredity chapter.</p>
+</div><div class="column" style="width:26%;">
+<p><img data-src="img/mendel-portrait.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Portrait_of_Gregor_Johann_Mendel,_Garrison._Wellcome_M0002351.jpg" class="photo-credit">Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons</a></p>
+<p>Gregor Johann Mendel (1822–1884).</p>
+</div></div>
 <aside class="notes">
 <p>This is the foundation of the whole of Part 1. Students have seen Punnett squares at school, so the risk is that they think they already know it. The new things today are the reasoning (how Mendel got from counts to a model), the link to meiosis (why the rules hold), and the shortcuts for several genes. Keep two simplifications in view and name them: complete dominance (the Extensions to Mendel unit relaxes it) and unlinked genes (the Linkage unit in Part 2 relaxes it). Testing whether observed numbers fit a ratio, the chi-square test, is the next unit.</p>
 <style type="text/css">
@@ -331,14 +338,20 @@ Basic and molecular genetics (5MO104)
 <section id="the-monohybrid-cross" class="slide level2 smaller">
 <h2>The monohybrid cross</h2>
 <p>Follow <strong>one</strong> trait through three generations.</p>
-
-<img data-src="fig01-monohybrid.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><ul>
+<div class="columns">
+<div class="column" style="width:68%;">
+<p><img data-src="fig01-monohybrid.svg" style="width:100.0%"></p>
+<ul>
 <li><strong>P</strong>: true-breeding round × true-breeding wrinkled.</li>
 <li><strong>F<sub>1</sub></strong>: all round. Wrinkled seems to have vanished, but…</li>
 <li><strong>F<sub>2</sub></strong> (F<sub>1</sub> self-fertilised): wrinkled comes back, in about <strong>a quarter</strong> of the seeds.</li>
 </ul>
+</div><div class="column" style="width:32%;">
+<p><img data-src="img/pea-cross-1914.png" class="quarto-figure quarto-figure-center" style="width:82.0%"> <a href="https://commons.wikimedia.org/wiki/File:PSM_V85_D331_Results_of_crossing_yellow_and_green_seeded_peas.png" class="photo-credit">Image: Popular Science Monthly vol.&nbsp;85 (1914), public domain, via Wikimedia Commons</a></p>
+<p>Seed colour, drawn in 1914: yellow and green parents, F<sub>1</sub> pod all yellow, and an F<sub>2</sub> pod with <strong>both</strong> colours side by side. Each seed is a separate offspring.</p>
+</div></div>
 <aside class="notes">
-<p>The surprise is the F2. Under blending, wrinkled should be gone for good once it was “diluted” in the F1. Instead it comes back unchanged: the F2 wrinkled seeds are just as wrinkled as the original parent. So the wrinkled factor must have been present in the F1, hidden but intact. A monohybrid cross is a cross between parents that differ in one trait, or, equivalently, a cross between two individuals heterozygous for one gene (the F1 x F1 step). Mendel did the same for all seven traits and got the same pattern each time.</p>
+<p>The surprise is the F2. Under blending, wrinkled should be gone for good once it was “diluted” in the F1. Instead it comes back unchanged: the F2 wrinkled seeds are just as wrinkled as the original parent. So the wrinkled factor must have been present in the F1, hidden but intact. A monohybrid cross is a cross between parents that differ in one trait, or, equivalently, a cross between two individuals heterozygous for one gene (the F1 x F1 step). Mendel did the same for all seven traits and got the same pattern each time. The 1914 drawing on the right shows the same thing for seed colour, and makes a point students often miss: seed traits are traits of the embryo, the next generation, so one F1 plant carries its F2 offspring in its own pods, and a single pod can hold both yellow and green seeds. That is why Mendel could count thousands of F2 seeds in one season.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -626,6 +639,76 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="writing-gametes-step-by-step" class="slide level2">
+<h2>Writing gametes, step by step</h2>
+<p>A gamete carries <strong>one allele of every gene</strong>. To list the gametes of a genotype, take one gene at a time and combine:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Genotype</th>
+<th>Gene 1 gives</th>
+<th>Gene 2 gives</th>
+<th>Gametes</th>
+<th>Kinds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Rr Yy</em></td>
+<td><em>R</em> or <em>r</em></td>
+<td><em>Y</em> or <em>y</em></td>
+<td><em>RY</em>, <em>Ry</em>, <em>rY</em>, <em>ry</em> (¼ each)</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td><em>RR Yy</em></td>
+<td><em>R</em> only</td>
+<td><em>Y</em> or <em>y</em></td>
+<td><em>RY</em>, <em>Ry</em> (½ each)</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td><em>Rr yy</em></td>
+<td><em>R</em> or <em>r</em></td>
+<td><em>y</em> only</td>
+<td><em>Ry</em>, <em>ry</em> (½ each)</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><em>rr yy</em></td>
+<td><em>r</em> only</td>
+<td><em>y</em> only</td>
+<td><em>ry</em></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Only <strong>heterozygous</strong> genes double the number of gamete types: 2<sup><em>k</em></sup> kinds for <em>k</em> heterozygous genes.</li>
+<li>A gamete is <strong>never</strong> <em>Rr</em> or <em>RRY</em>: it has exactly <strong>one</strong> letter per gene.</li>
+<li>The rows and columns of a Punnett square are these gametes, each with its frequency.</li>
+</ul>
+<aside class="notes">
+<p>Many errors in crosses start here, so give this a slide of its own. Show the rule: for each gene, list what that gene can contribute, then take every combination. Homozygous genes contribute only one option and so do not add gamete types. The two classic mistakes are writing a gamete with both alleles of one gene (Rr), which confuses gametes with genotypes, and listing only the two parental gametes RY and ry, which forgets independent assortment. The 2 to the k rule is the general form of the 2 to the n on the counting slide later, where all n genes are heterozygous.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-branch-line-method" class="slide level2 smaller">
 <h2>The branch-line method</h2>
 <p>A Punnett square for two genes has 16 cells; for three genes, 64. The <strong>branch-line</strong> (forked-line) method is faster: treat each gene <strong>separately</strong>, then <strong>multiply</strong> along each branch.</p>
@@ -633,6 +716,61 @@ Basic and molecular genetics (5MO104)
 <img data-src="fig05-branch-line.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><p>It works because the genes assort independently: each gene contributes its own ratio, and the <strong>product rule</strong> combines them.</p>
 <aside class="notes">
 <p>Draw this on the board from left to right. The first column is the monohybrid result for seed shape, three quarters and one quarter. Each branch then splits by seed colour, again three quarters and one quarter. Multiply along each path to get the probability of that combination. Four paths, four phenotypes, the same 9:3:3:1 as the 16-cell square. The method scales: a third gene adds a third column and doubles the number of paths. It also works for genotypes (1/4, 1/2, 1/4 on each branch) and for crosses where each gene has a different parental genotype, for example Aa x aa for one gene and Bb x Bb for the other.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-two-different-parents" class="slide level2">
+<h2>Worked example: two different parents</h2>
+<p>Tall (<em>T</em>) is dominant to dwarf (<em>t</em>), round (<em>R</em>) to wrinkled (<em>r</em>). Cross <strong>tall round <em>Tt Rr</em></strong> × <strong>dwarf round <em>tt Rr</em></strong>.</p>
+<p><strong>Step 1. One gene at a time.</strong></p>
+<ul>
+<li>Height: <em>Tt</em> × <em>tt</em> is a testcross → ½ tall, ½ dwarf.</li>
+<li>Shape: <em>Rr</em> × <em>Rr</em> is a monohybrid cross → ¾ round, ¼ wrinkled.</li>
+</ul>
+<p><strong>Step 2. Multiply along the branches.</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Height</th>
+<th>Shape</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>½ tall</td>
+<td>¾ round</td>
+<td><strong>3/8</strong> tall round</td>
+</tr>
+<tr class="even">
+<td>½ tall</td>
+<td>¼ wrinkled</td>
+<td><strong>1/8</strong> tall wrinkled</td>
+</tr>
+<tr class="odd">
+<td>½ dwarf</td>
+<td>¾ round</td>
+<td><strong>3/8</strong> dwarf round</td>
+</tr>
+<tr class="even">
+<td>½ dwarf</td>
+<td>¼ wrinkled</td>
+<td><strong>1/8</strong> dwarf wrinkled</td>
+</tr>
+</tbody>
+</table>
+<p>Ratio <strong>3 : 1 : 3 : 1</strong>. Check: the four probabilities sum to 1. A Punnett square would need 4 × 2 = 8 cells.</p>
+<aside class="notes">
+<p>The point of this example is that the two parents do not have the same genotype, so the familiar 9:3:3:1 does not apply; students who have memorised 9:3:3:1 will try to use it anyway. Break the cross into one gene at a time: each gene is a cross students already know, a testcross for height and an F1 × F1 for shape. Then multiply. Always do the free check that the probabilities sum to 1. The exercise has a similar problem with seed colour instead of height.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -758,6 +896,118 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>The pattern is the multiplication principle again: independent choices multiply. Gametes: two choices per gene, so 2 to the n.&nbsp;Genotypes in the offspring: three per gene, so 3 to the n.&nbsp;The last bullet explains why classical geneticists rarely tried to recover a plant recessive for many genes at once from a single cross: with ten genes you would need about a million offspring to expect one. It is also a first hint of why traits controlled by many genes look continuous rather than falling into neat classes: that is the complex traits unit at the end of the course.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="working-backwards-from-offspring-to-parents" class="slide level2">
+<h2>Working backwards: from offspring to parents</h2>
+<p>Often we know the offspring and want the parents. <strong>Split the ratio by trait</strong>, recognise each single-gene ratio, then combine.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Offspring ratio for one gene</th>
+<th>Parents for that gene</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3 : 1</td>
+<td><em>Aa</em> × <em>Aa</em></td>
+</tr>
+<tr class="even">
+<td>1 : 1</td>
+<td><em>Aa</em> × <em>aa</em></td>
+</tr>
+<tr class="odd">
+<td>all dominant</td>
+<td>at least one parent <em>AA</em></td>
+</tr>
+<tr class="even">
+<td>all recessive</td>
+<td><em>aa</em> × <em>aa</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked example.</strong> Two pea plants give 1 tall round : 1 tall wrinkled : 1 dwarf round : 1 dwarf wrinkled.</p>
+<ul>
+<li>Height: tall 1 + 1 = 2, dwarf 2 → <strong>1 : 1</strong> → <em>Tt</em> × <em>tt</em>.</li>
+<li>Shape: round 2, wrinkled 2 → <strong>1 : 1</strong> → <em>Rr</em> × <em>rr</em>.</li>
+<li>So the parents are <strong><em>Tt Rr</em> × <em>tt rr</em></strong> (a dihybrid testcross) <strong>or</strong> <strong><em>Tt rr</em> × <em>tt Rr</em></strong>. Both give 1 : 1 : 1 : 1.</li>
+</ul>
+<p>A ratio can have <strong>more than one</strong> solution. To decide, you need the parents’ phenotypes: here, is one parent tall and round?</p>
+<aside class="notes">
+<p>This is the reverse of the forward problems, and a common exam format. The method is the same: one gene at a time. Sum the classes for each trait separately; the per-gene ratio identifies that gene’s cross from the small table. The twist in this example is deliberate: two different pairs of parents give the same offspring ratio, and only extra information, such as the parents’ phenotypes, separates them. In the first solution one parent is tall round and the other dwarf wrinkled; in the second, one is tall wrinkled and the other dwarf round. The “all dominant” row is ambiguous for the same reason.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Writing a gamete as <em>Rr</em></td>
+<td>A gamete has <strong>one</strong> allele per gene: <em>R</em> or <em>r</em>.</td>
+</tr>
+<tr class="even">
+<td>“<em>Rr Yy</em> makes <em>RY</em> and <em>ry</em> gametes”</td>
+<td>Independent assortment: <strong>four</strong> gametes, <em>RY</em>, <em>Ry</em>, <em>rY</em>, <em>ry</em>.</td>
+</tr>
+<tr class="odd">
+<td>“3 : 1 means 3 of every 4 children will be dominant”</td>
+<td>It is a <strong>probability per offspring</strong>, not a quota.</td>
+</tr>
+<tr class="even">
+<td>“P(round F<sub>2</sub> plant is <em>Rr</em>) = ½”</td>
+<td>Given round, it is <strong>⅔</strong> (the <em>rr</em> quarter is excluded).</td>
+</tr>
+<tr class="odd">
+<td>“All 6 testcross offspring were dominant, so the parent is <em>AA</em>”</td>
+<td>Likely, not certain: (½)<sup>6</sup> = 1/64 if <em>Aa</em>.</td>
+</tr>
+<tr class="even">
+<td>Using 9 : 3 : 3 : 1 for <em>Aa Bb</em> × <em>aa Bb</em></td>
+<td>9 : 3 : 3 : 1 needs <strong>both</strong> parents <em>AaBb</em>. Split by gene.</td>
+</tr>
+<tr class="odd">
+<td>Multiplying probabilities for linked genes</td>
+<td>The product rule needs <strong>independent</strong> (unlinked) genes.</td>
+</tr>
+<tr class="even">
+<td>“Dominant alleles are more common”</td>
+<td>Dominance says nothing about frequency.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Use as a self-check: cover the right column and ask the class to correct each statement. Every row has come up somewhere in the lecture; this collects them. The most frequent exam errors are the first two and the 9:3:3:1 overgeneralisation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -940,14 +1190,18 @@ Basic and molecular genetics (5MO104)
 <td>alleles of different genes enter gametes independently; <strong>homologue pairs orient independently at metaphase I</strong></td>
 </tr>
 <tr class="odd">
-<td>Branch-line / product rule</td>
-<td>solve each gene separately, multiply along branches</td>
+<td>Gametes</td>
+<td>one allele per gene; 2<sup><em>k</em></sup> kinds for <em>k</em> heterozygous genes</td>
 </tr>
 <tr class="even">
+<td>Branch-line / product rule</td>
+<td>solve each gene separately, multiply along branches; backwards: split the offspring ratio by trait</td>
+</tr>
+<tr class="odd">
 <td>Counting</td>
 <td>2<sup><em>n</em></sup> gamete types, 3<sup><em>n</em></sup> genotypes, (¼)<sup><em>n</em></sup> fully recessive</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Mendel’s numbers</td>
 <td>5474 : 1850 (2.96 : 1); 315 : 108 : 101 : 32 (≈ 9 : 3 : 3 : 1)</td>
 </tr>

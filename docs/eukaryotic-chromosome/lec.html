@@ -29,7 +29,23 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -145,9 +161,9 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li><strong>Chromatin</strong>: how 2 m of DNA fits in a nucleus; nucleosomes and higher-order packing.</li>
 <li><strong>Euchromatin and heterochromatin</strong>, and what happens to a gene moved next to heterochromatin.</li>
-<li><strong>Banding and karyotypes</strong>: how chromosomes are recognised and named (1p36.33, 47,XY,+21).</li>
-<li><strong>Centromeres</strong>: the attachment point for the spindle.</li>
-<li><strong>Telomeres</strong>: why linear ends are a problem, and how <strong>telomerase</strong> solves it.</li>
+<li><strong>Banding and karyotypes</strong>: a real karyotype, and how chromosomes are named (1p36.33, 47,XY,+21).</li>
+<li><strong>Centromeres</strong>: the attachment point for the spindle, and what happens with none or two.</li>
+<li><strong>Telomeres</strong>: why linear ends are a problem, and how <strong>telomerase</strong> solves it, step by step.</li>
 <li>What a chromosome <strong>needs</strong>: yeast artificial chromosomes.</li>
 <li>The <strong>telomere-to-telomere (T2T)</strong> human genome, which finally sequenced centromeres and telomeres.</li>
 </ul>
@@ -345,6 +361,103 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="a-real-karyotype" class="slide level2 smaller">
+<h2>A real karyotype</h2>
+<div class="columns">
+<div class="column" style="width:58%;">
+<p><img data-src="img/human-male-karyotype.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Human_male_karyotpe_high_resolution.jpg" class="photo-credit">Image: courtesy National Human Genome Research Institute, public domain, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:42%;">
+<p>How it is made:</p>
+<ol type="1">
+<li>Grow dividing cells (for example blood lymphocytes) and <strong>arrest them in metaphase</strong>, when chromosomes are most condensed.</li>
+<li>Swell the cells, spread the chromosomes on a slide, and <strong>G-band</strong> them.</li>
+<li>Photograph, then sort the chromosomes into <strong>pairs</strong>, by size, centromere position and band pattern, numbered 1 (largest) to 22, then X and Y.</li>
+</ol>
+<p>Check yourself: count the chromosomes. Which pairs are acrocentric? Is this a woman or a man?</p>
+</div></div>
+<aside class="notes">
+<p>This is a real G-banded karyotype from the NHGRI. Let the class work on the questions for a minute. 46 chromosomes; the acrocentrics are 13, 14, 15, 21 and 22, with their tiny short arms; the last pair is X and Y, so it is a man, written 46,XY. Point out that each chromosome here is two sister chromatids lying side by side, because the cell was in metaphase. The numbering by size is nearly but not quite right: chromosome 21 is actually smaller than 22, a historical accident of the first karyotypes. The band patterns of the two homologues match, which is how each chromosome is recognised. Modern labs use software to sort the chromosomes, but a cytogeneticist still reads the bands.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-a-band-name-step-by-step" class="slide level2">
+<h2>Reading a band name, step by step</h2>
+<p>Take <strong>17q21.31</strong>, the band that holds the <em>MAPT</em> gene:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 8%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Here</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>chromosome</td>
+<td><strong>17</strong></td>
+<td>chromosome 17</td>
+</tr>
+<tr class="even">
+<td>arm</td>
+<td><strong>q</strong></td>
+<td>the long arm (<strong>p</strong> = short arm, from French <em>petit</em>)</td>
+</tr>
+<tr class="odd">
+<td>region</td>
+<td><strong>2</strong></td>
+<td>the second region of 17q, counted <strong>from the centromere outward</strong></td>
+</tr>
+<tr class="even">
+<td>band</td>
+<td><strong>1</strong></td>
+<td>band 1 of that region</td>
+</tr>
+<tr class="odd">
+<td>sub-band</td>
+<td><strong>.3</strong></td>
+<td>after the dot: finer bands seen at higher resolution</td>
+</tr>
+<tr class="even">
+<td>sub-sub-band</td>
+<td><strong>1</strong></td>
+<td>finer still</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Say it as “seventeen q two one point three one”, not “q twenty-one”.</li>
+<li>Small numbers lie <strong>near the centromere</strong>; large ones near the end. So 1p36 is near the tip of 1p, and 1q12 near the centromere. “pter” and “qter” mean the end of each arm.</li>
+<li>A range is written from one band to another: 22q11.21–q11.23.</li>
+</ul>
+<aside class="notes">
+<p>The digits are separate levels, which is why “21” is read “two one”. Band numbers grow outward from the centromere on both arms, so p11 and q11 are the bands next to the centromere. More sub-bands appear as the resolution of the karyotype increases: a band seen as 17q21 at 400 bands splits into 17q21.1, .2 and .3 at 850 bands. NCBI Gene gives every gene’s band, so students can now read the Location field: CFTR at 7q31.2, TERT at 5p15.33, the outermost band of 5p. 17q21.31 also holds a common inversion polymorphism, which ties into the next unit.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-karyotype-and-its-notation" class="slide level2 smaller">
 <h2>The karyotype and its notation</h2>
 <p>A <strong>karyotype</strong> is the full set of chromosomes of a cell, arranged in pairs by size, centromere position and banding. It is written in a standard notation (ISCN):</p>
@@ -453,6 +566,38 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="exactly-one-centromere-what-goes-wrong-otherwise" class="slide level2 smaller">
+<h2>Exactly one centromere: what goes wrong otherwise</h2>
+<div class="columns">
+<div class="column" style="width:64%;">
+<p><strong>No centromere</strong> (acentric): no kinetochore, so the spindle cannot move it. It lags at anaphase, is left out of both nuclei (often in a <strong>micronucleus</strong>), and its genes are lost.</p>
+<p><strong>Two centromeres</strong> (dicentric): if the two are pulled to opposite poles, the chromatid is stretched into an <strong>anaphase bridge</strong> and breaks. McClintock followed this in maize as the <strong>breakage–fusion–bridge cycle</strong>:</p>
+<ol type="1">
+<li>A chromosome loses an end. After replication, the two broken sister chromatids <strong>fuse</strong>.</li>
+<li>The fused chromatid has <strong>two centromeres</strong>; at anaphase they go to opposite poles: a <strong>bridge</strong>.</li>
+<li>The bridge <strong>breaks</strong> at a random point. One daughter gets a duplication, the other a deletion, and both have a new <strong>broken end</strong>.</li>
+<li>At the next division the cycle starts again.</li>
+</ol>
+<p><img data-src="fig06-bfb-cycle.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:36%;">
+<p><img data-src="img/mcclintock-1947.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Barbara_McClintock_(1902-1992)_shown_in_her_laboratory_in_1947.jpg" class="photo-credit">Photo: Smithsonian Institution/Science Service, public domain, via Wikimedia Commons</a></p>
+<p>Barbara McClintock in her laboratory at Cold Spring Harbor, 1947.</p>
+</div></div>
+<aside class="notes">
+<p>Two genetic rules come out of the last two lectures: a chromosome needs exactly one centromere, and it needs protected ends. McClintock’s work on maize in the late 1930s and early 1940s showed what happens without the second: broken ends kept fusing and breaking, cycle after cycle, producing variegated kernels, while natural chromosome ends never fused. She also saw that broken ends could be “healed” in some tissues, a first hint of telomere addition. The same cycle runs in many cancers: repeated bridges and breaks amplify some regions and delete others, which is one way tumours gain extra copies of oncogenes. In the next unit, a crossover inside a paracentric inversion makes exactly one dicentric and one acentric, so both fates appear again. McClintock later found transposable elements while studying these broken chromosomes, and received the Nobel Prize in 1983.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="telomeres-protecting-the-ends" class="slide level2 smaller">
 <h2>Telomeres: protecting the ends</h2>
 <p>A <strong>telomere</strong> is the end of a linear chromosome: a long array of a short repeat, plus proteins.</p>
@@ -494,6 +639,30 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="worked-example-telomeres-as-a-division-counter" class="slide level2">
+<h2>Worked example: telomeres as a division counter</h2>
+<p>Illustrative numbers, in the range seen in cultured human cells:</p>
+<ul>
+<li>A cell line starts with telomeres of <strong>12 kb</strong>.</li>
+<li>Without telomerase, each end loses about <strong>150 bp</strong> per division.</li>
+<li>The cell stops dividing (<strong>senescence</strong>) when a telomere reaches about <strong>6 kb</strong>.</li>
+</ul>
+<p><span class="math display">\text{divisions left} = \frac{\text{start} - \text{limit}}{\text{loss per division}} = \frac{12\,000 - 6\,000}{150} = 40</span></p>
+<p>Turn it around: a line that stops after 50 divisions while losing 80 bp per division has used up 50 × 80 = <strong>4 kb</strong> of telomere.</p>
+<aside class="notes">
+<p>This is the arithmetic behind the Hayflick limit on the next slides; the exercise has its own version with other numbers and a twist about which telomere counts. Make the assumptions explicit: a constant loss per division, and a fixed length at which the cell stops. Both are simplifications: the loss per division varies (end processing adds to the primer gap), and the signal for senescence is a few critically short or unprotected ends, not the average. Still, the model explains why cells without telomerase have a limited number of divisions, and why that number depends on the starting length.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="telomerase" class="slide level2 smaller">
 <h2>Telomerase</h2>
 <p><strong>Telomerase</strong> is a <strong>reverse transcriptase</strong> that carries its own RNA template.</p>
@@ -505,6 +674,36 @@ Basic and molecular genetics (5MO104)
 <p>Discovered in the ciliate <em>Tetrahymena</em> by <strong>Carol Greider and Elizabeth Blackburn</strong> (1985). Changing bases in the RNA template changed the repeats added, which proved the RNA is the template. Nobel Prize 2009, with Jack Szostak.</p>
 <aside class="notes">
 <p>Telomerase is the reverse of the central dogma in a small way: RNA to DNA, like a retroviral reverse transcriptase, and TERT is in fact related to those enzymes. Ciliates were the right organism because their macronucleus has many thousands of small chromosomes (including thousands of copies of a tiny rDNA minichromosome) and so a huge number of telomeres. The template experiment is a lovely piece of genetics: Yu, Blackburn and colleagues mutated the template in Tetrahymena and the cells’ telomeres acquired the mutant repeat. The exercise has a by-hand version. Both genes are on chromosomes you can look up in the Find it part; note that TERT itself sits only about 1.3 Mb from the end of chromosome 5.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="telomerase-step-by-step" class="slide level2">
+<h2>Telomerase, step by step</h2>
+<pre><code>template (in TERC):            3'-CAAUCCCAAUC-5'
+
+1. Pair    5'-...TTAGGGTTAG-3'
+                      |||||
+                   3'-CAAUCCCAAUC-5'     the 3' end GTTAG pairs with CAAUC
+
+2. Copy    5'-...TTAGGGTTAGGGTTAG-3'     TERT adds GGTTAG, copying CCAAUC
+
+3. Slide   5'-...TTAGGGTTAGGGTTAG-3'
+                            |||||
+                         3'-CAAUCCCAAUC-5'  the new GTTAG pairs again
+
+4. Repeat: 6 nt per round. Then primase and DNA polymerase fill in the C-rich strand.</code></pre>
+<p><strong>To read any template:</strong> write its DNA complement 5’ → 3’. The part that pairs with the DNA end is not copied; the rest is the repeat that is added.</p>
+<aside class="notes">
+<p>This builds up panel (b) of the end-replication figure one move at a time. Telomerase holds on to the DNA, adds six nucleotides by reverse transcription, then lets go of the template-DNA pairing, slides along, and pairs again with the six nucleotides it has just made. That repeated slide is why the product is a repeat, and why the repeat length is set by the template. The rule at the bottom is all students need for any organism: complement the template, and the copied part gives the repeat. The exercise asks this for Tetrahymena and for a mutant template; the mutant template experiment is the one that proved the RNA is the template.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -691,6 +890,64 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="check-yourself-common-mistakes" class="slide level2">
+<h2>Check yourself: common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Better</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“1p36 is band thirty-six of chromosome 1.”</td>
+<td>Read digit by digit: region <strong>3</strong>, band <strong>6</strong>, on the short arm <strong>p</strong>. Numbers grow from the centromere outward.</td>
+</tr>
+<tr class="even">
+<td>“p is the top arm.”</td>
+<td><strong>p</strong> is the <strong>short</strong> arm, <strong>q</strong> the long one, whichever way the picture is drawn.</td>
+</tr>
+<tr class="odd">
+<td>“Heterochromatin is junk DNA.”</td>
+<td>It is a <strong>state</strong> of chromatin: compact and mostly silent. Facultative heterochromatin (inactive X) holds normal genes.</td>
+</tr>
+<tr class="even">
+<td>“More centromeres make a chromosome safer.”</td>
+<td>Exactly <strong>one</strong>: two give a bridge that breaks, none means the chromosome is lost.</td>
+</tr>
+<tr class="odd">
+<td>“The end-replication problem is on the leading strand.”</td>
+<td>It is the <strong>lagging</strong> strand’s last primer that cannot be replaced.</td>
+</tr>
+<tr class="even">
+<td>“CCCTAA at the p end is a different repeat.”</td>
+<td>It is the <strong>same</strong> TTAGGG telomere, read on the other strand.</td>
+</tr>
+<tr class="odd">
+<td>“Telomerase is active in all our cells.”</td>
+<td>Mainly in <strong>germline</strong>, stem cells and most <strong>cancers</strong>; most somatic cells have little or none.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Run this as a quick quiz: read a mistake and ask what is wrong before revealing the right column. Each row is a mistake seen in exam answers or in the exercise. The band-name and strand rows are what students need for B2 and B9 in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2 smaller">
 <h2>Summary</h2>
 <table class="caption-top">
@@ -723,29 +980,33 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="odd">
 <td>G-banding, karyotype</td>
-<td>reproducible band pattern; names like 1p36.33; notation 47,XY,+21</td>
+<td>reproducible band pattern; names read digit by digit from the centromere (17q21.31); notation 47,XY,+21</td>
 </tr>
 <tr class="even">
 <td>Centromere</td>
 <td>kinetochore site; yeast 125 bp; human Mb arrays of 171-bp α-satellite; marked by CENP-A</td>
 </tr>
 <tr class="odd">
+<td>One centromere only</td>
+<td>acentric → lost; dicentric → bridge and break; breakage–fusion–bridge cycles</td>
+</tr>
+<tr class="even">
 <td>Telomere</td>
 <td>TTAGGG repeats with a 3’ overhang and shelterin; hides the end from DNA repair</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>End-replication problem</td>
-<td>the last lagging-strand primer cannot be replaced: ends shorten each division</td>
+<td>the last lagging-strand primer cannot be replaced: ends shorten each division (divisions left = length to spare / loss per division)</td>
+</tr>
+<tr class="even">
+<td>Telomerase</td>
+<td>TERT + TERC RNA template: pair, copy, slide, repeat; active in germline and most cancers</td>
 </tr>
 <tr class="odd">
-<td>Telomerase</td>
-<td>TERT + TERC RNA template; active in germline and most cancers</td>
-</tr>
-<tr class="even">
 <td>Minimal chromosome</td>
 <td>origin (ARS) + centromere (CEN) + two telomeres (TEL): the YAC</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>T2T-CHM13</td>
 <td>first gapless human genome, 3.055 Gb, 2022</td>
 </tr>

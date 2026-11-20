@@ -24,9 +24,9 @@
     <text x="130" y="232">A</text>
     <text x="340" y="182">E</text>
     <text x="340" y="232">E</text>
-    <text x="150" y="122">B</text>
-    <text x="220" y="78">C</text>
-    <text x="290" y="122">D</text>
+    <text x="122" y="112">B</text>
+    <text x="220" y="64">C</text>
+    <text x="318" y="112">D</text>
   </g>
   <g font-size="12" text-anchor="middle" fill="#5b6b7a">
     <text x="182" y="146">B</text>

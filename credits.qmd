@@ -1,0 +1,232 @@
+---
+title: "Image credits"
+---
+
+Photos on this site are freely licensed: public domain, CC0, CC BY or CC BY-SA. Most come from [Wikimedia Commons](https://commons.wikimedia.org). Each licence was checked through the Commons API. Each photo also carries a credit line where it is shown. Figures and diagrams without a credit were drawn for this course.
+
+## [Genetics as information](intro-genetics/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), November 2026. Images are resized only, not cropped or altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| sickle-cell-smear.jpg | Sickle-cell smear 2015-09-10 | Paulo Henrique Orlandi Mourao | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg |
+| white-eyed-drosophila.jpg | White-eyed Drosophila | Paul Reynolds (Flickr user sylverwytche) | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:White-eyed_Drosophila.jpg |
+
+## [Mendel: segregation & assortment](mendel/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), November 2026. Images are resized only, not cropped or altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| mendel-portrait.jpg | Portrait of Gregor Johann Mendel (Wellcome M0002351) | Wellcome Collection (reproduction after a photograph; photographer not named) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Portrait_of_Gregor_Johann_Mendel,_Garrison._Wellcome_M0002351.jpg |
+| pea-cross-1914.png | Results of crossing yellow and green seeded peas (Popular Science Monthly vol. 85) | unknown author | public domain | https://commons.wikimedia.org/wiki/File:PSM_V85_D331_Results_of_crossing_yellow_and_green_seeded_peas.png |
+
+## [Probability & the χ² test](probability-chisq/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), November 2026. Images are resized only, not cropped or altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| fisher-1913.jpg | Ronald Fisher in 1913 | unknown author (Commons credit: University of Adelaide) | public domain | https://commons.wikimedia.org/wiki/File:Youngronaldfisher2.JPG |
+
+## [Extensions to Mendel](mendel-extensions/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), November 2026. Images are resized only, not cropped or altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| labrador-colours.jpg | Molly, Zoey, and Chance: all three Labrador colours | Erikeltic | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:3labradorcols.jpg |
+| himalayan-rabbit-kits.jpg | Chilled and warm Himalayan rabbit kits | SableSteel | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Chilled_and_Warm_Himalayan_rabbit_kits.JPG |
+| snapdragon-incomplete-dominance.png | Incomplete dominance, Antirrhinum majus | Jacek Halicki, I am Jim, Crochet.david and Sciencia58 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Incomplete_dominance_-_Antirrhinum_majus.png |
+
+## [Chromosome theory & sex linkage](chromosome-theory/lec.qmd)
+
+Licences checked with the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| karyotype-male.png | NHGRI human male karyotype | National Human Genome Research Institute | Public domain | https://commons.wikimedia.org/wiki/File:NHGRI_human_male_karyotype.png |
+| grasshopper-meiosis.jpg | Grasshopper meiosis stages (cropped: title and footer removed) | Durbadal's micro observations | CC0 | https://commons.wikimedia.org/wiki/File:Grasshopper_meiosis_stages.jpg |
+| morgan.jpg | Thomas Hunt Morgan | Unknown author (Johns Hopkins yearbook, 1891; via NLM) | Public domain | https://commons.wikimedia.org/wiki/File:Thomas_Hunt_Morgan.jpg |
+| white-eyed-fly.jpg | White-eyed Drosophila | Paul Reynolds (Flickr user sylverwytche) | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:White-eyed_Drosophila.jpg |
+| calico-cat.jpg | Calico cat - Phoebe | Holly Cheng | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Calico_cat_-_Phoebe.jpg |
+
+## [Linkage & recombination](linkage/lec.qmd)
+
+Licences checked with the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| vestigial-flies.jpg | Drosophila melanogaster vestigial | Salem.slima | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Drosophila_melanogaster_vestigial.jpg |
+| grasshopper-chiasmata.jpg | Grasshopper meiosis stages (cropped: diplotene and diakinesis panels) | Durbadal's micro observations | CC0 | https://commons.wikimedia.org/wiki/File:Grasshopper_meiosis_stages.jpg |
+
+## [Human linkage & LOD scores](lod-scores/lec.qmd)
+
+Licences checked with the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| nancy-wexler.jpg | Nancy Wexler, PhD (cropped: photograph only, from an FDA poster) | U.S. Food and Drug Administration | Public domain | https://commons.wikimedia.org/wiki/File:Nancy_Wexler,_PhD_(8515001497).jpg |
+
+## [DNA structure & replication (recap)](dna-recap/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| model-e-ultracentrifuge.jpg | Beckman Model E Analytical Ultracentrifuge Serial Numbers 1 and 1000 | Fred English Photographs (contributed by Science History Institute) | Public domain | https://commons.wikimedia.org/wiki/File:Beckman_Model_E_Analytical_Ultracentrifuge_Serial_Numbers_1_and_1000_-_DPLA_-_ae096339b1121b2e16f2acb323e80457.jpg |
+
+## [Mutation & complementation](mutation/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| sickle-cell-smear.jpg | Sickle-cell smear 2015-09-10 | Paulo Henrique Orlandi Mourao | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg |
+| replica-plating-velvet.jpg | Sterile velvet on a block | Pilarbini | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sterile_velvet_on_a_block.jpg |
+| neurospora-hyphae.jpg | Neurospora crassahyphae | Roland Gromes | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Neurospora_crassahyphae.jpg |
+
+## [Gene expression (recap)](gene-expression-recap/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| nirenberg-matthaei.jpg | J. Heinreich Matthaei and Marshall Nirenberg | NIH History Office | Public domain | https://commons.wikimedia.org/wiki/File:J._Heinreich_Matthaei_and_Marshall_Nirenberg_(29819142523).jpg |
+| t4-phage-em.jpg | T4 phage EM | 7USSR7 | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:T4_phage_EM.jpg |
+
+## [Digital analysis of DNA](digital-dna/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| gel-photo.jpg | Gel electrophoresis 2 | Mnolf | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Gel_electrophoresis_2.jpg |
+| sanger-read.png | Sanger sequencing read display | Loris | Public domain | https://commons.wikimedia.org/wiki/File:Sanger_sequencing_read_display.png |
+
+## [Genome annotation](genome-annotation/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| minion.png | MinION portable sequencer | Mongan A.E. (from Mongan, Tuda & Runtuwene, J Hum Genet 65, 35–40, 2020) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:MinION_portable_sequencer.png |
+
+## [Genomic variation](genomic-variation/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| sickle-smear.jpg | Sickle-cell smear 2015-09-10 | Paulo Henrique Orlandi Mourao | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg |
+
+## [The eukaryotic chromosome](eukaryotic-chromosome/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| human-male-karyotype.jpg | Human male karyotype after G-banding | Courtesy: National Human Genome Research Institute | Public domain | https://commons.wikimedia.org/wiki/File:Human_male_karyotpe_high_resolution.jpg |
+| mcclintock-1947.jpg | Barbara McClintock (1902–1992) shown in her laboratory in 1947 | Smithsonian Institution/Science Service; restored by Adam Cuerden | Public domain | https://commons.wikimedia.org/wiki/File:Barbara_McClintock_(1902-1992)_shown_in_her_laboratory_in_1947.jpg |
+
+## [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons originals or thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| trisomy21-karyotype.png | Karyotype of trisomy 21 (Down syndrome) | U.S. Department of Energy Human Genome Program | Public domain | https://commons.wikimedia.org/wiki/File:21_trisomy_-_Down_syndrome.png |
+| bcr-abl-fish.png | A metaphase cell positive for the BCR/ABL rearrangement (FISH) | Pmx | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Fish_2_fusion_signals.png |
+| polytene-chromosomes.jpg | Phase-contrast image of *Drosophila melanogaster* polytene chromosomes | J. Albert Vallunen (User:albval) | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Drosophila_polytene_chromosomes_2.jpg |
+
+## [Bacterial genetics (recap)](bacterial-genetics-recap/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| ecoli-sem.jpg | Low-temperature electron micrograph of a cluster of *E. coli*, ×10 000 | Eric Erbe (photo), Christopher Pooley (colorization), USDA ARS | Public domain | https://commons.wikimedia.org/wiki/File:E_coli_at_10000x,_original.jpg |
+| replica-velvet.jpg | A sterile velvet on a block for replica plating | Pilarbini | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sterile_velvet_on_a_block.jpg |
+
+## [Organelle inheritance](organelle-inheritance/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons originals or thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| mitochondria-tem.jpg | Mitochondria, mammalian lung (TEM) | Louisa Howard | Public domain | https://commons.wikimedia.org/wiki/File:Mitochondria,_mammalian_lung_-_TEM.jpg |
+| ragged-red-fibres.jpg | Ragged red fibres in a mitochondrial myopathy, Gomori trichrome | Nephron | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ragged_red_fibres_-_gtc_-_very_high_mag.jpg |
+
+## [Prokaryotic regulation (recap)](prokaryotic-regulation-recap/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), 2026-11-20.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| jacob.jpg | François Jacob, Nobel Prize in Physiology or Medicine 1965 | Unknown author (via nobelprize.org) | Public domain | https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Jacob_nobel.jpg |
+| monod.jpg | Jacques Monod, Nobel Prize in Physiology or Medicine 1965 (cropped) | Unknown author (via nobelprize.org) | Public domain | https://commons.wikimedia.org/wiki/File:Jacques_Monod_nobel_(cropped).jpg |
+| xgal-plate.jpg | LB agar plate with blue and white bacterial colonies (X-gal) | Roland Deschain | Public domain | https://commons.wikimedia.org/wiki/File:Blue_White_Screen.jpg |
+
+## [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd)
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| calico-cat.jpg | My calico cat | Jimis919 | CC0 1.0 | https://commons.wikimedia.org/wiki/File:My_calico_cat.jpg |
+| barr-body.jpg | Sd4hi-unten-crop (nucleus of a female amniotic fluid cell; X territories by FISH and DAPI, Barr body arrowed) | Steffen Dietzel (User:Dietzel65) | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Sd4hi-unten-crop.jpg |
+
+## [RNA-mediated regulation](rna-regulation/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (`extmetadata.LicenseShortName`), 2026-11-20. Images are resized thumbnails, not otherwise altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| c-elegans-adult.jpg | Adult *Caenorhabditis elegans* hermaphrodite (DIC micrograph) | Zeynep F. Altun (WormAtlas); uploaded by Kbradnam | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Adult_Caenorhabditis_elegans.jpg |
+| ambros.jpg | Victor Ambros, 2024 Nobel Prize Laureate in Medicine (cropped) | Arthur Petron | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Victor_Ambros,_2024_Nobel_Prize_Laureate_in_Medicine_(cropped).jpg |
+| ruvkun.jpg | Gary Ruvkun, 2024 Nobel Prize Laureate in Medicine 4 (cropped 3x4) | John Sears | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Gary_Ruvkun,_2024_Nobel_Prize_Laureate_in_Medicine_4_(cropped_3x4).jpg |
+
+## [Development & model organisms](development-model-organisms/lec.qmd)
+
+All images from Wikimedia Commons; licences checked through the Commons API (`extmetadata.LicenseShortName`) on 2026-11-20. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| nusslein-volhard.jpg | Christiane Nüsslein-Volhard mg 4389 (cropped) | Rama | CC BY-SA 2.0 fr | https://commons.wikimedia.org/wiki/File:Christiane_N%C3%BCsslein-Volhard_mg_4389_(cropped).jpg |
+| eve-stripes.png | Drosophila pair rule pattern | Thomas Gregor (left), Erik Clark (right) | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Drosophila_pair_rule_pattern.png |
+| antennapedia.jpg | Antennapedia2 | toony | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Antennapedia2.jpg |
+| c-elegans-adult.jpg | Adult Caenorhabditis elegans | Zeynep F. Altun (WormAtlas); uploaded by Kbradnam | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Adult_Caenorhabditis_elegans.jpg |
+
+## [Cancer genetics](cancer-genetics/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (extmetadata) on 20 November 2026. Files are the Commons originals or thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| philadelphia-karyotype.jpg | Philadelphia chromosome, t(9;22) translocation.jpg: partial karyotype, bone marrow in chronic myeloid leukaemia (PEIR image 404859, from the AFIP Atlas of Tumor Pathology) | The Armed Forces Institute of Pathology (AFIP) | Public domain | https://commons.wikimedia.org/wiki/File:Philadelphia_chromosome,_t(9;22)_translocation.jpg |
+
+## [Drift, selection, mutation, migration](drift-selection/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (extmetadata) on 20 November 2026. Files are the Commons thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| sickle-smear.jpg | Sickle Cell Anemia (5610746554).jpg: peripheral blood smear in sickle-cell disease | Ed Uthman from Houston, TX, USA | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Sickle_Cell_Anemia_(5610746554).jpg |
+| falciparum-smear.jpg | Plasmodium falciparum (malaria) parasite in blood.jpg: ring forms in red blood cells | MichaelZahniser | Public domain | https://commons.wikimedia.org/wiki/File:Plasmodium_falciparum_(malaria)_parasite_in_blood.jpg |
+
+## [Complex traits, heritability & GWAS](complex-traits/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (extmetadata) on 20 November 2026. Files are the Commons originals, not altered.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| galton-regression.png | Galton-height-regress.png: Galton's 1889 "regression from mid-parent to son" diagram (Natural Inheritance, p. 96), redrawn with circles sized by the data of his table 11 | Madprime | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Galton-height-regress.png |
+
+## [Ethics of genetic knowledge](ethics/lec.qmd)
+
+Licences checked through the Wikimedia Commons API (extmetadata) on 20 November 2026. Files are the Commons originals or thumbnails, resized only.
+
+| file | title | author | licence | source URL |
+|---|---|---|---|---|
+| he-jiankui-summit.jpg | He Jiankui at Second International Summit on Human Genome Editing.jpg (Hong Kong, 28 November 2018) | VOA, Iris Tong | Public domain | https://commons.wikimedia.org/wiki/File:He_Jiankui_at_Second_International_Summit_on_Human_Genome_Editing.jpg |
+| anopheles-gambiae.jpg | Anopheles gambiae mosquito feeding 1354.p lores.jpg (CDC PHIL #1354) | CDC / James Gathany | Public domain | https://commons.wikimedia.org/wiki/File:Anopheles_gambiae_mosquito_feeding_1354.p_lores.jpg |
+

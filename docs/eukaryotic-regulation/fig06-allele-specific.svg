@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: telling cis from trans with an allele-specific measurement.
+       The two copies of a target gene differ at a silent SNP (C or T), so RNA reads can be assigned to each copy.
+       A: heterozygous enhancer mutation on the C chromosome. The activator is present but has no site there:
+          only the T copy is expressed. The mutation acts in cis.
+       B: heterozygous loss-of-function mutation in the activator gene (on another chromosome). Half as much
+          activator, but it reaches both copies: C and T reads about 50:50. The mutation acts in trans. -->
+
+  <!-- ===== Panel A ===== -->
+  <text x="20" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">A. Enhancer mutation: <tspan fill="#c0392b">cis</tspan></text>
+  <text x="30" y="64" font-size="13" fill="#5c6b7a">heterozygote: the two copies differ at a silent SNP (C or T)</text>
+  <!-- chromosome 1: broken enhancer, allele C -->
+  <line x1="30" y1="110" x2="420" y2="110" stroke="#1b2a3a" stroke-width="3"/>
+  <rect x="50" y="97" width="60" height="26" fill="#fde8e8" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="56" y1="101" x2="104" y2="119" stroke="#c0392b" stroke-width="2.5"/>
+  <line x1="56" y1="119" x2="104" y2="101" stroke="#c0392b" stroke-width="2.5"/>
+  <rect x="200" y="94" width="200" height="32" rx="4" fill="#e3e6ea" stroke="#9aa5b1" stroke-width="1.5"/>
+  <text x="300" y="116" font-size="15" fill="#8a929b" text-anchor="middle">target gene, allele C</text>
+  <text x="80" y="146" font-size="13" fill="#c0392b" text-anchor="middle">no site</text>
+  <text x="300" y="146" font-size="13" fill="#5c6b7a" text-anchor="middle">silent</text>
+  <!-- chromosome 2: intact enhancer, allele T -->
+  <line x1="30" y1="200" x2="420" y2="200" stroke="#1b2a3a" stroke-width="3"/>
+  <rect x="50" y="187" width="60" height="26" fill="#fbf0c9" stroke="#b8901a" stroke-width="2"/>
+  <ellipse cx="80" cy="176" rx="22" ry="12" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.2"/>
+  <rect x="200" y="184" width="200" height="32" rx="4" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="300" y="206" font-size="15" fill="#ffffff" text-anchor="middle">target gene, allele T</text>
+  <text x="300" y="236" font-size="13" fill="#5c6b7a" text-anchor="middle">transcribed</text>
+  <!-- activator legend -->
+  <ellipse cx="160" cy="160" rx="16" ry="9" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="182" y="165" font-size="13" fill="#2a6f97">activator</text>
+  <!-- RNA reads bar -->
+  <text x="30" y="282" font-size="15" fill="#1b2a3a">RNA reads at the SNP:</text>
+  <rect x="200" y="266" width="200" height="24" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="300" y="283" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">T 100 %</text>
+  <text x="200" y="308" font-size="13" fill="#5c6b7a">C 0 %</text>
+  <!-- verdict -->
+  <rect x="30" y="324" width="390" height="84" rx="8" fill="#fbeeee" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="44" y="350" font-size="15" fill="#1b2a3a">Only the copy next to the intact enhancer</text>
+  <text x="44" y="371" font-size="15" fill="#1b2a3a">is used: the mutation acts <tspan font-weight="bold">in cis</tspan>.</text>
+  <text x="44" y="394" font-size="15" fill="#1b2a3a">→ the mutation is in a <tspan font-weight="bold">DNA site</tspan>.</text>
+
+  <line x1="450" y1="20" x2="450" y2="408" stroke="#d5dae0" stroke-width="1.5"/>
+
+  <!-- ===== Panel B ===== -->
+  <text x="475" y="30" font-size="18" font-weight="bold" fill="#1b2a3a">B. Activator-gene mutation: <tspan fill="#2a6f97">trans</tspan></text>
+  <!-- activator gene, heterozygous, elsewhere in the genome -->
+  <text x="475" y="64" font-size="13" fill="#5c6b7a">activator gene (other chromosome):</text>
+  <rect x="694" y="50" width="60" height="22" rx="4" fill="#9db4c8" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="724" y="66" font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">+</text>
+  <rect x="764" y="50" width="60" height="22" rx="4" fill="#c9ced4" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="794" y="66" font-size="13" font-weight="bold" fill="#1b2a3a" text-anchor="middle">−</text>
+  <!-- chromosome 1: intact enhancer, allele C -->
+  <line x1="485" y1="120" x2="875" y2="120" stroke="#1b2a3a" stroke-width="3"/>
+  <rect x="505" y="107" width="60" height="26" fill="#fbf0c9" stroke="#b8901a" stroke-width="2"/>
+  <ellipse cx="535" cy="96" rx="22" ry="12" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.2"/>
+  <rect x="655" y="104" width="200" height="32" rx="4" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="755" y="126" font-size="15" fill="#ffffff" text-anchor="middle">target gene, allele C</text>
+  <!-- chromosome 2: intact enhancer, allele T -->
+  <line x1="485" y1="200" x2="875" y2="200" stroke="#1b2a3a" stroke-width="3"/>
+  <rect x="505" y="187" width="60" height="26" fill="#fbf0c9" stroke="#b8901a" stroke-width="2"/>
+  <ellipse cx="535" cy="176" rx="22" ry="12" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.2"/>
+  <rect x="655" y="184" width="200" height="32" rx="4" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="755" y="206" font-size="15" fill="#ffffff" text-anchor="middle">target gene, allele T</text>
+  <text x="535" y="240" font-size="13" fill="#2a6f97" text-anchor="middle">half as much activator,</text>
+  <text x="755" y="240" font-size="13" fill="#2a6f97" text-anchor="middle">but it reaches both copies</text>
+  <!-- RNA reads bar -->
+  <text x="485" y="282" font-size="15" fill="#1b2a3a">RNA reads at the SNP:</text>
+  <rect x="655" y="266" width="100" height="24" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1"/>
+  <rect x="755" y="266" width="100" height="24" fill="#5f9e4a" stroke="#1b2a3a" stroke-width="1"/>
+  <text x="705" y="283" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">C 50 %</text>
+  <text x="805" y="283" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">T 50 %</text>
+  <!-- verdict -->
+  <rect x="485" y="324" width="390" height="84" rx="8" fill="#eef4f8" stroke="#2a6f97" stroke-width="1.5"/>
+  <text x="499" y="350" font-size="15" fill="#1b2a3a">Both copies are used equally: the mutation</text>
+  <text x="499" y="371" font-size="15" fill="#1b2a3a">acts <tspan font-weight="bold">in trans</tspan>, through a diffusible protein.</text>
+  <text x="499" y="394" font-size="15" fill="#1b2a3a">Recessive if half the activator is enough.</text>
+</svg>

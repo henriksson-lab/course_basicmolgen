@@ -29,7 +29,23 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -143,10 +159,10 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p>The reference genome from the last unit is one genome. No living person has exactly that sequence. This lecture is about the <strong>differences</strong>: what kinds there are, how we find them in thousands of people, and why some alleles are common in one part of the world and rare in another.</p>
 <ul>
-<li><strong>Kinds of variant</strong>: SNPs, indels, microsatellites (STRs) and copy-number variants (CNVs).</li>
-<li><strong>Naming</strong> a variant: rs numbers, HGVS names, and the strand problem.</li>
-<li><strong>Haplotypes</strong> and <strong>linkage disequilibrium</strong> (LD).</li>
-<li><strong>Genotyping</strong> by arrays vs sequencing; the big databases: dbSNP, 1000 Genomes, gnomAD.</li>
+<li><strong>Kinds of variant</strong>: SNPs, indels, microsatellites (STRs) and copy-number variants (CNVs), and what each does depending on where it lies.</li>
+<li><strong>Naming</strong> a variant: rs numbers, HGVS names, and the strand problem, step by step.</li>
+<li><strong>Haplotypes</strong> and <strong>linkage disequilibrium</strong> (LD): how to measure it, how fast it decays, and how it differs from linkage (Part 2).</li>
+<li><strong>Genotyping</strong> by arrays vs sequencing; the big databases: dbSNP, 1000 Genomes, gnomAD; reading a frequency and using it as evidence.</li>
 <li><strong>Population differences</strong>, with two case stories: <strong>lactase persistence</strong> and the <strong>sickle-cell allele and malaria</strong>.</li>
 <li><strong>Personal genomics</strong>: what a consumer genome test can and cannot tell you.</li>
 </ul>
@@ -214,8 +230,12 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="kinds-of-variant" class="slide level2 smaller">
 <h2>Kinds of variant</h2>
-
-<img data-src="fig01-variant-types.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:68.0%"><table class="caption-top">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="fig01-variant-types.svg" class="quarto-figure quarto-figure-center" style="width:66.0%"></p>
+</figure>
+</div>
+<table class="caption-top">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -259,6 +279,79 @@ Basic and molecular genetics (5MO104)
 </table>
 <aside class="notes">
 <p>SNP strictly means a single-nucleotide variant common enough to be a polymorphism (often defined as at least 1 percent); SNV is the general term including rare ones. Indels inside a coding sequence cause frameshifts unless their length is a multiple of three, as in F508del, which removes one phenylalanine. Microsatellites mutate by polymerase slippage during replication, a thousand to ten thousand times faster than SNPs, so they have many alleles per locus. That made them the markers of choice for linkage mapping in the 1990s (the LOD-score unit in Part 2) and for forensic DNA profiles today. Expansions of some trinucleotide repeats cause disease: Huntington disease, met in the Mendel unit, appears with 40 or more CAG repeats in HTT. CNVs cover more base pairs in total than SNPs. A well-studied example is AMY1: populations with traditionally starch-rich diets have, on average, more copies of the salivary amylase gene.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-does-a-variant-do-it-depends-on-where-it-is" class="slide level2 smaller">
+<h2>What does a variant do? It depends on where it is</h2>
+<p>Recap from the Mutation unit, now as a checklist for any variant you meet in a database:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Where, and what changes</th>
+<th>Consequence</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>coding, same amino acid</td>
+<td><strong>synonymous</strong> (usually no effect)</td>
+<td>most third-position changes</td>
+</tr>
+<tr class="even">
+<td>coding, another amino acid</td>
+<td><strong>missense</strong></td>
+<td>HbS: <em>HBB</em> c.20A&gt;T, Glu7Val</td>
+</tr>
+<tr class="odd">
+<td>coding, a new stop codon</td>
+<td><strong>nonsense</strong>: truncated protein, often mRNA decay</td>
+<td><em>HBB</em> codon 39 CAG → TAG: β<sup>0</sup>-thalassaemia</td>
+</tr>
+<tr class="even">
+<td>indel, length <strong>not</strong> a multiple of 3</td>
+<td><strong>frameshift</strong>: wrong amino acids until a stop</td>
+<td>many loss-of-function alleles</td>
+</tr>
+<tr class="odd">
+<td>indel, multiple of 3</td>
+<td><strong>in-frame</strong>: amino acids lost or gained</td>
+<td><em>CFTR</em> F508del</td>
+</tr>
+<tr class="even">
+<td>GT or AG at an intron end</td>
+<td><strong>splice-site</strong>: exon skipped or intron kept</td>
+<td><em>HBB</em> intron 1, first base G&gt;A: β<sup>0</sup>-thalassaemia</td>
+</tr>
+<tr class="odd">
+<td>promoter or enhancer</td>
+<td><strong>regulatory</strong>: changes how much, when, where</td>
+<td>lactase persistence, −13910</td>
+</tr>
+<tr class="even">
+<td>intron or between genes</td>
+<td>usually <strong>none</strong></td>
+<td>most of the 4–5 million</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This is the reasoning students need for B1: classify the variant first, then predict the effect from its position. Databases do the same: Ensembl and dbSNP give every variant a “consequence” term, and the exercise asks students to read it. Codon 39 is the traditional numbering (without the start methionine), as for HbS; this nonsense allele is a common cause of beta-zero-thalassaemia around the Mediterranean. The splice example is the allele usually written IVS-I-1 G&gt;A: the first base of intron 1 is changed, so the splice donor GT is lost. Most variants in a genome fall in the last row, which is why “a variant” is not the same as “a mutation that causes disease”. The effects in the table are typical, not certain: a missense change can be harmless, and a synonymous change can occasionally affect splicing.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -319,6 +412,28 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="one-change-two-strands-step-by-step" class="slide level2 smaller">
+<h2>One change, two strands: step by step</h2>
+
+<img data-src="fig05-strand-names.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:76.0%"><ol type="1">
+<li><strong>Find the gene’s strand</strong> (Ensembl or a browser). <em>HBB</em>: minus.</li>
+<li><strong>Plus-strand gene</strong>: database alleles = gene alleles. <strong>Minus-strand gene</strong>: take the <strong>complement</strong> of each allele (for longer alleles, the reverse complement).</li>
+<li><strong>Count c.&nbsp;positions on the gene’s strand</strong> from the A of ATG (c.1); <em>HBB</em> codon 7 is c.19–21.</li>
+</ol>
+<aside class="notes">
+<p>Walk through the figure from top to bottom. The chromosome coordinate runs left to right along the plus strand, which reads CTCCTCAGG here. HBB is on the minus strand, which reads right to left; read that way, it gives CCT GAG GAG, codons 6, 7 and 8. The highlighted column is position 5,227,002: T on the plus strand, A on the minus strand. HbS changes this base pair from T-A to A-T, so the plus-strand name is T&gt;A and the gene-strand name is A&gt;T. Same change, two descriptions. For a single base, complementing is enough; for an indel or a multi-base allele you must also reverse the order. The bases are checked against the reference sequence of the HBB PCR product from Digital analysis of DNA. Students do the same for the lactase SNP and ALDH2 in B2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="haplotypes-and-linkage-disequilibrium" class="slide level2 smaller">
 <h2>Haplotypes and linkage disequilibrium</h2>
 
@@ -328,6 +443,225 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>LD is linkage (Part 2) seen at population level. In a family, linkage means that alleles close together on a chromosome go into the same gamete unless there is a crossover between them. In a population, over many generations, crossovers gradually break up the associations, but between very close sites they rarely happen, so the associations survive. Walk through the figure: the new mutation appears on one chromosome, so at first it is always found with that chromosome’s alleles. Each generation, crossovers swap in other chromosome stretches at the ends. After many generations only a short stretch around the mutation is still shared by all carriers. A young allele that rose fast because of selection, such as lactase persistence, sits on an unusually long shared haplotype, which is one of the ways selection is detected.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="linkage-versus-linkage-disequilibrium" class="slide level2 smaller">
+<h2>Linkage versus linkage disequilibrium</h2>
+<p>Both come from the same crossovers, but they are measured in different samples and answer different questions.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Linkage</strong> (Part 2)</th>
+<th><strong>Linkage disequilibrium</strong> (LD)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample</td>
+<td>a family or a cross: parents and offspring</td>
+<td>unrelated people from a population</td>
+</tr>
+<tr class="even">
+<td>What you count</td>
+<td>recombinant offspring</td>
+<td>haplotypes</td>
+</tr>
+<tr class="odd">
+<td>Measure</td>
+<td>recombination fraction <em>r</em>, LOD score</td>
+<td><em>D</em> (and <em>r</em><sup>2</sup>, <em>D</em>’ in browsers)</td>
+</tr>
+<tr class="even">
+<td>Crossovers seen</td>
+<td>only those in the meioses you observe: a few per chromosome</td>
+<td>all crossovers since the haplotype arose: thousands of generations</td>
+</tr>
+<tr class="odd">
+<td>Resolution</td>
+<td>Mb</td>
+<td>kb</td>
+</tr>
+<tr class="even">
+<td>Depends on population history?</td>
+<td>no</td>
+<td><strong>yes</strong>: age of the allele, drift, selection, migration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Linkage</strong> is a property of two <strong>loci</strong> (how far apart they are). <strong>LD</strong> is a property of <strong>alleles in a population</strong> (whether they travel together there).</p>
+<aside class="notes">
+<p>This slide connects Part 2 to today. In Part 2, two loci were linked if they were close enough on a chromosome that recombinant offspring were fewer than half; you measured that directly by counting recombinants in families or crosses. LD asks a different question: in a population of unrelated people, does knowing the allele at one site tell me the allele at the other? It does when the alleles were inherited together from a common ancestral chromosome and crossovers have not yet separated them. So LD needs linkage to last, but linkage does not guarantee LD: two tightly linked SNPs whose alleles have been shuffled for a long time can be in linkage equilibrium. The resolution row is the practical consequence. In the LOD-score unit, a few families with a few dozen meioses could place a gene within several Mb. A population sample carries the crossovers of all ancestors back to the origin of the haplotype, so LD extends only over kb.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="measuring-ld-a-worked-example" class="slide level2">
+<h2>Measuring LD: a worked example</h2>
+<p>100 chromosomes typed at two nearby SNPs, <em>A</em>/<em>a</em> and <em>B</em>/<em>b</em>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Haplotype</th>
+<th style="text-align: right;"><em>AB</em></th>
+<th style="text-align: right;"><em>Ab</em></th>
+<th style="text-align: right;"><em>aB</em></th>
+<th style="text-align: right;"><em>ab</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Count</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">40</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><strong>Allele frequencies</strong>: <em>p</em><sub>A</sub> = (40 + 10)/100 = 0.5; <em>p</em><sub>B</sub> = (40 + 10)/100 = 0.5.</li>
+<li><strong>Expected without LD</strong>: <em>p</em><sub>AB</sub> = <em>p</em><sub>A</sub> × <em>p</em><sub>B</sub> = 0.25, so 25 <em>AB</em> chromosomes (product rule).</li>
+<li><strong>Observed</strong>: 40/100 = 0.40.</li>
+<li><strong>D</strong> = <em>p</em><sub>AB</sub> − <em>p</em><sub>A</sub> <em>p</em><sub>B</sub> = 0.40 − 0.25 = <strong>0.15</strong>. <em>D</em> ≠ 0: the SNPs are in LD; <em>A</em> travels with <em>B</em>.</li>
+</ol>
+<p>Browsers report two scaled versions: <em>r</em><sup>2</sup> = <em>D</em><sup>2</sup> / (<em>p</em><sub>A</sub> <em>p</em><sub>a</sub> <em>p</em><sub>B</sub> <em>p</em><sub>b</sub>) = 0.0225 / 0.0625 = <strong>0.36</strong>, and <em>D</em>’ = <em>D</em> / <em>D</em><sub>max</sub> = 0.15 / 0.25 = <strong>0.6</strong>. Both run from 0 (no LD) to 1.</p>
+<aside class="notes">
+<p>This is the method of B3 with different numbers. The key step is step 2: if the alleles at the two sites were independent, the frequency of a haplotype would be the product of its allele frequencies, by the product rule from the probability unit. D measures the excess. D can be negative, which just means that A travels with b instead. Its maximum depends on the allele frequencies, which is why browsers use scaled measures. r squared is the one used for tagging: it says how well one SNP predicts the other, and an r squared near 1 means you only need to genotype one of them. Here r squared is 0.36, so SNP 1 predicts SNP 2 only partly. D prime for positive D is D divided by the smaller of p_A times p_b and p_a times p_B, which here are both 0.25. Students do not need to memorise r squared and D prime, only to recognise them in Ensembl’s LD view.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-fast-does-ld-decay" class="slide level2">
+<h2>How fast does LD decay?</h2>
+<p>Each generation, a fraction <em>r</em> of chromosomes recombine between the two sites, so <em>D</em> shrinks by a factor (1 − <em>r</em>):</p>
+<p><span class="math display">D_t = D_0 \, (1 - r)^t</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distance (1 cM ≈ 1 Mb in humans)</th>
+<th style="text-align: right;"><em>r</em></th>
+<th style="text-align: right;"><em>D</em> left after 100 generations (~2,500 years)</th>
+<th style="text-align: right;">after 1,000 generations (~25,000 years)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10 kb</td>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">99%</td>
+<td style="text-align: right;">90%</td>
+</tr>
+<tr class="even">
+<td>100 kb</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">90%</td>
+<td style="text-align: right;">37%</td>
+</tr>
+<tr class="odd">
+<td>1 Mb</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">37%</td>
+<td style="text-align: right;">0.004%</td>
+</tr>
+<tr class="even">
+<td>different chromosomes</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0 (halves every generation)</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>LD between sites a few kb apart can survive since the origin of modern humans; between unlinked loci it is gone within a few generations.</p>
+<aside class="notes">
+<p>This is why LD blocks are kb long. Work through one row: at 100 kb, r is about one in a thousand, so after a thousand generations D is 0.999 to the power 1,000, about 0.37 of its starting value. At 1 Mb it would be essentially zero after the same time. The generation time of 25 years and the rule of 1 cM per Mb are averages; recombination rates vary a lot along the chromosome, with hotspots, which is one reason LD blocks have sharp edges. Compare with the LOD-score unit: there the recombination fraction was something you measured; here it sets how fast associations decay. Selection can create long LD quickly: an allele that rose from one copy to high frequency within a few hundred generations still sits on a long ancestral haplotype, as lactase persistence does.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-ld-is-not-linkage" class="slide level2">
+<h2>Check yourself: LD is not linkage</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statement</th>
+<th>True?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“Two SNPs in strong LD must be close together.”</td>
+<td><strong>Usually, not always.</strong> Recent admixture, drift in a small population or selection can create LD between distant or even unlinked loci; it then decays within a few generations.</td>
+</tr>
+<tr class="even">
+<td>“Two linked SNPs are always in LD.”</td>
+<td><strong>No.</strong> Close loci can be in linkage equilibrium if their alleles have had time to mix, or if one allele arose many times.</td>
+</tr>
+<tr class="odd">
+<td>“A GWAS SNP associated with a disease causes it.”</td>
+<td><strong>Not necessarily.</strong> It may only be in LD with the causal variant nearby.</td>
+</tr>
+<tr class="even">
+<td>“LD is the same in every population.”</td>
+<td><strong>No.</strong> It depends on each population’s history; African populations have the shortest LD blocks.</td>
+</tr>
+<tr class="odd">
+<td>“Linkage tells you about families; LD about populations.”</td>
+<td><strong>Yes.</strong> Same crossovers, different samples and time scales.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Ask the room to vote on each statement before revealing. The first is the one that surprises students most. Admixture is the clearest case: if two populations with different allele frequencies at two unlinked loci mix, the first generations of offspring show an association between the loci simply because people with ancestry from one population tend to carry that population’s alleles at both. Independent assortment at meiosis removes this in a few generations. The GWAS point is developed in Complex traits in Part 7.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -480,6 +814,51 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="reading-a-frequency-from-a-database" class="slide level2">
+<h2>Reading a frequency from a database</h2>
+<p>Databases report counts of <strong>chromosomes</strong>, not people. For rs4988235 in the CEU sample of 1000 Genomes (99 people, from Ensembl):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Allele</th>
+<th style="text-align: right;">Allele count (AC)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A (persistence)</td>
+<td style="text-align: right;">146</td>
+</tr>
+<tr class="even">
+<td>G</td>
+<td style="text-align: right;">52</td>
+</tr>
+<tr class="odd">
+<td><strong>Allele number (AN)</strong></td>
+<td style="text-align: right;">198 = 2 × 99</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Allele frequency</strong> = AC / AN = 146 / 198 = <strong>0.737</strong>.</p>
+<ul>
+<li>gnomAD gives the same three columns per ancestry group, plus the number of <strong>homozygotes</strong>.</li>
+<li><strong>Not seen ≠ absent.</strong> An allele with AC = 0 among 198 chromosomes can still have a frequency of up to about 3/198 ≈ 1.5% in the population (95% upper bound, the “rule of three”).</li>
+<li>Small samples give rough frequencies; large ones (gnomAD) can measure alleles as rare as 1 in 100,000.</li>
+</ul>
+<aside class="notes">
+<p>These are the numbers behind the lactase table later in the lecture, and they come from the Ensembl export used in the R exercise. Allele number is twice the number of people typed, because each person has two copies of an autosome; for the X chromosome it differs between the sexes. The rule of three: if an event has probability p and you see it zero times in n trials, values of p above about 3 over n would make that result unlikely, below 5 percent. So “frequency 0 in YRI” in a 1000 Genomes table means “rare or absent in that population”, not “impossible”. The R exercise meets the same issue from the other side: Ensembl leaves out alleles that were not observed, and students have to put the zeros back.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="allele-frequencies-differ-between-populations" class="slide level2 smaller">
 <h2>Allele frequencies differ between populations</h2>
 
@@ -583,6 +962,8 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="variants-and-families-back-to-pedigrees" class="slide level2 smaller">
 <h2>Variants and families: back to pedigrees</h2>
+<div class="columns">
+<div class="column" style="width:62%;">
 <p>Population frequencies feed directly into the risk calculations of Part 1:</p>
 <ul>
 <li><strong>Carrier probability of a partner.</strong> For a recessive disease with allele frequency <em>q</em>, a random partner is a carrier with probability about 2<em>q</em>: for HbS in YRI (<em>q</em> = 0.14), 2 × 0.14 × 0.86 ≈ <strong>0.24</strong>.</li>
@@ -590,8 +971,67 @@ Basic and molecular genetics (5MO104)
 <li><strong>Interpreting a new variant</strong> in a family: is it in gnomAD? At what frequency? Does it co-segregate with the disease in the pedigree?</li>
 </ul>
 <p>The same variant can be common and protective in one setting and a cause of disease in another: genotype and environment together make the phenotype.</p>
+</div><div class="column" style="width:38%;">
+<p><img data-src="img/sickle-smear.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg" class="photo-credit">Photo: Paulo Henrique Orlandi Mourao, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+<p>Blood smear in sickle-cell disease (HbS/HbS): sickled red cells (arrow) among normal discs.</p>
+</div></div>
 <aside class="notes">
-<p>This links the population view back to the pedigree unit, where the probability that an unrelated partner was a carrier was often just given. Now students can look it up. Use the 2pq approximation (Part 7 gives the justification); for rare alleles it is about 2q. The second bullet multiplies the probability that the partner is a carrier by the one-quarter risk of a carrier-by-carrier cross. The third bullet is how clinical geneticists classify variants of uncertain significance: rarity in population databases, segregation in the family, predicted effect on the protein. It sets up the ethics module’s discussion of what to tell patients about uncertain findings.</p>
+<p>The micrograph shows what the HbS/HbS genotype means for a child at the level of the cell: deoxygenated haemoglobin S polymerises into long fibres that bend red cells into the sickle shape. Sickled cells are stiff, block small vessels and are destroyed early, which causes the pain crises and anaemia of the disease. The large cell with a lobed nucleus is a white blood cell. This links the population view back to the pedigree unit, where the probability that an unrelated partner was a carrier was often just given. Now students can look it up. Use the 2pq approximation (Part 7 gives the justification); for rare alleles it is about 2q. The second bullet multiplies the probability that the partner is a carrier by the one-quarter risk of a carrier-by-carrier cross. The third bullet is how clinical geneticists classify variants of uncertain significance: rarity in population databases, segregation in the family, predicted effect on the protein. It sets up the ethics module’s discussion of what to tell patients about uncertain findings.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-can-this-variant-cause-the-disease" class="slide level2">
+<h2>Worked example: can this variant cause the disease?</h2>
+<p>A fully penetrant disease allele cannot be <strong>more common than the disease allows</strong>.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Recessive disease</th>
+<th>Dominant disease</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Affected people need</td>
+<td>two copies: prevalence ≈ <em>q</em><sup>2</sup></td>
+<td>one copy: prevalence ≈ 2<em>q</em></td>
+</tr>
+<tr class="even">
+<td>Largest possible allele frequency</td>
+<td><em>q</em> ≤ √prevalence</td>
+<td><em>q</em> ≤ prevalence / 2</td>
+</tr>
+<tr class="odd">
+<td>Example: prevalence</td>
+<td>1 in 10,000</td>
+<td>1 in 20,000</td>
+</tr>
+<tr class="even">
+<td>Largest possible <em>q</em></td>
+<td>√(1/10,000) = <strong>0.01</strong></td>
+<td>1/40,000 = <strong>2.5 × 10<sup>−5</sup></strong></td>
+</tr>
+</tbody>
+</table>
+<p>A candidate recessive variant has frequency <strong>3%</strong> in gnomAD for the patient’s ancestry group. Then 0.03<sup>2</sup> ≈ 1 in 1,100 people would be homozygous: <strong>nine times</strong> more than the disease prevalence. It cannot be the cause on its own; look elsewhere.</p>
+<aside class="notes">
+<p>This is the reasoning for B7 and Q10, with different numbers. It is the first filter a clinical lab applies after sequencing a patient: thousands of rare variants per person are reduced to a handful by removing everything that is too common in healthy people. The bounds are upper limits: if several different alleles cause the disease, each one must be rarer still, and incomplete penetrance or a late onset can relax them a little, which is why labs use generous thresholds. The approximations q squared and 2q come from Hardy-Weinberg proportions (Part 7) and assume that affected people are mostly homozygous for one allele or heterozygous respectively. 1 in 1,100 versus 1 in 10,000 is about a nine-fold excess.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -651,6 +1091,68 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comparing a database allele with a gene’s allele without checking the strand.</td>
+<td>Databases use the plus strand; complement for a minus-strand gene.</td>
+</tr>
+<tr class="even">
+<td>“The reference allele is the normal or ancestral one.”</td>
+<td>The reference is one assembled genome; it can carry a derived or rare allele.</td>
+</tr>
+<tr class="odd">
+<td>“Frequency 0 in a 1000 Genomes sample: the allele does not exist there.”</td>
+<td>Not seen in ~200 chromosomes; it may still be at ~1%.</td>
+</tr>
+<tr class="even">
+<td>“Rare in gnomAD, so it is pathogenic.”</td>
+<td>Rarity is necessary, not sufficient: most rare variants are harmless.</td>
+</tr>
+<tr class="odd">
+<td>“LD means the loci are linked” (or the reverse).</td>
+<td>LD is population association; linkage is distance. Each can occur without the other.</td>
+</tr>
+<tr class="even">
+<td>“The GWAS SNP is the causal variant.”</td>
+<td>It may just tag the causal variant through LD.</td>
+</tr>
+<tr class="odd">
+<td>“Large frequency differences show selection.”</td>
+<td>First consider drift and migration; selection explains outliers.</td>
+</tr>
+<tr class="even">
+<td>“An array result says I am not a carrier.”</td>
+<td>Only for the variants on the array.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>A revision slide built from the errors students make most often in this unit’s exercise. The reference-allele row is B2c in the exercise: the human reference carries the derived SLC24A5 allele because most of it comes from people of European ancestry. Ask students to correct one or two statements before revealing the right-hand column.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2 smaller">
 <h2>Summary</h2>
 <table class="caption-top">
@@ -670,16 +1172,32 @@ Basic and molecular genetics (5MO104)
 <td>SNP (1 bp), indel (1–50 bp), STR (repeat count, fast-mutating), CNV (kb–Mb copy number)</td>
 </tr>
 <tr class="even">
+<td>Consequence</td>
+<td>synonymous, missense, nonsense, frameshift, in-frame, splice, regulatory, none: decided by location</td>
+</tr>
+<tr class="odd">
 <td>One genome vs the reference</td>
 <td>4.1–5.0 million sites differ (1000 Genomes)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Naming</td>
 <td>rs number (dbSNP); HGVS g./c./p.; watch the strand: rs334 is T&gt;A on plus, c.20A&gt;T on <em>HBB</em></td>
 </tr>
+<tr class="odd">
+<td>Frequency</td>
+<td>AF = allele count / allele number (chromosomes); not seen ≠ absent</td>
+</tr>
 <tr class="even">
 <td>Haplotype, LD</td>
-<td>alleles on one chromosome; nearby alleles stay associated; LD decays with distance and time</td>
+<td>alleles on one chromosome; <em>D</em> = <em>p</em><sub>AB</sub> − <em>p</em><sub>A</sub><em>p</em><sub>B</sub>; <em>D</em> shrinks by (1 − <em>r</em>) per generation</td>
+</tr>
+<tr class="odd">
+<td>Linkage vs LD</td>
+<td>linkage: distance, measured in families; LD: association of alleles in a population, kb scale</td>
+</tr>
+<tr class="even">
+<td>Frequency as evidence</td>
+<td>recessive <em>q</em> ≤ √prevalence; dominant <em>q</em> ≤ prevalence/2</td>
 </tr>
 <tr class="odd">
 <td>Arrays vs sequencing</td>

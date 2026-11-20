@@ -19,15 +19,16 @@ format:
     html-math-method: katex
 ---
 
-## About this lecture
+## About this lecture {.smaller}
 
 In flies we map genes with designed testcrosses and thousands of offspring. In humans we have neither: we get the families that exist, with a handful of children each. So we need **statistics** to say whether a disease gene is linked to a marker, and how far apart they are.
 
 - Why human linkage needs a different approach, and what a **DNA marker** is.
 - Counting recombinants in a pedigree: **informative meioses** and **phase**.
-- The **likelihood** L(θ) of the data, and the **LOD score**: $\text{LOD}(\theta) = \log_{10} \dfrac{L(\theta)}{L(0.5)}$.
+- The **likelihood** L(θ) of the data, built one meiosis at a time, and the **LOD score**: $\text{LOD}(\theta) = \log_{10} \dfrac{L(\theta)}{L(0.5)}$.
+- Computing a LOD **by hand**, with worked examples for phase known and phase unknown.
 - The **LOD curve**, its maximum θ̂, the **threshold of 3** for linkage and **−2** for exclusion.
-- **Adding LODs** across families.
+- **Adding LODs** across families, and the common mistakes.
 - The story of **Huntington disease**: from a linked marker in 1983 to the gene in 1993.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, linkage and mapping chapter (the section on mapping in humans).
@@ -72,6 +73,24 @@ Autosomal dominant disease (*D*), marker with alleles 1, 2, 3. II-1's mother is 
 Walk through it. Generation I: the affected grandfather is homozygous 1/1 at the marker, so the D he passed to II-1 must sit on a chromosome with marker allele 1. II-1 therefore has D 1 on one homologue and d 2 on the other: his phase is known. His wife is 3/3, so she always passes 3, and the other allele of each child came from II-1. Affected children (D) who carry 1 got the parental D 1 chromosome; unaffected children with 2 got d 2; both are non-recombinant. III-4 is affected but carries 2: a crossover between the disease gene and the marker happened in his father's meiosis. Six meioses, one recombinant. The naive estimate of theta is 1/6, about 0.17. But is this evidence of linkage at all? With only 6 meioses, one recombinant could easily come from an unlinked marker. The rest of the lecture answers that.
 :::
 
+## Which meioses can be scored? {.smaller}
+
+A child can be scored R or NR only if we can tell **which homologue** it got from the affected parent, at **both** loci. Three typical situations (affected father *Dd*, dominant disease, full penetrance):
+
+| Father | Mother | Child | Scorable? | Why |
+|---|---|---|---|---|
+| *D 4* / *d 4* | 1/2 | affected, 4/1 | **no** | father is homozygous 4/4: every child gets a 4, whichever homologue |
+| *D 1* / *d 2* | 1/2 | affected, 1/2 | **no** | the child's 1 could be from either parent; we cannot tell which came from the father |
+| *D 1* / *d 2* | 3/4 | affected, 2/4 | **yes: R** | the 2 must be the father's, and it came with *D* |
+
+**Rules:** the affected parent must be **heterozygous at the marker**, and the child's paternal allele must be **identifiable**. Markers with **many alleles** make both more likely.
+
+Unscorable children are simply left out: they are not evidence either way.
+
+::: notes
+This slide is the bridge between pedigrees and statistics. Only informative meioses enter n. Case one: a homozygous parent at the marker transmits the same allele from both homologues, so recombination is invisible. Case two: both parents share the same two alleles, and a heterozygous child is ambiguous; sometimes typing more relatives resolves it, but in a simple analysis the child is dropped. Case three: the mother's alleles differ from the father's, so the paternal allele is obvious; with phase D 1 / d 2, an affected child carrying the 2 is a recombinant. This is why highly polymorphic markers such as microsatellites replaced two-allele RFLPs. The exercise has its own three cases.
+:::
+
 ## Phase: known or unknown {.smaller}
 
 ![](fig02-phase.svg){width="82%" fig-align="center"}
@@ -80,6 +99,27 @@ Without the grandparents we do not know which marker allele travels with *D*. Ea
 
 ::: notes
 Phase is the linkage phase from Linkage & recombination: coupling versus repulsion, here D 1 / d 2 versus D 2 / d 1. In a testcross we built the parent, so we knew. In a human family we infer it from the previous generation, when it is available. If the grandparents are dead or untyped, we must consider both phases. Under phase 1 the family has 1 recombinant out of 6; under phase 2 it has 5. Each phase is equally likely before we look at the children, so the likelihood is the average. Today we mostly work with phase-known families, where the arithmetic is simplest; the demo and the R exercise also let you switch to phase unknown. Note the maximum LOD drops from 0.63 to 0.33: not knowing the phase costs information.
+:::
+
+## The likelihood, step by step: one meiosis at a time
+
+Suppose the disease gene and the marker recombine with probability **θ** (the RF of *Linkage & recombination*). For **one** informative meiosis of II-1:
+
+| The child is | Probability if linked at θ | at θ = 0.1 | if unlinked (θ = 0.5) |
+|---|---|---:|---:|
+| non-recombinant (NR) | 1 − θ | 0.9 | 0.5 |
+| recombinant (R) | θ | 0.1 | 0.5 |
+
+Meioses are **independent**, so the probability of the whole sibship is a **product** (the product rule):
+
+$$
+\underbrace{(1-\theta)}_{\text{III-1}}\;\underbrace{(1-\theta)}_{\text{III-2}}\;\underbrace{(1-\theta)}_{\text{III-3}}\;\underbrace{\theta}_{\text{III-4}}\;\underbrace{(1-\theta)}_{\text{III-5}}\;\underbrace{(1-\theta)}_{\text{III-6}} \;=\; \theta^{1}(1-\theta)^{5}
+$$
+
+At θ = 0.1: 0.9 × 0.9 × 0.9 × 0.1 × 0.9 × 0.9 = **0.0590**. If unlinked: 0.5^6^ = **0.0156**.
+
+::: notes
+Build the likelihood on the board one child at a time, pointing at the pedigree. Each NR child contributes 1 minus theta, each R child contributes theta. Because the children's meioses are independent, we multiply, exactly as with coin tosses in Probability & the chi-square test. The order of the children does not matter, so the product collapses to theta to the power k times 1 minus theta to the power n minus k. Under no linkage every child is a coin toss, so the probability is a half to the sixth. Note that we are computing the probability of this exact sequence of children, which is why no binomial coefficient appears; it would cancel in the ratio anyway.
 :::
 
 ## The likelihood of the data {.smaller}
@@ -122,9 +162,66 @@ $$
 The LOD score is a likelihood ratio, written as a base-10 logarithm. Why the logarithm? Because independent families multiply their likelihoods, and logarithms turn products into sums: that is what lets us add LOD scores later. Why base 10? Historical convenience: a LOD of 3 is easy to read as odds of a thousand to one. Positive LOD favours linkage, negative favours no linkage, zero is neutral. At theta = 0.5 the LOD is always exactly 0, because the numerator and denominator are the same.
 :::
 
+## Each meiosis adds its own term {.smaller}
+
+![](fig08-meiosis-votes.svg){width="82%" fig-align="center"}
+
+Taking log~10~ of the ratio turns the product into a **sum**, one term per informative meiosis:
+
+$$
+\text{LOD}(\theta) = k \log_{10}\theta + (n-k)\log_{10}(1-\theta) + 0.301\,n
+$$
+
+At θ = 0.1, n = 6, k = 1: −1 + 5 × (−0.046) + 1.806 = **0.577**, as before.
+
+::: notes
+This is the form students should use for hand calculation, and it gives a feel for the evidence. At theta = 0.1 every non-recombinant child votes for linkage with plus 0.255, and the one recombinant votes against with minus 0.699: one recombinant costs as much as almost three non-recombinants. The 0.301 n term is n times log10 of 2, from dividing by 0.5 to the n. The exercise background gives a table of logs so that students can do this with a simple calculator. Note how the evidence depends on theta: at theta = 0.01, a recombinant would cost minus 1.70, so a single recombinant makes very tight linkage very unlikely.
+:::
+
+## Worked example: a LOD table for one family {.smaller}
+
+The family of the pedigree (n = 6, k = 1, phase known). LOD(θ) = log~10~ θ + 5 log~10~(1 − θ) + 1.806:
+
+| θ | log~10~ θ | 5 log~10~(1 − θ) | LOD(θ) |
+|---:|---:|---:|---:|
+| 0 | −∞ | 0 | **−∞** |
+| 0.05 | −1.301 | −0.111 | 0.39 |
+| 0.1 | −1.000 | −0.229 | 0.58 |
+| 1/6 | −0.778 | −0.396 | **0.63** (max) |
+| 0.2 | −0.699 | −0.485 | 0.62 |
+| 0.3 | −0.523 | −0.775 | 0.51 |
+| 0.4 | −0.398 | −1.109 | 0.30 |
+| 0.5 | −0.301 | −1.505 | 0 |
+
+**Read it:** θ̂ = 1/6, maximum LOD 0.63: odds of about 4 : 1 for linkage. Far from 3, and nowhere below −2: **inconclusive**.
+
+::: notes
+This is the table students build in exercise B2 for another family. Work two rows aloud and let the room fill in the rest. Three features to point out. The maximum is at theta hat = k/n = 1/6. LOD at 0.5 is exactly zero. LOD at 0 is minus infinity, because one recombinant is impossible under complete linkage. Ten to the power 0.63 is about 4.3, so even the best-fitting theta makes this family only about four times more probable than no linkage. The next slides turn this table into a curve and then add families.
+:::
+
+## Worked example: phase unknown
+
+Same six children, but now the grandparents are **not typed**. II-1 is *D 1* / *d 2* or *D 2* / *d 1*, each with probability ½.
+
+| Step | Phase *D 1* / *d 2* | Phase *D 2* / *d 1* |
+|---|---|---|
+| Recombinants among 6 | k = 1 | k = 5 (every NR becomes R and vice versa) |
+| Probability at θ = 0.1 | 0.1 × 0.9^5^ = 0.059049 | 0.1^5^ × 0.9 = 0.000009 |
+
+$$
+L(0.1) = \tfrac{1}{2}(0.059049) + \tfrac{1}{2}(0.000009) = 0.029529, \qquad
+\text{LOD}(0.1) = \log_{10}\frac{0.029529}{0.015625} = \log_{10} 1.89 = \mathbf{0.28}
+$$
+
+Phase known, the same family gave **0.58**. Not knowing the phase cost almost exactly log~10~ 2 = 0.30: the second phase contributes almost nothing, so the average is about half of the first phase's likelihood.
+
+::: notes
+Go through the two columns. Under the second phase every child flips label, so one recombinant becomes five. At theta = 0.1 that phase is extremely improbable, 0.000009, so the average is essentially half of the first phase's probability. Halving a likelihood subtracts log10 of 2, 0.301, from the LOD: 0.577 minus 0.301 is 0.276. That is a useful rule of thumb when one phase clearly fits much better: an unknown phase costs about 0.3 LOD units per family. When the data fit both phases about equally, the loss is smaller in absolute terms, but such families carry little evidence anyway. The R exercise writes this as lod_unknown().
+:::
+
 ## The LOD curve {.smaller}
 
-![](fig03-lod-curves.svg){width="68%" fig-align="center"}
+![](fig03-lod-curves.svg){width="63%" fig-align="center"}
 
 One family, n = 10 meioses. Compute LOD(θ) for every θ from 0 to 0.5: the curve peaks at **θ̂ = k/n**, and its height is the strength of the evidence. With **k = 0**, LOD(0) = 10 × log~10~ 2 = **3.01**. With k > 0, LOD(0) = −∞: one recombinant rules out θ = 0.
 
@@ -148,12 +245,33 @@ This is the key conceptual slide. The threshold of 3 is not arbitrary: it reflec
 
 ## Adding families {.smaller}
 
-![](fig04-adding-families.svg){width="64%" fig-align="center"}
+![](fig04-adding-families.svg){width="57%" fig-align="center"}
 
 Families are independent, so their likelihoods **multiply** and their LODs **add**: $\text{LOD}_\text{total}(\theta) = \sum_\text{families} \text{LOD}_i(\theta)$. Five families (invented data), none above 1.8 alone, sum to **6.35** at θ̂ = 3/36 = 0.083.
 
 ::: notes
-This is the practical power of the LOD score. Five small families, each inconclusive, together give strong evidence. Add the curves at each theta, then find the maximum of the sum. For phase-known families the total maximum is at total recombinants over total meioses, 3 out of 36. Note one subtlety: you must add the curves first and then take the maximum, not add the individual maxima, because each family peaks at a different theta. The sum of the individual maxima here would be 6.9, which is too high. The demo and R exercise make students do this.
+This is the practical power of the LOD score. Five small families, each inconclusive, together give strong evidence. Add the curves at each theta, then find the maximum of the sum. For phase-known families the total maximum is at total recombinants over total meioses, 3 out of 36. Note one subtlety: you must add the curves first and then take the maximum, not add the individual maxima, because each family peaks at a different theta. The sum of the individual maxima here would be 6.9, which is too high. The next slide shows the numbers.
+:::
+
+## Adding families: the numbers {.smaller}
+
+The five phase-known families of the figure (invented): LOD at a few values of θ, then the **column sums**.
+
+| Family (n, k) | θ = 0 | 0.05 | 0.1 | 0.2 | 0.3 | 0.4 | own max |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| A (10, 1) | −∞ | 1.51 | 1.60 | 1.44 | 1.09 | 0.62 | 1.60 at 0.10 |
+| B (6, 0) | 1.81 | 1.67 | 1.53 | 1.22 | 0.88 | 0.48 | 1.81 at 0 |
+| C (8, 1) | −∞ | 0.95 | 1.09 | 1.03 | 0.80 | 0.46 | 1.10 at 0.125 |
+| D (5, 0) | 1.51 | 1.39 | 1.28 | 1.02 | 0.73 | 0.40 | 1.51 at 0 |
+| E (7, 1) | −∞ | 0.67 | 0.83 | 0.83 | 0.65 | 0.38 | 0.86 at 0.14 |
+| **Total** | **−∞** | **6.20** | **6.33** | **5.54** | **4.16** | **2.32** | |
+
+- The total peaks between the columns: **6.35 at θ̂ = 3/36 = 0.083**. Linkage is established (> 3).
+- One recombinant anywhere makes the total at θ = 0 equal to −∞: the genes are close but not completely linked.
+- **Wrong:** adding the "own max" column gives 6.87, a number that belongs to no single θ.
+
+::: notes
+These numbers come from the same lod function as the R exercise. Do one column by hand: at theta = 0.1, 1.60 + 1.53 + 1.09 + 1.28 + 0.83 = 6.33. For phase-known families the best theta for the total is simply total recombinants over total meioses: 3 over 36. A theta of 0.083 corresponds to about 9 cM with Haldane's map function, and in humans 1 cM is on average about 1 Mb, so the disease gene is within roughly 10 Mb of the marker: a region, not a gene, which is why the HD story took ten more years.
 :::
 
 ## Try it: the LOD curve
@@ -209,6 +327,8 @@ Huntington disease was the first human disease gene mapped with an anonymous DNA
 
 ## The Venezuelan families {.smaller}
 
+:::: {.columns}
+::: {.column width="66%"}
 Some of the key HD families live in **Venezuela**: very large extended kindreds with many affected people, studied by Nancy Wexler and a US–Venezuelan collaboration.
 
 - By 2004 the Venezuelan kindreds comprised **18 149 individuals over 10 generations** (Wexler et al. 2004, *PNAS*, PMID 14993615).
@@ -216,6 +336,15 @@ Some of the key HD families live in **Venezuela**: very large extended kindreds 
 - Such pedigrees made linkage possible, and later also the study of what modifies age of onset.
 
 Mapping in humans depends on **families who agree to take part**. That raises ethical questions about consent, about learning one's own risk, and about benefit to the families, which come back in the Ethics module.
+:::
+::: {.column width="34%"}
+![](img/nancy-wexler.jpg){width="100%"}
+
+[Photo: U.S. Food and Drug Administration, public domain, via Wikimedia Commons (cropped from a poster)](https://commons.wikimedia.org/wiki/File:Nancy_Wexler,_PhD_(8515001497).jpg){.photo-credit}
+
+Nancy Wexler, president of the Hereditary Disease Foundation, who led the Venezuela project.
+:::
+::::
 
 ::: notes
 A pedigree of this size is rare and extraordinarily valuable. Huntington disease is autosomal dominant with late onset; most people at risk in such a family do not know whether they carry the allele. The linkage marker immediately made predictive testing possible, years before the gene was known, which raised difficult questions: do you want to know? Many at-risk people chose not to. This is a good place to mention that the Ethics module discusses predictive genetic testing. The 18,149 individuals and 10 generations come from the 2004 PNAS abstract.
@@ -236,6 +365,22 @@ Cystic fibrosis (*CFTR*, 1989) and many other disease genes were found this way:
 Linkage needs recombinants within families; there are only a few crossovers per chromosome per meiosis, so families localise a gene to a region of a few centimorgans, which in humans is a few million base pairs and can hold dozens of genes. For complex traits, where each gene has a small effect, linkage in families has little power; genome-wide association studies, which exploit very old recombinations in the population (linkage disequilibrium), took over in the 2000s. GWAS is in Complex traits, Part 7. Incomplete penetrance from Extensions to Mendel causes trouble here: an unaffected carrier looks like a recombinant. Real software models penetrance explicitly; we keep full penetrance.
 :::
 
+## Common mistakes {.smaller}
+
+| Mistake | Why it is wrong | Instead |
+|---|---|---|
+| Counting every child in *n* | uninformative meioses carry no information about θ | count only meioses you can score R or NR |
+| Scoring R/NR without the phase | "recombinant" is defined relative to the parent's phase | get the phase from the grandparents, or average over both phases |
+| Adding the families' maximum LODs | each maximum is at a different θ | add the curves **at each θ**, then take the maximum |
+| "LOD 3 means p = 0.001" | a LOD is a likelihood ratio, not a p-value | LOD 3 ≈ 5% chance of a false linkage, given the low prior |
+| "Max LOD 2.1, so not linked" | between −2 and 3 is **inconclusive** | collect more meioses |
+| "LOD < −2, so the gene is not on this chromosome" | exclusion holds only for θ where LOD < −2 | state the excluded distance, e.g. θ ≤ 0.15 |
+| Using natural logs | the thresholds 3 and −2 are on the log~10~ scale | use log~10~, with log~10~ 2 = 0.301 |
+
+::: notes
+A check-yourself slide: read the left column and ask the room what is wrong before showing the rest. Each line matches a quiz or exercise question. The p-value line is a deep one: a likelihood ratio of 1000 is not a probability of the data under H0; the threshold of 3 was chosen by Morton so that, given the low prior probability of linkage, about 5 percent of declared linkages are false. The exclusion line uses the DRPLA example: exclusion out to 0.15, not a statement about the whole chromosome.
+:::
+
 ## Summary {.smaller}
 
 | Concept | Key fact |
@@ -244,7 +389,8 @@ Linkage needs recombinants within families; there are only a few crossovers per 
 | Informative meiosis | the parent is heterozygous at the marker and at the disease locus, so the child can be scored R or NR |
 | Phase | which marker allele is on the same homologue as the disease allele; known from grandparents, else average over both (½ each) |
 | Likelihood (phase known) | L(θ) = θ^k^ (1 − θ)^n−k^; maximal at θ̂ = k/n |
-| LOD score | LOD(θ) = log~10~[L(θ) / L(0.5)]; LOD(0.5) = 0 |
+| LOD score | LOD(θ) = log~10~[L(θ) / L(0.5)] = k log~10~ θ + (n − k) log~10~(1 − θ) + 0.301 n; LOD(0.5) = 0 |
+| Phase unknown | L(θ) = ½ θ^k^(1 − θ)^n−k^ + ½ θ^n−k^(1 − θ)^k^; weaker evidence |
 | Thresholds | ≥ 3 linkage (odds 1000 : 1); ≤ −2 excluded at that θ |
 | Many families | LODs **add** at each θ; then find the maximum of the sum |
 | k = 0 | LOD(0) = n × 0.301: at least 10 non-recombinant meioses for LOD 3 |

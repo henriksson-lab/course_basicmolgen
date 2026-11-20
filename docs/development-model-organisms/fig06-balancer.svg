@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig06: how a balancer chromosome keeps a recessive lethal mutation in a stock.
+       Example on chromosome 3: the mutation m (recessive embryonic lethal) over the balancer TM3,
+       which carries several inversions, the dominant marker Stubble (Sb, short bristles) and is
+       itself lethal as a homozygote. Intercross: 1/4 m/m die, 1/4 TM3/TM3 die, 1/2 m/TM3 survive
+       and all show Stubble. The stock breeds true. The inversions stop recombinant chromosomes
+       from being recovered, so m stays on its own chromosome. -->
+  <defs>
+    <marker id="arr6" markerWidth="16" markerHeight="16" refX="12" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+    <marker id="inv" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#7b4fa0"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">A balancer keeps a recessive lethal in a stock, with no selection</text>
+
+  <!-- the two homologues -->
+  <text x="20" y="80" font-size="15" fill="#5c6b7a">mutant chr 3</text>
+  <line x1="130" y1="75" x2="540" y2="75" stroke="#1b2a3a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="300" cy="75" r="11" fill="#c0392b" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="300" y="56" font-size="15" font-weight="bold" font-style="italic" fill="#c0392b" text-anchor="middle">m</text>
+  <text x="560" y="80" font-size="14" fill="#1b2a3a">new recessive lethal mutation</text>
+
+  <text x="20" y="140" font-size="15" fill="#5c6b7a">balancer TM3</text>
+  <line x1="130" y1="135" x2="540" y2="135" stroke="#1b2a3a" stroke-width="5" stroke-linecap="round"/>
+  <!-- inverted segments drawn as reversed arrows -->
+  <rect x="170" y="125" width="110" height="20" fill="#e6dcef" stroke="#7b4fa0" stroke-width="1.5"/>
+  <line x1="270" y1="135" x2="182" y2="135" stroke="#7b4fa0" stroke-width="2.5" marker-end="url(#inv)"/>
+  <rect x="340" y="125" width="130" height="20" fill="#e6dcef" stroke="#7b4fa0" stroke-width="1.5"/>
+  <line x1="460" y1="135" x2="352" y2="135" stroke="#7b4fa0" stroke-width="2.5" marker-end="url(#inv)"/>
+  <text x="320" y="170" font-size="13" fill="#7b4fa0" text-anchor="middle">inverted segments</text>
+  <rect x="490" y="122" width="36" height="26" rx="4" fill="#2a6f97" stroke="#1b2a3a" stroke-width="1.2"/>
+  <text x="508" y="140" font-size="13" font-weight="bold" font-style="italic" fill="#ffffff" text-anchor="middle">Sb</text>
+  <text x="560" y="132" font-size="14" fill="#1b2a3a">dominant marker <tspan font-style="italic">Stubble</tspan> (short bristles)</text>
+  <text x="560" y="152" font-size="14" fill="#1b2a3a">+ recessive lethal: TM3/TM3 dies</text>
+
+  <!-- cross -->
+  <line x1="20" y1="192" x2="880" y2="192" stroke="#d5dae0" stroke-width="1.5"/>
+  <text x="345" y="222" font-size="16" fill="#1b2a3a">Stock intercross: <tspan font-style="italic">m</tspan>/TM3 × <tspan font-style="italic">m</tspan>/TM3</text>
+  <line x1="450" y1="232" x2="450" y2="256" stroke="#1b2a3a" stroke-width="2" marker-end="url(#arr6)"/>
+
+  <rect x="60" y="266" width="230" height="74" rx="8" fill="#fbeeee" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="150" y="292" font-size="16" fill="#1b2a3a">¼ <tspan font-style="italic">m</tspan>/<tspan font-style="italic">m</tspan></text>
+  <text x="175" y="320" font-size="15" font-weight="bold" fill="#c62828" text-anchor="middle">die as embryos</text>
+
+  <rect x="335" y="266" width="230" height="74" rx="8" fill="#eef6ea" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="414" y="292" font-size="16" fill="#1b2a3a">½ <tspan font-style="italic">m</tspan>/TM3</text>
+  <text x="450" y="320" font-size="15" font-weight="bold" fill="#2e7d32" text-anchor="middle">survive, all Stubble</text>
+
+  <rect x="610" y="266" width="230" height="74" rx="8" fill="#fbeeee" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="725" y="292" font-size="16" fill="#1b2a3a" text-anchor="middle">¼  TM3/TM3</text>
+  <text x="725" y="320" font-size="15" font-weight="bold" fill="#c62828" text-anchor="middle">die</text>
+
+  <text x="20" y="378" font-size="14" fill="#1b2a3a">Every surviving adult is <tspan font-style="italic">m</tspan>/TM3, so the stock <tspan font-weight="bold">breeds true</tspan>; the marker tells you who carries the balancer.</text>
+  <text x="20" y="402" font-size="14" fill="#1b2a3a">The inversions make crossover products unbalanced, so no recombinant chromosome is recovered: <tspan font-style="italic">m</tspan> stays put.</text>
+</svg>

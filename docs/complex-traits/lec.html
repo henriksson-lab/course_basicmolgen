@@ -29,7 +29,23 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -144,9 +160,9 @@ Basic and molecular genetics (5MO104)
 <p>Height, blood pressure and the risk of type 2 diabetes do not fall into Mendel’s neat classes. They vary <strong>continuously</strong>, and depend on <strong>many genes and the environment</strong>: they are <strong>complex</strong> (quantitative, polygenic) traits.</p>
 <ul>
 <li>The <strong>polygenic model</strong>: many loci of small effect give a normal distribution.</li>
-<li><strong>Heritability</strong>: broad (<em>H</em>²) and narrow (<em>h</em>²); <strong>twin studies</strong>; <strong>parent–offspring regression</strong> (slope = <em>h</em>²).</li>
+<li><strong>Heritability</strong>: variance components with numbers, broad (<em>H</em>²) and narrow (<em>h</em>²); the <strong>breeder’s equation</strong>; <strong>twin studies</strong>; <strong>parent–offspring regression</strong> (slope = <em>h</em>²).</li>
 <li>What heritability does <strong>not</strong> mean.</li>
-<li>Finding the loci: <strong>QTL mapping</strong> in crosses, and <strong>genome-wide association studies (GWAS)</strong>: association, linkage disequilibrium, 5 × 10⁻⁸, Manhattan and QQ plots.</li>
+<li>Finding the loci: <strong>QTL mapping</strong> in crosses, and <strong>genome-wide association studies (GWAS)</strong>: linkage disequilibrium, a case–control test by hand, 5 × 10⁻⁸, and how to read Manhattan and QQ plots.</li>
 <li><strong>Polygenic scores</strong> and the <strong>missing heritability</strong>.</li>
 </ul>
 <p>Book: Hartwell, the chapter on complex traits. You need χ² and multiple testing (Part 1, Hardy–Weinberg), LOD scores (Part 2) and <code>lm</code> from your data-analysis course.</p>
@@ -186,6 +202,69 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="two-additive-loci-by-hand" class="slide level2">
+<h2>Two additive loci, by hand</h2>
+<p><em>AaBb</em> × <em>AaBb</em>, unlinked. Each “+” allele (<em>A</em> or <em>B</em>) adds the same amount; <em>a</em> and <em>b</em> add nothing.</p>
+<ol type="1">
+<li>Each parent’s gamete carries 0, 1 or 2 “+” alleles; each of the 4 allele copies in the child is “+” with probability ½, independently.</li>
+<li>So the number of “+” alleles in the child is <strong>Binomial(4, ½)</strong>:</li>
+</ol>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>“+” alleles</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>genotypes</td>
+<td><em>aabb</em></td>
+<td><em>Aabb</em>, <em>aaBb</em></td>
+<td><em>AAbb</em>, <em>AaBb</em>, <em>aaBB</em></td>
+<td><em>AABb</em>, <em>AaBB</em></td>
+<td><em>AABB</em></td>
+</tr>
+<tr class="even">
+<td>fraction</td>
+<td>1/16</td>
+<td>4/16</td>
+<td>6/16</td>
+<td>4/16</td>
+<td>1/16</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li>In general, <em>k</em> loci give <strong>2<em>k</em> + 1</strong> classes, and each <strong>extreme</strong> class has frequency (¼)<sup><em>k</em></sup>: 1/16 for 2 loci, 1/4096 for 6, about 1 in a million for 10.</li>
+</ol>
+<p>This is the method for any number of loci: count “+” alleles, use the binomial (Pascal’s triangle).</p>
+<aside class="notes">
+<p>This is the polygenic model in its smallest form. Write out the 16 squares of the Punnett square if students need it, then show that grouping by the number of plus alleles gives 1, 4, 6, 4, 1, a row of Pascal’s triangle. The extreme classes become rare very fast, which is why Nilsson-Ehle could estimate the number of loci in wheat from how often the parental extremes reappeared in the F2. Assumptions: additive alleles with equal effects, no dominance, unlinked loci, and allele frequency one half in the F2. Exercise B1 uses three loci; same method.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="genes-and-environment" class="slide level2">
 <h2>Genes and environment</h2>
 <p>The phenotype of one person: <strong>P = G + E</strong>, the sum of a genetic value and an environmental deviation.</p>
@@ -197,6 +276,71 @@ Basic and molecular genetics (5MO104)
 <p>Across a population, we split the <strong>variance</strong> of <em>P</em>, not one person’s height, into genetic and environmental parts.</p>
 <aside class="notes">
 <p>The key conceptual move: heritability is about variation among individuals in a population, not about how much of one person’s height comes from genes. That question makes no sense, because genes and environment are both needed for any height at all. The secular increase in height is a good example of why high heritability does not mean a trait cannot change. The PKU example from Part 1 is the classic gene–environment interaction: the genotype causes disease only on a diet with phenylalanine.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="separating-vg-from-ve-inbred-lines-and-the-f2" class="slide level2">
+<h2>Separating <em>V</em><sub>G</sub> from <em>V</em><sub>E</sub>: inbred lines and the F2</h2>
+<p>In plants and animals we can <strong>remove</strong> the genetic variance on purpose:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Population</th>
+<th>genotypes</th>
+<th>variance contains</th>
+<th>example variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>inbred parent line P1</td>
+<td>all identical</td>
+<td><em>V</em><sub>E</sub> only</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>inbred parent line P2</td>
+<td>all identical</td>
+<td><em>V</em><sub>E</sub> only</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>F1 (P1 × P2)</td>
+<td>all identical (heterozygous)</td>
+<td><em>V</em><sub>E</sub> only</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>F2 (F1 × F1)</td>
+<td>segregating</td>
+<td><em>V</em><sub>G</sub> + <em>V</em><sub>E</sub></td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><em>V</em><sub>E</sub> = 4 (the average of the uniform populations).</li>
+<li><em>V</em><sub>G</sub> = <em>V</em><sub>F2</sub> − <em>V</em><sub>E</sub> = 10 − 4 = 6.</li>
+<li><em>H</em>² = <em>V</em><sub>G</sub>/<em>V</em><sub>F2</sub> = 6/10 = <strong>0.6</strong>.</li>
+</ol>
+<p>In humans we cannot make inbred lines, so we use <strong>relatives</strong> instead: twins and families (next slides).</p>
+<aside class="notes">
+<p>This is the cleanest way to see what the variance components mean. Every plant in an inbred line, or in the F1 between two inbred lines, has the same genotype, so any variation among them must be environmental: soil, light, measurement. The F2 segregates, so it has genetic variance on top. The numbers are invented for illustration. The method assumes the environment acts the same in all four populations, and that the F2 is grown alongside the others. It gives broad-sense heritability; separating additive from dominance variance needs more crosses, such as backcrosses, which we skip.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -231,6 +375,75 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="variance-components-a-worked-example" class="slide level2">
+<h2>Variance components: a worked example</h2>
+<p>The proportions in the figure, as numbers (trait units²):</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><em>V</em><sub>P</sub></th>
+<th><em>V</em><sub>A</sub></th>
+<th><em>V</em><sub>D</sub></th>
+<th><em>V</em><sub>E</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>100</td>
+<td>45</td>
+<td>15</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><em>V</em><sub>G</sub> = <em>V</em><sub>A</sub> + <em>V</em><sub>D</sub> = 45 + 15 = 60.</li>
+<li>Broad sense: <em>H</em>² = <em>V</em><sub>G</sub>/<em>V</em><sub>P</sub> = 60/100 = <strong>0.60</strong>.</li>
+<li>Narrow sense: <em>h</em>² = <em>V</em><sub>A</sub>/<em>V</em><sub>P</sub> = 45/100 = <strong>0.45</strong>.</li>
+</ol>
+<p>Always <em>h</em>² ≤ <em>H</em>². The gap is the dominance (and epistatic) variance: genetic, but <strong>not</strong> passed from parent to child as such.</p>
+<p>Heritabilities are ratios of <strong>variances</strong>, not of standard deviations: never take a square root of <em>h</em>² to compare traits.</p>
+<aside class="notes">
+<p>Put numbers to the figure. The steps are just definitions, but students often mix up which numerator goes with which heritability, and whether VD belongs to VG. The point about variances versus standard deviations matters later: when we say a SNP explains 0.1 percent of the variance, we mean a variance ratio. Exercise B2 asks the same with cattle milk yield. The narrow-sense value is the one we need for the breeder’s equation on the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-breeders-equation-r-h²-s" class="slide level2">
+<h2>The breeder’s equation: <em>R</em> = <em>h</em>² <em>S</em></h2>
+
+<img data-src="fig06-breeders-equation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%"><ul>
+<li><strong>Selection differential <em>S</em></strong>: selected parents’ mean minus population mean (110 − 100 = 10).</li>
+<li><strong>Response <em>R</em></strong>: how far the <strong>offspring</strong> mean moves. Only the additive part is passed on: <em>R</em> = <em>h</em>² <em>S</em> = 0.45 × 10 = <strong>4.5</strong>.</li>
+</ul>
+<aside class="notes">
+<p>This is how animal and plant breeders use narrow-sense heritability every day. Read the figure: the selected parents, the orange tail, have a mean 10 units above the population. Their offspring move only 4.5 units, because the parents were partly lucky with their environment and their dominance combinations, and neither is inherited. This is regression towards the mean, the same thing Galton saw in families. If h squared were zero, there would be no response at all however hard one selected; if it were one, the offspring would be as extreme as the parents. Repeated over generations, the response accumulates, as long as the additive variance lasts: much of the long-term rise in dairy cattle milk yield is due to such selection, alongside better feeding. Exercise B5 applies the same equation. The equation can also be read backwards: from a measured response and differential, h squared equals R over S, which is the realised heritability.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="twin-studies" class="slide level2 smaller">
 <h2>Twin studies</h2>
 
@@ -253,6 +466,53 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="falconers-formula-step-by-step" class="slide level2">
+<h2>Falconer’s formula, step by step</h2>
+<p>Split the variance into additive genes (<em>h</em>²), <strong>shared</strong> family environment (<em>c</em>²) and <strong>unique</strong> environment (<em>e</em>²), with <em>h</em>² + <em>c</em>² + <em>e</em>² = 1. Then (additive genes only):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>shares genes</th>
+<th>shares family environment</th>
+<th>correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MZ twins</td>
+<td>all</td>
+<td>yes</td>
+<td><em>r</em>(MZ) = <em>h</em>² + <em>c</em>²</td>
+</tr>
+<tr class="even">
+<td>DZ twins</td>
+<td>half, on average</td>
+<td>yes</td>
+<td><em>r</em>(DZ) = ½ <em>h</em>² + <em>c</em>²</td>
+</tr>
+</tbody>
+</table>
+<p>With the numbers in the figure, <em>r</em>(MZ) = 0.8 and <em>r</em>(DZ) = 0.5:</p>
+<ol type="1">
+<li>Subtract: <em>r</em>(MZ) − <em>r</em>(DZ) = ½ <em>h</em>², so <strong><em>h</em>² = 2 [<em>r</em>(MZ) − <em>r</em>(DZ)]</strong> = 2 × 0.3 = <strong>0.6</strong>.</li>
+<li>Shared environment: <em>c</em>² = <em>r</em>(MZ) − <em>h</em>² = 2<em>r</em>(DZ) − <em>r</em>(MZ) = 1.0 − 0.8 = <strong>0.2</strong>.</li>
+<li>Unique environment (and measurement error): <em>e</em>² = 1 − <em>r</em>(MZ) = <strong>0.2</strong>: the reason MZ twins are not identical.</li>
+</ol>
+<aside class="notes">
+<p>The two rows are the whole model: everything that makes twins alike is either shared genes or shared environment. The shared environment cancels when we subtract, which is the trick of the twin design. The last line is a nice point to stress: MZ twins are genetically identical, so anything that makes them different must be environment in the broad sense, including chance in development. Assumptions: only additive genetic effects (dominance would make r of DZ less than half the genetic part and inflate the h squared estimate), equal environments for MZ and DZ pairs, and twins representative of the population. Exercise B3 asks the same with body mass index.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="parentoffspring-regression" class="slide level2 smaller">
 <h2>Parent–offspring regression</h2>
 
@@ -263,6 +523,34 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>This is lm from the data-analysis course, applied to the problem it was invented for. Why is the slope h squared? The covariance between midparent and offspring is half the additive variance, and the variance of the midparent is half the phenotypic variance, so the ratio is VA over VP. With one parent, the covariance is the same but the variance is the full VP, so the slope halves. The data are Galton’s original family heights, from the HistData R package; students fit this model themselves. Galton multiplied daughters’ heights by 1.08 to put them on the male scale; we follow him. Note that Galton’s slope of 0.71 is probably inflated by shared environment and by assortative mating; modern estimates of the narrow-sense heritability of height in well-nourished populations are around 0.7 to 0.8 from family data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="galtons-own-plot-and-predicting-a-child" class="slide level2">
+<h2>Galton’s own plot, and predicting a child</h2>
+<div class="columns">
+<div class="column" style="width:42%;">
+<p><img data-src="img/galton-regression.png" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Galton-height-regress.png" class="photo-credit">Figure: Madprime after Galton (1889), CC BY-SA 4.0, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:58%;">
+<p>Galton’s diagram (<em>Natural Inheritance</em>, 1889), in inches. Here the <strong>midparent</strong> is on the vertical axis and the <strong>son</strong> on the horizontal; dot size = number of sons. Line <strong>AB</strong>: sons exactly as tall as their midparents. Line <strong>CD</strong>, Galton’s regression: per inch of midparent above the mean, sons are only about ⅔ inch above it.</p>
+<p><strong>Prediction</strong>: child’s deviation = <em>h</em>² × midparent deviation.</p>
+<ul>
+<li>Midparent 6 cm above the mean, <em>h</em>² = 0.7: child expected <strong>4.2 cm</strong> above the mean.</li>
+<li>Midparent 6 cm <strong>below</strong>: child expected 4.2 cm below. Regression works in both directions.</li>
+</ul>
+<p>The <strong>variance</strong> does not shrink: children scatter around their predicted value, and some are more extreme than their parents.</p>
+</div></div>
+<aside class="notes">
+<p>This is Galton’s own regression figure from his 1889 book, redrawn with the circles sized by the counts in his table. Note that the axes are swapped compared with our plots: each horizontal row of dots is one midparent height, and the dots along it are the sons’ heights, taken from his family table. Point to the two lines: AB is where sons would be if they were exactly as tall as their midparents; CD runs through the centre of each row, and it is steeper in this orientation, which means the sons change less than the midparents: tall parents have sons who are on average less tall, and short parents sons who are less short. Galton called it regression towards mediocrity. Two misconceptions to address. First, regression is not a force that makes the population more uniform: the next generation has the same variance, because the children also have their own environmental deviations and new combinations of alleles. Second, a prediction is an average; individual children vary around it. The 0.7 is an illustrative heritability close to Galton’s slope. Exercise B4 and E2 use the same prediction.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -363,16 +651,189 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="manhattan-and-qq-plots" class="slide level2 smaller">
-<h2>Manhattan and QQ plots</h2>
+<section id="linkage-disequilibrium-makes-towers" class="slide level2">
+<h2>Linkage disequilibrium makes towers</h2>
 
-<img data-src="fig05-manhattan.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><ul>
-<li>One test per SNP, so about <strong>a million tests</strong>. At p &lt; 0.05 we would expect ~50 000 false hits. The <strong>genome-wide threshold</strong> is <strong>5 × 10⁻⁸</strong> ≈ 0.05 / 1 000 000 (a Bonferroni correction for about a million independent tests).</li>
-<li><strong>Manhattan plot</strong>: −log10 p against position. Causal loci appear as <strong>towers</strong>: the causal variant and its LD neighbours.</li>
-<li><strong>QQ plot</strong>: observed against expected −log10 p.&nbsp;Null SNPs follow the line; true signals lift off at the top. If <strong>all</strong> points lift off, suspect <strong>population structure</strong> (the Wahlund effect of the Hardy–Weinberg unit) or genotyping errors.</li>
+<img data-src="fig07-ld-tower.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:64.0%"><ul>
+<li>A new variant arises on <strong>one</strong> ancestral chromosome (orange). Recombination shrinks the shared segment around it; today’s carriers still share a short <strong>core</strong> (dashed box).</li>
+<li>SNPs in the core are correlated with the variant (<strong>LD</strong>), so they are associated too: a <strong>tower</strong>.</li>
 </ul>
 <aside class="notes">
-<p>Recall from the Hardy–Weinberg exercise: one of 15 tests was significant at 5 percent, which was just chance. With a million tests, chance alone would give tens of thousands of hits. 5 times 10 to the minus 8 is the conventional threshold; it corresponds to roughly a million independent common variants in the genome of European-ancestry populations. Population structure is a classic trap: if cases come more often from one population than controls, every SNP with an allele frequency difference between the populations looks associated. Modern GWAS correct for this with principal components of the genotypes.</p>
+<p>This picture explains three things at once. Why a SNP array works: one SNP in the core tags the causal variant. Why the signal is a tower rather than a single dot: every SNP in LD with the causal variant carries part of its signal. And why the top SNP is not necessarily causal: several SNPs in the core are almost equally correlated with it, and noise decides which one is highest. The length of the core depends on the age of the variant and the local recombination rate; in European-ancestry populations LD blocks are typically tens of kilobases, shorter in African populations, which have a larger long-term effective size. That difference is why fine mapping benefits from diverse samples. The figure is schematic: real carriers would show many more chromosomes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-casecontrol-test-by-hand-step-1-allele-counts" class="slide level2">
+<h2>A case–control test by hand, step 1: allele counts</h2>
+<p>Invented example: 500 cases and 500 controls genotyped at one SNP. Count <strong>alleles</strong> (two per person):</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>risk allele T</th>
+<th>other allele C</th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cases</td>
+<td>400</td>
+<td>600</td>
+<td>1000</td>
+</tr>
+<tr class="even">
+<td>controls</td>
+<td>300</td>
+<td>700</td>
+<td>1000</td>
+</tr>
+<tr class="odd">
+<td>total</td>
+<td>700</td>
+<td>1300</td>
+<td>2000</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><strong>Allele frequencies</strong>: T in cases 400/1000 = <strong>0.40</strong>; in controls 300/1000 = <strong>0.30</strong>.</li>
+<li><strong>Odds ratio</strong> (the effect size):</li>
+</ol>
+<p><span class="math display">
+\text{OR} = \frac{400/600}{300/700} = \frac{0.667}{0.429} = \mathbf{1.56}.
+</span></p>
+<p>Each T allele is associated with about 1.56 times higher odds of being a case. An OR of 1 means no association.</p>
+<aside class="notes">
+<p>This is the simplest form of a disease GWAS test, done for one SNP. The numbers are invented and the effect is larger than typical GWAS hits, to keep the arithmetic easy. Counting alleles rather than people doubles the sample and assumes the alleles act additively. The odds ratio compares odds, not probabilities: in cases the odds of carrying T rather than C is 400 to 600, in controls 300 to 700. Real GWAS hits for type 2 diabetes have odds ratios of about 1.1 to 1.4 per allele, which is why very large samples are needed. Exercise B7 has a table with other numbers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-the-χ²-test-and-the-genome-wide-threshold" class="slide level2">
+<h2>Step 2: the χ² test, and the genome-wide threshold</h2>
+<p><strong>Expected counts</strong> under no association = row total × column total / grand total:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>T</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>cases</td>
+<td>1000 × 700/2000 = 350</td>
+<td>1000 × 1300/2000 = 650</td>
+</tr>
+<tr class="even">
+<td>controls</td>
+<td>350</td>
+<td>650</td>
+</tr>
+</tbody>
+</table>
+<p>Every cell is 50 away from its expectation:</p>
+<p><span class="math display">
+\chi^2 = \frac{50^2}{350} + \frac{50^2}{650} + \frac{50^2}{350} + \frac{50^2}{650} = 7.14 + 3.85 + 7.14 + 3.85 = \mathbf{22.0}, \quad \text{df} = 1.
+</span></p>
+<ul>
+<li>p ≈ 3 × 10⁻⁶: significant at 0.05 (χ² &gt; 3.84), but <strong>not</strong> genome-wide (needs χ² &gt; <strong>29.7</strong> for p &lt; 5 × 10⁻⁸).</li>
+<li>With the same frequencies, χ² grows in proportion to <em>N</em>: 29.7/22.0 ≈ 1.35 times as many people would reach it.</li>
+</ul>
+<aside class="notes">
+<p>The 2 by 2 table has df 1: once the margins are fixed, one cell determines the rest. The expected count rule is the same as for any contingency table: if allele and case status were independent, the fraction of T would be the same in both rows. The point of the last two lines: whether a SNP is significant depends both on the effect and on the sample size, which is why the same SNP can be missed in one study and found in a bigger one. The threshold value 29.7 is the χ² with df 1 that has a tail probability of 5 times 10 to the minus 8; students can get it in R with qchisq.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-million-tests-why-5-10⁸" class="slide level2">
+<h2>A million tests: why 5 × 10⁻⁸</h2>
+<p>A GWAS repeats the test of the last slide at about <strong>a million</strong> independent SNPs. If <strong>none</strong> had any effect, how many would pass by chance?</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>threshold</th>
+<th>expected false hits among 10⁶ null SNPs</th>
+<th>−log10 threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p &lt; 0.05</td>
+<td>10⁶ × 0.05 = <strong>50 000</strong></td>
+<td>1.3</td>
+</tr>
+<tr class="even">
+<td>p &lt; 10⁻⁵ (“suggestive”)</td>
+<td>10⁶ × 10⁻⁵ = <strong>10</strong></td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>p &lt; 5 × 10⁻⁸</td>
+<td>10⁶ × 5 × 10⁻⁸ = <strong>0.05</strong></td>
+<td>7.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bonferroni</strong>: divide the error rate you accept for the <strong>whole</strong> study by the number of tests: 0.05 / 10⁶ = <strong>5 × 10⁻⁸</strong>. Then the chance of even <strong>one</strong> false hit in the whole scan is about 5%.</p>
+<aside class="notes">
+<p>Recall from the Hardy–Weinberg exercise: one of 15 tests was significant at 5 percent, which was just chance. With a million tests, chance alone gives tens of thousands of hits at 0.05. The number of tests is “about a million independent” because neighbouring SNPs are in LD, so the effective number of tests is smaller than the number of SNPs genotyped; a million is the conventional estimate for common variants in European-ancestry genomes. The minus log10 column is what the Manhattan plot shows on its y-axis: 7.3 is the red line. Exercise B6 uses the same multiplication.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-a-manhattan-plot-step-by-step" class="slide level2">
+<h2>Reading a Manhattan plot, step by step</h2>
+
+<img data-src="fig05-manhattan.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:56.0%"><ol type="1">
+<li><strong>One dot = one SNP.</strong> <em>x</em>: position, chromosome by chromosome. <em>y</em>: −log10 p (<em>y</em> = 2 is p = 0.01; <em>y</em> = 13 is p = 10⁻¹³).</li>
+<li><strong>The red line</strong> is 5 × 10⁻⁸ (<em>y</em> = 7.3): dots above it are genome-wide significant.</li>
+<li><strong>Count towers, not dots</strong>: 3 loci here (chromosomes 2, 10, 16), each a causal variant plus its LD neighbours.</li>
+<li><strong>Height is evidence, not effect size</strong>: it also grows with sample size and allele frequency.</li>
+<li><strong>QQ plot</strong>: null SNPs lie on the diagonal; true signals lift off at the <strong>top</strong>. If <strong>all</strong> points lie above it, suspect <strong>population structure</strong> or genotyping errors.</li>
+</ol>
+<aside class="notes">
+<p>Walk through the plot in this order every time. Students often read each dot above the line as a separate discovery; the tower on chromosome 10 is one locus with many SNPs in LD. The highest dot in a tower is the best-tagged SNP, not necessarily the causal one. The height point connects to the TCF7L2 example coming up: a p-value of 10 to the minus 1315 reflects millions of participants, not a huge effect. Population structure is a classic trap: if cases come more often from one population than controls, every SNP with an allele frequency difference between the populations looks associated, and the whole QQ plot lifts. Modern GWAS correct for this with principal components of the genotypes. The plot is simulated.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -453,14 +914,72 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“<em>h</em>² = 0.8 means 80% of my height comes from genes”</td>
+<td><em>h</em>² describes <strong>variation in a population</strong>, not one person</td>
+</tr>
+<tr class="even">
+<td>Using <em>H</em>² in the breeder’s equation</td>
+<td><em>R</em> = <strong><em>h</em>²</strong> <em>S</em>: only additive variance is passed on</td>
+</tr>
+<tr class="odd">
+<td>Slope on <strong>one</strong> parent = <em>h</em>²</td>
+<td>one parent: slope = <em>h</em>²/2; <strong>midparent</strong>: slope = <em>h</em>²</td>
+</tr>
+<tr class="even">
+<td>“Regression to the mean makes the population less variable”</td>
+<td>the variance stays the same; children scatter around the prediction</td>
+</tr>
+<tr class="odd">
+<td>Each dot above the line is a separate discovery</td>
+<td>count <strong>towers</strong>: one locus, many SNPs in LD</td>
+</tr>
+<tr class="even">
+<td>The top SNP is the causal variant</td>
+<td>it is the best <strong>tag</strong>; fine mapping is needed</td>
+</tr>
+<tr class="odd">
+<td>A tiny p-value means a large effect</td>
+<td>p depends on <em>N</em>; read the <strong>odds ratio</strong> or <em>β</em> for the effect</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Use as a check-yourself slide: cover the right column. The first and fourth are conceptual misunderstandings that also come up in public debate; the second and third are the commonest calculation errors; the last three are about reading GWAS results, and they matter whenever students read news about “a gene for” something.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
-<li>Complex traits: <strong>many loci + environment</strong> give continuous, normal variation (Fisher’s polygenic model).</li>
-<li><em>V</em><sub>P</sub> = <em>V</em><sub>A</sub> + <em>V</em><sub>D</sub> + <em>V</em><sub>E</sub>. <strong>Broad</strong> <em>H</em>² = <em>V</em><sub>G</sub>/<em>V</em><sub>P</sub>; <strong>narrow</strong> <em>h</em>² = <em>V</em><sub>A</sub>/<em>V</em><sub>P</sub>.</li>
+<li>Complex traits: <strong>many loci + environment</strong> give continuous, normal variation (Fisher’s polygenic model). <em>k</em> additive loci: Binomial(2<em>k</em>, ½), 2<em>k</em> + 1 classes.</li>
+<li><em>V</em><sub>P</sub> = <em>V</em><sub>A</sub> + <em>V</em><sub>D</sub> + <em>V</em><sub>E</sub>. <strong>Broad</strong> <em>H</em>² = <em>V</em><sub>G</sub>/<em>V</em><sub>P</sub>; <strong>narrow</strong> <em>h</em>² = <em>V</em><sub>A</sub>/<em>V</em><sub>P</sub>. Inbred lines and F1 give <em>V</em><sub>E</sub>; breeder’s equation <em>R</em> = <em>h</em>² <em>S</em>.</li>
 <li>Estimates: twins <em>h</em>² ≈ 2[<em>r</em>(MZ) − <em>r</em>(DZ)]; offspring on midparent <strong>slope = <em>h</em>²</strong> (Galton: 0.71); on one parent slope = <em>h</em>²/2.</li>
 <li>Heritability is about <strong>variation in one population and environment</strong>; it says nothing about individuals or differences between groups.</li>
-<li><strong>QTL mapping</strong> uses crosses and linkage (LOD); <strong>GWAS</strong> use association and <strong>LD</strong> in unrelated people, with p &lt; <strong>5 × 10⁻⁸</strong>.</li>
+<li><strong>QTL mapping</strong> uses crosses and linkage (LOD); <strong>GWAS</strong> use association and <strong>LD</strong> in unrelated people: a 2 × 2 χ² test and odds ratio per SNP, with p &lt; <strong>5 × 10⁻⁸</strong> = 0.05/10⁶. Read Manhattan plots as towers.</li>
 <li>Hits such as <em>TCF7L2</em> for T2D have small effects; <strong>polygenic scores</strong> add them up; part of the heritability is still <strong>missing</strong>.</li>
 </ul>
 <aside class="notes">

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig08: pedigree for a loss-of-function allele of a gene expressed only from the PATERNAL copy
+       (like mouse Igf2). Illustrative family, not real data.
+       I: carrier woman (unaffected: her copy came from her mother).
+       II: her son and her daughter both carry it, on their maternal copy: unaffected.
+       III, via the son (paternal transmission): about half affected.
+       III, via the daughter (maternal transmission): unaffected; half are silent carriers.
+       IV, via the carrier grandson: about half affected again; via the carrier granddaughter: unaffected.
+       Carriers are drawn with a dot (in practice found by genotyping). -->
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a">A paternally expressed gene in a pedigree: affected only if inherited from the father</text>
+
+  <g font-size="16" font-weight="bold" fill="#5c6b7a">
+    <text x="30" y="76">I</text>
+    <text x="30" y="176">II</text>
+    <text x="30" y="286">III</text>
+    <text x="30" y="396">IV</text>
+  </g>
+
+  <g stroke="#1b2a3a" stroke-width="2" fill="none">
+    <!-- I mating and descent -->
+    <line x1="437" y1="70" x2="483" y2="70"/>
+    <line x1="460" y1="70" x2="460" y2="120"/>
+    <line x1="250" y1="120" x2="570" y2="120"/>
+    <line x1="250" y1="120" x2="250" y2="153"/>
+    <line x1="570" y1="120" x2="570" y2="153"/>
+    <!-- II matings -->
+    <line x1="267" y1="170" x2="313" y2="170"/>
+    <line x1="290" y1="170" x2="290" y2="230"/>
+    <line x1="140" y1="230" x2="350" y2="230"/>
+    <line x1="140" y1="230" x2="140" y2="263"/>
+    <line x1="210" y1="230" x2="210" y2="263"/>
+    <line x1="280" y1="230" x2="280" y2="263"/>
+    <line x1="350" y1="230" x2="350" y2="263"/>
+    <line x1="587" y1="170" x2="633" y2="170"/>
+    <line x1="610" y1="170" x2="610" y2="230"/>
+    <line x1="500" y1="230" x2="710" y2="230"/>
+    <line x1="500" y1="230" x2="500" y2="263"/>
+    <line x1="570" y1="230" x2="570" y2="263"/>
+    <line x1="640" y1="230" x2="640" y2="263"/>
+    <line x1="710" y1="230" x2="710" y2="263"/>
+    <!-- III matings -->
+    <line x1="447" y1="280" x2="483" y2="280"/>
+    <line x1="465" y1="280" x2="465" y2="340"/>
+    <line x1="430" y1="340" x2="500" y2="340"/>
+    <line x1="430" y1="340" x2="430" y2="373"/>
+    <line x1="500" y1="340" x2="500" y2="373"/>
+    <line x1="727" y1="280" x2="773" y2="280"/>
+    <line x1="750" y1="280" x2="750" y2="340"/>
+    <line x1="715" y1="340" x2="785" y2="340"/>
+    <line x1="715" y1="340" x2="715" y2="373"/>
+    <line x1="785" y1="340" x2="785" y2="373"/>
+  </g>
+
+  <!-- symbols: squares = males, circles = females; fill #1b2a3a = affected; dot = carrier -->
+  <g stroke="#1b2a3a" stroke-width="2">
+    <!-- I -->
+    <circle cx="420" cy="70" r="17" fill="#ffffff"/>
+    <rect x="483" y="53" width="34" height="34" fill="#ffffff"/>
+    <!-- II -->
+    <rect x="233" y="153" width="34" height="34" fill="#ffffff"/>
+    <circle cx="330" cy="170" r="17" fill="#ffffff"/>
+    <circle cx="570" cy="170" r="17" fill="#ffffff"/>
+    <rect x="633" y="153" width="34" height="34" fill="#ffffff"/>
+    <!-- III, via the son -->
+    <rect x="123" y="263" width="34" height="34" fill="#1b2a3a"/>
+    <circle cx="210" cy="280" r="17" fill="#ffffff"/>
+    <circle cx="280" cy="280" r="17" fill="#1b2a3a"/>
+    <rect x="333" y="263" width="34" height="34" fill="#ffffff"/>
+    <!-- III spouse, then children via the daughter, then spouse -->
+    <circle cx="430" cy="280" r="17" fill="#ffffff"/>
+    <rect x="483" y="263" width="34" height="34" fill="#ffffff"/>
+    <rect x="553" y="263" width="34" height="34" fill="#ffffff"/>
+    <circle cx="640" cy="280" r="17" fill="#ffffff"/>
+    <circle cx="710" cy="280" r="17" fill="#ffffff"/>
+    <rect x="773" y="263" width="34" height="34" fill="#ffffff"/>
+    <!-- IV -->
+    <rect x="413" y="373" width="34" height="34" fill="#1b2a3a"/>
+    <circle cx="500" cy="390" r="17" fill="#ffffff"/>
+    <circle cx="715" cy="390" r="17" fill="#ffffff"/>
+    <rect x="768" y="373" width="34" height="34" fill="#ffffff"/>
+  </g>
+  <!-- carrier dots -->
+  <g fill="#1b2a3a">
+    <circle cx="420" cy="70" r="5"/>
+    <circle cx="250" cy="170" r="5"/>
+    <circle cx="570" cy="170" r="5"/>
+    <circle cx="500" cy="280" r="5"/>
+    <circle cx="710" cy="280" r="5"/>
+    <circle cx="715" cy="390" r="5"/>
+  </g>
+
+  <!-- annotations -->
+  <text x="245" y="328" font-size="14" fill="#c0392b" text-anchor="middle">from the father: ½ affected</text>
+  <text x="605" y="328" font-size="14" fill="#2a6f97" text-anchor="middle">from the mother: ½ silent carriers</text>
+  <text x="465" y="436" font-size="14" fill="#c0392b" text-anchor="middle">from the father</text>
+  <text x="750" y="436" font-size="14" fill="#2a6f97" text-anchor="middle">from the mother</text>
+  <text x="392" y="76" font-size="14" fill="#5c6b7a" text-anchor="end">carrier (her copy came from her mother)</text>
+
+  <!-- legend -->
+  <line x1="20" y1="456" x2="880" y2="456" stroke="#d5dae0" stroke-width="1.5"/>
+  <rect x="30" y="467" width="20" height="20" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="72" cy="477" r="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="92" y="482" font-size="14" fill="#1b2a3a">unaffected</text>
+  <circle cx="200" cy="477" r="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <circle cx="200" cy="477" r="3.5" fill="#1b2a3a"/>
+  <text x="220" y="482" font-size="14" fill="#1b2a3a">unaffected carrier (found by genotyping)</text>
+  <rect x="510" y="467" width="20" height="20" fill="#1b2a3a"/>
+  <text x="540" y="482" font-size="14" fill="#1b2a3a">affected</text>
+  <text x="640" y="482" font-size="13" fill="#5c6b7a">Illustrative family</text>
+</svg>

@@ -19,18 +19,29 @@ format:
     html-math-method: katex
 ---
 
-## About this lecture
+## About this lecture {.smaller}
 
-In the 1850s and 1860s, Gregor Mendel crossed garden peas and **counted** the offspring. From the numbers alone he deduced that inheritance works through discrete **factors** (we now say *genes*), present in pairs, that separate cleanly when gametes form.
+:::: {.columns}
+::: {.column width="74%"}
+In the 1850s and 1860s, Gregor Mendel crossed garden peas in the garden of his monastery in Brno and **counted** the offspring. From the numbers alone he deduced that inheritance works through discrete **factors** (we now say *genes*), present in pairs, that separate cleanly when gametes form.
 
 - Mendel's **experimental design**: true-breeding lines, controlled crosses, reciprocal crosses, seven clear-cut traits.
 - The **monohybrid cross**: P → F~1~ → F~2~, the **3 : 1** phenotype ratio and the **1 : 2 : 1** genotype ratio.
 - The **law of segregation**, and why **meiosis** makes it true.
 - The **testcross**, to read an unknown genotype.
 - The **dihybrid cross** (9 : 3 : 3 : 1), the **law of independent assortment**, and its basis in meiosis.
-- Shortcuts for many genes: the **branch-line method**, the **product rule**, and counting $3^n$ genotypes and $2^n$ gametes.
+- Shortcuts for many genes: writing **gametes**, the **branch-line method**, the **product rule**, and counting $3^n$ genotypes and $2^n$ gametes.
+- Worked examples forwards (parents → offspring) and **backwards** (offspring → parents), and the common mistakes.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, Mendel's principles of heredity chapter.
+:::
+::: {.column width="26%"}
+![](img/mendel-portrait.jpg){width="100%"}
+[Image: Wellcome Collection, CC BY 4.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Gregor_Johann_Mendel,_Garrison._Wellcome_M0002351.jpg){.photo-credit}
+
+Gregor Johann Mendel (1822–1884).
+:::
+::::
 
 ::: notes
 This is the foundation of the whole of Part 1. Students have seen Punnett squares at school, so the risk is that they think they already know it. The new things today are the reasoning (how Mendel got from counts to a model), the link to meiosis (why the rules hold), and the shortcuts for several genes. Keep two simplifications in view and name them: complete dominance (the Extensions to Mendel unit relaxes it) and unlinked genes (the Linkage unit in Part 2 relaxes it). Testing whether observed numbers fit a ratio, the chi-square test, is the next unit.
@@ -76,14 +87,24 @@ Read the table row by row, quickly. Point out two things. First, "dominant" is a
 
 Follow **one** trait through three generations.
 
-![](fig01-monohybrid.svg){width="72%" fig-align="center"}
+:::: {.columns}
+::: {.column width="68%"}
+![](fig01-monohybrid.svg){width="100%"}
 
 - **P**: true-breeding round × true-breeding wrinkled.
 - **F~1~**: all round. Wrinkled seems to have vanished, but…
 - **F~2~** (F~1~ self-fertilised): wrinkled comes back, in about **a quarter** of the seeds.
+:::
+::: {.column width="32%"}
+![](img/pea-cross-1914.png){width="82%" fig-align="center"}
+[Image: Popular Science Monthly vol. 85 (1914), public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PSM_V85_D331_Results_of_crossing_yellow_and_green_seeded_peas.png){.photo-credit}
+
+Seed colour, drawn in 1914: yellow and green parents, F~1~ pod all yellow, and an F~2~ pod with **both** colours side by side. Each seed is a separate offspring.
+:::
+::::
 
 ::: notes
-The surprise is the F2. Under blending, wrinkled should be gone for good once it was "diluted" in the F1. Instead it comes back unchanged: the F2 wrinkled seeds are just as wrinkled as the original parent. So the wrinkled factor must have been present in the F1, hidden but intact. A monohybrid cross is a cross between parents that differ in one trait, or, equivalently, a cross between two individuals heterozygous for one gene (the F1 x F1 step). Mendel did the same for all seven traits and got the same pattern each time.
+The surprise is the F2. Under blending, wrinkled should be gone for good once it was "diluted" in the F1. Instead it comes back unchanged: the F2 wrinkled seeds are just as wrinkled as the original parent. So the wrinkled factor must have been present in the F1, hidden but intact. A monohybrid cross is a cross between parents that differ in one trait, or, equivalently, a cross between two individuals heterozygous for one gene (the F1 x F1 step). Mendel did the same for all seven traits and got the same pattern each time. The 1914 drawing on the right shows the same thing for seed colour, and makes a point students often miss: seed traits are traits of the embryo, the next generation, so one F1 plant carries its F2 offspring in its own pods, and a single pod can hold both yellow and green seeds. That is why Mendel could count thousands of F2 seeds in one season.
 :::
 
 ## Mendel's model {.smaller}
@@ -224,6 +245,25 @@ Genes on **different chromosomes**: at metaphase I each homologue pair lines up 
 Walk through the two panels. Blue chromosomes came from the round yellow parent, red ones from the wrinkled green parent. In orientation 1 both blue chromosomes go to the same pole, giving the parental combinations RY and ry. In orientation 2 they go to opposite poles, giving the new combinations Ry and rY. Each cell does one or the other, with equal probability, and across the millions of meioses in a plant the four types come out equal. This is the chromosomal reason for Mendel's second law. Mendel was lucky, or careful: his seven traits behave as if unlinked. Peas have seven chromosome pairs, but some of his genes do share a chromosome; they are far enough apart that crossing over makes them assort almost independently. The full story of linkage and crossing over is Part 2.
 :::
 
+## Writing gametes, step by step
+
+A gamete carries **one allele of every gene**. To list the gametes of a genotype, take one gene at a time and combine:
+
+| Genotype | Gene 1 gives | Gene 2 gives | Gametes | Kinds |
+|---|---|---|---|---|
+| *Rr Yy* | *R* or *r* | *Y* or *y* | *RY*, *Ry*, *rY*, *ry* (¼ each) | 4 |
+| *RR Yy* | *R* only | *Y* or *y* | *RY*, *Ry* (½ each) | 2 |
+| *Rr yy* | *R* or *r* | *y* only | *Ry*, *ry* (½ each) | 2 |
+| *rr yy* | *r* only | *y* only | *ry* | 1 |
+
+- Only **heterozygous** genes double the number of gamete types: 2^*k*^ kinds for *k* heterozygous genes.
+- A gamete is **never** *Rr* or *RRY*: it has exactly **one** letter per gene.
+- The rows and columns of a Punnett square are these gametes, each with its frequency.
+
+::: notes
+Many errors in crosses start here, so give this a slide of its own. Show the rule: for each gene, list what that gene can contribute, then take every combination. Homozygous genes contribute only one option and so do not add gamete types. The two classic mistakes are writing a gamete with both alleles of one gene (Rr), which confuses gametes with genotypes, and listing only the two parental gametes RY and ry, which forgets independent assortment. The 2 to the k rule is the general form of the 2 to the n on the counting slide later, where all n genes are heterozygous.
+:::
+
 ## The branch-line method {.smaller}
 
 A Punnett square for two genes has 16 cells; for three genes, 64. The **branch-line** (forked-line) method is faster: treat each gene **separately**, then **multiply** along each branch.
@@ -234,6 +274,30 @@ It works because the genes assort independently: each gene contributes its own r
 
 ::: notes
 Draw this on the board from left to right. The first column is the monohybrid result for seed shape, three quarters and one quarter. Each branch then splits by seed colour, again three quarters and one quarter. Multiply along each path to get the probability of that combination. Four paths, four phenotypes, the same 9:3:3:1 as the 16-cell square. The method scales: a third gene adds a third column and doubles the number of paths. It also works for genotypes (1/4, 1/2, 1/4 on each branch) and for crosses where each gene has a different parental genotype, for example Aa x aa for one gene and Bb x Bb for the other.
+:::
+
+## Worked example: two different parents
+
+Tall (*T*) is dominant to dwarf (*t*), round (*R*) to wrinkled (*r*). Cross **tall round *Tt Rr*** × **dwarf round *tt Rr***.
+
+**Step 1. One gene at a time.**
+
+- Height: *Tt* × *tt* is a testcross → ½ tall, ½ dwarf.
+- Shape: *Rr* × *Rr* is a monohybrid cross → ¾ round, ¼ wrinkled.
+
+**Step 2. Multiply along the branches.**
+
+| Height | Shape | Probability |
+|---|---|---|
+| ½ tall | ¾ round | **3/8** tall round |
+| ½ tall | ¼ wrinkled | **1/8** tall wrinkled |
+| ½ dwarf | ¾ round | **3/8** dwarf round |
+| ½ dwarf | ¼ wrinkled | **1/8** dwarf wrinkled |
+
+Ratio **3 : 1 : 3 : 1**. Check: the four probabilities sum to 1. A Punnett square would need 4 × 2 = 8 cells.
+
+::: notes
+The point of this example is that the two parents do not have the same genotype, so the familiar 9:3:3:1 does not apply; students who have memorised 9:3:3:1 will try to use it anyway. Break the cross into one gene at a time: each gene is a cross students already know, a testcross for height and an F1 × F1 for shape. Then multiply. Always do the free check that the probabilities sum to 1. The exercise has a similar problem with seed colour instead of height.
 :::
 
 ## Many genes: the product rule {.smaller}
@@ -273,6 +337,46 @@ For an individual heterozygous for *n* unlinked genes, crossed to another one li
 
 ::: notes
 The pattern is the multiplication principle again: independent choices multiply. Gametes: two choices per gene, so 2 to the n. Genotypes in the offspring: three per gene, so 3 to the n. The last bullet explains why classical geneticists rarely tried to recover a plant recessive for many genes at once from a single cross: with ten genes you would need about a million offspring to expect one. It is also a first hint of why traits controlled by many genes look continuous rather than falling into neat classes: that is the complex traits unit at the end of the course.
+:::
+
+## Working backwards: from offspring to parents
+
+Often we know the offspring and want the parents. **Split the ratio by trait**, recognise each single-gene ratio, then combine.
+
+| Offspring ratio for one gene | Parents for that gene |
+|---|---|
+| 3 : 1 | *Aa* × *Aa* |
+| 1 : 1 | *Aa* × *aa* |
+| all dominant | at least one parent *AA* |
+| all recessive | *aa* × *aa* |
+
+**Worked example.** Two pea plants give 1 tall round : 1 tall wrinkled : 1 dwarf round : 1 dwarf wrinkled.
+
+- Height: tall 1 + 1 = 2, dwarf 2 → **1 : 1** → *Tt* × *tt*.
+- Shape: round 2, wrinkled 2 → **1 : 1** → *Rr* × *rr*.
+- So the parents are ***Tt Rr* × *tt rr*** (a dihybrid testcross) **or** ***Tt rr* × *tt Rr***. Both give 1 : 1 : 1 : 1.
+
+A ratio can have **more than one** solution. To decide, you need the parents' phenotypes: here, is one parent tall and round?
+
+::: notes
+This is the reverse of the forward problems, and a common exam format. The method is the same: one gene at a time. Sum the classes for each trait separately; the per-gene ratio identifies that gene's cross from the small table. The twist in this example is deliberate: two different pairs of parents give the same offspring ratio, and only extra information, such as the parents' phenotypes, separates them. In the first solution one parent is tall round and the other dwarf wrinkled; in the second, one is tall wrinkled and the other dwarf round. The "all dominant" row is ambiguous for the same reason.
+:::
+
+## Common mistakes
+
+| Mistake | Correct |
+|---|---|
+| Writing a gamete as *Rr* | A gamete has **one** allele per gene: *R* or *r*. |
+| "*Rr Yy* makes *RY* and *ry* gametes" | Independent assortment: **four** gametes, *RY*, *Ry*, *rY*, *ry*. |
+| "3 : 1 means 3 of every 4 children will be dominant" | It is a **probability per offspring**, not a quota. |
+| "P(round F~2~ plant is *Rr*) = ½" | Given round, it is **⅔** (the *rr* quarter is excluded). |
+| "All 6 testcross offspring were dominant, so the parent is *AA*" | Likely, not certain: (½)^6^ = 1/64 if *Aa*. |
+| Using 9 : 3 : 3 : 1 for *Aa Bb* × *aa Bb* | 9 : 3 : 3 : 1 needs **both** parents *AaBb*. Split by gene. |
+| Multiplying probabilities for linked genes | The product rule needs **independent** (unlinked) genes. |
+| "Dominant alleles are more common" | Dominance says nothing about frequency. |
+
+::: notes
+Use as a self-check: cover the right column and ask the class to correct each statement. Every row has come up somewhere in the lecture; this collects them. The most frequent exam errors are the first two and the 9:3:3:1 overgeneralisation.
 :::
 
 ## Try it: Punnett squares and sampling noise {.smaller}
@@ -330,7 +434,8 @@ Being honest about the simplifications is part of understanding the laws. Nothin
 | Testcross | × homozygous recessive; offspring phenotypes read off the unknown parent's gametes (1 : 1 if *Aa*) |
 | Dihybrid F~1~ × F~1~ | *AaBb* × *AaBb* → 9 : 3 : 3 : 1 = (3 : 1) × (3 : 1) |
 | Law of independent assortment | alleles of different genes enter gametes independently; **homologue pairs orient independently at metaphase I** |
-| Branch-line / product rule | solve each gene separately, multiply along branches |
+| Gametes | one allele per gene; 2^*k*^ kinds for *k* heterozygous genes |
+| Branch-line / product rule | solve each gene separately, multiply along branches; backwards: split the offspring ratio by trait |
 | Counting | 2^*n*^ gamete types, 3^*n*^ genotypes, (¼)^*n*^ fully recessive |
 | Mendel's numbers | 5474 : 1850 (2.96 : 1); 315 : 108 : 101 : 32 (≈ 9 : 3 : 3 : 1) |
 

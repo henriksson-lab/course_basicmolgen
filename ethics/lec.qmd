@@ -29,6 +29,7 @@ All course long you have predicted genotypes, computed risks and looked up varia
 - **Editing the germline**: embryo editing, mitochondrial replacement and gene drives.
 - **History**: eugenics, and the Swedish Institute for Racial Biology and sterilisation laws.
 - **Ethical review** of research in Sweden, and the laws on biobanks and genetic data.
+- A **method** for analysing a case in six steps, worked through on one example.
 
 The aim is not to give you the right answers. It is to help you **see the conflict**, name the principles involved and argue for a position. The exercise gives you cases and a literature search.
 
@@ -189,7 +190,16 @@ The distinction is the key concept. Somatic editing is ethically like any other 
 
 ## He Jiankui and the CRISPR babies
 
+:::: {.columns}
+::: {.column width="62%"}
 On **25–26 November 2018**, just before an international summit on human genome editing in Hong Kong, He Jiankui announced the birth of twin girls whose embryos he had edited with CRISPR-Cas9 to disrupt ***CCR5***, the co-receptor HIV uses to enter cells (Cyranoski & Ledford 2018, PMID 30482929).
+:::
+
+::: {.column width="38%"}
+![](img/he-jiankui-summit.jpg){width="100%"}
+[Photo: VOA / Iris Tong, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:He_Jiankui_at_Second_International_Summit_on_Human_Genome_Editing.jpg){.photo-credit}
+:::
+::::
 
 - **No medical need**: the father had HIV, but sperm washing can prevent transmission to the child with no risk.
 - **Not what was intended**: neither twin got the natural *CCR5*-Δ32 deletion; the edits made new mutations, and the children are **mosaics** (Greely 2019, PMID 31666967).
@@ -199,7 +209,7 @@ On **25–26 November 2018**, just before an international summit on human genom
 The response was near-universal condemnation, and calls for a moratorium on heritable editing.
 
 ::: notes
-This case is the clearest example of a violation of almost every principle at once. Non-maleficence: unknown risks to healthy children for no medical benefit. Autonomy: questionable consent from the parents, and none from the children or their descendants. Justice and public trust: done in secret, presented to the media before peer review. Point out the genetics: CRISPR makes a double-strand break and the cell repairs it by error-prone end joining, so the alleles created were new small deletions, not the well-studied Δ32 allele, and different cells of an embryo can be repaired differently, which is mosaicism. That is the scientific reason, apart from ethics, why heritable editing is not safe today. Case 5 in the exercise asks students to evaluate a more plausible proposal.
+The photo shows He presenting the work at the Second International Summit on Human Genome Editing in Hong Kong on 28 November 2018, where it was met with sharp questions from the audience. This case is the clearest example of a violation of almost every principle at once. Non-maleficence: unknown risks to healthy children for no medical benefit. Autonomy: questionable consent from the parents, and none from the children or their descendants. Justice and public trust: done in secret, presented to the media before peer review. Point out the genetics: CRISPR makes a double-strand break and the cell repairs it by error-prone end joining, so the alleles created were new small deletions, not the well-studied Δ32 allele, and different cells of an embryo can be repaired differently, which is mosaicism. That is the scientific reason, apart from ethics, why heritable editing is not safe today. Case 5 in the exercise asks students to evaluate a more plausible proposal.
 :::
 
 ## Mitochondrial replacement
@@ -218,7 +228,18 @@ MRT is useful for discussion because it is legal and regulated in one country, u
 
 ## Gene drives {.smaller}
 
-![](fig05-gene-drive.svg){width="74%" fig-align="center"}
+:::: {.columns}
+::: {.column width="72%"}
+![](fig05-gene-drive.svg){width="100%"}
+:::
+
+::: {.column width="28%"}
+![](img/anopheles-gambiae.jpg){width="100%"}
+[Photo: CDC / James Gathany, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Anopheles_gambiae_mosquito_feeding_1354.p_lores.jpg){.photo-credit}
+
+*Anopheles gambiae*, the main malaria vector in Africa, and the target of the doublesex gene drive.
+:::
+::::
 
 A **gene drive** cheats Mendel's law of segregation: a heterozygote passes the drive to **nearly all** offspring, not half. It could eliminate malaria mosquitoes, or an invasive species.
 
@@ -281,6 +302,46 @@ Sample re-use is common: newborn blood spots from the Swedish PKU biobank were u
 These three laws are the practical frame for any genetics project in Sweden. The Biobanks Act: a sample taken in health care stays linked to the person; using it for research needs consent and ethical approval. The PKU biobank is special: it stores the newborn screening blood spots of a very large share of the population, so it is a powerful research resource and a sensitive one; the act gives it its own chapter. The Ronneby study is a good example of beneficial re-use: nobody in 1985 could have consented to a PFAS study, so the decision rests on ethical review and the law. GDPR treats genetic data as a special category, alongside health data and ethnic origin. The Genetic Integrity Act protects individuals in contracts: an employer or insurer may not demand a genetic test; the insurance exception only applies to very large policies. Case 6 in the exercise is a biobank re-use request.
 :::
 
+## Analysing a case: six steps
+
+| Step | Question to answer |
+|---|---|
+| 1. **Genetics** | What is the mode of inheritance, the risk, and what can (and cannot) a test tell? |
+| 2. **Who is affected** | The person tested, relatives, children and future generations, research participants, society |
+| 3. **Principles** | Which of autonomy, beneficence, non-maleficence and justice are involved, plus consent, privacy and the right not to know? **Where do they conflict?** |
+| 4. **Law and guidelines** | What do Swedish law and professional guidelines say? |
+| 5. **Options** | More than yes or no: list the middle ways |
+| 6. **Position** | Argue for one option, and state the **strongest objection** to it |
+
+::: notes
+This is the structure from the exercise, and the structure of the written group analysis. It is deliberately mechanical: the first two steps are facts, the third names the values, the fourth checks the rules, and only the last two are judgement. Many weak answers jump straight to step 6. The next two slides apply the six steps to one case that is not in the exercise, so students see the method once before they use it themselves.
+:::
+
+## Worked case: a treatable family risk (1)
+
+Erik, 45, has a heart attack. Genetic testing finds a pathogenic *LDLR* variant: **familial hypercholesterolaemia** (FH), very high LDL cholesterol from birth. He has two adult siblings and two children aged 12 and 15. He does not want his siblings told (they have not spoken in years) and thinks his children are too young.
+
+1. **Genetics**: FH is **autosomal dominant**. Each sibling and each child has a **½** prior risk. Unlike Huntington disease, FH is **treatable**: lipid-lowering drugs (statins) and lifestyle greatly reduce the risk of early heart disease, and treatment can start in **childhood**.
+2. **Who is affected**: Erik; his siblings and their children; his own children, who cannot yet decide for themselves.
+3. **Principles in tension**: Erik's **autonomy** and **confidentiality** against **beneficence** and **non-maleficence** towards relatives who could avoid serious, preventable harm. **Justice**: relatives who are never told cannot use the screening others get.
+
+::: notes
+FH is a good contrast with the Huntington and BRCA cases in the exercise, because here a positive result leads directly to an effective, cheap treatment. The genes are LDLR, APOB and PCSK9, and FH is one of the conditions on the ACMG secondary-findings list. That changes the weight of the principles: the right not to know is weaker when knowing allows prevention, and the harm of not knowing is larger. The children are the other contrast: for adult-onset, non-actionable conditions we wait until children can decide themselves, but FH is treated from childhood, so testing them now serves their own interest. The facts here are general; numbers such as treatment ages differ between guidelines and are not needed for the argument.
+:::
+
+## Worked case: a treatable family risk (2)
+
+4. **Law and guidelines**: health-care staff are bound by **confidentiality**; information to relatives normally goes **through the patient**, often with a **family letter** written by the clinic. Testing a child needs the parents' consent and should serve the child's own interest.
+5. **Options**: accept the refusal · counsel Erik and return to it later · give him family letters to pass on · with his consent, let the clinic contact relatives · test the children now · disclose to siblings **without** consent.
+6. **A position**: counsel Erik, explain that the result is treatable and what is at stake for his relatives, and offer family letters; recommend testing the children, since treatment starts in childhood. Disclosure without consent only as a last resort, if the harm is serious and preventable and every other route has failed.
+   **Strongest objection**: breaking confidentiality, even rarely, can make patients avoid testing at all, which harms more families in the long run.
+
+Another group could reasonably argue for a different line; what matters is that each step is covered.
+
+::: notes
+The point of step 5 is that there are many options between "tell everyone" and "tell no one"; good answers find them. The family letter is a common practice: the clinic writes a factual letter that the patient hands to relatives, so the patient keeps control while the relatives get accurate information. For step 6, stress that a position is only as good as its answer to the strongest objection. In discussion, ask how the analysis would change if the condition were untreatable, like Huntington disease: the balance swings back towards autonomy and the right not to know. Laws and professional guidance on disclosure to relatives differ between countries and change; students should check current Swedish rules for their own case.
+:::
+
 ## Summary
 
 - Genetic information is **shared, predictive, permanent, identifying and reproductive**. That is why it gets special ethical and legal treatment.
@@ -290,6 +351,7 @@ These three laws are the practical frame for any genetics project in Sweden. The
 - **Germline**: editing an embryo, mitochondrial replacement and gene drives all make **heritable** changes.
 - **History**: Sweden's racial biology institute and sterilisation laws are why consent and **independent ethical review** matter.
 - **Sweden today**: Ethical Review Act (2003:460), Etikprövningsmyndigheten, Biobanks Act, GDPR, Genetic Integrity Act.
+- **Method**: genetics → who is affected → principles → law → options → position and strongest objection.
 
 ::: notes
 If students remember one structure, it should be: who is affected (including relatives and future generations), which principles conflict, what the genetics really says, and what the law requires. The cases in the exercise are built to make them practise exactly this.

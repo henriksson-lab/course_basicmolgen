@@ -25,10 +25,11 @@ format:
 
 - Bacterial **mutants**: auxotrophs, resistance markers, replica plating; selection vs screening.
 - **Conjugation**: F^+^, Hfr and F′ strains.
-- **Interrupted mating**: a map in **minutes**, and why it is circular.
+- **Interrupted mating**: a map in **minutes**, worked through from raw counts to a circular map.
 - **Minutes vs base pairs**: the *E. coli* map against the genome sequence.
-- **Transduction** and **cotransduction**: fine mapping.
-- **Transformation**, and what each method is still used for.
+- **F′ partial diploids**: a dominance test in a haploid organism.
+- **Transduction** and **cotransduction**: fine mapping, and gene order from three factors.
+- **Transformation**: testing linkage with the product rule.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, the bacterial genetics chapter.
 
@@ -38,12 +39,23 @@ This is a short recap unit, so keep the pace up. Students have seen conjugation,
 
 ## Why bacteria are good for genetics {.smaller}
 
+:::: {.columns}
+::: {.column width="64%"}
 | Property | Why it helps |
 |---|---|
 | **Haploid**: one copy of each gene | every mutation shows its phenotype at once; no dominance to worry about |
 | **Fast**: a generation in ~20–30 min | many generations overnight |
 | **Huge numbers**: ~10^9^ cells per ml | events at 1 in 10^7^ can be found, **if you can select them** |
 | Grow on **defined media** | phenotypes are read as "grows / does not grow" |
+:::
+::: {.column width="36%"}
+![](img/ecoli-sem.jpg){width="100%"}
+
+[Photo: Eric Erbe and Christopher Pooley, USDA ARS, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:E_coli_at_10000x,_original.jpg){.photo-credit}
+
+*E. coli*, electron micrograph (×10 000, false colour). Each rod is about 1–2 µm long.
+:::
+::::
 
 **Notation.** Genes are three lower-case italic letters plus a capital: *lacZ*, *trpA*. A phenotype or marker is written with a superscript: *lac*^+^ (can use lactose), *lac*^−^ (cannot), *str*^r^ (streptomycin resistant), *str*^s^ (sensitive). A strain that needs a nutrient, such as Trp^−^, is an **auxotroph**; the wild type, which grows on minimal medium, is a **prototroph**.
 
@@ -53,11 +65,22 @@ Haploidy is the key difference from everything in Parts 1 and 2: a recessive mut
 
 ## Mutants: selection, screening and replica plating {.smaller}
 
+:::: {.columns}
+::: {.column width="68%"}
 - **Selection**: only the wanted cells grow. Minimal medium **without** threonine selects Thr^+^ cells; streptomycin selects *str*^r^ cells.
 - **Screening**: everyone grows, but you can see the wanted ones. On X-gal plates, *lac*^+^ colonies are blue and *lac*^−^ colonies white.
 - **Replica plating** (Lederbergs, 1952): press a velvet onto a master plate of colonies, then onto several test plates. A colony that grows on complete medium but not on minimal medium is an **auxotroph**.
 
 Replica plating also showed that resistance mutations (to phage T1, for example) **exist before** the selection: the same colony positions were resistant on every replica. Selection finds mutants; it does not cause them (Luria and Delbrück had shown the same with the fluctuation test, 1943).
+:::
+::: {.column width="32%"}
+![](img/replica-velvet.jpg){width="80%" fig-align="center"}
+
+[Photo: Pilarbini, CC BY-SA 4.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sterile_velvet_on_a_block.jpg){.photo-credit}
+
+A sterile velvet on a block, ready for replica plating.
+:::
+::::
 
 ::: notes
 These are the tools that make every mapping experiment possible. A bacterial cross always ends on a selective plate: we kill the donor and select recipients that gained a donor marker. Replica plating lets us then score unselected markers on many colonies at once. The historical point is worth one sentence, because students often hold the Lamarckian intuition that antibiotics "cause" resistance: Luria and Delbrück, and then the Lederbergs, showed that the resistant mutants were already there. This links back to the Mutation unit in Part 3.
@@ -109,6 +132,24 @@ Each marker first appears at its **time of entry**. Earlier entry = closer to th
 This is the classic experiment. The donor is streptomycin sensitive and the recipient resistant, so streptomycin removes the donors from every plate; the str marker must lie far from the origin, so that it is not itself transferred early. Read the plot: no thr+ recombinants before about 8 minutes, then a linear rise. Extrapolating the rise back to zero gives the time of entry. The map is simply the list of entry times. The numbers here are the simulated Hfr from the R exercise. The lower plateaus for later markers are a gradient of transfer: the longer the transfer must last, the more pairs have broken apart before the marker gets through. That gradient alone already gives the order, even without a blender.
 :::
 
+## Worked example: reading a time of entry
+
+Teaching data: *lac*^+^ recombinants (per 100 Hfr donors), on plates with streptomycin and lactose as the only sugar.
+
+| Minutes of mating | 10 | 15 | 20 | 25 | 30 |
+|---|---:|---:|---:|---:|---:|
+| *lac*^+^ recombinants | 0 | 0 | 8 | 18 | 28 |
+
+1. Find the **straight rise**: from 20 to 30 min it climbs by 10 every 5 min, a **slope of 2 per min**.
+2. **Extrapolate back to zero**: 8 recombinants at 20 min, so zero at 20 − 8/2 = **16 min**. That is the time of entry.
+3. Do the same for every marker, then **order** them by entry time. The **difference** between two entry times is their distance in minutes.
+
+Why not just read the first non-zero time point? Samples are taken every few minutes, so the first non-zero point (20 min) overestimates the entry time. The extrapolated line uses all the points.
+
+::: notes
+These numbers are invented to show the method; the rise in the plot on the previous slide is read the same way. Ask students to draw the five points on the board and draw the line. The slope itself is not the point: it depends on how many pairs mated and how efficiently recombinants form. What matters is where the line hits zero. In the exercise, B1 gives entry times directly and asks for the map; the R exercise fits a line to entry times against genome positions with lm, the same idea one level up.
+:::
+
 ## Hfr maps are circular {.smaller}
 
 ![](fig04-circular-map.svg){width="78%" fig-align="center"}
@@ -117,6 +158,30 @@ Each Hfr strain has F inserted at its own place and in its own orientation. Ever
 
 ::: notes
 Hfr A and B are teaching examples; the gene positions are the real ones from the genome sequence, converted to minutes. Ask the students: Hfr A transfers pyr, thr, lac, gal, trp; Hfr B transfers his, trp, gal, lac, thr. Can both be right on a straight chromosome? Only if the line is read in opposite directions. Add a third Hfr that starts in the str region and the orders wrap around: the only consistent arrangement is a circle. This was shown genetically in the late 1950s, years before Cairns saw the circular replicating chromosome by autoradiography (1963). The map unit, the minute, is still used in EcoCyc and in older papers.
+:::
+
+## Worked example: three Hfr strains, one circle
+
+Teaching data with made-up genes *p* to *w* (entry times in min):
+
+| Hfr | Order of entry, with time of entry |
+|---|---|
+| 1 | *p* 3, *q* 10, *r* 18, *s* 30 |
+| 2 | *u* 2, *t* 14, *s* 25, *r* 37 |
+| 3 | *v* 6, *w* 24, *p* 44, *q* 51 |
+
+**Step 1. Distances within each Hfr** (differences of entry times): *p*–*q* 7, *q*–*r* 8, *r*–*s* 12 (Hfr 1); *u*–*t* 12, *t*–*s* 11, *s*–*r* 12 (Hfr 2); *v*–*w* 18, *w*–*p* 20, *p*–*q* 7 (Hfr 3).
+
+**Step 2. Line them up on shared genes.** Hfr 2 ends with *s r*, which Hfr 1 has as *r s*: it transfers in the **opposite direction**. Read backwards it gives *r s t u*. Hfr 3 ends with *p q*, where Hfr 1 starts.
+
+**Step 3. Join:** *v w* **p q r s** *t u* … and after *u* comes *v* again: the only arrangement that fits all three is a **circle**:
+
+*p* – 7 – *q* – 8 – *r* – 12 – *s* – 11 – *t* – 12 – *u* – ? – *v* – 18 – *w* – 20 – back to *p*
+
+**Step 4. Close the circle.** The whole chromosome is 100 min, so *u*–*v* = 100 − 88 = **12 min**. **Check:** *r*–*s* is 12 min in both Hfr 1 and Hfr 2, and *p*–*q* is 7 in both Hfr 1 and Hfr 3.
+
+::: notes
+The genes and times are invented so that students practise the method without seeing the exercise answer; B1 in the exercise is the same problem with real E. coli markers and four strains. Walk the steps on the board. The direction of transfer comes out for free: Hfr 1 and 3 run one way round the circle, Hfr 2 the other, because their F factors are inserted in opposite orientations. The consistency check is important: the same interval measured with two strains must give the same number of minutes, otherwise something is wrong with the data or the order. Real maps were assembled exactly like this from dozens of Hfr strains in the 1950s and 60s.
 :::
 
 ## Minutes vs base pairs {.smaller}
@@ -138,6 +203,23 @@ The minute map was drawn by convention from *thr* = 0. Transfer speed is nearly 
 
 ::: notes
 The coordinates are from NCBI Gene for E. coli K-12 MG1655, checked for this unit. The last column is just the position as a fraction of the genome. The historical minute map (from timed transfers) agrees with these values to within about a minute for most genes, which tells us that DNA transfer runs at a roughly constant speed. Compare with the cM-to-bp relation in eukaryotes in Part 2: there, recombination hot and cold spots make the relation uneven; here the "distance" is time, which tracks DNA length much more faithfully. In the R exercise students regress simulated entry times on real Mb positions and get the slope, about 21 minutes per Mb, or 47 kb per minute.
+:::
+
+## F′ partial diploids: a dominance test in bacteria
+
+A haploid cell cannot tell you which allele is dominant. An **F′** can: it carries a piece of chromosome, so a recipient becomes **diploid for that piece** (a **merodiploid**), written F′ *x* / *x*.
+
+Example: an F′ carrying *gal*^+^ (galactose use) is transferred into a *gal*^−^ recipient.
+
+| Cell | Genotype | Grows on galactose? |
+|---|---|:-:|
+| recipient | *gal*^−^ | no |
+| merodiploid | F′ *gal*^+^ / *gal*^−^ | **yes** |
+
+One working copy is enough, so *gal*^+^ is **dominant** and the loss-of-function allele recessive, as for most enzymes. Not every pair works this way: the exercise has a case where the **mutant** phenotype is recessive for an unexpected reason.
+
+::: notes
+F-prime factors arise when an integrated F loops out imprecisely and takes neighbouring chromosomal genes with it. Transferred to a new cell, the F-prime replicates as a plasmid, so the cell keeps two copies of those genes, one on the F-prime and one on its chromosome. That gives bacteria what diploid organisms have naturally: a heterozygote. The logic is the same as a dominance test in peas: compare the phenotype of the heterozygote with the two homozygotes. Jacob and Monod used F-prime lac merodiploids to separate the lac repressor from the operator in cis/trans tests, which is the prokaryotic regulation unit in Part 6. The exercise asks about lac and str merodiploids; the str case is the surprise.
 :::
 
 ## Generalized transduction {.smaller}
@@ -167,6 +249,34 @@ Select one donor marker, then score a second, unselected one by replica plating.
 These qualitative rows match the real positions: leuA at 1.8 min, secA (azi) at 2.3 min, thrA at 0 min, lacZ at 7.8 min. The reversed scale confuses students every year: in eukaryotic mapping a high recombination frequency means far apart; here a high cotransduction frequency means close together, because we count how often two markers travel in the same fragment. For order, the reasoning is the same as the three-point cross in Part 2: the rarest class needs the most crossovers. A widely used approximation (Wu, 1966) relates cotransduction frequency C to distance d and fragment length L: C = (1 − d/L)^3. It is in the exercise as an optional extra.
 :::
 
+## Gene order from three factors, step by step {.smaller}
+
+Teaching data: P1 grown on an *a*^+^ *b*^+^ *c*^+^ donor; 200 *a*^+^ transductants selected and scored for *b* and *c*.
+
+:::: {.columns}
+::: {.column width="30%"}
+| *b* | *c* | Number |
+|:-:|:-:|---:|
+| + | + | 30 |
+| + | − | 50 |
+| − | + | **1** |
+| − | − | 119 |
+:::
+::: {.column width="70%"}
+**Step 1. Cotransduction** with the selected *a*: *a*–*b* = (30 + 50)/200 = **40%**; *a*–*c* = (30 + 1)/200 = **15.5%**. So *b* is closer to *a* than *c* is.
+
+**Step 2. Rarest class**: *b*^−^ *c*^+^, 1 of 200.
+
+**Step 3. Which order** makes that class need **four** crossovers? Only *a* – *b* – *c*: *b* lies between *a* and *c*.
+:::
+::::
+
+![](fig05-three-factor-order.svg){width="70%" fig-align="center"}
+
+::: notes
+The numbers are invented for teaching; B4 in the exercise uses real markers with the same logic. Step 1 gives distances from the selected marker: higher cotransduction means closer. It cannot by itself say whether b and c are on the same side of a. Step 2 picks out the rarest class, here a+ b− c+, only one of 200. Step 3 draws the possible orders, as in the figure: with a–b–c the donor fragment must swap in a+, then switch back to recipient DNA for b, then back again for c: four crossovers. With b–a–c the same class needs only a fragment that begins between b and a, two crossovers, and should be about as common as a+ c+ with b+, which it is not. The reasoning is exactly the three-point cross from Part 2: the rarest class is the double crossover, and the gene that "switches" in it is the middle one.
+:::
+
 ## Transformation {.smaller}
 
 - **Natural competence**: *Streptococcus pneumoniae*, *Bacillus subtilis*, *Haemophilus influenzae* take up DNA from the medium. Griffith's mice (1928) and Avery, MacLeod and McCarty (1944) used it to show that **DNA** is the genetic material (DNA recap unit).
@@ -177,6 +287,23 @@ Transformation and transduction are **gene transfer, not sex**: only a fragment 
 
 ::: notes
 Transformation was the first of the three to be discovered and it carried the historical weight of proving that genes are DNA, which students met in the DNA recap unit in Part 3. For mapping, it works like transduction with a smaller and more variable fragment size. The test for linkage in transformation is a comparison with the product of the single frequencies: if a+ alone is transformed in 1 in 1000 cells and b+ alone in 1 in 1000, two independent events together happen in about 1 in a million. If a+ b+ double transformants are much more common than that, the genes are on the same fragment.
+:::
+
+## Worked example: linked or not?
+
+Teaching data: *B. subtilis* *d*^−^ *e*^−^ *f*^−^ cells transformed with DNA from a *d*^+^ *e*^+^ *f*^+^ strain. Fractions of cells transformed:
+
+| Transformed for | *d*^+^ | *e*^+^ | *f*^+^ | *d*^+^ *e*^+^ | *d*^+^ *f*^+^ |
+|---|---:|---:|---:|---:|---:|
+| observed | 1 × 10^−3^ | 2 × 10^−3^ | 1 × 10^−3^ | 6 × 10^−4^ | 1 × 10^−6^ |
+
+**The test.** If two genes enter on **separate** fragments, a double transformant needs two independent events: expected = product of the single frequencies.
+
+- *d* and *e*: expected 1 × 10^−3^ × 2 × 10^−3^ = 2 × 10^−6^. Observed 6 × 10^−4^, **300 times more**: one fragment carries both: **linked**.
+- *d* and *f*: expected 1 × 10^−3^ × 1 × 10^−3^ = 1 × 10^−6^. Observed 1 × 10^−6^: just chance: **not linked** (by transformation; they may still be on the same chromosome, far apart).
+
+::: notes
+Invented numbers, chosen to give one clear case of each. The product rule from Part 1 does the work: independent events multiply. Linked markers travel together on one piece of DNA, so their double transformants are nearly as common as the rarer single. Note what "not linked" means here: further apart than one transforming fragment, a few tens of kb at most, which on a 4 Mb chromosome is almost everything. A second test, if in doubt, is to dilute the DNA: double transformants from one fragment drop in proportion to the DNA concentration, those from two fragments drop with its square. B6 in the exercise is the same test with other numbers.
 :::
 
 ## Which mutation breaks what {.smaller}
@@ -199,6 +326,21 @@ Loss of function in a biosynthetic enzyme → auxotroph. A change in a drug or p
 This is the genetics lens the recap is meant to add. Most markers fall into two groups. Biosynthetic genes give auxotrophs when broken: the cell needs the end product in the medium. Resistance markers are changes in a target: an altered ribosomal protein that no longer binds streptomycin, or a missing outer membrane receptor that phage T1 uses to attach. Note that str-r is recessive to str-s in a merodiploid, because one sensitive ribosome population is enough to poison translation; that is a nice F′ dominance test. You will look up several of these genes in NCBI Gene in the exercise, with their positions in the genome.
 :::
 
+## Check yourself: common mistakes
+
+| Mistake | Better |
+|---|---|
+| "High cotransduction means far apart, like recombination frequency." | The scale is **reversed**: high cotransduction = **close**. |
+| "After Hfr × F^−^ the recipient becomes Hfr." | The end of F almost never arrives: the recipient **stays F^−^**. |
+| "The marker that enters first is at 0 min on the map." | Entry times are measured from **that Hfr's origin**. The map's 0 is *thr*, by convention. |
+| "Streptomycin selects the recombinants." | It kills the **donors** (counterselection). The missing nutrient selects the recombinants. |
+| "Antibiotics cause resistance mutations." | Resistant mutants **exist before** the drug (Luria–Delbrück, replica plating); the drug selects them. |
+| "Two markers that are never cotransduced are unlinked." | They are just more than one phage head (~2 min) apart. |
+
+::: notes
+Run it as a quiz. The first row is the one that costs most exam points. The third row matters for B1 in the exercise: each Hfr has its own origin, and you convert to the map's coordinates only at the end. The fourth row checks that students understand what each ingredient of the plate does, which is B2 in the exercise.
+:::
+
 ## Summary {.smaller}
 
 | Concept | Key fact |
@@ -208,10 +350,10 @@ This is the genetics lens the recap is meant to add. Most markers fall into two 
 | F^+^ × F^−^ | only F transfers; recipient becomes F^+^ |
 | Hfr × F^−^ | chromosome transfers from *oriT* in a fixed order; recipient stays F^−^ |
 | F′ | F with a piece of chromosome; gives a **partial diploid** for dominance tests |
-| Interrupted mating | **time of entry** gives order and distance in **minutes** |
-| Circular map | overlapping Hfr orders; 100 min ≈ 4.64 Mb, 1 min ≈ 46 kb |
-| Transduction | phage carries ~2 min; **cotransduction**: higher = closer |
-| Transformation | naked DNA; cotransformation of close genes |
+| Interrupted mating | **time of entry** (extrapolate the rise to zero) gives order and distance in **minutes** |
+| Circular map | overlapping Hfr orders, some read backwards; 100 min ≈ 4.64 Mb, 1 min ≈ 46 kb |
+| Transduction | phage carries ~2 min; **cotransduction**: higher = closer; rarest class (4 crossovers) gives the order |
+| Transformation | naked DNA; linked if doubles ≫ product of the singles |
 | All three | need homologous recombination (*recA*): two crossovers |
 
 ::: notes

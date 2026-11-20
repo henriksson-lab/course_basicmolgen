@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -159,11 +159,11 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p>Hardy–Weinberg keeps the allele frequency <em>p</em> constant. Real allele frequencies <strong>change</strong>. This lecture is about the four forces that change them:</p>
 <ul>
-<li><strong>Genetic drift</strong>: chance, strongest in small populations. The Wright–Fisher model; fixation and loss; effective population size; <strong>founder effects</strong> and the <strong>Finnish disease heritage</strong>.</li>
-<li><strong>Selection</strong>: genotypes differ in fitness. The Δ<em>p</em> recursion; dominance and the speed of selection.</li>
-<li><strong>Mutation</strong> and <strong>mutation–selection balance</strong>: why harmful alleles never disappear.</li>
+<li><strong>Genetic drift</strong>: chance, strongest in small populations. The Wright–Fisher model in numbers; fixation and loss; effective population size; <strong>founder effects</strong> and the <strong>Finnish disease heritage</strong>.</li>
+<li><strong>Selection</strong>: genotypes differ in fitness. The selection recursion, worked one generation at a time; dominance and the speed of selection.</li>
+<li><strong>Mutation</strong> and <strong>mutation–selection balance</strong>: why harmful alleles never disappear, and where the formulas come from.</li>
 <li><strong>Migration</strong>: gene flow makes populations alike.</li>
-<li><strong>Heterozygote advantage</strong>: sickle-cell haemoglobin and malaria.</li>
+<li><strong>Heterozygote advantage</strong>: sickle-cell haemoglobin and malaria, with the equilibrium worked out by hand.</li>
 </ul>
 <p>This is syllabus outcome 2: <em>how allele frequencies in populations vary with different factors</em>. Book: Hartwell, the population genetics chapter.</p>
 <aside class="notes">
@@ -261,6 +261,28 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="drift-in-numbers-one-generation" class="slide level2">
+<h2>Drift in numbers: one generation</h2>
+
+<img data-src="fig06-drift-binomial.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:62.0%"><ul>
+<li><strong>2<em>N</em> = 10</strong>: SD of the change = √(0.5 × 0.5/10) = <strong>0.16</strong>. <em>A</em> is lost at once if all 10 draws are <em>a</em>: 0.5¹⁰ ≈ <strong>0.001</strong> (and fixed with the same probability).</li>
+<li><strong>2<em>N</em> = 100</strong>: SD = √(0.5 × 0.5/100) = <strong>0.05</strong>. The new <em>p</em> almost always lies between 0.4 and 0.6.</li>
+<li>A rarer allele is lost more easily: with <em>p</em> = 0.3 and 2<em>N</em> = 10, P(lost in one generation) = 0.7¹⁰ = <strong>0.028</strong>.</li>
+</ul>
+<aside class="notes">
+<p>These are the numbers behind the Wright–Fisher picture. The distribution of the next p is binomial, divided by 2N. Its centre stays at the current p, which is why drift has no direction; its width shrinks with the square root of 2N, so ten times as many gene copies gives about three times less drift per generation. Loss in a single step is the probability that every one of the 2N draws is the other allele, q to the power 2N. Exercise B1 asks the same question for an even smaller population. Over many generations the small steps add up: that is the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="what-drift-does" class="slide level2 smaller">
 <h2>What drift does</h2>
 
@@ -271,6 +293,56 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>Left: with 40 gene copies, after 100 generations most of the 20 populations have fixed or lost A. Right: with 1000 copies, they have barely spread. Fixation probability equals p0 because drift has no direction: the average of p over many populations stays at p0, and at the end every population is at 0 or 1, so the fraction at 1 must be p0. The heterozygosity formula says how fast variation disappears; time to lose half of it is about 1.4 times 2N generations. Note the divergence: populations that start the same end up different by chance alone. This is part of why human populations differ in allele frequencies, as seen in 1000 Genomes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="drift-over-many-generations-worked-numbers" class="slide level2">
+<h2>Drift over many generations: worked numbers</h2>
+<p><strong>Fixation.</strong> A neutral allele at frequency <em>p</em>₀ is eventually fixed with probability <em>p</em>₀.</p>
+<ul>
+<li>Why: drift has no direction, so the <strong>average</strong> <em>p</em> over many populations stays <em>p</em>₀. At the end every population sits at 0 or 1, so the fraction at 1 must be <em>p</em>₀.</li>
+<li>A new mutation in <em>N</em> = 100 people: <em>p</em>₀ = 1/200, so it is lost with probability <strong>0.995</strong>.</li>
+</ul>
+<p><strong>Heterozygosity.</strong> <em>H</em><sub><em>t</em></sub> = <em>H</em>₀ (1 − 1/2<em>N</em>)<sup><em>t</em></sup>. Example: <em>N</em> = 100, <em>H</em>₀ = 0.5:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>generation <em>t</em></th>
+<th>0</th>
+<th>50</th>
+<th>100</th>
+<th>200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>H</em><sub><em>t</em></sub> = 0.5 × 0.995<sup><em>t</em></sup></td>
+<td>0.50</td>
+<td>0.39</td>
+<td>0.30</td>
+<td>0.18</td>
+</tr>
+</tbody>
+</table>
+<p>Half of the variation is gone after about 2<em>N</em> ln 2 = 200 × 0.69 ≈ <strong>139 generations</strong>: drift works on a time scale proportional to <em>N</em>.</p>
+<aside class="notes">
+<p>Two formulas, two arguments. The fixation argument is a neat piece of reasoning worth spelling out once: it needs no algebra, only the fact that the expected change is zero. Heterozygosity falls by a factor 1 minus 1 over 2N each generation because that is the probability that two gene copies drawn in the next generation are copies of the same parental copy, and then they are identical. The half-life follows from 1 minus x being close to e to the minus x. The general point is that drift works on a time scale proportional to N: double the population size and everything takes twice as long. Exercise B2 and B4 practise these with other numbers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -416,6 +488,120 @@ p' = \frac{p^2 w_{AA} + pq\, w_{Aa}}{\bar w}, \qquad \bar w = p^2 w_{AA} + 2pq\,
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-recursion-one-generation-by-hand" class="slide level2">
+<h2>The recursion, one generation by hand</h2>
+<p><em>p</em> = 0.1, <em>s</em> = 0.2, <em>h</em> = ½ (additive): fitnesses 1.2, 1.1, 1.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>AA</em></th>
+<th><em>Aa</em></th>
+<th><em>aa</em></th>
+<th>sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. frequency at birth (HWE)</td>
+<td>0.01</td>
+<td>0.18</td>
+<td>0.81</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2. fitness <em>w</em></td>
+<td>1.2</td>
+<td>1.1</td>
+<td>1.0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3. frequency × <em>w</em></td>
+<td>0.012</td>
+<td>0.198</td>
+<td>0.810</td>
+<td><strong><em>w̄</em> = 1.020</strong></td>
+</tr>
+<tr class="even">
+<td>4. <em>A</em> alleles among survivors</td>
+<td>0.012</td>
+<td>½ × 0.198 = 0.099</td>
+<td>0</td>
+<td>0.111</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" type="1">
+<li>Divide by <em>w̄</em>: <em>p</em>′ = 0.111 / 1.020 = <strong>0.1088</strong>. So Δ<em>p</em> = +0.0088 in one generation.</li>
+</ol>
+<p>Next generation: start again at step 1 with <em>p</em> = 0.1088 (→ 0.1183 → 0.1285 …).</p>
+<aside class="notes">
+<p>This is the formula of the previous slide, written as a table. Students make two errors: they forget to divide by the mean fitness, which would make frequencies add up to more than one, and they count 2pq instead of pq of A alleles from heterozygotes; step 4 makes the half explicit. The new genotypes at birth are again in Hardy–Weinberg proportions with the new p, because mating is random; that is why step 1 can always start from p squared, 2pq, q squared. Exercise B5 does two generations with fitnesses below 1; the method is the same, only relative fitness matters.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-fast-does-p-change-δp-is-proportional-to-pq" class="slide level2">
+<h2>How fast does <em>p</em> change? Δ<em>p</em> is proportional to <em>pq</em></h2>
+<p>The table simplifies to one line:</p>
+<p><span class="math display">
+\Delta p = p' - p = \frac{pq\,\big[\,p\,(w_{AA} - w_{Aa}) + q\,(w_{Aa} - w_{aa})\,\big]}{\bar w}.
+</span></p>
+<p>Check with the example: 0.1 × 0.9 × [0.1 × 0.1 + 0.9 × 0.1] / 1.02 = 0.009/1.02 = <strong>0.0088</strong> ✓.</p>
+<p>Same additive selection (<em>s</em> = 0.2) at different starting <em>p</em>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><em>p</em></th>
+<th>0.01</th>
+<th>0.1</th>
+<th>0.5</th>
+<th>0.9</th>
+<th>0.99</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Δ<em>p</em> per generation</td>
+<td>0.0010</td>
+<td>0.0088</td>
+<td>0.0227</td>
+<td>0.0076</td>
+<td>0.0008</td>
+</tr>
+</tbody>
+</table>
+<p>Selection is <strong>fastest at intermediate frequencies</strong> and <strong>slow near 0 and 1</strong>, where there is little variation (<em>pq</em> small) for it to act on.</p>
+<aside class="notes">
+<p>The pq factor is the variation in the population: no variation, no response to selection. The bracket says which genotype differences matter. When A is rare, p is small, so the bracket is dominated by the heterozygote–aa difference: a dominant favoured allele, with Aa as fit as AA, rises fast while rare. When A is common, q is small, and the AA–Aa difference matters: if A is dominant that difference is zero, and selection stalls. That is the next figure. Students do not need to derive this formula; they should be able to use the table method and understand the pq message.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="dominance-and-the-speed-of-selection" class="slide level2 smaller">
 <h2>Dominance and the speed of selection</h2>
 
@@ -426,6 +612,61 @@ p' = \frac{p^2 w_{AA} + pq\, w_{Aa}}{\bar w}, \qquad \bar w = p^2 w_{AA} + 2pq\,
 </ul>
 <aside class="notes">
 <p>These are deterministic curves: no drift. Same s, three dominance values. The additive allele follows a symmetric S curve. The dominant one wins the race at first and then crawls. The recessive one, starting at 1 percent, hardly changes in 800 generations: with q equals 0.01, only 1 in 10 000 people is a homozygote and visible to selection. The flip side: selection against a harmful recessive allele is also very slow once the allele is rare. Even complete removal of affected people reduces q from 0.01 to 0.005 only after about 100 generations, about 2500 years.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="selection-against-a-recessive-lethal-worked" class="slide level2">
+<h2>Selection against a recessive lethal, worked</h2>
+<p>Suppose every <em>aa</em> dies before reproducing (<em>s</em> = 1) and <em>A</em> is dominant. Among the survivors only <em>AA</em> (<em>p</em>²) and <em>Aa</em> (2<em>pq</em>) remain:</p>
+<p><span class="math display">
+q' = \frac{pq}{p^2 + 2pq} = \frac{q}{p + 2q} = \frac{q}{1+q}, \qquad\text{and after } t \text{ generations}\quad q_t = \frac{q_0}{1 + t\,q_0}.
+</span></p>
+<p>Start at <em>q</em>₀ = 0.01 (incidence 1 in 10 000):</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>generations <em>t</em></th>
+<th>0</th>
+<th>1</th>
+<th>10</th>
+<th>50</th>
+<th>100</th>
+<th>200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>q</em><sub><em>t</em></sub></td>
+<td>0.0100</td>
+<td>0.0099</td>
+<td>0.0091</td>
+<td>0.0067</td>
+<td><strong>0.0050</strong></td>
+<td>0.0033</td>
+</tr>
+</tbody>
+</table>
+<p>Halving <em>q</em> takes 1/<em>q</em>₀ = <strong>100 generations</strong>, about 2500 years, even though every affected person is removed. The copies survive in healthy carriers.</p>
+<aside class="notes">
+<p>This is the extreme case of the recessive curve on the previous figure, and it can be done exactly. The survivors’ a alleles all sit in heterozygotes: pq out of p squared plus 2pq. Divide top and bottom by p and use p plus q equals one to get q over 1 plus q. Iterating gives the neat closed form, which students can check on a calculator. This is the population-genetic reason eugenic sterilisation programmes could never have achieved their stated aims, a point we return to in the ethics module: most copies of a recessive allele are in carriers, invisible to selection. Mutation also adds new copies, which is the next slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -485,6 +726,60 @@ p' = \frac{p^2 w_{AA} + pq\, w_{Aa}}{\bar w}, \qquad \bar w = p^2 w_{AA} + 2pq\,
           display:block!important;
       }</style></aside>
 </section>
+<section id="where-the-balance-formulas-come-from" class="slide level2">
+<h2>Where the balance formulas come from</h2>
+<p>At equilibrium, <strong>copies gained</strong> by mutation = <strong>copies lost</strong> by selection, per generation.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>recessive harmful allele</th>
+<th>dominant harmful allele</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>gained by mutation (<em>A</em> → <em>a</em>)</td>
+<td>≈ <em>μ</em></td>
+<td>≈ <em>μ</em></td>
+</tr>
+<tr class="even">
+<td>who is selected against</td>
+<td><em>aa</em>, frequency <em>q</em>²</td>
+<td><em>Aa</em>, frequency ≈ 2<em>q</em>, half its alleles are <em>a</em></td>
+</tr>
+<tr class="odd">
+<td>lost by selection</td>
+<td>≈ <em>s q</em>²</td>
+<td>≈ <em>s q</em></td>
+</tr>
+<tr class="even">
+<td>balance</td>
+<td><em>μ</em> = <em>s q</em>² → <strong><em>q̂</em> = √(<em>μ</em>/<em>s</em>)</strong></td>
+<td><em>μ</em> = <em>s q</em> → <strong><em>q̂</em> = <em>μ</em>/<em>s</em></strong></td>
+</tr>
+</tbody>
+</table>
+<p>Worked example, a recessive allele with <em>s</em> = 0.25 and <em>μ</em> = 10⁻⁶: <em>q̂</em> = √(10⁻⁶ / 0.25) = √(4 × 10⁻⁶) = <strong>0.002</strong>; incidence <em>q̂</em>² = 4 × 10⁻⁶; carriers ≈ 2<em>q̂</em> = 1 in 250.</p>
+<aside class="notes">
+<p>The derivation uses approximations valid for rare alleles: p is close to 1, so the rate at which A alleles mutate to a is mu times p, about mu; and the dominant case treats almost all affected people as heterozygotes. The idea of a balance of gains and losses is the important part; it is the same logic as a bath with the tap open and the plug out. Note the square root in the recessive case: a smaller s raises the equilibrium frequency, but only as the square root. Exercise B6 uses this in reverse, to ask what mutation rate would explain cystic fibrosis, and finds that mutation–selection balance cannot.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="migration-gene-flow" class="slide level2">
 <h2>Migration (gene flow)</h2>
 <p>If a fraction <em>m</em> of each generation are migrants from a population with allele frequency <em>p</em><sub>M</sub>:</p>
@@ -510,6 +805,30 @@ p' = (1-m)\,p + m\,p_M, \qquad \Delta p = m\,(p_M - p).
           display:block!important;
       }</style></aside>
 </section>
+<section id="two-selective-forces-on-one-allele" class="slide level2">
+<h2>Two selective forces on one allele</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/sickle-smear.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Sickle_Cell_Anemia_(5610746554).jpg" class="photo-credit">Photo: Ed Uthman, CC BY 2.0, via Wikimedia Commons</a></p>
+<p><strong>Against HbS</strong>: blood smear from a person with sickle-cell disease (<em>HbS/HbS</em>). Sickled cells block small vessels and are destroyed early.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/falciparum-smear.jpg" class="quarto-figure quarto-figure-center" style="width:75.0%"> <a href="https://commons.wikimedia.org/wiki/File:Plasmodium_falciparum_(malaria)_parasite_in_blood.jpg" class="photo-credit">Photo: MichaelZahniser, public domain, via Wikimedia Commons</a></p>
+<p><strong>For HbS</strong>: ring forms of <em>Plasmodium falciparum</em> inside red blood cells. <em>HbA/HbS</em> carriers are protected against severe malaria.</p>
+</div></div>
+<aside class="notes">
+<p>Two microscope images make the two sides of the balance concrete. Left: a blood smear in sickle-cell disease, with elongated, sickled red cells among normal-looking ones. This is the cost of the HbS allele in homozygotes. Right: the malaria parasite Plasmodium falciparum, the small rings inside red cells. Carriers of one HbS allele are much less likely to develop severe malaria; the mechanisms are still being studied, and include faster removal of infected cells. Neither image tells the whole story alone: the fitness of each genotype depends on both forces, which is the next slide. The HbS smear connects to the sickle-cell example from Part 1.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="heterozygote-advantage-sickle-cell-and-malaria" class="slide level2 smaller">
 <h2>Heterozygote advantage: sickle cell and malaria</h2>
 
@@ -520,6 +839,78 @@ p' = (1-m)\,p + m\,p_M, \qquad \Delta p = m\,(p_M - p).
 </ul>
 <aside class="notes">
 <p>This brings together the HBB thread of the course. In Part 1 HbS was a single missense change, glutamate to valine at position 6. Here it is a classic case of balancing selection, first proposed by Allison in the 1950s from the overlap of high HbS frequencies with malaria. The fitness values are illustrative, chosen so that the equilibrium matches the observed frequency; they are the same as in the demo preset. The right panel is the change in q per generation: positive below the equilibrium, negative above, so q returns to 0.14 from either side. Where malaria has gone, as among people of African descent in the Americas, the heterozygote advantage disappears and selection slowly lowers HbS. Other examples: thalassaemias and G6PD deficiency, also linked to malaria.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="heterozygote-advantage-step-by-step" class="slide level2">
+<h2>Heterozygote advantage, step by step</h2>
+<p><strong>1. Rescale</strong> so the heterozygote has fitness 1 (divide by 1.16):</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>AA</em></th>
+<th><em>AS</em></th>
+<th><em>SS</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>fitness</td>
+<td>1/1.16 = 0.862</td>
+<td>1</td>
+<td>0.20/1.16 = 0.172</td>
+</tr>
+<tr class="even">
+<td>written as</td>
+<td>1 − <em>s</em>₁, <em>s</em>₁ = <strong>0.138</strong></td>
+<td>1</td>
+<td>1 − <em>s</em>₂, <em>s</em>₂ = <strong>0.828</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Equilibrium</strong>: <span class="math inline">\hat q = \dfrac{s_1}{s_1 + s_2} = \dfrac{0.138}{0.138 + 0.828} = \mathbf{0.143}</span> (the same as the formula on the previous slide).</p>
+<p><strong>3. Check that it is stable</strong>, with the table method of the recursion:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><em>q</em>(S) now</th>
+<th>0.02</th>
+<th>0.05</th>
+<th>0.14</th>
+<th>0.30</th>
+<th>0.50</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Δ<em>q</em> per generation</td>
+<td>+0.0027</td>
+<td>+0.0049</td>
+<td>+0.0004</td>
+<td>−0.037</td>
+<td>−0.114</td>
+</tr>
+</tbody>
+</table>
+<p>Below <em>q̂</em> the allele rises, above it falls: a <strong>stable</strong> equilibrium.</p>
+<aside class="notes">
+<p>The rescaled form is the one in most textbooks and is easiest by hand: each homozygote has a selection coefficient against it, and the equilibrium frequency of S is the cost to AA divided by the sum of the two costs. Intuition: the stronger the selection against SS, the lower the equilibrium; the stronger the selection against AA (that is, the more malaria), the higher. The check uses the same recursion as before, with the allele of interest now being S. Note how slowly q approaches the equilibrium from below and how fast it falls from above, because selection against SS acts on q squared. Exercise B7 does the same for thalassaemia with other numbers.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -555,15 +946,73 @@ p' = (1-m)\,p + m\,p_M, \qquad \Delta p = m\,(p_M - p).
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“Drift pushes rare alleles towards loss”</td>
+<td>drift has <strong>no direction</strong>: the expected change is 0. Rare alleles are lost <strong>more often</strong> only because they start closer to 0</td>
+</tr>
+<tr class="even">
+<td>“The fixation probability of a neutral allele depends on <em>N</em>”</td>
+<td>it is <em>p</em>₀. <em>N</em> sets how <strong>long</strong> it takes, and <em>p</em>₀ = 1/2<em>N</em> for a new mutation</td>
+</tr>
+<tr class="odd">
+<td><em>N</em>ₑ as the arithmetic mean of sizes</td>
+<td><strong>harmonic</strong> mean: one small generation dominates</td>
+</tr>
+<tr class="even">
+<td>Forgetting to divide by <em>w̄</em></td>
+<td>frequencies after selection must add up to 1</td>
+</tr>
+<tr class="odd">
+<td>Counting 2<em>pq</em> <em>A</em> alleles from heterozygotes</td>
+<td>each heterozygote carries <strong>one</strong> <em>A</em>: the term is <em>pq w</em><sub>Aa</sub></td>
+</tr>
+<tr class="even">
+<td>“Selection removes a harmful recessive allele quickly”</td>
+<td>once rare, it hides in carriers: halving <em>q</em> = 0.01 takes 100 generations even for a lethal</td>
+</tr>
+<tr class="odd">
+<td>“A beneficial mutation always spreads”</td>
+<td>most are lost by drift while rare: P(fix) ≈ 2<em>s</em><sub>het</sub></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Use as a check-yourself slide: hide the right column and ask for the correction. The first two are conceptual and come up in every exam; the middle three are the arithmetic slips in the recursion; the last two connect selection and drift. A good follow-up question: what is the probability that a new beneficial mutation with heterozygote advantage 0.01 is lost? About 98 percent.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
 <li><strong>Drift</strong>: random sampling of 2<em>N</em> gene copies each generation. Alleles are fixed or lost; P(fixation) = <em>p</em>₀; heterozygosity decays by (1 − 1/2<em>N</em>) per generation. Use <em>N</em>ₑ, which is usually much smaller than the census size.</li>
 <li><strong>Founder effects</strong> and bottlenecks make some rare alleles common (Finnish disease heritage, Salla disease) and others rare (CF in Finland).</li>
-<li><strong>Selection</strong>: <em>p</em>′ = (<em>p</em>²<em>w</em><sub>AA</sub> + <em>pq w</em><sub>Aa</sub>)/<em>w̄</em>. Selection on rare recessive alleles is slow.</li>
-<li><strong>Mutation–selection balance</strong>: <em>q̂</em> ≈ √(<em>μ</em>/<em>s</em>) recessive, <em>μ</em>/<em>s</em> dominant.</li>
+<li><strong>Selection</strong>: <em>p</em>′ = (<em>p</em>²<em>w</em><sub>AA</sub> + <em>pq w</em><sub>Aa</sub>)/<em>w̄</em>, done as a table generation by generation. Δ<em>p</em> ∝ <em>pq</em>: fast at intermediate <em>p</em>, slow near 0 and 1. A recessive lethal falls as <em>q</em><sub><em>t</em></sub> = <em>q</em>₀/(1 + <em>tq</em>₀).</li>
+<li><strong>Mutation–selection balance</strong> (gain = loss): <em>q̂</em> ≈ √(<em>μ</em>/<em>s</em>) recessive, <em>μ</em>/<em>s</em> dominant.</li>
 <li><strong>Migration</strong>: Δ<em>p</em> = <em>m</em>(<em>p</em><sub>M</sub> − <em>p</em>); makes populations similar.</li>
-<li><strong>Heterozygote advantage</strong> keeps HbS at a stable <em>q̂</em> where malaria is common.</li>
+<li><strong>Heterozygote advantage</strong> keeps HbS at a stable <em>q̂</em> = <em>s</em>₁/(<em>s</em>₁ + <em>s</em>₂) where malaria is common.</li>
 </ul>
 <aside class="notes">
 <p>The exam-level skills: apply the selection recursion for one or two generations by hand; compute an equilibrium for heterozygote advantage; compute Ne for a sex ratio; explain founder effects with an example; state the fixation probability of a neutral allele.</p>

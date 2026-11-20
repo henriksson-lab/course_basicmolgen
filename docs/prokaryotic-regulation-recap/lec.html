@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -143,15 +143,16 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p><strong>Recap from 5MO103.</strong> You have met the lac operon in <em>Microbiology and basic molecular biology</em>: a repressor, an operator, three genes, and lactose as the switch. Today we look at it <strong>as geneticists</strong>. Jacob and Monod worked out the model in 1961 from mutants, before anyone had purified the repressor or sequenced the operator.</p>
 <ul>
-<li>The <strong>mutant classes</strong>: constitutive (<em>I</em><sup>−</sup>, <em>O</em><sup>c</sup>) and uninducible (<em>I</em><sup>s</sup>).</li>
+<li>The <strong>mutant classes</strong>: constitutive (<em>I</em><sup>−</sup>, <em>O</em><sup>c</sup>) and uninducible (<em>I</em><sup>s</sup>, <em>P</em><sup>−</sup>).</li>
 <li><strong>Merodiploids</strong> (partial diploids made with an F′ plasmid) to test <strong>dominance</strong>.</li>
 <li><strong>Cis vs trans</strong>: a mutation that acts in trans changes a <strong>diffusible product</strong> (a protein); one that acts only in cis changes a <strong>site on the DNA</strong>.</li>
-<li>Complementation between <em>lacZ</em><sup>−</sup> and <em>lacY</em><sup>−</sup>.</li>
+<li>A <strong>three-step recipe</strong> for predicting any merodiploid, with worked examples.</li>
+<li>Complementation between <em>lacZ</em><sup>−</sup> and <em>lacY</em><sup>−</sup>, and the <strong>polarity</strong> trap.</li>
 <li>Briefly: <strong>attenuation</strong> of the <em>trp</em> operon.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the chapter on gene regulation in prokaryotes.</p>
 <aside class="notes">
-<p>This is a recap unit, so keep it light on mechanism and heavy on reasoning. Students know the cartoon. What is new is the logic: how do you deduce from phenotypes alone that lacI makes a diffusible protein while lacO is a stretch of DNA? The tools are the same ones they used in Part 1 and Part 3: dominance (Extensions to Mendel), and the complementation test (Mutation unit). The F′ plasmid comes from the Bacterial genetics recap in Part 5. We simplify throughout: no CAP and cAMP, no leaky basal expression, and the inducer is IPTG, which works without permease or beta-galactosidase.</p>
+<p>This is a recap unit, so keep it light on mechanism and heavy on reasoning. Students know the cartoon. What is new is the logic: how do you deduce from phenotypes alone that lacI makes a diffusible protein while lacO is a stretch of DNA? The tools are the same ones they used in Part 1 and Part 3: dominance (Extensions to Mendel), and the complementation test (Mutation unit). The F′ plasmid comes from the Bacterial genetics recap in Part 5. We simplify throughout: no CAP and cAMP, no leaky basal expression, and the inducer is IPTG, which works without permease or beta-galactosidase. The middle of the lecture is a set of worked merodiploids: this is the core skill of the exercise, so take the time to do them with the class.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -188,7 +189,9 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="jacob-monod-hunting-for-regulatory-mutants" class="slide level2 smaller">
 <h2>Jacob &amp; Monod: hunting for regulatory mutants</h2>
-<p>Screen <em>E. coli</em> on indicator plates (e.g.&nbsp;X-gal, which turns blue when β-galactosidase cuts it), with and without inducer. Two odd kinds of mutants stood out:</p>
+<div class="columns">
+<div class="column" style="width:64%;">
+<p>Screen <em>E. coli</em> on <strong>indicator plates</strong>. X-gal is colourless, but β-galactosidase cuts it into a blue dye: colonies that make the enzyme turn <strong>blue</strong>. Plate with and without inducer, and look for colonies that behave oddly.</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -206,12 +209,12 @@ Basic and molecular genetics (5MO104)
 <tr class="odd">
 <td><strong>Constitutive</strong></td>
 <td>enzymes made <strong>with or without</strong> inducer</td>
-<td><em>lacI</em><sup>−</sup> (no working repressor); <em>lacO</em><sup>c</sup> (operator that repressor cannot bind)</td>
+<td><em>lacI</em><sup>−</sup>, <em>lacO</em><sup>c</sup></td>
 </tr>
 <tr class="even">
 <td><strong>Uninducible</strong></td>
 <td>enzymes <strong>never</strong> made, although <em>lacZ</em> and <em>lacY</em> are intact</td>
-<td><em>lacI</em><sup>s</sup> (“super-repressor”: cannot bind inducer)</td>
+<td><em>lacI</em><sup>s</sup> (“super-repressor”), promoter <em>P</em><sup>−</sup></td>
 </tr>
 <tr class="odd">
 <td>Structural</td>
@@ -220,9 +223,17 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
-<p>Both <em>lacI</em><sup>−</sup> and <em>lacO</em><sup>c</sup> give the same phenotype in a haploid cell. <strong>How can you tell them apart?</strong> You need a second copy of the operon in the same cell.</p>
+</div><div class="column" style="width:36%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/xgal-plate.jpg" class="quarto-figure quarto-figure-center" style="width:92.0%"></p>
+</figure>
+</div>
+<p><a href="https://commons.wikimedia.org/wiki/File:Blue_White_Screen.jpg" class="photo-credit">Photo: Roland Deschain, public domain, via Wikimedia Commons</a></p>
+</div></div>
+<p><em>lacI</em><sup>−</sup> and <em>lacO</em><sup>c</sup> give the <strong>same</strong> phenotype in a haploid cell. So do <em>lacI</em><sup>s</sup> and <em>P</em><sup>−</sup>. <strong>How can you tell them apart?</strong> You need a second copy of the operon in the same cell.</p>
 <aside class="notes">
-<p>The genetic approach: find mutants with an interesting phenotype first, then ask what kind of thing is broken. Constitutive mutants were the clue that something actively keeps the genes off. Note that in a haploid, I minus and O c look identical: both are constitutive. Mapping showed them at slightly different positions, next to each other, which is not enough to say what they are. The decisive experiment is dominance in a partial diploid. The super-repressor I s was found a few years later (1964); it is an uninducible mutant that maps in lacI, not in lacZ or lacY.</p>
+<p>The genetic approach: find mutants with an interesting phenotype first, then ask what kind of thing is broken. The photo is a modern blue-white plate from a cloning experiment, which uses the same lacZ and X-gal; blue colonies make beta-galactosidase. Constitutive mutants were the clue that something actively keeps the genes off. In a haploid, I minus and O c look identical: both are constitutive. Mapping showed them at slightly different positions, next to each other, which is not enough to say what they are. The decisive experiment is dominance in a partial diploid. The super-repressor I s was found a few years later (1964); it is an uninducible mutant that maps in lacI. Promoter mutations, which RNA polymerase cannot use, are also uninducible; they map between lacI and lacZ.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -235,11 +246,43 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="merodiploids-a-second-copy-on-an-f" class="slide level2 smaller">
+<section id="the-people" class="slide level2 smaller">
+<h2>The people</h2>
+<div class="columns">
+<div class="column" style="width:22%;">
+<p><img data-src="img/jacob.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Jacob_nobel.jpg" class="photo-credit">Photo: unknown author (Nobel Foundation), public domain, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:22%;">
+<p><img data-src="img/monod.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Jacques_Monod_nobel_(cropped).jpg" class="photo-credit">Photo: unknown author (Nobel Foundation), public domain, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:56%;">
+<p><strong>François Jacob</strong> (left), a bacterial geneticist, and <strong>Jacques Monod</strong> (right), a biochemist, worked at the Institut Pasteur in Paris.</p>
+<ul>
+<li>Monod had studied how <em>E. coli</em> switches to lactose; Jacob had built the tools of bacterial conjugation.</li>
+<li>Together they put <em>lac</em> mutations into partial diploids and read off <strong>dominance</strong> and <strong>cis/trans</strong> behaviour.</li>
+<li>From that alone they proposed the repressor, the operator and the mRNA (1961).</li>
+<li>Nobel Prize 1965, shared with André Lwoff.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>A one-minute human slide. The point to make is that the operon model was a genetic inference: the repressor protein was isolated only in 1966, by Gilbert and Müller-Hill, five years after the model was published. The model predicted that the repressor is a protein and the operator a DNA site; biochemistry later confirmed both. That is the power of the cis-trans test.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="merodiploids-a-second-copy-on-an-f" class="slide level2">
 <h2>Merodiploids: a second copy on an F′</h2>
 <p>An <strong>F′ plasmid</strong> is an F factor that has picked up a piece of the chromosome (here the <em>lac</em> region). Transfer it by conjugation into a recipient, and the cell has <strong>two copies</strong> of the <em>lac</em> genes: a <strong>partial diploid</strong>, or <strong>merodiploid</strong>.</p>
 <ul>
-<li>Notation: <strong>F′ genotype / chromosome genotype</strong>, e.g.&nbsp;F′ <em>I</em><sup>+</sup> / <em>I</em><sup>−</sup>.</li>
+<li>Notation: <strong>F′ genotype / chromosome genotype</strong>, e.g.&nbsp;F′ <em>I</em><sup>+</sup> / <em>I</em><sup>−</sup>. <strong>Genes not written are wild type.</strong></li>
 <li>Now you can ask the questions from Part 1 and Part 3:
 <ul>
 <li><strong>Dominance</strong>: in <em>I</em><sup>+</sup>/<em>I</em><sup>−</sup>, which phenotype wins? (Extensions to Mendel)</li>
@@ -248,7 +291,7 @@ Basic and molecular genetics (5MO104)
 </ul></li>
 </ul>
 <aside class="notes">
-<p>This is the same trick as in diploid organisms: put two alleles in one cell and see what happens. Bacteria are normally haploid, so Jacob and Monod used F-prime plasmids (from the Bacterial genetics recap in Part 5) to make them partially diploid for the lac region. “Cis” means on the same DNA molecule; “trans” means on the other molecule. The key insight is this: a product that diffuses through the cell, like a protein, can act on both copies, so it acts in trans. A site on the DNA can only affect what is physically next to it, so it acts only in cis.</p>
+<p>This is the same trick as in diploid organisms: put two alleles in one cell and see what happens. Bacteria are normally haploid, so Jacob and Monod used F-prime plasmids (from the Bacterial genetics recap in Part 5) to make them partially diploid for the lac region. “Cis” means on the same DNA molecule; “trans” means on the other molecule. The key insight is this: a product that diffuses through the cell, like a protein, can act on both copies, so it acts in trans. A site on the DNA can only affect what is physically next to it, so it acts only in cis. Stress the notation rule: anything not written is wild type. Many mistakes in the exercise come from forgetting a Y plus on the F-prime.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -282,72 +325,282 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-super-repressor-is-and-the-full-logic" class="slide level2 smaller">
-<h2>The super-repressor <em>I</em><sup>s</sup> and the full logic</h2>
-<p><em>I</em><sup>s</sup> makes a repressor that <strong>binds the operator but not the inducer</strong>. In F′ <em>I</em><sup>+</sup> / <em>I</em><sup>s</sup>, the <em>I</em><sup>s</sup> repressor sits on <strong>both</strong> operators: <em>I</em><sup>s</sup> is <strong>dominant</strong>, in trans. Only an <em>O</em><sup>c</sup> in cis can escape it.</p>
+<section id="the-super-repressor-is" class="slide level2">
+<h2>The super-repressor <em>I</em><sup>s</sup></h2>
+<p><em>I</em><sup>s</sup> makes a repressor that <strong>binds the operator but not the inducer</strong>.</p>
+<ul>
+<li>In a haploid: the repressor never lets go. <strong>Uninducible.</strong></li>
+<li>In F′ <em>I</em><sup>+</sup> / <em>I</em><sup>s</sup>: the cell has <strong>both</strong> kinds of repressor. Inducer releases the normal one, but the <em>I</em><sup>s</sup> repressor stays on <strong>both</strong> operators. Still uninducible: <em>I</em><sup>s</sup> is <strong>dominant</strong>, and it acts <strong>in trans</strong>.</li>
+<li><em>I</em><sup>−</sup> and <em>I</em><sup>s</sup> are both trans-acting, yet one is recessive and one dominant. <strong>Trans says where a mutation acts; dominance says which allele wins.</strong> They are separate questions.</li>
+<li>The only escape from <em>I</em><sup>s</sup> is a copy whose operator the repressor cannot bind: an <em>O</em><sup>c</sup>, <strong>in cis</strong>.</li>
+</ul>
+<aside class="notes">
+<p>I s is a dominant gain-of-function allele in the sense of Extensions to Mendel: the mutant repressor has lost the ability to respond, and it wins over the normal one because it keeps the operators blocked. The third bullet is the single most common confusion in this topic: students equate trans with dominant and cis with recessive. Both I minus and I s act in trans, but I minus is recessive and I s dominant. And Oc acts in cis yet is dominant over O+ for the genes on its own copy. A side note for the curious: some lacI mutations (I minus d) are dominant negative: the repressor is a tetramer, and poisoned subunits ruin mixed tetramers. That is the same idea as dominant-negative collagen mutations in Extensions to Mendel.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="promoter-mutations-uninducible-but-in-cis" class="slide level2">
+<h2>Promoter mutations: uninducible, but in cis</h2>
+<p>A <strong><em>P</em><sup>−</sup></strong> mutation changes the <strong>promoter</strong> so that RNA polymerase cannot start there. Like <em>I</em><sup>s</sup>, it is <strong>uninducible</strong> in a haploid. Unlike <em>I</em><sup>s</sup>, it is a <strong>site</strong>:</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Strain (F′ / chromosome)</th>
-<th>β-gal</th>
-<th>permease</th>
-<th>Conclusion</th>
+<th></th>
+<th><em>I</em><sup>s</sup></th>
+<th><em>P</em><sup>−</sup></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><em>I</em><sup>+</sup> (haploid)</td>
-<td>inducible</td>
-<td>inducible</td>
-<td>wild type</td>
+<td>What is changed</td>
+<td>the repressor protein</td>
+<td>the DNA where polymerase binds</td>
 </tr>
 <tr class="even">
-<td><em>I</em><sup>−</sup> (haploid)</td>
-<td>constitutive</td>
-<td>constitutive</td>
-<td>repressor needed to turn genes off</td>
+<td>Haploid phenotype</td>
+<td>uninducible</td>
+<td>uninducible</td>
 </tr>
 <tr class="odd">
-<td>F′ <em>I</em><sup>+</sup> / <em>I</em><sup>−</sup></td>
-<td>inducible</td>
-<td>inducible</td>
-<td><em>I</em><sup>+</sup> dominant, acts in trans</td>
+<td>Acts on</td>
+<td><strong>every</strong> copy in the cell (trans)</td>
+<td>only <strong>its own</strong> copy (cis)</td>
 </tr>
 <tr class="even">
-<td>F′ <em>I</em><sup>+</sup> / <em>I</em><sup>s</sup></td>
-<td>none</td>
-<td>none</td>
-<td><em>I</em><sup>s</sup> dominant, acts in trans</td>
-</tr>
-<tr class="odd">
-<td>F′ <em>I</em><sup>+</sup> <em>O</em><sup>c</sup> / <em>I</em><sup>s</sup> <em>O</em><sup>+</sup></td>
-<td>constitutive</td>
-<td>constitutive</td>
-<td><em>O</em><sup>c</sup> escapes even <em>I</em><sup>s</sup>, in cis</td>
-</tr>
-<tr class="even">
-<td>F′ <em>O</em><sup>+</sup> <em>Z</em><sup>+</sup> / <em>O</em><sup>c</sup> <em>Z</em><sup>−</sup></td>
-<td>inducible</td>
-<td>constitutive</td>
-<td><em>O</em><sup>c</sup> acts only in cis</td>
-</tr>
-<tr class="odd">
-<td>F′ <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup> / <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup></td>
-<td>inducible</td>
-<td>inducible</td>
-<td><em>Z</em> and <em>Y</em> complement</td>
+<td>With a wild-type second copy</td>
+<td>the wild-type copy is blocked too</td>
+<td>the wild-type copy works normally</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Rule:</strong> a mutation that is dominant <strong>in trans</strong> changes a diffusible product; one that acts <strong>only in cis</strong> changes a DNA site.</p>
+<p>So the same experimental logic separates the two uninducible classes as separates the two constitutive classes: give the cell a <strong>wild-type second copy</strong> and see whether it still works.</p>
 <aside class="notes">
-<p>I s is a dominant gain-of-function allele in the sense of Extensions to Mendel: the mutant repressor has lost the ability to respond, and it wins over the normal one because it keeps the operators blocked. Read the table row by row and ask the class to predict before revealing. The permease column in the Oc Z minus row: the chromosome copy is Oc and Y+, so permease is made all the time. This is exactly the table the R exercise rebuilds from a single function. A side note for the curious: some lacI mutations (I minus d) are dominant negative: the repressor is a tetramer, and poisoned subunits ruin mixed tetramers. That is the same idea as dominant-negative collagen mutations in Extensions to Mendel.</p>
+<p>Promoter mutations complete the picture: there are two kinds of DNA site in front of the lac genes, the promoter and the operator, and both act only in cis. A P minus mutation is cis-recessive in the sense that the other copy is unaffected, while Oc is cis-dominant: its own copy is on whatever the other copy carries. Ask the class: what merodiploid would you build to tell a new uninducible mutant apart as I s or P minus? Let them think; this is exercise B4, so do not give the full answer now.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-to-read-a-merodiploid-result" class="slide level2">
+<h2>How to read a merodiploid result</h2>
+<p>Put the unknown mutation in a cell with a <strong>wild-type</strong> second copy, and ask what happens to <strong>each</strong> copy:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Result</th>
+<th>Interpretation</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>The cell behaves as <strong>wild type</strong></td>
+<td>the mutant lost a <strong>diffusible product</strong>; the other copy supplies it in trans (<strong>recessive</strong>)</td>
+<td><em>I</em><sup>−</sup></td>
+</tr>
+<tr class="even">
+<td><strong>Both</strong> copies show the mutant phenotype</td>
+<td>an altered <strong>diffusible product</strong> that wins (<strong>dominant, in trans</strong>)</td>
+<td><em>I</em><sup>s</sup></td>
+</tr>
+<tr class="odd">
+<td><strong>Only the mutant’s own copy</strong> is affected, whatever the other copy carries</td>
+<td>a <strong>DNA site</strong> (<strong>cis-acting</strong>)</td>
+<td><em>O</em><sup>c</sup> (always on), <em>P</em><sup>−</sup> (always off)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Design rule:</strong> you must be able to tell the two copies’ products apart. Make sure that the enzyme you measure can only come from <strong>one</strong> copy, for example by putting <em>Z</em><sup>−</sup> on the other.</p>
+<aside class="notes">
+<p>This slide is the generalisation of the two decisive experiments. The design rule is subtle and is what the exercise problem B3 tests: if both copies are Z plus, you cannot tell which copy is making the beta-galactosidase, so a cis-acting mutation can be hidden by the wild-type copy’s own inducible enzyme. Jacob and Monod always marked the copies with structural mutations for exactly this reason. Ask: in panel B of the cis-trans figure, which copy can make active beta-gal? Only the F-prime. That is why the result is readable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-recipe-for-any-merodiploid" class="slide level2 smaller">
+<h2>A recipe for any merodiploid</h2>
+
+<img data-src="fig04-merodiploid-recipe.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:88.0%"><p>Step 1 is about the <strong>cell</strong> (trans). Step 2 is about <strong>each copy</strong> (cis). Step 3 reads off what each transcribed copy makes. Do it <strong>twice</strong>, without and with inducer.</p>
+<aside class="notes">
+<p>This is the algorithm students should use for every problem, and it is exactly what the R exercise turns into a function. Step 1: look at all lacI alleles in the cell together, because repressor diffuses. A super-repressor wins over a normal repressor, and a normal repressor wins over none. Step 2: go copy by copy. Oc is always free; O+ is free only if no repressor is blocking it. Step 3: a free copy is transcribed and makes whatever working proteins it encodes. A transcribed Z minus gene makes protein, but inactive protein: it does not count as beta-gal. Finally compare the no-inducer and with-inducer results to name the phenotype. The next three slides apply the recipe to strains that are not in the exercise.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-1-trans-works-both-ways" class="slide level2">
+<h2>Worked example 1: trans works both ways</h2>
+<p><strong>Strain: F′ <em>I</em><sup>−</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup> / <em>I</em><sup>+</sup> <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup></strong></p>
+<p><strong>Step 1.</strong> One copy is <em>I</em><sup>+</sup> (the chromosome): the cell has <strong>normal repressor</strong>. It blocks every <em>O</em><sup>+</sup> without inducer.</p>
+<p><strong>Step 2.</strong> Both operators are <em>O</em><sup>+</sup>: free only <strong>with</strong> inducer.</p>
+<p><strong>Step 3.</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Copy</th>
+<th>Transcribed? (− / + inducer)</th>
+<th>Makes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F′ <em>I</em><sup>−</sup> <em>O</em><sup>+</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup></td>
+<td>no / yes</td>
+<td>active β-gal; no permease</td>
+</tr>
+<tr class="even">
+<td>chr <em>I</em><sup>+</sup> <em>O</em><sup>+</sup> <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup></td>
+<td>no / yes</td>
+<td>inactive β-gal; permease</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phenotype:</strong> β-gal <strong>inducible</strong>, permease <strong>inducible</strong>.</p>
+<p>Two lessons in one strain: repressor from the <strong>chromosome</strong> controls the <strong>F′</strong> (trans works in both directions), and <em>Z</em><sup>−</sup> and <em>Y</em><sup>−</sup> on different copies <strong>complement</strong>.</p>
+<aside class="notes">
+<p>Go slowly and write the table on the board. The trap is to think that the F-prime copy, being I minus, is uncontrolled. But I minus only means that this copy makes no repressor; the repressor from the chromosome reaches the F-prime operator. Repressor is a pool in the cell, not a property of a copy. Note also that both copies are transcribed with inducer, but each makes only one working enzyme; together the cell has both.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-2-one-cell-two-phenotypes" class="slide level2">
+<h2>Worked example 2: one cell, two phenotypes</h2>
+<p><strong>Strain: F′ <em>I</em><sup>+</sup> <em>Z</em><sup>−</sup> / <em>I</em><sup>−</sup> <em>O</em><sup>c</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup></strong></p>
+<p><strong>Step 1.</strong> The F′ is <em>I</em><sup>+</sup>: <strong>normal repressor</strong> in the cell.</p>
+<p><strong>Step 2.</strong> F′ operator <em>O</em><sup>+</sup>: free only with inducer. Chromosome operator <em>O</em><sup>c</sup>: <strong>always free</strong>.</p>
+<p><strong>Step 3.</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Copy</th>
+<th>Transcribed? (− / + inducer)</th>
+<th>Makes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F′ <em>I</em><sup>+</sup> <em>O</em><sup>+</sup> <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup></td>
+<td>no / yes</td>
+<td>inactive β-gal; permease</td>
+</tr>
+<tr class="even">
+<td>chr <em>I</em><sup>−</sup> <em>O</em><sup>c</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup></td>
+<td>yes / yes</td>
+<td>active β-gal; no permease</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phenotype:</strong> β-gal <strong>constitutive</strong>, permease <strong>inducible</strong>.</p>
+<p>The two enzymes of one cell have <strong>different</strong> phenotypes, because they come from different copies with different operators. Only a cis-acting site can do that.</p>
+<aside class="notes">
+<p>Point out that the F-prime is Y plus although it is not written: genes not mentioned are wild type. The striking result is that one enzyme is constitutive and the other inducible in the same cell. A trans-acting mutation could never split the two enzymes like this, because the repressor acts on both copies alike. Splitting the phenotypes of two copies is the signature of a cis-acting element.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="worked-example-3-the-super-repressor-meets-oc" class="slide level2">
+<h2>Worked example 3: the super-repressor meets <em>O</em><sup>c</sup></h2>
+<p><strong>Strain: F′ <em>I</em><sup>s</sup> <em>O</em><sup>c</sup> <em>Z</em><sup>−</sup> / <em>I</em><sup>+</sup> <em>Z</em><sup>+</sup></strong></p>
+<p><strong>Step 1.</strong> One copy is <em>I</em><sup>s</sup>: the cell has <strong>super-repressor</strong>. It blocks every <em>O</em><sup>+</sup>, with or without inducer.</p>
+<p><strong>Step 2.</strong> F′ operator <em>O</em><sup>c</sup>: <strong>always free</strong>, even of <em>I</em><sup>s</sup> repressor. Chromosome operator <em>O</em><sup>+</sup>: <strong>never free</strong>.</p>
+<p><strong>Step 3.</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Copy</th>
+<th>Transcribed? (− / + inducer)</th>
+<th>Makes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F′ <em>I</em><sup>s</sup> <em>O</em><sup>c</sup> <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup></td>
+<td>yes / yes</td>
+<td>inactive β-gal; permease</td>
+</tr>
+<tr class="even">
+<td>chr <em>I</em><sup>+</sup> <em>O</em><sup>+</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>+</sup></td>
+<td>no / no</td>
+<td>(nothing)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Phenotype:</strong> β-gal <strong>none</strong>, permease <strong>constitutive</strong>.</p>
+<p>Notice that <em>I</em><sup>s</sup> and <em>O</em><sup>c</sup> sit on the <strong>same</strong> copy here, yet <em>I</em><sup>s</sup> shuts down the <strong>other</strong> copy. Where a <em>lacI</em> allele sits does not matter; where an operator sits does.</p>
+<aside class="notes">
+<p>This one tests whether students keep the two steps apart. The I s on the F-prime makes super-repressor, which diffuses and blocks the chromosome’s normal operator forever: so the chromosome’s perfectly good lacZ plus is never expressed. The F-prime’s own operator is Oc, which no repressor can bind, so the F-prime copy is always on; but it is Z minus, so it only gives permease. Ask: what single change would make beta-gal constitutive? Answer: make the F-prime Z plus, or make the chromosome’s operator Oc.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -366,7 +619,7 @@ Basic and molecular genetics (5MO104)
 <div data-demo="lacoperon" data-preset="oc-trans"></div>
 <script src="../demos/dist/lacoperon.js"></script>
 <aside class="notes">
-<p>Interactive demo. It opens on F-prime O+ Z+ over Oc Z minus, without lactose: the F-prime copy is repressed, the chromosome copy is transcribed but has Z minus, so no active beta-gal; permease is made from the chromosome. Click “+ lactose”: now beta-gal comes from the F-prime. Phenotype: beta-gal inducible, permease constitutive. Then try the presets in order: I minus (constitutive), F-prime I+ over I minus (inducible again: trans), I s (nothing), F-prime I+ over I s (still nothing: I s is trans-dominant), and finally put Oc on the F-prime in the I s cell to show that a cis-acting operator escapes even the super-repressor. Ask the class to predict before each click.</p>
+<p>Interactive demo. It opens on F-prime O+ Z+ over Oc Z minus, without lactose: the F-prime copy is repressed, the chromosome copy is transcribed but has Z minus, so no active beta-gal; permease is made from the chromosome. Click “+ lactose”: now beta-gal comes from the F-prime. Phenotype: beta-gal inducible, permease constitutive. Then try the presets in order: I minus (constitutive), F-prime I+ over I minus (inducible again: trans), I s (nothing), F-prime I+ over I s (still nothing: I s is trans-dominant), and finally put Oc on the F-prime in the I s cell to show that a cis-acting operator escapes even the super-repressor. Then set up the three worked examples from the last slides and check them. Ask the class to predict before each click.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -379,16 +632,40 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="complementation-in-the-operon" class="slide level2 smaller">
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>“Trans means dominant.”</strong> No.&nbsp;<em>I</em><sup>−</sup> acts in trans and is <strong>recessive</strong>; <em>I</em><sup>s</sup> acts in trans and is <strong>dominant</strong>.</li>
+<li><strong>“<em>O</em><sup>c</sup> makes the whole cell constitutive.”</strong> No.&nbsp;Only the genes on the <strong>same</strong> DNA molecule as the <em>O</em><sup>c</sup>.</li>
+<li><strong>“An <em>I</em><sup>−</sup> copy is uncontrolled.”</strong> No.&nbsp;It is controlled by repressor made from <strong>any</strong> <em>I</em><sup>+</sup> copy in the cell.</li>
+<li><strong>“A <em>Z</em><sup>−</sup> copy that is transcribed gives β-gal.”</strong> No.&nbsp;It makes <strong>inactive</strong> protein. Count only <em>Z</em><sup>+</sup> copies.</li>
+<li><strong>Forgetting the unwritten genes.</strong> F′ <em>O</em><sup>c</sup> <em>Z</em><sup>−</sup> is also <em>I</em><sup>+</sup> and <em>Y</em><sup>+</sup>.</li>
+<li><strong>Naming a phenotype from one condition.</strong> Always work out <strong>both</strong> no inducer and with inducer.</li>
+</ul>
+<aside class="notes">
+<p>These are the errors that show up again and again in exam answers. Read them out and ask the class for a strain that illustrates each one. The first is the deepest: dominance and cis/trans are two different questions. The cis-trans test asks where a mutation acts, and dominance asks which allele wins in a heterozygote.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="complementation-in-the-operon" class="slide level2">
 <h2>Complementation in the operon</h2>
 <p>F′ <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup> / <em>Z</em><sup>−</sup> <em>Y</em><sup>+</sup>: each copy makes the protein the other cannot. The cell has <strong>both</strong> enzymes, <strong>inducibly</strong>. So <em>lacZ</em> and <em>lacY</em> are <strong>different genes</strong>, even though they share one promoter and one mRNA.</p>
 <ul>
-<li>This is the <strong>complementation test</strong> from the Mutation unit (Part 3), done in a bacterium.</li>
-<li>Benzer called the unit defined by the cis–trans test a <strong>cistron</strong>. In modern words: a gene that encodes one polypeptide.</li>
-<li><strong>Caveat: polarity.</strong> A nonsense mutation early in <em>lacZ</em> also lowers <em>lacY</em> expression from that copy (transcription and translation are coupled in bacteria). Such <em>polar</em> mutations can fail to complement <em>lacY</em><sup>−</sup> although the <em>lacY</em> gene itself is fine.</li>
+<li>This is the <strong>complementation test</strong> from the Mutation unit (Part 3), done in a bacterium: two <strong>recessive</strong> loss-of-function mutations, one on each copy.</li>
+<li><strong>Fail to complement</strong> → same gene. <strong>Complement</strong> → different genes.</li>
+<li>Benzer called the unit defined by this cis–trans test a <strong>cistron</strong>. In modern words: a gene that encodes one polypeptide.</li>
 </ul>
 <aside class="notes">
-<p>Link back to the complementation grid in the Mutation unit. Two recessive loss-of-function mutations complement when they are in different genes, because each copy supplies the missing product. Here the twist is that two genes share one transcription unit, and the test still separates them. Polarity is the classic complication: in bacteria, if ribosomes fall off the mRNA at an early stop codon, the downstream part of the mRNA is left bare and is degraded or terminated (Rho), so the downstream genes are also expressed poorly. Students only need to know that polarity exists and why it can fool a complementation test. That is why Jacob and Monod were careful to use missense alleles.</p>
+<p>Link back to the complementation grid in the Mutation unit. Two recessive loss-of-function mutations complement when they are in different genes, because each copy supplies the missing product. Here the twist is that two genes share one transcription unit, and the test still separates them. The test only works with recessive mutations: a dominant mutation, like I s, cannot be put through a complementation test, because the cell is mutant whatever the other copy carries.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -401,12 +678,167 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="a-second-way-to-switch-trp-attenuation" class="slide level2 smaller">
-<h2>A second way to switch: <em>trp</em> attenuation</h2>
-
-<img data-src="fig03-trp-attenuation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><p>The <em>trp</em> operon (tryptophan synthesis) has a repressor too (TrpR, active <strong>with</strong> tryptophan). On top of that, the <strong>leader mRNA</strong> senses tryptophan through translation of a short leader peptide with two Trp codons. Deletions of the attenuator region raise <em>trp</em> expression even with the repressor working: another <strong>cis-acting</strong> site.</p>
+<section id="the-polarity-trap" class="slide level2">
+<h2>The polarity trap</h2>
+<p>In bacteria, ribosomes start translating the mRNA while it is still being made. A <strong>nonsense</strong> mutation early in <em>lacZ</em> makes ribosomes fall off; the downstream mRNA is left bare and is terminated or degraded. <em>lacY</em> and <em>lacA</em> on <strong>that copy</strong> are then expressed poorly.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>F′ / chromosome</th>
+<th>β-gal</th>
+<th>permease</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>F′ <em>Z</em><sup>−</sup>(missense) / <em>Y</em><sup>−</sup></td>
+<td>yes</td>
+<td>yes</td>
+<td>complement: different genes ✓</td>
+</tr>
+<tr class="even">
+<td>F′ <em>Z</em><sup>−</sup>(early nonsense, polar) / <em>Y</em><sup>−</sup></td>
+<td>yes</td>
+<td><strong>low</strong></td>
+<td>seems <strong>not</strong> to complement: misleading</td>
+</tr>
+</tbody>
+</table>
+<p>A mutation that seems to fail to complement mutations in <strong>two</strong> neighbouring genes is either a <strong>deletion</strong> that removes both, or a <strong>polar</strong> mutation in the upstream gene.</p>
 <aside class="notes">
-<p>Keep this to one slide. The trp operon makes the enzymes for tryptophan synthesis, so it is on when tryptophan is scarce: a repressible rather than an inducible system. The repressor TrpR needs tryptophan as a corepressor. Attenuation is the second, finer control. Transcription and translation are coupled, so the position of the ribosome on the leader decides which hairpin forms in the RNA that RNA polymerase has just made. With lots of tryptophan, the ribosome zips through region 1, covers region 2, and the 3:4 terminator forms. With little tryptophan the ribosome stalls on the Trp codons in region 1, region 2 pairs with 3, and the terminator cannot form. Genetically, attenuator deletions act in cis, like Oc. Only bacteria can do this, because eukaryotes separate transcription (nucleus) from translation (cytoplasm).</p>
+<p>Polarity is the classic complication of complementation tests in operons. In the polar strain, the chromosome copy is Y minus, and the F-prime copy’s lacY is intact but hardly expressed, because of the nonsense codon upstream in lacZ on the same mRNA. So permease is low and the cell grows poorly on lactose, which looks like failure to complement. This is a cis effect: the nonsense codon only affects the genes downstream on its own mRNA. That is why Jacob and Monod were careful to use missense alleles. The exercise has a complementation table with a warning about exactly this.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-repressible-operon-trp" class="slide level2">
+<h2>A repressible operon: <em>trp</em></h2>
+<p>The <em>trp</em> operon makes the enzymes that <strong>synthesise</strong> tryptophan, so the cell wants it <strong>on when tryptophan is scarce</strong>. That is the reverse of <em>lac</em>.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><em>lac</em></th>
+<th><em>trp</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pathway</td>
+<td>breaks down lactose</td>
+<td>makes tryptophan</td>
+</tr>
+<tr class="even">
+<td>Kind of control</td>
+<td><strong>inducible</strong>: off unless lactose is present</td>
+<td><strong>repressible</strong>: on unless tryptophan is present</td>
+</tr>
+<tr class="odd">
+<td>Small molecule</td>
+<td>inducer releases the repressor</td>
+<td>tryptophan <strong>activates</strong> the repressor (a <strong>corepressor</strong>)</td>
+</tr>
+<tr class="even">
+<td>Repressor gene</td>
+<td><em>lacI</em></td>
+<td><em>trpR</em>, far from the operon (trans)</td>
+</tr>
+<tr class="odd">
+<td>Second layer</td>
+<td>CAP–cAMP (not today)</td>
+<td><strong>attenuation</strong>, in the leader mRNA (cis)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>A quick contrast before attenuation. The logic of negative control is the same: a repressor binds an operator. What differs is whether the small molecule takes the repressor off (lac) or puts it on (trp). TrpR is encoded far away from the trp operon, which makes the point from the Find it task again: a trans-acting regulator can be anywhere in the genome. Mutations in trpR are constitutive and recessive, like lacI minus. The second layer, attenuation, is a cis-acting element in the RNA itself.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="attenuation-the-ribosome-reads-the-tryptophan-level" class="slide level2 smaller">
+<h2>Attenuation: the ribosome reads the tryptophan level</h2>
+
+<img data-src="fig03-trp-attenuation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><ol type="1">
+<li>The <strong>leader</strong> mRNA encodes a short peptide with <strong>two Trp codons</strong> in a row (in region 1).</li>
+<li><strong>Plenty of Trp:</strong> charged tRNA<sup>Trp</sup> is abundant; the ribosome runs through region 1 and covers region 2. Regions 3 and 4 pair: a <strong>terminator</strong>. Transcription stops.</li>
+<li><strong>Little Trp:</strong> the ribosome <strong>stalls</strong> at the Trp codons. Region 2 pairs with region 3 (<strong>antiterminator</strong>); 3:4 cannot form. Transcription continues.</li>
+</ol>
+<aside class="notes">
+<p>Go through the three steps with the figure. Transcription and translation are coupled, so the position of the ribosome on the leader decides which hairpin forms in the RNA that RNA polymerase has just made. The sensor is not the free amino acid but charged tRNA: the ribosome waits at a codon until a charged tRNA arrives. Only bacteria can do this, because eukaryotes separate transcription (nucleus) from translation (cytoplasm).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="attenuation-as-genetics" class="slide level2">
+<h2>Attenuation as genetics</h2>
+<ul>
+<li>The <strong>codons</strong> in the leader peptide decide <strong>which</strong> amino acid is sensed. Other amino-acid operons use the same trick: the <em>his</em> operon leader has <strong>seven His codons in a row</strong>.</li>
+<li><strong>Deletions of the attenuator</strong> (region 3–4) raise <em>trp</em> expression even when the repressor works. They act only on their own copy: <strong>cis-acting</strong>, like <em>O</em><sup>c</sup>.</li>
+<li><em>trpR</em><sup>−</sup> and attenuator deletions add up: the two controls are <strong>independent</strong> layers.</li>
+</ul>
+<p>So for any leader mutation, ask: where will the ribosome stall now, and which hairpin can form?</p>
+<aside class="notes">
+<p>Turn the mechanism into predictions. If you change the codons in the leader, you change which starvation causes stalling: that is exercise B6, so leave the specific answer to them. Attenuator deletions behave like Oc: cis, constitutive for their own copy. A strain with both trpR minus and an attenuator deletion has higher expression than either alone, which is how the two layers were shown to be separate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself" class="slide level2">
+<h2>Check yourself</h2>
+<p>Use the recipe. Answers in the notes.</p>
+<ol type="1">
+<li>F′ <em>I</em><sup>−</sup> / <em>I</em><sup>s</sup>: β-gal and permease?</li>
+<li>F′ <em>O</em><sup>c</sup> <em>Z</em><sup>+</sup> <em>Y</em><sup>−</sup> / <em>I</em><sup>−</sup> <em>Z</em><sup>+</sup>: β-gal and permease?</li>
+<li>A new mutation is <strong>dominant</strong> in a merodiploid. Can you conclude that it is cis-acting?</li>
+<li>Why must one copy carry <em>Z</em><sup>−</sup> when you test whether a constitutive mutant is <em>I</em><sup>−</sup> or <em>O</em><sup>c</sup>?</li>
+</ol>
+<aside class="notes">
+<p>Answers. 1: The cell has super-repressor; both operators are O+, so blocked always: beta-gal none, permease none. 2: The F-prime is I+, so normal repressor. The F-prime copy is Oc: always transcribed, makes beta-gal (Z+) but no permease (Y minus): beta-gal constitutive. The chromosome copy is O+, inducible, makes beta-gal and permease: permease inducible. Beta-gal is constitutive overall, because constitutive plus inducible is still made without inducer. 3: No.&nbsp;I s is dominant and trans-acting. Dominance and cis/trans are separate questions; you need to see whether the other copy is affected. 4: So that all active beta-gal comes from the copy with the unknown mutation; otherwise the wild-type copy’s own inducible enzyme would hide or muddy the result.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -446,28 +878,32 @@ Basic and molecular genetics (5MO104)
 <td><em>I</em><sup>−</sup> (no repressor), <em>O</em><sup>c</sup> (operator cannot bind repressor)</td>
 </tr>
 <tr class="even">
-<td>Uninducible mutant</td>
-<td><em>I</em><sup>s</sup> (repressor cannot bind inducer)</td>
+<td>Uninducible mutants</td>
+<td><em>I</em><sup>s</sup> (repressor cannot bind inducer), <em>P</em><sup>−</sup> (no promoter)</td>
 </tr>
 <tr class="odd">
 <td>Merodiploid</td>
-<td>F′ / chromosome; a partial diploid to test dominance</td>
+<td>F′ / chromosome; a partial diploid to test dominance and cis/trans</td>
 </tr>
 <tr class="even">
 <td>Trans-acting</td>
-<td><em>I</em><sup>+</sup> over <em>I</em><sup>−</sup>, and <em>I</em><sup>s</sup> over <em>I</em><sup>+</sup>: the gene makes a diffusible protein</td>
+<td><em>I</em><sup>+</sup> over <em>I</em><sup>−</sup> (recessive), <em>I</em><sup>s</sup> over <em>I</em><sup>+</sup> (dominant): a diffusible protein</td>
 </tr>
 <tr class="odd">
 <td>Cis-acting</td>
-<td><em>O</em><sup>c</sup> affects only genes on its own DNA molecule: a DNA site</td>
+<td><em>O</em><sup>c</sup>, <em>P</em><sup>−</sup>, attenuator deletions: affect only their own DNA molecule</td>
 </tr>
 <tr class="even">
-<td>Complementation</td>
-<td><em>Z</em><sup>−</sup> and <em>Y</em><sup>−</sup> on different copies give both enzymes (watch out for polarity)</td>
+<td>Recipe</td>
+<td>1 repressor in the cell; 2 free operators, copy by copy; 3 products; − and + inducer</td>
 </tr>
 <tr class="odd">
-<td>Attenuation</td>
-<td><em>trp</em> leader hairpins; ribosome stalling on Trp codons decides termination</td>
+<td>Complementation</td>
+<td><em>Z</em><sup>−</sup> and <em>Y</em><sup>−</sup> on different copies give both enzymes; beware polar mutations</td>
+</tr>
+<tr class="even">
+<td><em>trp</em></td>
+<td>repressible; TrpR + Trp; attenuation by ribosome stalling on Trp codons</td>
 </tr>
 </tbody>
 </table>
@@ -489,11 +925,11 @@ Basic and molecular genetics (5MO104)
 <h2>Where this leads</h2>
 <ul>
 <li><strong>Next: Eukaryotic regulation &amp; epigenetics.</strong> Enhancers and promoters are <strong>cis-acting</strong> elements, and transcription factors are <strong>trans-acting</strong> proteins, the same logic as <em>lacO</em> and <em>lacI</em>. Chromatin adds a layer that bacteria do not have.</li>
-<li><strong>RNA-mediated regulation.</strong> Small RNAs that turn genes down after transcription, discovered, like the lac mutants, through a genetic screen.</li>
-<li><strong>Development &amp; model organisms.</strong> Mutant screens like Jacob and Monod’s, scaled up to find the genes that build an embryo.</li>
+<li><strong>RNA-mediated regulation.</strong> Small RNAs that turn genes down after transcription, discovered, like the lac mutants, through a genetic screen. A 3′UTR site behaves like <em>O</em><sup>c</sup>.</li>
+<li><strong>Development &amp; model organisms.</strong> Mutant screens like Jacob and Monod’s, scaled up to find the genes that build an embryo, and <em>lacZ</em> reused as a reporter gene.</li>
 </ul>
 <aside class="notes">
-<p>Point forward. In the exercise students predict merodiploid phenotypes by hand, then check their answers in the demo, and look up lacZ and lacI in NCBI Gene to see that lacI lies right next to the operon it controls but has its own promoter. In R they write the whole Jacob-Monod logic as one function and run it over every possible merodiploid with expand_grid.</p>
+<p>Point forward. In the exercise students predict merodiploid phenotypes by hand with the recipe, then check their answers in the demo, and look up lacZ and lacI in NCBI Gene to see that lacI lies right next to the operon it controls but has its own promoter. In R they write the whole Jacob-Monod logic as one function and run it over every possible merodiploid with expand_grid.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

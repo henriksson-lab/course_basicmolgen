@@ -153,3 +153,15 @@ Which mating type passes on its chloroplast DNA?
 ::: {.callout-note collapse="true" title="Answer"}
 Chloroplast DNA comes from the **mt^+^** parent. So the first cross gives **all resistant** progeny and the reciprocal cross gives **all sensitive** progeny. (A nuclear gene would give a 1 : 1 ratio among the haploid progeny in both crosses; so does the mating type itself.)
 :::
+
+---
+
+**Q13.** A woman has 40 % heteroplasmy. Assume a bottleneck of only N = 2 copies. List the possible levels in her eggs and their probabilities. With a threshold of 60 %, what fraction of her eggs are at or above it?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Each of the two founder copies is mutant with probability 0.4, independently. Use the binomial with N = 2.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*k* = 0, 1 or 2 mutant founders, so levels **0 %, 50 %, 100 %**, with probabilities 0.6^2^ = **0.36**, 2 × 0.4 × 0.6 = **0.48** and 0.4^2^ = **0.16** (they add to 1). Only the 100 % eggs are at or above 60 %: **0.16**, about 1 in 6. The mean is 0 × 0.36 + 0.5 × 0.48 + 1 × 0.16 = 0.40, the mother's level, as it must be.
+:::

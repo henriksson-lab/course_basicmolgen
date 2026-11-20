@@ -23,11 +23,11 @@ format:
 
 Hardy–Weinberg keeps the allele frequency *p* constant. Real allele frequencies **change**. This lecture is about the four forces that change them:
 
-- **Genetic drift**: chance, strongest in small populations. The Wright–Fisher model; fixation and loss; effective population size; **founder effects** and the **Finnish disease heritage**.
-- **Selection**: genotypes differ in fitness. The Δ*p* recursion; dominance and the speed of selection.
-- **Mutation** and **mutation–selection balance**: why harmful alleles never disappear.
+- **Genetic drift**: chance, strongest in small populations. The Wright–Fisher model in numbers; fixation and loss; effective population size; **founder effects** and the **Finnish disease heritage**.
+- **Selection**: genotypes differ in fitness. The selection recursion, worked one generation at a time; dominance and the speed of selection.
+- **Mutation** and **mutation–selection balance**: why harmful alleles never disappear, and where the formulas come from.
 - **Migration**: gene flow makes populations alike.
-- **Heterozygote advantage**: sickle-cell haemoglobin and malaria.
+- **Heterozygote advantage**: sickle-cell haemoglobin and malaria, with the equilibrium worked out by hand.
 
 This is syllabus outcome 2: *how allele frequencies in populations vary with different factors*. Book: Hartwell, the population genetics chapter.
 
@@ -62,6 +62,18 @@ A summary slide to come back to. Mutation is the ultimate source of all variatio
 The Wright–Fisher model is the simplest model of drift: discrete generations, a constant population size, and random sampling of gene copies. Some copies leave several descendants, some none, purely by chance. In the figure, p goes 0.5, 0.2, 0.3, 0.5, 0.4 with only 10 copies. The variance formula shows why small populations drift faster: the standard deviation of the change per generation is the square root of pq over 2N. For 2N equals 10 and p equals 0.5 that is 0.16; for 2N equals 1000 it is 0.016. In the R exercise this model is a for loop of a few lines.
 :::
 
+## Drift in numbers: one generation
+
+![](fig06-drift-binomial.svg){width="62%" fig-align="center"}
+
+- **2*N* = 10**: SD of the change = √(0.5 × 0.5/10) = **0.16**. *A* is lost at once if all 10 draws are *a*: 0.5¹⁰ ≈ **0.001** (and fixed with the same probability).
+- **2*N* = 100**: SD = √(0.5 × 0.5/100) = **0.05**. The new *p* almost always lies between 0.4 and 0.6.
+- A rarer allele is lost more easily: with *p* = 0.3 and 2*N* = 10, P(lost in one generation) = 0.7¹⁰ = **0.028**.
+
+::: notes
+These are the numbers behind the Wright–Fisher picture. The distribution of the next p is binomial, divided by 2N. Its centre stays at the current p, which is why drift has no direction; its width shrinks with the square root of 2N, so ten times as many gene copies gives about three times less drift per generation. Loss in a single step is the probability that every one of the 2N draws is the other allele, q to the power 2N. Exercise B1 asks the same question for an even smaller population. Over many generations the small steps add up: that is the next slide.
+:::
+
 ## What drift does {.smaller}
 
 ![](fig02-drift-trajectories.svg){width="78%" fig-align="center"}
@@ -72,6 +84,25 @@ The Wright–Fisher model is the simplest model of drift: discrete generations, 
 
 ::: notes
 Left: with 40 gene copies, after 100 generations most of the 20 populations have fixed or lost A. Right: with 1000 copies, they have barely spread. Fixation probability equals p0 because drift has no direction: the average of p over many populations stays at p0, and at the end every population is at 0 or 1, so the fraction at 1 must be p0. The heterozygosity formula says how fast variation disappears; time to lose half of it is about 1.4 times 2N generations. Note the divergence: populations that start the same end up different by chance alone. This is part of why human populations differ in allele frequencies, as seen in 1000 Genomes.
+:::
+
+## Drift over many generations: worked numbers
+
+**Fixation.** A neutral allele at frequency *p*₀ is eventually fixed with probability *p*₀.
+
+- Why: drift has no direction, so the **average** *p* over many populations stays *p*₀. At the end every population sits at 0 or 1, so the fraction at 1 must be *p*₀.
+- A new mutation in *N* = 100 people: *p*₀ = 1/200, so it is lost with probability **0.995**.
+
+**Heterozygosity.** *H*<sub>*t*</sub> = *H*₀ (1 − 1/2*N*)<sup>*t*</sup>. Example: *N* = 100, *H*₀ = 0.5:
+
+| generation *t* | 0 | 50 | 100 | 200 |
+|---|---|---|---|---|
+| *H*<sub>*t*</sub> = 0.5 × 0.995<sup>*t*</sup> | 0.50 | 0.39 | 0.30 | 0.18 |
+
+Half of the variation is gone after about 2*N* ln 2 = 200 × 0.69 ≈ **139 generations**: drift works on a time scale proportional to *N*.
+
+::: notes
+Two formulas, two arguments. The fixation argument is a neat piece of reasoning worth spelling out once: it needs no algebra, only the fact that the expected change is zero. Heterozygosity falls by a factor 1 minus 1 over 2N each generation because that is the probability that two gene copies drawn in the next generation are copies of the same parental copy, and then they are identical. The half-life follows from 1 minus x being close to e to the minus x. The general point is that drift works on a time scale proportional to N: double the population size and everything takes twice as long. Exercise B2 and B4 practise these with other numbers.
 :::
 
 ## Effective population size
@@ -147,6 +178,47 @@ $$
 This is the one formula of the lecture. It is a weighted count: each genotype's contribution of A alleles is multiplied by its fitness, and we divide by the mean fitness so that frequencies add up to one. The 2pq heterozygotes each carry one A, which is why the heterozygote term is pq, not 2pq. Fitness here combines survival and fertility. Example: s equals 0.05 and h equals 0.5 means AA carriers leave 5 percent more offspring than aa, and heterozygotes 2.5 percent more. Small fitness differences, repeated over hundreds of generations, are enough to change p from rare to common.
 :::
 
+## The recursion, one generation by hand
+
+*p* = 0.1, *s* = 0.2, *h* = ½ (additive): fitnesses 1.2, 1.1, 1.
+
+| | *AA* | *Aa* | *aa* | sum |
+|---|---|---|---|---|
+| 1. frequency at birth (HWE) | 0.01 | 0.18 | 0.81 | 1 |
+| 2. fitness *w* | 1.2 | 1.1 | 1.0 | |
+| 3. frequency × *w* | 0.012 | 0.198 | 0.810 | ***w̄* = 1.020** |
+| 4. *A* alleles among survivors | 0.012 | ½ × 0.198 = 0.099 | 0 | 0.111 |
+
+5. Divide by *w̄*: *p*′ = 0.111 / 1.020 = **0.1088**. So Δ*p* = +0.0088 in one generation.
+
+Next generation: start again at step 1 with *p* = 0.1088 (→ 0.1183 → 0.1285 …).
+
+::: notes
+This is the formula of the previous slide, written as a table. Students make two errors: they forget to divide by the mean fitness, which would make frequencies add up to more than one, and they count 2pq instead of pq of A alleles from heterozygotes; step 4 makes the half explicit. The new genotypes at birth are again in Hardy–Weinberg proportions with the new p, because mating is random; that is why step 1 can always start from p squared, 2pq, q squared. Exercise B5 does two generations with fitnesses below 1; the method is the same, only relative fitness matters.
+:::
+
+## How fast does *p* change? Δ*p* is proportional to *pq*
+
+The table simplifies to one line:
+
+$$
+\Delta p = p' - p = \frac{pq\,\big[\,p\,(w_{AA} - w_{Aa}) + q\,(w_{Aa} - w_{aa})\,\big]}{\bar w}.
+$$
+
+Check with the example: 0.1 × 0.9 × [0.1 × 0.1 + 0.9 × 0.1] / 1.02 = 0.009/1.02 = **0.0088** ✓.
+
+Same additive selection (*s* = 0.2) at different starting *p*:
+
+| *p* | 0.01 | 0.1 | 0.5 | 0.9 | 0.99 |
+|---|---|---|---|---|---|
+| Δ*p* per generation | 0.0010 | 0.0088 | 0.0227 | 0.0076 | 0.0008 |
+
+Selection is **fastest at intermediate frequencies** and **slow near 0 and 1**, where there is little variation (*pq* small) for it to act on.
+
+::: notes
+The pq factor is the variation in the population: no variation, no response to selection. The bracket says which genotype differences matter. When A is rare, p is small, so the bracket is dominated by the heterozygote–aa difference: a dominant favoured allele, with Aa as fit as AA, rises fast while rare. When A is common, q is small, and the AA–Aa difference matters: if A is dominant that difference is zero, and selection stalls. That is the next figure. Students do not need to derive this formula; they should be able to use the table method and understand the pq message.
+:::
+
 ## Dominance and the speed of selection {.smaller}
 
 ![](fig04-selection-curves.svg){width="72%" fig-align="center"}
@@ -157,6 +229,26 @@ This is the one formula of the lecture. It is a weighted count: each genotype's 
 
 ::: notes
 These are deterministic curves: no drift. Same s, three dominance values. The additive allele follows a symmetric S curve. The dominant one wins the race at first and then crawls. The recessive one, starting at 1 percent, hardly changes in 800 generations: with q equals 0.01, only 1 in 10 000 people is a homozygote and visible to selection. The flip side: selection against a harmful recessive allele is also very slow once the allele is rare. Even complete removal of affected people reduces q from 0.01 to 0.005 only after about 100 generations, about 2500 years.
+:::
+
+## Selection against a recessive lethal, worked
+
+Suppose every *aa* dies before reproducing (*s* = 1) and *A* is dominant. Among the survivors only *AA* (*p*²) and *Aa* (2*pq*) remain:
+
+$$
+q' = \frac{pq}{p^2 + 2pq} = \frac{q}{p + 2q} = \frac{q}{1+q}, \qquad\text{and after } t \text{ generations}\quad q_t = \frac{q_0}{1 + t\,q_0}.
+$$
+
+Start at *q*₀ = 0.01 (incidence 1 in 10 000):
+
+| generations *t* | 0 | 1 | 10 | 50 | 100 | 200 |
+|---|---|---|---|---|---|---|
+| *q*<sub>*t*</sub> | 0.0100 | 0.0099 | 0.0091 | 0.0067 | **0.0050** | 0.0033 |
+
+Halving *q* takes 1/*q*₀ = **100 generations**, about 2500 years, even though every affected person is removed. The copies survive in healthy carriers.
+
+::: notes
+This is the extreme case of the recessive curve on the previous figure, and it can be done exactly. The survivors' a alleles all sit in heterozygotes: pq out of p squared plus 2pq. Divide top and bottom by p and use p plus q equals one to get q over 1 plus q. Iterating gives the neat closed form, which students can check on a calculator. This is the population-genetic reason eugenic sterilisation programmes could never have achieved their stated aims, a point we return to in the ethics module: most copies of a recessive allele are in carriers, invisible to selection. Mutation also adds new copies, which is the next slide.
 :::
 
 ## Mutation–selection balance
@@ -175,6 +267,24 @@ Selection removes harmful alleles; mutation creates new ones. They balance at an
 The derivation is beyond this course; the intuition is enough. At equilibrium, the number of copies removed by selection each generation equals the number created by mutation. For a recessive allele, selection removes copies only from aa individuals, at a rate s times q squared, so q squared equals mu over s. For a dominant allele, selection acts on heterozygotes, removing about s times q, so q equals mu over s. Note that in both cases the incidence of the disease is about mu, or 2 mu for the dominant: under this simple model, disease incidence tells you the mutation rate. The figure 10 to the minus 5 is a typical order of magnitude for the per-gene rate of new loss-of-function mutations.
 :::
 
+## Where the balance formulas come from
+
+At equilibrium, **copies gained** by mutation = **copies lost** by selection, per generation.
+
+| | recessive harmful allele | dominant harmful allele |
+|---|---|---|
+| gained by mutation (*A* → *a*) | ≈ *μ* | ≈ *μ* |
+| who is selected against | *aa*, frequency *q*² | *Aa*, frequency ≈ 2*q*, half its alleles are *a* |
+| lost by selection | ≈ *s q*² | ≈ *s q* |
+| balance | *μ* = *s q*² → ***q̂* = √(*μ*/*s*)** | *μ* = *s q* → ***q̂* = *μ*/*s*** |
+
+Worked example, a recessive allele with *s* = 0.25 and *μ* = 10⁻⁶:
+*q̂* = √(10⁻⁶ / 0.25) = √(4 × 10⁻⁶) = **0.002**; incidence *q̂*² = 4 × 10⁻⁶; carriers ≈ 2*q̂* = 1 in 250.
+
+::: notes
+The derivation uses approximations valid for rare alleles: p is close to 1, so the rate at which A alleles mutate to a is mu times p, about mu; and the dominant case treats almost all affected people as heterozygotes. The idea of a balance of gains and losses is the important part; it is the same logic as a bath with the tap open and the plug out. Note the square root in the recessive case: a smaller s raises the equilibrium frequency, but only as the square root. Exercise B6 uses this in reverse, to ask what mutation rate would explain cystic fibrosis, and finds that mutation–selection balance cannot.
+:::
+
 ## Migration (gene flow)
 
 If a fraction *m* of each generation are migrants from a population with allele frequency *p*<sub>M</sub>:
@@ -191,6 +301,28 @@ $$
 Migration is the simplest force to model: the new population is a weighted average of the residents and the migrants. The "one migrant per generation" rule is a classical result from Wright's island model: it holds whatever the population size, because larger populations drift more slowly and need proportionally more migrants. Link to last lecture: the HbS allele appears in 1000 Genomes populations outside Africa only in admixed populations with recent African ancestry, such as ACB in Barbados and ASW in the south-western US. That is migration.
 :::
 
+## Two selective forces on one allele
+
+:::: {.columns}
+::: {.column width="50%"}
+![](img/sickle-smear.jpg){width="100%"}
+[Photo: Ed Uthman, CC BY 2.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sickle_Cell_Anemia_(5610746554).jpg){.photo-credit}
+
+**Against HbS**: blood smear from a person with sickle-cell disease (*HbS/HbS*). Sickled cells block small vessels and are destroyed early.
+:::
+
+::: {.column width="50%"}
+![](img/falciparum-smear.jpg){width="75%" fig-align="center"}
+[Photo: MichaelZahniser, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plasmodium_falciparum_(malaria)_parasite_in_blood.jpg){.photo-credit}
+
+**For HbS**: ring forms of *Plasmodium falciparum* inside red blood cells. *HbA/HbS* carriers are protected against severe malaria.
+:::
+::::
+
+::: notes
+Two microscope images make the two sides of the balance concrete. Left: a blood smear in sickle-cell disease, with elongated, sickled red cells among normal-looking ones. This is the cost of the HbS allele in homozygotes. Right: the malaria parasite Plasmodium falciparum, the small rings inside red cells. Carriers of one HbS allele are much less likely to develop severe malaria; the mechanisms are still being studied, and include faster removal of infected cells. Neither image tells the whole story alone: the fitness of each genotype depends on both forces, which is the next slide. The HbS smear connects to the sickle-cell example from Part 1.
+:::
+
 ## Heterozygote advantage: sickle cell and malaria {.smaller}
 
 ![](fig05-heterozygote-advantage.svg){width="80%" fig-align="center"}
@@ -201,6 +333,29 @@ Migration is the simplest force to model: the new population is a weighted avera
 
 ::: notes
 This brings together the HBB thread of the course. In Part 1 HbS was a single missense change, glutamate to valine at position 6. Here it is a classic case of balancing selection, first proposed by Allison in the 1950s from the overlap of high HbS frequencies with malaria. The fitness values are illustrative, chosen so that the equilibrium matches the observed frequency; they are the same as in the demo preset. The right panel is the change in q per generation: positive below the equilibrium, negative above, so q returns to 0.14 from either side. Where malaria has gone, as among people of African descent in the Americas, the heterozygote advantage disappears and selection slowly lowers HbS. Other examples: thalassaemias and G6PD deficiency, also linked to malaria.
+:::
+
+## Heterozygote advantage, step by step
+
+**1. Rescale** so the heterozygote has fitness 1 (divide by 1.16):
+
+| | *AA* | *AS* | *SS* |
+|---|---|---|---|
+| fitness | 1/1.16 = 0.862 | 1 | 0.20/1.16 = 0.172 |
+| written as | 1 − *s*₁, *s*₁ = **0.138** | 1 | 1 − *s*₂, *s*₂ = **0.828** |
+
+**2. Equilibrium**: $\hat q = \dfrac{s_1}{s_1 + s_2} = \dfrac{0.138}{0.138 + 0.828} = \mathbf{0.143}$ (the same as the formula on the previous slide).
+
+**3. Check that it is stable**, with the table method of the recursion:
+
+| *q*(S) now | 0.02 | 0.05 | 0.14 | 0.30 | 0.50 |
+|---|---|---|---|---|---|
+| Δ*q* per generation | +0.0027 | +0.0049 | +0.0004 | −0.037 | −0.114 |
+
+Below *q̂* the allele rises, above it falls: a **stable** equilibrium.
+
+::: notes
+The rescaled form is the one in most textbooks and is easiest by hand: each homozygote has a selection coefficient against it, and the equilibrium frequency of S is the cost to AA divided by the sum of the two costs. Intuition: the stronger the selection against SS, the lower the equilibrium; the stronger the selection against AA (that is, the more malaria), the higher. The check uses the same recursion as before, with the allele of interest now being S. Note how slowly q approaches the equilibrium from below and how fast it falls from above, because selection against SS acts on q squared. Exercise B7 does the same for thalassaemia with other numbers.
 :::
 
 ## Drift versus selection
@@ -217,14 +372,30 @@ So most variation in the genome is shaped by drift, and selection acts strongly 
 This connects the two halves of the lecture. The product 4Ns compares the strength of selection with the strength of drift. For human Ne of about 10 000, alleles with s smaller than about 1 in 40 000 behave as neutral: most of the genome. Haldane's 2s result is surprising for students: even a clearly beneficial mutation is usually lost, because it starts as a single copy and its first few carriers may simply not pass it on. The demo's "new beneficial mutation" preset shows this: 7 of 100 populations fix the allele with these settings, close to 5 percent. Small populations accumulating harmful alleles is a concern in conservation genetics, and links back to the founder effect.
 :::
 
+## Common mistakes
+
+| Mistake | Correct |
+|---|---|
+| "Drift pushes rare alleles towards loss" | drift has **no direction**: the expected change is 0. Rare alleles are lost **more often** only because they start closer to 0 |
+| "The fixation probability of a neutral allele depends on *N*" | it is *p*₀. *N* sets how **long** it takes, and *p*₀ = 1/2*N* for a new mutation |
+| *N*ₑ as the arithmetic mean of sizes | **harmonic** mean: one small generation dominates |
+| Forgetting to divide by *w̄* | frequencies after selection must add up to 1 |
+| Counting 2*pq* *A* alleles from heterozygotes | each heterozygote carries **one** *A*: the term is *pq w*<sub>Aa</sub> |
+| "Selection removes a harmful recessive allele quickly" | once rare, it hides in carriers: halving *q* = 0.01 takes 100 generations even for a lethal |
+| "A beneficial mutation always spreads" | most are lost by drift while rare: P(fix) ≈ 2*s*<sub>het</sub> |
+
+::: notes
+Use as a check-yourself slide: hide the right column and ask for the correction. The first two are conceptual and come up in every exam; the middle three are the arithmetic slips in the recursion; the last two connect selection and drift. A good follow-up question: what is the probability that a new beneficial mutation with heterozygote advantage 0.01 is lost? About 98 percent.
+:::
+
 ## Summary
 
 - **Drift**: random sampling of 2*N* gene copies each generation. Alleles are fixed or lost; P(fixation) = *p*₀; heterozygosity decays by (1 − 1/2*N*) per generation. Use *N*ₑ, which is usually much smaller than the census size.
 - **Founder effects** and bottlenecks make some rare alleles common (Finnish disease heritage, Salla disease) and others rare (CF in Finland).
-- **Selection**: *p*′ = (*p*²*w*<sub>AA</sub> + *pq w*<sub>Aa</sub>)/*w̄*. Selection on rare recessive alleles is slow.
-- **Mutation–selection balance**: *q̂* ≈ √(*μ*/*s*) recessive, *μ*/*s* dominant.
+- **Selection**: *p*′ = (*p*²*w*<sub>AA</sub> + *pq w*<sub>Aa</sub>)/*w̄*, done as a table generation by generation. Δ*p* ∝ *pq*: fast at intermediate *p*, slow near 0 and 1. A recessive lethal falls as *q*<sub>*t*</sub> = *q*₀/(1 + *tq*₀).
+- **Mutation–selection balance** (gain = loss): *q̂* ≈ √(*μ*/*s*) recessive, *μ*/*s* dominant.
 - **Migration**: Δ*p* = *m*(*p*<sub>M</sub> − *p*); makes populations similar.
-- **Heterozygote advantage** keeps HbS at a stable *q̂* where malaria is common.
+- **Heterozygote advantage** keeps HbS at a stable *q̂* = *s*₁/(*s*₁ + *s*₂) where malaria is common.
 
 ::: notes
 The exam-level skills: apply the selection recursion for one or two generations by hand; compute an equilibrium for heterozygote advantage; compute Ne for a sex ratio; explain founder effects with an example; state the fixation probability of a neutral allele.

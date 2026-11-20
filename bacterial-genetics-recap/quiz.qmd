@@ -105,3 +105,15 @@ Different Hfr strains have F inserted at different places and in different orien
 ::: {.callout-note collapse="true" title="Answer"}
 Each Hfr strain gives a linear order of entry, starting at its own origin and going in its own direction. When the orders from many Hfrs were lined up, they overlapped, and the only arrangement consistent with all of them was a **circle**: the last genes of one Hfr were the first genes of another. The circular map was later confirmed physically (Cairns, 1963) and by the genome sequence (4 641 652 bp, one circular chromosome).
 :::
+
+---
+
+**Q9.** In an interrupted-mating experiment, *gal*^+^ recombinants per 100 donors are 0 at 20 min, 0 at 25 min, 6 at 30 min, 16 at 35 min and 26 at 40 min. What is the time of entry of *gal*?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Find the slope of the straight rise, then extend the line back to zero recombinants.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+From 30 to 40 min the count rises by 10 every 5 min: a slope of **2 per min**. At 30 min there are 6, so the line reaches zero at 30 − 6/2 = **27 min**. That is the time of entry. Reading the first non-zero time point (30 min) would overestimate it, because samples were only taken every 5 min.
+:::

@@ -19,16 +19,16 @@ format:
     html-math-method: katex
 ---
 
-## About this lecture
+## About this lecture {.smaller}
 
 Mendel's factors were an abstraction: pairs of "somethings" that separate when gametes form. Around 1900–1915 geneticists found out **where** genes are: on **chromosomes**. The key evidence came from a gene that follows the X chromosome.
 
-- A careful recap of **mitosis and meiosis**: ploidy, homologues and sister chromatids, and what each division separates.
+- A careful recap of **mitosis and meiosis**: ploidy, homologues and sister chromatids, and what each division separates, in diagrams and in real cells.
 - The **chromosome theory of inheritance**: chromosomes behave exactly as Mendel's factors must.
 - **Morgan's white-eyed fly** (1910): the first gene assigned to a specific chromosome, the X.
-- **Bridges' nondisjunction** (1916): rare exceptions that proved the theory.
+- **Bridges' nondisjunction** (1916): rare exceptions that proved the theory, and how to tell **in which parent and which division** an error happened.
 - **Sex determination**: XY with *SRY*, XO, ZW and haplodiploidy.
-- **X-linked inheritance** worked by hand, and a pointer to dosage compensation.
+- **X- and Z-linked inheritance** worked by hand, and a pointer to dosage compensation.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, chromosome theory of inheritance chapter.
 
@@ -51,6 +51,29 @@ This lecture opens Part 2. Part 1 treated genes as abstract factors; today we pu
 
 ::: notes
 Go slowly here: most confusion later in Part 2 comes from mixing up homologues and sister chromatids. Homologues are similar but not identical (they can carry different alleles) and come from different parents. Sister chromatids are identical copies made in S phase. The rule "count centromeres" settles every counting question: after S phase a human cell still has 46 chromosomes, but 92 chromatids. Mention the DNA content notation if useful: a G1 diploid cell is 2C, after S it is 4C, a gamete is 1C.
+:::
+
+## A real karyotype {.smaller}
+
+:::: {.columns}
+::: {.column width="60%"}
+![](img/karyotype-male.png){width="100%"}
+
+[Image: National Human Genome Research Institute, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:NHGRI_human_male_karyotype.png){.photo-credit}
+:::
+::: {.column width="40%"}
+A human **male** karyotype: chromosomes from one cell in **metaphase**, photographed, cut out and arranged in pairs by size and banding pattern (G-bands).
+
+- **22 pairs of autosomes**, numbered from largest (1) to smallest (21 and 22).
+- **X and Y**, bottom right: unequal in size.
+- Each chromosome is already **replicated** into two sister chromatids, held tightly together.
+
+Count: 46 centromeres, so **46 chromosomes**; 92 chromatids.
+:::
+::::
+
+::: notes
+This is what the vocabulary of the previous slide looks like in a real cell. The cells are usually cultured white blood cells, arrested in metaphase with a spindle poison so that chromosomes are condensed, then stained to give the light and dark bands that identify each chromosome. The pairs are homologues: one from the mother, one from the father. Within each chromosome, the two sister chromatids are held together along their length and are often hard to tell apart at this resolution. Note that chromosome 21 is actually smaller than 22; the numbering was fixed before that was known. Karyotypes come back in Part 5, where an extra chromosome 21 or a missing X is visible in exactly this kind of picture.
 :::
 
 ## Mitosis and meiosis {.smaller}
@@ -82,6 +105,29 @@ A human cell, 2n = 46:
 
 ::: notes
 Have them fill in this table before showing it. The common mistake is to say a cell after meiosis I is "still diploid because it has 46 chromatids". Ploidy counts chromosome sets, not DNA molecules. The last bullet is a small honesty note: if a crossover happens between a gene and its centromere, the two alleles are separated only in meiosis II. That matters for tetrad analysis in fungi, which we skip, and it is a hint that crossing over, next unit, complicates the simple picture.
+:::
+
+## Meiosis in real cells: a grasshopper testis {.smaller}
+
+:::: {.columns}
+::: {.column width="56%"}
+![](img/grasshopper-meiosis.jpg){width="92%"}
+
+[Photo: Durbadal's micro observations, CC0, via Wikimedia Commons (cropped)](https://commons.wikimedia.org/wiki/File:Grasshopper_meiosis_stages.jpg){.photo-credit}
+:::
+::: {.column width="44%"}
+Squashed grasshopper testis stained with aceto-orcein: the kind of material Sutton used in 1902.
+
+- **Prophase I** (top row, then diakinesis): chromosomes condense, homologues **pair**, then pull apart except at **chiasmata**.
+- **Meiosis I** (middle row): bivalents on the equator (**metaphase I**); **homologues** go to opposite poles (**anaphase I**).
+- **Bottom row, meiosis II**: two cells, each with **n** chromosomes; **sister chromatids** separate (anaphase II), giving four haploid nuclei.
+
+The counting of the last slide, seen down a microscope.
+:::
+::::
+
+::: notes
+These are real cells. Ask the students to find the two divisions: the middle row is meiosis I, with paired chromosomes on the plate and then whole chromosomes moving apart; the bottom row is meiosis II, where two cells divide side by side. Telophase II, bottom right, shows four nuclei: the four products of one meiosis. The diplotene and diakinesis panels show chiasmata, the crossovers that are the subject of the next unit. Grasshoppers have large, few chromosomes, which is why Sutton could follow individual pairs and see that they behave like Mendel's factors.
 :::
 
 ## Meiosis makes variety {.smaller}
@@ -151,6 +197,39 @@ The parallel is striking, but it is correlation: two things that both come in pa
 The first part is the hemizygosity rule students already used in pedigrees; now we see its chromosomal basis. The X-Y pairing via the pseudoautosomal regions matters for two reasons: it is how the X and Y segregate from each other in meiosis I, and occasional abnormal crossing over there can move SRY onto an X, which explains some XX males (two slides on). The 1 to 1 sex ratio is a Mendelian testcross: XY times XX is like Aa times aa.
 :::
 
+## Morgan and the fruit fly {.smaller}
+
+:::: {.columns}
+::: {.column width="24%"}
+![](img/morgan.jpg){width="100%"}
+
+[Photo: unknown author (1891), public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Thomas_Hunt_Morgan.jpg){.photo-credit}
+:::
+::: {.column width="40%"}
+![](img/white-eyed-fly.jpg){width="100%"}
+
+[Photo: Paul Reynolds, CC BY 2.5, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:White-eyed_Drosophila.jpg){.photo-credit}
+:::
+::: {.column width="36%"}
+**Thomas Hunt Morgan** (left, as a young man) began breeding *Drosophila melanogaster* at Columbia University around 1908.
+
+Why flies?
+
+- a generation in about **10 days** at 25 °C;
+- **hundreds** of offspring from one female;
+- cheap: thousands live in milk bottles;
+- only **4 chromosome pairs** (2n = 8).
+
+Right: a **white-eyed** fly on a millimetre scale. Wild type has red eyes.
+
+Morgan received the Nobel Prize in Physiology or Medicine in **1933**.
+:::
+::::
+
+::: notes
+Morgan was an embryologist who was sceptical of both Mendelism and the chromosome theory when he started breeding flies. He was looking for mutations, and after about two years of breeding he found one: a male with white eyes, in 1910. The photo on the right shows how small the fly is, about 2.5 mm, and how obvious the white eye is under a low-power microscope. Flies made genetics fast: what took Mendel eight years in peas takes a few months in Drosophila. Morgan's students Sturtevant, Bridges and Muller all appear in Part 2. The Nobel Prize was for discoveries concerning the role of chromosomes in heredity, which is exactly today's topic.
+:::
+
 ## Morgan's white-eyed fly (1910) {.smaller}
 
 ![](fig02-morgan-white-eye.svg){width="80%" fig-align="center"}
@@ -182,9 +261,9 @@ This is the chi-square test from Part 1 applied to a real historical data set; s
 
 ## Bridges: exceptions that prove the rule {.smaller}
 
-![](fig03-bridges-nondisjunction.svg){width="54%" fig-align="center"}
+![](fig03-bridges-nondisjunction.svg){width="47%" fig-align="center"}
 
-Morgan's student **Calvin Bridges** crossed white ♀ × red ♂. Rarely (well under 1 % of offspring) he found **exceptional** flies: white daughters and red sons. His explanation: the two X chromosomes of the mother occasionally fail to separate in meiosis, **nondisjunction**, giving XX and no-X (O) eggs.
+Morgan's student **Calvin Bridges**: rare (well under 1 %) **exceptional** flies, explained by **nondisjunction** of the mother's two X chromosomes, giving XX and no-X (O) eggs.
 
 ::: notes
 The regular offspring show criss-cross inheritance: red daughters, white sons. The exceptions are the reverse. Bridges reasoned that a white daughter must have got both her X chromosomes from her white-eyed mother, and a Y from the father; a red son must have got his X from the father and no X from the mother. If that is right, the exceptional females must be XXY and the exceptional males XO. In flies the Y does not determine sex, so XXY is female and XO is male, sterile because the Y carries genes needed for sperm. The XXX and YO zygotes mostly die. The table is the Punnett square with the two abnormal egg types added. Try the nondisjunction mode of the demo: the n+1 and n-1 gametes are the XX and O eggs.
@@ -261,8 +340,54 @@ All four classes ¼ each: ½ of the daughters and ½ of the sons are white.
 The trick for X-linked problems is to solve sons and daughters separately. Sons: it is all about the mother, because the father gives a Y. Daughters: they always get the father's X, so look at his allele first, then add the mother's. In example 1, the father is white, so every daughter gets Xw; whether she is white depends on the mother's X, half and half. The sons get the mother's X, half and half. This cross is the one Morgan used to show that white-eyed females exist and are viable. Example 2 is the same pattern students used in pedigrees for Duchenne and haemophilia. Note the notation: the allele symbol goes as a superscript on the X; Y carries no allele.
 :::
 
+## Worked example: where did the error happen? {.smaller}
+
+X-linked markers tell you **which parent** an extra or missing X came from, and sometimes **which division**. Red–green colour blindness: *C* normal, *c* colour-blind.
+
+**Case 1.** Father X^*C*^Y (normal), mother X^*C*^X^*c*^ (carrier). Their son is **47,XXY** and **colour-blind**.
+
+| Step | Reasoning |
+|---|---|
+| His genotype | colour-blind with two X: X^*c*^X^*c*^Y |
+| Where are the X^*c*^ from? | the father has no *c*, so **both X** came from the **mother**; the Y from the father |
+| Which division? | the mother has only one X^*c*^; two copies of it are **sister chromatids**: error in **meiosis II** |
+
+**Case 2.** Father X^*c*^Y (colour-blind), mother X^*C*^X^*C*^. Their son is **47,XXY** with **normal** vision.
+
+| Step | Reasoning |
+|---|---|
+| His genotype | he must carry the father's X^*c*^ (the mother has none) and the father's Y: X^*C*^X^*c*^Y |
+| Which parent, which division? | the father's X and Y went **together**: X and Y pair and separate in **meiosis I**, so a **paternal meiosis I** error |
+
+::: notes
+Two worked cases of the reasoning in exercise B9, which asks the same for a Turner woman. The key moves: first write the child's genotype from its phenotype and karyotype; then ask which parent could have given each allele; then ask whether the two copies from one parent are identical (sisters, meiosis II) or different (homologues, meiosis I). Case 1 assumes no crossover between the colour-blindness gene and the centromere; a crossover can make sister chromatids carry different alleles, which is why real studies use markers near the centromere, as in the demo question about Down syndrome. Case 2 is clean: X and Y from one father can only end up together if they failed to separate in his first division.
+:::
+
+## Z-linkage: the same rules, sexes reversed {.smaller}
+
+In birds the **female is ZW** and the male ZZ. Z-linked genes follow the X-linked rules with the sexes swapped:
+
+| | XY (mammals, flies) | ZW (birds, butterflies) |
+|---|---|---|
+| Hemizygous sex | male, XY | **female**, ZW |
+| A daughter gets her sex chromosome from | each parent (X from father, X from mother) | her **father** only (Z); W from mother |
+| A son gets | X from his mother | one Z from each parent |
+| Criss-cross pattern | mother → sons | **father → daughters** |
+
+**Example** (chickens): *silver* plumage (*S*) is dominant to *gold* (*s*), and the gene is on the Z. Gold rooster Z^*s*^Z^*s*^ × silver hen Z^*S*^W:
+
+- sons Z^*S*^Z^*s*^: all **silver**; daughters Z^*s*^W: all **gold**.
+
+Day-old chicks can be **sexed by colour**. Poultry breeders use crosses like this (exercise B8 has another one).
+
+::: notes
+The point is that nothing new is needed: write the alleles on the Z, remember that the hen is the hemizygous sex, and solve sons and daughters separately, as with X-linkage. A hen's single Z goes to all her sons; her daughters get her W and their Z from the father. So in the example, every daughter gets the father's gold allele and shows it, while every son gets the mother's dominant silver allele. Commercial sex-linked crosses, for example red rooster times white or silver hen, rely on exactly this. In butterflies and moths, also ZW, the same rules apply.
+:::
+
 ## Dosage compensation: a pointer {.smaller}
 
+:::: {.columns}
+::: {.column width="58%"}
 Females have **two** X chromosomes and males **one**. Why don't females make twice as much of every X-linked gene product?
 
 | Organism | Solution |
@@ -271,12 +396,21 @@ Females have **two** X chromosomes and males **one**. Why don't females make twi
 | *Drosophila* | males **double** transcription from their single X |
 | *C. elegans* | XX hermaphrodites **halve** expression from each X |
 
-In mammals the choice of which X to silence is random in each early embryonic cell, so a heterozygous female is a **mosaic**. Calico and tortoiseshell cats are the classic example.
+In mammals the choice of which X to silence is random in each early embryonic cell, so a heterozygous female is a **mosaic**.
 
 **More in Part 6** (*Eukaryotic gene regulation*), with its own demo.
+:::
+::: {.column width="42%"}
+![](img/calico-cat.jpg){width="100%"}
+
+[Photo: Holly Cheng, CC BY-SA 3.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Calico_cat_-_Phoebe.jpg){.photo-credit}
+
+A **calico** cat: the orange and black patches are clones of cells with different active X chromosomes (white patches come from a separate, autosomal spotting gene).
+:::
+::::
 
 ::: notes
-Only a pointer today. The point to make is that sex chromosomes create a dosage problem that the autosomes do not, and that different lineages have solved it in opposite ways. X inactivation also explains why female carriers of X-linked diseases can show mild symptoms: in some tissues, by chance, most cells may have silenced the normal X. The mechanism (the XIST RNA, chromatin modification) belongs to gene regulation in Part 6.
+Only a pointer today. The cat: the orange/black coat-colour gene is on the X in cats, so a cat with orange and black patches must have two X chromosomes, one carrying each allele, and is nearly always female. Each patch descends from an early embryonic cell that silenced one X, and its descendants kept that choice. The point to make is that sex chromosomes create a dosage problem that the autosomes do not, and that different lineages have solved it in opposite ways. X inactivation also explains why female carriers of X-linked diseases can show mild symptoms: in some tissues, by chance, most cells may have silenced the normal X. The mechanism (the XIST RNA, chromatin modification) belongs to gene regulation in Part 6.
 :::
 
 ## Try it: nondisjunction {.smaller}
@@ -289,6 +423,22 @@ Only a pointer today. The point to make is that sex chromosomes create a dosage 
 
 ::: notes
 The demo starts at metaphase I in the nondisjunction mode. Step to the gametes: all four are abnormal, two n+1 and two n-1, and the n+1 gametes carry one father's and one mother's copy. Then switch to nondisjunction in MII and step again: two gametes are normal, one n+1 with two identical (same colour) copies, one n-1. Link to Bridges: an XX egg is an n+1 gamete for the X; an O egg is n-1. In humans, the same error for chromosome 21 gives Down syndrome; whether it happened in meiosis I or II can be read from DNA markers, because MI errors give two different parental copies. That is Part 5.
+:::
+
+## Common mistakes {.smaller}
+
+| Mistake | Why it is wrong | Instead |
+|---|---|---|
+| "After meiosis I the cell is still diploid: it has 46 chromatids" | ploidy counts chromosome **sets**, not DNA molecules | count centromeres: 23 chromosomes = n |
+| "Homologues and sister chromatids are the same thing" | homologues come from different parents and can differ; sisters are copies | homologues separate in MI, sisters in MII |
+| "A son can inherit his father's X-linked allele" | a son gets his father's **Y** | sons: look only at the mother |
+| Solving X-linked crosses with one Punnett square for "all offspring" | ratios differ between the sexes | solve **sons and daughters separately** |
+| "XXY is male in every species" | in flies the X : autosome ratio decides | a Y makes a male only in mammals (*SRY*) |
+| In birds, "the father decides the sex" | hens are ZW, the heterogametic sex | the **mother** decides in ZW species |
+| "A significant χ² disproves X-linkage" (Morgan's data) | the misfit can have another cause, e.g. viability | look at **which** classes deviate |
+
+::: notes
+A check-yourself slide. Read out the left column and ask the room what is wrong with each before showing the rest. Most items map to a by-hand problem in the exercise: counting (B1, B2), Morgan's crosses (B3), colour blindness (B5), sex determination (B7), chickens (B8).
 :::
 
 ## Summary {.smaller}
@@ -304,6 +454,8 @@ The demo starts at metaphase I in the nondisjunction mode. Step to the gametes: 
 | Bridges 1916 | nondisjunction; exceptional XXY females and XO males, seen in the microscope |
 | Sex determination | XY (*SRY* in mammals; X : A ratio in flies), XO, ZW, haplodiploidy |
 | X-linked crosses | sons get the mother's X; daughters get the father's X; males are hemizygous |
+| Origin of aneuploidy | X-linked alleles show which parent; identical copies → MII, different homologues → MI |
+| Z-linked crosses | hens (ZW) are hemizygous; criss-cross from father to daughters |
 | Dosage compensation | X inactivation in mammals (Part 6) |
 
 ::: notes

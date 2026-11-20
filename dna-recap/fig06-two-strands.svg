@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" font-family="Helvetica, Arial, sans-serif" width="900" height="390">
+  <!-- HBB codons 5-7 (c.13-21, ACT CCT GAG; NM_000518.5) as they lie on chromosome 11 (GRCh38).
+       HBB is on the minus strand (NCBI Gene: NC_000011.10, complement), so the coding strand runs right to left.
+       c.20 = chr11:5,227,002; the + strand base there is T (dbSNP rs334 T>A). Column k (1-9) = chr11:5,227,000+k = c.(22-k). -->
+  <defs>
+    <marker id="arrG" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#5a6b7a"/></marker>
+    <marker id="arrR" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#bc4749"/></marker>
+  </defs>
+
+  <text x="20" y="24" font-size="15" font-weight="bold" fill="#1b2a3a">HBB lies on the minus strand of chromosome 11</text>
+
+  <!-- coordinate axis -->
+  <line x1="250" y1="46" x2="690" y2="46" stroke="#5a6b7a" stroke-width="2" marker-end="url(#arrG)"/>
+  <text x="700" y="50" font-size="13" fill="#5a6b7a">chr11 coordinates increase</text>
+
+  <!-- highlighted column: c.20 / chr11:5,227,002 -->
+  <rect x="300" y="58" width="42" height="130" rx="6" fill="#fbecc8"/>
+  <text x="323" y="72" font-size="12" fill="#1b2a3a" text-anchor="middle">5,227,002</text>
+
+  <!-- + strand: 5'-CTCAGGAGT-3' ; boxes at x = 260 + 46(k-1) -->
+  <text x="20" y="98" font-size="15" font-weight="bold" fill="#2a6f97">+ strand</text>
+  <text x="20" y="116" font-size="13" fill="#5a6b7a">genome view: dbSNP, browsers</text>
+  <text x="240" y="102" font-size="15" font-weight="bold" fill="#2a6f97" text-anchor="middle">5'</text>
+  <text x="686" y="102" font-size="15" font-weight="bold" fill="#2a6f97" text-anchor="middle">3'</text>
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="260" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="277" y="101">C</text>
+    <rect x="306" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97" stroke-width="2.5"/><text x="323" y="101">T</text>
+    <rect x="352" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="369" y="101">C</text>
+    <rect x="398" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="415" y="101">A</text>
+    <rect x="444" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="461" y="101">G</text>
+    <rect x="490" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="507" y="101">G</text>
+    <rect x="536" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="553" y="101">A</text>
+    <rect x="582" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="599" y="101">G</text>
+    <rect x="628" y="80" width="34" height="30" rx="4" fill="#e3eef6" stroke="#2a6f97"/><text x="645" y="101">T</text>
+  </g>
+
+  <!-- pairing ticks -->
+  <g stroke="#8a97a4" stroke-width="2" stroke-dasharray="4,3">
+    <line x1="277" y1="114" x2="277" y2="150"/><line x1="323" y1="114" x2="323" y2="150"/>
+    <line x1="369" y1="114" x2="369" y2="150"/><line x1="415" y1="114" x2="415" y2="150"/>
+    <line x1="461" y1="114" x2="461" y2="150"/><line x1="507" y1="114" x2="507" y2="150"/>
+    <line x1="553" y1="114" x2="553" y2="150"/><line x1="599" y1="114" x2="599" y2="150"/>
+    <line x1="645" y1="114" x2="645" y2="150"/>
+  </g>
+
+  <!-- minus strand: 3'-GAGTCCTCA-5' (read right to left: ACT CCT GAG = codons 5, 6, 7) -->
+  <text x="20" y="172" font-size="15" font-weight="bold" fill="#bc4749">minus strand</text>
+  <text x="20" y="190" font-size="13" fill="#5a6b7a">gene view: HBB coding strand</text>
+  <text x="240" y="176" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">3'</text>
+  <text x="686" y="176" font-size="15" font-weight="bold" fill="#bc4749" text-anchor="middle">5'</text>
+  <g font-size="18" font-weight="bold" font-family="Courier New, monospace" text-anchor="middle" fill="#1b2a3a">
+    <rect x="260" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="277" y="175">G</text>
+    <rect x="306" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749" stroke-width="2.5"/><text x="323" y="175">A</text>
+    <rect x="352" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="369" y="175">G</text>
+    <rect x="398" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="415" y="175">T</text>
+    <rect x="444" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="461" y="175">C</text>
+    <rect x="490" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="507" y="175">C</text>
+    <rect x="536" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="553" y="175">T</text>
+    <rect x="582" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="599" y="175">C</text>
+    <rect x="628" y="154" width="34" height="30" rx="4" fill="#f6e3e3" stroke="#bc4749"/><text x="645" y="175">A</text>
+  </g>
+
+  <!-- codon brackets under the minus strand -->
+  <g stroke="#5a6b7a" stroke-width="1.5" fill="none">
+    <path d="M262,196 L262,202 L384,202 L384,196"/>
+    <path d="M400,196 L400,202 L522,202 L522,196"/>
+    <path d="M538,196 L538,202 L660,202 L660,196"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="323" y="220">codon 7: GAG, Glu</text>
+    <text x="461" y="220">codon 6: CCT, Pro</text>
+    <text x="599" y="220">codon 5: ACT, Thr</text>
+  </g>
+  <text x="323" y="236" font-size="12" fill="#5a6b7a" text-anchor="middle">c.20 = middle base</text>
+
+  <!-- direction of the gene -->
+  <line x1="662" y1="254" x2="262" y2="254" stroke="#bc4749" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="700" y="250" font-size="13" fill="#bc4749">HBB is read this way:</text>
+  <text x="700" y="266" font-size="13" fill="#bc4749">5' → 3' on the minus strand</text>
+
+  <!-- two descriptions of HbS -->
+  <rect x="20" y="284" width="420" height="72" rx="8" fill="#f6e3e3" stroke="#bc4749" stroke-width="1.2"/>
+  <text x="36" y="306" font-size="14" font-weight="bold" fill="#1b2a3a">Gene view (ClinVar, HGVS c. name)</text>
+  <text x="36" y="326" font-size="13" fill="#1b2a3a">c.20A&gt;T: codon 7 GAG → GTG, Glu → Val</text>
+  <text x="36" y="344" font-size="13" fill="#5a6b7a">counted from the A of ATG, along the gene</text>
+  <rect x="460" y="284" width="420" height="72" rx="8" fill="#e3eef6" stroke="#2a6f97" stroke-width="1.2"/>
+  <text x="476" y="306" font-size="14" font-weight="bold" fill="#1b2a3a">Genome view (dbSNP rs334, VCF)</text>
+  <text x="476" y="326" font-size="13" fill="#1b2a3a">T&gt;A at chr11:5,227,002 (GRCh38)</text>
+  <text x="476" y="344" font-size="13" fill="#5a6b7a">always the + strand of the reference</text>
+  <text x="450" y="380" font-size="14" font-weight="bold" fill="#1b2a3a" text-anchor="middle">One base pair, A:T → T:A, described from each of its two strands</text>
+</svg>

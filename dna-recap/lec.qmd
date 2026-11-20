@@ -25,14 +25,15 @@ format:
 
 - **How we know** that genes are made of DNA: Griffith, Avery, Hershey and Chase.
 - The **double helix**: base pairing, antiparallel strands, and how to read the partner strand (the **reverse complement**).
-- **Semiconservative replication** and the Meselson–Stahl experiment.
+- **One mutation, two strands**: why a database can write the sickle-cell change as A>T or as T>A.
+- **Semiconservative replication** and the Meselson–Stahl experiment, with its predictions worked out.
 - The **replication fork** in brief, and why copying errors matter to a geneticist.
 - **Homologous recombination** at the molecular level: the Holliday junction, the molecular basis of crossing over from Part 2.
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, DNA structure, replication and recombination chapter.
 
 ::: notes
-This is a recap unit. Students have met DNA structure and replication in 5MO103, so do not re-teach the enzymology. The aim is to look at the same material with a geneticist's questions: what properties must the genetic material have, what experiment showed it, what happens when copying goes wrong (mutation, next unit), and how crossing over, which they used as an abstract event in Part 2, happens at the level of DNA strands. Keep it brisk; about 10 content slides.
+This is a recap unit. Students have met DNA structure and replication in 5MO103, so do not re-teach the enzymology. The aim is to look at the same material with a geneticist's questions: what properties must the genetic material have, what experiment showed it, what happens when copying goes wrong (mutation, next unit), and how crossing over, which they used as an abstract event in Part 2, happens at the level of DNA strands. Keep the biochemistry brisk. Slow down in two places, because the exercises depend on them: reading the two strands of a real gene (the reverse complement, and the + versus − strand in databases), and predicting the Meselson-Stahl bands by following the old strands.
 :::
 
 ## What must the genetic material do? {.smaller}
@@ -66,23 +67,13 @@ Walk through the three panels left to right. Griffith did not identify the molec
 
 ## The double helix {.smaller}
 
-:::: {.columns}
-::: {.column width="45%"}
-
 Watson and Crick (1953), using X-ray data from **Rosalind Franklin** and Maurice Wilkins, and **Chargaff's rules** (A = T, G = C):
 
-- Two strands, each a **sugar–phosphate backbone** with a **base** on every sugar.
-- Bases pair across: **A–T** (2 hydrogen bonds), **G–C** (3).
+- Two strands, each a **sugar–phosphate backbone** with a **base** on every sugar. Bases pair across: **A–T** (2 hydrogen bonds), **G–C** (3).
 - A **purine** (A, G) always pairs with a **pyrimidine** (T, C), so the helix has a constant width.
 - The strands are **antiparallel**: one runs 5′ → 3′, the partner 3′ → 5′.
 
-:::
-::: {.column width="55%"}
-
-![](fig02-base-pairing.svg){width="100%"}
-
-:::
-::::
+![](fig02-base-pairing.svg){width="74%" fig-align="center"}
 
 "It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material." (Watson & Crick, 1953)
 
@@ -90,41 +81,76 @@ Watson and Crick (1953), using X-ray data from **Rosalind Franklin** and Maurice
 The key genetic fact is complementarity: one strand determines the other. That gives a copying mechanism (each strand is a template) and a way to repair damage (the undamaged strand holds the information). The 5' and 3' ends refer to the carbon atoms of the deoxyribose: the 5' end has a free phosphate, the 3' end a free hydroxyl. Polymerases add only to the 3' end, which is why the replication fork is asymmetric. G-C pairs have three hydrogen bonds and A-T two, so GC-rich DNA melts at a higher temperature; that matters for PCR primers in Part 4. The quotation is the famous understatement at the end of the 1953 paper.
 :::
 
-## Reading DNA: strands and the reverse complement {.smaller}
+## Reading DNA: the reverse complement {.smaller}
 
 A sequence is always written **5′ → 3′**. To write the partner strand, **complement** every base, then **reverse** the order:
 
-| | |
-|---|---|
-| this strand | 5′-`ATGGTGCAT`-3′ (start of the *HBB* coding sequence) |
-| complement, as it lies | 3′-`TACCACGTA`-5′ |
-| reverse complement | 5′-`ATGCACCAT`-3′ |
+![](fig05-revcomp.svg){width="80%" fig-align="center"}
 
-**Why a geneticist cares.** A genome database stores only the **+ strand** of each chromosome. *HBB* lies on the **− strand** of chromosome 11, so the sickle-cell change looks different depending on which strand you read:
-
-- on the *HBB* mRNA and coding sequence: **c.20A>T** (GAG → GTG, Glu → Val);
-- on the chromosome's + strand (dbSNP rs334): **T>A** at position 5,227,002 (GRCh38).
-
-Same mutation, same base pair, two strands.
+Each step alone gives a wrong answer. Both together give the partner strand, ready to be read like any other sequence.
 
 ::: notes
-This is the most useful practical skill of the lecture, and the R exercise automates it. Every genome browser, VCF file and dbSNP record reports alleles on the forward (+) strand of the reference chromosome, while gene-centred names (HGVS c. names, ClinVar titles) use the gene's own coding strand. For a gene on the minus strand, the two descriptions are reverse complements of each other. Students will meet this in the Find it tasks of this and the next unit: dbSNP rs334 is listed as T>A on NC_000011.10, while ClinVar calls it c.20A>T. Neither is wrong. A palindromic site such as GAATTC (EcoRI) is its own reverse complement, which is why restriction enzymes can recognise it on both strands at once (Part 4).
+This is the most useful practical skill of the lecture, and the R exercise automates it with a function revcomp(). The sequence is the first nine bases of the HBB coding sequence, the same as in the previous figure. Do it on the board once, slowly: complement under each base, then read the new strand from its 5' end, which is on the right. The two mistakes in the grey box are the ones students actually make. "Complement only" has the right bases but in the 3' to 5' direction, so if you type it into a database or a primer design tool it is read backwards. "Reverse only" is not a partner strand at all. A sequence such as GAATTC (EcoRI) is its own reverse complement: a palindrome in the DNA sense, which is why restriction enzymes can recognise it on both strands at once (Part 4).
+:::
+
+## One mutation, two strands: *HBB* on chromosome 11 {.smaller}
+
+A genome database stores only the **+ strand** of each chromosome. *HBB* lies on the **− strand** of chromosome 11 (NCBI Gene: "complement"), so the gene is read right to left on the chromosome's coordinates:
+
+![](fig06-two-strands.svg){width="78%" fig-align="center"}
+
+The sickle-cell change is **c.20A>T** in ClinVar and **T>A** in dbSNP (rs334). Same mutation, same base pair, two strands. Neither is wrong.
+
+::: notes
+Every genome browser, VCF file and dbSNP record reports alleles on the forward (+) strand of the reference chromosome, while gene-centred names (HGVS c. names, ClinVar titles) use the gene's own coding strand. For a gene on the minus strand, the two descriptions are reverse complements of each other. The figure shows codons 5 to 7 of HBB as they lie on chromosome 11: the coding strand is the lower one, read from right to left, and codon 7 (GAG) is at the left. The highlighted column is c.20, chr11:5,227,002 on GRCh38: A on the coding strand, T on the + strand. HbS changes the base pair A:T to T:A. Students will meet this in the Find it tasks of this unit and the next one, and in F3 they confirm the strand themselves in NCBI Gene. Coordinates and alleles are from dbSNP rs334 and NCBI Gene HBB.
+:::
+
+## Check yourself: strands {.smaller}
+
+1. Write the reverse complement of 5′-`AAGCTT`-3′ (the HindIII site). What is special about it?
+2. *CFTR* lies on the **+ strand** of chromosome 7. Its nonsense allele G542X is c.1624G>T. How would dbSNP (rs113993959) write the alleles?
+3. HbC is c.19G>A in *HBB*, the base just before HbS in the gene. Does it lie to the left or to the right of HbS in the figure? Which base does dbSNP give as the reference allele?
+
+::: notes
+Give two minutes, then go through them. 1: complement TTCGAA, reversed AAGCTT: it is its own reverse complement, a palindrome, like EcoRI and BamHI. 2: for a gene on the + strand the coding strand is the + strand, so dbSNP writes the same bases as the c. name: G>T (checked in dbSNP: rs113993959, NC_000007.14 position 117,587,778, G>T, plus G>A at the same position). 3: c.19 is one base earlier in the gene, and the gene runs right to left, so it lies one column to the right of HbS, at a higher chromosome coordinate (students check the exact position in the Find it part of the mutation exercise). On the + strand the G of c.19 pairs with C, so the reference allele is C, and dbSNP writes C>T (rs33930165, checked in dbSNP). The point of question 3 is the most common mistake: counting along the gene and along the chromosome in the same direction.
 :::
 
 ## Three ways to copy a helix {.smaller}
 
 Complementary strands suggest three models of replication. **Meselson and Stahl (1958)** grew *E. coli* for many generations in heavy nitrogen (^15^N), moved the cells to light nitrogen (^14^N), and separated DNA by density in a caesium chloride gradient.
 
-![](fig03-meselson-stahl.svg){width="78%" fig-align="center"}
+:::: {.columns}
+::: {.column width="70%"}
+![](fig03-meselson-stahl.svg){width="100%"}
+:::
+::: {.column width="30%"}
+![](img/model-e-ultracentrifuge.jpg){width="100%"}
+[Photo: Fred English Photographs, Science History Institute, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Beckman_Model_E_Analytical_Ultracentrifuge_Serial_Numbers_1_and_1000_-_DPLA_-_ae096339b1121b2e16f2acb323e80457.jpg){.photo-credit}
 
-| Model | Generation 1 | Generation 2 |
-|---|---|---|
-| **Semiconservative** (each helix = one old + one new strand) | all hybrid | ½ hybrid, ½ light |
-| Conservative (old helix stays intact) | ½ heavy, ½ light | ¼ heavy, ¾ light |
-| Dispersive (old and new mixed along each strand) | all hybrid | all one intermediate band |
+The Spinco **Model E** analytical ultracentrifuge, the kind of instrument they used: it spins the gradient and photographs the DNA bands by UV absorption.
+:::
+::::
 
 ::: notes
-This is one of the most elegant experiments in biology, and it is a genetics-style experiment: three hypotheses, each with a different quantitative prediction, and one decisive observation. Generation 1 rules out conservative replication (no heavy band). Generation 2 rules out dispersive replication (two bands, not one band moving slowly towards light). Only semiconservative fits both. Ask the room what generation 3 would look like: one quarter hybrid, three quarters light. Semiconservative replication is also why a mutation that arises as a mismatch on one strand ends up in only one of the two daughter helices; that comes back in the next unit.
+The left panel follows the strands: generation 0 is all heavy; after one round in light medium each helix has one heavy and one light strand (hybrid); after two rounds there are two hybrid and two light helices. The right panel is what the centrifuge showed. Spinning caesium chloride at high speed for many hours makes a density gradient, and each DNA settles where its density matches the salt: 15N DNA is slightly denser than 14N DNA (by under one per cent), which is enough to give separate bands. The photo shows the Model E instrument (serial numbers 1 and 1000, at a Beckman event); Meselson and Stahl's 1958 paper used a Spinco Model E. The bands were recorded by photographing ultraviolet absorption through the spinning cell. The next slide turns the picture into predictions.
+:::
+
+## Three models, three predictions {.smaller}
+
+**Follow the old strands.** The two heavy strands of one original helix are never destroyed. After *n* generations in ^14^N there are 2^*n*^ helices, and:
+
+| Model | Where the 2 old strands end up | Generation 1 | Generation 2 |
+|---|---|---|---|
+| **Semiconservative** (each helix = one old + one new strand) | in 2 different helices, each paired with a new strand | all hybrid | ½ hybrid, ½ light |
+| Conservative (old helix stays intact) | together, in 1 heavy helix | ½ heavy, ½ light | ¼ heavy, ¾ light |
+| Dispersive (old and new mixed along each strand) | spread over all helices | all hybrid | all one intermediate band |
+
+**Worked example, generation 2** (4 helices). Semiconservative: 2 contain an old strand → 2 hybrid + 2 light. Conservative: 1 heavy + 3 light.
+
+**Observed:** one hybrid band at generation 1 (conservative is out), then hybrid + light 1 : 1 at generation 2 (dispersive is out).
+
+::: notes
+This is one of the most elegant experiments in biology, and it is a genetics-style experiment: three hypotheses, each with a different quantitative prediction, and one decisive observation. Teach the bookkeeping rule rather than the table: count helices (2 to the power n), then ask where the two old strands are. Generation 1 rules out conservative replication (no heavy band). Generation 2 rules out dispersive replication (two bands, not one band moving slowly towards light). Only semiconservative fits both. The same rule answers any variant of the question, including what happens if the cells are moved back to heavy medium (exercise B4) or what generation 3 looks like (quiz Q6), so leave those to the students. Semiconservative replication is also why a mutation that arises as a mismatch on one strand ends up in only one of the two daughter helices; that comes back in the next unit.
 :::
 
 ## The replication fork, in brief {.smaller}
@@ -181,14 +207,14 @@ This slide connects to Part 2. A crossover between two genes swaps the flanking 
 |---|---|
 | Genes are DNA | Griffith (transformation), Avery et al. (only DNase stops it), Hershey–Chase (phage DNA enters the cell) |
 | Double helix | two antiparallel strands; A–T, G–C; one strand determines the other |
-| Reverse complement | the partner strand, written 5′ → 3′: complement every base, then reverse |
-| Strands in databases | genome records use the + strand; gene names (c.) use the gene's own strand. *HBB* c.20A>T = + strand T>A |
-| Replication | semiconservative (Meselson–Stahl: hybrid, then hybrid + light) |
+| Reverse complement | the partner strand, written 5′ → 3′: complement every base, then reverse (both steps!) |
+| Strands in databases | genome records use the + strand; gene names (c.) use the gene's own strand. *HBB* (− strand) c.20A>T = + strand T>A; for a + strand gene the two agree |
+| Replication | semiconservative (Meselson–Stahl: hybrid, then hybrid + light); follow the 2 old strands among 2^*n*^ helices |
 | Fork | leading and lagging strands; polymerase proofreads; mismatch repair finishes; error about 10^−9^–10^−10^ per base |
 | Recombination | DSB → strand invasion → Holliday junctions → crossover or non-crossover (heteroduplex, gene conversion) |
 
 ::: notes
-The revision sheet. If they remember three things: complementarity (one strand determines the other, which explains copying, repair and the reverse complement), semiconservative replication, and that crossing over is a DNA repair event that uses the homologue as template.
+The revision sheet. If they remember three things: complementarity (one strand determines the other, which explains copying, repair and the reverse complement), semiconservative replication, and that crossing over is a DNA repair event that uses the homologue as template. The practical skill to take to the next unit is reading a variant on either strand.
 :::
 
 ## Where this leads
@@ -196,7 +222,7 @@ The revision sheet. If they remember three things: complementarity (one strand d
 - **Next: Mutation & complementation.** What happens when copying or repair fails: kinds of mutation, mutagens, the Ames test, and how geneticists decide whether two mutations hit the same gene.
 - **Gene expression (recap).** How the cell reads the sequence: transcription, splicing, translation and the genetic code.
 - **Part 4: Digital analysis of DNA.** PCR and sequencing exploit exactly the rules on today's slides: primers, 5′ → 3′ synthesis and base pairing.
-- **Exercise in R:** write `revcomp()` and compute GC content of the *HBB* mRNA.
+- **Exercise in R:** write `revcomp()`, check the two-strand view of HbS in code, and compute GC content of the *HBB* mRNA.
 
 ::: notes
 Point forward. The exercise today has short by-hand problems on base pairing, Meselson-Stahl and recombination, a Find it task that downloads the HBB mRNA from NCBI Nucleotide, and an R page where students write their own reverse-complement function. That function is reused in Part 4 to find restriction sites and design primers.

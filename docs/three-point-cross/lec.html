@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -155,14 +155,16 @@ Basic and molecular genetics (5MO104)
 </div>
 
 </section>
-<section id="about-this-lecture" class="slide level2">
+<section id="about-this-lecture" class="slide level2 smaller">
 <h2>About this lecture</h2>
 <p>In <strong>Linkage &amp; recombination</strong> we measured the distance between <strong>two</strong> genes from a testcross. Following <strong>three</strong> linked genes in one cross gives more than three distances: it gives the <strong>order</strong> of the genes, and it shows the <strong>double crossovers</strong> that a two-point cross cannot see.</p>
 <ul>
 <li>The <strong>three-point testcross</strong>: a triple heterozygote × a triple recessive tester; <strong>8</strong> offspring classes.</li>
 <li>A five-step recipe: <strong>parentals</strong> (most common), <strong>double crossovers</strong> (rarest), the <strong>gene in the middle</strong>, the two <strong>distances</strong>.</li>
 <li>Why the outer distance must count the double crossovers <strong>twice</strong>.</li>
-<li><strong>Expected</strong> double crossovers from the product rule; the <strong>coefficient of coincidence</strong> and <strong>interference</strong>.</li>
+<li><strong>Checking the order</strong>: what goes wrong when you put the wrong gene in the middle.</li>
+<li><strong>Expected</strong> double crossovers from the product rule; the <strong>coefficient of coincidence</strong> and <strong>interference</strong>, and how noisy they are.</li>
+<li>Running the recipe <strong>backwards</strong>: predicting the eight classes from a map and an interference value.</li>
 <li>A worked <em>Drosophila</em> example on the X chromosome: <em>cv</em>, <em>ct</em> and <em>v</em>.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, linkage and recombination chapter (the three-point cross sections).</p>
@@ -437,7 +439,70 @@ Basic and molecular genetics (5MO104)
 <p><span class="math display">cv \;-\; ct \;-\; v \qquad (\text{or } v - ct - cv\text{: the same map read backwards})</span></p>
 <p>The parental chromosomes in the true order: <em>cv</em><sup>+</sup> <em>ct</em><sup>+</sup> <em>v</em> / <em>cv ct v</em><sup>+</sup>.</p>
 <aside class="notes">
-<p>This is the whole trick. Pick a DCO class, find the parental class that agrees with it at two of the three loci; the locus where they disagree is the middle one. Check with the other DCO class: it must give the same answer. The direction of the map does not matter; cv-ct-v and v-ct-cv are the same order. A useful check: if you try the other two orders, the class you would call “double crossover” is much more common than the singles, which makes no sense. The R exercise does exactly this for all three orders, and so does the demo.</p>
+<p>This is the whole trick. Pick a DCO class, find the parental class that agrees with it at two of the three loci; the locus where they disagree is the middle one. Check with the other DCO class: it must give the same answer. The direction of the map does not matter; cv-ct-v and v-ct-cv are the same order. A useful check: if you try the other two orders, the class you would call “double crossover” is much more common than the singles, which makes no sense. The next slide does exactly that.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-the-order-try-all-three" class="slide level2 smaller">
+<h2>Check the order: try all three</h2>
+<p>There are only three orders, one for each gene in the middle. For each, ask: which pair would be the “double crossovers”, and does that make sense?</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gene in the middle</th>
+<th>“DCO” pair = classes where only that gene switched</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">Expected if DCO</th>
+<th style="text-align: right;">CoC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>v</em> (<em>cv</em>–<em>v</em>–<em>ct</em>)</td>
+<td>+ + + and <em>v cv ct</em></td>
+<td style="text-align: right;">249</td>
+<td style="text-align: right;">49.1</td>
+<td style="text-align: right;">5.07</td>
+</tr>
+<tr class="even">
+<td><em>cv</em> (<em>v</em>–<em>cv</em>–<em>ct</em>)</td>
+<td>+ + <em>ct</em> and <em>v cv</em> +</td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">26.5</td>
+<td style="text-align: right;">4.88</td>
+</tr>
+<tr class="odd">
+<td><strong><em>ct</em></strong> (<em>cv</em>–<em>ct</em>–<em>v</em>)</td>
+<td><em>v</em> + <em>ct</em> and + <em>cv</em> +</td>
+<td style="text-align: right;"><strong>11</strong></td>
+<td style="text-align: right;">18.2</td>
+<td style="text-align: right;"><strong>0.60</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>In a wrong order, the “DCO” pair is really a <strong>single</strong> crossover pair, so it is far too common: CoC ≈ 5, “five times more double crossovers than chance allows”.</li>
+<li>In the right order, the DCO pair is the <strong>rarest</strong> pair, and CoC is at or below 1.</li>
+</ul>
+<p>A CoC far above 1 almost always means <strong>the order is wrong</strong>, not that the biology is strange.</p>
+<aside class="notes">
+<p>These are the numbers the demo and the R exercise produce. How the expected values come about for a wrong order, for example v in the middle: region I, cv to v, now contains the classes where cv and v are in a new combination, 129 plus 249 = 378, so RF 0.189; region II, v to ct, contains 249 plus 11 = 260, RF 0.13; expected DCO 0.189 times 0.13 times 2000 = 49. Observed “DCO” 249. The point for students: the three-order check is a safety net. In an exam, if your CoC comes out above 1, go back and check which gene you put in the middle.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -453,7 +518,7 @@ Basic and molecular genetics (5MO104)
 <section id="rewrite-the-classes-in-the-right-order" class="slide level2">
 <h2>Rewrite the classes in the right order</h2>
 
-<img data-src="fig03-fly-classes.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><p>In the order <em>cv</em>–<em>ct</em>–<em>v</em>, each class shows its crossovers: one switch of colour = one crossover.</p>
+<img data-src="fig03-fly-classes.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:75.0%"><p>In the order <em>cv</em>–<em>ct</em>–<em>v</em>, each class shows its crossovers: one switch of colour = one crossover.</p>
 <aside class="notes">
 <p>Rewriting the data in the correct order is the step students skip and then get lost. Blue alleles came from the cv+ ct+ v chromosome, red from cv ct v+. The two parental classes are all blue or all red. In 63 and 66, cv has switched: a crossover between cv and ct, region I. In 128 and 121, v has switched: a crossover between ct and v, region II. In 6 and 5, only ct has switched: one crossover in each region. The map at the bottom is the result of the next step.</p>
 <style type="text/css">
@@ -600,8 +665,141 @@ Basic and molecular genetics (5MO104)
 <li>So 0.60 is fairly strong evidence for interference, but with fewer flies it would not be.</li>
 </ul>
 <p>A CoC computed from 2 or 3 double crossovers says very little. Rare classes need <strong>large</strong> crosses.</p>
+<p><strong>Zero DCOs?</strong> For a rare class, P(0 observed) ≈ e<sup>−expected</sup>. With 2 DCOs expected, finding none happens about 1 time in 7 (e<sup>−2</sup> = 0.14) even without interference; with 5 expected, about 1 time in 150 (e<sup>−5</sup> = 0.007).</p>
 <aside class="notes">
-<p>This brings back the theme of sampling noise from Part 1. CoC is a ratio of two counts, one of them small, so it is noisy. The simulation in R gives a feel for the spread; a proper test would compare the observed DCO count with the expected count, for example with a Poisson or binomial model, which is beyond what we need. Practical message: if a three-point cross has zero double crossovers in 200 offspring, you cannot conclude complete interference: with 2 expected, zero happens about one time in seven.</p>
+<p>This brings back the theme of sampling noise from Part 1. CoC is a ratio of two counts, one of them small, so it is noisy. The simulation in R gives a feel for the spread; a proper test would compare the observed DCO count with the expected count, for example with a Poisson or binomial model, which is beyond what we need. Practical message: if a three-point cross has zero double crossovers in 200 offspring, you cannot conclude complete interference: with 2 expected, zero happens about one time in seven. The e to the minus expected rule is the Poisson probability of zero, which is a good approximation for rare classes; students use it in the exercise when a DCO class is missing altogether.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="running-the-recipe-backwards-predict-a-cross" class="slide level2 smaller">
+<h2>Running the recipe backwards: predict a cross</h2>
+<p>Map: <em>A</em> — 12 cM — <em>B</em> — 8 cM — <em>C</em>, interference <strong>I = 0.25</strong> (invented values). A plant <em>A B C</em> / <em>a b c</em> is testcrossed; predict 1000 offspring.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Class type</th>
+<th>Calculation</th>
+<th style="text-align: right;">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>DCO</td>
+<td>(1 − I) × RF<sub>I</sub> × RF<sub>II</sub> = 0.75 × 0.12 × 0.08</td>
+<td style="text-align: right;"><strong>0.0072</strong></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>SCO in I only</td>
+<td>RF<sub>I</sub> − P(DCO) = 0.12 − 0.0072</td>
+<td style="text-align: right;"><strong>0.1128</strong></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>SCO in II only</td>
+<td>RF<sub>II</sub> − P(DCO) = 0.08 − 0.0072</td>
+<td style="text-align: right;"><strong>0.0728</strong></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>parental</td>
+<td>1 − (the three above)</td>
+<td style="text-align: right;"><strong>0.8072</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Start with the DCOs: the interference acts on them.</li>
+<li>Subtract the DCOs from each interval, because RF<sub>I</sub> and RF<sub>II</sub> <strong>include</strong> the double crossovers.</li>
+<li>Check: the four probabilities add up to 1.</li>
+</ul>
+<aside class="notes">
+<p>This is the three-point recipe run in reverse, the kind of prediction a breeder makes when planning how many plants to grow to get a particular recombinant. The order of steps matters. Step 1 uses the product rule corrected by interference: with I = 0.25, only three quarters of the independent expectation happen. Steps 2 and 3 are where students go wrong: an RF of 12 percent for interval I counts every chromatid with a crossover in interval I, including the double crossovers, so the singles are 12 percent minus the doubles. Step 4 is whatever is left. Exercise B5 has the same structure with other numbers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="predict-a-cross-step-5-split-into-the-eight-classes" class="slide level2 smaller">
+<h2>Predict a cross, step 5: split into the eight classes</h2>
+<p>Each probability is shared <strong>equally</strong> by the two reciprocal classes of its pair. × 1000:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Type</th>
+<th style="text-align: right;">Expected count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>A B C</em></td>
+<td>parental</td>
+<td style="text-align: right;">403.6</td>
+</tr>
+<tr class="even">
+<td><em>a b c</em></td>
+<td>parental</td>
+<td style="text-align: right;">403.6</td>
+</tr>
+<tr class="odd">
+<td><em>a B C</em></td>
+<td>SCO in I (<em>A</em> switched)</td>
+<td style="text-align: right;">56.4</td>
+</tr>
+<tr class="even">
+<td><em>A b c</em></td>
+<td>SCO in I</td>
+<td style="text-align: right;">56.4</td>
+</tr>
+<tr class="odd">
+<td><em>A B c</em></td>
+<td>SCO in II (<em>C</em> switched)</td>
+<td style="text-align: right;">36.4</td>
+</tr>
+<tr class="even">
+<td><em>a b C</em></td>
+<td>SCO in II</td>
+<td style="text-align: right;">36.4</td>
+</tr>
+<tr class="odd">
+<td><em>A b C</em></td>
+<td>DCO (<em>B</em> switched)</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr class="even">
+<td><em>a B c</em></td>
+<td>DCO</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>total</td>
+<td style="text-align: right;">1000</td>
+</tr>
+</tbody>
+</table>
+<p>With only 7 DCOs expected in 1000 offspring, a cross this size measures interference poorly: compare the previous slides.</p>
+<aside class="notes">
+<p>To write the classes, start from the parental chromosomes and switch the right gene: the end gene for a single crossover in its interval, the middle gene for a double. Decimal expected counts are fine; they are expectations, not flies. A useful closing check: run the forward recipe on these numbers and you get back RF I = (112.8 + 7.2) / 1000 = 0.12, RF II = 0.08, and CoC = 7.2 / 9.6 = 0.75, so I = 0.25. The exercise problem uses a mixed-phase parent, which only changes which classes are called what.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -621,6 +819,55 @@ Basic and molecular genetics (5MO104)
 <script src="../demos/dist/threepoint.js"></script>
 <aside class="notes">
 <p>Interactive demo. It starts on the fly data with no order chosen; each class is drawn as a chromosome, blue for alleles from the most common class’s chromosome, red for the other. Click each of the three orders in turn. With v in the middle or cv in the middle, the demo says “not this order”: the pair it would call double crossovers has 249 or 129 offspring, more than a single crossover pair, and the CoC comes out far above 1. With ct in the middle, the rarest pair, 6 and 5, is the DCO, the distances are 7.0 and 13.0 cM, CoC 0.60 and I 0.40. Then click maize: here the female is in coupling, so the parentals are all mutant and all wild type, and the middle gene is gl. Finally click random a few times and let the room call the order before you click.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-which-gene-is-in-the-middle" class="slide level2 smaller">
+<h2>Check yourself: which gene is in the middle?</h2>
+<p>For each data set, the two largest classes and the two smallest classes are given. Find the middle gene before you look at the notes.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Parental pair (largest)</th>
+<th>DCO pair (smallest)</th>
+<th>Middle gene?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><em>D e F</em> and <em>d E f</em></td>
+<td><em>D E F</em> and <em>d e f</em></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>+ + + and <em>x y z</em></td>
+<td><em>x</em> + <em>z</em> and + <em>y</em> +</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><em>p</em> + + and + <em>q r</em></td>
+<td>+ + + and <em>p q r</em></td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Method:</strong> take one DCO class, find the parental class that matches it at <strong>two</strong> of the three genes. The gene where they differ is the middle one. Check with the other DCO class.</p>
+<p>Data set 3 is in <strong>mixed phase</strong>, like the fly example: + + + and <em>p q r</em> are the rarest, not the most common classes.</p>
+<aside class="notes">
+<p>Answers. 1: D E F matches D e F at D and F, differs at E: E is in the middle, order D E F. Check: d e f matches d E f except at E. 2: x + z matches x y z except at y: y is in the middle. 3: + + + matches p + + except at p: p is in the middle, order q p r (or r p q). The third case is the one that catches people, because the all-wild-type and all-mutant classes are the double crossovers. Give the room a minute; this is the single most examined skill of the unit.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -750,6 +997,14 @@ Basic and molecular genetics (5MO104)
 <tr class="even">
 <td>Interference</td>
 <td>I = 1 − CoC; usually positive (fewer DCOs than expected)</td>
+</tr>
+<tr class="odd">
+<td>Wrong order check</td>
+<td>a “DCO” pair that is not the rarest gives CoC ≫ 1</td>
+</tr>
+<tr class="even">
+<td>Predicting a cross</td>
+<td>P(DCO) = (1 − I) RF<sub>I</sub> RF<sub>II</sub>; SCO = RF − P(DCO); split each pair equally</td>
 </tr>
 <tr class="odd">
 <td>Worked example</td>

@@ -12,9 +12,13 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **C-value paradox**: genome size does not follow gene number or organism complexity, because most of a large genome is non-coding DNA. See [Genetics as information](intro-genetics/lec.qmd).
 
+**Cytogenetic band**: a chromosome address such as 11p15.4: chromosome, arm, region, band and sub-band, numbered outwards from the centromere. See [Genetics as information](intro-genetics/lec.qmd).
+
 **Dominant / recessive**: if *Aa* has the same phenotype as *AA*, then *A* is dominant and *a* is recessive, for that phenotype. See [Genetics as information](intro-genetics/lec.qmd).
 
 **Gene**: a DNA segment that carries the information for one functional product, usually a protein. See [Genetics as information](intro-genetics/lec.qmd).
+
+**Gene tree**: a tree of genes in which speciation nodes define orthologs and duplication nodes define paralogs. See [Genetics as information](intro-genetics/lec.qmd).
 
 **Genotype**: the alleles an individual carries at a locus, e.g. *Aa*. See [Genetics as information](intro-genetics/lec.qmd).
 
@@ -78,6 +82,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 ### Extensions to Mendel
 
+**Allelic series**: several alleles of one gene in a dominance hierarchy, e.g. *C* > *c^ch^* > *c^h^* > *c*. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
 **Codominance**: the heterozygote shows the phenotypes of both alleles in full, as in blood type AB (*I^A^I^B^*). See [Extensions to Mendel](mendel-extensions/lec.qmd).
 
 **Complementary genes**: two genes that are both needed for a phenotype, giving a 9 : 7 F₂ ratio. See [Extensions to Mendel](mendel-extensions/lec.qmd).
@@ -91,6 +97,10 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Expressivity**: how strongly a phenotype shows in the individuals who have it. See [Extensions to Mendel](mendel-extensions/lec.qmd).
 
 **Haploinsufficiency**: one working copy of a gene does not make enough product for a normal phenotype, so a loss-of-function allele is dominant. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Haplosufficient**: a gene for which one working copy gives a normal phenotype. This is why most loss-of-function alleles are recessive. See [Extensions to Mendel](mendel-extensions/lec.qmd).
+
+**Hypostatic**: describes a gene whose effect is hidden by an epistatic gene. See [Extensions to Mendel](mendel-extensions/lec.qmd).
 
 **Incomplete dominance**: the heterozygote's phenotype lies between those of the two homozygotes, so the F₂ phenotypes are 1 : 2 : 1, as in snapdragon flower colour. See [Extensions to Mendel](mendel-extensions/lec.qmd).
 
@@ -113,6 +123,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Obligate carrier**: an unaffected person who must be heterozygous because of where they are in the pedigree, for example a parent of a child with a recessive disease. See [Pedigree analysis](pedigrees/lec.qmd).
 
 **Pedigree**: a family tree drawn with standard symbols that shows who is affected by a trait and how they are related. See [Pedigree analysis](pedigrees/lec.qmd).
+
+**Sib method**: a correction for ascertainment bias that counts the affected siblings of each affected child in turn. See [Pedigree analysis](pedigrees/lec.qmd).
 
 **Proband**: the affected person through whom a family first comes to attention, marked with an arrow. See [Pedigree analysis](pedigrees/lec.qmd).
 
@@ -148,6 +160,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Sister chromatids**: the two identical DNA copies of a replicated chromosome, joined at the centromere. See [Chromosome theory & sex linkage](chromosome-theory/lec.qmd).
 
+**Z-linkage**: inheritance of genes on the bird Z chromosome. Hens (ZW) are hemizygous. See [Chromosome theory & sex linkage](chromosome-theory/lec.qmd).
+
 ***SRY***: the Y-linked gene (Yp11.2) encoding the testis-determining factor, which switches on male development in mammals. See [Chromosome theory & sex linkage](chromosome-theory/lec.qmd).
 
 ### Linkage and recombination
@@ -169,6 +183,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Map function**: a formula that converts between map distance and RF, correcting for hidden multiple crossovers. See [Linkage & recombination](linkage/lec.qmd).
 
 **Parental / recombinant class**: offspring with the allele combinations the heterozygous parent received from its own parents, or with new combinations made by crossing over. See [Linkage & recombination](linkage/lec.qmd).
+
+**Poisson model of crossing over**: the assumption that crossovers occur independently, so that the number of crossovers on a chromatid is Poisson-distributed with mean *d*. It underlies Haldane's map function. See [Linkage & recombination](linkage/lec.qmd).
 
 **Recombination frequency (RF)**: recombinant offspring divided by all offspring. It lies between 0 and 0.5. See [Linkage & recombination](linkage/lec.qmd).
 
@@ -216,6 +232,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 ### DNA structure and replication
 
+**+ strand / − strand**: the two strands of a reference chromosome. Databases such as dbSNP report alleles on the + strand, while c. names use the gene's own coding strand. See [DNA structure & replication](dna-recap/lec.qmd).
+
 **Antiparallel**: the two strands of a double helix run in opposite directions, one 5′→3′ and the other 3′→5′. See [DNA structure & replication](dna-recap/lec.qmd).
 
 **Gene conversion**: non-reciprocal transfer of sequence, caused by mismatch repair of heteroduplex DNA. It gives 3 : 1 instead of 2 : 2 in a tetrad. See [DNA structure & replication](dna-recap/lec.qmd).
@@ -232,6 +250,10 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Ames test**: a test for mutagens that counts *his*⁻ → *his*⁺ reversions in *Salmonella*, with liver extract added. See [Mutation & complementation](mutation/lec.qmd).
 
+**Cis–trans test**: comparing two recessive mutations on different homologues (*trans*) with both on one homologue (*cis*). If *trans* is mutant and *cis* is wild type, the mutations are in the same gene. See [Mutation & complementation](mutation/lec.qmd).
+
+**Cistron**: Benzer's name for the unit of function defined by the cis–trans test; today, a gene. See [Mutation & complementation](mutation/lec.qmd).
+
 **Complementation group**: a set of mutations that fail to complement each other, which is one gene. See [Mutation & complementation](mutation/lec.qmd).
 
 **Complementation test**: cross two recessive mutants. A wild-type F₁ means the mutations are in different genes; a mutant F₁ means they are in the same gene. See [Mutation & complementation](mutation/lec.qmd).
@@ -239,6 +261,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Fluctuation test**: parallel cultures show jackpots (variance much larger than the mean). This shows that mutations arise at random, before selection. See [Mutation & complementation](mutation/lec.qmd).
 
 **Loss / gain of function**: an allele that reduces or removes a gene's activity, or one that raises it or adds a new activity. See [Mutation & complementation](mutation/lec.qmd).
+
+**Minimal medium / complete medium**: the simplest medium on which the wild type grows, versus a medium supplemented with amino acids and vitamins, on which auxotrophs also grow. See [Mutation & complementation](mutation/lec.qmd).
 
 **Mutagen**: an agent that raises the mutation rate above the spontaneous rate. See [Mutation & complementation](mutation/lec.qmd).
 
@@ -249,6 +273,10 @@ A running glossary of the genetics, database and statistics terms used in this c
 ### Gene expression
 
 **Alternative splicing**: one gene gives several mRNAs by including or skipping exons. See [Gene expression](gene-expression-recap/lec.qmd).
+
+**Intronic HGVS position (c.92+1, c.93-21)**: a base in an intron, counted from the nearest exon base: +*n* after the end of an exon, −*n* before the start of the next one. See [Gene expression](gene-expression-recap/lec.qmd).
+
+***rII* mutant**: a phage T4 mutant that makes plaques on *E. coli* B but not on K12(λ), so that rare wild-type phage can be selected. See [Gene expression](gene-expression-recap/lec.qmd).
 
 **Intragenic suppression**: a second mutation in the same gene restores function, for example a (−) frameshift next to a (+) frameshift. See [Gene expression](gene-expression-recap/lec.qmd).
 
@@ -274,11 +302,15 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Gel electrophoresis**: separation of DNA fragments by size in an agarose gel. The distance run falls roughly linearly with log(size). See [Digital analysis of DNA](digital-dna/lec.qmd).
 
+**Partial digest**: a digest in which some sites were not cut. It gives extra, larger fragments that are sums of neighbouring fragments. See [Digital analysis of DNA](digital-dna/lec.qmd).
+
 **PCR (polymerase chain reaction)**: repeated cycles of denaturing, annealing and extension that copy the DNA between two primers exponentially. See [Digital analysis of DNA](digital-dna/lec.qmd).
 
 **Primer-dimer**: a short PCR artefact, made when two primers anneal to each other and are extended. See [Digital analysis of DNA](digital-dna/lec.qmd).
 
 **Restriction enzyme**: a bacterial enzyme that cuts double-stranded DNA at a specific short recognition site, usually a palindrome. See [Digital analysis of DNA](digital-dna/lec.qmd).
+
+**Reverse primer**: the PCR primer that pairs with the top strand. Its sequence is the reverse complement of the end of the target region. See [Digital analysis of DNA](digital-dna/lec.qmd).
 
 **RFLP**: a restriction fragment length polymorphism, a variant that creates or destroys a restriction site and so changes fragment sizes. See [Digital analysis of DNA](digital-dna/lec.qmd).
 
@@ -286,9 +318,13 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Sticky end**: a short single-stranded overhang left by a staggered cut. It can pair with any end cut by the same enzyme. See [Digital analysis of DNA](digital-dna/lec.qmd).
 
+**Supercoiled DNA**: the twisted, compact form of an uncut circular plasmid. It runs faster on a gel than the same DNA when linear. See [Digital analysis of DNA](digital-dna/lec.qmd).
+
 ### Genome annotation
 
 **Annotation**: the evidence-based, versioned description of where the genes and other features lie in a genome and what they do. See [Genome annotation](genome-annotation/lec.qmd).
+
+**Bit score**: a normalised alignment score. Each extra bit halves the E-value. See [Genome annotation](genome-annotation/lec.qmd).
 
 **BLAST**: a program that finds local sequence similarity by seeding short word matches and extending them (blastn, blastp, blastx, tblastn). See [Genome annotation](genome-annotation/lec.qmd).
 
@@ -302,7 +338,13 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Pseudogene**: a gene copy that can no longer make a working product. See [Genome annotation](genome-annotation/lec.qmd).
 
+**Substitution matrix (BLOSUM62)**: a table of scores for aligning each pair of amino acids, positive for identical or similar residues. See [Genome annotation](genome-annotation/lec.qmd).
+
+**Untranslated region (UTR)**: the part of an mRNA before the start codon (5′ UTR) or after the stop codon (3′ UTR). See [Genome annotation](genome-annotation/lec.qmd).
+
 ### Genomic variation
+
+**Allele number (AN)**: the number of chromosomes typed at a site. Allele frequency = allele count / AN. See [Genomic variation](genomic-variation/lec.qmd).
 
 **Balanced polymorphism (heterozygote advantage)**: a polymorphism kept in a population because heterozygotes are the fittest, as for HbS where malaria is common. See [Genomic variation](genomic-variation/lec.qmd).
 
@@ -318,6 +360,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Linkage disequilibrium (LD)**: a non-random association of alleles at nearby sites in a population. See [Genomic variation](genomic-variation/lec.qmd).
 
+**r² and D′**: scaled measures of linkage disequilibrium between 0 and 1, shown in genome browsers. See [Genomic variation](genomic-variation/lec.qmd).
+
 **rs number**: the stable dbSNP identifier of a variant position. See [Genomic variation](genomic-variation/lec.qmd).
 
 **SNP**: a single-nucleotide variant common enough to count as a polymorphism. See [Genomic variation](genomic-variation/lec.qmd).
@@ -325,6 +369,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 ## Part 5: Chromosomes in detail
 
 ### The eukaryotic chromosome
+
+**Breakage–fusion–bridge cycle**: broken sister chromatids fuse into a dicentric chromosome, which breaks again at anaphase, over and over. It gives duplications and deletions. See [The eukaryotic chromosome](eukaryotic-chromosome/lec.qmd).
 
 **Centromere**: the site on a chromosome where the kinetochore assembles. In humans it is Mb-long α-satellite arrays marked by the histone variant CENP-A. See [The eukaryotic chromosome](eukaryotic-chromosome/lec.qmd).
 
@@ -360,7 +406,11 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Philadelphia chromosome**: der(22) of t(9;22). It carries the *BCR*::*ABL1* fusion gene in chronic myeloid leukaemia. See [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd).
 
+**Polytene chromosome**: a giant chromosome made of many aligned copies, with visible bands. It is used for deletion mapping in *Drosophila*. See [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd).
+
 **Pseudodominance**: a recessive allele is expressed in a heterozygote because a deletion has removed the other copy. It is used for deletion mapping. See [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd).
+
+**Quadrivalent**: the cross-shaped pairing of the four chromosomes of a reciprocal translocation carrier at meiosis I. See [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd).
 
 **Robertsonian translocation**: a fusion of two acrocentric chromosomes near their centromeres. Carriers have 45 chromosomes. See [Rearrangements & aneuploidy](rearrangements-aneuploidy/lec.qmd).
 
@@ -380,6 +430,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Map minute**: the *E. coli* map unit. 100 minutes ≈ the whole 4.64 Mb chromosome, so 1 minute ≈ 46 kb. See [Bacterial genetics](bacterial-genetics-recap/lec.qmd).
 
+**Time of entry**: the minute at which a donor marker first enters the recipient in interrupted mating. It is found by extrapolating the rise in recombinants back to zero. See [Bacterial genetics](bacterial-genetics-recap/lec.qmd).
+
 **Replica plating**: printing the colonies of a master plate onto several test plates with a velvet, to score many colonies for growth at once. See [Bacterial genetics](bacterial-genetics-recap/lec.qmd).
 
 ### Organelle inheritance
@@ -397,6 +449,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Mitochondrial bottleneck**: each oocyte is founded by a small number of mtDNA copies before they are amplified. Offspring heteroplasmy therefore varies widely around the mother's level (variance h(1−h)/N). See [Organelle inheritance](organelle-inheritance/lec.qmd).
 
 **Mitochondrial donation**: transfer of the mother's nuclear DNA (spindle or pronuclei) into an enucleated donor egg or zygote, so that the child has the donor's mtDNA. See [Organelle inheritance](organelle-inheritance/lec.qmd).
+
+**Ragged red fibres**: muscle fibres with clumped, abnormal mitochondria that stain red with Gomori trichrome. They are a sign of mitochondrial myopathy. See [Organelle inheritance](organelle-inheritance/lec.qmd).
 
 **Replicative segregation**: random sorting of organelle genomes between daughter cells at division. It changes heteroplasmy between tissues and over time, and causes variegation in plants. See [Organelle inheritance](organelle-inheritance/lec.qmd).
 
@@ -418,6 +472,12 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Super-repressor (*lacI*ˢ)**: a repressor that cannot bind the inducer. It is uninducible and dominant in trans. See [Prokaryotic regulation](prokaryotic-regulation-recap/lec.qmd).
 
+**Polar mutation**: a nonsense mutation early in an operon gene that also lowers expression of the downstream genes on the same mRNA. It can wrongly appear to fail to complement them. See [Prokaryotic regulation](prokaryotic-regulation-recap/lec.qmd).
+
+**Promoter mutation (*P*⁻)**: a cis-acting change that stops RNA polymerase starting at a promoter. It is uninducible, but only the genes on its own DNA molecule are affected. See [Prokaryotic regulation](prokaryotic-regulation-recap/lec.qmd).
+
+**Repressible operon**: an operon that is on unless a small molecule (a corepressor, e.g. tryptophan) activates its repressor. The *trp* operon is the example. See [Prokaryotic regulation](prokaryotic-regulation-recap/lec.qmd).
+
 ### Eukaryotic regulation and epigenetics
 
 **Barr body**: the condensed inactive X. A cell has (number of X − 1) of them. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
@@ -432,11 +492,25 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Skewed X inactivation**: use of one X in at least 80% of the cells of a tissue (80:20 or more). See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
 
+**Allele-specific expression**: the share of a gene's RNA made from each of its two alleles, measured with a SNP that tells them apart. Cis-acting variants make the shares unequal; trans-acting variants do not. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
+
+**Hemi-methylated DNA**: a CpG site methylated on the old strand only, just after replication. DNMT1 methylates the new strand, and so copies the pattern. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
+
+**Imprint resetting**: erasing the parental imprints in the germ line and setting new ones according to the parent's sex. The same allele can therefore be silent in one generation and active in the next. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
+
+**Manifesting carrier**: a heterozygous woman who shows symptoms of an X-linked recessive disease, usually because of skewed X inactivation. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
+
 **X inactivation**: random silencing of one X per cell in female mammals, inherited by the cell's descendants and started by *XIST*. See [Eukaryotic regulation & epigenetics](eukaryotic-regulation/lec.qmd).
 
 ### RNA-mediated regulation
 
+**Guide strand**: the strand of an siRNA or miRNA duplex that Argonaute keeps. For an siRNA it is the reverse complement of the target mRNA. See [RNA-mediated regulation](rna-regulation/lec.qmd).
+
 **lncRNA**: a non-coding transcript longer than 200 nt. See [RNA-mediated regulation](rna-regulation/lec.qmd).
+
+**miRNA family**: miRNAs that share a seed sequence and so target the same sites. Members can cover for each other. See [RNA-mediated regulation](rna-regulation/lec.qmd).
+
+**Off-target effect**: knockdown of unintended mRNAs by an siRNA, mainly through miRNA-like pairing of its seed. See [RNA-mediated regulation](rna-regulation/lec.qmd).
 
 **microRNA (miRNA)**: a ~22-nt RNA from a hairpin in the genome that represses mRNAs through seed pairing. See [RNA-mediated regulation](rna-regulation/lec.qmd).
 
@@ -444,11 +518,23 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Seed**: nucleotides 2–8 of a miRNA. See [RNA-mediated regulation](rna-regulation/lec.qmd).
 
+**Site type (8mer, 7mer-m8, 7mer-A1, 6mer)**: classes of miRNA target site, defined by pairing with seed nucleotides 2–8 or 2–7, and by whether there is an A opposite nucleotide 1. See [RNA-mediated regulation](rna-regulation/lec.qmd).
+
 **siRNA**: a ~21-nt RNA made by Dicer from long double-stranded RNA. It pairs perfectly with one target. See [RNA-mediated regulation](rna-regulation/lec.qmd).
 
 ### Development and model organisms
 
 **Balancer chromosome**: a chromosome with inversions, a dominant marker and a recessive lethal. It is used to keep mutations in stocks. See [Development & model organisms](development-model-organisms/lec.qmd).
+
+**Denticle belt**: a band of small cuticle hooks on each segment of the *Drosophila* larva, used to read the phenotypes of segmentation mutants. See [Development & model organisms](development-model-organisms/lec.qmd).
+
+**Gap / pair-rule / segment-polarity gene**: classes of segmentation gene. Their mutants lack a block of adjacent segments, every other segment, or part of each segment (replaced by a mirror image), respectively. See [Development & model organisms](development-model-organisms/lec.qmd).
+
+**Homeotic transformation**: development of one body part with the identity of another, caused by Hox mutations. Loss of function gives a more anterior identity; ectopic gain gives a more posterior one. See [Development & model organisms](development-model-organisms/lec.qmd).
+
+**Mosaic founder**: an F0 animal from a CRISPR-injected embryo whose cells carry different edits, or none. It is crossed to obtain offspring with one defined allele. See [Development & model organisms](development-model-organisms/lec.qmd).
+
+**Reporter gene**: a gene with an easily detected product (e.g. *lacZ*) placed after a DNA fragment, to show where and when that fragment drives expression. See [Development & model organisms](development-model-organisms/lec.qmd).
 
 **Forward / reverse genetics**: from phenotype to gene, or from gene to phenotype. See [Development & model organisms](development-model-organisms/lec.qmd).
 
@@ -480,6 +566,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **de Finetti triangle**: a triangle in which each population is a point (q across, heterozygote frequency up). Populations in HWE lie on a parabola. See [Hardy–Weinberg equilibrium](hardy-weinberg/lec.qmd).
 
+**Gene pool**: all the gametes of a population. Its allele frequencies equal *p* and *q*. See [Hardy–Weinberg equilibrium](hardy-weinberg/lec.qmd).
+
 **Hardy–Weinberg equilibrium (HWE)**: genotype frequencies p², 2pq and q². They are reached after one generation of random mating and stay constant without drift, selection, mutation or migration. See [Hardy–Weinberg equilibrium](hardy-weinberg/lec.qmd).
 
 **Identical by descent**: two alleles that are copies of the same ancestral allele. See [Hardy–Weinberg equilibrium](hardy-weinberg/lec.qmd).
@@ -510,6 +598,10 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 ### Complex traits, heritability and GWAS
 
+**Bonferroni correction**: dividing the accepted error rate by the number of tests, e.g. 0.05/10⁶ = 5 × 10⁻⁸. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
+
+**Breeder's equation**: *R* = *h*²*S*. The response to selection equals the narrow-sense heritability times the selection differential. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
+
 **Broad-sense heritability (H²)**: V~G~/V~P~, the fraction of phenotypic variance due to all genetic differences. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
 
 **Complex (quantitative) trait**: a continuously varying trait influenced by many loci and by the environment. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
@@ -522,9 +614,13 @@ A running glossary of the genetics, database and statistics terms used in this c
 
 **Narrow-sense heritability (h²)**: V~A~/V~P~, the fraction of phenotypic variance due to additive genetic variance. It equals the slope of offspring on midparent. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
 
+**Odds ratio**: the odds of carrying the risk allele in cases divided by the odds in controls. It is the effect size in a case–control GWAS. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
+
 **Polygenic score**: a person's sum of risk alleles, each weighted by its GWAS effect size. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
 
 **Quantitative trait locus (QTL)**: a locus that affects a quantitative trait, mapped by linkage in crosses. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
+
+**Selection differential (*S*)**: how far the mean of the selected parents lies above the population mean. See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
 
 **Regression towards the mean**: offspring of extreme parents are on average less extreme, by the factor h². See [Complex traits, heritability & GWAS](complex-traits/lec.qmd).
 
@@ -537,6 +633,8 @@ A running glossary of the genetics, database and statistics terms used in this c
 **Direct-to-consumer (DTC) test**: a genetic test sold directly to the public, without a doctor. See [Ethics of genetic knowledge](ethics/lec.qmd).
 
 **Eugenics**: the attempt to "improve" a population by controlling reproduction. Galton coined the word in 1883. See [Ethics of genetic knowledge](ethics/lec.qmd).
+
+**Family letter**: a letter written by the clinic, which a patient passes on to relatives, about a genetic risk they share. See [Ethics of genetic knowledge](ethics/lec.qmd).
 
 **Gene drive**: an allele that copies itself onto the homologous chromosome, so that it reaches nearly all gametes instead of half. See [Ethics of genetic knowledge](ethics/lec.qmd).
 

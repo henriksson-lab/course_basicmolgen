@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="450" viewBox="0 0 900 450" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig09: the eve stripe 2 enhancer as a logic gate. Schematic (not measured) protein profiles
+       along the anterior-posterior axis of the early embryo (anterior left).
+       Activators: Bicoid (maternal gradient) and Hunchback (high in the anterior half).
+       Repressors: Giant (anterior domain, plus a posterior domain) and Kruppel (central domain).
+       Stripe 2 (shaded column) forms where both activators are present and both repressors are absent:
+       Giant sets its anterior border, Kruppel its posterior border. -->
+  <text x="20" y="28" font-size="18" font-weight="bold" fill="#1b2a3a"><tspan font-style="italic">eve</tspan> stripe 2: where the activators are on and the repressors are off</text>
+
+  <!-- shaded stripe-2 column across all panels -->
+  <rect x="359" y="50" width="29" height="340" fill="#9b6db5" opacity="0.16"/>
+
+  <!-- activators panel -->
+  <text x="20" y="64" font-size="14" font-weight="bold" fill="#2a6f97">Activators</text>
+  <line x1="100" y1="160" x2="820" y2="160" stroke="#9aa5b1" stroke-width="1.2"/>
+  <polyline points="100,70 136,90 172,105 208,118 244,127 280,134 316,140 352,144 388,148 460,153 532,156 604,157 676,158 820,159" fill="none" stroke="#2a6f97" stroke-width="3"/>
+  <path d="M100,85 L388,85 C430,85 440,158 532,159 L820,160" fill="none" stroke="#5aa0c8" stroke-width="3" stroke-dasharray="9,5"/>
+  <text x="190" y="150" font-size="14" font-weight="bold" fill="#2a6f97">Bicoid</text>
+  <text x="450" y="104" font-size="14" font-weight="bold" fill="#5aa0c8">Hunchback</text>
+
+  <!-- repressors panel -->
+  <text x="20" y="200" font-size="14" font-weight="bold" fill="#b5532a">Repressors</text>
+  <line x1="100" y1="290" x2="820" y2="290" stroke="#9aa5b1" stroke-width="1.2"/>
+  <path d="M172,290 C230,290 240,215 280,215 C320,215 330,290 359,290 Z" fill="#e8b04a" fill-opacity="0.55" stroke="#c98a2e" stroke-width="2"/>
+  <path d="M590,290 C630,290 640,232 676,232 C712,232 722,290 762,290 Z" fill="#e8b04a" fill-opacity="0.3" stroke="#c98a2e" stroke-width="1.5"/>
+  <path d="M395,290 C430,290 430,212 470,212 C510,212 515,290 546,290 Z" fill="#d06b5c" fill-opacity="0.5" stroke="#b5532a" stroke-width="2"/>
+  <text x="252" y="206" font-size="14" font-weight="bold" fill="#c98a2e">Giant</text>
+  <text x="444" y="204" font-size="14" font-weight="bold" fill="#b5532a">Krüppel</text>
+  <text x="648" y="224" font-size="13" fill="#c98a2e">Giant (posterior)</text>
+
+  <!-- embryo -->
+  <clipPath id="emb9"><ellipse cx="460" cy="345" rx="360" ry="32"/></clipPath>
+  <ellipse cx="460" cy="345" rx="360" ry="32" fill="#ffffff"/>
+  <rect x="359" y="300" width="29" height="90" fill="#9b6db5" clip-path="url(#emb9)"/>
+  <ellipse cx="460" cy="345" rx="360" ry="32" fill="none" stroke="#1b2a3a" stroke-width="1.5"/>
+  <text x="20" y="350" font-size="14" font-weight="bold" fill="#8e5aa8">Embryo</text>
+  <text x="373" y="398" font-size="13" fill="#8e5aa8" text-anchor="middle">stripe 2</text>
+  <text x="100" y="398" font-size="13" fill="#5c6b7a">anterior</text>
+  <text x="820" y="398" font-size="13" fill="#5c6b7a" text-anchor="end">posterior</text>
+
+  <line x1="20" y1="412" x2="880" y2="412" stroke="#d5dae0" stroke-width="1.5"/>
+  <text x="20" y="436" font-size="15" fill="#1b2a3a">Stripe 2 = Bicoid <tspan font-weight="bold">AND</tspan> Hunchback <tspan font-weight="bold">AND NOT</tspan> Giant <tspan font-weight="bold">AND NOT</tspan> Krüppel. Schematic profiles, not measured data.</text>
+</svg>

@@ -120,7 +120,19 @@ Mutant 5 cannot be a simple recessive mutation in one gene, because then it woul
 
 ---
 
-**Q10.** Three *Neurospora* mutants need arginine. Mutant X grows on citrulline or arginine; mutant Y grows only on arginine; mutant Z grows on ornithine, citrulline or arginine. In which order are their blocks in the pathway precursor → ornithine → citrulline → arginine?
+**Q10.** Two recessive mutations, *m1* and *m2*, give the same phenotype. A diploid with *m1* + / + *m2* (*trans*) is mutant, and a diploid with *m1 m2* / + + (*cis*) is wild type. What do you conclude? What could you conclude if the *cis* diploid were mutant too?
+
+::: {.callout-tip collapse="true" title="Hint"}
+How many intact copies of the gene does each diploid have? What does the cis diploid test?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The *trans* diploid has no intact copy of the gene if both mutations are in the same gene, so a mutant *trans* result means **same gene** (they fail to complement). The *cis* diploid has one completely intact copy, so a wild-type *cis* result shows that the mutations are **recessive** and the test is valid. If the *cis* diploid were also mutant, one intact copy would not be enough: at least one mutation acts **dominantly**, and the *trans* result says nothing about whether they are in the same gene.
+:::
+
+---
+
+**Q11.** Three *Neurospora* mutants need arginine. Mutant X grows on citrulline or arginine; mutant Y grows only on arginine; mutant Z grows on ornithine, citrulline or arginine. In which order are their blocks in the pathway precursor → ornithine → citrulline → arginine?
 
 ::: {.callout-tip collapse="true" title="Hint"}
 A mutant grows on every compound made **after** its block.

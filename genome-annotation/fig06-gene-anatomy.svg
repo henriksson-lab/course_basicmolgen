@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 22 900 274" font-family="Helvetica, Arial, sans-serif" width="900" height="274">
+  <!-- Schematic anatomy of a eukaryotic protein-coding gene with three exons (not to scale, no real coordinates).
+       Thick boxes: coding sequence; thin boxes: untranslated regions (UTRs); lines: introns. -->
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L7,3.5 L0,7 Z" fill="#1b2a3a"/></marker></defs>
+  <!-- row labels -->
+  <g fill="#1b2a3a">
+    <text x="20" y="85" font-size="15" font-weight="bold">gene (DNA)</text>
+    <text x="20" y="168" font-size="15" font-weight="bold">pre-mRNA</text>
+    <text x="20" y="186" font-size="12" fill="#5a6b7a">after transcription</text>
+    <text x="20" y="248" font-size="15" font-weight="bold">mRNA</text>
+    <text x="20" y="266" font-size="12" fill="#5a6b7a">after splicing</text>
+  </g>
+
+  <!-- gene -->
+  <line x1="180" y1="80" x2="880" y2="80" stroke="#1b2a3a" stroke-width="2"/>
+  <rect x="180" y="74" width="52" height="12" fill="#c9d3dd"/>
+  <polyline points="240,68 240,40 258,40" fill="none" stroke="#1b2a3a" stroke-width="2" marker-end="url(#ar)"/>
+  <g fill="#2a6f97">
+    <rect x="240" y="74" width="40" height="12"/><rect x="280" y="68" width="70" height="24"/>
+    <rect x="480" y="68" width="90" height="24"/>
+    <rect x="700" y="68" width="70" height="24"/><rect x="770" y="74" width="90" height="12"/>
+  </g>
+  <g font-size="13" fill="#1b2a3a" text-anchor="middle">
+    <text x="315" y="62">exon 1</text><text x="525" y="60">exon 2</text><text x="780" y="60">exon 3</text>
+    <text x="415" y="70">intron 1</text><text x="635" y="70">intron 2</text>
+  </g>
+  <g font-size="12" fill="#5a6b7a" text-anchor="middle">
+    <text x="206" y="108">promoter</text>
+    <text x="280" y="108">ATG</text><text x="770" y="108">stop</text>
+  </g>
+  <g font-size="12" font-weight="bold" fill="#bc4749">
+    <text x="354" y="108">GT</text><text x="476" y="108" text-anchor="end">AG</text>
+    <text x="574" y="108">GT</text><text x="696" y="108" text-anchor="end">AG</text>
+  </g>
+  <text x="266" y="44" font-size="12" fill="#5a6b7a">transcription start</text>
+
+  <!-- pre-mRNA -->
+  <line x1="240" y1="170" x2="860" y2="170" stroke="#8a97a4" stroke-width="2"/>
+  <g fill="#2a6f97">
+    <rect x="240" y="164" width="40" height="12"/><rect x="280" y="158" width="70" height="24"/>
+    <rect x="480" y="158" width="90" height="24"/>
+    <rect x="700" y="158" width="70" height="24"/><rect x="770" y="164" width="90" height="12"/>
+  </g>
+
+  <!-- splicing guides -->
+  <g stroke="#9aa6b2" stroke-width="1.2" stroke-dasharray="4 3">
+    <line x1="240" y1="184" x2="380" y2="236"/><line x1="350" y1="184" x2="490" y2="236"/>
+    <line x1="480" y1="184" x2="490" y2="236"/><line x1="570" y1="184" x2="580" y2="236"/>
+    <line x1="700" y1="184" x2="580" y2="236"/><line x1="860" y1="184" x2="740" y2="236"/>
+  </g>
+
+  <!-- mRNA -->
+  <g fill="#2a6f97">
+    <rect x="380" y="244" width="40" height="12"/><rect x="420" y="238" width="70" height="24"/>
+    <rect x="490" y="238" width="90" height="24"/>
+    <rect x="580" y="238" width="70" height="24"/><rect x="650" y="244" width="90" height="12"/>
+  </g>
+  <line x1="490" y1="238" x2="490" y2="262" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="580" y1="238" x2="580" y2="262" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="366" y="255" font-size="12" fill="#5a6b7a" text-anchor="end">5' cap</text>
+  <text x="748" y="255" font-size="12" fill="#5a6b7a">AAAA… (poly-A tail)</text>
+  <g font-size="12" fill="#1b2a3a" text-anchor="middle">
+    <text x="400" y="284">5' UTR</text>
+    <text x="535" y="284">coding sequence (CDS): ATG … stop</text>
+    <text x="695" y="284">3' UTR</text>
+  </g>
+</svg>

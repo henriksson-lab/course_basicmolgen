@@ -129,3 +129,27 @@ Which chromosome does *XIST* RNA coat?
 ::: {.callout-note collapse="true" title="Answer"}
 *XIST* RNA coats the chromosome it is made from. The autosome carrying the active transgene would be coated and (at least partly) **silenced**, while the X chromosomes would be unaffected. Experiments like this showed that *XIST* is sufficient to start silencing in cis.
 :::
+
+---
+
+**Q11.** You delete one member of a miRNA family in mice and see no phenotype. Give a genetic explanation, and say how you would test it.
+
+::: {.callout-tip collapse="true" title="Hint"}
+What do the members of a miRNA family have in common, and what does that mean for their targets?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Members of a family share the same **seed**, so they repress the same target sites. The remaining members can cover for the deleted one: **genetic redundancy**. Test it by deleting several or all family members together (or by mutating the target sites in a key target) and looking for a phenotype that the single deletion lacks.
+:::
+
+---
+
+**Q12.** A student converts the seed GAGGUAG of *let-7* into the site **CUCCAUC** and finds no match in the *HMGA2* 3′UTR. What went wrong, and what is the correct site?
+
+::: {.callout-tip collapse="true" title="Hint"}
+The site must be written 5′→3′, like the mRNA.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+The student took the complement but did not **reverse** it; CUCCAUC is the site read 3′→5′. Reversed, the site is **CUACCUC** (5′→3′), the 7mer-m8 *let-7* site. With an A after it (CUACCUCA) it is an 8mer.
+:::

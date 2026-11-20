@@ -153,3 +153,15 @@ What does "dominant" describe: a relation between two alleles in one individual,
 ::: {.callout-note collapse="true" title="Answer"}
 **False.** Dominance describes what the heterozygote looks like; it says nothing about how common an allele is. The Huntington disease allele is dominant but rare, while recessive alleles can be very common (in peas, all plants of a wrinkled line carry only *r*). Allele frequencies in populations are the topic of the Hardy–Weinberg unit.
 :::
+
+---
+
+**Q13.** List the gametes of a plant with genotype *RR Yy Tt*, with their proportions. How many kinds are there?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Take one gene at a time. How many different alleles can each gene contribute?
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+*RR* always gives *R*; *Yy* gives *Y* or *y*; *Tt* gives *T* or *t*. The gametes are ***RYT*, *RYt*, *RyT*, *Ryt***, ¼ each: **4 kinds**, that is 2^2^ for the two heterozygous genes. The homozygous gene does not add any gamete types. Every gamete carries exactly one allele of each of the three genes.
+:::

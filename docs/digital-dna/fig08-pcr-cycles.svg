@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 318" font-family="Helvetica, Arial, sans-serif" width="900" height="318">
+  <!-- The first three PCR cycles, duplex by duplex, starting from one double-stranded template.
+       Each column is 240 px wide; the target (primer to primer) is x = 70..170; primers sit at 70..82 and 158..170.
+       Strand types: original (dark), long product that starts at a primer but runs past the other primer site (grey),
+       short product that runs exactly from primer to primer (blue). Counts checked by simulation: target-length duplexes = 2^n - 2n. -->
+  <defs>
+    <g id="OL"><line x1="0" y1="0" x2="240" y2="0" stroke="#1b2a3a" stroke-width="3"/><line x1="0" y1="7" x2="170" y2="7" stroke="#9aa6b2" stroke-width="3"/></g>
+    <g id="LO"><line x1="70" y1="0" x2="240" y2="0" stroke="#9aa6b2" stroke-width="3"/><line x1="0" y1="7" x2="240" y2="7" stroke="#1b2a3a" stroke-width="3"/></g>
+    <g id="LS"><line x1="70" y1="0" x2="240" y2="0" stroke="#9aa6b2" stroke-width="3"/><line x1="70" y1="7" x2="170" y2="7" stroke="#2a6f97" stroke-width="3"/></g>
+    <g id="SL"><line x1="70" y1="0" x2="170" y2="0" stroke="#2a6f97" stroke-width="3"/><line x1="0" y1="7" x2="170" y2="7" stroke="#9aa6b2" stroke-width="3"/></g>
+    <g id="SS"><line x1="70" y1="0" x2="170" y2="0" stroke="#2a6f97" stroke-width="3"/><line x1="70" y1="7" x2="170" y2="7" stroke="#2a6f97" stroke-width="3"/></g>
+    <g id="bands"><rect x="70" y="0" width="12" height="194" fill="#6a994e" opacity="0.18"/><rect x="158" y="0" width="12" height="194" fill="#6a994e" opacity="0.18"/></g>
+  </defs>
+
+  <!-- column 1 -->
+  <g transform="translate(30,0)">
+    <text x="120" y="24" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">After cycle 1</text>
+    <text x="120" y="44" font-size="13" fill="#5a6b7a" text-anchor="middle">2 duplexes, 0 of target length</text>
+    <rect x="70" y="58" width="12" height="50" fill="#6a994e" opacity="0.18"/><rect x="158" y="58" width="12" height="50" fill="#6a994e" opacity="0.18"/>
+    <use xlink:href="#OL" y="68"/>
+    <use xlink:href="#LO" y="92"/>
+  </g>
+  <!-- column 2 -->
+  <g transform="translate(330,0)">
+    <text x="120" y="24" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">After cycle 2</text>
+    <text x="120" y="44" font-size="13" fill="#5a6b7a" text-anchor="middle">4 duplexes, 0 of target length</text>
+    <rect x="70" y="58" width="12" height="98" fill="#6a994e" opacity="0.18"/><rect x="158" y="58" width="12" height="98" fill="#6a994e" opacity="0.18"/>
+    <use xlink:href="#OL" y="68"/>
+    <use xlink:href="#LO" y="92"/>
+    <use xlink:href="#LS" y="116"/>
+    <use xlink:href="#SL" y="140"/>
+  </g>
+  <!-- column 3 -->
+  <g transform="translate(630,0)">
+    <text x="120" y="24" font-size="15" font-weight="bold" fill="#1b2a3a" text-anchor="middle">After cycle 3</text>
+    <text x="120" y="44" font-size="13" fill="#5a6b7a" text-anchor="middle">8 duplexes, 2 of target length</text>
+    <use xlink:href="#bands" y="58"/>
+    <use xlink:href="#OL" y="68"/>
+    <use xlink:href="#LO" y="92"/>
+    <use xlink:href="#LS" y="116"/>
+    <use xlink:href="#LS" y="140"/>
+    <use xlink:href="#SL" y="164"/>
+    <use xlink:href="#SL" y="188"/>
+    <use xlink:href="#SS" y="212"/>
+    <use xlink:href="#SS" y="236"/>
+  </g>
+  <rect x="696" y="205" width="112" height="45" rx="5" fill="none" stroke="#2a6f97" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- legend -->
+  <g font-size="13" fill="#1b2a3a">
+    <line x1="30" y1="282" x2="62" y2="282" stroke="#1b2a3a" stroke-width="3"/><text x="70" y="287">original template</text>
+    <line x1="210" y1="282" x2="242" y2="282" stroke="#9aa6b2" stroke-width="3"/><text x="250" y="287">long product: starts at a primer, runs past the other</text>
+    <line x1="30" y1="306" x2="62" y2="306" stroke="#2a6f97" stroke-width="3"/><text x="70" y="311">short product: primer to primer (the target)</text>
+    <rect x="390" y="298" width="12" height="16" fill="#6a994e" opacity="0.35"/><text x="410" y="311">primer sites</text>
+  </g>
+</svg>

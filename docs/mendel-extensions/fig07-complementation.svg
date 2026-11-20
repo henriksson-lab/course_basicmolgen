@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" font-family="Helvetica, Arial, sans-serif">
+  <!-- fig07: the complementation logic behind 9 : 7.
+       Left: two white lines with recessive mutations in DIFFERENT genes give a purple F1 (they complement).
+       Right: two white lines with recessive mutations in the SAME gene give a white F1 (no complementation).
+       Pathway: colourless -> (enzyme A) -> colourless -> (enzyme B) -> purple. -->
+  <defs>
+    <marker id="arr" markerWidth="16" markerHeight="16" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,6 L0,12 Z" fill="#1b2a3a"/>
+    </marker>
+  </defs>
+
+  <!-- panel frames -->
+  <rect x="10" y="10" width="455" height="310" rx="12" fill="#f4f6f8" stroke="#d5dbe1"/>
+  <rect x="495" y="10" width="455" height="310" rx="12" fill="#f4f6f8" stroke="#d5dbe1"/>
+  <text x="237" y="40" font-size="20" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Mutations in different genes</text>
+  <text x="722" y="40" font-size="20" font-weight="bold" fill="#1b2a3a" text-anchor="middle">Mutations in the same gene</text>
+
+  <!-- LEFT panel: W1 x W2 -->
+  <rect x="30" y="58" width="180" height="84" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="120" y="82" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">W1 (white)</text>
+  <text x="120" y="106" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">AA bb</text>
+  <text x="120" y="129" font-size="14" fill="#5c6b7a" text-anchor="middle">has A, lacks B</text>
+  <text x="237" y="108" font-size="24" fill="#1b2a3a" text-anchor="middle">×</text>
+  <rect x="264" y="58" width="180" height="84" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="354" y="82" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">W2 (white)</text>
+  <text x="354" y="106" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">aa BB</text>
+  <text x="354" y="129" font-size="14" fill="#5c6b7a" text-anchor="middle">lacks A, has B</text>
+  <line x1="237" y1="146" x2="237" y2="180" stroke="#1b2a3a" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="137" y="186" width="200" height="84" rx="10" fill="#6f4a9e" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="237" y="210" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">hybrid: purple</text>
+  <text x="237" y="234" font-size="18" font-style="italic" fill="#ffffff" text-anchor="middle">Aa Bb</text>
+  <text x="237" y="257" font-size="14" fill="#ffffff" text-anchor="middle">has A and B</text>
+  <text x="237" y="303" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">They complement: the hybrid is wild type</text>
+
+  <!-- RIGHT panel: W1 x W3 -->
+  <rect x="515" y="58" width="180" height="84" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="605" y="82" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">W1 (white)</text>
+  <text x="605" y="106" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">AA bb</text>
+  <text x="605" y="129" font-size="14" fill="#5c6b7a" text-anchor="middle">has A, lacks B</text>
+  <text x="722" y="108" font-size="24" fill="#1b2a3a" text-anchor="middle">×</text>
+  <rect x="749" y="58" width="180" height="84" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="839" y="82" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">W3 (white)</text>
+  <text x="839" y="106" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">AA b*b*</text>
+  <text x="839" y="129" font-size="14" fill="#5c6b7a" text-anchor="middle">another broken B allele</text>
+  <line x1="722" y1="146" x2="722" y2="180" stroke="#1b2a3a" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="622" y="186" width="200" height="84" rx="10" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="722" y="210" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">hybrid: white</text>
+  <text x="722" y="234" font-size="18" font-style="italic" fill="#1b2a3a" text-anchor="middle">AA bb*</text>
+  <text x="722" y="257" font-size="14" fill="#5c6b7a" text-anchor="middle">still lacks B</text>
+  <text x="722" y="303" font-size="17" font-weight="bold" fill="#1b2a3a" text-anchor="middle">They fail to complement: the hybrid is mutant</text>
+</svg>

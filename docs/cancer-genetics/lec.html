@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -144,8 +144,8 @@ Basic and molecular genetics (5MO104)
 <p>Cancer is a <strong>genetic disease of somatic cells</strong>: a clone of cells that has collected mutations which let it divide when it should not.</p>
 <ul>
 <li>Two kinds of cancer gene: <strong>oncogenes</strong> (gain of function, dominant at the cell level) and <strong>tumour suppressors</strong> (loss of function, recessive at the cell level).</li>
-<li><strong>Knudson’s two-hit hypothesis</strong>, from the ages at which children get retinoblastoma.</li>
-<li><strong>Loss of heterozygosity</strong>, and why a “recessive” cancer gene is inherited as a dominant predisposition (<em>BRCA1/2</em>).</li>
+<li><strong>Knudson’s two-hit hypothesis</strong>, from the ages at which children get retinoblastoma, and the two-hit model in numbers.</li>
+<li><strong>Loss of heterozygosity</strong>, read from marker data, and why a “recessive” cancer gene is inherited as a dominant predisposition with incomplete penetrance (<em>BRCA1/2</em>), with a worked family risk.</li>
 <li><strong>Mutator phenotypes</strong>, <strong>clonal evolution</strong>, and <strong>driver</strong> vs <strong>passenger</strong> mutations.</li>
 <li>The <strong>Philadelphia chromosome</strong> and imatinib: from a chromosome to a drug.</li>
 </ul>
@@ -353,6 +353,33 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-two-hit-model-in-numbers" class="slide level2">
+<h2>The two-hit model in numbers</h2>
+<p>A simple model eye: <em>n</em> = 10⁶ retinoblasts, and each <em>RB1</em> allele in a cell is hit with probability <em>u</em> = 10⁻⁶ while the cells divide (round numbers for illustration).</p>
+<p><strong>Carrier</strong> (one hit inherited, one more needed per cell):</p>
+<ol type="1">
+<li>Expected tumours per eye = <em>n u</em> = 10⁶ × 10⁻⁶ = <strong>1</strong>; both eyes: <strong>2</strong>.</li>
+<li>Rare events in many cells: P(no tumour) ≈ e<sup>−expected number</sup> = e<sup>−2</sup> = <strong>0.14</strong>, so penetrance ≈ <strong>0.86</strong>.</li>
+<li>Both eyes affected: (1 − e<sup>−1</sup>)² = 0.63² = <strong>0.40</strong>.</li>
+</ol>
+<p><strong>Non-carrier</strong> (two hits needed in the <strong>same</strong> cell):</p>
+<ol start="4" type="1">
+<li>Expected tumours, both eyes = 2<em>n</em> <em>u</em>² = 2 × 10⁶ × 10⁻¹² = <strong>2 × 10⁻⁶</strong>: about 1 child in 500 000, and almost never bilateral.</li>
+</ol>
+<aside class="notes">
+<p>This turns the figure into arithmetic. The key step is 2: when each of very many cells has a tiny chance, the number of tumours is approximately Poisson, and the chance of none is e to the minus the expected number. Students know e to the minus x from radioactive decay. The carrier numbers reproduce the clinic: most carriers affected, many bilateral; a few unaffected carriers explain incomplete penetrance by chance alone. The non-carrier number is a million times smaller, because u is squared. The values of n and u are round numbers, not measurements; exercise B2 does the same with other values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="demo-two-hits" class="slide level2">
 <h2>Demo: two hits</h2>
 <link rel="stylesheet" href="../demos/dist/demo.css">
@@ -394,6 +421,58 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="reading-loh-from-marker-data-a-worked-example" class="slide level2">
+<h2>Reading LOH from marker data: a worked example</h2>
+<p>Five markers along one chromosome arm, from the centromere outwards; the tumour suppressor lies between M3 and M4. Blood and tumour DNA from one patient:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Marker</th>
+<th>M1</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4</th>
+<th>M5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Blood</td>
+<td>1/2</td>
+<td>3/4</td>
+<td>2/5</td>
+<td>1/3</td>
+<td>4/6</td>
+</tr>
+<tr class="even">
+<td>Tumour</td>
+<td>1/2</td>
+<td>3/4</td>
+<td><strong>2</strong></td>
+<td><strong>1</strong></td>
+<td><strong>4</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li><strong>Where?</strong> M1 and M2 stay heterozygous; M3 to M5 lose an allele. The lost region starts between M2 and M3 and runs to the end of the arm, and it covers the gene.</li>
+<li><strong>How?</strong> Not loss of the whole chromosome (M1, M2 still heterozygous). A <strong>terminal deletion</strong> leaves <strong>1</strong> copy of M3–M5; <strong>mitotic recombination</strong> between M2 and M3 leaves <strong>2</strong> identical copies. A copy-number measurement tells them apart.</li>
+<li><strong>Which parent’s allele is kept?</strong> If the mother is 2/2 at M3 and the father 5/5, the tumour kept the <strong>maternal</strong> chromosome, so the inherited mutant allele most likely came from the <strong>mother</strong>.</li>
+</ol>
+<aside class="notes">
+<p>This is the reasoning that mapped many tumour suppressors: find the smallest region that loses heterozygosity in many tumours. The method in three questions: where does the loss start and end, which mechanism fits, and which parental chromosome is retained. The retained chromosome carries the first hit, because selection keeps cells that lost the normal copy. Step 3 assumes no recombination between M3 and the gene in the parent’s meiosis, and that the mutant allele is the inherited first hit. The marker values here are invented; exercise B4 has another example of the same kind.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="recessive-in-the-cell-dominant-in-the-pedigree" class="slide level2">
 <h2>Recessive in the cell, dominant in the pedigree</h2>
 <p>A retinoblastoma family looks <strong>autosomal dominant</strong>: about ½ of the children of a carrier are affected, in every generation. Yet the allele is <strong>recessive</strong> in each cell. Both are true:</p>
@@ -404,6 +483,55 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>This slide resolves the apparent paradox that confuses many students. Dominant and recessive describe phenotypes at a level. At the level of the person, the phenotype is “gets retinoblastoma”, and a heterozygote usually does: dominant, with high but incomplete penetrance. At the level of the cell, the phenotype is “divides uncontrollably”, and a heterozygous cell does not: recessive. Link to the pedigrees unit: incomplete penetrance makes a dominant trait skip a generation, and an unaffected obligate carrier between two affected relatives is the giveaway. BRCA1 and BRCA2 are the commonest example in adults. Their penetrance is high but varies between studies and families; avoid quoting a single number without a source.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="incomplete-penetrance-in-a-family-a-worked-risk" class="slide level2">
+<h2>Incomplete penetrance in a family: a worked risk</h2>
+<p>A dominant cancer predisposition with penetrance <strong>0.8</strong> (round number). An affected carrier has children with a non-carrier.</p>
+<ol type="1">
+<li><strong>Child’s risk</strong> of disease: P(inherits the allele) × penetrance = ½ × 0.8 = <strong>0.40</strong>.</li>
+<li>A daughter is now an adult and <strong>unaffected</strong>. Is she a carrier? Use conditional probability (probability unit):</li>
+</ol>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>prior</th>
+<th>P(unaffected | this)</th>
+<th>product</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>carrier</td>
+<td>½</td>
+<td>1 − 0.8 = 0.2</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td>non-carrier</td>
+<td>½</td>
+<td>1</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p>P(carrier | unaffected) = 0.10 / (0.10 + 0.50) = <strong>1/6</strong>.</p>
+<ol start="3" type="1">
+<li><strong>Her child’s risk</strong>: 1/6 × ½ × 0.8 = <strong>1/15</strong> (about 7%), although she herself never had the disease: the skipped generation of the pedigrees unit.</li>
+</ol>
+<aside class="notes">
+<p>This is the Bayesian table from the probability and pedigree units applied to cancer predisposition. Being unaffected is evidence against being a carrier, but only partly, because a carrier stays unaffected 20 percent of the time. The table makes the arithmetic transparent: multiply prior by the likelihood of the observation, then divide by the sum. In practice, penetrance also depends on age: an unaffected 20-year-old says less than an unaffected 70-year-old. Genetic testing for the family’s known variant, if available, replaces this calculation with a near-certain answer, which is why it matters in counselling, a point the ethics module returns to. Exercise B5 does the same with 90 percent penetrance.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -461,6 +589,33 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="the-philadelphia-chromosome-under-the-microscope" class="slide level2">
+<h2>The Philadelphia chromosome under the microscope</h2>
+<div class="columns">
+<div class="column" style="width:52%;">
+<p><img data-src="img/philadelphia-karyotype.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Philadelphia_chromosome,_t(9;22)_translocation.jpg" class="photo-credit">Photo: Armed Forces Institute of Pathology, public domain, via Wikimedia Commons</a></p>
+</div><div class="column" style="width:48%;">
+<p>A partial karyotype from the bone marrow of a patient with <strong>chronic myeloid leukaemia</strong>: the two chromosomes 9 and the two chromosomes 22, G-banded.</p>
+<ul>
+<li>In each pair, the <strong>right-hand</strong> chromosome (arrowhead) is the rearranged one: the end of 9q now carries material from 22, and 22 has lost most of its long arm.</li>
+<li>The short 22 is the <strong>Philadelphia chromosome</strong>, der(22).</li>
+<li>Nothing is lost: the ends were <strong>swapped</strong>, a balanced reciprocal translocation.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>This is what a cytogeneticist sees, and it connects to the karyotypes of Part 5. Each chromosome pair is shown side by side, the normal homologue on the left and the rearranged one on the right, marked with an arrowhead. Chromosome 9 gained material at the end of its long arm and chromosome 22 lost most of its long arm, which moved to 9. In 1960 Nowell and Hungerford saw only a small chromosome, without banding; the banded picture showing that it is a reciprocal translocation came from Janet Rowley in 1973. The next slide shows what the swap does at the level of genes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-philadelphia-chromosome" class="slide level2 smaller">
 <h2>The Philadelphia chromosome</h2>
 
@@ -505,13 +660,67 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="common-mistakes" class="slide level2">
+<h2>Common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“Cancer is genetic, so it is inherited”</td>
+<td>most driver mutations are <strong>somatic</strong>; only a minority of patients inherit a first hit</td>
+</tr>
+<tr class="even">
+<td>“Tumour suppressor alleles are recessive, so carriers are not at risk”</td>
+<td>recessive in the <strong>cell</strong>; in the <strong>person</strong> the second hit is so likely that the predisposition is dominant</td>
+</tr>
+<tr class="odd">
+<td>“A dominant predisposition means every carrier gets cancer”</td>
+<td>penetrance is <strong>incomplete</strong>: unaffected carriers exist and can transmit the allele</td>
+</tr>
+<tr class="even">
+<td>“Inherited cancer genes are oncogenes”</td>
+<td>mostly <strong>tumour suppressors</strong>: an activated oncogene in every cell is usually not compatible with normal development</td>
+</tr>
+<tr class="odd">
+<td>“LOH is a new point mutation”</td>
+<td>LOH is <strong>loss of the normal allele</strong>, often with a stretch of chromosome (deletion, mitotic recombination, chromosome loss)</td>
+</tr>
+<tr class="even">
+<td>“Most mutations in a tumour cause the cancer”</td>
+<td>most are <strong>passengers</strong>; drivers recur across tumours</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Use as a check-yourself slide: cover the right column and ask for the correction. The first two are the most common confusions in exam answers; the fourth is a nice reasoning question with exceptions such as RET in multiple endocrine neoplasia type 2. The last one links to the cBioPortal task: recurrence at the same codon or gene across many tumours is the signature of selection.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
 <li>Cancer is a clone of cells with <strong>somatic</strong> mutations; a minority of patients carry an <strong>inherited</strong> first hit.</li>
 <li><strong>Oncogenes</strong>: gain of function, one allele enough (dominant at the cell level). <strong>Tumour suppressors</strong>: loss of function, both alleles (recessive at the cell level).</li>
-<li><strong>Knudson</strong>: hereditary retinoblastoma needs one more hit (early, bilateral, multiple, risk ∝ age); sporadic needs two in one cell (late, unilateral, single, risk ∝ age²).</li>
-<li>The second hit is often <strong>loss of heterozygosity</strong>. An inherited cell-recessive allele gives a <strong>dominant</strong> predisposition with <strong>incomplete penetrance</strong> (<em>RB1</em>, <em>BRCA1/2</em>).</li>
+<li><strong>Knudson</strong>: hereditary retinoblastoma needs one more hit (early, bilateral, multiple, risk ∝ age); sporadic needs two in one cell (late, unilateral, single, risk ∝ age²). Expected tumours <em>nu</em> vs <em>nu</em>²; P(none) ≈ e<sup>−expected</sup>.</li>
+<li>The second hit is often <strong>loss of heterozygosity</strong>, read as markers heterozygous in blood but not in the tumour. An inherited cell-recessive allele gives a <strong>dominant</strong> predisposition with <strong>incomplete penetrance</strong> (<em>RB1</em>, <em>BRCA1/2</em>); unaffected relatives’ risks need conditional probability.</li>
 <li><strong>Mutator phenotypes</strong> raise the hit rate; <strong>clonal evolution</strong> selects drivers; passengers come along.</li>
 <li><strong>t(9;22)</strong> makes BCR–ABL1; <strong>imatinib</strong> targets it.</li>
 </ul>

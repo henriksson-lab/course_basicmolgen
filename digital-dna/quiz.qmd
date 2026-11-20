@@ -141,3 +141,27 @@ Coverage = number of reads × read length / genome length.
 ::: {.callout-note collapse="true" title="Answer"}
 2 × 10^6^ × 150 / 5 × 10^6^ = **60×**. On average each base is read 60 times, but reads land at random positions, so coverage varies: some bases have far more reads and some fewer. At 60× it is very unlikely that any base has none, but at low coverage (say 2×) a noticeable fraction of the genome would be missed.
 :::
+
+---
+
+**Q12.** The top strand of the region you want to amplify ends with 5'-…GATCCAGTTGACCTAGCGTA-3'. Write the reverse primer (20 nt, 5'→3').
+
+::: {.callout-tip collapse="true" title="Hint"}
+The reverse primer pairs with the top strand. Complement the sequence, then reverse it so it reads 5'→3'.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+Reverse complement of GATCCAGTTGACCTAGCGTA: **5'-TACGCTAGGTCAACTGGATC-3'**. Check by reverse-complementing it again: you get the top strand back. Writing the top-strand sequence itself would give a primer that binds the same strand as the forward primer, and no exponential product.
+:::
+
+---
+
+**Q13.** A PCR starts from one double-stranded template molecule. After 4 cycles at 100% efficiency there are 16 duplexes. How many of them have exactly the length from primer to primer, and why are not all of them that length?
+
+::: {.callout-tip collapse="true" title="Hint"}
+Follow the original strands: what does the polymerase make when it copies a strand that runs past the other primer site? See the slide on the first three cycles.
+:::
+
+::: {.callout-note collapse="true" title="Answer"}
+2^4^ − 2 × 4 = **8** of the 16. The two original strands are always present, and each cycle copies them into "long" products that start at a primer but run on past the other primer site. Only copies of copies end exactly at a primer. These long products grow by only 2 per cycle, while the primer-to-primer products grow exponentially, so after 30 cycles essentially all of the product has the defined length.
+:::

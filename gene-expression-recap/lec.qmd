@@ -23,15 +23,15 @@ format:
 
 **Recap of 5MO103** (Microbiology and basic molecular biology). You know how a cell reads a gene. Here we ask the geneticist's version of the question: **where in a gene can a mutation act, and what does it do?**
 
-- The anatomy of a gene, and six real *HBB* mutations that hit six different steps.
+- The anatomy of a gene, six real *HBB* mutations that hit six different steps, and how such variants are **named** (c.92+1, c.-78).
 - **Transcription** and **RNA processing**: promoters, caps, poly(A) tails and **splicing**.
-- **Splicing mutations**, and **alternative splicing**: one gene, many transcripts (*CFTR* in Ensembl and UniProt).
-- **Translation** and the **genetic code**, and how **frameshift mutants** proved that the code is read in triplets (Crick and Brenner).
+- **Splicing mutations**, and **alternative splicing**: one gene, many transcripts (*CFTR* in Ensembl and UniProt); does an exon skip keep the frame?
+- **Translation** and the **genetic code**, and how **frameshift mutants** of phage T4 proved that the code is read in triplets (Crick and Brenner).
 
 Book: Hartwell, *Genetics: From Genes to Genomes*, Gene expression: the flow of information from DNA to RNA to protein chapter.
 
 ::: notes
-This is a recap unit, so keep the biochemistry short; students have the full mechanism from 5MO103. The new angle is the mutation one: in the previous unit every mutation was a change in a codon. Here we see that a mutation in a promoter, a splice site or a poly(A) signal can be just as damaging, and that one gene can give several proteins. The beta-thalassaemias are the running example because HBB is so small and so well studied; nearly every step of expression has a known disease mutation. About eight content slides.
+This is a recap unit, so keep the biochemistry short; students have the full mechanism from 5MO103. The new angle is the mutation one: in the previous unit every mutation was a change in a codon. Here we see that a mutation in a promoter, a splice site or a poly(A) signal can be just as damaging, and that one gene can give several proteins. The beta-thalassaemias are the running example because HBB is so small and so well studied; nearly every step of expression has a known disease mutation. Spend the extra time on the three things the exercise needs: HGVS numbering outside codons, the in-frame arithmetic for exon skipping, and the logic of the Crick-Brenner experiment.
 :::
 
 ## Where can a mutation act? {.smaller}
@@ -41,7 +41,19 @@ This is a recap unit, so keep the biochemistry short; students have the full mec
 Six real disease variants in one small gene, *HBB* (all classified as pathogenic in ClinVar). Only two of them change a codon.
 
 ::: notes
-Walk along the gene from left to right. The promoter variant at c.-78 sits in the TATA box, 28 bases before the transcription start, and reduces transcription, so less beta-globin is made: beta-plus thalassaemia (reduced output). HbS is the missense change students know. The two intron 1 variants damage splicing: c.92+1 destroys the GT of the donor site, c.93-21 creates a new AG acceptor inside the intron. c.118C>T is the codon 39 nonsense allele from the mutation unit. The last one is in the poly(A) signal AATAAA in the 3' UTR. Beta-zero means no beta-globin at all from that allele, beta-plus means some. Numbering: c.-78 is 78 bases before the A of ATG; c.92+1 is the first intron base after coding base 92; c.93-21 is 21 bases before coding base 93; c.*111 is 111 bases after the stop codon. The numbers are from the HGVS names in ClinVar.
+Walk along the gene from left to right. The promoter variant at c.-78 sits in the TATA box, 28 bases before the transcription start, and reduces transcription, so less beta-globin is made: beta-plus thalassaemia (reduced output). HbS is the missense change students know. The two intron 1 variants damage splicing: c.92+1 destroys the GT of the donor site, c.93-21 creates a new AG acceptor inside the intron. c.118C>T is the codon 39 nonsense allele from the mutation unit. The last one is in the poly(A) signal AATAAA in the 3' UTR. Beta-zero means no beta-globin at all from that allele, beta-plus means some. Numbering: c.-78 is 78 bases before the A of ATG; c.92+1 is the first intron base after coding base 92; c.93-21 is 21 bases before coding base 93; c.*111 is 111 bases after the stop codon. The numbers are from the HGVS names in ClinVar. The next slide explains the numbering, because the exercise uses it.
+:::
+
+## Naming variants outside the codons {.smaller}
+
+Database (HGVS) names place every variant relative to the **coding sequence** of a reference transcript:
+
+![](fig05-hgvs-numbering.svg){width="84%" fig-align="center"}
+
+So **c.92+1G>A** is the G of the intron's GT, right after exon 1; **c.93-21G>A** is in intron 1, 21 bases before exon 2; **c.-78A>C** is 78 bases before the ATG.
+
+::: notes
+In the mutation unit every variant was c.x in a codon. Now we need the rest of the system. The coding numbering skips the introns, so c.92 and c.93 are neighbours in the mRNA but about 130 bases apart in the genome (HBB intron 1 is 130 bp). An intronic position is anchored to the nearest exon base: plus after the end of an exon, minus before the start of the next one. A name like c.1585-1G>A therefore says at once that this is the last base of an intron, the G of the AG acceptor, before the exon that starts at c.1585. The 5' UTR and promoter get negative numbers counting back from the A of ATG, and the 3' UTR gets c.* numbers counting from the stop codon. HBB exon boundaries are from the ClinVar names; the stop codon is c.442-444 because the coding sequence is 444 nt.
 :::
 
 ## Transcription, in brief {.smaller}
@@ -82,27 +94,48 @@ About one in ten disease-causing point mutations affects splicing. A "silent" or
 Three patterns. Destroying a donor or acceptor site (c.92+1G>A in HBB, or CFTR c.1585-1G>A, the acceptor of exon 12) means the normal splice is lost: the spliceosome skips the exon, keeps the intron, or uses a weaker cryptic site nearby. Creating a new site: HBB c.93-21G>A (traditionally IVS-I-110) makes a new AG 19 bases upstream of the normal acceptor; most transcripts use it and keep 19 nt of intron, which shifts the reading frame, but some normal splicing remains, so it is a beta-plus allele. It is one of the most common beta-thalassaemia alleles around the Mediterranean. Exon skipping: if the skipped exon is a multiple of 3 long, the frame is kept and the protein just lacks a piece; CFTR exon 10 (183 nt) is the example on the next slide. The one-in-ten figure is a rough literature estimate; give it as an order of magnitude.
 :::
 
-## Alternative splicing: one gene, many products {.smaller}
+## Alternative splicing: one gene, many transcripts {.smaller}
 
-:::: {.columns}
-::: {.column width="40%"}
+Most human multi-exon genes are **alternatively spliced**: exons can be included or skipped, and different starts and ends can be used. Databases record this at two levels:
 
-Most human multi-exon genes are **alternatively spliced**: exons can be included or skipped, and different starts and ends can be used.
+| | What it lists | *CFTR* |
+|---|---|---|
+| **Ensembl** (release 116) | every **transcript** with evidence: full-length, fragments, retained introns, ones with early stop codons | **45 transcripts** |
+| **MANE Select** | the **one** transcript per gene that NCBI and Ensembl agree to use as the default | ENST00000003084 = NM_000492.4: 27 exons, 1480 amino acids |
+| **UniProt** (P13569) | protein **isoforms** with good evidence | **3 isoforms** |
 
-*CFTR* in **Ensembl** (release 116): **45 transcripts**, of which one is the **MANE Select** transcript (ENST00000003084, = RefSeq NM_000492.4): 27 exons, a protein of 1480 amino acids.
-
-**UniProt** P13569 lists **3 isoforms**. Isoform 2 lacks residues 404–464: exactly the 61 codons of **exon 10**.
-
-:::
-::: {.column width="60%"}
-
-![](fig04-cftr-isoforms.svg){width="100%"}
-
-:::
-::::
+**Why it matters for a geneticist.** A variant is always named on a transcript (NM_000492.4:c.1624G>T). On another transcript, the same base can have a different c. number, or lie in an intron.
 
 ::: notes
-Ensembl's transcripts include everything with evidence: full-length coding transcripts, fragments, transcripts that keep an intron, and transcripts predicted to be destroyed by nonsense-mediated decay. Many are rare. MANE Select is one transcript per gene, agreed between NCBI and Ensembl, that is used as the default for reporting variants; ClinVar's CFTR names all use NM_000492.4. UniProt lists isoforms only when there is protein-level or strong evidence, which is why it has 3 rather than 45. Exon 10 (exon 9 in the old legacy numbering) is 183 nt. A poly-T tract just upstream of it in intron 9 varies in length between people: with only five Ts (the 5T allele), exon 10 is skipped in most transcripts, and the protein without exon 10 does not work. 5T is associated with male infertility from absent vas deferens and with mild CF when combined with a severe allele. Students compute these numbers themselves in the R exercise.
+Ensembl's transcripts include everything with evidence: full-length coding transcripts, fragments, transcripts that keep an intron, and transcripts predicted to be destroyed by nonsense-mediated decay. Many are rare. MANE Select is one transcript per gene, agreed between NCBI and Ensembl, that is used as the default for reporting variants; ClinVar's CFTR names all use NM_000492.4. UniProt lists isoforms only when there is protein-level or strong evidence, which is why it has 3 rather than 45. Students find these numbers themselves in the Find it part, and count the transcript types in the R exercise. The last line is the practical reason MANE exists: before it, two labs could give the same variant different names.
+:::
+
+## Exon skipping: *CFTR* isoform 2 lacks exon 10 {.smaller}
+
+![](fig04-cftr-isoforms.svg){width="82%" fig-align="center"}
+
+- UniProt isoform 2 lacks residues **404–464**: exactly the 61 codons of **exon 10** (183 nt = 3 × 61, so the frame is kept).
+- How much exon 10 is skipped is itself **genetic**: a poly-T tract just before exon 10, in intron 9, varies between people. With only five Ts (the **5T** allele) most transcripts skip exon 10, and the protein without it does not work.
+
+::: notes
+The figure lines up the MANE transcript and a transcript without exon 10 with the two UniProt isoforms. Exon 10 (exon 9 in the old legacy numbering) is 183 nt. The 5T allele is a nice example of a cis-acting variant that changes splicing efficiency rather than a splice site: it lies in the intron, outside the consensus sequences, and changes the proportion of the two products. 5T is associated with male infertility from congenital absence of the vas deferens, and with mild cystic fibrosis when combined with a severe CFTR allele on the other chromosome. In the R exercise students find the Ensembl transcript (CFTR-218) that matches isoform 2 by comparing exon coordinates.
+:::
+
+## Worked example: does skipping an exon keep the frame? {.smaller}
+
+**Method.** (1) Is the exon length a multiple of 3? (2) Which coding positions does it hold? Add up the coding nucleotides of all exons before it. (3) Codon *n* covers c.(3*n*−2) to c.3*n*.
+
+Real *CFTR* exons (MANE Select, Ensembl 116); exons 1–9 hold 1209 coding nucleotides, exon 10 holds 183 more.
+
+| | exon 11 (192 nt) | exon 16 (38 nt) |
+|---|---|---|
+| multiple of 3? | 192 = 3 × 64: **yes** | 38 = 3 × 12 + 2: **no** |
+| coding positions | 1209 + 183 = 1392 before it, so **c.1393–c.1584** | |
+| codons | 1393 = 3 × 465 − 2 → codon **465**; 1584 = 3 × 528 → codon **528** | |
+| if skipped | protein lacks codons 465–528 (64 amino acids), rest normal | frame shifts after exon 15; premature stop likely → **NMD** |
+
+::: notes
+This is the arithmetic behind exercise B3 and F3, done on different exons so the exercise is still theirs. Step 1 decides in frame or not; step 2 needs the coding nucleotides before the exon, which is why we need exons 1 to 9 (exon 1 also contains the 5' UTR, which does not count). Exon 11 then ends at c.1584, so the next exon, exon 12, starts at c.1585: that is why the splice acceptor variant in the exercise is called c.1585-1G>A. Exon 16 is the shortest CFTR exon, 38 nt. Skipping it shifts the frame, which usually creates a premature stop codon; the next slides show why such an mRNA is usually destroyed. Exon lengths are from the Ensembl 116 exon table used in the R exercise.
 :::
 
 ## Translation, and nonsense-mediated decay {.smaller}
@@ -121,15 +154,54 @@ Wobble explains the pattern students found in the mutation R exercise: almost al
 
 | Property | Meaning | How we know |
 |---|---|---|
-| **Triplet** | 3 bases per amino acid (4^3^ = 64 codons ≥ 20 amino acids) | Crick–Brenner frameshifts (next slide) |
+| **Triplet** | 3 bases per amino acid (4^3^ = 64 codons ≥ 20 amino acids) | Crick–Brenner frameshifts (next slides) |
 | **Non-overlapping, no gaps** | each base belongs to one codon; reading from a fixed start | single base changes alter one amino acid (HbS) |
 | **Degenerate** | 61 sense codons for 20 amino acids; 3 stops | silent mutations |
 | **(Nearly) universal** | the same in bacteria, plants and animals, with small exceptions (e.g. UGA = Trp in vertebrate mitochondria) | human genes are expressed correctly in *E. coli* |
 
-The meaning of the codons was found biochemically: Nirenberg and Matthaei (1961) showed that poly-U RNA makes poly-phenylalanine, so **UUU = Phe**; by 1966 all 64 codons were assigned.
+:::: {.columns}
+::: {.column width="70%"}
+The meaning of the codons was found **biochemically**: Nirenberg and Matthaei (1961) added synthetic poly-U RNA to a cell-free extract of *E. coli* and got poly-phenylalanine, so **UUU = Phe**. By 1966 all 64 codons were assigned.
+
+The **rules** of the code (triplet, fixed start) came from **genetics**: the Crick–Brenner experiment on the next slides.
+:::
+::: {.column width="30%"}
+![](img/nirenberg-matthaei.jpg){width="58%" fig-align="center"}
+[Photo: NIH History Office, public domain, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:J._Heinreich_Matthaei_and_Marshall_Nirenberg_(29819142523).jpg){.photo-credit}
+
+Heinrich Matthaei and Marshall Nirenberg at the NIH.
+:::
+::::
 
 ::: notes
 Each property has a genetic or biochemical proof. Non-overlapping: if codons overlapped, a single base change would alter two or three adjacent amino acids; HbS and every other point mutation change only one. Degenerate: silent substitutions exist, and the codon table in the R exercise shows six codons for Leu, Ser and Arg. Universal: that is what makes it possible to make human insulin in bacteria. The mitochondrial exceptions come back in the organelle inheritance unit in Part 5. The cell-free translation experiments with synthetic RNAs (Nirenberg, Khorana) cracked the meanings; Crick and Brenner's genetic experiment established the triplet nature before any codon was assigned.
+:::
+
+## Phage T4 *rII*: a genetic system for rare events {.smaller}
+
+:::: {.columns}
+::: {.column width="28%"}
+![](img/t4-phage-em.jpg){width="80%" fig-align="center"}
+[Image: 7USSR7, CC BY 4.0, via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:T4_phage_EM.jpg){.photo-credit}
+
+Phage T4 in the electron microscope: a head full of DNA, a tail and tail fibres.
+:::
+::: {.column width="72%"}
+Crick and Brenner (like Benzer, in the mutation unit) worked with the ***rII*** genes of phage T4, because the phenotype is a simple **grow / no grow** test:
+
+| | on *E. coli* B | on *E. coli* K12(λ) |
+|---|---|---|
+| wild-type T4 | plaques | plaques |
+| *rII* mutant | plaques (large, sharp-edged) | **no plaques** |
+
+- Grow mutants on strain B; **select** wild type on strain K12(λ).
+- One wild-type phage among millions of mutants makes a plaque: **revertants** and **suppressors** are easy to find.
+- **Proflavin** gives mostly **+1 and −1 frameshifts**.
+:::
+::::
+
+::: notes
+Set up the system before the experiment, because the logic depends on it. A plaque is a clear spot in a lawn of bacteria where one phage has multiplied and killed the cells around it. rII mutants make unusually large, sharp-edged plaques on E. coli B (the r stands for rapid lysis), but cannot grow at all on E. coli K12 carrying prophage lambda. So strain K12(lambda) is a selective plate: only phage with a working rII gene make plaques there, however rare. That is what let Crick and Brenner pick revertants of a proflavin mutant and find that most of them carried a second mutation of the opposite sign nearby. It is the same idea as counting his-plus revertants in the Ames test. The electron micrograph shows T4, the phage they used.
 :::
 
 ## Crick & Brenner: the code is read in triplets {.smaller}
@@ -147,6 +219,21 @@ Only a code read **in threes** from a **fixed start** explains this, years befor
 This is the genetic proof that matters for this course, because it used only crosses and phenotypes. Proflavin causes single-base insertions or deletions. They started with one rII mutant, called it plus by definition, and selected revertants; most revertants carried a second mutation nearby of the opposite sign, minus. Recombining mutations of the same sign showed that two pluses are still mutant but three pluses restore function. The region between the changes is translated in the wrong frame, so the protein is only near normal if that region is short and tolerant, which is why the suppressed mutants were close together and near the start of the gene, in a non-essential region. The sentence analogy in the figure is the one Crick used. Exercise B2 in the mutation unit did exactly this with the HBB sequence.
 :::
 
+## Common mistakes {.smaller}
+
+| Mistake | Correct |
+|---|---|
+| "An intron mutation cannot matter: introns are thrown away." | The splice signals (GU…A…AG) are **in** the intron. c.92+1G>A gives no normal mRNA (β^0^). |
+| "A silent mutation is always harmless." | It can destroy or create a splice signal; same codon meaning, different mRNA. |
+| "A nonsense mutation makes a short protein." | An early stop usually triggers **NMD**: almost no protein, a **null** allele. Only stops in (or just before) the last exon escape. |
+| "Skipping an exon always shifts the frame." | Only if its length is **not** a multiple of 3 (*CFTR* exon 10, 183 nt, keeps the frame). |
+| "A promoter mutation changes the protein." | It changes **how much** is made, not what: thalassaemias are diseases of quantity. |
+| Counting intron bases in c. numbers. | c. numbers count **coding** bases only; intron bases are c.92+*n* or c.93−*n*. |
+
+::: notes
+These are the errors that come up in exam answers about this material. Each row points back to a slide: splicing mutations, NMD, the worked frame example, transcription and the HGVS numbering. A good way to use the slide is to read the left column aloud and ask the room what is wrong before showing the right column.
+:::
+
 ## Summary {.smaller}
 
 | Step | Key fact | Mutation example (*HBB* unless noted) |
@@ -154,10 +241,11 @@ This is the genetic proof that matters for this course, because it used only cro
 | Transcription | Pol II at the promoter; RNA = coding strand sequence | c.-78A>C, TATA box: less mRNA (β^+^) |
 | 3′ end | cut after AAUAAA, poly(A) added | c.*111A>G in AATAAA (β^+^) |
 | Splicing | GU…A…AG; spliceosome | c.92+1G>A destroys a donor (β^0^); c.93-21G>A creates an acceptor (β^+^) |
-| Alternative splicing | one gene, many transcripts; MANE Select = default | *CFTR*: 45 Ensembl transcripts, 3 UniProt isoforms; exon 10 skipping |
+| Variant names | c. counts coding bases; c.-*n* before ATG, c.\**n* after stop, c.92+*n* / c.93−*n* in introns | c.92+1G>A, c.93-21G>A, c.-78A>C, c.\*111A>G |
+| Alternative splicing | one gene, many transcripts; MANE Select = default; skip in frame if length = 3*k* | *CFTR*: 45 Ensembl transcripts, 3 UniProt isoforms; exon 10 skipping (5T) |
 | Translation | AUG to stop, in one frame; wobble at codon position 3 | c.20A>T, missense (HbS) |
 | NMD | premature stop → mRNA destroyed | c.118C>T (β^0^); *CFTR* G542X: null alleles |
-| Genetic code | triplet, non-overlapping, degenerate, nearly universal | Crick–Brenner (+)(+)(+) restores function |
+| Genetic code | triplet, non-overlapping, degenerate, nearly universal | Crick–Brenner (+)(+)(+) restores function, scored with T4 *rII* on *E. coli* K12(λ) |
 
 ::: notes
 The revision sheet. The table can be read row by row as "a step of expression, and the kind of mutation that breaks it". Ask students to place each of the HBB variants on the gene diagram from the first slide without looking.

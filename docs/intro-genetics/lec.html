@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -145,8 +145,9 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li>A short <strong>recap</strong> of DNA → RNA → protein → phenotype (from 5MO103).</li>
 <li>The words we will use all course: <strong>gene, allele, locus, genotype, phenotype, homozygous, heterozygous, wild type, mutant, dominant, recessive</strong>.</li>
+<li>How to read a gene’s <strong>address</strong> (11p15.4) and a mutation’s <strong>name</strong> (Glu6Val = p.Glu7Val).</li>
 <li>One gene followed all the way from DNA to disease: <strong><em>HBB</em></strong> and sickle-cell disease.</li>
-<li>Genomes differ hugely in size, but many genes are <strong>shared</strong>. That is why <strong>model organisms</strong> work.</li>
+<li>Genomes differ hugely in size, but many genes are <strong>shared</strong> (orthologs and paralogs, drawn as a gene tree). That is why <strong>model organisms</strong> work.</li>
 <li>Four ways to study genetics, which are also a <strong>map of this course</strong>.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, introductory chapter (“Genetics: the study of biological information”).</p>
@@ -257,6 +258,53 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="reading-a-genes-address" class="slide level2">
+<h2>Reading a gene’s address</h2>
+<p>Databases give a gene’s position in two ways.</p>
+<p><strong>1. Cytogenetic band</strong>, from the stripes a stained chromosome shows under the microscope. <em>HBB</em> is at <strong>11p15.4</strong>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>11</th>
+<th>p</th>
+<th>1</th>
+<th>5</th>
+<th>.4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>chromosome 11</td>
+<td>short arm (<strong>p</strong>; the long arm is <strong>q</strong>)</td>
+<td>region 1</td>
+<td>band 5</td>
+<td>sub-band 4</td>
+</tr>
+</tbody>
+</table>
+<p>Regions and bands are numbered <strong>outwards from the centromere</strong>, so 11p15.4 is far out on the short arm, near the tip. <em>CFTR</em> at <strong>7q31.2</strong> is on the long arm of chromosome 7.</p>
+<p><strong>2. Coordinates</strong> on a reference genome sequence: chromosome, start and end in base pairs, and strand (forward or reverse), on a named assembly such as the human <strong>GRCh38</strong>. Coordinates are exact to the base but change between assemblies; the band does not.</p>
+<aside class="notes">
+<p>Students will read both kinds of address in the first Find it tasks, and nobody tells them what the letters and numbers mean. The band notation comes from Giemsa staining of metaphase chromosomes, which gives a reproducible pattern of light and dark bands; it is coarse, a band is millions of bases. Read 11p15.4 aloud as “eleven p one five point four”, not “fifteen”, because the digits are region and band. The genome coordinates are what Ensembl and the genome browsers show; we leave the exact numbers for the exercise, where students read them off the Ensembl page. Stress that coordinates always belong to an assembly: GRCh38 is the current human reference, and the older GRCh37 numbers are different for the same gene. A gene on the reverse strand is read from right to left on the standard map.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="genotype-and-phenotype" class="slide level2 smaller">
 <h2>Genotype and phenotype</h2>
 <ul>
@@ -280,16 +328,22 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="wild-type-and-mutant" class="slide level2 smaller">
+<section id="wild-type-and-mutant" class="slide level2">
 <h2>Wild type and mutant</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
 <li><strong>Wild type</strong>: the allele (or phenotype) that is most common in natural or laboratory populations. Written with a plus: <em>w</em><sup>+</sup> in the fly.</li>
 <li><strong>Mutant</strong>: an allele that differs from wild type, usually because of a <strong>mutation</strong>, a heritable change in the DNA.</li>
 <li>In the fly, the <em>white</em> gene is named after its mutant phenotype: <em>w</em> flies have <strong>white</strong> eyes, <em>w</em><sup>+</sup> flies have red eyes.</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="img/white-eyed-drosophila.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:White-eyed_Drosophila.jpg" class="photo-credit">Photo: Paul Reynolds, CC BY 2.5, via Wikimedia Commons</a></p>
+<p>A <em>w</em>/<em>w</em> fruit fly: no red eye pigment.</p>
+</div></div>
 <p>In humans and other natural populations, many loci have <strong>several common alleles</strong>, and none is the obvious “wild type”. Then we just name the alleles, for example the ABO blood groups.</p>
 <aside class="notes">
-<p>Wild type is a model-organism idea. It works well in lab stocks of flies, worms or mice, where one standard allele exists. It works less well in humans, where many alleles at a locus are common and calling one of them “normal” is arbitrary. Keep the word mutant neutral: it simply means changed, not harmful. Many mutations have no visible effect at all. The fly white gene is the textbook example of naming genes after the mutant phenotype, which confuses students at first: the white gene is needed to make red eyes.</p>
+<p>Wild type is a model-organism idea. It works well in lab stocks of flies, worms or mice, where one standard allele exists. It works less well in humans, where many alleles at a locus are common and calling one of them “normal” is arbitrary. Keep the word mutant neutral: it simply means changed, not harmful. Many mutations have no visible effect at all. The fly white gene is the textbook example of naming genes after the mutant phenotype, which confuses students at first: the white gene is needed to make red eyes. The photo shows a white-eyed mutant; a wild-type fly has bright red eyes. The white-eyed fly is also the mutant Morgan found in 1910, which comes back in Chromosome theory.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -356,9 +410,15 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="worked-example-sickle-cell-disease-2" class="slide level2 smaller">
 <h2>Worked example: sickle-cell disease (2)</h2>
-
-<img data-src="fig04-sickle-cell.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><aside class="notes">
-<p>Walk through the figure from top left. One base (A to T in the coding strand) changes one codon (GAG to GTG) and one amino acid (Glu to Val). Valine is hydrophobic; on the surface of deoxygenated haemoglobin it creates a sticky patch, so HbS molecules polymerise into long fibres when oxygen is low. The fibres bend the red cell into a sickle shape. Sickled cells are stiff, block small vessels, causing pain and organ damage, and are destroyed early, causing anaemia. At the bottom, the three genotypes: two normal alleles, carrier, and two sickle alleles. The carrier state also gives partial protection against severe malaria, which is why HbS is common in regions where malaria is or was common. We return to that in population genetics.</p>
+<div class="columns">
+<div class="column" style="width:66%;">
+<p><img data-src="fig04-sickle-cell.svg" style="width:100.0%"></p>
+</div><div class="column" style="width:34%;">
+<p><img data-src="img/sickle-cell-smear.jpg" style="width:100.0%"> <a href="https://commons.wikimedia.org/wiki/File:Sickle-cell_smear_2015-09-10.jpg" class="photo-credit">Photo: Paulo Henrique Orlandi Mourao, CC BY-SA 4.0, via Wikimedia Commons</a></p>
+<p>A blood smear from a person with sickle-cell disease (HbS/HbS), under the light microscope. Next to normal round red cells lie the stiff, elongated <strong>sickle cells</strong> (drepanocytes).</p>
+</div></div>
+<aside class="notes">
+<p>The photo on the right is the phenotype at the level of the cell, the middle level between the protein change and the disease. Walk through the figure from top left. One base (A to T in the coding strand) changes one codon (GAG to GTG) and one amino acid (Glu to Val). Valine is hydrophobic; on the surface of deoxygenated haemoglobin it creates a sticky patch, so HbS molecules polymerise into long fibres when oxygen is low. The fibres bend the red cell into a sickle shape. Sickled cells are stiff, block small vessels, causing pain and organ damage, and are destroyed early, causing anaemia. At the bottom, the three genotypes: two normal alleles, carrier, and two sickle alleles. The carrier state also gives partial protection against severe malaria, which is why HbS is common in regions where malaria is or was common. We return to that in population genetics.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -433,6 +493,60 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
+<section id="naming-a-mutation-two-numbering-systems" class="slide level2">
+<h2>Naming a mutation: two numbering systems</h2>
+<p>The sickle mutation has two names, and you will meet both.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Traditional (papers, textbooks)</th>
+<th>Database (HGVS standard)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Protein</td>
+<td><strong>Glu6Val</strong></td>
+<td><strong>p.Glu7Val</strong></td>
+</tr>
+<tr class="even">
+<td>DNA</td>
+<td>“codon 6, GAG → GTG”</td>
+<td><strong>c.20A&gt;T</strong></td>
+</tr>
+<tr class="odd">
+<td>Counting from</td>
+<td>first amino acid of the <strong>mature</strong> protein (start Met removed)</td>
+<td>the <strong>A of the ATG</strong> start codon (c.) and the start <strong>Met</strong> (p.)</td>
+</tr>
+</tbody>
+</table>
+<p>How to move between them:</p>
+<ul>
+<li>Protein: HGVS number = traditional number <strong>+ 1</strong> here, because the start Met is counted.</li>
+<li>DNA to codon: codon <em>n</em> covers coding nucleotides <strong>3<em>n</em> − 2 to 3<em>n</em></strong>. So c.20 is the middle base of codon 7 (nucleotides 19–21).</li>
+<li>“c.” means coding DNA, “p.” protein; “A&gt;T” means the base A is replaced by T.</li>
+</ul>
+<aside class="notes">
+<p>This slide moves material that was in the notes onto the screen, because the exercise asks students to do exactly this conversion. The traditional numbering of haemoglobin variants skips the initiator methionine, which is removed from the mature beta-globin chain; the HGVS standard used by ClinVar and Ensembl counts it, so all protein positions differ by one. For the DNA, numbering starts at the A of ATG as c.1. The formula 3n − 2 to 3n is what they need for the translation task. Do not convert other variants here; the exercise has HbC to practise on.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="genomes-differ-hugely-in-size" class="slide level2 smaller">
 <h2>Genomes differ hugely in size</h2>
 
@@ -490,6 +604,28 @@ Basic and molecular genetics (5MO104)
 <p>Because genes and their functions are conserved, what we learn about a gene in one species often holds in others.</p>
 <aside class="notes">
 <p>Orthology is the reason comparative genetics works. The identity figures come from the Ensembl Compara orthologue pages (release 116). Mention that the globin family is a nice example of duplication: humans have several β-like globin genes expressed at different developmental stages, and the duplications happened separately in different mammal lineages, so the mouse β-like globins do not pair one-to-one with ours. That is why Ensembl does not list a simple mouse ortholog for HBB, and why the exercise uses CFTR for the mouse ortholog task. Paralogs come back in Genome annotation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="orthologs-and-paralogs-in-a-gene-tree" class="slide level2">
+<h2>Orthologs and paralogs in a gene tree</h2>
+
+<img data-src="fig06-gene-tree.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:78.0%"><p>To classify two genes, find the node where they <strong>last shared an ancestor</strong>:</p>
+<ul>
+<li>a <strong>speciation</strong> (●) → <strong>orthologs</strong>: the “same” gene in two species;</li>
+<li>a <strong>duplication</strong> (■) → <strong>paralogs</strong>: two genes that arose by copying, even if they are now in different species (human α and mouse β are paralogs too).</li>
+</ul>
+<aside class="notes">
+<p>The gene tree is the tool behind the words. Simplified globin family: one ancestral globin gene duplicated, long before mammals, into the alpha and beta lineages. Much later the human and mouse lineages split, and each species kept both genes. So human alpha and mouse alpha are orthologs, and human alpha and human beta are paralogs. The less obvious case in the last bullet is worth asking: human alpha and mouse beta last shared an ancestor at the duplication, so they are paralogs, even though they are in different species. The tree leaves out later duplications within the alpha and beta clusters; those are why human HBB has no simple one-to-one mouse ortholog. In the exercise students draw such a tree for a hypothetical gene and see what happens if the duplication comes after the split.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -621,6 +757,32 @@ Basic and molecular genetics (5MO104)
 <p>Tip: always check the <strong>species</strong> in the search result. Searching “HBB” gives hits in many species.</p>
 <aside class="notes">
 <p>This slide prepares the Find it tasks. The most common beginner error in NCBI Gene is to click the first hit without checking the organism. Show a live search if there is time: type HBB in NCBI Gene, point out the organism column, open the human entry and show where the chromosome and the map location are written. Then do the same in Ensembl and show the left-hand menu with the Orthologues link. Do not ask students to remember counts (like the number of transcripts), because they change between releases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself" class="slide level2">
+<h2>Check yourself</h2>
+<p>True or false? Correct the false ones.</p>
+<ol type="1">
+<li>“<em>HBB</em> and HbS are two alleles.”</li>
+<li>“A person can carry three alleles of <em>ABO</em>, since the population has three.”</li>
+<li>“Dominant alleles are the common ones.”</li>
+<li>“HbS is recessive, so a carrier makes no HbS protein.”</li>
+<li>“Mutant means harmful.”</li>
+<li>“Human <em>CFTR</em> and mouse <em>Cftr</em> are paralogs, because they are in different species.”</li>
+<li>“A bigger genome means more genes.”</li>
+</ol>
+<aside class="notes">
+<p>Answers. 1: false; HBB is the gene, HbA and HbS are its alleles. 2: false; a diploid person carries at most two alleles at an autosomal locus. 3: false; dominance says nothing about frequency (Huntington). 4: false; recessive for the disease, but the carrier makes both HbA and HbS (codominant on a gel). 5: false; mutant only means changed, many mutations have no visible effect. 6: false; they are orthologs, related by speciation; species alone does not decide it. 7: false; the C-value paradox (axolotl versus human). Let students discuss in pairs for two minutes, then go through them.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

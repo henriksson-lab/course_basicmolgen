@@ -1,10 +1,14 @@
-.PHONY: all render preview clean gitadd help figs demos typecheck edit-slides
+.PHONY: all render preview clean gitadd help figs demos typecheck edit-slides credits
 
 # Default: render the site, then stage every source file in git.
 all: render gitadd
 
-render: demos
+render: demos credits
 	quarto render
+
+# Collect <unit>/img/CREDITS.md into credits.qmd (the Image credits page).
+credits:
+	python3 tools/build-credits.py
 	@touch docs/.nojekyll
 
 preview:

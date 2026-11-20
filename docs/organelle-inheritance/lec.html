@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -161,8 +161,9 @@ Basic and molecular genetics (5MO104)
 <ul>
 <li>The <strong>mitochondrial</strong> and <strong>chloroplast genomes</strong>: small, circular, many copies per cell.</li>
 <li>Where they came from: <strong>endosymbiosis</strong>, and the gene transfer to the nucleus that followed.</li>
-<li><strong>Maternal (uniparental) inheritance</strong>: reciprocal crosses give different results.</li>
-<li><strong>Heteroplasmy</strong>, the <strong>bottleneck</strong> and the <strong>threshold effect</strong>: why the children of one mother can be so different.</li>
+<li><strong>Maternal (uniparental) inheritance</strong>: reciprocal crosses give different results; a nuclear marker as a control.</li>
+<li><strong>Heteroplasmy</strong>, the <strong>bottleneck</strong> and the <strong>threshold effect</strong>: why the children of one mother can be so different, worked out by hand with the binomial.</li>
+<li>Telling a <strong>mtDNA</strong> disease from a <strong>nuclear</strong> one in a family.</li>
 <li>Two human diseases: <strong>MELAS</strong> (m.3243A&gt;G) and <strong>LHON</strong> (m.11778G&gt;A).</li>
 <li><strong>Mitochondrial donation</strong>, and why it raises ethical questions.</li>
 </ul>
@@ -325,6 +326,8 @@ Basic and molecular genetics (5MO104)
 <section id="where-organelles-came-from-endosymbiosis" class="slide level2 smaller">
 <h2>Where organelles came from: endosymbiosis</h2>
 <p>Mitochondria descend from an <strong>alphaproteobacterium</strong>, and chloroplasts from a <strong>cyanobacterium</strong>, each taken up by a host cell more than a billion years ago.</p>
+<div class="columns">
+<div class="column" style="width:66%;">
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -366,6 +369,11 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
+</div><div class="column" style="width:34%;">
+<p><img data-src="img/mitochondria-tem.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Mitochondria,_mammalian_lung_-_TEM.jpg" class="photo-credit">Photo: Louisa Howard, public domain, via Wikimedia Commons</a></p>
+<p>Two mitochondria (electron micrograph, mammalian lung): the outer membrane and the folded inner membrane.</p>
+</div></div>
 <p>Over time, most of the symbiont’s genes <strong>moved to the nucleus</strong> or were lost. Pieces of mtDNA still land in our chromosomes (<strong>NUMTs</strong>, nuclear mitochondrial DNA segments).</p>
 <aside class="notes">
 <p>This connects to the previous unit: bacteria swap DNA, and organelles are former bacteria that have handed most of their genome over to the host. The strongest evidence is the sequence evidence: a tree of 16S-type rRNA puts mitochondria among the alphaproteobacteria and chloroplasts among the cyanobacteria. Gene transfer to the nucleus is still going on in plants, and in humans NUMTs are a practical nuisance: when you sequence mtDNA, reads from nuclear copies can look like low-level heteroplasmy. Why keep any genes in the organelle at all? One idea is that genes for very hydrophobic membrane proteins are hard to import, so they stay where the protein is needed.</p>
@@ -437,6 +445,51 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>Compare with the one-line version from the pedigree unit (fig06 there). The new element is the percentage under each person: the fraction of their mtDNA that carries the variant. In the left family the mother has 40 percent and is healthy; her four children have 85, 55, 10 and 30 percent. Only the 85 percent son is affected. The 55 percent daughter is healthy, but one of her children reaches 70 percent and is affected. On the right, an affected father passes nothing, and that holds in every generation. So the rule “mother to all children” is true for the variant but not for the disease: severity is a matter of degree. The rest of the lecture explains where the spread of percentages comes from.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="following-a-nuclear-and-an-organelle-gene-in-one-cross" class="slide level2">
+<h2>Following a nuclear and an organelle gene in one cross</h2>
+<p>The bread mould <em>Neurospora crassa</em> has a slow-growing mutant, <strong><em>poky</em></strong>, with defective mitochondria (Mitchell and Mitchell, 1952). In a cross, the “female” parent supplies the cytoplasm; the “male” adds little more than a nucleus. The progeny are <strong>haploid</strong>.</p>
+<p>Cross: <strong><em>poky</em></strong> female, <em>ad</em><sup>+</sup> × wild-type male, <em>ad</em><sup>−</sup> (<em>ad</em> is a nuclear gene for adenine synthesis)</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gene</th>
+<th>Where</th>
+<th>Progeny</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>ad</em></td>
+<td>nucleus</td>
+<td>½ <em>ad</em><sup>+</sup> : ½ <em>ad</em><sup>−</sup> (Mendel’s first law, in a haploid)</td>
+</tr>
+<tr class="even">
+<td><em>poky</em></td>
+<td>mitochondria</td>
+<td><strong>all</strong> <em>poky</em>: they follow the <strong>female</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The method:</strong> put a nuclear marker in the same cross as a control. If the nuclear marker segregates 1 : 1 but the other trait follows one parent in <strong>every</strong> offspring, and the reciprocal cross gives the opposite, the trait is in the cytoplasm.</p>
+<aside class="notes">
+<p>This is the fungal version of Correns’ plant crosses and of the human pedigrees, and it is the cleanest way to show the two kinds of inheritance side by side. Neurospora was the organism of Beadle and Tatum; poky was one of the first mitochondrial mutants found, and it was later traced to a small deletion in a mitochondrial ribosomal RNA gene. Ask the room to predict the reciprocal cross, wild-type female times poky male, before you move on; the exercise asks for both. The nuclear gene is a built-in control: it shows that meiosis worked and that both parents contributed a nucleus. Without it, “all offspring look like the mother” could also mean something odd, such as no fertilisation at all.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -581,10 +634,10 @@ Basic and molecular genetics (5MO104)
 <section id="the-mitochondrial-bottleneck" class="slide level2 smaller">
 <h2>The mitochondrial bottleneck</h2>
 
-<img data-src="fig03-bottleneck.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:74.0%"><p>During oocyte development, only a <strong>small number</strong> of mtDNA copies (or segregating units) found the mtDNA of each future egg. They are then copied up to the large number in a mature oocyte.</p>
+<img data-src="fig03-bottleneck.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><p>During oocyte development, only a <strong>small number</strong> of mtDNA copies (or segregating units) found the mtDNA of each future egg. They are then copied up to the large number in a mature oocyte.</p>
 <ul>
 <li>Each oocyte draws its founders <strong>at random</strong>: <span class="math inline">k \sim \text{Binomial}(N, h)</span> mutant copies out of <span class="math inline">N</span>, so its level is <span class="math inline">k/N</span>.</li>
-<li><strong>Mean</strong> level = the mother’s level <span class="math inline">h</span>; <strong>variance</strong> <span class="math inline">= \dfrac{h(1-h)}{N}</span>. A small <span class="math inline">N</span> gives a wide spread.</li>
+<li><strong>Mean</strong> level = the mother’s level <span class="math inline">h</span>; <strong>variance</strong> <span class="math inline">= h(1-h)/N</span>. A small <span class="math inline">N</span> gives a wide spread.</li>
 </ul>
 <aside class="notes">
 <p>This explains the pedigree on the earlier slide. The mother has 30 percent mutant mtDNA. If each egg simply got a random sample of a hundred thousand copies, every egg would have very close to 30 percent. Instead, there is a narrow point in the germline where only a few copies are passed on, and the egg’s level is fixed by which copies happen to pass. Measured bottleneck sizes vary between studies and species, from about ten to a few hundred units; the exact mechanism is still studied. The binomial model is a simplification, but it captures the main point, and it is exactly the model we use in the demo and in R. Check the variance formula with numbers: h = 0.3 and N = 20 give 0.3 times 0.7 over 20, about 0.0105, a standard deviation of about 10 percentage points.</p>
@@ -609,7 +662,119 @@ Basic and molecular genetics (5MO104)
 <li>Combined with heteroplasmy, this explains why relatives with the same variant can be healthy, mildly affected or severely affected.</li>
 </ul>
 <aside class="notes">
-<p>The threshold is why heteroplasmy matters clinically. Below it, the normal copies make enough working protein (or, for a tRNA variant, enough working tRNA) to keep the respiratory chain going. Above it, ATP production collapses. The figure is schematic: the curves are not data. Thresholds of roughly 60 to 90 percent are often quoted, and the exact value depends on how severe the variant is and on the tissue. The threshold is also the reason why the bottleneck is dangerous: a mother below the threshold can have an egg above it, as the demo shows. Note also the parallel to incomplete penetrance and variable expressivity from the Extensions to Mendel unit: here we know the mechanism.</p>
+<p>The threshold is why heteroplasmy matters clinically. Below it, the normal copies make enough working protein (or, for a tRNA variant, enough working tRNA) to keep the respiratory chain going. Above it, ATP production collapses. The figure is schematic: the curves are not data. Thresholds of roughly 60 to 90 percent are often quoted, and the exact value depends on how severe the variant is and on the tissue. The threshold is also the reason why the bottleneck is dangerous: a mother below the threshold can have an egg above it, as the next two slides compute and the demo shows. Note also the parallel to incomplete penetrance and variable expressivity from the Extensions to Mendel unit: here we know the mechanism.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-bottleneck-by-hand-n-3" class="slide level2">
+<h2>The bottleneck by hand: N = 3</h2>
+<p>A mother with <em>h</em> = 0.3 (30% mutant). Suppose each egg is founded by <strong>N = 3</strong> copies, drawn at random. Each copy is mutant with probability 0.3.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Mutant founders <em>k</em></th>
+<th style="text-align: center;">Level <em>k</em>/<em>N</em></th>
+<th>Probability <span class="math inline">\binom{3}{k}\,0.3^k\,0.7^{3-k}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0%</td>
+<td>1 × 0.7<sup>3</sup> = <strong>0.343</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">33%</td>
+<td>3 × 0.3 × 0.7<sup>2</sup> = <strong>0.441</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">67%</td>
+<td>3 × 0.3<sup>2</sup> × 0.7 = <strong>0.189</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">100%</td>
+<td>1 × 0.3<sup>3</sup> = <strong>0.027</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Mean level: (0 × 0.343 + 1 × 0.441 + 2 × 0.189 + 3 × 0.027)/3 = 0.9/3 = <strong>0.30</strong>, the mother’s level.</li>
+<li>SD: <span class="math inline">\sqrt{0.3 \times 0.7 / 3}</span> = <strong>0.26</strong>: 26 percentage points.</li>
+<li>With a threshold of 60%: P(level ≥ 60%) = 0.189 + 0.027 = <strong>0.216</strong>. A healthy 30% mother has about a <strong>1 in 5</strong> chance of an egg above the threshold, and a <strong>1 in 3</strong> chance of an egg with no mutant copies at all.</li>
+</ul>
+<aside class="notes">
+<p>This is the binomial distribution from the probability unit, with numbers small enough to write out. Build the table row by row on the board: the binomial coefficient counts which of the three copies are mutant, the powers give the probability of one such arrangement. Point out that the four probabilities add to one. The mean comes out exactly at the mother’s level: the bottleneck does not push the level up or down on average, it only spreads it. With N = 3 the only possible levels are 0, 33, 67 and 100 percent, which is why the demo histogram for small N has a few widely spaced bars. The exercise does the same with N = 2 and N = 4 and a 50 percent mother.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="from-the-mothers-level-to-the-risk-for-a-child" class="slide level2">
+<h2>From the mother’s level to the risk for a child</h2>
+<p>Same mother (<em>h</em> = 0.3), threshold 60%. The exact binomial probability that an egg is <strong>at or above 60%</strong>:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Bottleneck size <em>N</em></th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">5</th>
+<th style="text-align: right;">10</th>
+<th style="text-align: right;">20</th>
+<th style="text-align: right;">50</th>
+<th style="text-align: right;">200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SD of the egg level (points)</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">3.2</td>
+</tr>
+<tr class="even">
+<td>P(egg ≥ 60%)</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">1 × 10<sup>−5</sup></td>
+<td style="text-align: right;">≈ 0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The <strong>smaller</strong> the bottleneck, the <strong>wider</strong> the spread and the larger the risk. The SD falls as <span class="math inline">1/\sqrt{N}</span>.</li>
+<li>The risk depends on three numbers: the mother’s level <em>h</em>, the bottleneck <em>N</em>, and the threshold. None is known exactly for a given woman, which is why counselling uses <strong>empirical</strong> risks from many families.</li>
+</ul>
+<aside class="notes">
+<p>These probabilities were computed with pbinom in R; the N = 20 value, 0.5 percent, is the one the demo shows for its default settings. Read the table from left to right: from one in five to essentially zero. The step from N = 3 to N = 5 is not a smooth decline because with small N only a few levels are possible, and whether one of them falls just above the threshold matters; the overall trend is still clear. Estimates of the real human bottleneck vary between studies, from around ten to a few hundred segregating units, so the risk for a given mother is uncertain by more than an order of magnitude. This is why measuring the level in her oocytes or embryos, by preimplantation testing, is more informative than any formula. The R exercise draws these curves with pbinom.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -643,6 +808,8 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="melas-m.3243ag-in-mt-tl1" class="slide level2 smaller">
 <h2>MELAS: m.3243A&gt;G in <em>MT-TL1</em></h2>
+<div class="columns">
+<div class="column" style="width:62%;">
 <ul>
 <li><strong>MELAS</strong>: mitochondrial encephalomyopathy, lactic acidosis and stroke-like episodes.</li>
 <li>Most cases carry <strong>m.3243A&gt;G</strong>, a change in the gene for <strong>tRNA-Leu(UUR)</strong>, <em>MT-TL1</em>. A faulty tRNA affects the translation of <strong>all 13</strong> mtDNA-encoded proteins.</li>
@@ -650,8 +817,13 @@ Basic and molecular genetics (5MO104)
 <li>ClinVar: classified <strong>Pathogenic</strong>, reviewed by an expert panel.</li>
 </ul>
 <p>Genetic counselling for a woman who carries m.3243A&gt;G is hard: her own level says little about the level of each child.</p>
+</div><div class="column" style="width:38%;">
+<p><img data-src="img/ragged-red-fibres.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Ragged_red_fibres_-_gtc_-_very_high_mag.jpg" class="photo-credit">Photo: Nephron, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p><strong>Ragged red fibres</strong> in a muscle biopsy from a mitochondrial myopathy (Gomori trichrome stain): fibres packed with abnormal mitochondria stain red at their edges.</p>
+</div></div>
 <aside class="notes">
-<p>MELAS shows every concept of the lecture in one disease. The variant is in a tRNA gene, so it does not change one protein; it impairs mitochondrial translation as a whole, which is why many tissues are involved. Heteroplasmy explains the range from symptom-free carriers to severe disease, and tissue differences explain the mix of brain, muscle, pancreas and inner-ear symptoms. The bottleneck explains why a mildly affected mother can have a severely affected child. In the exercise, students look the variant up in ClinVar and see the long list of conditions submitters have reported for it, which is the clinical spectrum in database form.</p>
+<p>The micrograph is a muscle biopsy from a patient with a mitochondrial myopathy (the image does not say which variant): ragged red fibres are muscle fibres in which defective mitochondria have proliferated under the membrane, a classic finding in MELAS and in MERRF. Because the patient is heteroplasmic, affected and normal-looking fibres lie side by side, a mosaic in one tissue. MELAS shows every concept of the lecture in one disease. The variant is in a tRNA gene, so it does not change one protein; it impairs mitochondrial translation as a whole, which is why many tissues are involved. Heteroplasmy explains the range from symptom-free carriers to severe disease, and tissue differences explain the mix of brain, muscle, pancreas and inner-ear symptoms. The bottleneck explains why a mildly affected mother can have a severely affected child. In the exercise, students look the variant up in ClinVar and see the long list of conditions submitters have reported for it, which is the clinical spectrum in database form.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -698,6 +870,116 @@ Basic and molecular genetics (5MO104)
 <p>The ethical questions (a germline modification, “three genetic parents”, consent of future generations) are discussed in the <a href="../ethics/lec.html">Ethics</a> unit.</p>
 <aside class="notes">
 <p>Options for a woman who carries a pathogenic mtDNA variant include egg donation, preimplantation genetic testing (choosing embryos with a low level, which works for heteroplasmic variants), and mitochondrial donation. Spindle transfer moves the metaphase II spindle of an unfertilised egg; pronuclear transfer moves the two pronuclei from a fertilised egg. The 2025 reports appeared in the New England Journal of Medicine (McFarland et al.&nbsp;and Hyslop et al.). The “three-parent baby” headline is misleading in one sense: the donor contributes 37 genes out of about 20 000, none of which shape appearance or personality. But the change is passed on by daughters to all their descendants, which is why it is regulated as a germline modification. Keep the ethics discussion for the ethics module.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="mitochondrial-or-nuclear-reading-a-family" class="slide level2 smaller">
+<h2>Mitochondrial or nuclear? Reading a family</h2>
+<p>Three questions, in this order:</p>
+<ol type="1">
+<li><strong>Does a man pass it on?</strong> An affected father with an affected child rules out mtDNA: fathers do not transmit it.</li>
+<li><strong>Do all children of an affected or carrier mother carry it?</strong> For a mtDNA variant: yes, every child carries it, though at <strong>different levels</strong>, so severity varies.</li>
+<li><strong>Does it look Mendelian?</strong> Two affected sibs of healthy parents, about ¼ of the sibship, nobody else affected: think of a <strong>nuclear, autosomal recessive</strong> gene for a mitochondrial protein.</li>
+</ol>
+<table class="caption-top">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Most likely</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A man lost his central vision at 24. Two sons of his sister are affected too; none of his own five children is</td>
+<td>no</td>
+<td>fits</td>
+<td>no</td>
+<td><strong>mtDNA</strong> (think LHON)</td>
+</tr>
+<tr class="even">
+<td>A girl and one of her two brothers have a respiratory chain disease; parents, grandparents, aunts and uncles are healthy</td>
+<td>–</td>
+<td>–</td>
+<td><strong>yes</strong></td>
+<td><strong>nuclear, AR</strong>: ¼ recurrence</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>This is the practical skill students need for B7 in the exercise, which has three families of its own. The first question is the most powerful, because it can exclude mtDNA in one step. The second is the positive signature, but it needs care: with heteroplasmy or incomplete penetrance, some carrier children look unaffected, so you may need to test rather than look. In the first family the man’s sister passed the trait to her sons, he passed it to none of five children: that fits maternal transmission, and the age and symptom fit LHON, which mostly affects young men. The third question protects against the most common error, calling every mitochondrial disease maternal. The second family has the classic autosomal recessive pattern; a mtDNA variant would usually show up in the mother’s relatives too, though a new mtDNA mutation can occasionally mimic this. Real families are often small, so in practice the decision is backed by sequencing both mtDNA and the nuclear genes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-common-mistakes" class="slide level2">
+<h2>Check yourself: common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Better</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“Mitochondrial disease is always maternally inherited.”</td>
+<td>Only when the variant is in <strong>mtDNA</strong>. Most mitochondrial proteins are <strong>nuclear</strong>, and their diseases follow Mendel.</td>
+</tr>
+<tr class="even">
+<td>“A man cannot carry a mtDNA variant.”</td>
+<td>He can carry it, and be affected. He just does not <strong>pass it on</strong>.</td>
+</tr>
+<tr class="odd">
+<td>“All children of a carrier mother are equally affected.”</td>
+<td>They all inherit the variant, but at <strong>different levels</strong> (bottleneck), so severity varies.</td>
+</tr>
+<tr class="even">
+<td>“The bottleneck raises the mutant level.”</td>
+<td>On average the level stays at the mother’s <em>h</em>; the bottleneck only <strong>spreads</strong> it.</td>
+</tr>
+<tr class="odd">
+<td>“A low level in blood means low risk for the child.”</td>
+<td>Levels differ between <strong>tissues</strong>, and the bottleneck acts on the <strong>oocytes</strong>.</td>
+</tr>
+<tr class="even">
+<td>“Homoplasmic means healthy.”</td>
+<td>Homoplasmic for a pathogenic variant (LHON) means <strong>all</strong> copies are mutant; penetrance decides.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Run it as a quick quiz. The first row is the one that matters most in the clinic and in the exam. The bottleneck row is the subtle one: students often think the bottleneck selects for or against the mutant, but in the binomial model it only adds variance. Selection on mtDNA does happen, as the mitochondrial donation slide hints, but it is a separate process.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -817,17 +1099,21 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="odd">
 <td>Bottleneck</td>
-<td>few copies found each oocyte: level <span class="math inline">\sim</span> Binomial<span class="math inline">(N, h)/N</span>, variance <span class="math inline">h(1-h)/N</span></td>
+<td>few copies found each oocyte: level <span class="math inline">\sim</span> Binomial<span class="math inline">(N, h)/N</span>, mean <span class="math inline">h</span>, variance <span class="math inline">h(1-h)/N</span></td>
 </tr>
 <tr class="even">
 <td>Threshold</td>
 <td>symptoms only above a tissue-specific level, often 60–90 %</td>
 </tr>
 <tr class="odd">
+<td>Risk for a child</td>
+<td>P(egg level ≥ threshold): large for small <em>N</em>, falls steeply as <em>N</em> grows</td>
+</tr>
+<tr class="even">
 <td>MELAS / LHON</td>
 <td>m.3243A&gt;G in <em>MT-TL1</em> (heteroplasmic) / m.11778G&gt;A in <em>MT-ND4</em> (homoplasmic, incomplete penetrance)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Nuclear-encoded mito disease</td>
 <td>Mendelian inheritance (e.g.&nbsp;<em>POLG</em>)</td>
 </tr>

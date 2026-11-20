@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bf56578b9c06c165c166475cd19dbcd1.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-99e32c4357e003106d5ffc7110e2e794.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -159,15 +159,15 @@ Basic and molecular genetics (5MO104)
 <h2>About this lecture</h2>
 <p>The previous lecture built a normal chromosome: one centromere, two telomeres, a fixed band pattern. This one is about what happens when <strong>structure</strong> or <strong>number</strong> goes wrong, and why the consequences show up in the next generation.</p>
 <ul>
-<li><strong>Deletions</strong> and <strong>duplications</strong>: dosage changes; recurrent ones caused by repeats.</li>
-<li><strong>Inversions</strong>: no DNA lost, yet crossovers inside them give unbalanced gametes.</li>
-<li><strong>Translocations</strong>: reciprocal and Robertsonian; how the carrier’s chromosomes segregate; the Philadelphia chromosome.</li>
-<li><strong>Aneuploidy</strong>: nondisjunction in meiosis I and II; trisomy 21 and the <strong>maternal age effect</strong>; sex-chromosome aneuploidies.</li>
+<li><strong>Deletions</strong> and <strong>duplications</strong>: dosage changes; recurrent ones caused by repeats; deletion mapping.</li>
+<li><strong>Inversions</strong>: no DNA lost, yet crossovers inside them give unbalanced gametes. We work out the products step by step.</li>
+<li><strong>Translocations</strong>: reciprocal and Robertsonian; how the carrier’s chromosomes segregate, counted segment by segment; the Philadelphia chromosome.</li>
+<li><strong>Aneuploidy</strong>: nondisjunction in meiosis I and II; finding the parent and the division with DNA markers; trisomy 21 and the <strong>maternal age effect</strong>.</li>
 <li><strong>Polyploidy</strong>: crops with whole extra genomes, and why triploids are sterile.</li>
 </ul>
 <p>Book: Hartwell, <em>Genetics: From Genes to Genomes</em>, the chapter on chromosomal rearrangements and changes in chromosome number.</p>
 <aside class="notes">
-<p>The genetic thread through the whole lecture is meiosis. A rearrangement or a missing chromosome in one cell is a cytology fact; what makes it genetics is what the carrier passes on. Many carriers of a balanced rearrangement are perfectly healthy, and the problem appears only in their children or as reduced fertility. Students know mitosis, meiosis and nondisjunction from Part 2 (chromosome theory); today’s demo is the same meiosis demo, in its nondisjunction mode. Keep the key word “balanced” in view: does a cell or gamete have the right amount of every part of the genome, or not?</p>
+<p>The genetic thread through the whole lecture is meiosis. A rearrangement or a missing chromosome in one cell is a cytology fact; what makes it genetics is what the carrier passes on. Many carriers of a balanced rearrangement are perfectly healthy, and the problem appears only in their children or as reduced fertility. Students know mitosis, meiosis and nondisjunction from Part 2 (chromosome theory); today’s demo is the same meiosis demo, in its nondisjunction mode. Keep the key word “balanced” in view: does a cell or gamete have the right amount of every part of the genome, or not? Three parts of the lecture are built step by step because they are where students lose their way in the exercise: the products of a crossover inside an inversion, the gametes of a translocation carrier, and the marker logic for nondisjunction.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -185,7 +185,71 @@ Basic and molecular genetics (5MO104)
 
 <img data-src="fig01-rearrangement-types.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:66.0%"><p>A rearrangement starts with <strong>double-strand breaks</strong> that are rejoined the wrong way, or with <strong>recombination between repeats</strong> at the wrong place. <strong>Balanced</strong> rearrangements (inversions, reciprocal translocations) keep every gene, just in a new order; <strong>unbalanced</strong> ones (deletions, duplications) change the amount.</p>
 <aside class="notes">
-<p>Read the figure row by row. The letters are blocks of genes; the red dot is the centromere. Deletion: a segment is missing. Duplication: a segment is present twice, here in tandem. Inversion: a segment is cut out and put back the other way round; paracentric if the centromere is outside the inverted segment, pericentric if it is inside (which can move the centromere and change the arm ratio). Reciprocal translocation: two non-homologous chromosomes swap ends. The notation from the last lecture applies: del, dup, inv, t, with the breakpoints in parentheses. Ask the room which of these can be seen in a G-banded karyotype: those that change the band pattern by more than a few megabases.</p>
+<p>Read the figure row by row. The letters are blocks of genes; the red dot is the centromere. Deletion: a segment is missing. Duplication: a segment is present twice, here in tandem. Inversion: a segment is cut out and put back the other way round; paracentric if the centromere is outside the inverted segment, pericentric if it is inside (which can move the centromere and change the arm ratio). Reciprocal translocation: two non-homologous chromosomes swap ends. Ask the room which of these can be seen in a G-banded karyotype: those that change the band pattern by more than a few megabases.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reading-a-rearrangement-karyotype" class="slide level2">
+<h2>Reading a rearrangement karyotype</h2>
+<p>The notation from the last lecture: <strong>type(chromosome)(breakpoints)</strong>. The breakpoints tell you what kind of change it is.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Karyotype</th>
+<th>Read it as</th>
+<th>Kind</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>46,XX,del(4)(p16.1)</td>
+<td>chromosome 4 is missing everything from 4p16.1 to the end of 4p</td>
+<td><strong>terminal</strong> deletion, unbalanced</td>
+</tr>
+<tr class="even">
+<td>46,XY,del(7)(q11.23q11.23)</td>
+<td>a piece <strong>inside</strong> 7q11.23 is missing</td>
+<td><strong>interstitial</strong> deletion, unbalanced</td>
+</tr>
+<tr class="odd">
+<td>46,XX,inv(1)(q21q32)</td>
+<td>both breakpoints on <strong>q</strong>: the centromere is outside</td>
+<td><strong>paracentric</strong> inversion, balanced</td>
+</tr>
+<tr class="even">
+<td>46,XY,inv(5)(p13q31)</td>
+<td>one breakpoint on <strong>p</strong>, one on <strong>q</strong>: the centromere is inside</td>
+<td><strong>pericentric</strong> inversion, balanced</td>
+</tr>
+<tr class="odd">
+<td>46,XX,t(11;22)(q23;q11.2)</td>
+<td>11q23→11qter and 22q11.2→22qter have swapped</td>
+<td>reciprocal translocation, balanced</td>
+</tr>
+<tr class="even">
+<td>45,XY,rob(14;21)(q10;q10)</td>
+<td>14q and 21q joined at the centromere; 45 chromosomes</td>
+<td>Robertsonian, balanced</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> an inversion with <strong>both</strong> breakpoints on the same arm letter is paracentric; with a <strong>p and a q</strong> it is pericentric.</p>
+<aside class="notes">
+<p>Work down the table aloud. The first number is still the chromosome count: a Robertsonian carrier has 45 chromosomes and is still balanced, which surprises students. q10 means the breakpoint is at the centromere itself. A deletion written with one breakpoint is terminal, running to the end of the arm (pter or qter); with two breakpoints it is interstitial. The 7q11.23 deletion is the Williams syndrome region that students look up in the exercise. The t(11;22)(q23;q11.2) is the most common recurrent constitutional reciprocal translocation in humans, and inversions of chromosome 1 and 5 are just examples of the format. The rule of thumb for paracentric versus pericentric is the one students need for B1 in the exercise.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -221,7 +285,7 @@ Basic and molecular genetics (5MO104)
 <p>A heterozygote for a deletion has only <strong>one</strong> copy of the genes in the deleted segment.</p>
 <ul>
 <li><strong>Haploinsufficiency</strong>: for some genes, one copy is not enough. Large deletions are usually harmful; homozygous deletions are usually lethal.</li>
-<li><strong>Pseudodominance</strong>: a recessive allele on the normal homologue is <strong>expressed</strong>, because the deletion uncovers it. <em>Drosophila</em> geneticists used overlapping deletions to <strong>map</strong> genes: a recessive mutation is uncovered only by deletions that remove its locus.</li>
+<li><strong>Pseudodominance</strong>: a recessive allele on the normal homologue is <strong>expressed</strong>, because the deletion uncovers it.</li>
 <li>In meiosis, the normal homologue forms a <strong>deletion loop</strong> where it has no partner.</li>
 </ul>
 <table class="caption-top">
@@ -261,7 +325,66 @@ Basic and molecular genetics (5MO104)
 </tbody>
 </table>
 <aside class="notes">
-<p>Pseudodominance is the genetic signature of a deletion: a recessive phenotype appears in a heterozygote. It made deletion mapping possible: cross a recessive mutant to a series of flies carrying overlapping deletions, and the mutation lies in the region removed by every deletion that uncovers it. The same logic, with molecular deletions in yeast or bacteria, is still used. In humans, the most common deletion syndromes arise by NAHR, as on the previous slide, mostly as new mutations. A deletion syndrome is a contiguous gene syndrome: many genes are lost, and some features can be traced to single genes, such as the narrowing of the aorta in Williams syndrome to the loss of one copy of the elastin gene ELN. Students find these in ClinVar and MedGen in the exercise. Deletions below about 5 Mb are invisible in a routine karyotype; they are found with microarrays or sequencing.</p>
+<p>Pseudodominance is the genetic signature of a deletion: a recessive phenotype appears in a heterozygote. The next slide turns it into a mapping method. In humans, the most common deletion syndromes arise by NAHR, as on the previous slide, mostly as new mutations. A deletion syndrome is a contiguous gene syndrome: many genes are lost, and some features can be traced to single genes, such as the narrowing of the aorta in Williams syndrome to the loss of one copy of the elastin gene ELN. Students find these in ClinVar and MedGen in the exercise. Deletions below about 5 Mb are invisible in a routine karyotype; they are found with microarrays or sequencing.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="deletion-mapping-step-by-step" class="slide level2 smaller">
+<h2>Deletion mapping, step by step</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><em>Drosophila</em> larval salivary glands have giant <strong>polytene</strong> chromosomes, about a thousand copies side by side, with a band pattern visible in a light microscope. A deletion shows up as missing bands.</p>
+<p><strong>The test.</strong> Cross a fly homozygous for recessive <em>m</em> with a fly carrying a deletion (<em>Df</em>). If some offspring are mutant, the deletion <strong>uncovers</strong> <em>m</em>: <em>m</em> lies inside it.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>bands removed</th>
+<th style="text-align: center;">uncovers <em>x</em>?</th>
+<th style="text-align: center;">uncovers <em>y</em>?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Df1</em></td>
+<td>1–3</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">no</td>
+</tr>
+<tr class="even">
+<td><em>Df2</em></td>
+<td>3–5</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr class="odd">
+<td><em>Df3</em></td>
+<td>5–6</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">no</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>x</em>: inside <em>Df1</em> <strong>and</strong> <em>Df2</em>, so in their overlap: <strong>band 3</strong>.</li>
+<li><em>y</em>: inside <em>Df2</em> but <strong>not</strong> <em>Df1</em> or <em>Df3</em>: bands 3–5 minus 3 and 5: <strong>band 4</strong>.</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="img/polytene-chromosomes.jpg" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:Drosophila_polytene_chromosomes_2.jpg" class="photo-credit">Photo: J. Albert Vallunen, CC BY-SA 2.5, via Wikimedia Commons</a></p>
+<p><em>Drosophila</em> polytene chromosomes (phase contrast). Inset b: the dark bands up close.</p>
+</div></div>
+<aside class="notes">
+<p>This is a small invented example to show the logic; the exercise has a bigger one. Two rules: a mutation lies inside every deletion that uncovers it, and outside every deletion that does not. Intersect the first set, then subtract the second. The polytene chromosomes are what made this so powerful in Drosophila: Bridges drew maps of the salivary-gland chromosomes in the 1930s, and a deletion could be seen as a stretch of missing bands, so a genetic interval could be tied to a physical one. The polytene chromosome forms when the DNA replicates many times without cell division and the copies stay aligned, which makes each band thick enough to see. Today Drosophila geneticists use a genome-wide collection of molecularly defined deletions, the “deficiency kit”, in exactly this way.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -330,10 +453,10 @@ Basic and molecular genetics (5MO104)
 </tr>
 </tbody>
 </table>
-<p>In a heterozygote, the two homologues can only pair gene by gene if one of them forms an <strong>inversion loop</strong>.</p>
+<p>The trouble starts in a <strong>heterozygote</strong> at meiosis: the next four slides build it up step by step.</p>
 <p>A common harmless human variant is the pericentric inversion of chromosome 9, inv(9)(p12q13), found in about 1–3% of people.</p>
 <aside class="notes">
-<p>The genetic problem with inversions arises in heterozygotes during meiosis, which is the next slide. Inversion homozygotes pair normally and have no problem. Over evolution, inversions are common differences between species: humans and chimpanzees differ by several pericentric inversions, and many Drosophila populations carry inversion polymorphisms that keep favourable combinations of alleles together. Inversions are usually detected by a change in band order, or today by sequencing with long reads.</p>
+<p>The genetic problem with inversions arises in heterozygotes during meiosis. Inversion homozygotes pair normally and have no problem. Over evolution, inversions are common differences between species: humans and chimpanzees differ by several pericentric inversions, and many Drosophila populations carry inversion polymorphisms that keep favourable combinations of alleles together. Inversions are usually detected by a change in band order, or today by sequencing with long reads. The table is the conclusion; now we derive it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -346,16 +469,33 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="why-crossovers-in-inversions-make-bad-gametes" class="slide level2 smaller">
-<h2>Why crossovers in inversions make bad gametes</h2>
+<section id="step-1-pairing-makes-a-loop" class="slide level2">
+<h2>Step 1: pairing makes a loop</h2>
+
+<img data-src="fig03a-inversion-pairing.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:96.0%"><p>Homologues pair <strong>gene by gene</strong>. Where one of them has a segment the other way round, the only way to bring B next to B and D next to D is for one homologue to form an <strong>inversion loop</strong>. (In a cell the loop can be made by either homologue.)</p>
+<aside class="notes">
+<p>Draw this on the board as you talk. On the left the two homologues are laid straight: the inverted segment B C D reads D C B on the red one, so B faces D. Pairing in prophase I is driven by sequence matching, so the chromosomes contort until every gene lies next to its partner. The result on the right: the blue homologue forms the outer loop, and the red one runs through it backwards, twisting at the base. Inversion loops were seen directly in Drosophila polytene chromosomes, which pair in somatic cells. Nothing has gone wrong yet: if no crossover happens inside the loop, the two chromatids segregate normally and both gametes are balanced.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-one-crossover-in-a-paracentric-loop" class="slide level2 smaller">
+<h2>Step 2: one crossover in a paracentric loop</h2>
 
 <img data-src="fig03-inversion-loop.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:88.0%"><ul>
-<li><strong>Paracentric</strong>: the crossover chromatids become a <strong>dicentric</strong> (torn at anaphase I) and an <strong>acentric</strong> fragment (lost). Gametes with them are unbalanced.</li>
-<li><strong>Pericentric</strong>: the crossover chromatids each have a <strong>duplication</strong> of one end and a <strong>deficiency</strong> of the other.</li>
-<li>Either way, only the <strong>non-crossover</strong> chromatids give viable offspring. Inversion heterozygotes have reduced fertility, and recombinants for genes inside the inversion seem to be <strong>suppressed</strong>.</li>
+<li>The crossover chromatids become a <strong>dicentric</strong> (A B C D A, with a centromere at each end) and an <strong>acentric</strong> fragment (E D C B E).</li>
+<li>At anaphase I the dicentric is pulled to both poles and <strong>breaks</strong>; the acentric has no kinetochore and is <strong>lost</strong>.</li>
 </ul>
 <aside class="notes">
-<p>Derive the products on the board using the figure. Normal: centromere A B C D E; inverted: centromere A D C B E. In the loop, one crossover between B and C joins the normal chromatid’s centromere part, A B, to the inverted chromatid’s centromere part read backwards, C D A: a chromosome with a centromere at each end. The leftover pieces, E D C on one side and B E on the other, join into a fragment with no centromere. The dicentric is stretched between the poles at anaphase I and breaks; the acentric is lost. In animals, the cell often directs the dicentric into the polar body, so the egg can be fine, but in plants and in males fertility drops. Crossing over itself is not suppressed: it happens, but its products die. Geneticists use this: Drosophila balancer chromosomes carry several overlapping inversions, a dominant visible marker and a recessive lethal, and keep a mutation on the homologue intact for generations without selection.</p>
+<p>Now put a crossover in the loop, between B and C, involving one chromatid of each homologue. The other two chromatids are untouched: one normal, one inverted, both balanced. Read off the two recombinant products on the right, and let students check them with the recipe on the next slide. The dicentric forms a bridge between the two poles at anaphase I; it breaks at a random point, giving broken chromosomes with deletions. The acentric fragment is left behind. In animals the cell often directs the dicentric into the polar body, so the egg can be fine, but in plants and in males fertility drops.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -368,12 +508,198 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="reciprocal-translocations" class="slide level2 smaller">
-<h2>Reciprocal translocations</h2>
-
-<img data-src="fig04-translocation-segregation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:86.0%"><p>A balanced carrier is usually healthy. At meiosis I the four chromosomes pair as a <strong>cross</strong> (quadrivalent). Each gamete gets two of the four, and only <strong>alternate</strong> segregation gives balanced gametes.</p>
+<section id="how-to-work-out-the-products-a-recipe" class="slide level2">
+<h2>How to work out the products: a recipe</h2>
+<p>A crossover between genes <strong>X</strong> and <strong>Y</strong> joins two pieces:</p>
+<ol type="1">
+<li>Write both chromatids, with the centromere: normal <strong>• A B C D E</strong>, inverted <strong>• A D C B E</strong>.</li>
+<li>Find the crossover in <strong>both</strong>: here between B and C. In the inverted chromatid, B and C are neighbours too (…C B…).</li>
+<li><strong>Product 1</strong> = the normal piece that contains <strong>B</strong> + the inverted piece that contains <strong>C</strong>.
+<ul>
+<li>normal piece with B: <strong>• A B</strong>; inverted piece with C, read away from B: <strong>C D A •</strong></li>
+<li>joined: <strong>• A B C D A •</strong>: two centromeres, A twice, no E: a <strong>dicentric</strong>.</li>
+</ul></li>
+<li><strong>Product 2</strong> = the normal piece that contains <strong>C</strong> + the inverted piece that contains <strong>B</strong>.
+<ul>
+<li>normal piece with C: <strong>C D E</strong>; inverted piece with B: <strong>B E</strong></li>
+<li>join the crossover ends (C meets B): <strong>E D C B E</strong>: no centromere: an <strong>acentric</strong>.</li>
+</ul></li>
+<li><strong>Check</strong>: count every letter and every centromere across the two products. Together they have exactly what the two parental chromatids had.</li>
+</ol>
 <aside class="notes">
-<p>The cross forms because each part of each chromosome pairs with its homologous part. Then two of the four go to each pole. Alternate segregation, normal plus normal and translocation plus translocation, gives two kinds of balanced gamete: completely normal, and a balanced carrier like the parent. Adjacent-1 keeps homologous centromeres apart but puts one normal and one translocated chromosome together: each gamete has a duplication of one tip and a deficiency of the other. Adjacent-2, where homologous centromeres go to the same pole, is rarer and also unbalanced. In plants this shows up as semisterility: about half of the pollen and ovules abort. In human carriers it shows up as recurrent miscarriage or a child with an unbalanced karyotype. How often each mode happens is measured, not predicted from first principles; if all six ways of sending two chromosomes to each pole were equally likely, a third of gametes would be balanced, and the R exercise simulates exactly that. Translocations also cause pseudolinkage: genes near the breakpoints on the two different chromosomes are inherited together, because only alternate gametes survive.</p>
+<p>This recipe works for any single crossover between two chromatids, inside an inversion or not, so it is worth practising. The key move is in step 3: after the crossover you keep going on the partner chromatid, away from the crossover. Students often write the inverted piece in the wrong direction; the check in step 5 catches that, because the letters no longer add up. Without an inversion the recipe gives the familiar recombinant chromatids from Part 2. In the exercise, B3 asks for exactly this with a different chromosome and crossover; the pericentric case is on the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-3-one-crossover-in-a-pericentric-loop" class="slide level2 smaller">
+<h2>Step 3: one crossover in a pericentric loop</h2>
+
+<img data-src="fig06-pericentric-loop.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:88.0%"><p>Same recipe, crossover between D and E. Normal piece with D (<strong>A B C • D</strong>) + inverted piece with E (<strong>E A</strong>) = <strong>A B C • D E A</strong>. Normal piece with E (<strong>E F</strong>) + inverted piece with D (<strong>D • C B F</strong>), joined where E meets D = <strong>F E D • C B F</strong>.</p>
+<aside class="notes">
+<p>This time the centromere is inside the loop, so it is drawn at the top, where the two centromeres pair. Apply the recipe and show that each crossover chromatid gets exactly one centromere: there is no bridge and no fragment, and both segregate normally at anaphase. But each is unbalanced: one has A twice and no F, the other F twice and no A, a duplication of one end and a deficiency of the other. Zygotes from such gametes usually die, or, if the duplicated and missing ends are small, can survive with an unbalanced karyotype; that is how some children of inv carriers are born with a “recombinant” chromosome. Compare with the paracentric case side by side: different products, same outcome for the offspring.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-inversions-do-to-recombination" class="slide level2">
+<h2>What inversions do to recombination</h2>
+<p>A worked example, with round numbers to show the logic:</p>
+<ul>
+<li>In an inversion heterozygote, suppose <strong>40%</strong> of meioses have one crossover inside the loop.</li>
+<li>Each such meiosis gives <strong>2 of 4</strong> unbalanced products (the crossover chromatids).</li>
+<li>Unbalanced gametes: 0.40 × ½ = <strong>20%</strong>. Viable gametes are all <strong>non-crossover</strong> chromatids.</li>
+</ul>
+<p>Consequences:</p>
+<ul>
+<li>Among the surviving offspring, <strong>no recombinants</strong> for genes inside the inversion: recombination looks <strong>suppressed</strong>. Crossing over happens; its products die.</li>
+<li><strong>Reduced fertility</strong> in heterozygotes, especially plants and males.</li>
+<li><strong>Balancer chromosomes</strong> in <em>Drosophila</em> use this: several overlapping inversions, a dominant visible marker and a recessive lethal keep a mutation on the other homologue intact for generations.</li>
+</ul>
+<aside class="notes">
+<p>The 40 percent is not a measured value; it is there to show how the fractions combine. The general rule: the fraction of unbalanced gametes is half the fraction of meioses with a single crossover in the loop. Longer inversions have more crossovers inside them, so they cost more fertility. Double crossovers inside the loop can give viable recombinant products, which is why suppression is strong but not absolute. Balancers are the practical tool: because recombinants are not recovered, a lethal mutation kept over a balancer stays on its own chromosome, and the balancer’s dominant marker tells you which flies carry it. Evolutionary biologists see the same thing in nature: an inversion keeps a block of alleles together, a “supergene”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="reciprocal-translocations-step-1-pairing" class="slide level2 smaller">
+<h2>Reciprocal translocations: step 1, pairing</h2>
+
+<img data-src="fig04a-translocation-pairing.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:72.0%"><p>Name the segments: chromosome 1 = <strong>1a</strong> (with the centromere) + <strong>1b</strong> (the tip); chromosome 2 = <strong>2a</strong> + <strong>2b</strong>. The carrier has N1 = 1a·1b, N2 = 2a·2b, <strong>T1 = 1a·2b</strong> and <strong>T2 = 2a·1b</strong>: every segment exactly twice. A balanced carrier is usually healthy.</p>
+<aside class="notes">
+<p>Labelling segments is the trick that makes the rest mechanical. The carrier has two copies of every segment, so is balanced; but the segments sit on four different chromosomes, and none of them has a normal partner along its whole length. At meiosis I each segment pairs with its homologous segment: 1a of N1 with 1a of T1, 1b of N1 with 1b of T2, and so on. The only shape that satisfies all four pairings is a cross, called a quadrivalent. In real cells the cross often opens into a ring or a chain of four after chiasmata resolve, which is what you see at metaphase I.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-two-of-the-four-go-to-each-pole" class="slide level2 smaller">
+<h2>Step 2: two of the four go to each pole</h2>
+
+<img data-src="fig04-translocation-segregation.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:86.0%"><p>The four centromeres are shared out two and two. <strong>Alternate</strong>: N1 + N2 / T1 + T2. <strong>Adjacent-1</strong>: homologous centromeres go apart, N1 + T2 / N2 + T1. <strong>Adjacent-2</strong>: homologous centromeres go together, N1 + T1 / N2 + T2.</p>
+<aside class="notes">
+<p>The cross faces the spindle with its four centromeres. In alternate segregation the cross twists into a figure of eight so that the two normal chromosomes go one way and the two translocated ones the other. In adjacent-1, the neighbours in the cross go together, but homologous centromeres still go to opposite poles, which is what normally happens in meiosis I. Adjacent-2 sends homologous centromeres to the same pole; it is rarer. In plants this shows up as semisterility: about half of the pollen and ovules abort. In human carriers it shows up as recurrent miscarriage or a child with an unbalanced karyotype. Translocations also cause pseudolinkage: genes near the breakpoints on the two different chromosomes are inherited together, because only alternate gametes survive.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-3-count-the-segments" class="slide level2">
+<h2>Step 3: count the segments</h2>
+<p>A gamete is <strong>balanced</strong> if it has every segment exactly <strong>once</strong>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Gamete</th>
+<th style="text-align: center;">1a</th>
+<th style="text-align: center;">1b</th>
+<th style="text-align: center;">2a</th>
+<th style="text-align: center;">2b</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>alternate</td>
+<td>N1 + N2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>balanced, <strong>normal</strong></td>
+</tr>
+<tr class="even">
+<td>alternate</td>
+<td>T1 + T2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>balanced, <strong>carrier</strong></td>
+</tr>
+<tr class="odd">
+<td>adjacent-1</td>
+<td>N1 + T2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td>dup 1b, def 2b</td>
+</tr>
+<tr class="even">
+<td>adjacent-1</td>
+<td>N2 + T1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td>dup 2b, def 1b</td>
+</tr>
+<tr class="odd">
+<td>adjacent-2</td>
+<td>N1 + T1</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;">1</td>
+<td>dup 1a, def 2a</td>
+</tr>
+<tr class="even">
+<td>adjacent-2</td>
+<td>N2 + T2</td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">1</td>
+<td>dup 2a, def 1a</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Only <strong>alternate</strong> gametes are balanced, and half of those carry the translocation on.</li>
+<li>Adjacent-1 products duplicate and lose <strong>tips</strong> (often small); adjacent-2 products duplicate and lose the large <strong>centromeric</strong> segments, so they are almost always lethal.</li>
+</ul>
+<aside class="notes">
+<p>This table is the whole logic of translocation carriers, and the same counting works for any rearrangement: add up the copies of each segment. Adjacent-1 is the source of most liveborn unbalanced children, because the duplicated and missing pieces are the translocated tips, which may be small. How often each mode happens is measured, not predicted from first principles; the R exercise simulates what happens if all six ways of choosing two of the four were equally likely, and the by-hand exercise asks what fraction would then be balanced. Real carriers usually do better, because alternate segregation is favoured and many unbalanced embryos are lost before a pregnancy is recognised.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -441,7 +767,7 @@ Basic and molecular genetics (5MO104)
 </table>
 <p>About <strong>4%</strong> of Down syndrome is translocation Down syndrome, and it can <strong>recur</strong> in a family.</p>
 <aside class="notes">
-<p>Students met acrocentric chromosomes last lecture; the five pairs carry the rDNA on their short arms, so losing two short arms is harmless. The trivalent in the carrier can send the three chromosomes to the poles in several ways; the table lists the six two-plus-one outcomes. Several end in early miscarriage. The important clinical difference from ordinary trisomy 21: a translocation trisomy has 46 chromosomes, and one of the parents may be a carrier, so the recurrence risk is much higher than for free trisomy 21. Empirically, the risk of a child with Down syndrome is about 10 to 15 percent when the mother carries rob(14;21), and about 1 percent when the father does. A carrier of rob(21;21) can only make gametes with two copies of 21q or none, so every pregnancy that survives has Down syndrome. That is why a karyotype is done for every child with Down syndrome: it tells the family whether the risk can recur.</p>
+<p>Students met acrocentric chromosomes last lecture; the five pairs carry the rDNA on their short arms, so losing two short arms is harmless. The trivalent in the carrier can send the three chromosomes to the poles in several ways; the table lists the six two-plus-one outcomes. Count segments as on the last slide: rob plus 21 gives 14q once and 21q twice in the gamete, so three copies in the child. The important clinical difference from ordinary trisomy 21: a translocation trisomy has 46 chromosomes, and one of the parents may be a carrier, so the recurrence risk is much higher than for free trisomy 21. Empirically, the risk of a child with Down syndrome is about 10 to 15 percent when the mother carries rob(14;21), and about 1 percent when the father does. A carrier of rob(21;21) can only make gametes with two copies of 21q or none, so every pregnancy that survives has Down syndrome. That is why a karyotype is done for every child with Down syndrome: it tells the family whether the risk can recur.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -456,6 +782,8 @@ Basic and molecular genetics (5MO104)
 </section>
 <section id="the-philadelphia-chromosome" class="slide level2 smaller">
 <h2>The Philadelphia chromosome</h2>
+<div class="columns">
+<div class="column" style="width:64%;">
 <p><strong>Chronic myeloid leukaemia (CML)</strong>: in most patients, the leukaemic cells carry <strong>t(9;22)(q34;q11)</strong>.</p>
 <ul>
 <li>The small derivative chromosome 22, <strong>der(22)</strong>, is the <strong>Philadelphia chromosome</strong> (Nowell and Hungerford, 1960; shown to be a translocation by Janet Rowley in 1973).</li>
@@ -464,8 +792,17 @@ Basic and molecular genetics (5MO104)
 <li><strong>Imatinib</strong> (2001) blocks the kinase: one of the first drugs designed against the product of a specific mutation.</li>
 </ul>
 <p>This is a <strong>somatic</strong> rearrangement in blood stem cells: it is not inherited.</p>
+</div><div class="column" style="width:36%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/bcr-abl-fish.png" class="quarto-figure quarto-figure-center" style="width:78.0%"></p>
+</figure>
+</div>
+<p><a href="https://commons.wikimedia.org/wiki/File:Fish_2_fusion_signals.png" class="photo-credit">Image: Pmx, CC BY-SA 3.0, via Wikimedia Commons</a></p>
+<p>FISH on a metaphase with <em>BCR</em>::<em>ABL1</em>: a red and a green probe; where they sit together (yellow), the two genes are fused.</p>
+</div></div>
 <aside class="notes">
-<p>This is the clearest case of a rearrangement whose effect comes from the breakpoint itself rather than from dosage. Neither BCR nor ABL1 alone is the problem; the fusion is a new gene, with the start of BCR (which makes it dimerise) and the kinase domain of ABL1 (which normally is tightly regulated). The modern notation BCR::ABL1 with a double colon means a fusion. Students look up both genes in NCBI Gene in the exercise; note that BCR lies only about 2 Mb from the 22q11.2 deletion region, so 22q11 shows up twice today for two very different reasons. Cancer genetics in Part 7 comes back to fusion genes and oncogenes. Detection: karyotype, FISH with probes for both genes, or RT-PCR for the fusion transcript, which also measures how well treatment works.</p>
+<p>This is the clearest case of a rearrangement whose effect comes from the breakpoint itself rather than from dosage. Neither BCR nor ABL1 alone is the problem; the fusion is a new gene, with the start of BCR (which makes it dimerise) and the kinase domain of ABL1 (which normally is tightly regulated). The modern notation BCR::ABL1 with a double colon means a fusion. The image is fluorescence in situ hybridisation: chromosomes stained blue, one probe for each gene. Normal chromosomes 9 and 22 show a single colour; the two derivative chromosomes, der(9) and der(22), each carry a joined red-and-green signal. The short one is the Philadelphia chromosome. FISH, or RT-PCR for the fusion transcript, is how CML is diagnosed and followed during treatment. Students look up both genes in NCBI Gene in the exercise; BCR lies only about 2 Mb from the 22q11.2 deletion region. Cancer genetics in Part 7 comes back to fusion genes and oncogenes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -478,10 +815,40 @@ Basic and molecular genetics (5MO104)
           display:block!important;
       }</style></aside>
 </section>
-<section id="aneuploidy-nondisjunction" class="slide level2 smaller">
-<h2>Aneuploidy: nondisjunction</h2>
-<p><strong>Euploid</strong>: whole sets of chromosomes (n, 2n, 3n…). <strong>Aneuploid</strong>: one or a few chromosomes too many or too few: <strong>monosomy</strong> (2n − 1), <strong>trisomy</strong> (2n + 1), nullisomy (2n − 2), tetrasomy (2n + 2).</p>
+<section id="aneuploidy" class="slide level2">
+<h2>Aneuploidy</h2>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Euploid</strong>: whole sets of chromosomes (n, 2n, 3n…).</p>
+<p><strong>Aneuploid</strong>: one or a few chromosomes too many or too few:</p>
+<ul>
+<li><strong>monosomy</strong> (2n − 1)</li>
+<li><strong>trisomy</strong> (2n + 1)</li>
+<li>nullisomy (2n − 2), tetrasomy (2n + 2)</li>
+</ul>
 <p>Most aneuploidy comes from <strong>nondisjunction</strong>: chromosomes that fail to separate in meiosis.</p>
+<p>How would you write the karyotype on the right? (Count, then look at the sex chromosomes.)</p>
+</div><div class="column" style="width:52%;">
+<p><img data-src="img/trisomy21-karyotype.png" style="width:100.0%"></p>
+<p><a href="https://commons.wikimedia.org/wiki/File:21_trisomy_-_Down_syndrome.png" class="photo-credit">Image: U.S. Department of Energy Human Genome Program, public domain, via Wikimedia Commons</a></p>
+<p>A karyotype with trisomy 21 (boxed).</p>
+</div></div>
+<aside class="notes">
+<p>The terms first, then where aneuploidy comes from. Ask the class to count: 47 chromosomes, X and Y, three 21s, so 47,XY,+21. Trisomy is a whole-chromosome duplication; monosomy is a whole-chromosome deletion; dosage again. Polyploidy, at the end of the lecture, is a change of whole sets and is euploid. Note that “aneuploid” describes a cell or person; a gamete with an extra chromosome is n + 1, and it makes a 2n + 1 zygote.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="nondisjunction-in-meiosis-i-and-ii" class="slide level2">
+<h2>Nondisjunction in meiosis I and II</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -510,7 +877,7 @@ Basic and molecular genetics (5MO104)
 </table>
 <p>A trisomic zygote from an MI error has <strong>two different</strong> homologues from that parent; one from an MII error has <strong>two copies of the same</strong> homologue (apart from crossovers). DNA markers near the centromere tell which division failed.</p>
 <aside class="notes">
-<p>Students met nondisjunction with Bridges’ X chromosomes in Drosophila in Part 2; now we use it on autosomes and in humans. Count the gametes on the board, or use the demo on the next slide. The marker logic is how we know that most trisomy 21 is maternal and mostly from meiosis I: genotype the child, the mother and the father at polymorphic markers on chromosome 21. If the child has two maternal alleles that differ at markers near the centromere, the two chromosomes came from different homologues, so meiosis I. Crossing over makes this rule apply to centromere-near markers only, because a crossover can make the two sister chromatids differ further out. Mitotic nondisjunction after fertilisation gives mosaics, with normal and aneuploid cell lines side by side; about 1 to 2 percent of Down syndrome is mosaic.</p>
+<p>Students met nondisjunction with Bridges’ X chromosomes in Drosophila in Part 2; now we use it on autosomes and in humans. Count the gametes on the board, or use the demo on the next slide. Crossing over makes the MI/MII rule apply to centromere-near markers only, because a crossover can make the two sister chromatids differ further out. Mitotic nondisjunction after fertilisation gives mosaics, with normal and aneuploid cell lines side by side; about 1 to 2 percent of Down syndrome is mosaic.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -530,6 +897,65 @@ Basic and molecular genetics (5MO104)
 <script src="../demos/dist/meiosis.js"></script>
 <aside class="notes">
 <p>Interactive demo from Part 2 (chromosome theory), here in its nondisjunction mode with two chromosome pairs, labelled 21 and 2; only chromosome 21 nondisjoins. Blue is the homologue this person got from their father, red the one from their mother. Step through with Next. In meiosis I mode, both homologues go to the same pole at anaphase I, and the four gametes are two with both a blue and a red 21 (labelled n + 1 = 3) and two with none (n − 1 = 1). Switch to meiosis II mode and step again: meiosis I is normal, then in one cell the sister chromatids stay together, giving one gamete with two identical copies, one with none and two normal ones. Ask: if this person is a woman and the egg with two 21s is fertilised by a normal sperm, which grandparent’s chromosome 21 does the child carry in each case? Point out that chromosome 2 segregates normally, so each gamete is n + 1 or n − 1 for chromosome 21 only. The demo has no crossing over, which is a simplification.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="which-parent-which-division-a-worked-example" class="slide level2">
+<h2>Which parent, which division? A worked example</h2>
+<p>A short tandem repeat marker near the centromere of chromosome 21. Each number is an allele (repeat count).</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Mother</th>
+<th>Father</th>
+<th>Child</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>5, 8</td>
+<td>6, 9</td>
+<td>5, 8, 9</td>
+<td>9 is from the father; <strong>5 and 8</strong> are both from the mother: two <strong>different</strong> maternal homologues → <strong>maternal MI</strong></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5, 8</td>
+<td>6, 9</td>
+<td>8, 8, 6</td>
+<td>6 from the father; <strong>8, 8</strong> from the mother: two copies of <strong>one</strong> homologue → <strong>maternal MII</strong></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>5, 8</td>
+<td>5, 9</td>
+<td>5, 8, 9</td>
+<td>8 must be maternal, 9 paternal, but 5 could be from either: <strong>not informative</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The method.</strong> (1) Assign each allele in the child to a parent. (2) The parent with two alleles in the child made the disomic gamete. (3) Different alleles = MI, same allele twice = MII. (4) If the parents share alleles, use more markers.</p>
+<aside class="notes">
+<p>These are invented allele numbers to show the method; the exercise has three families of its own. Step through each row slowly. Row 3 is the one students forget: when a parent’s alleles overlap, a single marker cannot decide, so real studies type several markers along chromosome 21. Why near the centromere: a crossover in meiosis I can make the two sister chromatids differ further along the arm, so an MII error can look like MI at a distal marker, and vice versa. With markers like these, large studies found that about 90 percent of trisomy 21 is maternal, most of it from meiosis I, which leads to the maternal age effect in a few slides.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -611,6 +1037,60 @@ Basic and molecular genetics (5MO104)
 </ul>
 <aside class="notes">
 <p>The frequencies are rounded and vary between studies and with maternal age and prenatal screening; the point is the order of magnitude and the pattern. Gene dosage explains the pattern: chromosome 21 is one of the smallest and most gene-poor, so three copies are survivable; the gene-rich chromosomes are not. Chromosome 16 trisomy, the most common trisomy in miscarriages, shows how often aneuploid embryos form, and how strongly selection removes them; aneuploidy in human eggs is far more frequent than in most other species studied. For the sex chromosomes, X inactivation (Part 6) silences all but one X, so 47,XXY and 47,XXX are mild. Turner syndrome is the only viable monosomy, but even it is mostly lethal before birth: survivors are thought to be often mosaic.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sex-chromosome-aneuploidy-whose-error" class="slide level2">
+<h2>Sex-chromosome aneuploidy: whose error?</h2>
+<p>The same reasoning, using what each parent can give:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Karyotype</th>
+<th>Possible origins</th>
+<th>What we can say</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>47,XYY</td>
+<td>sperm <strong>YY</strong></td>
+<td>only the father has a Y, and two Ys are sister chromatids: <strong>paternal meiosis II</strong>, always</td>
+</tr>
+<tr class="even">
+<td>47,XXY</td>
+<td>sperm <strong>XY</strong> (father, MI), or egg <strong>XX</strong> (mother, MI or MII)</td>
+<td>either parent; X-linked markers decide. Roughly half of cases are paternal</td>
+</tr>
+<tr class="odd">
+<td>47,XXX</td>
+<td>egg <strong>XX</strong>, or sperm <strong>XX</strong></td>
+<td>mostly maternal</td>
+</tr>
+<tr class="even">
+<td>45,X</td>
+<td>sperm or egg with <strong>no</strong> sex chromosome, or loss after fertilisation</td>
+<td>the single X is usually the <strong>mother’s</strong>: the paternal sex chromosome is the one lost</td>
+</tr>
+</tbody>
+</table>
+<p>A father’s XY sperm can only come from <strong>meiosis I</strong>, because X and Y are homologues that should separate there.</p>
+<aside class="notes">
+<p>This slide applies the logic of the last worked example to the sex chromosomes, where the Y makes some cases unambiguous. YY in a sperm means the two sister chromatids of the Y failed to separate in meiosis II. XY in a sperm means the X and Y, which pair at the pseudoautosomal regions and normally separate at anaphase I, went together. For XXY, both routes are common, which is why paternal age matters little and maternal age somewhat. For 45,X, typing X-linked markers shows that the remaining X is usually maternal, which is why Turner syndrome shows no maternal age effect, next slide. The exercise asks you to list the gametes and zygotes for each case.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -736,7 +1216,65 @@ Basic and molecular genetics (5MO104)
 </table>
 <p>Almost every gamete is aneuploid, so triploids are (nearly) <strong>sterile</strong>. Bananas are propagated by cuttings.</p>
 <aside class="notes">
-<p>This is the product rule from Part 1 at work. Each trivalent is an independent event, so the probability that all x chromosome types happen to give one copy is one half to the power x, and the same for all giving two copies; add them. With 11 chromosome types it is about one in a thousand, so seeds almost never form; the black specks in a banana are aborted ovules. The same calculation explains why autotetraploids have reduced fertility, and why allopolyploids, which pair as bivalents, do not. The R exercise checks the formula by simulation with rbinom and replicate. The assumption that the extra copy goes to either pole at random is a simplification; trivalents can also fall apart into a bivalent and an unpaired univalent, which makes things worse rather than better.</p>
+<p>This is the product rule from Part 1 at work. Each trivalent is an independent event, so the probability that all x chromosome types happen to give one copy is one half to the power x, and the same for all giving two copies; add them. Do the toy case on the board: with three chromosome types there are eight equally likely combinations of 1s and 2s, and only 111 and 222 are balanced. With 11 chromosome types it is about one in a thousand, so seeds almost never form; the black specks in a banana are aborted ovules. The same calculation explains why autotetraploids have reduced fertility, and why allopolyploids, which pair as bivalents, do not. The R exercise checks the formula by simulation with rbinom and replicate. The assumption that the extra copy goes to either pole at random is a simplification; trivalents can also fall apart into a bivalent and an unpaired univalent, which makes things worse rather than better.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="check-yourself-common-mistakes" class="slide level2">
+<h2>Check yourself: common mistakes</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Better</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“A balanced carrier makes balanced gametes.”</td>
+<td>The carrier is balanced; many of their <strong>gametes</strong> are not.</td>
+</tr>
+<tr class="even">
+<td>“Inversions stop crossing over.”</td>
+<td>Crossovers happen in the loop; their <strong>products die</strong>, so recombinants are not recovered.</td>
+</tr>
+<tr class="odd">
+<td>“Pericentric inversions give dicentrics.”</td>
+<td><strong>Paracentric</strong> → dicentric + acentric. <strong>Pericentric</strong> → one centromere each, but dup + def.</td>
+</tr>
+<tr class="even">
+<td>“inv(3)(q21q26) is pericentric because it is long.”</td>
+<td>Look at the <strong>arms</strong>: q and q = paracentric; p and q = pericentric.</td>
+</tr>
+<tr class="odd">
+<td>“Down syndrome means 47 chromosomes.”</td>
+<td>Translocation Down syndrome has <strong>46</strong>; a rob carrier parent has <strong>45</strong>.</td>
+</tr>
+<tr class="even">
+<td>“Two maternal alleles in the child = MII.”</td>
+<td>Two <strong>different</strong> maternal alleles = MI; the <strong>same</strong> allele twice = MII (near the centromere).</td>
+</tr>
+<tr class="odd">
+<td>“Polyploid and aneuploid are the same.”</td>
+<td>Polyploid = whole <strong>extra sets</strong> (euploid); aneuploid = single chromosomes.</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Go through these as a quick quiz: read the left column and ask the room what is wrong before showing the right. Each line is a mistake that turns up in exam answers. The inversion and translocation lines are the reason for the step-by-step slides earlier; if students can write the products with the recipe and count segments, they will not make them.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -769,37 +1307,41 @@ Basic and molecular genetics (5MO104)
 </tr>
 <tr class="even">
 <td>Pseudodominance</td>
-<td>a deletion uncovers a recessive allele on the other homologue: used for deletion mapping</td>
+<td>a deletion uncovers a recessive allele on the other homologue: overlapping deletions map genes</td>
 </tr>
 <tr class="odd">
 <td>Inversion</td>
-<td>balanced; crossover in the loop → dicentric + acentric (paracentric) or dup + def (pericentric); recombinants “suppressed”</td>
+<td>balanced; pairing makes a loop; crossover in the loop → dicentric + acentric (paracentric) or dup + def (pericentric); recombinants “suppressed”</td>
 </tr>
 <tr class="even">
-<td>Reciprocal translocation</td>
-<td>balanced carrier; quadrivalent; only alternate segregation gives balanced gametes; semisterility</td>
+<td>Crossover products</td>
+<td>normal piece with the gene before the crossover + partner’s piece with the gene after it; check by counting</td>
 </tr>
 <tr class="odd">
+<td>Reciprocal translocation</td>
+<td>balanced carrier; quadrivalent; count segments: only alternate segregation gives balanced gametes</td>
+</tr>
+<tr class="even">
 <td>Robertsonian translocation</td>
 <td>two acrocentrics fuse; carrier has 45 chromosomes; can give translocation Down syndrome</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Philadelphia chromosome</td>
 <td>t(9;22) in CML; <em>BCR</em>::<em>ABL1</em> fusion kinase; somatic</td>
 </tr>
-<tr class="odd">
-<td>Nondisjunction</td>
-<td>MI: n + 1 gametes carry both homologues; MII: two copies of one</td>
-</tr>
 <tr class="even">
+<td>Nondisjunction</td>
+<td>MI: n + 1 gametes carry both homologues; MII: two copies of one; centromere markers tell which</td>
+</tr>
+<tr class="odd">
 <td>Trisomy 21</td>
 <td>≈ 90% maternal, mostly MI; risk rises steeply with maternal age</td>
 </tr>
-<tr class="odd">
-<td>Sex-chromosome aneuploidy</td>
-<td>45,X; 47,XXY; 47,XYY; 47,XXX; tolerated thanks to X inactivation</td>
-</tr>
 <tr class="even">
+<td>Sex-chromosome aneuploidy</td>
+<td>45,X; 47,XXY; 47,XYY (always paternal MII); 47,XXX; tolerated thanks to X inactivation</td>
+</tr>
+<tr class="odd">
 <td>Polyploidy</td>
 <td>auto- and allopolyploids; triploids sterile: P(balanced) = 2 · (½)<sup><em>x</em></sup></td>
 </tr>
@@ -829,7 +1371,7 @@ Basic and molecular genetics (5MO104)
 <li><strong>Ethics.</strong> Prenatal screening for trisomies raises its own questions.</li>
 </ul>
 <aside class="notes">
-<p>Point forward. The exercise has pen-and-paper problems on the products of inversion and translocation heterozygotes, nondisjunction, and the triploid formula; the meiosis demo in nondisjunction mode; database tasks on 22q11.2 deletion, Williams syndrome and BCR and ABL1. The R part plots the Danish maternal-age data on a log scale and simulates the gametes of a translocation carrier and a triploid.</p>
+<p>Point forward. The exercise has pen-and-paper problems on karyotypes, deletion mapping, the products of inversion and translocation heterozygotes, nondisjunction, and the triploid formula; the meiosis demo in nondisjunction mode; database tasks on 22q11.2 deletion, Williams syndrome and BCR and ABL1. The R part plots the Danish maternal-age data on a log scale and simulates the gametes of a translocation carrier and a triploid.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
