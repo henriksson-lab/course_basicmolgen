@@ -13,5 +13,7 @@ for n in "${names[@]}"; do
   node_modules/.bin/esbuild "demos/src/$n/main.ts" --bundle --format=iife --target=es2020 \
     --minify --log-level=warning --outfile="demos/dist/$n.js" \
     --loader:.jpg=dataurl --loader:.png=dataurl
+  # Full-page version of the demo (no site menu), linked from every embed.
+  sed "s/__NAME__/$n/g" demos/standalone.html > "demos/dist/$n.html"
 done
 echo "built: ${names[*]}"

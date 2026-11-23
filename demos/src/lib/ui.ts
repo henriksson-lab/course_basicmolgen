@@ -163,10 +163,31 @@ export function numList(s: string | undefined, fallback: number[]): number[] {
   return v.every(Number.isFinite) ? v : fallback;
 }
 
-/** Mount `fn` on every <div data-demo="name"> once the page is ready. */
+/**
+ * Mount `fn` on every <div data-demo="name"> once the page is ready. Unless the page is
+ * the standalone page itself, each embed gets a small "open standalone" link to
+ * <name>.html (next to the script), carrying the embed's data-* options as query parameters.
+ */
 export function autoMount(name: string, fn: (host: HTMLElement) => void): void {
+  const script = document.currentScript as HTMLScriptElement | null;  // only valid during script execution
+  const base = script?.src ?? "";
+  const standalone = () => document.body.hasAttribute("data-qb-standalone");
   const run = () => document.querySelectorAll<HTMLElement>(`[data-demo="${name}"]:not(.qb-demo)`)
-    .forEach(host => { host.classList.add("qb-demo"); host.innerHTML = ""; fn(host); });
+    .forEach(host => {
+      host.classList.add("qb-demo"); host.innerHTML = ""; fn(host);
+      if (base && !standalone()) host.insertAdjacentElement("afterend", standaloneLink(name, host, base));
+    });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
   else run();
+}
+
+function standaloneLink(name: string, host: HTMLElement, scriptSrc: string): HTMLAnchorElement {
+  const url = new URL(`${name}.html`, scriptSrc);
+  for (const a of Array.from(host.attributes))
+    if (a.name.startsWith("data-") && a.name !== "data-demo") url.searchParams.set(a.name.slice(5), a.value);
+  const link = htmlEl("a", "qb-standalone", "open standalone ↗");
+  link.href = url.href;
+  link.target = "_blank";
+  link.rel = "noopener";
+  return link;
 }

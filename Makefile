@@ -5,11 +5,11 @@ all: render gitadd
 
 render: demos credits
 	quarto render
+	@touch docs/.nojekyll
 
 # Collect <unit>/img/CREDITS.md into credits.qmd (the Image credits page).
 credits:
 	python3 tools/build-credits.py
-	@touch docs/.nojekyll
 
 preview:
 	quarto preview

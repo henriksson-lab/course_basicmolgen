@@ -35,6 +35,14 @@
 .qb-demo .qb-note { font-size: .85em; color: var(--qb-muted); }
 .qb-demo .qb-big { font-size: 1.25em; font-weight: 600; }
 
+/* "open standalone" link placed after each embedded demo (see autoMount in lib/ui.ts). */
+.qb-standalone {
+  display: block; text-align: right; font-size: 12px; color: #888; text-decoration: none;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin-top: -.6em;
+}
+.qb-standalone:hover { color: #1f77b4; text-decoration: underline; }
+.reveal .qb-standalone { font-size: 14px; margin-top: 0; }
+
 /* Inside a reveal.js slide: larger text, no outer margin, fit the content area. */
 .reveal .qb-demo { font-size: 22px; margin: .2em 0; text-align: left; }
 .reveal .qb-demo .qb-plot { max-width: none; }
